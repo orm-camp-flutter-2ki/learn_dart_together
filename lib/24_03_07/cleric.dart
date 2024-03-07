@@ -28,11 +28,13 @@ class Cleric {
   // 최대 mp보다 더 회복하는 것은 불가능.
   // 인수에 기도할 시간(초) 지정, 리턴값은 실제 회복된 mp 양을 반환
   int pray(int second) {
-    int healPoint = Random().nextInt(3); // 0,1,2 랜덤
-    mp += second * healPoint;
+    int prevMp = mp;
+    int plusPoint= second * Random().nextInt(3); // 0,1,2 랜덤
+    int healPoint = second + plusPoint;
+    mp += healPoint;
     if (mp > maxMp) {
       mp = maxMp;
     }
-    return second * healPoint;
+    return mp-prevMp;
   }
 }
