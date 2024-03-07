@@ -11,7 +11,7 @@ class Cleric {
   Cleric(this.name, this.hp, this.mp);
 
   void selfAid() {
-    if (hp > 5) {
+    if (hp > 5 || mp > 0) {
       mp -= 5;
       hp = maxHp;
     }
