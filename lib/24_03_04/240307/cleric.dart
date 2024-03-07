@@ -13,32 +13,32 @@ class Cleric {
   final int maxHp = 50;
   final int maxMp = 10;
 
-  int mpRecover = 0;
-
   Cleric(this.name, this.hp, this.mp);
 
   void selfAid() {
     if (mp >= 5) {
       mp -= 5;
-    }else{
+    } else {
       print('mp가 부족합니다. \nselfAid가 발동되지 않았습니다.');
     }
     hp = 50;
   }
+  // 컨벤션주의
+  // 캡슐화, 은닉화
+  // 
+  int pray(int seconds) {
+    int random = Random().nextInt(3); // 변수이름
+    int mpRecovery = 0;
 
-  int pray(int seconds) {    
-
-    int ran = Random().nextInt(3);
-    int mpRecover = 0;
     //print('ran: $ran');
-    mpRecover += seconds+ran;    
+    mpRecovery += seconds + random;
     //print('mpRecover: $mpRecover');
-    
-    if((mp+mpRecover) >= 10){
-      mp = 10;
-    }else{
-      mp += mpRecover;
+
+    if ((mp + mpRecovery) >= maxMp) {
+      mp = maxMp;
+    } else {
+      mp += mpRecovery;
     }
-    return mpRecover;
+    return mpRecovery;
   }
 }
