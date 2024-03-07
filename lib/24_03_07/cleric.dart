@@ -19,6 +19,9 @@ class Cleric {
 
     if (healedMp > maximumMp - mp) {
       healedMp = maximumMp - mp;
+      mp = maximumMp;
+    } else {
+      mp += healedMp;
     }
 
     return healedMp;
