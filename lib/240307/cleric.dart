@@ -21,8 +21,6 @@ class Cleric {
     if (mp >= 5) {
       mp -= 5;
       hp = maxHp;
-    } else {
-      print('mp가 부족합니다');
     }
   }
 
