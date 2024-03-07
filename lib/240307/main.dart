@@ -1,14 +1,12 @@
-import 'Slime.dart';
-import 'Hero.dart';
-import 'Cleric.dart';
+import 'cleric.dart';
+import 'hero.dart';
+import 'slime.dart';
 
 void main() {
   Hero hero = Hero('홍길동', 100);
 
   Slime slime1 = Slime(50, 'A');
   Slime slime2 = Slime(48, 'B');
-
-  Cleric cleric  = Cleric('클레릭');
 
   // 모험의 시작
   print('[모험을 떠납니다...]');
@@ -17,6 +15,21 @@ void main() {
   slime2.run();
   hero.run();
   hero.sleep();
-  cleric.selfAid();
-  cleric.pray(8);
+
+  Cleric cleric = Cleric('홍길동', 50, 10);
+
+  print('===== 클래릭 생성 =====');
+  print('${cleric.hp}, ${cleric.mp}');
+
+  for (int i = 0; i < 3; i++) {
+    cleric.selfAid();
+    print('===== selfAid() 발동 $i =====');
+    print('${cleric.hp}, ${cleric.mp}');
+  }
+
+  for (int i = 0; i < 3; i++) {
+    print('===== pray() 발동 $i =====');
+    int recoveryMp = cleric.pray(5);
+    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
+  }
 }
