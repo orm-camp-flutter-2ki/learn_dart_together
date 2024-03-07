@@ -12,15 +12,20 @@ class Cleric {
   Cleric(this.name, this.hp, this.mp);
 
   void selfAid() {
-    mp -= 5;
-    hp = maxHp;
+    if (mp >= 5) {
+      mp -= 5;
+      hp = maxHp;
+    } else {
+      print('마나가 부족합니다.');
+    }
   }
 
   int pray(int sec) {
-    mp += sec * Random().nextInt(3);
+    int recoveryMp = sec + Random().nextInt(3);
+    mp += recoveryMp;
     if (mp > maxMp) {
       mp = maxMp;
     }
-    return mp;
+    return recoveryMp;
   }
 }
