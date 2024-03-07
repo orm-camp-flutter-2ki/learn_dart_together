@@ -5,23 +5,23 @@
 최대 HP와 최대 MP는 상수 필드로 선언 하시오.
 */
 
-Class Cleric(){
+Class Cleric() {
   String name;
   int hp = 50;
-  final int maxHp =50;
-  int mp =10;
-  final int maxMp =10;
+  final int maxHp = 50;
+  int mp = 10;
+  final int maxMp = 10;
 
   Cleric(this.name, this.hp, this.maxHp, this.mp, this.maxMp)
 
-  void selfAid(){
+  void selfAid() {
     mp -= 5;
     hp = maxHp;
   }
 
-  int pray(int prayTime){
+  int pray(int prayTime) {
     healMp = prayTime + Random().nextInt(3);
-    if (healMp >10) {
+    if (healMp > 10) {
       healMp = 10;
     }
     return healMp;
