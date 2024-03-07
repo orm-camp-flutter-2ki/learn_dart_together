@@ -5,7 +5,7 @@ class Cleric {
   int hp; // HP
   final int maximumHp = 50; // 최대 HP
   int mp; // MP
-  final int maximumMp = 10;
+  final int maximumMp = 10; // 최대 MP
 
   Cleric(this.name, this.hp, this.mp);
 
