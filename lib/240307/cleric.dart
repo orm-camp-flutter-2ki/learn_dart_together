@@ -3,8 +3,17 @@ class Cleric {
   int hp;
   int mp;
 
-  Cleric(this.name,this.hp = maxhp,this.mp = maxmp);
-
   final int maxhp = 50;
   final int maxmp = 10;
+
+  Cleric(this.name, this.hp, this.mp);
+
+  void selfAid() {
+    if (mp < 5) {
+      print('mp가 부족합니다!');
+    } else {
+      mp = mp - 5;
+      hp = maxhp;
+    }
+  }
 }
