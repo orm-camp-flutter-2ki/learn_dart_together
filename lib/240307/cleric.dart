@@ -25,6 +25,11 @@ class Cleric {
 
   int pray(int time) {
     int randomRecoverMp = Random().nextInt(2);
-    return time + randomRecoverMp;
+
+    // pray() 로 회복하는 mp 가 maxMp 보다 크다면 maxMp, 아니라면 time + randomRecoverMp 를 recoverMp 에 저장
+    int recoverMp = time + randomRecoverMp > maxMp ? maxMp : time + randomRecoverMp;
+    
+    mp = recoverMp;
+    return recoverMp;
   }
 }
