@@ -19,49 +19,34 @@ void main() {
   }
 }
 
-
 class Cleric {
+  final hpMax = 50;
+  final mpMax = 10;
+
   String name;
   int hp = 50;
-  final hpMax = 50;
   int mp = 10;
-  final mpMax = 10;
 
   Cleric(this.name, this.hp, this.mp);
 
   void selfAid() {
-    if (mp < 5) {
-      print('마나가 없습니다.스킬을 쓸 수 없습니다.');
+    int mpCost = 5;
+    if (mp < mpCost) {
+      print('마나가 부족합니다.스킬을 쓸 수 없습니다.');
     } else {
-      mp -= 5;
+      mp -= mpCost;
       hp = hpMax;
     }
   }
 
   int pray(int sec) {
-    int healedMP = 0;
-    //sec 만큼 반복
-    for (int i = 1; i <= sec; i++) {
-      //mp가 최대가 아닐때
-      if (mp < mpMax) {
-        int randomRecovery = Random().nextInt(3);
-        if ((randomRecovery + mp) >= mpMax) {
-          int mpOver = (randomRecovery + mp)- mpMax;
-          healedMP += randomRecovery - mpOver;
-          mp += randomRecovery - mpOver;
-          break;
-        } else {
-          healedMP += randomRecovery;
-          //추가
-          mp += randomRecovery;
-        }
-      }
-      //mp가 최대일때
-      else {
-        print('마나가 다 찼습니다.');
-        break;
-      }
-    }//for
-    return healedMP;
+    int randomRecovery = sec + Random().nextInt(3);
+    print('랜덤값+초:$randomRecovery');
+    int possibleRange = mpMax - mp;
+    int recoveryMp = min(randomRecovery, possibleRange);
+
+    mp += recoveryMp;
+
+    return recoveryMp;
   }
 }
