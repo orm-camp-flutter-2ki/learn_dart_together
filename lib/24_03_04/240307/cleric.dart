@@ -18,10 +18,11 @@ class Cleric {
   void selfAid() {
     if (mp >= 5) {
       mp -= 5;
+      hp = 50;
     } else {
-      print('mp가 부족합니다. \nselfAid가 발동되지 않았습니다.');
+      print('mp가 부족합니다. \nselfAid가 발동되지 않았습니다.');      
     }
-    hp = 50;
+    
   }
   // 컨벤션주의
   // 캡슐화, 은닉화
