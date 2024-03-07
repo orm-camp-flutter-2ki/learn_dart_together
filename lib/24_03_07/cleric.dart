@@ -14,7 +14,9 @@ class Cleric {
       _mp -= 5;
       _hp = _maxHp;
       print('$_name의 hp가 회복 되었습니다. 잔여 mp: $_mp, hp: $_hp');
-    } else {}
+    } else {
+      print('$_name의 mp가 부족하여 hp를 회복하지 못했습니다. 잔여 mp: $_mp, hp: $_hp');
+    }
   }
 
   int pray(int second) {
