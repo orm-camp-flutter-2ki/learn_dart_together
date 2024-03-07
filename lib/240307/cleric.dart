@@ -11,8 +11,16 @@ class Cleric {
   Cleric(this.name, this.hp, this.mp);
 
   void selfAid() {
-    mp -= 5;
-    hp = maxHp;
+    int maxiumSpendMp = 5; // selfAid에 사용하는 mp의 양
+
+    // maxiumSpendMp 보다 mp가 적을 경우 남아있는 mp 만큼 회복
+    if(mp < maxiumSpendMp) {
+      hp + mp > maxHp ? hp = maxHp : hp += mp;
+      mp = 0;
+    } else {
+      mp -= maxiumSpendMp;
+      hp = maxHp;
+    }
   }
 
   int pray(int time) {
