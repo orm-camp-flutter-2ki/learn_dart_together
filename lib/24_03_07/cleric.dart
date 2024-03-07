@@ -9,6 +9,7 @@ class Cleric{
 
   Cleric(this._name);
 
+
   void selfAid(){
     if(_mp >=5) {
       _mp -= 5;
@@ -17,7 +18,7 @@ class Cleric{
   }
 
   int pray(int second){
-    int mpAmount = (_getRandomHealAmount(2) + 1) * second;
+    int mpAmount = _getRandomHealAmount(3) + second;
 
     return _maxMp < _mp + mpAmount? _maxMp - _mp: mpAmount;
   }
