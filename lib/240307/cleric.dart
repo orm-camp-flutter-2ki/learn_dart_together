@@ -26,7 +26,7 @@ class Cleric {
   int pray(int time) {
     if(mp == maxMp) return 0; // 현재 mp와 maxMp 가 같을때 0 반환
 
-    int randomRecoverMp = Random().nextInt(2);
+    int randomRecoverMp = Random().nextInt(3);
     int recoverMp = time + randomRecoverMp; // 기도로 회복하는 mp
     int maximumRecoverMp = maxMp - mp; // 최대 회복가능한 mp
 
