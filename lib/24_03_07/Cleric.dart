@@ -12,23 +12,19 @@ class Cleric {
   void selfAid() {
     if ((mp - 5) >= 0) {
       mp -= 5;
+      hp = maxHp;
     }
-    hp = maxHp;
   }
 
   int pray(int second) {
-    int realMp = 0;
     int randomNumber = Random().nextInt(3);
-    realMp += (second+randomNumber);
-    if((mp + realMp) <= maxMp){
-      mp += realMp;
-      return realMp;
+    int realMp = second + randomNumber;
+
+    if ((mp + realMp) > maxMp) {
+      realMp = maxMp - mp;
     }
-    else{
-      int excess = (realMp + mp) - maxMp;
-      realMp -= excess;
-      mp += realMp;
-      return realMp;
-    }
+
+    mp += realMp;
+    return realMp;
   }
 }
