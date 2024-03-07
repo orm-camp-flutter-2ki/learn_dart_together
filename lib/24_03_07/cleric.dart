@@ -17,7 +17,7 @@ class Cleric {
   // 셀프에이드 마법. mp를 5 소비하고 hp를 최대로 회복한다.
   // 인수도 리턴값도 없음.
   void selfAid() {
-    if (mp < 0) return;
+    if (mp < 5) return;
     mp -= 5;
     hp = maxHp;
     if (mp < 0) {
