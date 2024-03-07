@@ -22,13 +22,15 @@ class Cleric {
   }
 
   int pray(int time) {
-    if (mp == maxMp) { // 현재 mp가 최대 mp이면
+    if (mp == maxMp) {
+      // 현재 mp가 최대 mp이면
       return 0;
     }
 
     int recoveredMp = time + Random().nextInt(3); // mp 회복량
 
-    if (mp + recoveredMp > maxMp) { // 현재 mp에 mp 회복량을 더한 값이 최대 mp보다 크면
+    if (mp + recoveredMp > maxMp) {
+      // 현재 mp에 mp 회복량을 더한 값이 최대 mp보다 크면
       recoveredMp = maxMp - mp; // 회복 mp량은 회복할 수 있는 mp량 만큼으로 변환
     }
 
