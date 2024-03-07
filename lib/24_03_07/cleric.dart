@@ -30,13 +30,15 @@ class Cleric {
   Cleric(this.name);
 
   void selfAid() {
-    if (this.mp < 5) {
+    final int usedMp = 5;
+    
+    if (this.mp < usedMp) {
       print('MP가 부족합니다.');
     } else if (this.hp == this.maxHp) {
       print('이미 체력이 가득 찼습니다.');
     } else {
       this.hp = this.maxHp;
-      this.mp -= 5;
+      this.mp -= usedMp;
       print('HP가 모두 회복되었습니다.');
     }
   }
