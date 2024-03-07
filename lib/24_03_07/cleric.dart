@@ -7,8 +7,8 @@ void main() {
   print('${cleric.hp}, ${cleric.mp}');
 
   for (int i = 0; i < 3; i++) {
-    cleric.selfAid();
     print('===== selfAid() 발동 $i =====');
+    cleric.selfAid();
     print('${cleric.hp}, ${cleric.mp}');
   }
 
@@ -55,22 +55,5 @@ class Cleric {
 
     return chargedMp;
 
-  }
-
-  //테스트용 메서드
-  void decreaseStatus({int hp = 1, int mp = 1}) {
-    if (this.hp > hp) {
-      this.hp -= hp;
-    }
-
-    if (this.mp > mp) {
-      this.mp -= mp;
-    }
-
-    print('HP $hp 감소, MP $mp 감소');
-  }
-
-  void showCurrentStatus() {
-    print('현재체마 HP: ${this.hp}, MP: ${this.mp}');
   }
 }
