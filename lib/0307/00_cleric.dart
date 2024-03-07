@@ -1,7 +1,6 @@
 import 'dart:math';
 
-class Cleric {
-  // class 생성
+class Cleric { // class 생성
   String name; // field
   int hp;
   int mp;
@@ -9,33 +8,40 @@ class Cleric {
   final int maxMp = 10;
 
   // 생성자 : 인스턴스를 만드는 것
-  // this. : 나의.name, 나의.hp
-  Cleric(this.name, this.hp, this.mp);
+  Cleric(this.name, this.hp, this.mp); // this. : 나의.name, 나의.hp
 
   // selfAid 동작 작성
-  // mp 5를 소비하여 자신의 hp를 maxHp까지 회복하는 동작
+  // mp 5를 소비하여 자신의 hp를 maxHp 까지 회복하는 동작
+  //[edit] mp < aidHeal 으면 실행하지 않게...
   void selfAid() {
-    int aidHeal = 5;
-    mp -= aidHeal;
-    hp = maxHp;
+    int aidHeal = 5; //소비하는 mp
+
+    if (mp < aidHeal) {
+      print('MP가 부족해 실행이 취소됩니다. (현재 MP: $mp)');
+    } else {
+      mp -= aidHeal;
+      hp = maxHp;
+    }
   }
 
   // pray 동작 작성
-  // mp 회복, mp는 maxMp를 넘지 못함..
-
+  // mp 회복, mp는 maxMp를 넘지 못함
+  // [edit] 힐량과 실제 회복된 양은 다르다
+  // [edit] mp = 9 , 힐량이 6 일때 실제는 1만 회복이 된것
   int pray(int second) {
     int prayHeal = Random().nextInt(3); // 회복량, 0 ~ 2까지 랜덤한 정수가 나온다
-    int prayResult = (second + prayHeal); // 전달받은 시간(초)만큼 회복한다
+    int prayResult = second + prayHeal; // 전달받은 시간(초) + 0~2 만큼 회복한다
+
+    int beforeMp = mp;
 
     mp += prayResult;
 
-    if(mp >= maxMp) {
+    if (mp >= maxMp) {
       mp = maxMp;
-      return prayResult;
+      return maxMp - beforeMp;
     } else {
       return prayResult;
     }
-
   }
 }
 
