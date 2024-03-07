@@ -16,7 +16,7 @@ class Cleric {
       mp -= 5;
       hp = maxHp;
     } else {
-      print('마나가 부족합니다.');
+      print('마나가 부족합니다..');
     }
   }
 
