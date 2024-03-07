@@ -36,4 +36,18 @@ class Cleric {
     return true;
   }
 
+  void selfAid() {
+    print("스킬 사용 - 셀프 에이드");
+
+    if (hp == maxHp) {
+      print(" 이미 최대 HP입니다.");
+      return;
+    }
+
+    bool result = changeMp(-5);
+    if (result) {
+      changeHp(maxHp);
+    }
+  }
+
 }
