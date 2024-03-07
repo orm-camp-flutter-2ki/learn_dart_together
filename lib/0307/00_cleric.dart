@@ -1,4 +1,7 @@
-class Cleric { // class 생성
+import 'dart:math';
+
+class Cleric {
+  // class 생성
   String name; // field
   int hp;
   int mp;
@@ -17,4 +20,40 @@ class Cleric { // class 생성
     hp = maxHp;
   }
 
+  // pray 동작 작성
+  // mp 회복, mp는 maxMp를 넘지 못함..
+
+  int pray(int second) {
+    int prayHeal = Random().nextInt(3); // 회복량, 0 ~ 2까지 랜덤한 정수가 나온다
+    int prayResult = (second + prayHeal); // 전달받은 시간(초)만큼 회복한다
+
+    mp += prayResult;
+
+    if(mp >= maxMp) {
+      mp = maxMp;
+      return prayResult;
+    } else {
+      return prayResult;
+    }
+
+  }
+}
+
+void main() {
+  Cleric cleric = Cleric('홍길동', 50, 10);
+
+  print('===== 클래릭 생성 =====');
+  print('${cleric.hp}, ${cleric.mp}');
+
+  for (int i = 0; i < 3; i++) {
+    cleric.selfAid();
+    print('===== selfAid() 발동 $i =====');
+    print('${cleric.hp}, ${cleric.mp}');
+  }
+
+  for (int i = 0; i < 3; i++) {
+    print('===== pray() 발동 $i =====');
+    int recoveryMp = cleric.pray(5);
+    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
+  }
 }
