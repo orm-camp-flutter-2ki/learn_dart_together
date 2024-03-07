@@ -8,11 +8,17 @@ class Cleric {
   String name = '메딕';
   int level = 10;
   int hp;
+  int mp;
   final int maxHp = 50;
   final int maxMp = 10;
 
   String suffix;
 
-  Cleric(this.hp, this.suffix);
+  Cleric(this.hp, this.mp, this.suffix);
+
+  void selfAid(){
+    mp -= 5;
+    hp = 50;
+  }
 
 }
