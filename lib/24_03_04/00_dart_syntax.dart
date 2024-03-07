@@ -12,4 +12,11 @@ class Cleric {
     this.HP,
     this.MP,
   );
+
+  void selfAid() {
+    if (MP >= 5) {
+      HP = maxHP;
+      MP -= 5;
+    }
+  }
 }
