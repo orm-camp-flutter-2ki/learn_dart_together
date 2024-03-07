@@ -9,8 +9,12 @@ class Cleric{
   Cleric(this.name, this.hp, this.mp);
 
   void selfAid(){
-    mp -= 5;
-    hp = maxhp;
+    if(mp <= 0){
+      print('MP가 부족합니다.');
+    }else {
+      mp -= 5;
+      hp = maxhp;
+    }
   }
 
   int pray(a){
