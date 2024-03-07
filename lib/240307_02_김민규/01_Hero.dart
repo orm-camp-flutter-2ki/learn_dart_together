@@ -14,16 +14,6 @@ class Hero {
     mp = initialMp > 10 ? 10 : initialMp; // mp 최대치
   }
 
-  // selfAid() {
-  //   if (hp <= 40) {
-  //     hp += 10;
-  //   } else if (hp > 40) {
-  //     initialHp;
-  //   }
-  //   if (mp >= 5) {
-  //     mp -= 5;
-  //   }
-  // }
   selfAid(int a) {
     mp = a <= mp ? mp - a : mp;
     hp = initialHp - hp < 0 ? initialHp : hp;
