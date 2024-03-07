@@ -23,6 +23,7 @@ class Cleric {
     int randomAmount = _getRandomHealAmount(3);
     int mpAmount = randomAmount + second;
     int result = _maxMp < _mp + mpAmount ? _maxMp - _mp : mpAmount;
+    _mp += result;
     print('$_name의 mp가 총$result만큼 회복되었습니다. 잔여 mp: $_mp, mp회복량: $result, random회복량: $randomAmount');
 
     return result;
