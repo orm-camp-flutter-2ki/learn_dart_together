@@ -50,4 +50,20 @@ class Cleric {
     }
   }
 
+  int pray(int sec) {
+    print("스킬 사용 - 기도하기");
+
+    int possibleRange = maxMp - mp;
+    int recoveryMp = 0;
+
+    for (int i = 0; i < sec; i++) {
+      int tmp = min(Random().nextInt(3), possibleRange - recoveryMp);
+      recoveryMp += tmp;
+      if (possibleRange - recoveryMp == 0) break;
+    }
+
+    changeMp(recoveryMp);
+    return recoveryMp;
+  }
+  
 }
