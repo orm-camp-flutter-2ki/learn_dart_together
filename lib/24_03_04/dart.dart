@@ -7,7 +7,6 @@ class Cleric {
   int mp = 10;
   final int maxMp = 10;
 
-
   void selfAid() {
     if (hp < 50) {
       mp -= 5;
