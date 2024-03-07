@@ -4,5 +4,13 @@ class Cleric{
   int _hp = 50;
   int _mp = 10;
   String name;
+
   Cleric(this.name);
+
+  void selfAid(){
+    if(_mp >=5) {
+      _mp -= 5;
+      _hp = _maxHp;
+    }
+  }
 }
