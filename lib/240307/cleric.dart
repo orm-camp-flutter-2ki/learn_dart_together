@@ -11,7 +11,7 @@ class Cleric {
   void selfAid() {
     stdout.writeln('');
 
-    if (mp <= 0) {
+    if (mp < 5) {
       stdout.writeln('*마법 사용 : 셀프 에이드*');
       stdout.writeln('(MP가 부족하여 셀프 에이드를 사용할 수 없습니다.)');
       return;
@@ -55,4 +55,6 @@ void main() {
   cleric.pray(1);
   cleric.pray(2);
   cleric.pray(3);
+  cleric.pray(2);
+  cleric.pray(1);
 }
