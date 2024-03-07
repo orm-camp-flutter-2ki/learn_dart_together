@@ -7,30 +7,31 @@ class Cleric {
   final int maxHp = 50;
   final int maxMp = 10;
 
-  Cleric( this.name ,this.hp , this.mp);
+  Cleric(this.name, this.hp, this.mp);
 
   int spendMp = 5;
-  void selfAid(){
-    if(mp< spendMp){
+
+  void selfAid() {
+    if (mp < spendMp) {
       print("mp가 부족합니다");
-    }else{
+    } else {
       mp = mp - spendMp;
       hp = maxHp;
     }
   }
 
-  int pray(int second){
-   int heal = second + Random().nextInt(3);
+  int pray(int second) {
+    int heal = second + Random().nextInt(3);
 
-   int healPoint = 0;
-   if(mp + heal > maxMp){
-     healPoint = maxMp - mp;
-     mp = maxMp;
-   }else{
-     mp = mp + heal;
-     healPoint = heal;
-   }
-   return healPoint;
+    int healPoint = 0;
+    if (mp + heal > maxMp) {
+      healPoint = maxMp - mp;
+      mp = maxMp;
+    } else {
+      mp = mp + heal;
+      healPoint = heal;
+    }
+    return healPoint;
   }
 
 }
