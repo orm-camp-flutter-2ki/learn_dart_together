@@ -1,5 +1,7 @@
+import 'dart:math';
+
 void main() {
-  Cleric().selfAid();
+  Cleric().pray(3);
 }
 
 class Cleric {
@@ -16,5 +18,20 @@ class Cleric {
       mp -= 5;
       hp == maxHp;
     }
+  }
+
+  int pray(int praySec) {
+    int healAmount;
+    int mpWithHealAmount;
+    int randomPoint = Random().nextInt(2);
+
+    healAmount = randomPoint + praySec;
+
+    mpWithHealAmount = mp + healAmount;
+
+    if(mpWithHealAmount < maxMp){
+      mp += healAmount;
+    }
+    return healAmount;
   }
 }
