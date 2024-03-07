@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:math';
+
 class Cleric {
   String name;
   int hp = 50;
@@ -8,23 +11,46 @@ class Cleric {
 
   int maxMp = 10;
 
-  Cleric(this.name, this.hp, this.maxHp, this.mp, this.maxMp);
+  Cleric(
+    this.name,
+    this.hp,
+    this.mp,
+  );
 
-  void slefAid() {
+  void selfAid() {
     if (mp >= 5) {
       mp -= 5;
       hp = maxHp;
-      print('마나 에이드 사용. \nhp가 $hp이 되었습니다.\nmp가 $mp이 되었습니다');
     } else {
-      print('마나가 부족합니다');
+      print('mp가 부족합니다');
     }
+  }
+
+  int pray(int time) {
+    // print('기도 시간을 입력하시오.');
+    // int time = int.parse(stdin.readLineSync()!);
+    int prayMp = Random().nextInt(3) + time;
+    mp = prayMp + mp;
+    mp >= 10 ? mp = 10 : mp;
+    return prayMp;
   }
 }
 
 void main() {
-  Cleric cleric = Cleric('클래릭', 50, 50, 10, 10);
+  Cleric cleric = Cleric('홍길동', 50, 10);
 
-  cleric.slefAid();
-  cleric.slefAid();
-  cleric.slefAid();
+  print('===== 클래릭 생성 =====');
+  print('${cleric.hp}, ${cleric.mp}');
+
+  for (int i = 0; i < 3; i++) {
+    cleric.selfAid();
+    print('===== selfAid() 발동 $i =====');
+    print('${cleric.hp}, ${cleric.mp}');
+  }
+
+  for (int i = 0; i < 3; i++) {
+    print('===== pray() 발동 $i =====');
+    int recoveryMp = cleric.pray(5);
+    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
+  }
 }
