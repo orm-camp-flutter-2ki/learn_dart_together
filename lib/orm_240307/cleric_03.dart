@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class Cleric {
   String name;
   int hp;
@@ -10,4 +12,17 @@ class Cleric {
     mp -= 5;
     hp = maxhp;
   }
+
+  int pray(a){
+    int sec = a;
+    int recovery = sec + Random().nextInt(3);
+    int over_recovery= -(mp-maxmp);
+    mp += recovery ;
+    if(mp >= maxmp){
+      recovery = over_recovery;
+      mp = maxmp;
+    }
+    return recovery;
+  }
+
 }
