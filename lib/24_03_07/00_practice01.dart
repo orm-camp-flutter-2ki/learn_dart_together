@@ -37,10 +37,9 @@ class Cleric {
     } else if (5 <= mp && mp < maxMp) {
       mp -= 5;
       hp = maxHp;
+    } else if (mp < 5) {
+      print('MP가 부족합니다.');
     }
-    // else if (mp < 5) {
-    //   print('MP가 부족합니다.');
-    // }
   }
 
   int pray(int second) {
