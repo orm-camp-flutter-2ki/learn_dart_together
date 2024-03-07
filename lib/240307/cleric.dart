@@ -1,9 +1,9 @@
-class Cleric(){
-  String name();
+class Cleric {
+  String name;
   int hp;
   int mp;
-  int maxhp;
-  int maxmp;
+
+  Cleric(this.name,this.hp = maxhp,this.mp = maxmp);
 
   final int maxhp = 50;
   final int maxmp = 10;
