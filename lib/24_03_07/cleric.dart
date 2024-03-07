@@ -5,9 +5,9 @@ class Cleric{
   final int _maxMp = 10;
   int _hp = 50;
   int _mp = 10;
-  String name;
+  String _name;
 
-  Cleric(this.name);
+  Cleric(this._name);
 
   void selfAid(){
     if(_mp >=5) {
