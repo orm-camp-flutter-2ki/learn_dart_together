@@ -4,11 +4,14 @@ class Cleric {
   static const int maxHp = 50;
   static const int maxMp = 10;
 
-  String name;
+  String name = '';
   int hp = maxHp;
   int mp = maxMp;
 
-  Cleric(this.name);
+  Cleric(this.name, int hp, int mp) {
+    this.hp = min(maxHp, hp);
+    this.mp = min(maxMp, mp);
+  }
 
   bool changeMp(int value) {
     int origin = mp;
