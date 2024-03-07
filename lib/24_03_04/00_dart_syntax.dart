@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class Cleric {
   String name;
 
@@ -40,5 +42,24 @@ class Cleric {
 
     return recoveryMp;
     // 반환
+  }
+}
+
+void main() {
+  Cleric cleric = Cleric('법사', 50, 10);
+
+  print('===== 클래릭 생성 =====');
+  print('${cleric.HP}, ${cleric.MP}');
+
+  for (int i = 0; i < 3; i++) {
+    cleric.selfAid();
+    print('===== selfAid() 발동 $i =====');
+    print('${cleric.HP}, ${cleric.MP}');
+  }
+
+  for (int i = 0; i < 3; i++) {
+    print('===== pray() 발동 $i =====');
+    int recoveryMp = cleric.pray(5);
+    print('${cleric.HP}, ${cleric.MP}, 회복량: $recoveryMp');
   }
 }
