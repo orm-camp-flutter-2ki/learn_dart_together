@@ -14,4 +14,9 @@ class Cleric {
     mp -= 5;
     hp = maxHp;
   }
+
+  int pray(int time) {
+    int randomRecoverMp = Random().nextInt(2);
+    return time + randomRecoverMp;
+  }
 }
