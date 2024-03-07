@@ -15,7 +15,7 @@ class Cleric {
 
     // maxiumSpendMp 보다 mp가 적을 경우 남아있는 mp 만큼 회복
     if(mp < maxiumSpendMp) {
-      hp + mp > maxHp ? hp = maxHp : hp += mp;
+      hp = hp + mp > maxHp ? maxHp : hp + mp;
       mp = 0;
     } else {
       mp -= maxiumSpendMp;
@@ -26,12 +26,11 @@ class Cleric {
   int pray(int time) {
     if(mp == maxMp) return 0; // 현재 mp와 maxMp 가 같을때 0 반환
 
-    int randomRecoverMp = Random().nextInt(3);
-    int recoverMp = time + randomRecoverMp; // 기도로 회복하는 mp
+    int recoverMp = time + Random().nextInt(3); // 기도로 회복하는 mp
     int maximumRecoverMp = maxMp - mp; // 최대 회복가능한 mp
 
     // recoverMp 가 maxiumRecoverMp 보다 크다면 maxiumRecoverMp, 아니라면 recoverMp 를 actualRecoverMp 변수에 저장
-    int actualRecoverMp = recoverMp > maxMp - mp ? maximumRecoverMp : recoverMp;
+    int actualRecoverMp = recoverMp > maximumRecoverMp ? maximumRecoverMp : recoverMp;
     
     mp += actualRecoverMp;
     return actualRecoverMp;
