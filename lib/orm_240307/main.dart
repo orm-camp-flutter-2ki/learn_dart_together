@@ -10,9 +10,6 @@ void main() {
     cleric.selfAid();
     print('===== selfAid() 발동 ${i+1} =====');
     print('${cleric.hp}, ${cleric.mp}');
-    if(cleric.mp == 0){
-      break;
-    }
   }
 
   for (int i = 0; i < 3; i++) {
