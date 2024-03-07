@@ -9,11 +9,12 @@ class Cleric {
 
   Cleric( this.name ,this.hp , this.mp);
 
+  int spendMp = 5;
   void selfAid(){
-    if(mp<5){
+    if(mp< spendMp){
       print("mp가 부족합니다");
     }else{
-      mp = mp - 5;
+      mp = mp - spendMp;
       hp = maxHp;
     }
   }
@@ -22,9 +23,9 @@ class Cleric {
    int heal = second + Random().nextInt(3);
 
    int healPoint = 0;
-   if(mp + heal > 10){
-     healPoint = 10 - mp;
-     mp = 10;
+   if(mp + heal > maxMp){
+     healPoint = maxMp - mp;
+     mp = maxMp;
    }else{
      mp = mp + heal;
      healPoint = heal;
