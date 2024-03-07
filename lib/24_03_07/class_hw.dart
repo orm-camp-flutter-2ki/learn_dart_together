@@ -1,10 +1,11 @@
 class Cleric {
-  String name;
-  int hp;
-  int mp;
-  final int maxHp = 50;
-  final int maxMp = 10;
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
-  Cleric(this.name, this.hp, this.mp);
+  String name;
+  int hp = maxHp;
+  int mp = maxMp;
+
+  Cleric(this.name);
 
 }
