@@ -44,14 +44,11 @@ class Cleric {
   int pray({int second = 1}) {
     int chargedMp = second + Random().nextInt(3);
 
-    if (this.mp + chargedMp <= this.maxMp) {
-      this.mp = this.mp + chargedMp;
-
-      return chargedMp;
+    if (this.mp + chargedMp > this.maxMp) {
+      chargedMp = this.maxMp - this.mp;
     }
 
-    chargedMp = this.maxMp - this.mp;
-    this.mp = this.maxMp;
+    this.mp += chargedMp;
 
     return chargedMp;
 
