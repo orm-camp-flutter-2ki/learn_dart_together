@@ -10,30 +10,29 @@ class Cleric {
   String name;
   int hp;
   int mp;
-  final int maxHp = 50;
-  final int maxMp = 10;
+  // final -> const
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
-  Cleric(this.name, this.hp, this.mp);
+  Cleric({required this.name, this.hp = maxHp, this.mp = maxMp});
 
   void selfAid() {
     if (mp >= 5) {
       mp -= 5;
       hp = 50;
     } else {
-      print('mp가 부족합니다. \nselfAid가 발동되지 않았습니다.');      
+      print('mp가 부족합니다. \nselfAid가 발동되지 않았습니다.');
     }
-    
   }
+
   // 컨벤션주의
   // 캡슐화, 은닉화
-  // 
+
   int pray(int seconds) {
-    int random = Random().nextInt(3); // 변수이름
+    int addedMp = Random().nextInt(3); // 변수이름
     int mpRecovery = 0;
 
-    //print('ran: $ran');
-    mpRecovery += seconds + random;
-    //print('mpRecover: $mpRecover');
+    mpRecovery += seconds + addedMp;
 
     if ((mp + mpRecovery) >= maxMp) {
       mp = maxMp;
