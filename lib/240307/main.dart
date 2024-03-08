@@ -1,7 +1,7 @@
 import 'cleric.dart';
 
 void main() {
-  Cleric cleric = Cleric('홍길동', 50, 10);
+  Cleric cleric = Cleric(name: '홍길동', hp: 20);
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
@@ -9,7 +9,7 @@ void main() {
   for (int i = 0; i < 3; i++) {
     cleric.selfAid();
     print('===== selfAid() 발동 $i =====');
-    print('${cleric.hp}, ${cleric.mp}',);
+    print('${cleric.hp}, ${cleric.mp}');
   }
 
   for (int i = 0; i < 3; i++) {
