@@ -38,7 +38,10 @@ class Cleric {
 void main() {
   // Cleric cleric = Cleric(name: '아서스', hp: 40, mp: 5); //문제2-A
   // Cleric cleric = Cleric(name: '아서스', hp: 35); //문제2-B
-  Cleric cleric = Cleric(name: '아서스'); //문제2-C
+  // Cleric cleric = Cleric(name: '아서스'); //문제2-C
+
+  Cleric cleric2 = Cleric(); //문제2-E
+  // 이름을 지정하지 않는 경우에는 인스턴스화 할 수 없음, 이름없는 성직자 존재할 수 없음
 
   print('===== 클래릭 생성 =====');
   print('${cleric.name}, ${cleric.hp}, ${cleric.mp}');
