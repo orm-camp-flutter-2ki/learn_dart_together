@@ -5,17 +5,15 @@ class Cleric {
   String name; // field
   int hp;
   int mp;
-  final int maxHp = 50; // field, 상수
-  final int maxMp = 10;
+  static final int maxHp = 50; // field, 상수, static(대신 top level로 작성해도 된다..)
+  static final int maxMp = 10;
 
-  // 생성자 : 인스턴스를 만드는 것
-  Cleric(this.name, this.hp, this.mp); // this. : 나의.name, 나의.hp
+  Cleric(this.name, {this.hp = 50, this.mp = 10}); // 생성자
+  //[Q] Cleric(this.name, {this.hp = maxHp, this.mp = maxMP}); 이렇게는 불가능할까...
 
-  // selfAid 동작 작성
-  // mp 5를 소비하여 자신의 hp를 maxHp 까지 회복하는 동작
-  //[edit] mp < aidHeal 으면 실행하지 않게...
+  // selfAid 동작: mp 5를 소비하여 자신의 hp를 maxHp 까지 회복하는 동작
   void selfAid() {
-    int aidHeal = 5; //소비하는 mp
+    int aidHeal = 5; //소비 mp
 
     if (mp < aidHeal) {
       print('MP가 부족해 실행이 취소됩니다. (현재 MP: $mp)');
@@ -25,31 +23,29 @@ class Cleric {
     }
   }
 
-  // pray 동작 작성
-  // mp 회복, mp는 maxMp를 넘지 못함
-  // [edit] 힐량과 실제 회복된 양은 다르다
-  // [edit] mp = 9 , 힐량이 6 일때 실제는 1만 회복이 된것
+  // pray 동작 = mp 회복, mp는 maxMp를 넘지 못한다.
   int pray(int second) {
     int prayHeal = Random().nextInt(3); // 회복량, 0 ~ 2까지 랜덤한 정수가 나온다
     int prayResult = second + prayHeal; // 전달받은 시간(초) + 0~2 만큼 회복한다
 
     int beforeMp = mp;
 
-    mp +=
-        prayResult; //[cmd] 조건 검사 전에 +를 해주면 동시 접근시 에러가 날 수 있어서 리턴 바로 전에 해주기..(결 값이다). 블럭..?
+    mp += prayResult;
 
     if (mp >= maxMp) {
-      mp = maxMp; // [cmd] 맥스 검사를 초반해 해주는게 더 좋을 것 같다
+      mp = maxMp;
       return maxMp - beforeMp;
     } else {
-      // [cmd] else를 사용하지 않는게 더 안정적이다(?)
-      return prayResult; // [cmd] 리턴 위에 결과 값이 오는게 좋다. 중간에 누가 껴들어서 셀프에이드 하면 리턴 전에 값 변경이 발생할 수 있다.
+      return prayResult;
     }
   }
 }
 
 void main() {
-  Cleric cleric = Cleric('홍길동', 50, 10);
+  Cleric cleric = Cleric('아서스', hp: 50, mp: 5);
+  Cleric cleric2 = Cleric('아서스', hp: 35);
+  Cleric cleric3 = Cleric('아서스');
+  // Cleric cleric4 = Cleric(); // 이름 없는 경우 인스턴스화 할 수 없다.
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
