@@ -32,13 +32,13 @@ class Cleric {
   void selfAid() {
     final int usedMp = 5;
     
-    if (this.mp < usedMp) {
+    if (mp < usedMp) {
       print('MP가 부족합니다.');
-    } else if (this.hp == this.maxHp) {
+    } else if (hp == maxHp) {
       print('이미 체력이 가득 찼습니다.');
     } else {
-      this.hp = this.maxHp;
-      this.mp -= usedMp;
+      hp = maxHp;
+      mp -= usedMp;
       print('HP가 모두 회복되었습니다.');
     }
   }
@@ -46,11 +46,11 @@ class Cleric {
   int pray({int second = 1}) {
     int chargedMp = second + Random().nextInt(3);
 
-    if (this.mp + chargedMp > this.maxMp) {
-      chargedMp = this.maxMp - this.mp;
+    if (mp + chargedMp > maxMp) {
+      chargedMp = maxMp - mp;
     }
 
-    this.mp += chargedMp;
+    mp += chargedMp;
 
     return chargedMp;
 
