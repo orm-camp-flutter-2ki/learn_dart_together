@@ -5,11 +5,14 @@ class Cleric {
   String name; // field
   int hp;
   int mp;
-  static final int maxHp = 50; // field, 상수, static(대신 top level로 작성해도 된다..)
-  static final int maxMp = 10;
+  // static final int maxHp = 50;
+  // static final int maxMp = 10;
+  static const int maxHp = 50; // final -> const
+  static const int maxMp = 10;
 
-  Cleric(this.name, {this.hp = 50, this.mp = 10}); // 생성자
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp}); // 생성자
   //[Q] Cleric(this.name, {this.hp = maxHp, this.mp = maxMP}); 이렇게는 불가능할까...
+  //[A] final 말고 const로 하면 된다? 왜지
 
   // selfAid 동작: mp 5를 소비하여 자신의 hp를 maxHp 까지 회복하는 동작
   void selfAid() {
@@ -46,6 +49,11 @@ void main() {
   Cleric cleric2 = Cleric('아서스', hp: 35);
   Cleric cleric3 = Cleric('아서스');
   // Cleric cleric4 = Cleric(); // 이름 없는 경우 인스턴스화 할 수 없다.
+
+  // test 코드 추가
+  print("${cleric.name}, ${cleric.hp}, ${cleric.mp}");
+  print("${cleric2.name}, ${cleric2.hp}, ${cleric2.mp}");
+  print("${cleric3.name}, ${cleric3.hp}, ${cleric.mp}");
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
