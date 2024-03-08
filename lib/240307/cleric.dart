@@ -23,8 +23,8 @@ void main() {
 }
 
 class Cleric {
- static const int maxMp = 10;
- static const int maxHp = 50;
+ int maxMp = 10;
+ int maxHp = 50;
   String name;
 
   int hp = 50;
