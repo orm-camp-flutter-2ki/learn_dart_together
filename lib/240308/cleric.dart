@@ -66,4 +66,7 @@ void main() {
   print('===== 아서스 최대 HP, 최대 MP =====');
   print('최대 HP : ${arthas.hp}, 최대 MP : ${arthas.mp}');
 
+  // D
+  // arthas = Cleric();
+  // => 이름을 지정하지 않은 경우, 인스턴스화 할 수 없다.
 }
