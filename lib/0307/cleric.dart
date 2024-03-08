@@ -1,6 +1,7 @@
 import 'dart:math';
 
-class Cleric { // class 생성
+class Cleric {
+  // class 생성
   String name; // field
   int hp;
   int mp;
@@ -34,12 +35,14 @@ class Cleric { // class 생성
 
     int beforeMp = mp;
 
-    mp += prayResult; //[cmd] 조건 검사 전에 +를 해주면 동시 접근시 에러가 날 수 있어서 리턴 바로 전에 해주기..(결 값이다). 블럭..?
+    mp +=
+        prayResult; //[cmd] 조건 검사 전에 +를 해주면 동시 접근시 에러가 날 수 있어서 리턴 바로 전에 해주기..(결 값이다). 블럭..?
 
     if (mp >= maxMp) {
       mp = maxMp; // [cmd] 맥스 검사를 초반해 해주는게 더 좋을 것 같다
       return maxMp - beforeMp;
-    } else { // [cmd] else를 사용하지 않는게 더 안정적이다(?)
+    } else {
+      // [cmd] else를 사용하지 않는게 더 안정적이다(?)
       return prayResult; // [cmd] 리턴 위에 결과 값이 오는게 좋다. 중간에 누가 껴들어서 셀프에이드 하면 리턴 전에 값 변경이 발생할 수 있다.
     }
   }
