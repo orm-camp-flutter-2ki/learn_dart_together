@@ -16,7 +16,7 @@ class Cleric {
   }
 
   int pray(int second) {
-    int healedMp = Random().nextInt(2) + second;
+    int healedMp = Random().nextInt(3) + second;
 
     if (healedMp > maximumMp - mp) {
       healedMp = maximumMp - mp;
