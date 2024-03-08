@@ -10,7 +10,7 @@ class Cleric {
   int spendMp = 5;
   String name;
 
-  Cleric(this.name, this.hp, this.mp);
+  Cleric({required this.name, this.hp = Cleric.maxHp, this.mp = Cleric.maxMp});
 
   // '셀프 에이드'
   void selfAid() {
