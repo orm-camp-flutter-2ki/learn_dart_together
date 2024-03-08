@@ -1,8 +1,8 @@
 import 'dart:math';
 
 class Cleric {
-  static final int maxHp = 50;
-  static final int maxMp = 10;
+  static const int maxHp = 50; // named parameter에서 사용하려면 const
+  static const int maxMp = 10; // 위와 동일
 
   String name;
 
@@ -12,8 +12,8 @@ class Cleric {
   // Cleric(this.name, this.hp, this.mp); // 기존 생성자 주석 처리
   Cleric(
     this.name, {
-    this.hp = 50,
-    this.mp = 10,
+    this.hp = Cleric.maxHp, // 전달 인자가 없으면 최대 hp
+    this.mp = Cleric.maxMp, // 전달 인자가 없으면 최대 mp
   });
 
   void selfAid() {
