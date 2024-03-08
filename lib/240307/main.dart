@@ -12,5 +12,4 @@ void main() {
 
   final cleric3 = Cleric('아서스3');
   print('이름 ${cleric3.name} hp= ${cleric3.hp} mp= ${cleric3.mp}');
-
 }
