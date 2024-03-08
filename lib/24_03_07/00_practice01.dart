@@ -26,8 +26,6 @@ class Cleric {
   final int maxHp = 50;
   final int maxMp = 10;
 
-  int recoveryMp = 0;
-
   Cleric(this.name, this.hp, this.mp);
 
   void selfAid() {
@@ -55,9 +53,9 @@ class Cleric {
         mp = mp + recoveryMp;
       }
       // if 문을 삼항 연산자로
-      // mp + recoveryMp > 10 ? mp = maxMp : mp += recoveryMp;
+      // mp = mp + recoveryMp > 10 ? maxMp : mp + recoveryMp;
       //
-    } else if (mp >= maxMp) {
+    } else {
       print('이미 MP가 가득 찼습니다.');
       mp = maxMp;
     }
