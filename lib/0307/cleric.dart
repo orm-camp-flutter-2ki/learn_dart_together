@@ -6,8 +6,8 @@ const int maxHp = 50;
 class Cleric {
 
   String name;
-  late int hp;
-  late int mp;
+  int hp;
+  int mp;
 
   Cleric({required this.name, this.hp = maxHp, this.mp = maxMp}) {
       print('===== 클레릭 "$name" 생성 =====');
