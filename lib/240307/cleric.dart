@@ -6,10 +6,11 @@ class Cleric {
   int mp;
 
 //  최대 hp, 최대 mp 공유
-  static final int maxhp = 50; //최대 hp
-  static final int maxmp = 10; //최대 mp
+  static const int maxhp = 50; //최대 hp
+  static const int maxmp = 10; //최대 mp
 
-  Cleric(this.name, this.hp, this.mp);
+
+  Cleric({required this.name, this.hp=maxhp, this.mp=maxmp});
 
   void selfAid() {
     if (mp < 5) {
@@ -36,10 +37,10 @@ class Cleric {
 }
 
 void main() {
-  Cleric cleric = Cleric('홍길동', 50, 10);
+  Cleric cleric = Cleric(name: '아서스', hp: 40, mp: 5); //문제2-A
 
   print('===== 클래릭 생성 =====');
-  print('${cleric.hp}, ${cleric.mp}');
+  print('${cleric.name}, ${cleric.hp}, ${cleric.mp}');
 
   for (int i = 0; i < 3; i++) {
     cleric.selfAid();
