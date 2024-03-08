@@ -12,7 +12,7 @@ class Cleric {
 
   Cleric(this.name, {this.hp = maxHp, this.mp = maxMp}); // 생성자
   //[Q] Cleric(this.name, {this.hp = maxHp, this.mp = maxMP}); 이렇게는 불가능할까...
-  //[A] final 말고 const로 하면 된다? 왜지
+  //[A] final 말고 const로 하면 된다?
 
   // selfAid 동작: mp 5를 소비하여 자신의 hp를 maxHp 까지 회복하는 동작
   void selfAid() {
