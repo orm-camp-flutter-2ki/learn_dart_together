@@ -5,8 +5,9 @@ class Cleric {
   int hp;
   int mp;
 
-  final int maxhp = 50;
-  final int maxmp = 10;
+//  최대 hp, 최대 mp 공유
+  static final int maxhp = 50; //최대 hp
+  static final int maxmp = 10; //최대 mp
 
   Cleric(this.name, this.hp, this.mp);
 
@@ -23,9 +24,9 @@ class Cleric {
     int heal = second + Random().nextInt(3);
 
     int healPoint = 0;
-    if (mp+heal > 10) {
+    if (mp + heal > 10) {
       healPoint = 10 - mp;
-      mp=10;
+      mp = 10;
     } else {
       mp = mp + heal;
       healPoint = heal;
