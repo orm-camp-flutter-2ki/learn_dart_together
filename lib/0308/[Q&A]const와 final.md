@@ -39,7 +39,7 @@ class Cleric {
   ```
 - 팀원과 해결방법을 찾아보다 maxHp, maxMp field 선언 시 final 키워드가 아닌 const 키워드를 사용하면 가능하단 것을 알게되었다.
 - 그러나 이유를 알지 못해 다른 수강생분과 선생님에게 질문하였고 답변을 들었다.
-- 답변에 대해 이해하고 공유하기 위해 글로 작성하였다.
+- 답변에 대해 이해하기 위해 글로 작성하였다.
   <br/>
 
 ## Answer  
@@ -53,7 +53,7 @@ class Cleric {
 #### const와 final의 차이   
 - 둘 다 상수 키워드인 것은 동일하지만 큰 차이가 있다면 값이 결정되는 순간이 다르다는 것이다.
 > - const : 컴파일타임에 값이 결정된다.
-> - final : 런타임에 값이 결정된다.
+> - final : 런타임에 값이 결정된다.   
 > [차이에 대해 정리한 본인의 글](https://github.com/yujiyeong/TIL/blob/main/dart/02%20%EB%AC%B8%EB%B2%95/05%20const%20%EC%99%80%20final.md)
 <br/>
 
