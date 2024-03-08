@@ -1,24 +1,15 @@
 import 'cleric.dart';
 
 void main() {
-  Cleric cleric = Cleric('홍길동', 50, 10);
+  final cleric = Cleric('성직자');
+  print('이름 ${cleric.name} hp= ${cleric.hp} mp= ${cleric.mp}');
 
-  print('===== 클래릭 생성 =====');
-  print('${cleric.hp}, ${cleric.mp}');
+  final cleric1 = Cleric('아서스', hp: 40, mp: 5);
+  print('이름 ${cleric1.name} hp= ${cleric1.hp} mp= ${cleric1.mp}');
 
-  print('===== 전투(피 까임) =====');
-  cleric.hp -= 25;
-  print('${cleric.hp}, ${cleric.mp}');
+  final cleric2 = Cleric('아서스2', hp: 35);
+  print('이름 ${cleric2.name} hp= ${cleric2.hp} mp= ${cleric2.mp}');
 
-  for (int i = 1; i < 4; i++) {
-    cleric.selfAid();
-    print('===== selfAid() 발동 $i =====');
-    print('${cleric.hp}, ${cleric.mp}');
-  }
-
-  for (int i = 1; i < 4; i++) {
-    print('===== pray() 발동 $i =====');
-    int? recoveryMp = cleric.pray(5);
-    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
-  }
+  final cleric3 = Cleric('아서스3');
+  print('이름 ${cleric3.name} hp= ${cleric3.hp} mp= ${cleric3.mp}');
 }
