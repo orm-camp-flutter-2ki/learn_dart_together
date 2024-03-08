@@ -8,18 +8,28 @@ class Cleric {
    * 클레릭을 문자열로 표현하는 기능을 추가했습니다.
    */
   String name;
-  int hp;
-  int mp;
+  int _hp;
+  int _mp;
   // final -> const
   static const int maxHp = 50;
   static const int maxMp = 10;
 
-  Cleric({required this.name, this.hp = maxHp, this.mp = maxMp});
+  int get hp {
+    return this._hp;
+  }
+
+  int get mp {
+    return this._mp;
+  }
+
+  Cleric({required this.name, int hp = maxHp, int mp = maxMp})
+      : _mp = mp,
+        _hp = hp;
 
   void selfAid() {
-    if (mp >= 5) {
-      mp -= 5;
-      hp = 50;
+    if (_mp >= 5) {
+      _mp -= 5;
+      _hp = 50;
     } else {
       print('mp가 부족합니다. \nselfAid가 발동되지 않았습니다.');
     }
@@ -34,10 +44,10 @@ class Cleric {
 
     mpRecovery += seconds + addedMp;
 
-    if ((mp + mpRecovery) >= maxMp) {
-      mp = maxMp;
+    if ((_mp + mpRecovery) >= maxMp) {
+      _mp = maxMp;
     } else {
-      mp += mpRecovery;
+      _mp += mpRecovery;
     }
     return mpRecovery;
   }
