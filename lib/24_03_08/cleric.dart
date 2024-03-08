@@ -8,7 +8,7 @@ class Cleric {
   int hp; // HP
   int mp; // MP
 
-  Cleric(this.name, this.hp, this.mp);
+  Cleric(this.name, {this.hp = 50, this.mp = 10});
 
   void selfAid() {
     mp -= 5;
