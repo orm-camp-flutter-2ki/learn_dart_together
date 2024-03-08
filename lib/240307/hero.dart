@@ -1,10 +1,17 @@
+import '../240308/02_required_keyword.dart';
+
 class Hero {
   // 클래스가 가지는 속성을 field, 멤버변수 라고 부름
   String name;
   int hp;
+  Sword? sword; // nullable
 
   // 생성자 : 인스턴스를 만드는 방법을 제공
-  Hero(this.name, this.hp);
+  Hero({
+    required this.name,
+    required this.hp,
+    this.sword
+  });
 
   // 메서드
   // 싸우기
