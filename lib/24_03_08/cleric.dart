@@ -1,7 +1,7 @@
 import 'dart:math';
 
 void main() {
-  Cleric cleric = Cleric('홍길동', 50, 10);
+  Cleric cleric = Cleric(name :'홍길동', hp: 50, mp: 10);
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
@@ -21,15 +21,18 @@ void main() {
 
 
 class Cleric {
-  // 인스턴스가 생성될 때마다, 늘어나는 낭비를 방지하고자 field 를 static 으로 변형하였다. ^^
-  static final int maxHp = 50;
-  static final int maxMp = 10;
+  // 인스턴스가 생성될 때마다, 늘어나는 낭비를 방지 하고자 field 를 static 으로 변형 하였다. ^^
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
   String name = '';
   int hp = 50;
   int mp = 10;
 
-  Cleric(this.name, this.hp, this.mp);
+  // 과제 연습문제 2번을 봤을때, D) 항목 때문에 required 키워드가 필요한 것 같다.
+  // 필수 parameter 와 named parameter 를 같이 쓸 때, 순서는 필수 parameter 가 우선인 듯.
+  // 이 부분이 머릿 속에서 빨리 전환 되는 반복 숙달 훈련이 필요할 것 같다. 다른 언어와 너무 헷갈린다 🫠🫠.
+  Cleric({ required this.name, this.hp = maxHp, this.mp = maxMp });
 
   void selfAid() {
     mp -= 5;
