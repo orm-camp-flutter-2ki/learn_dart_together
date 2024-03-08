@@ -61,4 +61,9 @@ void main() {
   print('===== 아서스 최대 MP =====');
   print('최대 MP : ${arthas.mp} \n');
 
+  // C
+  arthas = Cleric(name: '아서스');
+  print('===== 아서스 최대 HP, 최대 MP =====');
+  print('최대 HP : ${arthas.hp}, 최대 MP : ${arthas.mp}');
+
 }
