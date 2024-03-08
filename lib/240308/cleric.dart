@@ -55,4 +55,10 @@ void main() {
         '현재 HP : ${arthas.hp}, '
         '현재 MP : ${arthas.mp} \n'
   );
+
+  // B
+  arthas = Cleric(name: '아서스', hp: 35);
+  print('===== 아서스 최대 MP =====');
+  print('최대 MP : ${arthas.mp} \n');
+
 }
