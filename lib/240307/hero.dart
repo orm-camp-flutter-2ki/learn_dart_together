@@ -1,9 +1,18 @@
+
+
+import 'sword.dart';
+
 class Hero {
   String name;
   int hp;
+  Sword? sword;
 
   // 생성자 : 인스턴스 만드는 방법을 제공하는 함수같은 놈
-  Hero({required this.name, required this.hp}); // this : 나
+  Hero({
+    required this.name,
+    required this.hp,
+    this.sword,
+  }); // this : 나
 
   // 메서드
   // 싸우기
@@ -13,9 +22,7 @@ class Hero {
   }
 
   // 도망
-  void run() {
-
-  }
+  void run() {}
 }
 
 void main() {
@@ -24,7 +31,7 @@ void main() {
   double d = 30.0;
 
   // 내가 만든 것
-  // Hero hero = Hero('홍길동', 100);
+  Hero hero = Hero(name: 'name', hp: 100);
   // Hero hero2 = Hero('홍길동', 100);
   // Hero hero3 = Hero('홍길동', 100);
 
