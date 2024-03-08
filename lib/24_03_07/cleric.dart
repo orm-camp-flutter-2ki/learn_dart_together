@@ -1,13 +1,14 @@
 import 'dart:math';
 
 class Cleric {
+  static const int maxHp = 50;
+  static const int maxMp = 10;
+
   String name;
   int hp;
-  final int maxHp = 50;
   int mp;
-  final int maxMp = 10;
 
-  Cleric(this.name, this.hp, this.mp);
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp});
 
   void selfAid() {
     if ((mp - 5) >= 0) {
