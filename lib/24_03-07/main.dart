@@ -1,21 +1,22 @@
+import 'package:learn_dart_together/02_03_08/sword.dart';
 import 'cleric.dart';
 
+
 void main() {
-  Cleric cleric = Cleric('홍길동', 50, 10);
 
-  print('===== 클래릭 생성 =====');
-  print('${cleric.hp}, ${cleric.mp}');
+final cleric = Cleric('마법사1');
 
-  for (int i = 0; i < 3; i++) {
-    cleric.selfAid();
-    print('===== selfAid() 발동 $i =====');
-    print('${cleric.hp}, ${cleric.mp}');
-  }
+print('이름 : ${cleric.name} HP :  ${cleric.hp} MP : ${cleric.mp}  ');
 
-  for (int i = 0; i < 3; i++) {
-    print('===== pray() 발동 $i =====');
-    int recoveryMp = cleric.pray(5);
-    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
-  }
+final cleric2 = Cleric('마법사2', hp:40, mp:5);
+
+print('이름 : ${cleric2.name} HP :  ${cleric2.hp} MP : ${cleric2.mp}  ');
+
+final cleric3 = Cleric('마법사3', hp:35);
+
+print('이름 : ${cleric3.name} HP :  ${cleric3.hp} MP : ${cleric3.mp}  ');
+
+
+
 }
 
