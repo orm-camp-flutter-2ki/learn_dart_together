@@ -9,7 +9,7 @@ class Cleric {
   int hp = 50;
   int mp = 10;
 
-  // Cleric(this.name, this.hp, this.mp);
+  // Cleric(this.name, this.hp, this.mp); // 기존 생성자 주석 처리
   Cleric(
     this.name, {
     this.hp = 50,
@@ -80,7 +80,7 @@ void main() {
   Cleric newCleric = Cleric("아서스", hp: 40, mp: 5);
   Cleric newCleric1 = Cleric("아서스", hp: 35);
   Cleric newCleric2 = Cleric("아서스");
-  // Cleric newCleric3 = Cleric();
+  // Cleric newCleric3 = Cleric(); //에러 발생
 
   print('${newCleric.name} : ${newCleric.hp} ${newCleric.mp}');
   print('${newCleric1.name} : ${newCleric1.hp} ${newCleric1.mp}');
