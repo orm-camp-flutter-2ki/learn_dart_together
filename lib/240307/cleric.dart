@@ -1,7 +1,10 @@
 import 'dart:math';
 
 void main() {
-  Cleric cleric = Cleric('홍길동', 50, 10);
+
+
+
+  Cleric cleric = Cleric( '홍길동',50,  10);
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
@@ -20,16 +23,16 @@ void main() {
 }
 
 class Cleric {
+ static const int maxMp = 10;
+ static const int maxHp = 50;
   String name;
 
   int hp = 50;
   int mp = 10;
 
-  final int maxMp = 10;
-  final int maxHp = 50;
 
   // 생성자 : 인스턴스 만드는 방법을 제공하는 함수같은 놈
-  Cleric(this.name, this.hp, this.mp); // this : 나
+  Cleric( this.name, this.hp, this.mp); // this : 나
 
   // hp 회복
   void selfAid() {
