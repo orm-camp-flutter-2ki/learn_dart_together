@@ -8,11 +8,19 @@ class Hero {
   Sword? sword;
 
   // 생성자 : 인스턴스 만드는 방법을 제공하는 함수같은 놈
-  Hero({
-    required this.name,
-    required this.hp,
-    this.sword,
-  }); // this : 나
+  // Hero({
+  //   required this.name,
+  //   required this.hp,
+  //   this.sword,
+  // }); // this : 나
+
+  // Hero('ddd', 11);
+  // Hero('ddd', 11, sword: sword);
+  // Hero(this.name, this.hp, {this.sword});
+
+  // Hero(name: 'ddd', hp: 11);
+  // Hero(name: 'ddd', hp: 11, sword: sword);
+  Hero({required this.name, required this.hp, this.sword});
 
   // 메서드
   // 싸우기

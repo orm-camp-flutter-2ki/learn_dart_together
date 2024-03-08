@@ -21,7 +21,7 @@ class Cleric {
   }
 
   // 불변
-  int pray(int second) {
+  int pray({int second = 1}) {
     final int heal = second + Random().nextInt(3);
 
     int healPoint = 0;
@@ -51,7 +51,8 @@ void main() {
 
   for (int i = 0; i < 3; i++) {
     print('===== pray() 발동 $i =====');
-    int recoveryMp = cleric.pray(5);
+    int recoveryMp = cleric.pray();
+    int recoveryMp2 = cleric.pray(second: 1);
     print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
   }
 }
