@@ -1,6 +1,9 @@
 0308 Q&A
 =============
 ### question  
+- 왜 final은 안되고 const는 되는 것일까?
+<br/>
+
 #### step_01
 ```dart  
 class Cleric {
