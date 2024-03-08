@@ -1,7 +1,10 @@
 import 'dart:math';
 
 void main() {
-  Cleric cleric = Cleric('홍길동');
+  Cleric cleric = Cleric(name: '아서스', hp: 30, mp: 5);
+  Cleric cleric2 = Cleric(name: '홍길동', hp: 15);
+  Cleric cleric3 = Cleric(name: '홍김동', mp: 5);
+  Cleric cleric4 = Cleric(name: '홍동길');
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
@@ -20,14 +23,15 @@ void main() {
 }
 
 class Cleric {
-  static final maxHp = 50;
-  static final maxMp = 10;
+  static const maxHp = 50;
+  static const maxMp = 10;
 
   String name;
-  int hp = 10;
-  int mp = 10;
+  int hp;
+  int mp;
 
-  Cleric(this.name);
+  Cleric({required this.name, this.hp = Cleric.maxHp, this.mp = Cleric.maxMp});
+
 
   void selfAid() {
     final int usedMp = 5;
