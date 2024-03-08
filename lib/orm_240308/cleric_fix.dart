@@ -1,11 +1,13 @@
 import 'dart:math';
 
 class Cleric {
+  static final int maxHp = 50;
+  static final int maxMp = 10;
+
   String name;
   int hp;
   int mp;
-  final int maxhp = 50;
-  final int maxmp = 10;
+
 
   Cleric(this.name, this.hp, this.mp);
 
@@ -14,18 +16,18 @@ class Cleric {
       print('MP가 부족합니다.');
     } else {
       mp -= 5;
-      hp = maxhp;
+      hp = maxHp;
     }
   }
 
-  int pray(a) {
-    int sec = a;
+  int pray(seconds) {
+    int sec = seconds;
     int recovery = sec + Random().nextInt(3);
-    int overRecovery = -(mp - maxmp);
+    int overRecovery = -(mp - maxMp);
     mp += recovery;
-    if (mp >= maxmp) {
+    if (mp >= maxMp) {
       recovery = overRecovery;
-      mp = maxmp;
+      mp = maxMp;
     }
     return recovery;
   }
