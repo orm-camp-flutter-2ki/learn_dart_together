@@ -1,12 +1,13 @@
 import 'dart:math';
 
+final int maxHp = 50;
+final int maxMp = 10;
+
 class Cleric {
 
   String name;
   late int hp;
   late int mp;
-  final int maxHp = 50;
-  final int maxMp = 10;
 
   Cleric(this.name) {
     hp = maxHp;
