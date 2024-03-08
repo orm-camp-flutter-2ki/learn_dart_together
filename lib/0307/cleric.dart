@@ -1,47 +1,50 @@
 import 'dart:math';
 
-const int maxMp = 10;
-const int maxHp = 50;
-
 class Cleric {
 
-  String name;
-  int hp;
-  int mp;
+  late String name;
+  late int hp;
+  late int mp;
+  final int maxHp = 50;
+  final int maxMp = 10;
 
-  Cleric({required this.name, this.hp = maxHp, this.mp = maxMp}) {
-      print('===== 클레릭 "$name" 생성 =====');
-      print('초기 HP: $hp, 초기 MP: $mp');
+  Cleric(String name) {
+    this.name = name;
+    this.hp = this.maxHp;
+    this.mp = this.maxMp;
+
+    print('===== 클레릭 "${this.name}" 생성 =====');
+    print('초기 HP: ${this.hp}, 초기 MP: ${this.mp}');
   }
 
   void selfAid(int cnt) {
     print('===== selfAid() 발동 $cnt =====');
 
-    if (mp < 5) {
+    if (this.mp < 5) {
       print('HP 회복에 필요한 MP 5가 없습니다.');
       return;
-    } else if (hp == maxHp) {
+    } else if (this.hp == this.maxHp) {
       print('HP가 이미 최댓값입니다.');
       return;
     }
 
-    mp -= 5;
-    hp = maxHp;
+    this.mp -= 5;
+    this.hp = this.maxHp;
 
-    print('$hp, $mp');
+    print('${this.hp}, ${this.mp}');
   }
 
   void pray(int second, int cnt) {
     print('===== pray() 발동 $cnt =====');
 
-    if (mp == maxMp) {
+    if (this.mp == this.maxMp) {
       print('MP가 이미 최댓값입니다.');
       return;
     }
 
     int recovery = second + Random().nextInt(3);
-    mp = min(mp + recovery, maxMp);
+    this.mp = min(this.mp + recovery, this.maxMp);
 
-    print('$hp, $mp, 회복량: $recovery');
+    print('${this.hp}, ${this.mp}, 회복량: $recovery');
   }
 }
