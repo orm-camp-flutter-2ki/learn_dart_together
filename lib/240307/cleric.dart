@@ -1,5 +1,4 @@
 import 'dart:math';
-<<<<<<< HEAD
 import 'dart:io';
 
 // 클래스
@@ -41,7 +40,6 @@ class Cleric {
   int pray(int praySec) {
     Random random = Random();
 
-    // 결과 출력
     print('\n=====스킬 사용 : 기도하기=====');
     int recoverMp = praySec + random.nextInt(3);
     print('($praySec 초 기도하였습니다. MP를 $recoverMp 회복합니다.)');
@@ -57,47 +55,11 @@ class Cleric {
       print('사용 후 MP :$mp (최대 MP를 초과하여 회복되지 않습니다.)');
       return maxMp - mp;
     }
-=======
-
-class Cleric {
-  String name;
-  int hp;
-  int mp;
-  final int maxHp = 50;
-  final int maxMp = 10;
-
-  Cleric(this.name, this.hp, this.mp);
-
-  int spendMp = 5;
-
-  void selfAid() {
-    if (mp < spendMp) {
-      print("mp가 부족합니다");
-    } else {
-      mp = mp - spendMp;
-      hp = maxHp;
-    }
-  }
-
-  // 불변
-  int pray(int second) {
-    final int heal = second + Random().nextInt(3);
-
-    int healPoint = 0;
-    if (mp + heal > maxMp) {
-      healPoint = maxMp - mp;
-      mp = maxMp;
-    } else {
-      mp = mp + heal;
-      healPoint = heal;
-    }
-    return healPoint;
->>>>>>> origin/master
   }
 }
 
+// 결과 출력
 void main() {
-<<<<<<< HEAD
   print('===== 클래릭 생성 ======');
   Cleric cleric = Cleric();
   print('초기 HP : ${cleric.hp}, 초기 MP : ${cleric.mp}');
@@ -111,23 +73,3 @@ void main() {
   cleric.pray(3);
   cleric.pray(1);
 }
-=======
-  // stack        // heap 할당
-  Cleric cleric = Cleric('홍길동', 50, 10);
-
-  print('===== 클래릭 생성 =====');
-  print('${cleric.hp}, ${cleric.mp}');
-
-  for (int i = 0; i < 3; i++) {
-    cleric.selfAid();
-    print('===== selfAid() 발동 $i =====');
-    print('${cleric.hp}, ${cleric.mp}');
-  }
-
-  for (int i = 0; i < 3; i++) {
-    print('===== pray() 발동 $i =====');
-    int recoveryMp = cleric.pray(5);
-    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
-  }
-}
->>>>>>> origin/master
