@@ -48,21 +48,11 @@ class Cleric {
 
 void main() {
   // stack        // heap 할당
-  Cleric cleric = Cleric('홍길동', 50, 10);
-
-  print('===== 클래릭 생성 =====');
-  print('${cleric.hp}, ${cleric.mp}');
-
-  for (int i = 0; i < 3; i++) {
-    cleric.selfAid();
-    print('===== selfAid() 발동 $i =====');
-    print('${cleric.hp}, ${cleric.mp}');
-  }
-
-  for (int i = 0; i < 3; i++) {
-    print('===== pray() 발동 $i =====');
-    int recoveryMp = cleric.pray();
-    int recoveryMp2 = cleric.pray(second: 1);
-    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
-  }
+  // A
+  Cleric arthas = Cleric(name: '아서스', hp: 40, mp: 5);
+  print('===== 아서스 클래릭 생성 =====');
+  print('클래릭 이름 : ${arthas.name}, '
+        '현재 HP : ${arthas.hp}, '
+        '현재 MP : ${arthas.mp} \n'
+  );
 }
