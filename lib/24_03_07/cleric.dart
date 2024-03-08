@@ -1,11 +1,12 @@
 import 'dart:math';
 
 class Cleric {
+  final int maximumHp = 50; // 최대 HP
+  final int maximumMp = 10; // 최대 MP
+
   String name; // 이름
   int hp; // HP
-  final int maximumHp = 50; // 최대 HP
   int mp; // MP
-  final int maximumMp = 10; // 최대 MP
 
   Cleric(this.name, this.hp, this.mp);
 
