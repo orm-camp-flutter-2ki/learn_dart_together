@@ -43,4 +43,7 @@ class Cleric {
   }
 }
 
-//main용 새로운 dart 파일 생성
+/*
+main용 새로운 dart 파일 생성
+cleric 클래스와 main 분리
+*/
