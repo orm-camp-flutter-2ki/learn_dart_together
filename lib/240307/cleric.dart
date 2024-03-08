@@ -33,9 +33,7 @@ class Cleric {
     }
     return healPoint;
   }
-
 }
-
 
 void main() {
   Cleric cleric = Cleric('홍길동', 50, 10);
@@ -55,4 +53,3 @@ void main() {
     print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
   }
 }
-
