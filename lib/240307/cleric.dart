@@ -9,8 +9,7 @@ class Cleric {
   static const int maxhp = 50; //최대 hp
   static const int maxmp = 10; //최대 mp
 
-
-  Cleric({required this.name, this.hp=maxhp, this.mp=maxmp});
+  Cleric({required this.name, this.hp = maxhp, this.mp = maxmp});
 
   void selfAid() {
     if (mp < 5) {
@@ -37,7 +36,8 @@ class Cleric {
 }
 
 void main() {
-  Cleric cleric = Cleric(name: '아서스', hp: 40, mp: 5); //문제2-A
+  // Cleric cleric = Cleric(name: '아서스', hp: 40, mp: 5); //문제2-A
+  Cleric cleric = Cleric(name: '아서스', hp: 35); //문제2-B
 
   print('===== 클래릭 생성 =====');
   print('${cleric.name}, ${cleric.hp}, ${cleric.mp}');
