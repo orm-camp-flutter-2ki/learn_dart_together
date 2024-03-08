@@ -10,7 +10,7 @@ class Cleric {
   int spendMp = 5;
   String name;
 
-  Cleric({required this.name, this.hp = Cleric.maxHp, this.mp = Cleric.maxMp});
+  Cleric(this.name, {this.hp = Cleric.maxHp, this.mp = Cleric.maxMp});
 
   // '셀프 에이드'
   void selfAid() {
@@ -49,7 +49,7 @@ class Cleric {
 void main() {
   // stack        // heap 할당
   // A
-  Cleric arthas = Cleric(name: '아서스', hp: 40, mp: 5);
+  Cleric arthas = Cleric('아서스', hp: 40, mp: 5);
   print('===== 아서스 클래릭 생성 =====');
   print('클래릭 이름 : ${arthas.name}, '
         '현재 HP : ${arthas.hp}, '
@@ -57,12 +57,12 @@ void main() {
   );
 
   // B
-  arthas = Cleric(name: '아서스', hp: 35);
+  arthas = Cleric('아서스', hp: 35);
   print('===== 아서스 최대 MP =====');
   print('최대 MP : ${arthas.mp} \n');
 
   // C
-  arthas = Cleric(name: '아서스');
+  arthas = Cleric('아서스');
   print('===== 아서스 최대 HP, 최대 MP =====');
   print('최대 HP : ${arthas.hp}, 최대 MP : ${arthas.mp}');
 
