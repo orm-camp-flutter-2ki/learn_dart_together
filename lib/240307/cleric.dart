@@ -4,12 +4,10 @@ import 'dart:math';
 class Cleric {
   String name;
   int hp = 50;
-
-  int maxHp = 50;
-
   int mp = 10;
 
-  int maxMp = 10;
+  final int maxHp = 50;
+  final int maxMp = 10;
 
   Cleric(
     this.name,
@@ -29,7 +27,7 @@ class Cleric {
     // int time = int.parse(stdin.readLineSync()!);
     int prayMp = Random().nextInt(3) + time;
     mp = prayMp + mp;
-    mp >= 10 ? mp = 10 : mp;
+    mp = mp >= 10 ? 10 : mp;
     return prayMp;
   }
 }
