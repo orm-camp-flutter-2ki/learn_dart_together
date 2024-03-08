@@ -44,4 +44,5 @@ void main(){
   hero2.hp = 200;
   print(hero1.name);
   print(hero2.hp);
+  print(sword.damage);
 }
