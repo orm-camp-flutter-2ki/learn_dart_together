@@ -80,7 +80,7 @@ void main() {
   Cleric newCleric = Cleric("아서스", hp: 40, mp: 5);
   Cleric newCleric1 = Cleric("아서스", hp: 35);
   Cleric newCleric2 = Cleric("아서스");
-  // Cleric newCleric3 = Cleric(); //에러 발생
+  // Cleric newCleric3 = Cleric(); // 이름을 적지 않으면 에러 발생
 
   print('${newCleric.name} : ${newCleric.hp} ${newCleric.mp}');
   print('${newCleric1.name} : ${newCleric1.hp} ${newCleric1.mp}');
