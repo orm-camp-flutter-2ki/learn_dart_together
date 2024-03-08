@@ -20,8 +20,9 @@ class Cleric {
     }
   }
 
+  // 불변
   int pray(int second) {
-    int heal = second + Random().nextInt(3);
+    final int heal = second + Random().nextInt(3);
 
     int healPoint = 0;
     if (mp + heal > maxMp) {
@@ -36,6 +37,7 @@ class Cleric {
 }
 
 void main() {
+  // stack        // heap 할당
   Cleric cleric = Cleric('홍길동', 50, 10);
 
   print('===== 클래릭 생성 =====');
