@@ -9,7 +9,7 @@ class Cleric {
   final int maxMp = 10;
 
   Cleric(this.name) {
-    this.hp = maxHp;
+    hp = maxHp;
     mp = maxMp;
 
     print('===== 클레릭 "$name" 생성 =====');
