@@ -25,8 +25,8 @@ void main() {
 }
 
 class Cleric {
- static const int maxMp = 10;
- static const int maxHp = 50;
+ static const  maxMp = 10;
+ static const  maxHp = 50;
   String name;
 
   int hp = 50;
@@ -59,7 +59,8 @@ class Cleric {
     // 최대 충전하는 mp 10을 넘지 않기 위한 삼향연산자문
     // mp 가 10이사이야? 그럼 10 아니면 충전함 mp로
 
-    mp >= 10 ? mp = 10 : mp;
+    // mp >= 10 ? mp = 10 : mp;
+    mp = mp >= 10 ? 10 : mp;
     return prayMp; // 실제 회복된 Mp양
   }
 }
