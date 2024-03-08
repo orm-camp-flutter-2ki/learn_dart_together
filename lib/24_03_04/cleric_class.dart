@@ -42,3 +42,5 @@ class Cleric {
     // 반환
   }
 }
+
+//main용 새로운 dart 파일 생성
