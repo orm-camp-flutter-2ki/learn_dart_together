@@ -37,7 +37,8 @@ class Cleric {
 
 void main() {
   // Cleric cleric = Cleric(name: '아서스', hp: 40, mp: 5); //문제2-A
-  Cleric cleric = Cleric(name: '아서스', hp: 35); //문제2-B
+  // Cleric cleric = Cleric(name: '아서스', hp: 35); //문제2-B
+  Cleric cleric = Cleric(name: '아서스'); //문제2-C
 
   print('===== 클래릭 생성 =====');
   print('${cleric.name}, ${cleric.hp}, ${cleric.mp}');
