@@ -5,40 +5,41 @@ class Cleric {
   static final int maxMp = 10;
 
   String name;
-  int? hp ;
-  int? mp ;
+  int? hp;
 
+  int? mp;
 
-  Cleric({this.name = '아서스', this.hp ,this.mp });
+  Cleric({this.name = '아서스', this.hp, this.mp});
 
-  // void selfAid() {
-  //   if (mp <= 0) {
-  //     print('MP가 부족합니다.');
-  //   } else {
-  //     mp -= 5;
-  //     hp = maxHp;
-  //   }
-  // }
-  //
-  // int pray(seconds) {
-  //   int sec = seconds;
-  //   int recovery = sec + Random().nextInt(3);
-  //   int overRecovery = -(mp - maxMp);
-  //   mp += recovery;
-  //   if (mp >= maxMp) {
-  //     recovery = overRecovery;
-  //     mp = maxMp;
-  //   }
-  //   return recovery;
-  // }
+// void selfAid() {
+//   if (mp <= 0) {
+//     print('MP가 부족합니다.');
+//   } else {
+//     mp -= 5;
+//     hp = maxHp;
+//   }
+// }
+//
+// int pray(seconds) {
+//   int sec = seconds;
+//   int recovery = sec + Random().nextInt(3);
+//   int overRecovery = -(mp - maxMp);
+//   mp += recovery;
+//   if (mp >= maxMp) {
+//     recovery = overRecovery;
+//     mp = maxMp;
+//   }
+//   return recovery;
+// }
 }
+
 void main() {
   Cleric cleric = Cleric(name: '아서스');
-  if(cleric.hp == null){
-    cleric.hp= Cleric.maxHp;
-  }else if (cleric.mp == null){
+  if (cleric.hp == null) {
+    cleric.hp = Cleric.maxHp;
+  } else if (cleric.mp == null) {
     cleric.mp = Cleric.maxMp;
-  }else if(cleric.hp == null && cleric.mp == null){
+  } else if (cleric.hp == null && cleric.mp == null) {
     cleric.mp = Cleric.maxMp;
     cleric.hp = Cleric.maxHp;
   }
