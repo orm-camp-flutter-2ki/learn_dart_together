@@ -1,7 +1,7 @@
 import 'package:learn_dart_together/0307/cleric.dart';
 
 void main() {
-  Cleric cleric = Cleric('zi존마법사ABC');
+  Cleric cleric = Cleric(name: 'zi존마법사ABC', hp: 35);
 
   for (int i = 1; i <= 3; i++)
     cleric.selfAid(i);

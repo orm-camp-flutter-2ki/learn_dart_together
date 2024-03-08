@@ -1,7 +1,7 @@
 import 'dart:math';
 
-final int maxHp = 50;
-final int maxMp = 10;
+const int maxMp = 10;
+const int maxHp = 50;
 
 class Cleric {
 
@@ -9,12 +9,9 @@ class Cleric {
   late int hp;
   late int mp;
 
-  Cleric(this.name) {
-    hp = maxHp;
-    mp = maxMp;
-
-    print('===== 클레릭 "$name" 생성 =====');
-    print('초기 HP: $hp, 초기 MP: $mp');
+  Cleric({required this.name, this.hp = maxHp, this.mp = maxMp}) {
+      print('===== 클레릭 "$name" 생성 =====');
+      print('초기 HP: $hp, 초기 MP: $mp');
   }
 
   void selfAid(int cnt) {
