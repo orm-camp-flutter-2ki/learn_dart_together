@@ -1,7 +1,7 @@
 import 'dart:math';
 
 class Cleric {
-  String? name;
+  String name;
   int hp;
   int mp;
   static final int maxHp = 50;
