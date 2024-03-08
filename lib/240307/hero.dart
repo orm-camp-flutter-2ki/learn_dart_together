@@ -1,8 +1,23 @@
 
 
+import 'dart:math';
+
 import 'sword.dart';
 
+int heroMoney = 100;
+
+void setRandomMoney() {
+  heroMoney = Random().nextInt(1000);
+}
+
+//
+int f(int x) {
+  return x * 2;
+}
+
 class Hero {
+  static int money = 100;
+
   String name;
   int hp;
   Sword? sword;
@@ -22,9 +37,14 @@ class Hero {
   // Hero(name: 'ddd', hp: 11, sword: sword);
   Hero({required this.name, required this.hp, this.sword});
 
+  static void setRandomMoney() {
+    Hero.money = Random().nextInt(1000);
+  }
+
   // 메서드
   // 싸우기
   void attack() {
+    Hero.money -= 50;
     hp -= 5;
     print('이상하다 왜 내피가 $hp가 까지지?');
   }
@@ -40,6 +60,9 @@ void main() {
 
   // 내가 만든 것
   Hero hero = Hero(name: 'name', hp: 100);
+
+  Hero.money = 100;
+
   // Hero hero2 = Hero('홍길동', 100);
   // Hero hero3 = Hero('홍길동', 100);
 
