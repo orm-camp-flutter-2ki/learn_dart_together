@@ -2,19 +2,19 @@ import 'dart:io';
 import 'dart:math';
 
 class Cleric {
-  static final int maxHp = 50;
-  static final int maxMp = 10;
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
   String name;
-  int hp = Cleric.maxHp;
-  int mp = Cleric.maxMp;
+  int mp;
+  int hp;
 
-  Cleric({required this.name});
+  Cleric(this.name, {this.hp = Cleric.maxHp, this.mp = Cleric.maxMp});
 
   void selfAid() {
     if (mp >= 5) {
       mp -= 5;
-      hp = maxHp;
+      hp = Cleric.maxHp;
     }
   }
 
@@ -29,7 +29,7 @@ class Cleric {
 }
 
 void main() {
-  Cleric cleric = Cleric(name: '홍길동');
+  Cleric cleric = Cleric('홍길동');
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
@@ -45,4 +45,11 @@ void main() {
     int recoveryMp = cleric.pray(5);
     print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
   }
+
+  final a = Cleric('아서스', hp: 40, mp: 5);
+  print('${a.name} ${a.hp} ${a.mp}');
+  final b = Cleric('아서스', hp: 35);
+  print('${b.name} ${b.hp} ${b.mp}');
+  final c = Cleric('아서스');
+  print('${c.name} ${c.hp} ${c.mp}');
 }
