@@ -43,8 +43,8 @@ class Cleric {
   <br/>
 
 ## Answer  
+- 우선 static과 final, const가 가진 키워드의 특성을 알아야했다. 
 #### static이란?
-- 우선 static이라는 키워드의 특성을 알아야했다.  
 > static 키워드가 붙으면 해당 변수나 함수는 메모리에 먼저 한번 할당되어 프로그램이 종료될 때 해제되는 것을 의미한다.   
 > [참고한 글](https://jutole.tistory.com/86)   
 - 이렇게 적힌 것처럼 런타임 전, 이미 메모리에 올라간 데이터인 것이다.
@@ -58,7 +58,7 @@ class Cleric {
 <br/>
 
 ### 따라서 final은 안되고 const는 가능했던 이유는  
-> 1) static은 런타임 이전에 메모리에 값이 올라간다.  
+> 1) static은 런타임 이전에 메모리에 값이 올라간다. (공유 자원이기 때문)  
 > 2) 생성자 룰은 컴파일 타임에 이미 결정된 값이어야 한다.
 ```dart  
 Cleric(this.name, {this.hp = maxHp, this.mp = maxMP}); // 이 부분이 생성자 룰이다.
