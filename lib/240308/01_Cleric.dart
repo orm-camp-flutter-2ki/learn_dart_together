@@ -68,5 +68,5 @@ void main() {
   print('===== 아서스 생성 C =====');
   print('이름: ${heroC.name}, HP: ${heroC.hp}, MP: ${heroC.mp}');
 
-  final Cleric heroD = Cleric(); // 이름 미기재 시 오류 확인용 코드
+  // final Cleric heroD = Cleric(); // 이름 미기재 시 오류 확인용 코드
 }
