@@ -6,10 +6,10 @@ class Cleric {
   int hp;
   int mp;
 
-  static final int maxHp = 50;
-  static final int maxMp = 10;
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
-  Cleric(this.name, {this.hp = 50, this.mp = 10});
+  Cleric(this.name ,{this.hp = Cleric.maxHp, this.mp = Cleric.maxMp});
 
   void selfAid() {
     if (mp >= 5) {
@@ -28,8 +28,7 @@ class Cleric {
     }
     return recoveryMp;
   }
-  static rann(){
 
 
-  }
+
 }
