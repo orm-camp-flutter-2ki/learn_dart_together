@@ -10,10 +10,11 @@ class Cleric {
   String name;
   int hp;
   int mp;
-  static final int maxHp = 50;
-  static final int maxMp = 10;
+  // final -> const
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
-  Cleric(this.name, this.hp, this.mp);
+  Cleric({required this.name, this.hp = maxHp, this.mp = maxMp});
 
   void selfAid() {
     if (mp >= 5) {
@@ -28,10 +29,10 @@ class Cleric {
   // 캡슐화, 은닉화
 
   int pray(int seconds) {
-    int random = Random().nextInt(3); // 변수이름
+    int addedMp = Random().nextInt(3); // 변수이름
     int mpRecovery = 0;
 
-    mpRecovery += seconds + random;
+    mpRecovery += seconds + addedMp;
 
     if ((mp + mpRecovery) >= maxMp) {
       mp = maxMp;
