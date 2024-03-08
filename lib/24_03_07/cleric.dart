@@ -1,7 +1,7 @@
 import 'dart:math';
 
 void main() {
-  Cleric cleric  = Cleric('홍길동');
+  Cleric cleric = Cleric('홍길동');
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
@@ -17,27 +17,27 @@ void main() {
     int recoveryMp = cleric.pray(second: 5);
     print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
   }
-
 }
 
 class Cleric {
+  static final maxHp = 50;
+  static final maxMp = 10;
+
   String name;
   int hp = 10;
   int mp = 10;
-  final maxHp = 50;
-  final maxMp = 10;
 
   Cleric(this.name);
 
   void selfAid() {
     final int usedMp = 5;
-    
+
     if (mp < usedMp) {
       print('MP가 부족합니다.');
-    } else if (hp == maxHp) {
+    } else if (hp == Cleric.maxHp) {
       print('이미 체력이 가득 찼습니다.');
     } else {
-      hp = maxHp;
+      hp = Cleric.maxHp;
       mp -= usedMp;
       print('HP가 모두 회복되었습니다.');
     }
@@ -46,13 +46,12 @@ class Cleric {
   int pray({int second = 1}) {
     int chargedMp = second + Random().nextInt(3);
 
-    if (mp + chargedMp > maxMp) {
-      chargedMp = maxMp - mp;
+    if (mp + chargedMp > Cleric.maxMp) {
+      chargedMp = Cleric.maxMp - mp;
     }
 
     mp += chargedMp;
 
     return chargedMp;
-
   }
 }
