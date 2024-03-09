@@ -1,26 +1,26 @@
 import 'dart:math';
 
 class Cleric {
-  static const int maximumHp = 50; // 최대 HP
-  static const int maximumMp = 10; // 최대 MP
+  static const int maximumHP = 50;
+  static const int maximumMP = 10;
 
-  String name; // 이름
-  int hp; // HP
-  int mp; // MP
+  String name;
+  int hp;
+  int mp;
 
-  Cleric(this.name, {this.hp = Cleric.maximumHp, this.mp = Cleric.maximumMp});
+  Cleric(this.name, {this.hp = Cleric.maximumHP, this.mp = Cleric.maximumMP});
 
   void selfAid() {
     mp -= 5;
-    hp = maximumHp;
+    hp = maximumHP;
   }
 
   int pray(int second) {
     int healedMp = Random().nextInt(3) + second;
 
-    if (healedMp > maximumMp - mp) {
-      healedMp = maximumMp - mp;
-      mp = maximumMp;
+    if (healedMp > maximumMP - mp) {
+      healedMp = maximumMP - mp;
+      mp = maximumMP;
     } else {
       mp += healedMp;
     }
