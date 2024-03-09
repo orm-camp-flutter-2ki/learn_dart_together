@@ -4,11 +4,11 @@ class Cleric {
   String name;
   int hp;
   int mp;
-  static final int maxHp = 50;
-  static final int maxMp = 10;
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
   //생성자 오버로딩 추가
-  Cleric(this.name, {this.hp = 50, this.mp = 10});
+  Cleric( this.name ,{this.hp = maxHp, this.mp = maxMp});
 
   int spendMp = 5;
 
@@ -52,7 +52,9 @@ void main() {
     print('===== pray() 발동 $i =====');
     int recoveryMp = cleric.pray(5);
     print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');*/
-  Cleric cleric = Cleric('아서스', hp: 40, mp: 5);
+
+
+  Cleric cleric = Cleric('아서스', mp: 5, hp: 40 );
   Cleric cleric1 = Cleric('아서스', hp: 35);
   Cleric cleric2 = Cleric('홍길동');
 
