@@ -8,7 +8,7 @@ class Cleric {
   static const int maxMp = 10;
 
   //생성자 오버로딩 추가
-  Cleric( this.name ,{this.hp = maxHp, this.mp = maxMp});
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp});
 
   int spendMp = 5;
 
@@ -53,8 +53,7 @@ void main() {
     int recoveryMp = cleric.pray(5);
     print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');*/
 
-
-  Cleric cleric = Cleric('아서스', mp: 5, hp: 40 );
+  Cleric cleric = Cleric('아서스', mp: 5, hp: 40);
   Cleric cleric1 = Cleric('아서스', hp: 35);
   Cleric cleric2 = Cleric('홍길동');
 
