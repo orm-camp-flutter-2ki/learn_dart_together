@@ -1,7 +1,7 @@
-import 'package:learn_dart_together/24_03_07/Cleric.dart';
+import 'package:learn_dart_together/24_03_07/cleric.dart';
 
 void main() {
-  Cleric cleric = Cleric('홍길동', 50, 10);
+  Cleric cleric = Cleric('홍길동', hp: 50, mp: 10);
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
