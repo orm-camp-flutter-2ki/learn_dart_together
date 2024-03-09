@@ -8,7 +8,7 @@ class Cleric {
   int hp = maxHp;
   int mp = maxMp;
 
-  Cleric(this.name, int hp, int mp) {
+  Cleric(this.name, {int hp = maxHp, int mp = maxMp}) {
     this.hp = min(maxHp, hp);
     this.mp = min(maxMp, mp);
   }
