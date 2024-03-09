@@ -1,14 +1,14 @@
 import 'dart:math';
 
 class Cleric {
-  final int maxHp = 50;
-  final int maxMp = 10;
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
   String name;
-  int hp = 50;
-  int mp = 10;
+  int hp;
+  int mp;
 
-  Cleric(this.name, this.hp, this.mp);
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp});
 
   void selfAid() {
     int maxiumSpendMp = 5; // selfAid에 사용하는 mp의 양
@@ -34,5 +34,10 @@ class Cleric {
     
     mp += actualRecoverMp;
     return actualRecoverMp;
+  }
+
+  @override
+  String toString() {
+    return 'Cleric{name: $name, hp: $hp, mp: $mp}';
   }
 }
