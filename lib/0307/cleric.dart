@@ -6,21 +6,21 @@ class Cleric {
   int hp;
   int mp;
   static const int maxHp = 50; // 상수 + static
-  static const int maxMp = 10;
+  static const int maxMp = 10; // 상수는 대문자?
 
   Cleric(this.name, {this.hp = maxHp, this.mp = maxMp}); // 생성자
 
   // selfAid 동작: mp 5를 소비하여 자신의 hp를 maxHp 까지 회복하는 동작
-  int selfAid() {
-    int aidHeal = 5; //소비 mp
+  void selfAid() {
+    const int aidHeal = 5; //소비 mp
     if (mp < aidHeal) {
       print('MP가 부족해 실행이 취소됩니다.');
-      return mp;
+      return;
     }
+
     mp -= aidHeal;
     hp = maxHp;
     print('MP $aidHeal 소모, HP를 최대로 회복했습니다.');
-    return mp;
   }
 
   // pray 동작: mp 회복, mp는 maxMp를 넘지 못한다.
@@ -35,7 +35,7 @@ class Cleric {
     int prayResult = second + prayHeal; // 전달받은 시간(초) + 0~2 만큼 회복한다
 
     if (mp + prayResult > maxMp) {
-      prayResult = maxMp - mp;
+      prayResult = maxMp - mp; // 실제 회복한 mp 양 구하기
     }
 
     mp += prayResult;
@@ -45,7 +45,7 @@ class Cleric {
 }
 
 void main() {
-  Cleric cleric = Cleric('아서스', hp: 50, mp: 10);
+  Cleric cleric = Cleric('아서스', hp: 50, mp: 5);
   Cleric cleric2 = Cleric('아서스', hp: 35);
   Cleric cleric3 = Cleric('아서스');
   // Cleric cleric4 = Cleric(); // 이름 없는 경우 인스턴스화 할 수 없다.
