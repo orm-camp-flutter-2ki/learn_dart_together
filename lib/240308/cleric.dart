@@ -1,14 +1,14 @@
 import 'dart:math';
 
 class Cleric {
-  static final int maximumHp = 50; // 최대 HP
-  static final int maximumMp = 10; // 최대 MP
+  static const int maximumHp = 50; // 최대 HP
+  static const int maximumMp = 10; // 최대 MP
 
   String name; // 이름
   int hp; // HP
   int mp; // MP
 
-  Cleric(this.name, {this.hp = 50, this.mp = 10});
+  Cleric(this.name, {this.hp = Cleric.maximumHp, this.mp = Cleric.maximumMp});
 
   void selfAid() {
     mp -= 5;
