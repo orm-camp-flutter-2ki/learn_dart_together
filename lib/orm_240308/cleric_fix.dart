@@ -9,8 +9,8 @@ class Cleric {
   int? mp;
 
   Cleric({this.name = '아서스', this.hp, this.mp}) {
-    this.hp ??= maxHp;
-    this.mp ??= maxMp;
+    hp ??= maxHp;
+    mp ??= maxMp;
   }
 
   void selfAid() {
