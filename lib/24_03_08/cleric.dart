@@ -1,7 +1,10 @@
 import 'dart:math';
 
 void main() {
-  Cleric cleric = Cleric(name :'홍길동', hp: 50, mp: 10);
+  //Cleric cleric = Cleric('Arthas', hp: 40, mp: 5);
+  //Cleric cleric = Cleric('Arthas', hp: 35);
+  Cleric cleric = Cleric('Arthas');
+  // Cleric cleric3 = Cleric();
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
@@ -17,6 +20,8 @@ void main() {
     int recoveryMp = cleric.pray(5);
     print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
   }
+
+
 }
 
 
@@ -32,7 +37,7 @@ class Cleric {
   // 과제 연습문제 2번을 봤을때, D) 항목 때문에 required 키워드가 필요한 것 같다.
   // 필수 parameter 와 named parameter 를 같이 쓸 때, 순서는 필수 parameter 가 우선인 듯.
   // 이 부분이 머릿 속에서 빨리 전환 되는 반복 숙달 훈련이 필요할 것 같다. 다른 언어와 너무 헷갈린다 🫠🫠.
-  Cleric({ required this.name, this.hp = maxHp, this.mp = maxMp });
+  Cleric( this.name, {this.hp = maxHp, this.mp = maxMp });
 
   void selfAid() {
     mp -= 5;
