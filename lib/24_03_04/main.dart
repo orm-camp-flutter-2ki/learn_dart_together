@@ -2,9 +2,9 @@ import 'cleric_class.dart';
 
 void main() {
   //인스턴스 생성
-  final Cleric cleric1 = Cleric(name: '용사', hp: 40, mp: 5);
-  final Cleric cleric2 = Cleric(name: '법사', hp: 40);
-  final Cleric cleric3 = Cleric(name: '전사');
+  final Cleric cleric1 = Cleric('용사', hp: 40, mp: 5);
+  final Cleric cleric2 = Cleric('법사', hp: 40);
+  final Cleric cleric3 = Cleric('전사');
 
   // 생성 인스턴스로 List 만들기
   List<Cleric> clerics = [cleric1, cleric2, cleric3];

@@ -6,14 +6,12 @@ class Cleric {
   int hp;
   int mp;
 
-  static const int maxHP = 50; // HP & MP 최대값 필드 공유, 컴파일 타임 상수 = const 사용
-  static const int maxMP = 10; // HP & MP 최대값 필드 공유, 컴파일 타임 상수 = const 사용
+  static const maxHP = 50; // HP & MP 최대값 필드 공유, 컴파일 타임 상수 = const 사용
+  static const maxMP = 10; // HP & MP 최대값 필드 공유, 컴파일 타임 상수 = const 사용
 
-  Cleric({
-    required this.name, // 이름 지정 필수
-    this.hp = 50, // hp 없으면 기본값 = maxHP(50)
-    this.mp = 10, // mp 없으면 기본값 = maxMP(10)
-  });
+  Cleric(this.name, // 이름 지정 필수
+      {this.hp = Cleric.maxHP,
+      this.mp = Cleric.maxMP}); // mp 없으면 기본값 = maxMP(10))
 
   void selfAid() {
     if (mp >= 5) {
