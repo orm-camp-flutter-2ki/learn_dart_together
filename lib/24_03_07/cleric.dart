@@ -1,13 +1,20 @@
 import 'dart:math';
 
 class Cleric {
-  String name;
-  int hp = 50;
-  final int maxHp = 50;
-  int mp = 10;
-  final int maxMp = 10;
+  static const int maxHp = 50; // named parameter에서 사용하려면 const
+  static const int maxMp = 10; // 위와 동일
 
-  Cleric(this.name, this.hp, this.mp);
+  String name;
+
+  int hp = 50;
+  int mp = 10;
+
+  // Cleric(this.name, this.hp, this.mp); // 기존 생성자 주석 처리
+  Cleric(
+    this.name, {
+    this.hp = Cleric.maxHp, // 전달 인자가 없으면 최대 hp
+    this.mp = Cleric.maxMp, // 전달 인자가 없으면 최대 mp
+  });
 
   void selfAid() {
     if (mp > 4) {
@@ -68,20 +75,29 @@ class Cleric {
 }
 
 void main() {
-  Cleric cleric = Cleric('홍길동', 50, 10);
+  // Cleric cleric = Cleric('홍길동', 50, 10);
 
-  print('===== 클래릭 생성 =====');
-  print('${cleric.hp}, ${cleric.mp}');
+  Cleric newCleric = Cleric("아서스", hp: 40, mp: 5);
+  Cleric newCleric1 = Cleric("아서스", hp: 35);
+  Cleric newCleric2 = Cleric("아서스");
+  // Cleric newCleric3 = Cleric(); // 이름을 적지 않으면 에러 발생
 
-  for (int i = 0; i < 3; i++) {
-    cleric.selfAid();
-    print('===== selfAid() 발동 $i =====');
-    print('${cleric.hp}, ${cleric.mp}');
-  }
+  print('${newCleric.name} : ${newCleric.hp} ${newCleric.mp}');
+  print('${newCleric1.name} : ${newCleric1.hp} ${newCleric1.mp}');
+  print('${newCleric2.name} : ${newCleric2.hp} ${newCleric2.mp}');
 
-  for (int i = 0; i < 3; i++) {
-    print('===== pray() 발동 $i =====');
-    int recoveryMp = cleric.pray(5);
-    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
-  }
+  // print('===== 클래릭 생성 =====');
+  // print('${cleric.hp}, ${cleric.mp}');
+  //
+  // for (int i = 0; i < 3; i++) {
+  //   cleric.selfAid();
+  //   print('===== selfAid() 발동 $i =====');
+  //   print('${cleric.hp}, ${cleric.mp}');
+  // }
+  //
+  // for (int i = 0; i < 3; i++) {
+  //   print('===== pray() 발동 $i =====');
+  //   int recoveryMp = cleric.pray(5);
+  //   print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
+  // }
 }
