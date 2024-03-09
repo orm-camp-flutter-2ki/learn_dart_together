@@ -9,7 +9,7 @@ class Cleric {
   int hp;
   int mp;
 
-  Cleric({required this.name, this.hp = maxHp, this.mp = maxMp}) {
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp}) {
       print('===== 클레릭 "$name" 생성 =====');
       print('초기 HP: $hp, 초기 MP: $mp');
   }
