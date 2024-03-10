@@ -3,7 +3,6 @@ import 'dart:io';
 
 // 클래스
 class Cleric {
-
   // 필드
   String name;
   int hp;
@@ -12,11 +11,10 @@ class Cleric {
   static const int maxMp = 10;
 
   // 생성자
-  Cleric({
-    required this.name, // 필수
-    this.hp = maxHp,
-    this.mp = maxMp
-  });
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp}) {
+    print('===== 클래릭 생성 ======');
+    print('이름 : ${name}, 초기 HP : ${hp}, 초기 MP : ${mp}');
+  }
 
   // 메소드(*셀프 에이드)
   void selfAid() {
@@ -60,12 +58,10 @@ class Cleric {
 // 결과 출력
 void main() {
   // 객체 생성
-  print('===== 클래릭 생성 ======');
-  Cleric cleric = Cleric(name: '아서스'); // 정상 작동
-  // Cleric cleric = Cleric(name:'아서스', hp:40, mp:5); // 정상 작동
-  // Cleric cleric = Cleric(name:'아서스', hp:35); // 정상 작동
+  // Cleric cleric = Cleric('아서스'); // 정상 작동
+  Cleric cleric = Cleric('아서스', hp:40, mp:5); // 정상 작동
+  // Cleric cleric = Cleric('아서스', hp:35); // 정상 작동
   // Cleric cleric = Cleric(); // 에러 발생
-  print('이름 : ${cleric.name}, 초기 HP : ${cleric.hp}, 초기 MP : ${cleric.mp}');
 
   // 메소드(*셀프 에이드) 사용
   cleric.selfAid();
