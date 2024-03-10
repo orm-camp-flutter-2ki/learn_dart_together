@@ -2,10 +2,10 @@
 
 void main() {
   print(solution04(5, 3));
-
 }
 
-solution04(int m, int n) { // 첫항 m, 공차 n
+List solution04(int m, int n) {
+  // 첫항 m, 공차 n
   //[1] input
   List<int> numbers = [];
 

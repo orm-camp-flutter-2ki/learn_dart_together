@@ -5,42 +5,42 @@ class Cleric {
   String name; // field
   int hp;
   int mp;
-  // static final int maxHp = 50;
-  // static final int maxMp = 10;
-  static const int maxHp = 50; // final -> const
-  static const int maxMp = 10;
+  static const int maxHp = 50; // 상수 + static
+  static const int maxMp = 10; // 상수는 대문자?
 
   Cleric(this.name, {this.hp = maxHp, this.mp = maxMp}); // 생성자
-  //[Q] Cleric(this.name, {this.hp = maxHp, this.mp = maxMP}); 이렇게는 불가능할까...
-  //[A] final 말고 const로 하면 된다?
 
   // selfAid 동작: mp 5를 소비하여 자신의 hp를 maxHp 까지 회복하는 동작
   void selfAid() {
-    int aidHeal = 5; //소비 mp
-
+    const int aidHeal = 5; //소비 mp
     if (mp < aidHeal) {
-      print('MP가 부족해 실행이 취소됩니다. (현재 MP: $mp)');
-    } else {
-      mp -= aidHeal;
-      hp = maxHp;
+      print('MP가 부족해 실행이 취소됩니다.');
+      return;
     }
+
+    mp -= aidHeal;
+    hp = maxHp;
+    print('MP $aidHeal 소모, HP를 최대로 회복했습니다.');
   }
 
-  // pray 동작 = mp 회복, mp는 maxMp를 넘지 못한다.
+  // pray 동작: mp 회복, mp는 maxMp를 넘지 못한다.
   int pray(int second) {
+    if (mp >= maxMp) {
+      print("이미 mp가 가득 차있습니다. 스킬 발동이 취소 됩니다.");
+      mp = maxMp;
+      return 0;
+    }
+
     int prayHeal = Random().nextInt(3); // 회복량, 0 ~ 2까지 랜덤한 정수가 나온다
     int prayResult = second + prayHeal; // 전달받은 시간(초) + 0~2 만큼 회복한다
 
-    int beforeMp = mp;
+    if (mp + prayResult > maxMp) {
+      prayResult = maxMp - mp; // 실제 회복한 mp 양 구하기
+    }
 
     mp += prayResult;
 
-    if (mp >= maxMp) {
-      mp = maxMp;
-      return maxMp - beforeMp;
-    } else {
-      return prayResult;
-    }
+    return prayResult;
   }
 }
 
@@ -54,19 +54,21 @@ void main() {
   print("${cleric.name}, ${cleric.hp}, ${cleric.mp}");
   print("${cleric2.name}, ${cleric2.hp}, ${cleric2.mp}");
   print("${cleric3.name}, ${cleric3.hp}, ${cleric.mp}");
+  print('');
 
   print('===== 클래릭 생성 =====');
-  print('${cleric.hp}, ${cleric.mp}');
+  print('[캐릭터 생성] ${cleric.name}, ${cleric.hp}, ${cleric.mp}\n');
 
   for (int i = 0; i < 3; i++) {
-    cleric.selfAid();
     print('===== selfAid() 발동 $i =====');
-    print('${cleric.hp}, ${cleric.mp}');
+    cleric.selfAid();
+    print('[현재 상태] HP:${cleric.hp}, MP:${cleric.mp}\n');
   }
 
   for (int i = 0; i < 3; i++) {
     print('===== pray() 발동 $i =====');
     int recoveryMp = cleric.pray(5);
-    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
+    print('회복량: $recoveryMp');
+    print('[현재 상태] HP:${cleric.hp}, MP:${cleric.mp}\n');
   }
 }
