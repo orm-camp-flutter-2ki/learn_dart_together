@@ -41,9 +41,8 @@ class Cleric {
 }
 
 void main() {
-
   Cleric hero1 = Cleric(name: '아서스', hp: 40, mp: 5);
-  Cleric hero2 = Cleric(name: '아서스', hp: 35, mp:Cleric.maxMp);
+  Cleric hero2 = Cleric(name: '아서스', hp: 35, mp: Cleric.maxMp);
   Cleric hero3 = Cleric(name: '아서스', hp: Cleric.maxHp);
 
   // Cleric cleric = Cleric(name: '홍길동', hp: 50, mp: 10);
