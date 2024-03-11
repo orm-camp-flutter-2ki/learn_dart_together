@@ -8,7 +8,7 @@ class Cleric {
   int hp = maxHp;
   int mp = maxMp;
 
-  Cleric(this.name, int hp, int mp) {
+  Cleric(this.name, {int hp = maxHp, int mp = maxMp}) {
     this.hp = min(maxHp, hp);
     this.mp = min(maxMp, mp);
   }
@@ -47,8 +47,7 @@ class Cleric {
       return;
     }
 
-    bool result = changeMp(-5);
-    if (result) {
+    if (changeMp(-5)) {
       changeHp(maxHp);
     }
   }
@@ -58,8 +57,7 @@ class Cleric {
 
     int possibleRange = maxMp - mp;
     int recoveryMp = min(sec, possibleRange);
-    int tmp = min(Random().nextInt(3), possibleRange - recoveryMp);
-    recoveryMp += tmp;
+    recoveryMp += min(Random().nextInt(3), possibleRange - recoveryMp);
     changeMp(recoveryMp);
     return recoveryMp;
   }
