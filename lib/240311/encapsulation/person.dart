@@ -1,8 +1,7 @@
 class Person {
   final int thisYear = DateTime.now().year;
-
-  String _name;
-  int _birthYear;
+  final String _name;
+  final int _birthYear;
 
   Person(this._name, this._birthYear);
 
