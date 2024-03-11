@@ -18,7 +18,7 @@ class Person {
 void main() {
   final personService = PersonService();
 
-  // PRACTICE 02.
+  // PRACTICE 02. 이름 출력
   final hong = Person(name: '홍길동');
   final im = Person(name: '임꺽정');
   final persons = personService.makePersonsLists([hong, im]);
@@ -27,7 +27,18 @@ void main() {
     print(person.name);
   });
 
-  // PRACTICE 03.
+  // PRACTICE 03. 이름 + 나이 출력
+  final hongWithAge = Person(name: '홍길동', age: 15);
+  final imWithAge = Person(name: '임꺽정', age: 20);
+
+  final personMap = personService.makePersonMap([
+    hongWithAge,
+    imWithAge
+  ]);
+
+  personMap.forEach((name, age) {
+    print('$name의 나이는 $age');
+  });
 }
 
 class PersonService {
@@ -36,38 +47,20 @@ class PersonService {
       return person;
     }).toList();
   }
-}
 
-void practiceSecond() {
-  final Map<String, int> persons = {};
+  Map<String, int> makePersonMap(List<Person> persons) {
+    final Map<String, int> personWithAgeData = {};
 
-  Person firstPerson = Person(name: '홍길동', age: 20);
-  Person secondPerson = Person(name: '한석봉', age: 25);
+    persons.forEach((person) {
+      int? age = person.age;
 
-  Map<String, int> personData = makeNameWithAgeData([
-    firstPerson,
-    secondPerson,
-  ]);
+      if (age == null) {
+        throw Exception(['age 값이 존재하지 않습니다.']);
+      }
 
-  persons.addAll(personData);
+      personWithAgeData[person.name] = age;
+    });
 
-  persons.forEach((name, age) {
-    print('$name의 나이는 $age살');
-  });
-}
-
-Map<String, int> makeNameWithAgeData(List<Person> persons) {
-  Map<String, int> personNameWithAgeData = {};
-
-  persons.forEach((person) {
-    int? age = person.age;
-
-    if (age == null) {
-      throw Exception('age 값이 존재하지 않습니다.');
-    }
-
-    personNameWithAgeData[person.name] = age;
-  });
-
-  return personNameWithAgeData;
+    return personWithAgeData;
+  }
 }
