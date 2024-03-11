@@ -1,23 +1,26 @@
 import 'package:learn_dart_together/24_03_07/wand.dart';
 
 class Wizard {
-  late String _name;
-  late int _hp;
-  late int _mp;
+  String _name;
+  int _hp;
+  int _mp;
   Wand? _wand;
 
   Wizard(
       {required String name,
       required int hp,
       required int mp,
-      required Wand wand}) {
-    // 인스턴스 생성시 setter 함수 호출
-    // 파라미터로 들어감
-    this.name = name;
-    this.hp = hp;
-    this.mp = mp;
-    this.wand = wand;
-  }
+      required Wand wand})
+      : _name = name,
+        _hp = hp,
+        _mp = mp,
+        _wand = wand;
+
+  String get name => _name;
+
+  int get hp => _hp;
+
+  int get mp => _mp;
 
   set name(String nameValue) {
     if (nameValue.length < 3) {

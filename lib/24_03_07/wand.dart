@@ -1,11 +1,10 @@
 class Wand {
-  late String _name;
-  late double _power;
+  String _name;
+  double _power;
 
-  Wand({required String name, required double power}) {
-    this.name = name;
-    this.power = power;
-  }
+  Wand({required String name, required double power})
+      : _name = name,
+        _power = power;
 
   set name(String nameValue) {
     if (nameValue.length < 3) {
