@@ -21,6 +21,7 @@ class Cleric {
     }
   }
 
+
   int pray(int second) {
     int heal = second + Random().nextInt(3);
 
