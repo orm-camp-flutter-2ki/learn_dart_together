@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 
 void main() {
   Wand wand1 = Wand(name: 'testwand', power: 0.1); //지팡이 생성자 생성
-  Wizard wizard1 = Wizard(name: 'testwizard', hp: 10, mp: 10, wand: wand1); //마법사 생성자 생성
+  Wizard wizard1 = Wizard(name: 'te', hp: 10, mp: 10, wand: wand1); //마법사 생성자 생성
   test('wizard 이름길이 테스트', () {
     wizard1.name = 'd';
   });
