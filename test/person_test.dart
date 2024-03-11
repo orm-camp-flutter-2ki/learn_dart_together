@@ -18,5 +18,14 @@ main() {
       // then
       expect(persons, [flutter, swift]);
     });
+
+    test('makePersonMap에 들어갈 Person의 나이가 null일 때 예외처리되는가', () {
+      // given
+      final optionalPerson = Person(name: '난널러블', age: null);
+
+      // when then
+      expect(
+          () => personService.makePersonMap([optionalPerson]), throwsException);
+    });
   });
 }
