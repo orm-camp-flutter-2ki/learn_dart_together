@@ -16,10 +16,10 @@ class Cleric {
   int pray(a){
     int sec = a;
     int recovery = sec + Random().nextInt(3);
-    int over_recovery= -(mp-maxmp);
+    int overRecovery= -(mp-maxmp);
     mp += recovery ;
     if(mp >= maxmp){
-      recovery = over_recovery;
+      recovery = overRecovery;
       mp = maxmp;
     }
     return recovery;
