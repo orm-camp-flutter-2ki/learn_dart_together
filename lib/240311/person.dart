@@ -1,5 +1,9 @@
-class Person{
-  String name;
+class Person {
+  final String _name;
+  final int _age;
 
-  Person(this.name);
+  String get name => _name;
+  int get age => _age;
+
+  Person(this._name, this._age);
 }
