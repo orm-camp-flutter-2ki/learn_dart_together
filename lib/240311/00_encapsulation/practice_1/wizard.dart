@@ -4,7 +4,7 @@ class Wizard {
   String _name;
   int _hp;
   int _mp;
-  Wand? _wand;
+  Wand _wand;
 
 
   Wizard({
@@ -38,10 +38,12 @@ class Wizard {
   // HP
   int get hp => _hp;
   set hp(int value) {
-    if( value < 0 ) {
-      _hp = 0;
-    }
-    _hp = value;
+    // if( value < 0 ) {
+    //   _hp = 0;
+    // }
+    // _hp = value;
+
+    _hp = value < 0 ? 0 : value;
   }
 
 
