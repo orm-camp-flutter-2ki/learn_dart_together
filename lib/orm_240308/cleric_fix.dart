@@ -5,13 +5,15 @@ class Cleric {
   static const int maxMp = 10;
 
   String name;
-  int? hp;
-  int? mp;
+  int hp;
+  int mp;
 
-  Cleric({required this.name, this.hp, this.mp}) {
-    hp ??= maxHp;
-    mp ??= maxMp;
-  }
+  // Cleric(this.name,{ this.hp, this.mp}) {
+  //   hp ??= maxHp;
+  //   mp ??= maxMp;
+  // }
+  Cleric(this.name, { this.hp = maxHp, this.mp = maxMp});
+
 
   void selfAid() {
     if (mp != null && mp! <= 0) {
@@ -37,7 +39,7 @@ class Cleric {
 
 void main() {
 
-  Cleric cleric = Cleric(name: 'mandy');
+  Cleric cleric = Cleric('mandy');
 
   print('===== 클래릭 생성 =====');
   print('${cleric.name}, ${cleric.hp}, ${cleric.mp}');
