@@ -16,22 +16,26 @@ class Person {
 }
 
 void main() {
-  practiceFirst();
-  practiceSecond();
-}
+  final personService = PersonService();
 
-void practiceFirst() {
-  final List<Person> persons = [];
-
-  Person firstPerson = Person(name: '홍길동');
-  Person secondPerson = Person(name: '한석봉');
-
-  persons.add(firstPerson);
-  persons.add(secondPerson);
+  // PRACTICE 02.
+  final hong = Person(name: '홍길동');
+  final im = Person(name: '임꺽정');
+  final persons = personService.makePersonsLists([hong, im]);
 
   persons.forEach((person) {
     print(person.name);
   });
+
+  // PRACTICE 03.
+}
+
+class PersonService {
+  List<Person> makePersonsLists(List<Person> persons) {
+    return persons.map((person) {
+      return person;
+    }).toList();
+  }
 }
 
 void practiceSecond() {
