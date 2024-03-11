@@ -3,12 +3,22 @@ import 'package:test/test.dart';
 
 void main() {
   test('Person Test', () {
-    Person person = Person('박세훈');
-    Person person2 = Person('한석봉');
+    Person person = Person('홍길동', 20);
+    Person person2 = Person('한석봉', 25);
 
+    /* 연습문제 2
     List<Person> people = [person, person2];
     for (Person item in people) {
       print(item.name);
+    }
+     */
+
+    List<Map<String, dynamic>> people = [];
+    people.add(person.toMap());
+    people.add(person2.toMap());
+
+    for (Map<String, dynamic> item in people) {
+      print("${item['name']}의 나이는 ${item['age']}살");
     }
   });
 }
