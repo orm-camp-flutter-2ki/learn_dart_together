@@ -6,7 +6,6 @@ class Wizard {
   int _mp;
   Wand _wand;
 
-  //방법1: setter로 검증없이 바로 값 세팅하기
   Wizard({required String name, required int hp, required int mp, required Wand wand}) :
       _name = name,
       _hp = hp,
