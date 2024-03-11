@@ -10,9 +10,9 @@ class Person {
   String get name => _name;
   int get brithYear => _birthYear;
 
-  int age(int value){
+  int get age{
     final now= DateTime.now().year;
-    final age = now - value;
+    final age = now - brithYear;
     return age;
   }
 
@@ -22,7 +22,7 @@ class Person {
 
 void main(){
   Person person = Person(name: '이수남', brithYear: 1999);
-  int age_01=person.age(person.brithYear);
+  int age_01=person.age;
   print('age : $age_01');
 }
 
