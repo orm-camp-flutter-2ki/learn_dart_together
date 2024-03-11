@@ -2,13 +2,13 @@
 void main(){
 
   //A
-  Cleric clericA = Cleric(name:'아서스',hp: 40,mp:5);
+  Cleric clericA = Cleric('아서스',hp: 40,mp:5);
   //B
-  Cleric clericB = Cleric(name:'아서스',hp: 35);
+  Cleric clericB = Cleric('아서스',hp: 35);
   //C
-  Cleric clericC = Cleric(name:'아서스');
+  Cleric clericC = Cleric('아서스');
   //D
-  Cleric clericD = Cleric(name:'아서스',mp:5);
+  Cleric clericD = Cleric('아서스',mp:5);
 
   print('clericA : ${clericA.hp},${clericA.mp}');
   print('clericB : ${clericB.hp},${clericB.mp}');
@@ -22,8 +22,8 @@ class Cleric {
   //그러나 생성자에 hpMax 값을 필요로 한다.
   //생성자는 runtime에 실행 된다. => default 값이 필요. 따라서 static const 로 선언해준다.
 
-  static const int hpMax = 50;
   static const int mpMax = 10;
+  static const int hpMax = 50;
 
   String name;
   int hp = 50;
@@ -36,6 +36,6 @@ class Cleric {
   //C
   // Cleric(this.name, {this.hp = Cleric.hpMax, this.mp = Cleric.mpMax});
   //D
-  Cleric({required this.name, this.hp = Cleric.hpMax, this.mp = Cleric.mpMax});
+  Cleric(this.name,{this.hp = Cleric.hpMax, this.mp = Cleric.mpMax});
 
 }
