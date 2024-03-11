@@ -1,26 +1,53 @@
 import 'dart:math';
+import 'package:learn_dart_together/0308/slime.dart';
+
 import 'sword.dart';
 
-// int heroMoney = 100; // top level 함수로 선언하는게 낫다 static
+// int heroMoney = 100; // top level 선언이 낫다
 
 class Hero {
   String name;
-  int hp;
+  int _hp; // private, 클래스 내에서만 접근이 가능하다.
   Sword? sword;
   static int money = 100; // static, 공유 자원이 된다. 다른 영역에 있기 때문에 클래스에 없다고 생각
 
   Hero({
     required this.name,
-    required this.hp,
+    required int hp, // this.hp -> int hp
     this.sword,
-  });
+  }) : _hp = hp;
 
-  void attack() {
-    print('공격했습니다!');
+  // 람다식(lambda expression), 화살표 표기법, arrow function
+  // int get hp {
+  //  return _hp;
+  // }
+  int get hp => _hp;
+
+  // 값을 받아와서 넣는다.
+  set hp(int heroHp) {
+    if(heroHp <= 0) {
+      throw Exception('0이하의 수는 입력할 수 없습니다.');
+    }
+      _hp = heroHp;
+  }
+
+  void attack(Slime slime) {
+    print('$name이 $slime을 공격했다.');
+    print('$slime이 반격했다.');
+    _hp -= 10;
+    if (hp <= 0) _die();
   }
 
   void run() {
-    print('당신은 도망쳤다!');
+    print('$name은 도망쳤다.');
+  }
+
+  void _die() {
+    print('$name는 죽었습니다..');
+  }
+
+  void bye() {
+    print('$name은 떠납니다.');
   }
 
   static void setRandomMoney() {
