@@ -1,5 +1,3 @@
-
-
 import 'dart:math';
 
 import 'sword.dart';
@@ -19,23 +17,26 @@ class Hero {
   static int money = 100;
 
   String name;
-  int hp;
+  int _hp;
   Sword? sword;
 
-  // 생성자 : 인스턴스 만드는 방법을 제공하는 함수같은 놈
-  // Hero({
-  //   required this.name,
-  //   required this.hp,
-  //   this.sword,
-  // }); // this : 나
+  Hero({
+    required this.name,
+    required int hp,
+    this.sword,
+  }) : _hp = hp;
 
-  // Hero('ddd', 11);
-  // Hero('ddd', 11, sword: sword);
-  // Hero(this.name, this.hp, {this.sword});
+  // expression body, lambda expression
+  // 람다식, 화살표 표기법, arrow function
+  int get hp => _hp;
 
-  // Hero(name: 'ddd', hp: 11);
-  // Hero(name: 'ddd', hp: 11, sword: sword);
-  Hero({required this.name, required this.hp, this.sword});
+  // 잘 안 씀
+  set hp(int value) {
+    if (value < 0) {
+      throw Exception('음수를 입력할 수 없습니다');
+    }
+    _hp = value;
+  }
 
   static void setRandomMoney() {
     Hero.money = Random().nextInt(1000);
@@ -45,12 +46,17 @@ class Hero {
   // 싸우기
   void attack() {
     Hero.money -= 50;
-    hp -= 5;
-    print('이상하다 왜 내피가 $hp가 까지지?');
+    _hp -= 5;
+    print('이상하다 왜 내피가 $_hp가 까지지?');
   }
 
   // 도망
   void run() {}
+
+  void _die() {}
+
+  void bye() {
+  }
 }
 
 void main() {

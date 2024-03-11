@@ -12,6 +12,6 @@ void main() {
 
     cleric.selfAid();
 
-    expect(cleric.hp, Cleric.maxHp);
+    expect(cleric.hp, equals(Cleric.maxHp));
   });
 }
