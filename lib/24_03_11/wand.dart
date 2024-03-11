@@ -2,12 +2,15 @@ class Wand {
   String _name;
   double power;
   double _mp;
+  static const double maxMp = 100.0;
+  static const double minMp = 0.5;
 
   Wand(
     this.power,
     double mp, {
     required String name,
-  }) : _name = name, _mp = mp;
+  })  : _name = name,
+        _mp = mp;
 
   set name(String name) {
     print('Wand $name');
@@ -18,14 +21,17 @@ class Wand {
     _name = name;
   }
 
+  String get name => _name;
+
+
+
   set mp(double mp) {
-    print('Wand name :  $mp');
-    if (mp < 0.5 || mp > 100.0) {
+    if (mp < minMp || mp > maxMp) {
       throw Exception('! 지팡이의 마력은 0.5 이상, 100.0 이하 여야 합니다.');
     }
+
     _mp = mp;
   }
-
 
   double get mp => _mp;
 }

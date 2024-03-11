@@ -25,7 +25,7 @@ class Wizard {
         _wand = wand;
 
 
-  // 생성자에다 바로 조건을 거는 방법
+  /// 생성자에다 바로 타당성 검증을 하는 방법
   // Wizard({required this.name, this.wand, this.mp = 0, this.hp = 0}) {
   //   if (name.isEmpty || name.length < 3) {
   //     throw Exception("이름은 3글자 이상 작성해주세요");
@@ -40,7 +40,6 @@ class Wizard {
   //     hp = 0; // HP가 음수가 되는 경우 0으로 설정
   //   }
   // }
-
 
 
   set name(String name) {

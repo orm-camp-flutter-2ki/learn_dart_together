@@ -29,15 +29,12 @@ void main() {
 
   Wand wand = Wand(name: 'name', 100, 0);
   wand.mp = 0;
+
   Wizard wizard = Wizard(name: '마법사', wand: wand);
-  // Wizard wizard = Wizard('마법사', wand, 10, 10);
   wizard.name = '마범사';
   wizard.hp = -10;
 
   print('wizard hp : ${wizard.hp}');
 
-  Person person = Person(name: 'hehe', birthYear: 1991);
-
-  print('age : ${person.age}');
 
 }
