@@ -2,10 +2,14 @@ import 'package:learn_dart_together/240311/00_encapsulation/practice_2/practice_
 import 'package:test/test.dart';
 
 void main() {
-  test('Person test', () {
+  test('나이 계산은 올해년도에서 birthYear 년도를 뺀 값을 리턴한다.', () {
 
-    final person = Person(name: '나오리', birthYear: 2006);
-    person.myAge(person.birthYear);
+    String name = '나오리';
+    int birthYear = 2006;
+
+    final person = Person(name: name, birthYear: birthYear);
+
     print(person.age);
+    expect(person.age, equals(DateTime.now().year - birthYear));
   });
 }
