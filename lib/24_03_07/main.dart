@@ -36,4 +36,8 @@ void main() {
 
   print('wizard hp : ${wizard.hp}');
 
+  Person person = Person(name: 'hehe', birthYear: 1991);
+
+  print('age : ${person.age}');
+
 }
