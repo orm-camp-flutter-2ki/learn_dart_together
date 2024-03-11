@@ -3,6 +3,7 @@ import 'hero.dart';
 class Wizard {
   String name;
   int hp;
+  Wand? wand;
 
   Wizard({
     required this.name,
