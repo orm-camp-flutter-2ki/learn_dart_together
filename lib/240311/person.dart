@@ -6,6 +6,8 @@ class Person {
 
   String get name => _name;
 
+  int get birthYear => _birthYear;
+
   int get age {
     return DateTime.now().year - _birthYear;
   }
