@@ -3,5 +3,7 @@ class Sword {
   int damage;
 
   Sword({required this.name, required this.damage});
-}
+
+
+  }
 
