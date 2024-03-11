@@ -14,7 +14,7 @@ class Wizard {
       : _wand = wand {
     _name = _checkNameValidity(name);
     _hp = _checkHPValidity(hp);
-    _mp = mp;
+    _mp = _checkMPValidity(mp);
   }
 
   String get name => _name;
