@@ -7,6 +7,7 @@ class Wizard {
 
   Wizard({
     required this.name,
-    required this.hp
+    required this.hp,
+    this.wand
   });
 }
