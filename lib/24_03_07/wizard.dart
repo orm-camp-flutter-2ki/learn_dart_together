@@ -22,6 +22,8 @@ class Wizard {
 
   int get mp => _mp;
 
+  Wand? get wand => _wand;
+
   set name(String nameValue) {
     if (nameValue.length < 3) {
       // 1.
