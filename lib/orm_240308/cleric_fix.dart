@@ -1,4 +1,4 @@
-import 'dart:math';
+// import 'dart:math';
 
 class Cleric {
   static const int maxHp = 50;
@@ -15,26 +15,26 @@ class Cleric {
   Cleric(this.name, { this.hp = maxHp, this.mp = maxMp});
 
 
-  void selfAid() {
-    if (mp != null && mp! <= 0) {
-      print('MP가 부족합니다.');
-    } else {
-      mp = (mp != null) ? mp! - 5 : null;
-      hp = maxHp;
-    }
-  }
+  // void selfAid() {
+  //   if (mp != null && mp! <= 0) {
+  //     print('MP가 부족합니다.');
+  //   } else {
+  //     mp = (mp != null) ? mp! - 5 : null;
+  //     hp = maxHp;
+  //   }
+  // }
 
-  int pray(int seconds) {
-    int sec = seconds;
-    int recovery = sec + Random().nextInt(3);
-    int? currentMp = mp;
-    if (currentMp != null) {
-      int overRecovery = (currentMp + recovery) - maxMp;
-      mp = (currentMp + recovery <= maxMp) ? currentMp + recovery : maxMp;
-      recovery -= (currentMp + recovery > maxMp) ? overRecovery : 0;
-    }
-    return recovery;
-  }
+  // int pray(int seconds) {
+  //   int sec = seconds;
+  //   int recovery = sec + Random().nextInt(3);
+  //   int? currentMp = mp;
+  //   if (currentMp != null) {
+  //     int overRecovery = (currentMp + recovery) - maxMp;
+  //     mp = (currentMp + recovery <= maxMp) ? currentMp + recovery : maxMp;
+  //     recovery -= (currentMp + recovery > maxMp) ? overRecovery : 0;
+  //   }
+  //   return recovery;
+  // }
 }
 
 void main() {
