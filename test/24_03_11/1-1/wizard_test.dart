@@ -8,6 +8,6 @@ void main() {
     Wand wand = Wand(name: "츄츄", power: 10);
     Wizard w1 = Wizard(name: '루루', hp: 100, mp: 50, wand: wand);
 
-    w1.hp = -100;
+    w1.mp = -100;
   });
 }
