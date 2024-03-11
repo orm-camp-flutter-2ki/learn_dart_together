@@ -6,7 +6,7 @@ void main(){
     Person person = Person( name: '이한빈', brithYear: 1999);
 
 
-    print('${person.age(person.brithYear)}${person.name}');
+    print('${person.age}${person.name}');
     // expect(person.age, equals(25));
   });
 }
