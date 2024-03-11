@@ -4,10 +4,10 @@ class Cleric {
   String name;
   int hp;
   int mp;
-  final int maxHp = 50;
-  final int maxMp = 10;
+  static const int maxHp = 50;
+  static const int maxMp = 10;
 
-  Cleric(this.name, this.hp, this.mp);
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp});
 
   int spendMp = 5;
 
@@ -38,7 +38,7 @@ class Cleric {
 
 void main() {
   // stack        // heap 할당
-  Cleric cleric = Cleric('홍길동', 50, 10);
+  Cleric cleric = Cleric('홍길동', hp: 50, mp: 10);
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
