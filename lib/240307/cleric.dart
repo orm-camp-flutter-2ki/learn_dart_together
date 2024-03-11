@@ -1,5 +1,7 @@
 import 'dart:math';
 
+const int maxHp = 50;
+const int maxMp = 10; 
 class Cleric {
   /**
    * 커밋 메시지
@@ -11,8 +13,8 @@ class Cleric {
   int _hp;
   int _mp;
   // final -> const
-  static const int maxHp = 50;
-  static const int maxMp = 10;
+  //static const int maxHp = 50;
+  //static const int maxMp = 10;
 
   int get hp {
     return this._hp;
