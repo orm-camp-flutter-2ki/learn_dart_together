@@ -1,4 +1,6 @@
-import 'package:learn_dart_together/24_03_11/1-1/wand.dart';
+
+
+import 'package:learn_dart_together/24_03_11/1-1%20(encapsulation)/wand.dart';
 
 class Wizard {
   String _name;

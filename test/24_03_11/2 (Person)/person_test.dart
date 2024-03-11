@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/24_03_11/2/person.dart';
+import 'package:learn_dart_together/24_03_11/2 (Person)/person.dart';
 import 'package:test/test.dart';
 
 void main() {
