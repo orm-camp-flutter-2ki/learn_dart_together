@@ -6,6 +6,10 @@ class Wand {
       : _name = name,
         _power = power;
 
+  String get name => _name;
+
+  double get power => _power;
+
   set name(String nameValue) {
     if (nameValue.length < 3) {
       throw Exception('이름은 3글자 이상이어야 합니다.');
