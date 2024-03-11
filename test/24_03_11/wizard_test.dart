@@ -1,6 +1,6 @@
 
-import 'package:learn_dart_together/24_03_11/wand.dart';
-import 'package:learn_dart_together/24_03_11/wizard.dart';
+import 'package:learn_dart_together/24_03_11/1-1/wand.dart';
+import 'package:learn_dart_together/24_03_11/1-1/wizard.dart';
 import 'package:test/test.dart';
 
 void main() {
