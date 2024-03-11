@@ -6,7 +6,7 @@ class Wizard {
   int _mp;
   Wand? _wand;
 
-  Wizard(this._name ,this._hp ,this._mp ,this._wand);
+  Wizard(this._name, this._hp, this._mp, this._wand);
 
 //getter
   String get name => _name;
@@ -34,6 +34,6 @@ class Wizard {
     // value가 0 보다 작아? 작으면 hp = 0이 되고, hp 값은 value 값과 같다.
     // value < 0 ? hp = 0 : hp = value;
     _hp = value;
-    if(value < 0)_hp =0;
+    if (value < 0) _hp = 0;
   }
 }
