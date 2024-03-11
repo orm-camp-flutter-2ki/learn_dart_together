@@ -1,4 +1,3 @@
-
 class Wand {
   String _name;
   double _power;
@@ -8,9 +7,11 @@ class Wand {
     required double power,
   })  : _name = name,
         _power = power;
+
 //getter
   String get name => _name;
-  double get power =>_power;
+
+  double get power => _power;
 
 //setter
   set name(String value) {
@@ -19,12 +20,11 @@ class Wand {
     }
     _name = value;
   }
-set power(double value) {
-  if (value < 0.5 || value > 100) {
-    throw Exception('마력은 0.5 보다 크고 100 보다는 작아야합니다');
+
+  set power(double value) {
+    if (value < 0.5 || value > 100) {
+      throw Exception('마력은 0.5 보다 크고 100 보다는 작아야합니다');
+    }
+    _power = value;
   }
-  _power = value;
 }
-}
-
-
