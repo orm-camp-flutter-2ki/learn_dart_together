@@ -7,7 +7,7 @@ void main() {
     test('name 속성에 3글자 미만을 할당하면 Exception이 난다.', () {
       // Given When Then
       expect(
-              () => Wizard(name: '마법', hp: 100, wand: Wand(name: '완드이름', power: 0.5)),
+              () => Wizard(name: '마법', hp: 100, mp: 10, wand: Wand(name: '완드이름', power: 0.5)),
           throwsA(predicate((e) =>
           e is Exception &&
               e.toString() == 'Exception: 이름은 3글자 이상이어야 합니다.')));
@@ -17,9 +17,10 @@ void main() {
       // Given
       String name = '마법사';
       int hp = -1;
+      int mp = 10;
 
       // When
-      Wizard wizard = Wizard(name: name, hp: hp, wand: Wand(name: '완드이름', power: 0.5));
+      Wizard wizard = Wizard(name: name, hp: hp, mp: , wand: Wand(name: '완드이름', power: 0.5));
 
       // Then
       expect(wizard.hp, equals(0));
