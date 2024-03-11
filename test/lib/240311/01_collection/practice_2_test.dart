@@ -26,12 +26,12 @@ void main() {
     Person person1 = Person(name: hong);
     Person person2 = Person(name: han);
 
-    List<Person> peopleList = [];
-    peopleList.add(person1);
-    peopleList.add(person2);
+    List<Person> people = [];
+    people.add(person1);
+    people.add(person2);
 
     // iterator 활용
-    final iterator = peopleList.iterator;
+    final iterator = people.iterator;
     while( iterator.moveNext() ) {
       print('peopleList > ${iterator.current.name}');
     }
