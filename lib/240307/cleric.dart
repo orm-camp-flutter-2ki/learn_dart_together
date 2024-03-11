@@ -24,7 +24,7 @@ class Cleric {
     return this._mp;
   }
 
-  Cleric({required this.name, int hp = maxHp, int mp = maxMp})
+  Cleric(this.name, { int hp = maxHp, int mp = maxMp})
       : _mp = mp,
         _hp = hp;
 
