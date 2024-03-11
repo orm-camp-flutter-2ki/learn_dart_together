@@ -2,7 +2,7 @@ import 'package:learn_dart_together/24_03_11/person.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('TEST_PERSON_나이_계산_확인', () {
+  test('TEST_PERSON_나이_계산_1989년_생이면_35살', () {
       Person howard = Person('Howard', 1989);
 
       expect(howard.age, 35);
