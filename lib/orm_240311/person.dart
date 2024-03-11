@@ -23,6 +23,6 @@ class Person {
 void main(){
   Person person = Person(name: '이수남', brithYear: 1999);
   int age_01=person.age(person.brithYear);
-  print(age_01);
+  print('age : $age_01');
 }
 
