@@ -5,25 +5,32 @@ import 'dart:math';
 /// hp,최대 hp는 초기치 정수 50
 /// mp,최대 mp는 초기치 정수 10
 /// 최대 hp, 최대 mp는 상수
+
 class Cleric {
-  String name;
-  int hp = 50;
-  int mp = 10;
   static const int maxHp = 50;
   static const int maxMp = 10;
+  String name;
+  int hp;
+  int mp;
 
-  Cleric(this.name, this.hp, this.mp);
+  // 인스턴스 생성 시 각 필수로 들어가야 하는 파라미터는 name 뿐.
+  // 선언시 필드의 이름표를 붙이고 값을 넣어준다.
+  Cleric(this.name,{this.hp = maxHp, this.mp = maxMp});
 
   // 셀프에이드 마법. mp를 5 소비하고 hp를 최대로 회복한다.
   // 인수도 리턴값도 없음.
   void selfAid() {
-    if (mp < 5) return;
+    if (mp < 5) {
+      return print('\n!! 마나가 부족합니다 !!\n');
+    }
     mp -= 5;
-    hp = maxHp;
     if (mp < 0) {
       mp = 0;
     }
+    hp = maxHp;
+
   }
+
 
   // 기도하기. 자신의 mp를 회복한다.
   // 회복량은 기도한 시간 + 랜덤하게 0~2포인트의 보정을 한 양.(3초 기도시 3~5).
@@ -33,10 +40,13 @@ class Cleric {
     int prevMp = mp;
     int plusPoint = Random().nextInt(3); // 0,1,2 랜덤
     int healPoint = second + plusPoint;
+
     mp += healPoint;
+
     if (mp >= maxMp) {
       mp = maxMp;
     }
+
     return mp - prevMp;
   }
 }
