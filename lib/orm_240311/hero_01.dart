@@ -3,7 +3,7 @@ import '../orm_240308/slime.dart';
 import 'sword.dart';
 
 class Hero {
-  // 클래스가 가지는 속성을 field, 멤버 변수 라고 부름
+  // 클래스가 가지는 속성을 field, 멤버변수 라고 부름
   static int money = 100;
   String name;
   int _hp;            //hp를 private로 지정한 코드_0
@@ -11,12 +11,13 @@ class Hero {
 
   int get hp => _hp; //Hero 클래스에 hp 게터를 추가
 
-  // 생성자 : 인스턴스를 만드는 방법을 제공
+    // 생성자 : 인스턴스를 만드는 방법을 제공
   Hero({
     required this.name,
     required int hp,  //hp를 private로 지정한 코드_1
     this.sword,
-  }); : _hp = hp;     //hp를 private로 지정한 코드_2
+  }) : _hp = hp;
+     //hp를 private로 지정한 코드_2
 
   void bye(){
     print('바이');
