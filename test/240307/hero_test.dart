@@ -13,6 +13,6 @@ void main() {
   test('Hero hp 타당성 검사 테스트', () {
     Hero hero = Hero(name: 'name', hp: 100);
 
-    hero.hp = -100;
+    expect(() => hero.hp = -100, throwsException);
   });
 }
