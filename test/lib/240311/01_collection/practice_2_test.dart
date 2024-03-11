@@ -4,8 +4,8 @@ import 'package:test/test.dart';
 void main() {
 
   // Given(준비)
-  String hong = '홍길동';
-  String han = '한석봉';
+  final String hong = '홍길동';
+  final String han = '한석봉';
 
 
   test('Person 클래슨느 반드시 이름을 포함한다.', () {
