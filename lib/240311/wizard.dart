@@ -13,7 +13,7 @@ class Wizard {
   }
 
   set name(String value) {
-    if (value == 'null') {
+    if (value == null) {
       throw Exception('이름은 null 일 수 없습니다.');
     }
 
