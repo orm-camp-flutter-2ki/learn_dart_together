@@ -17,7 +17,7 @@ class Wizard {
   String get name => _name;
 
   set name(String wizardName) {
-    if (wizardName.length <= 3) {
+    if (wizardName.length < 3) {
       throw Exception('마법사의 이름은 반드시 3글자 이상이어야 합니다.');
     }
     _name = wizardName;
