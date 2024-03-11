@@ -7,16 +7,10 @@
 // i. https://api.dart.dev/stable/3.3.1/dart-core/DateTime-class.html
 
 class Person {
-
   final String name;
   final int birthYear;
-  int get age {
-    return DateTime.now().year - birthYear; // 오늘 날짜의 년도 - 받은 년도
-  }
-  Person( this.name,  this.birthYear);
 
+  int get age => (DateTime.now().year - birthYear);
 
-
-
-
+  Person(this.name, this.birthYear);
 }

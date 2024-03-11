@@ -14,7 +14,7 @@ class Wizard {
   String _name;
   int _hp;
   int _mp;
-  Wand? _wand;
+  Wand? _wand;성
 
   Wizard(this._name, this._hp, this._mp, this._wand);
 
