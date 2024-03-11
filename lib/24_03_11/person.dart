@@ -5,16 +5,15 @@
 // 현재 시간과 날짜는 DateTime 클래스를 활용하면 얻을 수 있다.
 // https://api.dart.dev/stable/3.3.1/dart-core/DateTime-class.html
 
-
 class Person {
   final String name;
   final int birthYear;
 
   Person({required this.name, required this.birthYear});
 
-  get age {
-    final int year = DateTime.parse(DateTime.now().toString()).year;
-    int age = year - birthYear;
-    return age;
+  int get age {
+    return DateTime.now().year - birthYear;
   }
+
+
 }
