@@ -1,15 +1,23 @@
 class Wand {
-  late final String _name;
-  late final double _power;
+  late String _name;
+  late double _power;
 
   Wand({required String name, required double power}) {
-    _name = _checkNameValidity(name);
-    _power = _checkPowerValidity(power);
+    this.name = name;
+    this.power = power;
   }
 
   String get name => _name;
 
   double get power => _power;
+
+  set name(String name) {
+    _name = _checkNameValidity(name);
+  }
+
+  set power(double power) {
+    _power = _checkPowerValidity(power);
+  }
 
   String _checkNameValidity(String name) {
     if (name.length < 3) _exceptionHandler('이름은 3글자 이상이어야 합니다.');

@@ -12,9 +12,9 @@ class Wizard {
       required int mp,
       required Wand wand})
       : _wand = wand {
-    _name = _checkNameValidity(name);
-    _hp = _checkHPValidity(hp);
-    _mp = _checkMPValidity(mp);
+    this.name = name;
+    this.hp = hp;
+    this.mp = mp;
   }
 
   String get name => _name;
@@ -24,6 +24,18 @@ class Wizard {
   Wand get wand => _wand;
 
   int get mp => _mp;
+
+  set hp(int hp) {
+    _hp = _checkHPValidity(hp);
+  }
+
+  set mp(int mp) {
+    _mp = _checkMPValidity(mp);
+  }
+
+  set name(String name) {
+    _name = _checkNameValidity(name);
+  }
 
   int _checkHPValidity(int hp) {
     return hp < 0 ? 0 : hp;
