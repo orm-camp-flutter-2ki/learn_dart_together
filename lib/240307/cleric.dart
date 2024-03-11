@@ -10,6 +10,7 @@ class Cleric {
   Cleric(this.name, {this.hp = Cleric.maxhp, this.mp = maxmp});
 
   //매개변수(함수나 메서드가 호출될 때 전달되는 값)로 전달된 값을 클래스의 멤버 변수에 할당하기 위해 this 키워드를 사용
+  //여기서 maxhp.mp를 숫자로 하면 나중에 값을 바꾸게 되면 변형이 불가능 함, 의미부여가 중요함
   void selfAid() {
     if (mp == maxmp) {
       mp = maxmp - 5;
@@ -35,6 +36,4 @@ class Cleric {
     }
     return realMp;
   }
-
 }
-
