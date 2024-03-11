@@ -28,4 +28,11 @@ class Wizard {
     }
     _mp = value;
   }
+
+  set wand(Wand? wand) {
+    if (wand == null) {
+      throw Exception('지팡이는 null일 수 없습니다.');
+    }
+    _wand = wand;
+  }
 }
