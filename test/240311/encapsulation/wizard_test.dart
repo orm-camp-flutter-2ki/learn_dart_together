@@ -10,5 +10,6 @@ void main() {
     wizard.name = '홍길동';
     expect(wizard.name, '홍길동');
     expect(() => wizard.mp = -3, throwsException);
+    expect(() => wizard.wand = null, throwsException);
   });
 }
