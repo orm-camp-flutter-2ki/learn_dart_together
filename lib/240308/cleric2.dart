@@ -2,12 +2,11 @@ import 'dart:math';
 
 void main() {
 
- final Cleric athers = Cleric( name: '아서스', hp: 40, mp: 5);
- final Cleric athers2 = Cleric(name: '아서스', hp: 35);
- final Cleric athers3 = Cleric( name: '아서스');
+ final Cleric athers = Cleric(  '아서스', hp: 40, mp: 5);
+ final Cleric athers2 = Cleric('아서스', hp: 35);
+ final Cleric athers3 = Cleric(  '아서스');
 
   // Cleric cleric = Cleric( name: '홍길동',hp:50, mp: 10);
-
   print('===== 클래릭 생성 =====');
   print('${athers.hp}, ${athers.mp}');
 
@@ -17,7 +16,7 @@ void main() {
     print('${athers.hp}, ${athers.mp}');
   }
 
-  for (int i = 0; i < 3; i++) {
+ for (int i = 0; i < 3; i++) {
     print('===== pray() 발동 $i =====');
     int recoveryMp = athers.pray(5);
     print('${athers.hp}, ${athers.mp}, 회복량: $recoveryMp');
@@ -34,7 +33,7 @@ class Cleric {
 
 
   // 생성자 : 인스턴스 만드는 방법을 제공하는 함수같은 놈
-  Cleric({required this.name, this.hp = maxHp , this.mp =maxMp}); // this : 나
+  Cleric( this.name,{ this.hp = maxHp , this.mp =maxMp}); // this : 나
 
   // hp 회복
   void selfAid() {
