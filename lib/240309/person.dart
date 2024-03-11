@@ -6,7 +6,6 @@ class Person {
   final int? _age;
 
   String get name => _name;
-
   int? get age => _age;
 
   Person({
