@@ -15,7 +15,7 @@ void main() {
   });
 
   test('List', () {
-    final list = <Person>[person2, person3];
+    final List<Person> list = [person2, person3];
 
     // for (Person p in list) {
     //   print(p.name);
@@ -26,6 +26,13 @@ void main() {
   });
 
   test('Map', () {
+    final Map<String, int> map = {
+      person2.name : person2.age,
+      person3.name : person3.age
+    };
 
+    for (MapEntry element in map.entries) {
+      print('${element.key}의 나이는 ${element.value}살');
+    }
   });
 }
