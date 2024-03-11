@@ -4,4 +4,23 @@
 // 10명 학생의 시험 점수 Map
 // 대한민국의 도시별 인구수 (순서 상관 없음) List
 
+//연습문제 2
 
+class Person {
+  String name;
+
+  Person(this.name);
+}
+
+Person hong = Person('홍길동');
+Person han = Person('한석봉');
+
+void main() {
+  List<Person> people = [];
+  people.add(hong);
+  people.add(han);
+
+  for (final person in people) {
+    print(person.name);
+  }
+}
