@@ -6,4 +6,5 @@ class Sword{
     required this.name,
     required this.damage,
 });
+
 }
