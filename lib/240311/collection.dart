@@ -16,11 +16,16 @@ Person hong = Person('홍길동');
 Person han = Person('한석봉');
 
 void main() {
-  List<Person> people = [];
-  people.add(hong);
-  people.add(han);
+  // List<Person> people = [];
+  // people.add(hong);
+  // people.add(han);
 
-  for (final person in people) {
-    print(person.name);
-  }
+  person.entries.forEach((element) {
+    print('${element.key}의 나이는 ${element.value}살');
+  });
 }
+
+Map<String, dynamic> person = {
+  hong.name: '20',
+  han.name: '25',
+};
