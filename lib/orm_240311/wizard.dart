@@ -6,16 +6,6 @@ class Wizard {
   int _mp;
   Wand? wand;
 
-  void attack() {
-    if (_hp <= 0) {
-      _hp = 0;
-    }
-  }
-
-  void showHp() {
-    print('[현재 $_name 의 체력은 $hp]');
-  }
-
   Wizard({
     required String name,
     required int hp,
@@ -41,6 +31,16 @@ class Wizard {
       throw Exception('마법사의 MP는 0 이상이어야 합니다.');
     }
     _mp = value;
+  }
+
+  void attack() {
+    if (_hp <= 0) {
+      _hp = 0;
+    }
+  }
+
+  void showHp() {
+    print('[현재 $_name 의 체력은 $hp]');
   }
 }
 

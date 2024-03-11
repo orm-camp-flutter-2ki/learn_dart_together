@@ -27,6 +27,3 @@ class Wand {
   }
 }
 
-void main(){
-  final wand = Wand(name: '윈드스태프', power: 0);
-}
