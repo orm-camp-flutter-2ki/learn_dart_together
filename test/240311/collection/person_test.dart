@@ -20,8 +20,8 @@ void main() {
     people.add(person.toMap());
     people.add(person2.toMap());
 
-    for (Map<String, dynamic> element in people) {
-      print("${element['name']}의 나이는 ${element['age']}살");
+    for (var element in people) {
+      print('${element['name']}의 나이는 ${element['age']}살');
     }
   });
 }
