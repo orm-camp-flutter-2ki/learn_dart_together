@@ -1,7 +1,14 @@
 class Person {
-  String name;
+  String _name;
+  // int _age;
 
-  Person({required this.name});
+  Person({
+    required String name,
+    // required int age,
+  })  : _name = name;
+
+  String get name => _name;
+  // int get age => _age;
 }
 
 void main() {
@@ -14,9 +21,9 @@ void main() {
   // for (int i; persons.length; i++) {
   //   print(persons[i].name);
   // }
-// for (int i = 0; i <persons.length; i++){
-  print(persons[1]);
-// }
+for (int i = 0; i <persons.length; i++){
+  print(persons[i].name);
+}
 
   // print(persons);
 }
