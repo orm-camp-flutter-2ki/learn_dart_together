@@ -1,4 +1,3 @@
-
 import 'package:learn_dart_together/24_03_08/constructor.dart';
 
 /// 연습문제 1
@@ -11,7 +10,6 @@ import 'package:learn_dart_together/24_03_08/constructor.dart';
 /// 3. 대한민국의 도시별 인구수 (순서 상관 없음)
 /// - Map : 도시(key)와 인구수(value)의 정보를 효율적으로 저장할 수 있다.
 
-
 /// 연습문제 2
 ///다음을 수행하는 코드를 작성하시오.
 /// 이름을 가지는 Person 클래스를 작성하시오. Person 은 반드시 이름을 포함해야 합니다.
@@ -23,7 +21,6 @@ class Person {
 
   // 생성자(이름 반드시 포함)
   Person({required this.name});
-
 }
 
 void main() {
@@ -32,9 +29,23 @@ void main() {
   Person person2 = Person(name: '한석봉');
 
   // Person 인스턴스를 담을 List
-  List<Person> lists = [person1, person2];
+  // List<Person> lists = [person1, person2];
 
-  for (final list in lists) {
-    print(list.name);
-  }
+  // for (final list in lists) {
+  //   print(list.name);
+  // }
+
+  ///연습문제 2 에서 작성한 Person 클래스로 생성한 ‘홍길동’, ‘한석봉'의 나이를 각각 20, 25살 이라고 할 때, 이름과 나이를 쌍으로 적당한 컬렉션에 넣습니다.
+  /// 그 다음, 컬렉션에 저장한 값을 하나씩 다음과 같이 출력합니다.
+  /// “홍길동의 나이는 20살”
+  /// “한석봉의 나이는 25살”
+
+  Map<String, dynamic> personMap = {
+    person1.name: '20',
+    person2.name: '25',
+  };
+
+  personMap.entries.forEach((e) {
+    print('${e.key}의 나이는 ${e.value}살');
+  });
 }
