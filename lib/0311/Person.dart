@@ -3,13 +3,13 @@ class Person {
   final String name;
   final int birthYear;
 
+  // 생성자
+  Person({required this.name, required this.birthYear});
+
   // getter 프로퍼티, age는 나이를 계산하여 반환한다.
   int get age {
     return DateTime.now().year - birthYear; // 오늘 날짜의 년도 - 받은 년도
   }
-
-  // 생성자
-  Person({required this.name, required this.birthYear});
 }
 
 void main() {
