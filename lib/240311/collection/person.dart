@@ -2,7 +2,7 @@ class Person {
   String name;
   int age;
 
-  Person(this.name, this.age);
+  Person({required this.name, required this.age});
 
   Map<String, dynamic> toMap() {
     return {

@@ -3,8 +3,8 @@ import 'package:test/test.dart';
 
 void main() {
   test('Person Test', () {
-    Person person = Person('홍길동', 20);
-    Person person2 = Person('한석봉', 25);
+    Person person = Person(name: '홍길동', age: 20);
+    Person person2 = Person(name: '한석봉', age: 25);
 
     /* 연습문제 2
     List<Person> people = [person, person2];
