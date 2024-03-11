@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/240311/wand.dart';
-import 'package:learn_dart_together/240311/wizard.dart';
+import 'package:learn_dart_together/240311/encapsulation/wand.dart';
+import 'package:learn_dart_together/240311/encapsulation/wizard.dart';
 import 'package:test/test.dart';
 
 void main() {

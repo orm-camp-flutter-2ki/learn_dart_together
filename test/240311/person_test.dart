@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240311/person.dart';
+import 'package:learn_dart_together/240311/encapsulation/person.dart';
 import 'package:test/test.dart';
 
 void main() {
