@@ -1,6 +1,8 @@
 import 'package:learn_dart_together/24_03_07/wand.dart';
 
 class Wizard {
+  // exception이 발생하지 않음.
+
   String _name;
   int _hp;
   int _mp;

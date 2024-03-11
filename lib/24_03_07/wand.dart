@@ -1,4 +1,5 @@
 class Wand {
+  // exception이 발생하지 않음
   String _name;
   double _power;
 
