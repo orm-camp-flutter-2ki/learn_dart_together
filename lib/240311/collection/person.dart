@@ -1,8 +1,8 @@
 class Person {
   String name;
-  int age;
+  int? age;
 
-  Person({required this.name, required this.age});
+  Person({required this.name, this.age});
 
   Map<String, dynamic> toMap() {
     return {
