@@ -28,7 +28,7 @@ class Hero {
   }
 
   // 3) setter 추가
-  set hp(int hp) {
+  set hp(int value) {
     _hp = hp;
   }
 
@@ -36,7 +36,9 @@ class Hero {
   int get hp => _hp;
 
   // 1) hp생성자 변경
-  Hero({required this.name, required int hp, this.sword}) : _hp = hp;
+  Hero({required this.name, required int hp, this.sword})
+      : assert(hp >= 0, '음수를 입력할 수 없습니다'), // Validation check
+        _hp = hp;
 
   static void setRandomMoney() {
     Hero.money = Random().nextInt(1000);
