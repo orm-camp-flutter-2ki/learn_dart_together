@@ -18,7 +18,13 @@ class Wand {
   }
 
   double _checkPowerValidity(double power) {
-    return power < 0.5 ? 0.5 : power;
+    double result = power;
+    if (power < 0.5) {
+      result = 0.5;
+    } else if (power > 100.0) {
+      result = 100.0;
+    }
+    return result;
   }
 
   void _exceptionHandler(String message) {
