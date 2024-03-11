@@ -26,4 +26,3 @@ class Wand {
     _power = value;
   }
 }
-

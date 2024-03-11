@@ -11,11 +11,12 @@ void main() {
     person01,
     person02,
   ];
-
-  print(person01.name);
+  // for (int i; persons.length; i++) {
+  //   print(persons[i].name);
+  // }
 // for (int i = 0; i <persons.length; i++){
-//   print(persons[i]);
+  print(persons[1]);
 // }
 
-  print(persons);
+  // print(persons);
 }

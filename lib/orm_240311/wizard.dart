@@ -16,7 +16,9 @@ class Wizard {
         _hp = hp;
 
   String get name => _name;
+
   int get hp => _hp;
+
   int get mp => _mp;
 
   set name(String value) {
@@ -47,7 +49,6 @@ class Wizard {
 void main() {
   final wand = Wand(name: 'windStaff', power: 11.1);
   final wizard = Wizard(name: '전우치', hp: 30, mp: 20, wand: wand);
-
 
   wizard._hp -= 101;
   wizard.attack();
