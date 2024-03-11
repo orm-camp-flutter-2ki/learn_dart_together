@@ -1,5 +1,3 @@
-
-
 import 'slime.dart';
 
 class Hero {
@@ -31,14 +29,14 @@ class Hero {
     hp -= 5;
 
     if( hp <= 0 ) {
-      die();
+      _die();
     }
   }
 
 
   // 사망
-  void die() {
-
+  void _die() {
+    print('죽었다.');
   }
 }
 
