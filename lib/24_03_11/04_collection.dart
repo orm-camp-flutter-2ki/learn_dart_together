@@ -12,3 +12,29 @@ import 'package:learn_dart_together/24_03_08/constructor.dart';
 /// - Map : 도시(key)와 인구수(value)의 정보를 효율적으로 저장할 수 있다.
 
 
+/// 연습문제 2
+///다음을 수행하는 코드를 작성하시오.
+/// 이름을 가지는 Person 클래스를 작성하시오. Person 은 반드시 이름을 포함해야 합니다.
+/// 이름이 ‘홍길동', ‘한석봉' 인 Person 인스턴스를 생성하고, List에 담습니다.
+/// List에 담긴 모든 Person 인스턴스의 이름을 표시하시오.
+
+class Person {
+  String name;
+
+  // 생성자(이름 반드시 포함)
+  Person({required this.name});
+
+}
+
+void main() {
+  // Person 인스턴스 생성
+  Person person1 = Person(name: '홍길동');
+  Person person2 = Person(name: '한석봉');
+
+  // Person 인스턴스를 담을 List
+  List<Person> lists = [person1, person2];
+
+  for (final list in lists) {
+    print(list.name);
+  }
+}
