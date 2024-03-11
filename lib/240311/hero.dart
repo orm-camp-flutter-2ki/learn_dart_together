@@ -1,6 +1,6 @@
 
 
-import '../240311/slime.dart';
+import 'slime.dart';
 
 class Hero {
   String name;
