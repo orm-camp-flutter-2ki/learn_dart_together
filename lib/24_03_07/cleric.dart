@@ -15,7 +15,7 @@ class Cleric {
 
   // 인스턴스 생성 시 각 필수로 들어가야 하는 파라미터는 name 뿐.
   // 선언시 필드의 이름표를 붙이고 값을 넣어준다.
-  Cleric({required this.name, this.hp = maxHp, this.mp = maxMp});
+  Cleric(this.name,{this.hp = maxHp, this.mp = maxMp});
 
   // 셀프에이드 마법. mp를 5 소비하고 hp를 최대로 회복한다.
   // 인수도 리턴값도 없음.
@@ -30,6 +30,7 @@ class Cleric {
     hp = maxHp;
 
   }
+
 
   // 기도하기. 자신의 mp를 회복한다.
   // 회복량은 기도한 시간 + 랜덤하게 0~2포인트의 보정을 한 양.(3초 기도시 3~5).
