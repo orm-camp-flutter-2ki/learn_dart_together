@@ -24,5 +24,18 @@ void main() {
       expect(wand.name, equals(name));
       expect(wand.power, equals(0.5));
     });
+
+    test('name 속성에 3글자 이상을 할당하고 power속성에 100.0이상으로 할당하면 power는 100.0이 된다.', () {
+      // Given
+      String name = '완드이름';
+      double power = 100.3;
+
+      // When
+      Wand wand = Wand(name: name, power: power);
+
+      // Then
+      expect(wand.name, equals(name));
+      expect(wand.power, equals(100.0));
+    });
   });
 }
