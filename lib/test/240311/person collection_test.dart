@@ -6,8 +6,7 @@ import 'package:learn_dart_together/240311/person collection.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('Person test', ()
-  {
+  test('Person test', () {
     String name;
     int age;
 
@@ -18,12 +17,11 @@ void main() {
     people.add(name1);
     people.add(name2);
 
-    for( int i = 0; i < people.length; i++ ) {
+    for (int i = 0; i < people.length; i++) {
       name = people[i].name;
       age = people[i].age;
 
       print('$name의 나이는 $age살');
     }
-
   });
 }
