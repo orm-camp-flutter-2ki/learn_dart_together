@@ -2,7 +2,7 @@ import 'wand.dart';
 
 class Wizard {
   late final String _name;
-  late final int _hp;
+  late int _hp;
   final Wand _wand;
 
   Wizard({required String name, required int hp, required Wand wand})
