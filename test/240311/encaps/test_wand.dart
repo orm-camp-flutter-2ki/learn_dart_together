@@ -5,9 +5,8 @@ void main() {
   test('wardTest', () {
     Wand wand = Wand('막대기', 10.0);
 
-    //expect(() => wand.name = '작대기' , wand.name == '작대기' );
-
     wand.name = '작대기';
+
     expect(wand.name, equals('작대기'));
 
     expect(() => wand.power = -1, throwsException);
@@ -15,9 +14,5 @@ void main() {
     wand.power = 11.5;
 
     expect(wand.power, equals(11.5));
-
-    // expect(() => wand.power = 1.1 , 1.1);
-
-    // expect(() => hero.hp = -100, throwsException);
   });
 }
