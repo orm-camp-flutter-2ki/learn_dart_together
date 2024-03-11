@@ -15,6 +15,30 @@ class Person {
         _age = age;
 }
 
+class PersonService {
+  List<Person> makePersonsLists(List<Person> persons) {
+    return persons.map((person) {
+      return person;
+    }).toList();
+  }
+
+  Map<String, int> makePersonMap(List<Person> persons) {
+    final Map<String, int> personWithAgeData = {};
+
+    persons.forEach((person) {
+      int? age = person.age;
+
+      if (age == null) {
+        throw Exception(['age 값이 존재하지 않습니다.']);
+      }
+
+      personWithAgeData[person.name] = age;
+    });
+
+    return personWithAgeData;
+  }
+}
+
 void main() {
   final personService = PersonService();
 
@@ -39,28 +63,4 @@ void main() {
   personMap.forEach((name, age) {
     print('$name의 나이는 $age');
   });
-}
-
-class PersonService {
-  List<Person> makePersonsLists(List<Person> persons) {
-    return persons.map((person) {
-      return person;
-    }).toList();
-  }
-
-  Map<String, int> makePersonMap(List<Person> persons) {
-    final Map<String, int> personWithAgeData = {};
-
-    persons.forEach((person) {
-      int? age = person.age;
-
-      if (age == null) {
-        throw Exception(['age 값이 존재하지 않습니다.']);
-      }
-
-      personWithAgeData[person.name] = age;
-    });
-
-    return personWithAgeData;
-  }
 }
