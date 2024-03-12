@@ -1,0 +1,19 @@
+@startuml Rectangle
+
+class Hero{
+  +String name
+  -int hp
+
+}
+
+class PoisonSlime extends Slime {
+  -poisonAtackPoint = 5
+  +attack()
+}
+
+class Slime {
+  +hp = 40
+  +suffix
+  +attack()
+}
+@enduml
