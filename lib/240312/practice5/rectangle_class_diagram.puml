@@ -12,4 +12,6 @@ class Rectangle {
 +getRound(): void
 }
 
+Rectangle *-- Point
+
 @enduml
