@@ -12,13 +12,10 @@ class Car extends Vehicle{
 }
 
 class Truck extends Car{
-    String cdl; // commercial driver's license (CDL)
+    String license;
 }
 
 class Motorcycle extends Vehicle {
-
     String motorCycleLicense;
 }
-
-
 @enduml

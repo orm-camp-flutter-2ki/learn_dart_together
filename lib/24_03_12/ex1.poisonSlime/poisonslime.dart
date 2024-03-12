@@ -20,7 +20,7 @@ class PoisonSlime extends Slime {
 
       print('👊👊👊 $pointOfDamage 포인트의 데미지가 가해졌습니다 👊👊👊');
     }
-    numberOfPoisonAttack = --numberOfPoisonAttack;
+    --numberOfPoisonAttack;
     print('앞으로 용사 나부랭이를 $numberOfPoisonAttack 번 때릴 수 있다!!!!!');
   }
 }
