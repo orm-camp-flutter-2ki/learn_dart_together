@@ -1,0 +1,39 @@
+@startuml
+
+class Book {
+String title
+String author
+String genre
+int pages
+double price
+}
+
+class Fiction extends Book {
+String subgenre
+int series
+bool isBestseller
+}
+
+class NonFiction extends Book {
+String subject
+List<String> references
+}
+
+class Mystery extends Fiction {
+String background
+}
+
+class ScienceFiction extends Fiction {
+int hero
+}
+
+
+class History extends NonFiction {
+int year
+}
+
+class Travel extends NonFiction {
+String country
+}
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+
+class Point {
+double x
+double y
+}
+
+class Rectangle {
++int width
++int height
++Point point
+
+int calculateArea()
+int calculateRound()
+}
+
+class RectangleExtendsPoint extends Point {
++int width
++int height
+
+..calculate..
++calculateArea()
++calculateRound()
+}
+
+Rectangle *--> Point
+
+@enduml
