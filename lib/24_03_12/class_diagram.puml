@@ -2,51 +2,52 @@
 
 class PoisonSlime extends slime{
     int leftAttack;
-    super.attack();
-    attack();
+    -super.attack();
+    +attack();
 }
 
 class Dog extends Animal {
     String name;
     int barkCount = 0;
-    bark();
+    +bark();
 }
 
 class Cat extends Animal {
     String name;
-    climb();
+    +climb();
 }
 class Bird extends Animal {
     String name;
-    fly();
+    +fly();
 }
 
 class Rectangle extends Point {
     double width;
     double height;
     double topLeft;
-    calculatorArea();
-    calculatorPerimeter();
+    +calculatorArea();
+    +calculatorPerimeter();
 }
 
 class Car extends Vehicle {
     double distance = 10000;
     double driveToday;
-    infoMyCar();
+    +infoMyCar();
 }
 
 class Motorcycle extends Vehicle {
     double distance = 10000;
-    infoMyMotor();
+    +infoMyMotor();
 }
 
 class Fiction extends book {
     int totalSales;
-    summary();
+    +summary();
 }
 class NonFiction extends book {
     int totalSales;
-    summary();
+    +summary();
+
 }
 
 @enduml
