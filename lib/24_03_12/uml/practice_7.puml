@@ -1,0 +1,33 @@
+@startuml
+
+class Book {
+  - title: String
+  - genre: String
+  - author: Author
+
+  + Book(title: String, genre: String, author: Author)
+}
+
+class Author {
+  - name: String
+
+  + Author(name: String)
+}
+
+class NonFiction {
+  - _subject: String
+
+  + NonFiction(title: String, genre: String, author: Author, subject: String)
+}
+
+class Fiction {
+  - _subgenre: String
+
+  + Fiction(title: String, genre: String, author: Author, subgenre: String)
+}
+
+Book *--> Author
+Book <|-- NonFiction
+Book <|-- Fiction
+
+@enduml
