@@ -6,7 +6,7 @@ class Truck extends Vehicle {
   Truck({
     required super.maker,
     required super.model,
-    required super.year,의
+    required super.year,
   });
 
   void freightCheck() {
