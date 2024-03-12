@@ -1,0 +1,20 @@
+@startuml
+
+class Slime {
+  +hp
+  -suffix
+
+  +attack()
+  +run()
+}
+
+class PoisonSlime {
+    +type
+    -remainPoisonCount
+
+    +attack()
+}
+
+Slime <|-- PoisonSlime
+
+@enduml
