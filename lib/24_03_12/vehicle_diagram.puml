@@ -1,0 +1,31 @@
+@startuml
+class Vehicle{
+  +String maker;
+  +String model;
+  +int year;
+  +int speed;
+
+   +void accelerate(int speed);
+   +void decelerate(int speed);
+   +void stop();
+}
+
+class Car{
+    +void openTrunk();
+}
+
+class Truck{
+    +void takePackage();
+}
+
+class Motorcycle{
+    +void liftFrontWheel();
+}
+
+
+
+Vehicle <|-- Car
+Vehicle <|-- Truck
+Vehicle <|-- Motorcycle
+
+@enduml
