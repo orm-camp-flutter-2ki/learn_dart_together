@@ -1,16 +1,16 @@
 @startuml
 
 class Rectangle {
-    - width
-    - height
-    - topLeftPoint
+    + width
+    + height
+    + topLeftPoint
     + perimeter()
     + area()
 }
 
 class Point {
-    - xPoint
-    - yPoint
+    + xPoint
+    + yPoint
 }
 
 Rectangle *-- Point
