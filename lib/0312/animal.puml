@@ -1,10 +1,10 @@
 @startuml
 
 class Animal {
-- name
-- type
-- sound
-- birthYear
++ name
++ type
++ sound
++ birthYear
 + animalSound()
 }
 
