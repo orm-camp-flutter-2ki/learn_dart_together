@@ -1,15 +1,15 @@
 @startuml
 class Book {
-    String title;
-    String author;
-    String genre;
+    String title
+    String author
+    String genre
 }
 
 class Fiction extends Book {
-    String subgenre;
+    String subgenre
 }
 
 class NonFiction extends Book {
-    String subject;
+    String subject
 }
 @enduml

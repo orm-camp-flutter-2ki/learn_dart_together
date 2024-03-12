@@ -10,13 +10,13 @@ class Car extends Vehicle {
 }
 
 class Truck extends Vehicle {
-    String licensePlate;
-    double height;
+    String licensePlate
+    double height
 }
 
 class motorcycle extends Vehicle{
-    String licensePlate;
-    bool isWearHelmet;
+    String licensePlate
+    bool isWearHelmet
 }
 
 @enduml
