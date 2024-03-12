@@ -30,13 +30,3 @@ class PoisonSlime extends Slime {
     }
   }
 }
-
-void main() {
-  PoisonSlime poisonSlime = PoisonSlime('독 공격');
-
-  Hero hero = Hero(name: '나영웅', hp: 55);
-  poisonSlime.attack(hero);
-
-  print('현재 용사의 HP = ${hero.hp}');
-  print('현재 슬라임의 독 공격의 남은 횟수 = ${poisonSlime.poisonAttackCount}');
-}
