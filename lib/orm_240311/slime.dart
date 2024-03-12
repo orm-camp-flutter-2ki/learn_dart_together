@@ -11,6 +11,3 @@ class Slime {
   }
 }
 
-void main(){
-  Slime slime = Slime(20, 'A');
-}
