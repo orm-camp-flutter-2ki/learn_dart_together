@@ -6,6 +6,8 @@ class PoisonSlime extends Slime{
 
   PoisonSlime(super.suffix);
 
+  int get poisonPoint => _poisonPoint;
+
   @override
   void attack(Hero hero) {
     super.attack(hero);
