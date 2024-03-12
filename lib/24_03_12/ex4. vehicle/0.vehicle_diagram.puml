@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Vehicle {
+    String maker;
+    String model;
+    int year;
+}
+
+class Car extends Vehicle{
+    double registrationTax;
+}
+
+class Truck extends Car{
+    String cdl; // commercial driver's license (CDL)
+}
+
+class Motorcycle extends Vehicle {
+
+    String motorCycleLicense;
+}
+
+
+@enduml
