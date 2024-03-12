@@ -16,20 +16,17 @@ N,M 두 숫자가 짝수와 홀수의 쌍이면 "YES", 그렇지 않으면 "NO" 
 // 12 40
 // 출력 No
 
-void main(){
-  pickRandom(30,15);
-  print(pickRandom(30,15));
-  pickRandom(12,40);
-  print(pickRandom(12,40));
-
+void main() {
+  pickRandom(30, 15);
+  print(pickRandom(30, 15));
+  pickRandom(12, 40);
+  print(pickRandom(12, 40));
 }
-String pickRandom(int a, int b) {
-  String fair = 'YES';
-  String unfair = 'NO';
 
+String pickRandom(int a, int b) {
   if ((a + b) % 2 == 0) {
-    return unfair;
+    return 'NO';
   } else {
-    return fair;
+    return 'YES';
   }
 }

@@ -3,7 +3,7 @@
 // 2) 10명 학생의 시험 점수 => Map why? 키와 값으로 구성 가능.
 // 3) 대한민국의 도시별 인구수 (순서 상관 없음) => Map why? 키와 값으로 구성 가능.
 
-void main(){
+void main() {
   Person person1 = Person('홍길동');
   Person person2 = Person('한석봉');
 
@@ -12,7 +12,7 @@ void main(){
   lists.add(person1);
   lists.add(person2);
 
-  for(int i=0;i<lists.length;i++){
+  for (int i = 0; i < lists.length; i++) {
     print(lists[i].name);
   }
   // for(final list in lists){
@@ -23,11 +23,13 @@ void main(){
   //   }
   // );
 
-
   //연습문제3
-  List<Map<String,dynamic>> map = [{'name':person1.name,'age':20},{'name':person2.name,'age':25},];
+  List<Map<String, dynamic>> map = [
+    {'name': person1.name, 'age': 20},
+    {'name': person2.name, 'age': 25},
+  ];
 
-  for(int i=0;i<map.length;i++){
+  for (int i = 0; i < map.length; i++) {
     print('${map[i]['name']}의 나이는 ${map[i]['age']}살');
   }
   // for(final item in map){
@@ -38,8 +40,8 @@ void main(){
   // });
 }
 
-class Person{
+class Person {
   String name;
+
   Person(this.name);
 }
-
