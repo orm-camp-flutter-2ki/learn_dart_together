@@ -1,0 +1,38 @@
+@startuml
+
+class Vehicle {
+  -String _make
+  -String _model
+  -int _year
+  +void sound()
+}
+
+class Car {
+  -int _remainOil
+  +void sound()
+  +void refuelingTen()
+}
+
+class ElectricCar {
+  -int _remainOil
+  +void sound()
+  +void refuelingTen()
+}
+
+class Truck {
+  -int _weight
+  +void sound()
+  +void load()
+}
+
+class MotorCycle {
+  -int _remainOil
+  +void sound()
+}
+
+Vehicle <|-- Car
+Vehicle <|-- Truck
+Vehicle <|-- MotorCycle
+
+Car <|-- ElectricCar
+@enduml

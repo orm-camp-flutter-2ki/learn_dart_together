@@ -1,0 +1,25 @@
+@startuml
+
+class Point {
+  -int _x
+  -int _y
+}
+
+class Rectangle {
+  -int _width
+  -int _height
+  -Point _topLeft
+  +int area()
+  +int perimeter()
+}
+
+class Circle {
+  -Point _origin
+  +double area()
+  +double perimeter()
+}
+
+Rectangle o-- Point
+Circle o-- Point
+
+@enduml
