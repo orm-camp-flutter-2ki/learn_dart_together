@@ -16,6 +16,5 @@ class Point {
 
   +Point(this._x, this._y);
 }
-Point <|-- RectanglePoint
-
+RectanglePoint <|-- Point
 @enduml
