@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240312/Bird.dart';
+import 'package:learn_dart_together/240312/bird.dart';
 import 'package:learn_dart_together/240312/cat.dart';
 import 'package:learn_dart_together/240312/dog.dart';
 import 'package:test/test.dart';
