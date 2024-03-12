@@ -1,8 +1,7 @@
 import 'dart:math';
 
 const int maxHp = 50;
-const int maxMp = 10;
-
+const int maxMp = 10; 
 class Cleric {
   /**
    * 커밋 메시지
@@ -25,11 +24,7 @@ class Cleric {
     return this._mp;
   }
 
-  set hp(int value) {
-    _hp = value;
-  }
-
-  Cleric(this.name, {int hp = maxHp, int mp = maxMp})
+  Cleric(this.name, { int hp = maxHp, int mp = maxMp})
       : _mp = mp,
         _hp = hp;
 

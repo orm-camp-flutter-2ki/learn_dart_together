@@ -1,7 +1,7 @@
 import 'cleric.dart';
 
 void main() {
-  Cleric cleric = Cleric(name: '홍길동', hp: 20);
+  Cleric cleric = Cleric('홍길동', hp: 20);
 
   print('===== 클래릭 생성 =====');
   print('${cleric.hp}, ${cleric.mp}');
