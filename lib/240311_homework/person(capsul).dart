@@ -1,17 +1,16 @@
-void main(){
-  Person yejin = Person('예진',1997);
+void main() {
+  Person yejin = Person('예진', 1997);
   print(yejin.age);
-
 }
 
-class Person{
+class Person {
   final String name;
   final int birthYear;
 
-  Person(this.name,this.birthYear);
+  Person(this.name, this.birthYear);
 
-  int get age{
-    return  DateTime.now().year - birthYear;
+  int get age {
+    return DateTime.now().year - birthYear;
   }
 }
 //   age => _age 형태로 쓰고 싶다.
