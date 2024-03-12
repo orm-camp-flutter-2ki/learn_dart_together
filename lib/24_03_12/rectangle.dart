@@ -1,14 +1,11 @@
 import 'package:learn_dart_together/24_03_12/point.dart';
 
-class Rectangle extends Point {
+class Rectangle {
   double width;
   double height;
+  Point topLeft;
 
-  Rectangle(
-      {required super.x,
-      required super.y,
-      required this.width,
-      required this.height});
+  Rectangle({required this.width, required this.height, required this.topLeft});
 
   double figureOutArea() {
     return width * height;
