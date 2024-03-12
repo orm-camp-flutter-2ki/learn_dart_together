@@ -2,7 +2,7 @@ class Point {
   final double x;
   final double y;
 
-  const Point(this.x, this.y);
+  Point(this.x, this.y);
 
   @override
   String toString() => 'Point($x, $y)';
@@ -13,7 +13,7 @@ class Rectangle {
   final double width;
   final double height;
 
-  const Rectangle(this.topLeft, this.width, this.height);
+  Rectangle(this.topLeft, this.width, this.height);
 
   double get area => width * height;
 
@@ -25,8 +25,8 @@ class Rectangle {
 }
 
 void main() {
-  const point = Point(0, 0);
-  const rectangle = Rectangle(point, 50, 30);
+  Point point = Point(0, 0);
+  Rectangle rectangle = Rectangle(point, 50, 30);
 
   print(point);
   print(rectangle);

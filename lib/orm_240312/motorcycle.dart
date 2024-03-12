@@ -7,16 +7,16 @@ class Motorcycle extends Vehicle {
 
   final bool hasSidecar;
 
-const Motorcycle(super.maker, super.model, super.year, this.hasSidecar);
+Motorcycle(super.maker, super.model, super.year, this.hasSidecar);
 
 @override
 String toString() => 'Motorcycle($maker, $model, $year, $hasSidecar)';
 }
 
 void main() {
-  const car = Car('Hyundai', 'gv80', 2022, 5);
-  const truck = Truck('KIA', 'Bonggo 3 ev', 2024, 1500.0);
-  const motorcycle = Motorcycle('Honda', 'Goldwing', 2021, true);
+  Car car = Car('Hyundai', 'gv80', 2022, 5);
+  Truck truck = Truck('KIA', 'Bonggo 3 ev', 2024, 1500.0);
+  Motorcycle motorcycle = Motorcycle('Honda', 'Goldwing', 2021, true);
 
   print(car);
   print(truck);

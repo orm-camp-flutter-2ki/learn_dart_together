@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Cat extends Animal
+Cat : type = 포유류
+Cat : sound = 냐옹
+Cat : species = 노르웨이숲
+
+class Dog extends Animal
+Dog : type = 포유류
+Dog : sound = 멍멍
+Dog : species = 진돗개
+
+class Bird extends Animal
+Bird : type = 조류
+Bird : sound = 쨱쨱
+Bird : wing = o
+
+@enduml
+

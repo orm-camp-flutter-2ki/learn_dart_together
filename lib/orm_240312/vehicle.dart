@@ -3,7 +3,7 @@ class Vehicle {
   final String model;
   final int year;
 
-  const Vehicle(this.maker, this.model, this.year);
+  Vehicle(this.maker, this.model, this.year);
 
   @override
   String toString() => 'Vehicle($maker, $model, $year)';
