@@ -24,8 +24,9 @@ class Wizard {
         _mp = mp,
         _wand = wand;
 
-
-  /// 생성자에다 바로 타당성 검증을 하는 방법
+  /// 생성자에다 바로 타당성 검증을 하는 방법.
+  /// 하지만 이러면 생상자 호출시에만 타당성 검증이 된다.
+  /// 변경 할 때마다 검증하기 위해 setter를 따로 만드는게 좋다.
   // Wizard({required this.name, this.wand, this.mp = 0, this.hp = 0}) {
   //   if (name.isEmpty || name.length < 3) {
   //     throw Exception("이름은 3글자 이상 작성해주세요");
@@ -40,8 +41,7 @@ class Wizard {
   //     hp = 0; // HP가 음수가 되는 경우 0으로 설정
   //   }
   // }
-
-
+  
   set name(String name) {
     print('Wizard name :  $name');
 
@@ -63,10 +63,10 @@ class Wizard {
     print('Wizard hp :  $hp');
     if (hp < 0) {
       _hp = 0;
+      return;
     }
+    _hp = hp;
   }
 
   int get hp => _hp;
-
-
 }
