@@ -1,0 +1,24 @@
+@startuml
+class Rectangle {
+  - _width: int
+  - _height: int
+  - _topLeft: Point
+
+  + Rectangle(width: int, height: int, topLeft: Point)
+  + calculateArea(): int
+  + calculatePerimeter(): int
+  + setWidth(): int
+  + setHeight(): int
+  + setTopLeft(): Point
+}
+
+class Point {
+  - x: int
+  - y: int
+
+  + Point(x: int, y: int)
+}
+
+Rectangle *--> Point
+
+@enduml

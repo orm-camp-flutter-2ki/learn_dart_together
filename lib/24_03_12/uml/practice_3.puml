@@ -1,0 +1,21 @@
+@startuml
+class PoisonSlime {
+  - _poisonSkillRemainingCharges: int
+  + PoisonSlime(suffix: String)
+  + attack(wizard: Wizard): void
+  - _calculatePoisonDamageValue(hp: int): int
+}
+
+class Slime {
+  + suffix: String
+  + attack(wizard: Wizard): void
+}
+
+class Wizard {
+  + hp: int
+}
+
+PoisonSlime --|> Slime
+Slime --> Wizard
+
+@enduml

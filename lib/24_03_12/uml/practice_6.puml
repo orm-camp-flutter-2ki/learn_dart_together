@@ -1,0 +1,44 @@
+@startuml
+
+class Vehicle {
+  - maker: String
+  - model: String
+  - year: int
+
+  + Vehicle(maker: String, model: String, year: int)
+}
+
+class Tier {
+  - maker: String
+
+  + Tier(maker: String)
+}
+
+class Truck {
+  - _maxLoad: int
+  - _minLoad: int
+  - _load: int
+
+  + Truck(maker: String, model: String, year: int)
+  + load(weight: int): void
+  + unload(weight: int): void
+}
+
+class Car {
+  - _tier: Tier
+
+  + Car(maker: String, model: String, year: int, tier: Tier)
+  + changeTire(tier: Tier): void
+}
+
+class Motorcycle {
+  + Motorcycle(maker: String, model: String, year: int)
+  + pullThrottle(): void
+}
+
+Truck --|> Vehicle
+Car --|> Vehicle
+Car *--> Tier
+Motorcycle --|> Vehicle
+
+@enduml
