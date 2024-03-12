@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Vehicle{
+ +maker
+ +model
+ +year
+ +move()
+}
+
+class Car extends Vehicle{
+ +move()
+}
+class Truck extends Vehicle{
+ +cargoLoadingYn
+ +move()
+}
+class Motorcycle extends Vehicle{
+ +move()
+}
+
+@enduml

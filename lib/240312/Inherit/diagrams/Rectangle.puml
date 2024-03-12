@@ -1,0 +1,14 @@
+@startuml
+
+class Rectangle{
+  +bottomLeft
+}
+
+class Point {
+  +x;
+  +y;
+}
+
+Rectangle *-- Point
+
+@enduml

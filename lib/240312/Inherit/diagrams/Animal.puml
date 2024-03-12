@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Animal {
+ +type
+ +sound
+ +move()
+}
+class Dog extends Animal{
+ +move()
+}
+class Cat extends Animal{
+ +move()
+}
+class Bird extends Animal{
+ +move()
+}
+
+@enduml
