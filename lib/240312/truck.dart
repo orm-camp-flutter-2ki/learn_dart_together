@@ -1,12 +1,24 @@
 import 'package:learn_dart_together/240312/Vehicle.dart';
 
 class Truck extends Vehicle {
-  bool loaded;
+  bool _loaded;
 
-  Truck(super.maker, super.model, super.year) : loaded = false;
-}
+  Truck(super.maker, super.model, super.year) : _loaded = false;
 
-@override
-void drive() {
-  print('트럭이 간다.');
+  bool get loaded {
+    return _loaded;
+  }
+
+  @override
+  void drive() {
+    print('트럭이 간다.');
+  }
+
+  void getLoaded() {
+    _loaded = true;
+  }
+
+  void offLoaded() {
+    _loaded = false;
+  }
 }

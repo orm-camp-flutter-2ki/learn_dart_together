@@ -2,8 +2,9 @@ import 'package:learn_dart_together/240312/vehicle.dart';
 
 class Motorcycle extends Vehicle {
   Motorcycle(super.maker, super.model, super.year);
-}
 
-void drive() {
-  print('오토바이가 간다.');
+  @override
+  void drive() {
+    print('오토바이가 간다.');
+  }
 }

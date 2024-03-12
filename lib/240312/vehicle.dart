@@ -4,8 +4,8 @@ class Vehicle {
   int year;
 
   Vehicle(this.maker, this.model, this.year);
-}
 
-void drive() {
-  print('간다.');
+  void drive() {
+    print('간다.');
+  }
 }
