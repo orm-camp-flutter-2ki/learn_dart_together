@@ -1,11 +1,9 @@
-class Animal{
-String? type ;
-Animal(this.type);
+class Animal {
+  String? type;
 
+  Animal(this.type);
 
-void sound(){
-  print('shhh');
-}
-
-
+  void sound() {
+    print('shhh');
+  }
 }

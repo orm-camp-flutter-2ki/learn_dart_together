@@ -13,10 +13,20 @@ void main(){
 
   print(cat.type);
   cat.sound();
+  cat.push();
+
   print(dog.type);
   dog.sound();
+  dog.moveTail();
+
   print(bird.type);
   bird.sound();
+  bird.flying();
+  bird.notFlying();
+
+
+
+  print(bird.isflying);
 
 
 
