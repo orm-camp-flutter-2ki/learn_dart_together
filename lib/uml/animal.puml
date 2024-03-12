@@ -1,0 +1,21 @@
+@startuml
+
+class Animal {
+  -String _type
+  +void sound()
+}
+
+class Dog {
+  +void sound()
+  +void bark()
+}
+
+class Cat {
+  +void sound()
+}
+
+Animal <|-- Dog
+Animal <|-- Cat
+
+
+@enduml
