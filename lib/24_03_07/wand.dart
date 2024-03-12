@@ -28,3 +28,11 @@ class Wand {
     _power = powerValue;
   }
 }
+
+void main(){
+  // 인스턴스화 할 때는 익셉션이 발생하지 않음
+  Wand fireWand = Wand(name: 'd', power: 0.1);
+
+  // 변경 시에만 익셉션 발생
+  fireWand.name = 'z';
+}

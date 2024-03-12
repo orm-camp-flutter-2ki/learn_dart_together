@@ -61,3 +61,12 @@ class Wizard {
     _hp = hpValue;
   }
 }
+
+void main(){
+  // 인스턴스 생성 시에는 익셉션 발생하지 않음
+  Wand aWand = Wand(name: 'za', power: 0.1);
+  Wizard vi = Wizard(name: 'vi', hp: 50, mp: 10, wand: aWand);
+
+  // 변경 시에만 익셉션 발생
+  vi.name = 'vi';
+}
