@@ -56,6 +56,7 @@ class Wizard {
     if (hpValue < 0) {
       // 5.
       _hp = 0;
+      return;
     }
 
     _hp = hpValue;
