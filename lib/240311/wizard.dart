@@ -5,7 +5,7 @@ class Wizard {
   final String _name;
   int _hp; // hp를 final로 생성해야하는지? (final로 하면 26줄에서 에러), late 쓰임 확인필요
   final int _mp;
-  final Wand _wand;
+  final Wand? _wand;
 
   Wizard({
     required String name,
