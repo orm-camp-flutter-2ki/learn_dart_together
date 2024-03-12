@@ -1,7 +1,7 @@
+import 'package:learn_dart_together/24_03_12/animal.dart';
+import 'package:learn_dart_together/24_03_12/dog.dart';
+import 'package:learn_dart_together/24_03_12/dolphin.dart';
 import 'package:test/test.dart';
-import '../24_03_11/animal.dart';
-import '../24_03_11/dog.dart';
-import '../24_03_11/dolphin.dart';
 
 void main() {
   test('Animal과 dog, dolphin의 상속 관계 확인', () {
