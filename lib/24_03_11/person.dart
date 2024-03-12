@@ -16,4 +16,5 @@ void main() {
   Person person1 = Person(name: 'seung', birthYear: 1995);
   print(person1.age);
 
+
 }

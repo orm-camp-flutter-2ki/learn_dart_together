@@ -23,7 +23,7 @@ class Wizard {
   int get hp =>_hp;
 
   set name(String value) {
-    if (value.length < 3 || value == false) {
+    if (value.length < 3) {
       throw Exception('이름이 너무 짧습니다.');
     } else {
       _name = value;
@@ -42,5 +42,6 @@ class Wizard {
     _hp = value < 0 ? 0 : value;
   }
 }
+
 
 
