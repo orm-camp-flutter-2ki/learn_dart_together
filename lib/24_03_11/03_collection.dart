@@ -21,23 +21,3 @@ class Collection {
 // print(collection1.scores);
 // print(collection1.cityPopulation);
 }
-
-class Person {
-  final String _name;
-  final int _age;
-
-  Person({required name, required age})
-      : _name = name,
-        _age = age;
-
-  String get name => _name;
-  int get age => _age;
-}
-
-class Person1 {
-  final String _name;
-
-  Person1({required name}) : _name = name;
-
-  String get name => _name;
-}

@@ -1,0 +1,20 @@
+@startuml
+class Vehicle{
+- maker:String
+- model:String
+- year:int
+}
+
+class Car extends Vehicle {
+- seater:int
+}
+
+class Truck extends Vehicle {
+- loadCapacity:double
+}
+
+class Motorcycle extends Vehicle {
+
+}
+
+@enduml
