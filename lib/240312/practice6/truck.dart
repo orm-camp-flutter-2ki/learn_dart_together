@@ -22,7 +22,7 @@ class Truck extends Vehicle{
 
   void printCarriedWeight() {
     if (_carriedWeight == 0) {
-      print('이 트럭은 화물을 적재하고 있지 않네요');
+      print('이 트럭은 화물을 적재하고 있지 않네요.');
       return;
     }
     print('이 트럭은 화물을 ${_carriedWeight}kg 적재 중이네요.');
