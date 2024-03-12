@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Slime{
+  +hp
+  +suffix
+  +attack()
+}
+
+class PoisonSlime extends Slime{
+  +poisonAttackPoint
+  +attack()
+}
+
+@enduml
