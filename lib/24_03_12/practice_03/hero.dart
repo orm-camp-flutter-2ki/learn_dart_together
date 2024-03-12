@@ -15,10 +15,6 @@ class Hero {
   }
 
   void die() {
-    if (hp < 1) {
-      hp = 0;
-    }
-
     print('$name이/가 사망했습니다.');
   }
 

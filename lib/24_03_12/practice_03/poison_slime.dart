@@ -25,9 +25,23 @@ class PoisonSlime extends Slime {
     _poisonAttackPossible += value;
   }
 
+  bool isHeroDead(int heroHp) {
+    if (heroHp < 1) {
+      // 공격으로 hero의 hp가 0이하가 되면
+      return true;
+    }
+
+    return false;
+  }
+
   @override
   void attack(Hero hero) {
     super.attack(hero); // 우선, “보통 슬라임과 같은 공격"을 한다
+
+    if (isHeroDead(hero.hp)) {
+      hero.die();
+      return;
+    }
 
     if (poisonAttackPossible > 0) {
       // “독 공격의 남은 횟수"가 0이 아니면
@@ -41,11 +55,6 @@ class PoisonSlime extends Slime {
 
       poisonAttackPossible = -1; // 독 공격 가능 횟수 차감
     }
-
-    if (hero.hp < 1) {
-      // 공격으로 hero의 hp가 0이하가 되면 사망 처리
-      hero.die();
-    }
   }
 }
 
@@ -54,8 +63,6 @@ void main() {
   PoisonSlime poisonSlime = PoisonSlime('A');
 
   for (int i = 0; i < 6; i++) {
-    if (ataho.hp < 1) break;
-
     print('---${i + 1}---');
     poisonSlime.attack(ataho);
     print(ataho.hp);
