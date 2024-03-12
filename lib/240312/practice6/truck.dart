@@ -1,6 +1,6 @@
 import 'package:learn_dart_together/240312/practice6/vehicle.dart';
 
-class Truck extends Vehicle{
+class Truck extends Vehicle {
   int _carriedWeight = 0;
 
   Truck({
