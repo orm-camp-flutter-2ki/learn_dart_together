@@ -13,8 +13,8 @@ class Rectangle {
         _bottomRight = bottomRight,
         _height = (topLeft.y - bottomRight.y).abs(),
         _width = (topLeft.x - bottomRight.x).abs();
-
-  // 받은 매개변수로 변수를 초기화하는 방법
+  // abs() 함수 -> 절대값
+  // height, width 계산을 생성자 안에서 해야
 
   double getExtent() {
     double result = _height * _width;

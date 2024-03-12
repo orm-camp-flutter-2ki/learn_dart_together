@@ -12,8 +12,8 @@ void main() {
     Rectangle rec1 = Rectangle(topLeft: point1, bottomRight: point2);
     Rectangle rec2 = Rectangle(topLeft: point3, bottomRight: point4);
 
-    // expect(rec1.getExtent(), 100);
-    // expect(rec1.getRound(), 40);
+    expect(rec1.getExtent(), 100);
+    expect(rec1.getRound(), 40);
     expect(rec2.getExtent(), 200);
     expect(rec2.getRound(), 60);
   });
