@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:learn_dart_together/240307/wand.dart';
+
 import 'sword.dart';
 
 int heroMoney = 100;
@@ -75,4 +77,20 @@ void main() {
   // print('공격 전 : ${hero.hp}');
   // hero.attack();
   // print('공격 후 : ${hero.hp}');
+  List aa = [1, 1];
+
+  Wand wand = Wand(name: '지팡이', power: 100);
+
+  print(wand.name);
+}
+
+class Person {
+  static const defaultBirthYear = 2024;
+  final String name;
+  final int _birthYear;
+
+  int get age => DateTime.now().year - _birthYear;
+
+  Person({required this.name, int? birthYear}):
+        _birthYear = birthYear?? defaultBirthYear;
 }
