@@ -1,4 +1,3 @@
-import 'package:learn_dart_together/240307_02_%EA%B9%80%EB%AF%BC%EA%B7%9C/01_Hero.dart';
 
 class Person {
   String name;
@@ -11,7 +10,7 @@ void main() {
   List<String> heros = [];
 
   Person personA = Person(
-    name: '홍길도',
+    name: '홍길동',
     age: 20,
   );
   heros.add(personA.name);

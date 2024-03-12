@@ -1,0 +1,27 @@
+@startuml
+class Animal {
+  String type;
+  String sound;
+    void sound()
+}
+
+class Dog extends Animal{
+@override
++void sound()
+Dog dog = Dog('포유류', '멍멍');
+}
+
+class Cat extends Animal{
+@override
++void sound()
+Dog dog = Dog('포유류', '야옹');
+}
+
+class Bird extends Animal{
+@override
++void sound()
+Dog dog = Dog('조류', '짹짹');
+}
+
+
+@enduml

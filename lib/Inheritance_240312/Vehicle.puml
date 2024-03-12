@@ -1,0 +1,37 @@
+@startuml
+class Vehicle {
+  String maker;
+  String model;
+  int year;
+  int price;
+
+  Vehicle(
+    this.maker,
+    this.model,
+    this.year,
+    this.price,
+  );
+
+  void CarSale () {}
+}
+
+class Car extends Vehicle {
+  Car(super.maker,
+    super.model,
+    super.year,
+    super.price,
+   ){
+    String color;
+    double weight;
+    double enginePower;
+    double standardGearRatio;
+    bool ev;
+}
+
+class Bird extends Vehicle {
+@override
++void sound()
+Dog dog = Dog('조류', '짹짹');
+}
+
+@enduml

@@ -7,13 +7,20 @@ class Wizard {
   int _mp;
   Wand wand;
 
+  Wizard({
+    required String name,
+    required int hp,
+    required int mp,
+    required this.wand,
+  })  : _name = name,
+        _hp = hp,
+        _mp = mp;
+
   String get name => _name;
 
   int get mp => _mp;
 
   int get hp => _hp;
-
-  Wizard(this._name, this._hp, this._mp, this.wand);
 
   set name(String value) {
     if (value.length < 3) {
