@@ -33,7 +33,8 @@ class Wizard {
 
   set hp(int hpValue) {
     if (hpValue < 0) {
-      hp = 0;
+      _hp = 0;
+      return;
     }
     _hp = hpValue;
   }
