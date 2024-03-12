@@ -8,7 +8,7 @@ class Cleric {
   static const int maxHp = 50;
   static const int maxMp = 10;
 
-  Cleric({required this.name, this.hp = 40, this.mp = 5});
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp});
 
   // final hero1 = Cleric(name: givenName, hp: 40, mp: 5);
   // final hero2 = Cleric(name: givenName, hp: 35, mp:maxMp);
@@ -41,9 +41,9 @@ class Cleric {
 }
 
 void main() {
-  Cleric hero1 = Cleric(name: '아서스', hp: 40, mp: 5);
-  Cleric hero2 = Cleric(name: '아서스', hp: 35, mp: Cleric.maxMp);
-  Cleric hero3 = Cleric(name: '아서스', hp: Cleric.maxHp);
+  Cleric hero1 = Cleric('아서스', hp: 40, mp: 5);
+  Cleric hero2 = Cleric('아서스', hp: 35, mp: Cleric.maxMp);
+  Cleric hero3 = Cleric('아서스', hp: Cleric.maxHp);
 
   // Cleric cleric = Cleric(name: '홍길동', hp: 50, mp: 10);
   //
