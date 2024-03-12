@@ -23,7 +23,7 @@ class Vehicle {
   }
 }
 
-void main () {
+void main() {
   Vehicle vehicle = Vehicle(maker: 'maker', model: 'model', year: 443);
 
   vehicle.rideNow();
