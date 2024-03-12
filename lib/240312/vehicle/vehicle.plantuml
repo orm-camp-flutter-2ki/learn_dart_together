@@ -1,0 +1,45 @@
+@startuml vehicle
+
+class Vehicle {
+  String maker;
+  String model;
+  int year;
+  Vehicle({
+    required this.maker,
+    required this.model,
+    required this.year,
+  });
+  void move() ;
+  void modelYear();
+}
+
+class Car extends Vehicle {
+  Car({
+    required super.maker,
+    required super.model,
+    required super.year,
+  });
+}
+
+class Motocycle extends Vehicle {
+  Motocycle({
+    required super.maker,
+    required super.model,
+    required super.year,
+  });
+}
+
+class Truck extends Vehicle {
+  bool load;
+  Truck({
+    required super.maker,
+    required super.model,
+    required super.year,
+    required this.load,
+  });
+
+  void loadCheck() ;
+}
+
+
+@enduml
