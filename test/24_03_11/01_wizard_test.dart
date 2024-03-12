@@ -1,4 +1,5 @@
 import 'package:learn_dart_together/24_03_11/01_wizard.dart';
+import 'package:learn_dart_together/24_03_11/02_wand.dart';
 import 'package:test/test.dart';
 
 void main() {

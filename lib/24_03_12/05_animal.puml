@@ -1,0 +1,24 @@
+@startuml
+
+Class Animal {
+- type:String
+- sound:String
+
++ sound():void
+}
+class Dog extends Animal {
+- isLongTail:bool
++ sound():void
+}
+
+class Cat extends Animal {
+- isFur:bool
++ sound():void
+}
+
+class Bird extends Animal {
+- isFlying:bool
++ sound():void
+}
+
+@enduml

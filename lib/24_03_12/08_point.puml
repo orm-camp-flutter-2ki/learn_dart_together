@@ -1,0 +1,18 @@
+@startuml
+class Point {
+- x : int
+- y : int
+}
+
+class Rectangle {
+- topLeft:Point
+- botRight:Point
+
+- width:int
+- height:int
+
++ length():int
++ area():int
+}
+
+@enduml
