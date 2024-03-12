@@ -1,0 +1,86 @@
+@startuml
+
+class Slime {
+  int hp
+  final String suffix
+
+}
+
+class PoisonSlime {
+  int _attackPoint
+}
+
+class Character {
+  String name
+  int hp
+  int maxHp
+}
+
+class Hero {
+  Sword? sword
+}
+
+class Sword {
+  String name
+  int power
+}
+Character <|-- Hero
+Hero -- Sword: > owns
+Slime : attack()
+Slime <|--  PoisonSlime
+PoisonSlime : @override attack()
+
+class Animal{
+String type
+String sound
+talk()
+}
+class Dog {
+tailWagging()
+}
+class Cat {
+scratch()
+}
+class Bird{
+song()
+}
+
+Animal <|-- Dog
+Animal <|-- Cat
+Animal <|-- Bird
+
+
+class Point {
+int x
+int y
+}
+
+class Rectangle{
+int width
+int height
+int areaCalculate()
+int roundCalculate()
+}
+
+Point <|-- Rectangle
+
+
+class Vehicle {
+String maker
+String model
+int year
+oiling()
+}
+
+class Car {}
+class Truck {
+@override oiling()
+}
+class Motorcycle {}
+
+Vehicle <|-- Car
+Vehicle <|-- Truck
+Vehicle <|-- Motorcycle
+
+
+@enduml
