@@ -13,7 +13,6 @@ class PoisonSlime extends Slime {
     super.attack(wizard);
     if (_poisonSkillRemainingCharges > 0) {
       print('추가로, 독 포자를 살포했다!');
-      wizard.hp -= 5;
       int damage = _calculatePoisonDamageValue(wizard.hp);
       wizard.hp = wizard.hp - damage;
       print('$damage포인트의 데미지');
