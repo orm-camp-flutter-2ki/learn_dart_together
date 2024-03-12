@@ -1,7 +1,6 @@
-import 'package:learn_dart_together/240312/Truck.dart';
-import 'package:learn_dart_together/240312/Vehicle.dart';
 import 'package:learn_dart_together/240312/vehicle/car.dart';
 import 'package:learn_dart_together/240312/vehicle/motorcycle.dart';
+import 'package:learn_dart_together/240312/vehicle/truck.dart';
 import 'package:test/test.dart';
 
 void main() {

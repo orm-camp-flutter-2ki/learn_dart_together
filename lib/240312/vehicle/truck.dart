@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240312/Vehicle.dart';
+import 'vehicle.dart';
 
 class Truck extends Vehicle {
   bool _loaded;
