@@ -2,8 +2,18 @@ import 'package:learn_dart_together/24_03_07/cleric.dart';
 import 'package:learn_dart_together/24_03_11/person.dart';
 import 'package:learn_dart_together/24_03_11/wand.dart';
 import 'package:learn_dart_together/24_03_11/wizard.dart';
+import 'package:learn_dart_together/24_03_12/hero.dart';
+import 'package:learn_dart_together/24_03_12/poison_slime.dart';
 
 void main() {
+
+  Hero hero = Hero(name: '영웅', hp: 100);
+  PoisonSlime ps = PoisonSlime('독');
+
+  ps.attackChance = 5;
+  ps.attack(hero);
+
+
   // Cleric cleric = Cleric("홍길동");
   // Cleric cleric1 = Cleric("우투리", hp: 100);
   // Cleric cleric2 = Cleric("전우치", hp: 100, mp: 5);
@@ -27,18 +37,18 @@ void main() {
   //    print('${cleric.hp}, ${cleric.mp}, 회복량: $recoveryMp');
   // }
 
-  Wand wand = Wand(name: 'name', 100, 0);
-  wand.mp = 0;
-
-  Wizard wizard = Wizard(name: '마법사', wand: wand);
-  wizard.name = '마범사';
-  wizard.hp = -10;
-
-  print('wizard hp : ${wizard.hp}');
-
-  Person person = Person(name: 'hehe', birthYear: 1991);
-
-  print('age : ${person.age}');
+  // Wand wand = Wand(name: 'name', 100, 0);
+  // wand.mp = 0;
+  //
+  // Wizard wizard = Wizard(name: '마법사', wand: wand);
+  // wizard.name = '마범사';
+  // wizard.hp = -10;
+  //
+  // print('wizard hp : ${wizard.hp}');
+  //
+  // Person person = Person(name: 'hehe', birthYear: 1991);
+  //
+  // print('age : ${person.age}');
 
 
 }

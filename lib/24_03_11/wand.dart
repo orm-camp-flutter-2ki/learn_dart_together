@@ -12,6 +12,7 @@ class Wand {
   })  : _name = name,
         _mp = mp;
 
+  // 게터 세터는 변수 이름과 동일하게 가져가는 것이 법칙.
   set name(String name) {
     print('Wand $name');
 
@@ -35,3 +36,16 @@ class Wand {
 
   double get mp => _mp;
 }
+
+
+
+  // Wand({
+  //   required String name,
+  //   required this.power,
+  // }){
+  //   // 다른 많은 언어들이 이렇게 생성자 선언하면서 블록을 열어서 런타임에 코드가 동작하도록 한다.
+       // 이 방식은 초기화를 확실하게 해준다는 보장이 없으므로 :을 붙여서 생성자를 만들도록 한다.
+  // }
+
+
+

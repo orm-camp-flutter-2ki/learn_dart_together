@@ -1,0 +1,20 @@
+@startuml
+class Point{
+  +double x;
+  +double y;
+}
+
+class Square{
+  +double width;
+  +double height;
+  +Point topLeft;
+  +Point topRight;
+  +Point bottomLeft;
+
+  +double calculateArea()
+  +double calculatePerimeter()
+}
+
+Square *-->Point
+
+@enduml

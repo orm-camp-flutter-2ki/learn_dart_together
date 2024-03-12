@@ -1,0 +1,22 @@
+@startuml
+class Slime{
+  +hp: int
+  +{final} suffix: String
+  +attack(Hero hero): void
+}
+
+class PoisonSlime{
+    -attackChance: int
+   {attackChance} ++setAttackChance(in value: int)
+   {attackChance} ++getAttackChance(): int
+}
+
+class Hero{
+  +name: String
+  +hp: int
+}
+
+Slime <|--PoisonSlime
+Slime *--> Hero
+
+@enduml
