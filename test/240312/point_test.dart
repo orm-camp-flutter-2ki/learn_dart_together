@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/240312/point.dart';
-import 'package:learn_dart_together/240312/rectangle.dart';
+import 'package:learn_dart_together/240312/point/point.dart';
+import 'package:learn_dart_together/240312/point/rectangle.dart';
 import 'package:test/test.dart';
 
 void main() {

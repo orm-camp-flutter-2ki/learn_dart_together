@@ -1,6 +1,6 @@
-import 'package:learn_dart_together/240312/book.dart';
-import 'package:learn_dart_together/240312/fiction.dart';
-import 'package:learn_dart_together/240312/non_fiction.dart';
+import 'package:learn_dart_together/240312/book/book.dart';
+import 'package:learn_dart_together/240312/book/fiction.dart';
+import 'package:learn_dart_together/240312/book/non_fiction.dart';
 import 'package:test/test.dart';
 
 main() {

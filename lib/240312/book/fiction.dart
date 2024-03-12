@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240312/book.dart';
+import 'package:learn_dart_together/240312/book/book.dart';
 
 class Fiction extends Book {
   String subgenre;
