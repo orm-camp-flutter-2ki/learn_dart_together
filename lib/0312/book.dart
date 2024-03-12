@@ -10,7 +10,11 @@ class Book {
   });
 
   void read(bool readNow) {
-    readNow ? print('책을 읽고 있습니다.') : print('책을 그만 읽습니다.');
+    if (readNow) {
+      print('책을 읽고 있습니다.');
+      return;
+    }
+    print('책을 그만 읽습니다.');
   }
 
   void bookInfo() {
