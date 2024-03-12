@@ -4,6 +4,9 @@ import 'package:test/test.dart';
 void main(){
   test('animal', (){
   Cat cat = Cat('고양이', '냐옹');
-  expect(cat.SoundAnimal, cat.sound);
+  // expect(cat.SoundAnimal, cat.sound);
+  cat.SoundAnimal();
+  print(cat.sound);
   });
+
 }

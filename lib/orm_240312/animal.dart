@@ -26,6 +26,6 @@ class Cat extends Animal{
     type = '포유류';
   }
   void SoundAnimal(){
-    sound = '냐옹';
+    sound = '냐냐옹';
   }
 }
