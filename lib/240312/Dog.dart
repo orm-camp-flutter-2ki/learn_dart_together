@@ -12,7 +12,3 @@ class Dog extends Animal {
   }
 }
 
-void main() {
-  Dog dog = Dog(type: '포유류', sound: '멍멍');
-  dog.makesound();
-}

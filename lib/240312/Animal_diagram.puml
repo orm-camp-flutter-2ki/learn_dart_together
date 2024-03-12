@@ -3,21 +3,19 @@ class Animal {
     String type;
     String sound;
 
-void sound()
+void makesound()
 }
 class Dog extends Animal {
 @override
--void sound()
-
-' Dog dog = Dog('포유류', '멍멍');
+void makesound()
 
 }
 class Cat extends Animal{
 @override
--void sound()
+void makesound()
 }
 class Bird extends Animal{
 @override
--void sound()
+void makesound()
 }
 @enduml

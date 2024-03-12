@@ -11,8 +11,3 @@ class Bird extends Animal {
     print('$name이 $sound를 내었다');
   }
 }
-
-void main() {
-  Bird bird = Bird(type: '조류', sound: '짹짹');
-  bird.makesound();
-}
