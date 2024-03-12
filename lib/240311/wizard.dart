@@ -12,20 +12,16 @@ class Wizard {
     mp = _mp;
   }
 
-  set name(String? value) {
-    if (value == null) {
-      throw Exception('이름은 null 일 수 없습니다.');
+  set name(String value) {
+    if (value.length < 3) {
+      throw Exception('이름은 반드시 3글자 이상이어야 합니다.');
     }
 
     _name = value;
   }
 
   set hp(int value) {
-    if(value < 0) {
-      _hp = 0;
-    }
-
-    _hp = value;
+    _hp = value < 0 ? 0 : value;
   }
 
   set mp(int value) {
@@ -35,4 +31,9 @@ class Wizard {
 
     _mp = value;
   }
+
+  String get name => _name;
+  int get hp => _hp;
+  int get mp => _mp;
+  Wand get wand => _wand;
 }
