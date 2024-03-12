@@ -1,23 +1,23 @@
 @startuml
 
 class Animal {
-name
-type
-sound
-birthYear
-animalSound()
+- name
+- type
+- sound
+- birthYear
++ animalSound()
 }
 
 class Cat extends Animal{
-golgol()
++ golgol()
 }
 
 class Dog extends Animal{
-eatGum()
++ eatGum()
 }
 
 class Bird extends Animal {
-flying()
++ flying()
 }
 
 
