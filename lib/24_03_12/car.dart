@@ -7,6 +7,8 @@ class Car extends Vehicle {
   Car(super.maker, super.model, super.year, {required Tier tier})
       : _tier = tier;
 
+  get tierMaker => _tier.maker;
+
   set changeTire(Tier tier) {
     print('${_tier.maker}타이어를 ${tier.maker}타이어로 교체..');
     _tier = tier;
