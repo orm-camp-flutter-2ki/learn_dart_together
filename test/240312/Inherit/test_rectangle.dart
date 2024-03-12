@@ -4,11 +4,12 @@ import 'package:test/test.dart';
 
 void main() {
   test('rectTest', () {
-    Point point = Point(20, 10);
-    Rectangle rectangle = Rectangle(point);
+    Point point1 = Point(10, 10);
+    Point point2 = Point(20, 20);
+    Rectangle rectangle = Rectangle(point1, point2);
 
-    expect(rectangle.area, equals(200));
+    expect(rectangle.area, equals(100));
 
-    expect(rectangle.round, equals(60));
+    expect(rectangle.round, equals(40));
   });
 }
