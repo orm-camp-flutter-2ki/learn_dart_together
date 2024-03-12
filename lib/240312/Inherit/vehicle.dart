@@ -5,7 +5,7 @@ class Vehicle {
 
   Vehicle(this.maker, this.model, this.year);
 
-  void move(){
+  void move() {
     print('$maker 회사의 $model이 나아갑니다.');
   }
 }

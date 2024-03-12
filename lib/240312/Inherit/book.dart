@@ -5,7 +5,7 @@ class Book {
 
   Book(this.title, this.author, this.genre);
 
-  void read(){
+  void read() {
     print('$author 가 쓴 $title을 읽습니다.');
   }
 }

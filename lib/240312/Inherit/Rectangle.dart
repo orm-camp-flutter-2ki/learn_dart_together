@@ -5,12 +5,11 @@ class Rectangle {
 
   Rectangle(this.bottomLeft);
 
-  int get area{
-    return bottomLeft.x*bottomLeft.y;
+  int get area {
+    return bottomLeft.x * bottomLeft.y;
   }
 
-  int get round{
-    return (bottomLeft.x+bottomLeft.y)*2;
+  int get round {
+    return (bottomLeft.x + bottomLeft.y) * 2;
   }
-
 }
