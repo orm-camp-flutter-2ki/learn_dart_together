@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/24_03_12/slime.dart';
+import 'package:learn_dart_together/24_03_12/practice_03/slime.dart';
 
 class Hero {
   String name;

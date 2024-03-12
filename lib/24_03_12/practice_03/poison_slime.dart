@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/24_03_12/slime.dart';
-import 'package:learn_dart_together/24_03_12/hero.dart';
+import 'package:learn_dart_together/24_03_12/practice_03/hero.dart';
+import 'package:learn_dart_together/24_03_12/practice_03/slime.dart';
 
 //독 슬라임(PoisonSlime) 은, 슬라임 (Slime) 중에서도 특히 “독 공격" 이 되는 것
 //PoisonSlime 는 아래의 코드로 인스턴스화 되는 클래스임
