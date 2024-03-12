@@ -1,0 +1,20 @@
+@startuml
+
+class Point {
+  +x
+  +y
+}
+
+class Rectangle {
+  -width;
+  -height;
+  -Point topLeft;
+  -Point bottomRight;
+
+  +calcArea()
+  +calcPerimeter()
+}
+
+Rectangle *-- Point
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+
+class Vehicle {
+  +maker
+  +model
+  +year
+}
+
+class Car {}
+
+class Truck {
+  +loadingStatus = false;
+  +loadCapacity;
+}
+
+class Motorcycle {}
+
+Vehicle <|-- Car
+Vehicle <|-- Truck
+Vehicle <|-- Motorcycle
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+
+class Animal {
+  +name;
+  +type;
+  +sound;
+
+  +makeSound()
+}
+
+class Dog  {
+  +digging()
+}
+
+class Cat  {
+  +entersBox()
+  +beingCute()
+}
+
+class Bird {
+  +fly()
+}
+
+Animal <|-- Dog
+Animal <|-- Cat
+Animal <|-- Bird
+
+@enduml

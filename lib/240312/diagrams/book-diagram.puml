@@ -1,0 +1,17 @@
+@startuml
+
+class Book {
+  +title
+  +author
+  +genre
+
+  +read()
+}
+
+class Fiction {}
+class NonFiction {}
+
+Book <|-- Fiction
+Book <|-- NonFiction
+
+@enduml
