@@ -11,8 +11,3 @@ class Cat extends Animal {
     print('$name이 $sound를 내었다');
   }
 }
-
-void main() {
-  Cat cat = Cat(type: '포유류', sound: '야옹');
-  cat.makesound();
-}
