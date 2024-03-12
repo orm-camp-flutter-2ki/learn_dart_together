@@ -4,7 +4,11 @@ class Wand {
 
   Wand(this._name, this._power);
 
-  set name(String value) {
+  set name(String? value) {
+    if (value == null) {
+      throw Exception('이름은 null 일 수 없습니다.');
+    }
+
     if (value.length < 3) {
       throw Exception('이름은 반드시 3글자 이상이어야 합니다.');
     }
