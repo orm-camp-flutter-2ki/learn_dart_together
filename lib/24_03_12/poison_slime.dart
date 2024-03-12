@@ -33,16 +33,17 @@ class PoisonSlime extends Slime {
       // “독 공격의 남은 횟수"가 0이 아니면
       print('추가로, 독 포자를 살포했다!'); // 표시
 
-      int poisonDamage = hero.hp ~/ 5;
+      int poisonDamage = hero.hp ~/ 5; // 독 데미지
 
-      hero.hp -= poisonDamage; //
+      hero.hp -= poisonDamage; // 감소
 
-      print('$poisonDamage포인트의 데미지');
+      print('$poisonDamage포인트의 데미지'); // 표시
 
-      poisonAttackPossible = -1;
+      poisonAttackPossible = -1; // 독 공격 가능 횟수 차감
     }
 
     if (hero.hp < 1) {
+      // 공격으로 hero의 hp가 0이하가 되면 사망 처리
       hero.die();
     }
   }
