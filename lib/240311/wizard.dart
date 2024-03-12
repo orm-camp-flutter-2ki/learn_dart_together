@@ -31,4 +31,9 @@ class Wizard {
 
     _mp = value;
   }
+
+  String get name => _name;
+  int get hp => _hp;
+  int get mp => _mp;
+  Wand get wand => _wand;
 }
