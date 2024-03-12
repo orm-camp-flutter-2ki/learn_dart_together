@@ -1,0 +1,24 @@
+@startuml
+
+class Vehicle {
+String maker
+String model
+int year
+int numberOfWheels
+}
+
+class Car extends Vehicle {
+double distanceDriven
+String drivingSystem
+}
+
+class Bicycle extends Vehicle{
+bool hasBasket
+double weight
+}
+
+class Cycle extends Bicycle{}
+
+class Unicycle extends Bicycle{}
+
+@enduml
