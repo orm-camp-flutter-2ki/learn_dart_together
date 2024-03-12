@@ -1,4 +1,3 @@
-import 'package:learn_dart_together/240312/practice4/animal.dart';
 import 'package:learn_dart_together/240312/practice4/bird.dart';
 import 'package:learn_dart_together/240312/practice4/cat.dart';
 import 'package:learn_dart_together/240312/practice4/dog.dart';
