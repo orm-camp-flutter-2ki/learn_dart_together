@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+Character <-- Hero : parent class
+Hero <-- SuperHero : child class
+
+
+class Phone extends equipment
+Phone <-- iphone
+
+class Car extends machine
+Car <-- K5
+
+class Dictionary extends knowledge
+Dictionary <-- Koreandictionary
+@enduml
