@@ -1,0 +1,28 @@
+@startuml
+
+class Vehicle {
+  String maker
+  String model
+  int year
+}
+
+class Car {
+  int numOfDoors
+  + honk()
+}
+
+class Truck {
+  double payloadCapacity
+  + loadCargo()
+}
+
+class Motorcycle {
+  String type
+  + wheelie()
+}
+
+Vehicle <|-- Car
+Vehicle <|-- Truck
+Vehicle <|-- Motorcycle
+
+@enduml

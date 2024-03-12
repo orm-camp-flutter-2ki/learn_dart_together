@@ -1,0 +1,37 @@
+@startuml
+
+class Hero {
+  - String name
+  - int _hp
+  - Sword? sword
+  + Hero(name: String, hp: int, sword: Sword?)
+  + int get hp()
+  + void set hp(value: int)
+  + void attack(slime: Slime)
+}
+
+class Sword {
+  - String name
+  - int damage
+  + Sword(name: String, damage: int)
+}
+
+class Slime {
+  - int hp
+  - String suffix
+  + Slime(suffix: String)
+  + void attack(hero: Hero)
+}
+
+class PoisonSlime {
+  - int ableAttackCnt
+  + PoisonSlime(suffix: String)
+  + void attack(hero: Hero)
+}
+
+Hero --> Sword : 장비
+Hero <-> Slime : 싸움
+Hero <-> PoisonSlime : 싸움
+Slime <|-- PoisonSlime : 상속
+
+@enduml
