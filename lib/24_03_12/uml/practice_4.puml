@@ -1,0 +1,31 @@
+@startuml
+class Animal {
+  - type: String
+  - sound: String
+  + Animal(type: String, sound: String)
+}
+
+class Dog {
+  - _tail: bool
+  + Dog(type: String, sound: String, tail: bool)
+  + howling(): void
+}
+
+class Cat {
+  - _tail: bool
+  + Cat(type: String, sound: String, tail: bool)
+  + meow(): void
+}
+
+class Bird {
+  - _bill: String
+  + Bird(type: String, sound: String, bill: String)
+  + layEgg(): void
+}
+
+
+Dog --|> Animal
+Cat --|> Animal
+Bird --|> Animal
+
+@enduml
