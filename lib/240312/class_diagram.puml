@@ -1,48 +1,48 @@
 @startuml
 
 class Slime {
-  int hp
-  final String suffix
-
+  +int hp
+  +final String suffix
+  + attack()
 }
 
 class PoisonSlime {
-  int _attackPoint
+  - int _attackPoint
+  + @override attack()
 }
 
 class Character {
-  String name
-  int hp
-  int maxHp
+  + String name
+  + int hp
+  + int maxHp
 }
 
 class Hero {
-  Sword? sword
+  + Sword? sword
 }
 
 class Sword {
-  String name
-  int power
+  + String name
+  + int power
 }
 Character <|-- Hero
 Hero -- Sword: > owns
-Slime : attack()
 Slime <|--  PoisonSlime
-PoisonSlime : @override attack()
+
 
 class Animal{
-String type
-String sound
-talk()
++ String type
++ String sound
++ talk()
 }
 class Dog {
-tailWagging()
++ tailWagging()
 }
 class Cat {
-scratch()
++ scratch()
 }
 class Bird{
-song()
++ song()
 }
 
 Animal <|-- Dog
@@ -51,36 +51,59 @@ Animal <|-- Bird
 
 
 class Point {
-int x
-int y
++ int x
++ int y
 }
 
 class Rectangle{
-int width
-int height
-int areaCalculate()
-int roundCalculate()
++ int width
++ int height
++ int areaCalculate()
++ int roundCalculate()
 }
 
 Point <|-- Rectangle
 
 
 class Vehicle {
-String maker
-String model
-int year
-oiling()
++ String maker
++ String model
++ int year
++ oiling()
 }
 
 class Car {}
 class Truck {
-@override oiling()
++ @override oiling()
 }
 class Motorcycle {}
 
 Vehicle <|-- Car
 Vehicle <|-- Truck
 Vehicle <|-- Motorcycle
+
+
+class Book {
+  + String title
+  + String author
+  + String genre
+  + summary()
+}
+
+class Fiction {
+  + String subgenre
+  + String hero
+  + @override void summary()
+}
+
+class NonFiction {
+
+  + String subject
+  + int totalSales
+  + @override void summary()
+}
+Book <|-- Fiction
+Book <|-- NonFiction
 
 
 @enduml
