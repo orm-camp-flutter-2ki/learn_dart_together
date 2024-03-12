@@ -1,0 +1,27 @@
+class_diagram.puml
+@startuml
+class Vehicle{
+    String maker;
+    String model;
+    int year;
+void speed()
+}
+
+class Car extends Vehicle{
+@override
+void speed()
+
+}
+class Truck extends Vehicle{
+@override
+void speed()
+
+
+}
+class Motorcycle extends Vehicle{
+@override
+void speed()
+
+
+}
+@enduml

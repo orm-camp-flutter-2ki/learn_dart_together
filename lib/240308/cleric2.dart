@@ -1,10 +1,9 @@
 import 'dart:math';
 
 void main() {
-
- final Cleric athers = Cleric(  '아서스', hp: 40, mp: 5);
- final Cleric athers2 = Cleric('아서스', hp: 35);
- final Cleric athers3 = Cleric(  '아서스');
+  final Cleric athers = Cleric('아서스', hp: 40, mp: 5);
+  final Cleric athers2 = Cleric('아서스', hp: 35);
+  final Cleric athers3 = Cleric('아서스');
 
   // Cleric cleric = Cleric( name: '홍길동',hp:50, mp: 10);
   print('===== 클래릭 생성 =====');
@@ -16,7 +15,7 @@ void main() {
     print('${athers.hp}, ${athers.mp}');
   }
 
- for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 3; i++) {
     print('===== pray() 발동 $i =====');
     int recoveryMp = athers.pray(5);
     print('${athers.hp}, ${athers.mp}, 회복량: $recoveryMp');
@@ -24,20 +23,19 @@ void main() {
 }
 
 class Cleric {
- static const  maxMp = 10;
- static const  maxHp = 50;
+  static const maxMp = 10;
+  static const maxHp = 50;
   String name;
 
   int hp = 50;
   int mp = 10;
 
-
   // 생성자 : 인스턴스 만드는 방법을 제공하는 함수같은 놈
- // this.hp = 50 , this.mp =10 사용하면 안돼는이유?
- //27_전종현 — 오늘 오전 9:31
- // 클래릭의 최대 체력을 바꿀려면 하나하나 찾아서 50이라는 숫자를 수정해야 합니다
- // 다른 사람이 코드를 볼때, 50이 무슨 의미인지도 모릅니다
-  Cleric( this.name,{ this.hp = maxHp , this.mp =maxMp}); // this : 나
+  // this.hp = 50 , this.mp =10 사용하면 안돼는이유?
+  //27_전종현 — 오늘 오전 9:31
+  // 클래릭의 최대 체력을 바꿀려면 하나하나 찾아서 50이라는 숫자를 수정해야 합니다
+  // 다른 사람이 코드를 볼때, 50이 무슨 의미인지도 모릅니다
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp}); // this : 나
 
   // hp 회복
   void selfAid() {

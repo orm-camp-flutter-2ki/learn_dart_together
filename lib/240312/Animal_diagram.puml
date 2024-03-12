@@ -1,0 +1,21 @@
+@startuml
+class Animal {
+    String type;
+    String sound;
+
+void makesound()
+}
+class Dog extends Animal {
+@override
+void makesound()
+
+}
+class Cat extends Animal{
+@override
+void makesound()
+}
+class Bird extends Animal{
+@override
+void makesound()
+}
+@enduml

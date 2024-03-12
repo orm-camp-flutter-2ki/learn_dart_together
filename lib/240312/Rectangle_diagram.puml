@@ -1,0 +1,19 @@
+@startuml
+class Point {
+    double x;
+    double y;
+
+}
+
+class Rectangle {
+    double width;
+    double height;
+'    Point topLeft;
+
+
+double area(){ return width*height}
+double round(){ return (width+height)*2)}
+}
+
+
+@enduml

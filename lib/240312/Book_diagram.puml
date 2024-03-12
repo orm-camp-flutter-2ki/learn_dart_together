@@ -1,0 +1,21 @@
+@startuml
+class Book{
+    String title;
+    String author;
+    String genre;
+ void read()
+}
+
+class Fiction extends Book{
+    String subgenre;
+
+ @override
+ void read()
+}
+class NonFiction extends Book{
+    String subject;
+
+  @override
+  void read()
+}
+@enduml
