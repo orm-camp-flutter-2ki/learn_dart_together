@@ -3,7 +3,7 @@ import 'package:learn_dart_together/240311/wand.dart';
 class Wizard {
   String _name;
   int _hp;
-  int _mp;
+  int _mp; //보안상 코드를 구분하기 위해서 이 역할은 얘 밖에 못하게
   Wand wand;
 
 
@@ -39,6 +39,6 @@ class Wizard {
   }
 
   set hp(int value) {
-    _hp = value < 0 ? 0 : value;
+    _hp = value < 0 ? 0 : value; //음수면 0 양수면 다른걸로 한다.
   }
 }
