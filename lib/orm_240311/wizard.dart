@@ -35,6 +35,14 @@ class Wizard {
     _mp = value;
   }
 
+  set hp(int value){
+    if (_hp <= 0) {
+      _hp = 0;
+      return;
+    }
+    _hp = value;
+  }
+
   void attack() {
     if (_hp <= 0) {
       _hp = 0;
