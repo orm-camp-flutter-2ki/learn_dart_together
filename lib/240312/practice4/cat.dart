@@ -12,4 +12,8 @@ class Cat extends Animal {
     super.makeSound();
     print('$name이/가 "$sound"하고 울었다.');
   }
+
+  void punch() {
+    print('$name의 냥냥펀치~');
+  }
 }
