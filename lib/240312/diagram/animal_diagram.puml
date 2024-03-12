@@ -1,0 +1,23 @@
+@startuml skinparam groupInheritance 1
+
+class Animal {
+    +String type
+    +void sound()
+}
+class Bird {
+    +sound()
+    +fly()
+}
+class Cat {
+    +sound()
+    +sleep()
+}
+class Dog {
+    +sound()
+    +smell()
+}
+Animal <|-- Bird
+Animal <|-- Cat
+Animal <|-- Dog
+
+@enduml

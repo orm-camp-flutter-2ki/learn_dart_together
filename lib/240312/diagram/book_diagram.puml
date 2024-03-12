@@ -1,0 +1,18 @@
+@startuml skinparam groupInheritance 1
+
+class Book {
+    +String title
+    +String author
+    +String genre
+}
+class Fiction {
+    +subgenre
+}
+class NonFiction {
+    +subject()
+}
+
+Book <|-- Fiction
+Book <|-- NonFiction
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml skinparam groupInheritance 1
+
+class Vehicle {
+    +String maker
+    +String model
+    +int year
+    +void drive()
+}
+class Car {
+    +int doorCount
+    +void drive()
+}
+class Motorcycle {
+    +void drive()
+}
+class Truck {
+    -bool _loaded
+    +bool get loaded()
+    +getLoaded()
+    +offLoaded()
+
+}
+Vehicle <|-- Car
+Vehicle <|-- Motorcycle
+Vehicle <|-- Truck
+@enduml

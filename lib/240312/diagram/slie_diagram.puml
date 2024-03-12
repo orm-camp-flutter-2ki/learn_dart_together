@@ -1,0 +1,30 @@
+@startuml skinparam groupInheritance 1
+
+class Slime {
+    +int hp
+    +String suffix
+    +void attack(Hero hero)
+}
+class PoisonSlime {
+    -int _poisonAttack
+    +void attack(Hero hero)
+}
+class Hero {
+    {static}int money 
+    +String name
+    {static}void setRandomMoney()
+    +set hp(int value)
+    +int get hp()
+    +void bye()
+    -void _die()
+    +void attack(Slime slime)
+}
+class Sword{
+    +String name
+    +int damage     
+}
+Slime <|-- PoisonSlime
+Slime ..> Hero
+PoisonSlime ..> Hero
+Hero ..> Sword
+@enduml
