@@ -1,6 +1,6 @@
 
-import 'package:learn_dart_together/240312/hero.dart';
-import 'package:learn_dart_together/240312/poison_slime.dart';
+import 'package:learn_dart_together/240312/pratice_3/hero.dart';
+import 'package:learn_dart_together/240312/pratice_3/poison_slime.dart';
 import 'package:test/test.dart';
 
 void main() {

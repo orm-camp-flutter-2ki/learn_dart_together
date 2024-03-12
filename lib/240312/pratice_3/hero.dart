@@ -1,5 +1,3 @@
-import 'package:learn_dart_together/240311/00_encapsulation/king.dart';
-
 import 'slime.dart';
 
 class Hero {

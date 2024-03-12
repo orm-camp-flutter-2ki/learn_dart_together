@@ -1,4 +1,4 @@
-import 'Slime.dart';
+import 'slime.dart';
 import 'hero.dart';
 
 class PoisonSlime extends Slime {
