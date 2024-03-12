@@ -1,0 +1,24 @@
+@startuml
+
+class Vehicle {
++maker: String
++model: String
++year: int
++move(): void
+}
+
+class Car extends Vehicle {
++move(): void
+}
+
+class Motorcycle extends Vehicle {
++move(): void
+}
+
+class Truck extends Vehicle {
+-carriedWeight: int
++move(): void
++printCarriedWeight(): void
+}
+
+@enduml

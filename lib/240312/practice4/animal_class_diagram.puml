@@ -1,0 +1,23 @@
+@startuml
+
+class Animal {
++name: String
++type: String
++sound: String
++makeSound(): void
+}
+
+class Dog extends Animal {
++makeSound(): void
+}
+
+class Cat extends Animal {
++makeSound(): void
++punch(): void
+}
+
+class Bird extends Animal {
++makeSound(): void
+}
+
+@enduml
