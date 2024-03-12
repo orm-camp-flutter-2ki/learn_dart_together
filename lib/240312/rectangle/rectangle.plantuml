@@ -4,17 +4,15 @@ class RectanglePoint {
   +Point bottomLeft;
   +Point topRight;
 
-  +RectanglePoint(this.bottomLeft, this.topRight);
-  +int area()
-  +int round()
+  +area()
+  +round()
   
 }
 
 class Point {
-  -int _x;
-  -int _y;
+  -int x;
+  -int y;
 
-  +Point(this._x, this._y);
 }
-RectanglePoint <|-- Point
+RectanglePoint *-- Point
 @enduml
