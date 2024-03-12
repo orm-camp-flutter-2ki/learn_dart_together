@@ -1,0 +1,35 @@
+class Vehicle {
+String maker;
+String model;
+int year;
+int price;
+
+Vehicle(this.maker, this.model, this.year, this.price);
+
+void CarSale (int a) {
+print('$maker의 $model을/를 세일 중입니다.');
+price = (price * (a/100)).toInt();
+}
+}
+
+class Car extends Vehicle {
+Car(super.maker, super.model, super.year, super.price){
+String color;
+double weight;
+double enginePower;
+double standardGearRatio;
+bool ev;
+}
+}
+
+class Truck extends Vehicle {
+Truck(super.maker, super.model, super.year, super.price){
+int price;
+String color;
+double weight;
+double enginePower;
+double standardGearRatio;
+bool ev;
+double maxPayload;
+}
+}

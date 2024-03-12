@@ -1,0 +1,35 @@
+@startuml
+class Library {
+String title;
+String author;
+String genre;
+
+void lead();
+}
+
+class Fiction extends Library{
+-String Romance;
+-String Mystery;
+-String Science;
+-String Fantasy;
+-String Historical;
+-String Thriller;
+-String Horror;
+
+
+@override
+void lead();
+}
+
+class NonFiction extends Library{
+-String Self-help;
+-String History;
+-String echnology;
+
+@override
+void lead();
+
+}
+
+
+@enduml
