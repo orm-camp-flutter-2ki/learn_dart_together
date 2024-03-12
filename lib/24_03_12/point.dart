@@ -1,5 +1,10 @@
 class Point {
-  int x;
-  int y;
-  Point(this.x, this.y);
+  final int _x;
+  final int _y;
+
+  Point(this._x, this._y);
+
+  get x => _x;
+
+  get y => _y;
 }
