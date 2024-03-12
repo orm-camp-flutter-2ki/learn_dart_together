@@ -21,11 +21,7 @@ class Wizard {
   }
 
   set hp(int value) {
-    if(value < 0) {
-      _hp = 0;
-    }
-
-    _hp = value;
+    _hp = value < 0 ? 0 : value;
   }
 
   set mp(int value) {
