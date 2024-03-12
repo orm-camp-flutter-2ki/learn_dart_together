@@ -10,7 +10,7 @@ void main() {
   Hero hero = Hero(name: '영웅', hp: 100);
   PoisonSlime ps = PoisonSlime('독');
 
-  ps.attackChance = 0;
+  ps.attackChance = 5;
   ps.attack(hero);
 
 
