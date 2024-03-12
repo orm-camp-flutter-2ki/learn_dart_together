@@ -4,14 +4,15 @@ class Point {
     double y;
 
 }
-class Rectangle extends Point{
+
+class Rectangle {
     double width;
     double height;
-    double top-left;
+'    Point topLeft;
 
 
-double area(){ return width*height;}
-double round(){ return (width+height)*2);}
+double area(){ return width*height}
+double round(){ return (width+height)*2)}
 }
 
 
