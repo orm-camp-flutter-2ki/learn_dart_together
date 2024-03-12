@@ -1,0 +1,21 @@
+@startuml
+
+class Vehicle{
++ maker
++ model
++ year
++ ride()
+}
+
+class Car extends Vehicle {
++ airbag
+}
+
+class Truck extends Vehicle{
++ freight
+}
+class Motorcycle extends Vehicle{
++ helmet
+}
+
+@enduml
