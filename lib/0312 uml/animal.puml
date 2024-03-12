@@ -1,0 +1,24 @@
+@startuml
+
+class Animal {
++ name
++ type
++ sound
++ birthYear
++ animalSound()
+}
+
+class Cat extends Animal{
++ golgol()
+}
+
+class Dog extends Animal{
++ eatGum()
+}
+
+class Bird extends Animal {
++ flying()
+}
+
+
+@enduml

@@ -19,7 +19,7 @@ class Hero {
 
   // 람다식(lambda expression), 화살표 표기법, arrow function
   // int get hp {
-  //  return _hp;
+  // return _hp;
   // }
   int get hp => _hp;
 
@@ -31,9 +31,9 @@ class Hero {
       _hp = heroHp;
   }
 
-  void attack(Slime slime) {
-    print('$name이 $slime을 공격했다.');
-    print('$slime이 반격했다.');
+  void attack() {
+    print('$name이 상대을 공격했다.');
+    print('상대방이 반격했다.');
     _hp -= 10;
     if (hp <= 0) _die();
   }

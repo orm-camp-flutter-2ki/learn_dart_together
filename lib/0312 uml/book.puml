@@ -1,0 +1,21 @@
+@startuml
+
+class Book {
++ title
++ author
++ contents
++
++ read()
++ write()
+}
+
+class Fiction extends Book {
++ character
++ genre
+}
+
+class NonFiction extends Book {
++ factBased
+}
+
+@enduml

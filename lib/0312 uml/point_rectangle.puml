@@ -1,0 +1,18 @@
+@startuml
+
+class Rectangle {
+    + width
+    + height
+    + topLeftPoint
+    + perimeter()
+    + area()
+}
+
+class Point {
+    + xPoint
+    + yPoint
+}
+
+Rectangle *-- Point
+
+@enduml
