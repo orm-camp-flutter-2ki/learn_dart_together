@@ -10,6 +10,10 @@ class Motorcycle extends Vehicle {
   });
 
   void helmetNow() {
-    helmet ? print('헬멧을 착용했습니다.') : print('헬멧을 벗었습니다..');
+    if (helmet) {
+      print('헬멧을 착용했습니다.');
+      return;
+    }
+    print('헬멧을 벗었습니다.');
   }
 }
