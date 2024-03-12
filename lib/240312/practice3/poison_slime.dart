@@ -1,7 +1,6 @@
 import 'package:learn_dart_together/240312/practice3/hero.dart';
 import 'package:learn_dart_together/240312/practice3/slime.dart';
 
-
 class PoisonSlime extends Slime{
   int poisonPoint = 5;
 
