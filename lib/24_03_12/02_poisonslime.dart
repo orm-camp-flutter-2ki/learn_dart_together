@@ -22,5 +22,4 @@ void main() {
   PoisonSlime poisonSlime = PoisonSlime('A');
   Hero hero = Hero(name: 'name', hp: 50);
   poisonSlime.attack(hero);
-
 }

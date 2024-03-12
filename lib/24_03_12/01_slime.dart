@@ -10,5 +10,6 @@ class Slime {
     print('슬라임$suffix이/가 공격했다');
     print('10의 데미지');
     hero.hp -= 10;
+
   }
 }
