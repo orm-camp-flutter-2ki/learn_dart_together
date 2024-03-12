@@ -1,0 +1,25 @@
+@startuml Rectangle
+
+class Hero {
+  final String _name;
+  int _hp;
+  Hero(this._name, this._hp);
+  int get hp => _hp;
+  set hp(value) 
+  String get name => _name;
+}
+
+class PoisonSlime extends Slime {
+  int _poisonAtackPoint = 5;
+  PoisonSlime(super.suffix);
+  void attack(Hero hero);
+}
+
+class Slime {
+  int hp = 40;
+  final String suffix;
+  Slime(this.suffix);
+  void attack(Hero hero);
+}
+
+@enduml
