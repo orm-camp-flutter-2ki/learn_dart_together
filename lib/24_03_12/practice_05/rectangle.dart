@@ -21,7 +21,7 @@ class Rectangle {
     return width*height;
   }
 
-  int calculateRount(int width, int height) {
+  int calculateRound(int width, int height) {
     return ((width + height) * 2);
   }
 }
