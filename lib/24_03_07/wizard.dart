@@ -1,23 +1,30 @@
 import 'package:learn_dart_together/24_03_07/wand.dart';
 
 class Wizard {
-  late String _name;
-  late int _hp;
-  late int _mp;
+  // exception이 발생하지 않음.
+
+  String _name;
+  int _hp;
+  int _mp;
   Wand? _wand;
 
   Wizard(
       {required String name,
       required int hp,
       required int mp,
-      required Wand wand}) {
-    // 인스턴스 생성시 setter 함수 호출
-    // 파라미터로 들어감
-    this.name = name;
-    this.hp = hp;
-    this.mp = mp;
-    this.wand = wand;
-  }
+      required Wand wand})
+      : _name = name,
+        _hp = hp,
+        _mp = mp,
+        _wand = wand;
+
+  String get name => _name;
+
+  int get hp => _hp;
+
+  int get mp => _mp;
+
+  Wand? get wand => _wand;
 
   set name(String nameValue) {
     if (nameValue.length < 3) {
@@ -49,8 +56,18 @@ class Wizard {
     if (hpValue < 0) {
       // 5.
       _hp = 0;
+      return;
     }
 
     _hp = hpValue;
   }
+}
+
+void main(){
+  // 인스턴스 생성 시에는 익셉션 발생하지 않음
+  Wand aWand = Wand(name: 'za', power: 0.1);
+  Wizard vi = Wizard(name: 'vi', hp: 50, mp: 10, wand: aWand);
+
+  // 변경 시에만 익셉션 발생
+  vi.name = 'vi';
 }

@@ -1,0 +1,24 @@
+@startuml
+class Animal {
+    String type
+    String sound
+}
+
+class Dog extends Animal {
+    String name
+
+    void bowWow()
+}
+
+class Cat extends Animal {
+    String name
+
+    void meow()
+}
+
+class Bird extends Animal {
+    String name
+    String featherColor
+}
+
+@enduml

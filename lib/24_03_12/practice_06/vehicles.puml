@@ -1,0 +1,22 @@
+@startuml
+class Vehicle {
+    String maker
+    String model
+    int year
+}
+
+class Car extends Vehicle {
+    String licensePlate
+}
+
+class Truck extends Vehicle {
+    String licensePlate
+    double height
+}
+
+class motorcycle extends Vehicle{
+    String licensePlate
+    bool isWearHelmet
+}
+
+@enduml

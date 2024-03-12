@@ -22,4 +22,12 @@ void main() {
     // then
     expect(() => wizard.mp = -10, throwsException);
   });
+
+  test('wizard hp test', () {
+    // given when
+    final fireWand = Wand(name: 'fireWand', power: 10.0);
+    final wizard = Wizard(name: 'gandlf', hp: -10, mp: 10, wand: fireWand);
+
+    expect(wizard.hp, equals(0));
+  });
 }
