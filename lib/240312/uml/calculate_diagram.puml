@@ -23,5 +23,6 @@ class RectangleExtendsPoint extends Point {
 +calculateRound()
 }
 
+Rectangle *--> Point
 
 @enduml
