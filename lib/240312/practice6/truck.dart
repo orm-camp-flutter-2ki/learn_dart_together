@@ -10,6 +10,8 @@ class Truck extends Vehicle {
     required int carriedWeight
   }) : _carriedWeight = carriedWeight;
 
+  int get carriedWeight => _carriedWeight;
+
   set carriedWeight(int value) {
     _carriedWeight = value;
   }

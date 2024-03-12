@@ -16,5 +16,7 @@ void main() {
     truck.printCarriedWeight();
     truck.carriedWeight = 0;
     truck.printCarriedWeight();
+
+    expect(truck.carriedWeight, 0);
   });
 }
