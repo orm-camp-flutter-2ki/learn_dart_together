@@ -1,5 +1,3 @@
-
-
 /*
 String _name;
 

@@ -20,10 +20,9 @@ class Wand {
   }
 
   set power(double value) {
-    if (value < 0.5 || value >= 100) {
+    if (value < 0.5 || value >= 100.0) {
       throw Exception('마력은 0.5 이상 100 이하야 합니다.');
     }
     _power = value;
   }
 }
-

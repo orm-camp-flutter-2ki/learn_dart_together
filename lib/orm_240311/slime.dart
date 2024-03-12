@@ -10,3 +10,4 @@ class Slime {
     print('[슬라임 $suffix 가 도망쳤다.]');
   }
 }
+
