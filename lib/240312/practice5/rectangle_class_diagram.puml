@@ -1,0 +1,17 @@
+@startuml
+
+class Point {
++x: int
++y: int
+}
+
+class Rectangle {
++topLeft: Point
++bottomRight: Point
++getArea(): void
++getRound(): void
+}
+
+Rectangle *-- Point
+
+@enduml

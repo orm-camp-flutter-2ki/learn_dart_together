@@ -1,0 +1,26 @@
+@startuml
+
+class Slime {
++suffix: String
++hp: int
++attack(): void
+}
+
+class PoisonSlime extends Slime {
++poisonPoint: int
++attack(): void
+}
+
+class Hero {
++name: String
++hp: int
++attack(): void
++run(): void
+}
+
+class SuperHero extends Hero {
+-isFlying
++run(): void
+}
+
+@enduml
