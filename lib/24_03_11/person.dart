@@ -2,7 +2,6 @@ class Person {
   final String _name;
   final int _birthYear;
 
-  //방법3: 일반적인 그냥 생성자
   Person(this._name, this._birthYear);
 
   int get age {

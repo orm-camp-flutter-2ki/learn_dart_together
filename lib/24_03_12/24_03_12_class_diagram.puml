@@ -1,0 +1,98 @@
+@startuml
+
+class Slime {
+  +int hp = 50;
+  +final String suffix;
+  +void attack(Hero hero)
+}
+
+class PoisonSlime extends Slime {
+  +int attackCount = 5;
+
+  +@override void attack(Hero hero)
+}
+
+class Hero {
+  +String name;
+  +int hp;
+}
+PoisonSlime ..> Hero
+Slime ..> Hero
+class Animal {
+  +final String species;
+  +final String sound;
+  +final String mainLiving;
+  +void introduce()
+}
+
+class Dog extends Animal {
+  +final String name;
+  +void walk(String area)
+  +void bark(int count)
+}
+
+class Dolphin extends Animal {
+  +final String size;
+  +void jump()
+}
+
+class Vehicle {
+  +String brand;
+  +String model;
+  +int releaseYear;
+
+  +void getInformation()
+}
+
+class Car extends Vehicle {
+  +String name;
+  +int seatCount;
+  +int occupied;
+  +void getInCar(int peopleCount)
+}
+
+class Airplane extends Vehicle {
+  +String departPoint;
+  +String destination;
+
+  +String getLunchMenu(List<String> meal)
+}
+
+class Point {
+  double x;
+  double y;
+}
+
+class Rectangle {
+  double width;
+  double height;
+  Point topLeft;
+  double figureOutArea()
+  double figureOutCircumference()
+}
+
+Rectangle o-- Point
+
+class Book {
+  +String title;
+  +String author;
+  +String genre;
+
+  +void getInformation()
+}
+
+class Fiction extends Book {
+  +String subgenre;
+
+
+  +@override void getInformation()
+}
+
+class NonFiction extends Book {
+  +String subject;
+
+
+  +@override void getInformation()
+}
+
+@enduml
