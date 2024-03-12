@@ -1,0 +1,33 @@
+@startuml
+
+class Hero {
+    String name
+    int hp
+
+    void attack(Slime slime)
+    void die()
+    void run()
+}
+
+class Slime {
+    int hp
+    final String suffix
+
+    void attack(Here hero)
+}
+
+
+class PoisonSlime extends Slime {
+    -int posionAttackPossible = 5
+
+    int get poisonAttackPossible()
+    set poisonAttackPossible(int value)
+    bool isHeroDead(int heroHp)
+    void attack(Here hero)
+}
+
+Slime*..Hero
+Hero*..Slime
+Hero*..PoisonSlime
+
+@enduml

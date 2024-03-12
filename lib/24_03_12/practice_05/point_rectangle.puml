@@ -1,0 +1,22 @@
+@startuml
+class Point {
+    int x
+    int y
+
+    Point()
+}
+
+class Rectangle {
+    int width
+    int height
+    Point topLeft
+    Point topRight
+    Point bottomLeft
+    Point bottomRight
+
+    int calculateArea(int width, int height)
+    int calculateRound(int width, int height)
+}
+
+Rectangle..*Point
+@enduml
