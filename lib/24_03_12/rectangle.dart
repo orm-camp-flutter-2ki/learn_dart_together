@@ -9,7 +9,7 @@ class Rectangle {
 
   int get calculateArea => _width * _height;
 
-  int get calculatePerimeter => 2 * (_width * _height);
+  int get calculatePerimeter => 2 * (_width + _height);
 
   set width(int width) => _width = width;
 
