@@ -9,21 +9,8 @@ class Rectangle {
     required this.bottomRight
   });
 
-  int get width {
-    if (topLeft.x >= bottomRight.x)  {
-      return topLeft.x - bottomRight.x;
-    } else {
-      return bottomRight.x - topLeft.x;
-    }
-  }
-
-  int get height {
-    if (topLeft.y >= bottomRight.y)  {
-      return topLeft.y - bottomRight.y;
-    } else {
-      return bottomRight.y - topLeft.y;
-    }
-  }
+  int get width => (topLeft.x - bottomRight.x).abs();
+  int get height => (topLeft.y - bottomRight.y).abs();
 
   int getArea() {
     return width * height;
