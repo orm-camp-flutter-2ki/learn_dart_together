@@ -4,7 +4,10 @@ class Hero {
   String name;
   int hp;
 
-  Hero({required this.name, required this.hp});
+  Hero({
+    required this.name,
+    required this.hp,
+  });
 
   void attack(Slime slime) {
     print('$name이 $slime을 공격했다.');
