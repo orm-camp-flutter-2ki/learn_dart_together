@@ -1,0 +1,17 @@
+@startuml
+class Point {
+  - double x
+  - double y
+  + Point(x: double, y: double)
+}
+
+class Rectangle {
+  - double width
+  - double height
+  - double topLeft
+  + Rectangle(width: double, height: double, topLeft: double)
+  + area(): double
+  + perimeter(): double
+}
+Point <|-- Rectangle
+@enduml
