@@ -1,0 +1,89 @@
+@startuml
+
+class Hero {
+    String name;
+
+    -die()
+    +attack()
+}
+
+class SuperHero extends Hero {
+    -isFlying
+    +attack()
+    +run()
+}
+
+class Slime {
+    +int hp = 50;
+    +final String suffix;
+    +attack()
+}
+
+class PoisonSlime extends Slime{
+    +int poisonAttack = 5;
+    +void attack()
+}
+
+class Animal {
+    +type;
+    +sound;
+}
+
+class Bird extends Animal{
+    +chirps()
+}
+class Cat extends Animal{
+    +meows()
+}
+class Dog extends Animal{
+    +barks()
+}
+
+class Book {
+    +title
+    +author
+    +genre
+}
+
+class Fiction extends Book{
+    +subgenre
+    +information()
+}
+class NonFiction extends Book{
+    +subgenre
+    +information()
+}
+
+class Rectangle {
+    +width
+    +height
+    +topLeft
+    +calcArea()
+    +calcPerimeter()
+}
+
+class Point {
+    +x
+    +y
+}
+
+Rectangle *-- Point
+
+class Vehicle {
+    +maker
+    +model
+    +year
+    +running()
+}
+
+class Car extends Vehicle {
+    +running()
+}
+class Motorcycle extends Vehicle {
+    +running()
+}
+class Truck extends Vehicle {
+    +running()
+}
+
+@enduml
