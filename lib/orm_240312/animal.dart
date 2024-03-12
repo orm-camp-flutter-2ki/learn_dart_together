@@ -9,10 +9,11 @@ class Animal {
 }
 
 class Dog extends Animal{
-  Dog(super.type, super.sound);
+  final String species;
+  Dog(super.type, super.sound ,this.species);
 
   void TypeAnimal(){
-    type = '개';
+    type = '포유류';
   }
   void SoundAnimal(){
     sound = '멍멍';
@@ -20,12 +21,24 @@ class Dog extends Animal{
 
 }
 class Cat extends Animal{
-  Cat(super.type, super.sound);
+  final String species;
+  Cat(super.type, super.sound, this.species);
 
   void TypeAnimal(){
     type = '포유류';
   }
   void SoundAnimal(){
-    sound = '냐옹';
+    sound = '냐냐옹';
+  }
+}
+class Bird extends Animal{
+  final String wing;
+  Bird(super.type, super.sound, this.wing);
+
+  void TypeAnimal(){
+    type = '조류';
+  }
+  void SoundAnimal(){
+    sound = '짹';
   }
 }
