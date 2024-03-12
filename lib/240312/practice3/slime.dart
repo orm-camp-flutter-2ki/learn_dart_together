@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240312/hero.dart';
+import 'package:learn_dart_together/240312/practice3/hero.dart';
 
 class Slime {
   int hp = 50;
