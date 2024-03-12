@@ -1,14 +1,14 @@
-import 'Animal.dart';
+import 'animal.dart';
 
 class Cat extends Animal {
   Cat(super.type);
 
   @override
   void sound() {
-    print('짹짹');
+    print('야옹');
   }
 
-  void fly() {
-    print('푸드득');
+  void sleep() {
+    print('드르렁');
   }
 }

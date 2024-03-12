@@ -1,4 +1,4 @@
-import 'Animal.dart';
+import 'animal.dart';
 
 class Dog extends Animal {
   Dog(super.type);
