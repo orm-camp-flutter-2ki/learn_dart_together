@@ -1,0 +1,20 @@
+@startuml
+
+class Hero {
+  -String _name
+  +int hp
+  -int _attackPower
+  +void run()
+  +void attack()
+}
+
+class SuperHero {
+  -bool _isFlying
+  +bool isFlying
+  +void run()
+  +void attack()
+}
+
+Hero <|-- SuperHero
+
+@enduml

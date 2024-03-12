@@ -1,0 +1,16 @@
+@startuml
+
+class Slime {
+  -String _suffix
+  +int hp
+  +void attack()
+}
+
+class PoisonSlime {
+  -int _remainAttackCnt
+  +void attack()
+}
+
+Slime <|-- PoisonSlime
+
+@enduml
