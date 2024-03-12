@@ -1,5 +1,5 @@
 import 'package:learn_dart_together/24_03_11/wizard.dart';
-import 'package:learn_dart_together/24_03_12/Slime.dart';
+import 'package:learn_dart_together/24_03_12/slime.dart';
 
 class PoisonSlime extends Slime {
   static const int _defaultPoisonSkillRemainingCharges = 5;
