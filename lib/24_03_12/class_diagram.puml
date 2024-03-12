@@ -1,0 +1,52 @@
+@startuml
+
+class PoisonSlime extends slime{
+    int leftAttack;
+    super.attack();
+    attack();
+}
+
+class Dog extends Animal {
+    String name;
+    int barkCount = 0;
+    bark();
+}
+
+class Cat extends Animal {
+    String name;
+    climb();
+}
+class Bird extends Animal {
+    String name;
+    fly();
+}
+
+class Rectangle extends Point {
+    double width;
+    double height;
+    double topLeft;
+    calculatorArea();
+    calculatorPerimeter();
+}
+
+class Car extends Vehicle {
+    double distance = 10000;
+    double driveToday;
+    infoMyCar();
+}
+
+class Motorcycle extends Vehicle {
+    double distance = 10000;
+    infoMyMotor();
+}
+
+class Fiction extends book {
+    int totalSales;
+    summary();
+}
+class NonFiction extends book {
+    int totalSales;
+    summary();
+}
+
+@enduml
