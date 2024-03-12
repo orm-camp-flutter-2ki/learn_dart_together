@@ -11,6 +11,12 @@ class PoisonSlime{
    {attackChance} ++getAttackChance(): int
 }
 
+class Hero{
+  +name: String
+  +hp: int
+}
+
 Slime <|--PoisonSlime
+Slime *--> Hero
 
 @enduml
