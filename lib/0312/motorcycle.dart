@@ -1,7 +1,7 @@
 import 'package:learn_dart_together/0312/vehicle.dart';
 
 class Motorcycle extends Vehicle {
-  bool helmet = false의;
+  bool helmet = false;
 
   Motorcycle({
     required super.maker,
