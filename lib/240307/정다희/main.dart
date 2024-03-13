@@ -1,7 +1,9 @@
-import 'cleric.dart';
-void main(){
-  final Hero1 = Cleric("아서스1", hp:40, mp:5);
-  final Hero2 = Cleric("아서스2", hp:35);
+import'02_dart_class.dart';
+
+
+void main() {
+  final Hero1 = Cleric("아서스1", hp: 40, mp: 5);
+  final Hero2 = Cleric("아서스2", hp: 35);
   final Hero3 = Cleric("아서스3");
   // final Hero4 = Cleric();
 
