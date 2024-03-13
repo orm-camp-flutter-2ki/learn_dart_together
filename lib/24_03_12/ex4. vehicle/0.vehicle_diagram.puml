@@ -11,7 +11,7 @@ class Car extends Vehicle{
     double registrationTax;
 }
 
-class Truck extends Car{
+class Truck extends Car {
     String license;
 }
 

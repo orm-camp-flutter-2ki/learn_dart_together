@@ -9,7 +9,7 @@ interface Thing {
 abstract class Asset {
     +name // 이름
     +ownership // 소유권
-    +String value // 가치
+    String value // 가치
 }
 
 abstract class IntangibleAsset extends Asset {
