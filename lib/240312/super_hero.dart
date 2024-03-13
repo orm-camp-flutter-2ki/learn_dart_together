@@ -24,7 +24,7 @@ class SuperHero extends Hero {
   }
 
   @override
-  void attack(Slime slime){
+  void attack(Slime slime) {
     super.attack(slime);
     if(isFlying) {
       print('$name이 $slime을 공격했다.');

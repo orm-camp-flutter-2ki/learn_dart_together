@@ -1,0 +1,58 @@
+@startuml
+abstract class Asset {
+String name;
+this.name
+}
+
+interface Thing  {
+{abstract} double get weight;
+{abstract} set weight(double value);
+}
+
+abstract class IntangibleAsset extends Asset{
+required super.name
+}
+
+abstract class TangibleAsset extends Asset implements Thing{
+int price;
+String color;
+double _weight;
+
+this.price,
+this.color,
+super.name,
+double weight,
+_weight = weight;
+
+@override
+double get weight => _weight;
+
+@override
+set weight(double value)
+_weight = value;
+}
+
+class Computer extends TangibleAsset {
+String makerName;
+super.name,
+super.color,
+super.price,
+this.makerName,
+super.weight
+}
+
+class Book extends TangibleAsset {
+String isbn;
+super.name,
+super.price,
+super.color,
+super.weight,
+this.isbn,
+}
+
+class Patent extends IntangibleAsset {
+required super.name
+}
+
+@enduml
+//scale 1,2는 크기 조절
