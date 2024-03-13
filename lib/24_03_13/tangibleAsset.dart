@@ -1,13 +1,14 @@
-abstract class TangibleAsset {
-  String name;
-  int price;
+import 'package:learn_dart_together/24_03_13/asset.dart';
+
+abstract class TangibleAsset extends Asset {
   String color;
 
   TangibleAsset(
-    this.name,
-    this.price,
+    super.name,
+    super.price,
     this.color,
   );
 
-  String system();
+  @override
+  String system() => '${super.system()}, 색상: $color';
 }
