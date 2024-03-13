@@ -14,4 +14,9 @@ class Patent extends IntangibleAsset {
 
   @override
   double weight;
+
+  @override
+  void value() {
+    // 가치 계산
+  }
 }

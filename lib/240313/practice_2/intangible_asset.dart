@@ -11,4 +11,7 @@ abstract class IntangibleAsset extends Asset implements Thing {
     super.name,
     this.ownerName,
   );
+
+  // 가치 평가
+  void value();
 }
