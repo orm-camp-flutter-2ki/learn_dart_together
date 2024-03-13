@@ -3,7 +3,7 @@ import 'package:learn_dart_together/0313/thing.dart';
 
 abstract class TangibleAsset extends Asset implements Thing {
   // 무게는 0 이하가 될 수 없다고 생각.. -> 0으로 초기화
-  // 그냥 값을 입력받고 비워두는게 나을지 고민이 된다...
+  // 그냥 값을 입력받고 비워두는게 나을지 고민이 된다.
   double _weight = 0;
   String color;
 
