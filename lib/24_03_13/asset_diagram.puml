@@ -8,20 +8,22 @@ abstract class Asset{
 }
 
 interface Thing{
-     +get()
-     +set()
+     double get weight()
+     set weight(double value)
 }
 
 
 abstract class TangibleAsset extends Asset implements Thing{
     +String color
+   + double get weight()
+   + set weight(double value)
 }
-class Book extends Asset{
+class Book extends TangibleAsset{
 
     +String isbn
 }
 
-class computer extends Asset{
+class computer extends TangibleAsset{
 
     +String makerName
 }
