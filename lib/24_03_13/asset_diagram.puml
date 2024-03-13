@@ -1,0 +1,35 @@
+@startuml Asset
+
+
+
+abstract class Asset{
+    +String name
+    +int price
+}
+
+interface Thing{
+
+   {abstract} double get weight()
+   {abstract} set weight(double value)
+}
+
+
+abstract class TangibleAsset extends Asset implements Thing{
+    +String color
+   + double get weight()
+   + set weight(double value)
+}
+class Book extends TangibleAsset{
+
+    +String isbn
+}
+
+class computer extends TangibleAsset{
+
+    +String makerName
+}
+
+
+
+
+@enduml
