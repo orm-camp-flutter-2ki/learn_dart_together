@@ -9,5 +9,9 @@ class Patent extends IntangibleAsset {
     super.name,
     super.ownerName,
     this.number,
+    this.weight,
   );
+
+  @override
+  double weight;
 }
