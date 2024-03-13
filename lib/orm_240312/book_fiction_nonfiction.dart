@@ -11,8 +11,7 @@ class Book {
 class Fiction extends Book {
   final String subgenre;
 
-  Fiction(String title, String author, String genre, this.subgenre)
-      : super(title, author, genre);
+  Fiction(super.title, super.author, super.genre, this.subgenre);
 
   @override
   String toString() => 'Fiction($title, $author, $genre, $subgenre)';
@@ -20,8 +19,7 @@ class Fiction extends Book {
 class NonFiction extends Book {
   final String subject;
 
-  NonFiction(String title, String author, String genre, this.subject)
-      : super(title, author, genre);
+  NonFiction(super.title, super.author, super.genre, this.subject);
 
   @override
   String toString() => 'NonFiction($title, $author, $genre, $subject)';

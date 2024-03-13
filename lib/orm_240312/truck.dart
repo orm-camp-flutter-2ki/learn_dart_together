@@ -3,8 +3,7 @@ import 'package:learn_dart_together/orm_240312/vehicle.dart';
 class Truck extends Vehicle {
   final double cargoCapacity;
 
-  Truck(String maker, String model, int year, this.cargoCapacity)
-      : super(maker, model, year);
+  Truck(super.maker, super.model, super.year, this.cargoCapacity);
 
   @override
   String toString() => 'Truck($maker, $model, $year, $cargoCapacity)';
