@@ -5,3 +5,4 @@ abstract interface class Thing  {
 }
 
 //weight 속성값을 가져오고 설정할 때 특정 동작을 수행
+//인터페이스에서는 필드선언하는거랑 메서드 기능을 구현하지 않음 청사진 처럼 설계도임
