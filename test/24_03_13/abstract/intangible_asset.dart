@@ -5,13 +5,13 @@ abstract class IntangibleAsset extends Asset {
   final int _quantity;
 
   IntangibleAsset(
-      {required super.isTangible,
-      required super.name,
+      {required super.name,
       required super.price,
       required String color,
       required int quantity})
       : _color = color,
-        _quantity = quantity;
+        _quantity = quantity,
+        super(isTangible: false);
 
   String get color => _color;
 
