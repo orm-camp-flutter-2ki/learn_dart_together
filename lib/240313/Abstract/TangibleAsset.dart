@@ -4,17 +4,17 @@ import 'package:learn_dart_together/240313/Interface/Thing.dart';
 
 abstract class TangibleAsset extends Asset implements Thing {
   String name;
-  int pirce;
+  int price;
   String color;
   String makerName;
 
   String get assetCode {
-    return makerName + color + name + pirce.toString();
+    return makerName + color + name + price.toString();
   }
 
   TangibleAsset({
     required this.name,
-    required this.pirce,
+    required this.price,
     required this.color,
     required this.makerName,
     required super.owner,

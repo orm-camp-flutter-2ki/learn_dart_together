@@ -14,7 +14,7 @@ class Book extends TangibleAsset {
 
   Book({
     required super.name,
-    required super.pirce,
+    required super.price,
     required super.color,
     required super.makerName,
     required super.owner,
