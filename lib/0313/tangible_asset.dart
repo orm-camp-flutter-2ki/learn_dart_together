@@ -6,7 +6,7 @@ abstract class TangibleAsset extends Asset implements Thing {
   double _weight;
   String _color;
 
-  TangibleAsset(super.type, this._weight, this._color);
+  TangibleAsset(super.type, super.name, super.value, this._weight, this._color);
 
   @override
   double get weight => _weight;
