@@ -17,11 +17,11 @@ abstract class TangibleAsset extends Asset implements Thing {
   }) : _weight = weight;
 
   @override
+  double get weight => _weight;
+
+  @override
   set weight(double thingValue) {
     _weight = thingValue;
     return;
   }
-
-  @override
-  double get weight => _weight;
 }
