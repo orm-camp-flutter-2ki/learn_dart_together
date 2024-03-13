@@ -1,5 +1,5 @@
 abstract interface class Thing {
-  double getWeight();
+  double get weight;
 
-  void setMass(double value);
+  set mass(double value);
 }
