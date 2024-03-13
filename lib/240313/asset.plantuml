@@ -3,28 +3,7 @@
 abstract class Asset {}
 
 abstract class TangibleAsset extends Asset implements Thing {
-  +String name
-  +int price
-  +String color
-  -double _weight
-  
-  -double get weight()
-  -set weight()
 }
 
 interface Thing {
-  -{abstract} double get weight()
-  -{abstract} set weight()
-}
-
-class Book extends TangibleAsset {
-  +String isbn
-  -double get weight()
-  -set weight()
-}
-
-class Computer extends TangibleAsset {
-  +String makerName
-  -double get weight()
-  -set weight()
 }
