@@ -1,4 +1,4 @@
-import 'Tangible_Asset.dart';
+import 'tangible_asset.dart';
 
 class Computer extends TangibleAsset {
   // String name;
@@ -14,6 +14,6 @@ class Computer extends TangibleAsset {
     required this.makerName,
   }) : super(name, price, color, weight);
 
-  // @override
-  // double weight;
+// @override
+// double weight;
 }

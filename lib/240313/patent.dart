@@ -1,5 +1,5 @@
 //무형자산 특허권
-import 'Intangible_Asset.dart';
+import 'intangible_asset.dart';
 
 class Patent extends IntangibleAsset {
   String patentNumber;

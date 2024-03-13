@@ -9,5 +9,3 @@ abstract class IntangibleAsset extends Asset {
 
   IntangibleAsset(String name, int price) : super(name, price);
 }
-
-
