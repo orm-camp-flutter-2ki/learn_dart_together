@@ -8,6 +8,10 @@ abstract class TangibleAsset extends Asset implements Thing {
   String color;
   String makerName;
 
+  String get assetCode {
+    return makerName + color + name + pirce.toString();
+  }
+
   TangibleAsset({
     required this.name,
     required this.pirce,
@@ -16,4 +20,12 @@ abstract class TangibleAsset extends Asset implements Thing {
     required super.owner,
     required super.productionYear
   });
+
+  void repair() {
+    print('수리완료');
+  }
+
+  void wash() {
+    print('세척완료');
+  }
 }
