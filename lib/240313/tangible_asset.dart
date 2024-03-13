@@ -25,6 +25,6 @@ abstract class TangibleAsset extends Asset implements Thing {
   @override
   void show() {
     super.show();
-    print('이름: $name 가격:$price 색상:$color 무게:$_weight');
+    print('이름: $name, 가격:$price ,색상:$color ,무게:$_weight');
   }
 }
