@@ -1,10 +1,12 @@
 abstract class Asset {
-  String name;
-  int price;
+  String _name;
+  int _price;
 
-  Asset(this.name, this.price);
+  Asset(this._name, this._price);
 
   String generateDescription();
 
-  int get valuationPrice => price;
+  int get valuationPrice => _price;
+
+  String get name => _name;
 }
