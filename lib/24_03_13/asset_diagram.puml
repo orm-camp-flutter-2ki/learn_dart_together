@@ -8,8 +8,9 @@ abstract class Asset{
 }
 
 interface Thing{
-     double get weight()
-     set weight(double value)
+
+   {abstract} double get weight()
+   {abstract} set weight(double value)
 }
 
 
