@@ -2,7 +2,7 @@ import 'package:learn_dart_together/24_03_13/tangible_asset.dart';
 
 class Book extends TangibleAsset {
   String isbn;
-  double? weight;
+  double? _weight;
 
   Book(
     super.name,
@@ -17,19 +17,19 @@ class Book extends TangibleAsset {
   }
 
   @override
-  double getWeight() {
-    return weight ?? 0.0;
+  double get weight {
+    return _weight ?? 0.0;
   }
 
   @override
-  void setMass(double value) {
-    weight = value;
+  set mass(double value) {
+    _weight = value;
   }
 }
 
 void main() {
   Book book = Book('퍼즐로 이해하는 알고리즘', 3, 'white', 'BJPublic');
-  book.setMass(10);
+  book.mass = 10.0;
   book.displayInfo();
   print('${book.weight}');
 }
