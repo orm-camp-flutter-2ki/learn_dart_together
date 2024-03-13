@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Asset{
+    name()
+    price()
+}
+
+class TangibleAsset extends Asset{
+    +name()
+    +price()
+    -color
+
+}
+class Book extends TangibleAsset
+{
+    +name()
+    +price()
+    -color
+     isbn()
+}
+class Computer extends TangibleAsset
+{
+    +name()
+    +price()
+    -color
+    makerName
+}
+
+class Intangibleasset extends Asset
+{
+    +name()
+    +price()
+    -type
+
+}
+
+class CopyRight extends Intangibleasset
+{
+    +name()
+    +price()
+    -type
+    characteristic
+    }
+
+
+class Trademark extends Intangibleasset{
+  +name()
+  +price()
+  -type
+}
+
+class TangibleAsset extends Thing
+@enduml
