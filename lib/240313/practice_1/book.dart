@@ -7,6 +7,14 @@ class Book extends TangibleAsset {
     super.name,
     super.color,
     super.price,
+    super.warrantyExpiredYear,
+    super.warrantyExpiredMonth,
+    super.warrantyExpiredDay,
     this.isbn,
+    this.weight,
   );
+
+  @override
+  double weight;
+
 }
