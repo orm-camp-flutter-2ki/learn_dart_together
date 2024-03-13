@@ -1,0 +1,56 @@
+@startuml
+
+abstract class "Assets" {
+  -String _name
+  +String name
+  -int _price
+  +int price
+}
+
+abstract class "TangibleAssets" extends "Assets" implements "Thing" {
+  -String _color
+  +String color
+  -double _weight
+  +double weight
+  {abstract} void depreciate()
+}
+
+abstract class "IntangibleAssets" extends "Assets" implements "IntangibleType" {
+  -String _type
+  +String type
+  -String _certificate
+  +String certificate
+}
+
+class "IntangibleType" {
+  {abstract} -String _certificate
+  {abstract} +String certificate
+}
+
+class "Thing" {
+  {abstract} -double _weight
+  {abstract} +double weight
+  {abstract} void aged()
+}
+
+class "Book" extends "TangibleAssets" {
+  -String _isbn
+  +String isbn
+  void depreciate()
+  void aged()
+}
+
+class "Computer" extends "TangibleAssets" {
+  -String _makerName
+  +String makerName
+  void depreciate()
+  void aged()
+}
+
+class "Technology" extends "IntangibleAssets" {
+  -String _techLevel
+  +String techLevel
+}
+
+
+@enduml
