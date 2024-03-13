@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240312/Hero.dart';
+import 'package:learn_dart_together/240312/hero.dart';
 
 class SuperHero extends Hero {
   SuperHero(super.name, super.hp);

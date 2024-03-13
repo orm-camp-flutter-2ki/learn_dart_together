@@ -1,6 +1,6 @@
-import '../../240312/Bird.dart';
-import '../../240312/Cat.dart';
-import '../../240312/Dog.dart';
+import '../../240312/bird.dart';
+import '../../240312/cat.dart';
+import '../../240312/dog.dart';
 
 void main() {
   Dog dog = Dog(type: '포유류', sound: '멍멍');

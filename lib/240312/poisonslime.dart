@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/240312/Slime.dart';
-import 'package:learn_dart_together/240312/Hero.dart';
+import 'package:learn_dart_together/240312/slime.dart';
+import 'package:learn_dart_together/240312/hero.dart';
 
 class PoisonSlime extends Slime {
   PoisonSlime(super.suffix);
