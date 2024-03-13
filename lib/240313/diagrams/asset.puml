@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Asset {
+  +name
+  +price
+}
+
+abstract class IntangibleAsset extends Asset{
+  +expirationYn
+}
+
+abstract class TangibleAsset extends Asset implements Thing {
+  +color
+  +assetWeight
+}
+
+class Book extends TangibleAsset {
+  +isbn
+}
+
+class Computer extends TangibleAsset {
+  +makerName
+}
+
+class Patent extends IntangibleAsset {
+  +patentNumber
+}
+
+interface Thing {
+
+}
+
+
+@enduml
