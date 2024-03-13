@@ -49,4 +49,6 @@ class Trademark extends Intangibleasset{
   +price()
   -type
 }
+
+class TangibleAsset extends Thing
 @enduml
