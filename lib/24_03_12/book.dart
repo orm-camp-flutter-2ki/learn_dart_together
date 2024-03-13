@@ -3,7 +3,7 @@ import 'package:learn_dart_together/24_03_13/tangible_asset.dart';
 class Book extends TangibleAsset {
   String author;
   String genre;
-  String isbn;
+  String? isbn;
 
   /// [고민의 흔적]
   ///  생성자의 regular constructor body를 사용하여 부모 클래스의 속성들을 초기화
@@ -16,7 +16,8 @@ class Book extends TangibleAsset {
 
   Book(
     this.isbn,
-    super.color, {
+    super.color,
+    super._weight, {
     required this.author,
     required this.genre,
     super.name = '',
@@ -28,16 +29,23 @@ class Book extends TangibleAsset {
     this.isbn, {
     required this.author,
     required this.genre,
+    String color = '',
+    double weight = 0,
     String name = '',
     int price = 0,
-    String color = '',
-  }) : super(name: name, price: price, color);
+  }) : super(
+          color,
+          weight,
+          name: name,
+          price: price,
+        );
 
+  // 대출 불가 도서. isbn이 없다.
   Book.referenceBook(
-    super.color, {
+    super.color,
+    super._weight, {
     required this.author,
     required this.genre,
-    required this.isbn,
     required super.name,
     required super.price,
   });
@@ -53,7 +61,8 @@ class Fiction extends Book {
   Fiction(
     this.subgenre,
     super.isbn,
-    super.color, {
+    super.color,
+    super._weight, {
     required super.name,
     required super.price,
     required super.author,
@@ -67,7 +76,8 @@ class NonFiction extends Book {
   NonFiction(
     this.subject,
     super.isbn,
-    super.color, {
+    super.color,
+    super._weight, {
     required super.name,
     required super.price,
     required super.author,

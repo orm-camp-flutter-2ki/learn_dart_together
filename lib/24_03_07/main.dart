@@ -2,17 +2,17 @@ import 'package:learn_dart_together/24_03_07/cleric.dart';
 import 'package:learn_dart_together/24_03_11/person.dart';
 import 'package:learn_dart_together/24_03_11/wand.dart';
 import 'package:learn_dart_together/24_03_11/wizard.dart';
+import 'package:learn_dart_together/24_03_12/book.dart';
 import 'package:learn_dart_together/24_03_12/hero.dart';
 import 'package:learn_dart_together/24_03_12/poison_slime.dart';
+import 'package:learn_dart_together/24_03_13/Intangible_asset.dart';
 
 void main() {
-
-  Hero hero = Hero(name: '영웅', hp: 100);
-  PoisonSlime ps = PoisonSlime('독');
-
-  ps.attackChance = 5;
-  ps.attack(hero);
-
+  // Hero hero = Hero(name: '영웅', hp: 100);
+  // PoisonSlime ps = PoisonSlime('독');
+  //
+  // ps.attackChance = 5;
+  // ps.attack(hero);
 
   // Cleric cleric = Cleric("홍길동");
   // Cleric cleric1 = Cleric("우투리", hp: 100);
@@ -50,5 +50,16 @@ void main() {
   //
   // print('age : ${person.age}');
 
+  NonFiction non = NonFiction(
+    'subject',
+    'isbn',
+    'color',
+    name: 'name',
+    price: 100,
+    author: 'author',
+    genre: 'genre',
+    11,
+  );
 
+  print('${non.weight}');
 }
