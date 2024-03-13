@@ -1,0 +1,41 @@
+@startuml Asset 
+scale 1
+abstract class Asset {
+  +String name
+  +int price  
+}
+abstract class TangibleAsset extends Asset implements Thing{
+  +String color
+  +double _weight
+  +set weight(double value) {}
+  +double get weight();
+}
+class InTangibleAsset extends Asset {
+  +int period
+  +String field
+
+}
+class Patent extends InTangibleAsset {
+  +String jurisdictionDepartment
+  +String jurisdictionPerson
+
+}
+class Book extends TangibleAsset implements Thing {
+  +String isbn
+
+}
+class Computer extends TangibleAsset implements Thing {
+  +String makerName
+  
+}
+class Stone implements Thing {  
+  +double _weight;
+
+  +set weight(double value) {}
+  +double get weight();
+}
+interface Thing {
+  +{abstract}set weight(double value) 
+  +{abstract}double get weight()
+}
+@enduml
