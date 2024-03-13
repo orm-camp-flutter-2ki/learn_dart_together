@@ -1,13 +1,12 @@
-class Book {
-  String name;
-  String color;
-  String isbn;
-  int price;
+import 'package:learn_dart_together/240313/practice_1/tangible_asset.dart';
 
-  Book({
-    required this.name,
-    required this.color,
-    required this.isbn,
-    required this.price,
-  });
+class Book extends TangibleAsset {
+  String isbn;
+
+  Book(
+    super.name,
+    super.color,
+    super.price,
+    this.isbn,
+  );
 }
