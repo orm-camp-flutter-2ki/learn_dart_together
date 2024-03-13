@@ -1,0 +1,24 @@
+@startuml
+
+scale 2
+
+abstract class Vehicle implements Movable {
+}
+
+'승용차
+class Car extends Vehicle {}
+
+'트럭
+class Truck extends Vehicle {}
+
+class Person implements Movable {
+    void move()
+}
+
+interface Movable {
+    {abstract} void move()
+}
+
+
+
+@enduml

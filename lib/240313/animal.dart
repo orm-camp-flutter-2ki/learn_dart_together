@@ -1,4 +1,17 @@
+int money = 0;
+
+// add - subtract
+//  - reduce
+
+void incrementMoney() {
+  money++;
+}
+
+void decrementMoney() {
+  money--;
+}
+
 void main() {
-  // Dog, Cat
-  Animal animal = Animal('멍멍이');
+
+  Vehicle vehicle = Vehicle('오토바이');
 }

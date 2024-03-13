@@ -1,5 +1,7 @@
 @startuml
 
+scale 1.5
+
 abstract class Animal {
     String sound
     String name
@@ -10,14 +12,17 @@ abstract class Animal {
 class Dog extends Animal implements 산책맨 {
 }
 
+'extends 상속
 class Cat extends Animal {
     void punch()
 }
 
+'implements 구현
 class Person implements 산책맨 {
 
 }
 
+'abstract interface class
 interface 산책맨 {
     void 산책()
 }
