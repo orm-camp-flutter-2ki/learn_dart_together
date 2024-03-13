@@ -6,7 +6,7 @@ class Slime {
 
   Slime(this.suffix);
 
-  void attack(Hero hero){
+  void attack(Hero hero) {
     print('슬라임 $suffix이/가 공격했다');
     print('10의 데미지');
     hero.hp -= 10;

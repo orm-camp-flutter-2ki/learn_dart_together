@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Thing {
+    +get weight();
+    +set weight();
+}
+
+abstract class Asset {
+    +name // 이름
+    +ownership // 소유권
+    String value // 가치
+}
+
+abstract class IntangibleAsset extends Asset {
+    +patent
+}
+
+abstract class TangibleAsset extends Asset implements Thing {
+    +price
+    +color
+    -weight
+
+    +buy()
+    +sell()
+}
+
+class Book extends TangibleAsset {
+    +isbn
+
+    +book()
+    +sell()
+}
+
+class Computer extends TangibleAsset {
+    +makerName
+}
+
+class License extends IntangibleAsset {
+    +contract // 계약
+}
+
+@enduml

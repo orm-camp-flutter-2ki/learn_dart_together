@@ -11,14 +11,11 @@ class Car extends Vehicle{
     double registrationTax;
 }
 
-class Truck extends Car{
-    String cdl; // commercial driver's license (CDL)
+class Truck extends Car {
+    String license;
 }
 
 class Motorcycle extends Vehicle {
-
     String motorCycleLicense;
 }
-
-
 @enduml
