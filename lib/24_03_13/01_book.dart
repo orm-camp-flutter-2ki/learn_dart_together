@@ -11,10 +11,18 @@ class Book extends TangibleAsset {
     required this.price,
     required this.color,
     required this.isbn,
-    required super.isFixedAsset,
-    required super.useYear,
-    required super.expirationDate,
-  });
+    required this.weight,
+    // required super.isFixedAsset,
+    // required super.useYear,
+    // required super.expirationDate,
+    // required super.isWeighted,
+  }) : super(isFixedAsset: false, useYear: 0, expirationDate: 0, isWeighted: false, weight: 0.0);
+
+  @override
+  void isThing();
+
+  @override
+  double weight;
 }
 
 void main() {
@@ -23,9 +31,12 @@ void main() {
       price: 500,
       color: 'black',
       isbn: 'isbn',
-      isFixedAsset: true,
-      useYear: 10,
-      expirationDate: 30);
+      // isFixedAsset: true,
+      // useYear: 10,
+      // expirationDate: 30,
+      // isWeighted: true,
+      weight: 15);
 
   book.depreciated(book);
+  book.isThing();
 }

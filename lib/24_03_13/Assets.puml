@@ -1,0 +1,32 @@
+@startuml
+scale 2
+
+class Assets {
+
+}
+
+class TangibleAsset {
+
+}
+
+class IntangibleAsset {
+
+}
+
+class Computer {
+
+}
+
+class Book {
+
+}
+
+class Patent {
+
+}
+
+class License {
+
+}
+
+@enduml
