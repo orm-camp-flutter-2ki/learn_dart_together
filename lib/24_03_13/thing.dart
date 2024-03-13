@@ -1,4 +1,4 @@
 abstract interface class Thing {
   double get weight;
-  set weight(double things);
+  set weight(double weight);
 }
