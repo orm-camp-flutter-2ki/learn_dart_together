@@ -1,0 +1,32 @@
+@startuml
+
+class Animal {
+  - String type
+  - String sound
+  + Animal(type: String, sound: String)
+  + void makeSound()
+}
+
+class Dog {
+  - String breed
+  + Dog(type: String, sound: String, breed: String)
+  + void wagTail()
+}
+
+class Cat {
+  - bool hasWhiskers
+  + Cat(type: String, sound: String, hasWhiskers: bool)
+  + void meow()
+}
+
+class Bird {
+  - bool canFly
+  + Bird(type: String, sound: String, canFly: bool)
+  + void fly()
+}
+
+Animal <|-- Dog
+Animal <|-- Cat
+Animal <|-- Bird
+
+@enduml
