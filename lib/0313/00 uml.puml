@@ -9,7 +9,7 @@ isVisibility()
 }
 
 'interface'
-interface abstractThing{
+interface Thing{
 weight()
 }
 
