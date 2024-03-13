@@ -1,0 +1,35 @@
+@startuml
+
+abstract class Assets{
+String name;
+int code;
+String purchaseDate;
+String getDate;
+int purchasePrice;
+String category;
+
+Assets(this.name, this.code, this.purchaseDate, this.getDate, this.purchaseDate, this.category)
+
+void disposeAsset();
+}
+
+class TangibleAsset extends Assets{
+String location;
+
+TangibleAsset(this.location, super.name, super.code, super.purchaseDate, super.getDate, super.purchasePrice, super.category);
+
+}
+
+class IntangibleAsset extends Assets{
+}
+
+class Computer extends TangibleAsset{
+}
+
+class Book extends TangibleAsset {
+}
+
+class patent extends IntangibleAsset {
+}
+
+@enduml
