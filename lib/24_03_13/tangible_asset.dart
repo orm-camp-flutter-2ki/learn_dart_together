@@ -1,5 +1,5 @@
+import 'package:learn_dart_together/24_03_13/asset.dart';
 import 'package:learn_dart_together/24_03_13/thing.dart';
-import 'asset.dart';
 
 abstract class TangibleAsset extends Asset implements Thing {
   String color;
