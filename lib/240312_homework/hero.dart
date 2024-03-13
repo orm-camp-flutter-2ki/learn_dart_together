@@ -8,10 +8,10 @@ class Character {
   int hp;
   int maxHp = 100;
 
-  Character({required this.name,required this.hp});
+  Character({required this.name, required this.hp});
 }
 
-class Hero extends Character{
+class Hero extends Character {
   Sword? sword;
 
   Hero({required super.name, required super.hp});
@@ -21,5 +21,5 @@ class Sword {
   String name;
   int power;
 
-  Sword({required this.name,required this.power});
+  Sword({required this.name, required this.power});
 }

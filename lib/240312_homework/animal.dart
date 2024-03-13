@@ -1,4 +1,4 @@
-void main(){
+void main() {
   Dog dog = Dog('개', 'woof-woof');
   dog.talk();
   dog.tailWagging();
@@ -12,37 +12,37 @@ void main(){
   bird.song();
 }
 
-class Animal{
+class Animal {
   String type;
   String sound;
 
-  Animal(this.type,this.sound);
+  Animal(this.type, this.sound);
 
-  void talk(){
+  void talk() {
     print(sound);
   }
 }
 
-class Dog extends Animal{
+class Dog extends Animal {
   Dog(super.type, super.sound);
 
-  void tailWagging(){
+  void tailWagging() {
     print('강아지가 당신을 보며 꼬리를 흔듭니다.');
   }
 }
 
-class Cat extends Animal{
+class Cat extends Animal {
   Cat(super.type, super.sound);
 
-  void scratch(){
+  void scratch() {
     print('고양이가 당신을 할퀴었습니다.');
   }
 }
 
-class Bird extends Animal{
+class Bird extends Animal {
   Bird(super.type, super.sound);
 
-  void song(){
+  void song() {
     print('새가 지저귑니다.');
   }
 }
