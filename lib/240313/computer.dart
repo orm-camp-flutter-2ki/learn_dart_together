@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240313/tangibleAsset.dart';
+import 'package:learn_dart_together/240313/tangibleasset.dart';
 
 class Computer extends TangibleAsset {
   String makerName;

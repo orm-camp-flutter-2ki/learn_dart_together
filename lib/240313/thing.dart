@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 abstract interface class Thing {
   double get weight;
 
