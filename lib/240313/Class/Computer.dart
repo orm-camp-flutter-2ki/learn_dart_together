@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240313/TangibleAsset.dart';
+import 'package:learn_dart_together/240313/Abstract/TangibleAsset.dart';
 
 class Computer extends TangibleAsset {
   String os;
