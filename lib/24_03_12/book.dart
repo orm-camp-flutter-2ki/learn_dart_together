@@ -5,37 +5,41 @@ class Book extends TangibleAsset {
   String genre;
   String isbn;
 
-  // initializer list를 사용하여 초기화
-  Book({
+  /// [고민의 흔적]
+  ///  생성자의 regular constructor body를 사용하여 부모 클래스의 속성들을 초기화
+  ///  이 방식은 이미 부모 클래스에 필드를 초기화 하는 코드와 중복이 되므로 사용성이 좋진 않다.
+  ///  (왜냐면 이미 부모 클래스에서 named parameter 로 선언을 해 놓은 상태이기 때문에.)
+  ///  Book.another 생성자 처럼 변수에 파라미터 값을 받아서 전달 해주는 게 더 명확하다.
+  ///  근데 abstract class에서 필드를 named로 하고 말고는 자유겠지..? 흠
+  ///  [==> 결론 !!] Book.another 생성자와 이 생성자는 문법만 다르고 같은 생성자다.
+  ///  Book.another 가 옛날 버전 문법임.
+
+  Book(
+    this.isbn,
+    super.color, {
     required this.author,
     required this.genre,
-    required this.isbn,
+    super.name = '',
+    super.price = 0,
+  });
+
+  // initializer list를 사용하여 초기화. 예전 문법
+  Book.another(
+    this.isbn, {
+    required this.author,
+    required this.genre,
     String name = '',
     int price = 0,
     String color = '',
-  }) : super(name: name, price: price, color: color);
+  }) : super(name: name, price: price, color);
 
-  // 생성자의 regular constructor body를 사용하여 부모 클래스의 속성들을 초기화
-  // 이 방식은 이미 부모 클래스에 필드를 초기화 하는 코드와 중복이 되므로 사용성이 좋진 않다.
-  // (왜냐면 이미 부모 클래스에서 named parameter 로 선언을 해 놓은 상태이기 때문에.)
-  // 위 생성자 처럼 변수에 파라미터 값을 받아서 전달 해주는 게 더 명확하다.
-  Book.another(
-    this.author,
-    this.genre,
-    this.isbn, {
-    super.name = '',
-    super.price = 0,
-    super.color = '',
-  });
-
-  // 부모 클래스의 필드를 필수로 하고 named로 넣고 싶을 경우에 이렇게 한다.
-  Book.another2({
+  Book.referenceBook(
+    super.color, {
     required this.author,
     required this.genre,
     required this.isbn,
     required super.name,
     required super.price,
-    required super.color,
   });
 
   void read() {
@@ -47,13 +51,13 @@ class Fiction extends Book {
   String subgenre;
 
   Fiction(
-    this.subgenre, {
+    this.subgenre,
+    super.isbn,
+    super.color, {
     required super.name,
     required super.price,
-    required super.color,
     required super.author,
     required super.genre,
-    required super.isbn,
   });
 }
 
@@ -62,18 +66,11 @@ class NonFiction extends Book {
 
   NonFiction(
     this.subject,
-    String author,
-    String genre,
-    String isbn, {
-    String name = '',
-    int price = 0,
-    String color = '',
-  }) : super(
-          name: name,
-          price: price,
-          color: color,
-          author: author,
-          genre: genre,
-          isbn: isbn,
-        );
+    super.isbn,
+    super.color, {
+    required super.name,
+    required super.price,
+    required super.author,
+    required super.genre,
+  });
 }

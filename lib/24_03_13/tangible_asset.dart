@@ -1,24 +1,14 @@
 import 'package:learn_dart_together/24_03_12/book.dart';
 
+import 'asset.dart';
+
 /// 유형자산
-abstract class TangibleAsset {
-  String name;
-  int price;
+abstract class TangibleAsset extends Asset {
   String color;
 
-  TangibleAsset({
-    required this.name,
-    required this.price,
-    required this.color,
+  TangibleAsset(
+    this.color, {
+    required super.name,
+    required super.price,
   });
 }
-
-Fiction fiction = Fiction(
-  'subgenre',
-  author: 'author',
-  genre: 'genre',
-  isbn: 'isbn',
-  name: 'name',
-  price: 0,
-  color: 'color',
-);
