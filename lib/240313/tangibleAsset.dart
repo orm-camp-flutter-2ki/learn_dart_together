@@ -4,7 +4,7 @@ import 'package:learn_dart_together/240313/thing.dart';
 abstract class TangibleAsset extends Asset implements Thing {
   int price;
   String color;
-  double _weight;
+  double _weight; //getter setter을 쓰려면 private울 써야 함 일반적인 개념에서
 
   TangibleAsset({required this.price,
       required this.color,
