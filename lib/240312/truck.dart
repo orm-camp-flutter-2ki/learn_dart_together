@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240312/Vehicle.dart';
+import 'package:learn_dart_together/240312/vehicle.dart';
 
 class Truck extends Vehicle {
   Truck(super.maker, super.model, super.year);

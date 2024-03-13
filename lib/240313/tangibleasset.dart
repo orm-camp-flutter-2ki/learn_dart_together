@@ -1,4 +1,4 @@
-import 'Asset.dart';
+import 'asset.dart';
 
 abstract class TangibleAsset extends Asset {
   int price;

@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240312/Animal.dart';
+import 'package:learn_dart_together/240312/animal.dart';
 
 class Dog extends Animal {
   Dog({required super.type, required super.sound});

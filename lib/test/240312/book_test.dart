@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/240312/Fiction.dart';
-import 'package:learn_dart_together/240312/NonFiction.dart';
+import 'package:learn_dart_together/240312/fiction.dart';
+import 'package:learn_dart_together/240312/nonfiction.dart';
 import 'package:test/test.dart';
 
 void main() {

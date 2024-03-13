@@ -1,4 +1,4 @@
-import 'Point.dart';
+import 'point.dart';
 
 class Rectagle {
   double width;

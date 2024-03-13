@@ -1,4 +1,4 @@
-import 'Asset/abstract Asset.dart';
+import 'Asset/abstract_asset.dart';
 
 class idea extends intangibleAsset {
   String patentNum;

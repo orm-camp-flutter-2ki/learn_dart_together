@@ -1,4 +1,4 @@
-import 'Asset.dart';
+import 'asset.dart';
 
 abstract class intangibleAsset extends Asset {
   String patent;

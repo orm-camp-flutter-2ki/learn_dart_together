@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240312/Rectangle.dart';
+import 'package:learn_dart_together/240312/rectangle.dart';
 import 'package:test/test.dart';
 
 void main() {
