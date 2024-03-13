@@ -1,7 +1,8 @@
 
 import 'package:learn_dart_together/240313/Abstract/Asset.dart';
+import 'package:learn_dart_together/240313/Interface/Thing.dart';
 
-abstract class TangibleAsset extends Asset {
+abstract class TangibleAsset extends Asset implements Thing {
   String name;
   int pirce;
   String color;
