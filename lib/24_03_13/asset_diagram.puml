@@ -7,7 +7,13 @@ abstract class Asset{
     +int price
 }
 
-abstract class TangibleAsset extends Asset{
+interface Thing{
+     +get()
+     +set()
+}
+
+
+abstract class TangibleAsset extends Asset implements Thing{
     +String color
 }
 class Book extends Asset{
