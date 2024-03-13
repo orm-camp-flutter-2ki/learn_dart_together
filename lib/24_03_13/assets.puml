@@ -1,0 +1,71 @@
+@startuml
+
+abstract class Assets {
+    +String name
+}
+
+interface Thing {
+    +double getWeight()
+    +void setMass()
+}
+
+abstract class TangibleAsset extends Assets implements Thing{
+    +String name
+    +int price
+    +String color
+    +void displayInfo()
+}
+
+abstract class IntangibleAsset extends Assets{
+    +String name
+    +int number
+    +String description
+    +void descriptionInfo()
+}
+
+class Book extends TangibleAsset {
+    +String name
+    +int price
+    +String color
+    +String isbn
+    +double? weight
+    +void displayInfo()
+    +double getWeight()
+    +void setMass()
+}
+
+class Computer extends TangibleAsset {
+    +String name
+    +int price
+    +String color
+    +String makerName
+    +double? weight
+    +void displayInfo()
+    +double getWeight()
+    +void setMass()
+}
+
+class Fiction extends Book {
+    +String name
+    +int price
+    +String color
+    +String isbn
+    +String subgenre
+}
+
+class NonFiction extends Book {
+    +String name
+    +int price
+    +String color
+    +String isbn
+    +String subgenre
+}
+
+class Patent extends IntangibleAsset {
+    +String name
+    +String number
+    +String description
+    +void descriptionInfo()
+}
+
+@enduml
