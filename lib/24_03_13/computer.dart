@@ -4,11 +4,12 @@ abstract class Computer extends TangibleAsset {
   String makerName;
 
   Computer({
+    required super.color,
     required super.name,
     required super.ownership,
-    required super.value,
     required super.price,
-    required super.color,
+    required super.value,
+    required super.weight,
     required this.makerName,
   });
 }
