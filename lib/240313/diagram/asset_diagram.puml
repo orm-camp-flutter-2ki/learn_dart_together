@@ -4,7 +4,7 @@ abstract class Asset {
   +String name
   +int price  
 }
-abstract class TangibleAsset extends Asset {
+abstract class TangibleAsset extends Asset implements Thing{
   +String color
 
 }
