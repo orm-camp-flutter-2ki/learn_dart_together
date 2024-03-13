@@ -1,0 +1,25 @@
+@startuml
+
+abstract class Animal {
+    String sound
+    String name
+
+    void makeSound()
+}
+
+class Dog extends Animal implements 산책맨 {
+}
+
+class Cat extends Animal {
+    void punch()
+}
+
+class Person implements 산책맨 {
+
+}
+
+interface 산책맨 {
+    void 산책()
+}
+
+@enduml
