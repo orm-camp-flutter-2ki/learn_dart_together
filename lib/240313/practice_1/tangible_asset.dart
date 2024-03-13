@@ -12,21 +12,20 @@ abstract class TangibleAsset extends Asset implements Thing {
   String warrantyExpiredDay;
 
   TangibleAsset(
-    super.name,
-    super.price,
-    this.color,
-    this._weight,
-    this.warrantyExpiredYear,
-    this.warrantyExpiredMonth,
-    this.warrantyExpiredDay,
-  );
+    this._weight, {
+    required super.name,
+    required super.price,
+    required this.color,
+    required this.warrantyExpiredYear,
+    required this.warrantyExpiredMonth,
+    required this.warrantyExpiredDay,
+  });
 
   @override
   double get weight => _weight;
 
   @override
   set weight(double value) => _weight;
-
 
   String rental() {
     String warrantyExpiredDate =

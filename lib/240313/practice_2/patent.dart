@@ -5,12 +5,12 @@ class Patent extends IntangibleAsset {
   int number; // 특허 번호
 
   Patent(
-    super.price,
-    super.name,
-    super.ownerName,
-    this.number,
-    this.weight,
-  );
+    this.weight, {
+    required super.price,
+    required super.name,
+    required super.ownerName,
+    required this.number,
+  });
 
   @override
   double weight;

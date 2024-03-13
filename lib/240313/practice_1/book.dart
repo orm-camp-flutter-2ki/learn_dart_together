@@ -4,13 +4,13 @@ class Book extends TangibleAsset {
   String isbn;
 
   Book(
-    super.name,
-    super.price,
-    super.color,
-    super.weight,
-    super.warrantyExpiredYear,
-    super.warrantyExpiredMonth,
-    super.warrantyExpiredDay,
-    this.isbn,
-  );
+    super.weight, {
+    required super.name,
+    required super.price,
+    required super.color,
+    required super.warrantyExpiredYear,
+    required super.warrantyExpiredMonth,
+    required super.warrantyExpiredDay,
+    required this.isbn,
+  });
 }

@@ -6,11 +6,11 @@ import 'asset.dart';
 abstract class IntangibleAsset extends Asset implements Thing {
   String ownerName;
 
-  IntangibleAsset(
-    super.price,
-    super.name,
-    this.ownerName,
-  );
+  IntangibleAsset({
+    required super.price,
+    required super.name,
+    required this.ownerName,
+  });
 
   // 가치 평가
   void value();
