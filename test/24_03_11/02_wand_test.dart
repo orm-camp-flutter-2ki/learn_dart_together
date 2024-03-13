@@ -6,7 +6,8 @@ void main() {
     Wand wand = Wand(name: 'Wanded', power: 13.0);
 
     // wand.name = 'dd';
-    wand.power = 123.5;
+    // wand.power = 123.5;
 
+    expect(() => wand.power = 123.5, throwsException);
   });
 }
