@@ -8,31 +8,31 @@
 class Cleric {
 
   String name;
-  int? hp;
-  int? mp;
+  int hp;
+  int mp;
 
   static const int maxHp = 50;
   static const int maxMp = 10;
 
   //생성자
-  Cleric({required this.name, this.hp = maxHp, this.mp = maxMp});
-}
-
-void main(){
-  final cleric1 = Cleric(name: '아서스',hp: 40,mp: 5);
-  final cleric2 = Cleric(name: '아서스',hp: 35);
-  final cleric3 = Cleric(name: '아서스');
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp});
+// }
+//
+// void main(){
+//   final cleric1 = Cleric('아서스',hp: 40,mp: 5);
+//   final cleric2 = Cleric('아서스',hp: 35);
+//   final cleric3 = Cleric('아서스');
   //final cleric4 = Cleric(); //인스턴스화 할 수 없다.
 
   //확인용 코드
-  print('===== 클래릭1 생성 =====');
-  print('${cleric1.hp}, ${cleric1.mp}');
-
-  print('===== 클래릭2 생성 =====');
-  print('${cleric2.hp}, ${cleric2.mp}');
-
-  print('===== 클래릭3 생성 =====');
-  print('${cleric3.hp}, ${cleric3.mp}');
+  // print('===== 클래릭1 생성 =====');
+  // print('${cleric1.hp}, ${cleric1.mp}');
+  //
+  // print('===== 클래릭2 생성 =====');
+  // print('${cleric2.hp}, ${cleric2.mp}');
+  //
+  // print('===== 클래릭3 생성 =====');
+  // print('${cleric3.hp}, ${cleric3.mp}');
 
   //print('===== 클래릭4 생성 =====');
   //print('${cleric4.hp}, ${cleric4.mp}');
