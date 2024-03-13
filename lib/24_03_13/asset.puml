@@ -1,4 +1,4 @@
-@startuml
+$@startuml
 'https://plantuml.com/class-diagram
 
 abstract class Asset{
@@ -36,7 +36,7 @@ class computer{
 }
 class BrandValue{}
 
-Thing <|-- TangibleAsset
+Thing <|.. TangibleAsset
 Asset <|-- TangibleAsset
 Asset <|-- InTangibleAsset
 TangibleAsset <|-- Book
