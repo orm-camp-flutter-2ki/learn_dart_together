@@ -1,4 +1,4 @@
-import 'Hero.dart';
+import 'hero.dart';
 
 class Slime {
   static final maxHp = 50;

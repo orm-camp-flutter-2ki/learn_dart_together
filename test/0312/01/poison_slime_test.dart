@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/0312/01/Hero.dart';
-import 'package:learn_dart_together/0312/01/PoisonSlime.dart';
+import 'package:learn_dart_together/0312/01/hero.dart';
+import 'package:learn_dart_together/0312/01/poison_slime.dart';
 import 'package:test/test.dart';
 
 void main() {
