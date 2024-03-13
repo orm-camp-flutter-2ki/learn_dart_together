@@ -1,6 +1,8 @@
 @startuml
 
 abstract class Asset {
+String name
+int price
 }
 
 '무형 자산
@@ -10,9 +12,12 @@ String ownerName
 
 '유형 자산
 abstract class TangibleAsset extends Asset{
-String name
 String color
-int price
+String warrantyExpiredYear
+String warrantyExpiredMonth
+String warrantyExpiredDay
+
+String rental()
 }
 
 '무형 자산 상속
