@@ -7,6 +7,7 @@ class Book extends TangibleAsset {
     super.name,
     super.price,
     super.color,
+    super._weight,
     this.isbn,
   );
 
