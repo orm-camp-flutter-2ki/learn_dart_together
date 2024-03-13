@@ -1,4 +1,5 @@
-import 'cleric.dart';
+import'02_dart_class.dart';
+
 
 void main() {
   final Hero1 = Cleric("아서스1", hp: 40, mp: 5);
