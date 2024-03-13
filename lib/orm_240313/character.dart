@@ -24,7 +24,3 @@ class Dancer extends Character{
 
 }
 
-abstract interface class CleaningSevice {
-  Shirt washShirt(Shirt shirt);
-
-}
