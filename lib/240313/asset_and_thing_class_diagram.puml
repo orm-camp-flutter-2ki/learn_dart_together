@@ -1,0 +1,35 @@
+@startuml
+
+interface Thing {
+}
+
+abstract class Asset {
+-String name
+-int price
++void printInformation()
+}
+
+abstract class TangibleAsset extends Asset implements Thing {
+-String color
+-double weight
++void printInformation()
+}
+
+abstract class IntangibleAsset extends Asset {
+}
+
+class Book extends TangibleAsset {
+-String isbn
++void printInformation()
+}
+
+class Computer extends TangibleAsset {
+-String makerName
++void printInformation()
+}
+
+class Patent extends IntangibleAsset {
+-String creator
+}
+
+@enduml
