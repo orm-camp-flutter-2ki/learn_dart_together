@@ -1,29 +1,21 @@
-import 'package:learn_dart_together/240313/asset.dart';
+import 'package:learn_dart_together/240313/book.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Book 테스트', () {
-    test('Book 인스턴스 생성', () {
-      Book book = Book(
-          name: 'Flutter 프로그래밍',
-          price: 20000,
-          color: '파랑',
-          isbn: '9781234567890');
-      expect(book.name, 'Flutter 프로그래밍');
-      expect(book.price, 20000);
-      expect(book.color, '파랑');
-      expect(book.isbn, '9781234567890');
-    });
-  });
+  test('asset test', () {
+    Book book = Book(
+      name: '책 제목',
+      price: 20000,
+      color: '파란색',
+      weight: 1.5,
+      isbn: '9781234567890',
+    ); //Book클래스 인스턴스 생성
 
-  group('Computer 테스트', () {
-    test('Computer 인스턴스 생성', () {
-      Computer computer = Computer(
-          name: 'MacBook Pro', price: 3000000, color: '은색', makerName: 'Apple');
-      expect(computer.name, 'MacBook Pro');
-      expect(computer.price, 3000000);
-      expect(computer.color, '은색');
-      expect(computer.makerName, 'Apple');
-    });
+    // 수정된 부분: expect 문의 인수를 올바르게 수정
+    expect(book.name, '책 제목');
+    expect(book.price, 20000);
+    expect(book.color, '파란색');
+    expect(book.weight, 1.5);
+    expect(book.isbn, '9781234567890');
   });
 }

@@ -7,7 +7,7 @@ class Book extends TangibleAsset {
   String isbn;
 
   Book({
-    required String name,
+    required name,
     required int price,
     required String color,
     required double weight,
