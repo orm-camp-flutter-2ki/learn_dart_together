@@ -9,7 +9,7 @@ abstract class TangibleAsset extends Asset implements Thing {
   TangibleAsset({required super.name, required super.price, required this.color, required double weight}) : _weight = weight;
 
   @override
-  set weight(double value) {
+  set weight(double weight) {
     _weight = weight;
   }
 
