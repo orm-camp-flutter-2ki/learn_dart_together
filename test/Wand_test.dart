@@ -12,3 +12,25 @@ void main() {
     expect(() => wand.power = 0, throwsException);
   });
 }
+
+/*
+void main() {
+  test('지팡이의 이름은 반드시 3문자 이상이어야 한다', () {
+    Wand wand = Wand(name: 'name', power: 100);
+
+    expect(() => wand.name = '김', throwsException);
+    expect(() => wand.name = '김씨', throwsException);
+    expect(() => wand.name = '김씨2', returnsNormally);
+    expect(() => wand.name = '김씨22', returnsNormally);
+  });
+
+  test('지팡이의 마력은 0.5이상 100.0 이하여야 한다', () {
+    Wand wand = Wand(name: 'name', power: 100);
+
+    expect(() => wand.power = '0.4', throwsException);
+    expect(() => wand.power = '0.4', throwsException);
+    expect(() => wand.power = '100.1', returnsNormally);
+    expect(() => wand.power = '100', returnsNormally);
+  });
+}
+*/
