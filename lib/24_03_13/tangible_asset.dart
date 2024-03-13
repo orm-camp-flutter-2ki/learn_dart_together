@@ -1,9 +1,10 @@
-abstract class TangibleAsset {
-  String name;
-  int price;
+import 'package:learn_dart_together/24_03_13/asset.dart';
+
+abstract class TangibleAsset extends Asset {
   String color;
 
-  TangibleAsset(this.name, this.price, this.color);
+  TangibleAsset(super.name, super.price, this.color);
 
+  @override
   String generateDescription();
 }
