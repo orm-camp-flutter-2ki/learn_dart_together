@@ -1,5 +1,3 @@
-import 'package:learn_dart_together/%EC%97%B0%EC%8A%B5/240311/chamjo.dart';
-
 class Hero {
   final String _name;
   int _hp;

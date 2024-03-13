@@ -1,0 +1,9 @@
+@startuml Asset
+
+abstract class Asset {}
+
+abstract class TangibleAsset extends Asset implements Thing {
+}
+
+interface Thing {
+}
