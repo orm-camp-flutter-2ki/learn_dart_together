@@ -1,27 +1,26 @@
 @startuml Animal
 
 class Animal {
-  String type;
-  String sound;
+  +String type
+  +String sound
 
-  Animal(this.type, this.sound);
-  void move()
-  void makeSound()
+  +void move()
+  +void makeSound()
 }
 
 class Bird extends Animal {
-  Bird(super.type, super.sound);
-  void move()
+  +Bird(super.type, super.sound);
+  +void move()
 }
 
 class Cat extends Animal {
-  Cat(super.type, super.sound);
-  void move() 
+  +Cat(super.type, super.sound);
+  +void move() 
 }
 
 class Dog extends Animal {
-  Dog(super.type, super.sound);
-  void move()
+  +Dog(super.type, super.sound);
+  +void move()
 }
 
 
