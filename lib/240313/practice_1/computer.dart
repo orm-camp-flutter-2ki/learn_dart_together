@@ -5,15 +5,12 @@ class Computer extends TangibleAsset {
 
   Computer(
     super.name,
-    super.color,
     super.price,
+    super.color,
+    super.weight,
     super.warrantyExpiredYear,
     super.warrantyExpiredMonth,
     super.warrantyExpiredDay,
     this.makerName,
-    this.weight,
   );
-
-  @override
-  double weight;
 }

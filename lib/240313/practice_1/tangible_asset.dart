@@ -4,6 +4,7 @@ import '../practice_2/asset.dart';
 
 abstract class TangibleAsset extends Asset implements Thing {
   String color;
+  double _weight;
 
   // 보증 만료 기간
   String warrantyExpiredYear;
@@ -14,10 +15,18 @@ abstract class TangibleAsset extends Asset implements Thing {
     super.name,
     super.price,
     this.color,
+    this._weight,
     this.warrantyExpiredYear,
     this.warrantyExpiredMonth,
     this.warrantyExpiredDay,
   );
+
+  @override
+  double get weight => _weight;
+
+  @override
+  set weight(double value) => _weight;
+
 
   String rental() {
     String warrantyExpiredDate =
