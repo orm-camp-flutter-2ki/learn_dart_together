@@ -1,5 +1,7 @@
 @startuml
-class Asset {
+scale 2
+
+abstract class Asset {
 name
 price
 assetInfo()
@@ -11,12 +13,12 @@ abstract class Thing{
 weight()
 }
 
-class TangibleAsset extends Asset implements Thing {
+abstract class TangibleAsset extends Asset implements Thing {
 color
 buy()
 }
 
-class IntangibleAsset extends Asset {
+abstract class IntangibleAsset extends Asset {
 tradeMark
 }
 
