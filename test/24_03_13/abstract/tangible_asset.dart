@@ -16,4 +16,10 @@ abstract class TangibleAsset extends Asset {
   String get type => _type;
 
   int get amount => _amount;
+
+  int get totalPrice {
+    int total = price * amount;
+
+    return total;
+  }
 }
