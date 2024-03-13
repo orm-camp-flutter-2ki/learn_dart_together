@@ -10,6 +10,7 @@ class Monitor extends IntangibleAsset {
       required super.price,
       required super.color,
       required super.quantity,
+      required super.weight,
       required String brand,
       required String resolution,
       required bool isPivot})

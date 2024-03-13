@@ -9,6 +9,7 @@ class Computer extends IntangibleAsset {
       required super.price,
       required super.color,
       required super.quantity,
+      required super.weight,
       required bool isLaptop,
       required String OS})
       : _isLaptop = isLaptop,
