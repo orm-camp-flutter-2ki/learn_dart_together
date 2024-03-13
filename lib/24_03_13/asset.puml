@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Asset{
++name : Sting
++price : int
+}
+interface Thing{
+-{get} weight();
++{set} weight();
+}
+class TangibleAsset{
+-weight : double
++color : string
+
+
+}
+class InTangibleAsset{
+ +awareness : int
+ +customerLoyalty :int
+ +reliability : int
+}
+class Book{
+ +author: String
+ +genre : String
+ +isbn : String?
+}
+class Fiction{
++subgenre : Sting
+}
+class NonFiction{
++subject : String
+}
+class computer{
++makerName : String
+}
+class BrandValue{}
+
+Thing <|-- TangibleAsset
+Asset <|-- TangibleAsset
+Asset <|-- InTangibleAsset
+TangibleAsset <|-- Book
+TangibleAsset <|-- computer
+Book <|-- Fiction
+Book <|-- NonFiction
+InTangibleAsset <|-- BrandValue
+
+
+@enduml
