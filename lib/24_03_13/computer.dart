@@ -1,8 +1,9 @@
 import 'package:learn_dart_together/24_03_13/tangible_asset.dart';
+import 'package:learn_dart_together/24_03_13/thing.dart';
 
 class Computer extends TangibleAsset {
   String makerName;
-  double? weight;
+  double? _weight;
 
   Computer(
     super.name,
@@ -17,19 +18,19 @@ class Computer extends TangibleAsset {
   }
 
   @override
-  double getWeight() {
-    return weight ?? 0.0;
+  double get weight {
+    return _weight ?? 0.0;
   }
 
   @override
-  void setMass(double value) {
-    weight = value;
+  set mass(double value) {
+    _weight = value;
   }
 }
 
 void main() {
   Computer computer = Computer('내 컴퓨터', 200, 'black', 'LG');
-  computer.setMass(200);
+  computer.mass = 200.0;
   computer.displayInfo();
   print('${computer.weight}');
 }
