@@ -1,0 +1,32 @@
+@startuml
+abstract class TangibleAsset extends Asset{
+
+}
+
+class Computer extends TangibleAsset {
+  String name;
+  int price;
+  String color;
+  String makerName;
+}
+
+class Book extends TangibleAsset {
+  String name;
+  int price;
+  String color;
+  String isbn;
+}
+
+class Patent extends Intangible {
+
+}
+
+abstract class Asset {
+
+}
+
+abstract class Intangible extends Asset{
+
+}
+
+@enduml
