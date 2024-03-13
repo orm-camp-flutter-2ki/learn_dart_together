@@ -12,6 +12,11 @@ class Computer extends TangibleAsset {
     required this.color,
     required this.makerName,
   }) : super(isFixedAsset: true, useYear: 10, expirationDate: 30);
+
+  @override
+  void depreciated(TangibleAsset tangibleAsset) {
+
+  }
 }
 
 void main() {

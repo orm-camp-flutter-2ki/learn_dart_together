@@ -1,4 +1,6 @@
-abstract class TangibleAsset {
+import '06_asset.dart';
+
+abstract class TangibleAsset extends Asset {
   bool isFixedAsset;
   int useYear;
   int expirationDate = 30;
