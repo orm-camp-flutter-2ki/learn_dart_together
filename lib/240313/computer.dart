@@ -10,6 +10,10 @@ class Computer extends TangibleAsset {
     required String name,
     required int price,
     required String color,
+    required double weight,
     required this.makerName,
-  }) : super(name, price, color);
+  }) : super(name, price, color, weight);
+
+  // @override
+  // double weight;
 }

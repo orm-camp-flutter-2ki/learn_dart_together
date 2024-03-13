@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240313/Tangible_Asset.dart';
+import 'Tangible_Asset.dart';
 
 class Book extends TangibleAsset {
   // String name;
@@ -10,6 +10,10 @@ class Book extends TangibleAsset {
     required String name,
     required int price,
     required String color,
+    required double weight,
     required this.isbn,
-  }) : super(name, price, color);
+  }) : super(name, price, color, weight);
+
+// @override
+// double weight;
 }

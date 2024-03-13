@@ -9,4 +9,8 @@ class Patent extends IntangibleAsset {
     required int price,
     required this.patentNumber,
   }) : super(name, price);
+  //
+  // @override
+  // double weight;
+
 }
