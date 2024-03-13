@@ -16,5 +16,5 @@ abstract class TangibleAsset extends Asset implements Thing{
   @override
   set weight(double weight) => _weight = weight;
 
-  get color => _color;
+  String get color => _color;
 }
