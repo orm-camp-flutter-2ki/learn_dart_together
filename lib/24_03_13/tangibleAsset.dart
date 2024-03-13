@@ -1,6 +1,6 @@
 import 'asset.dart';
 
-class TangibleAsset extends Asset{
+abstract class TangibleAsset extends Asset{
 
   String color;
 
