@@ -1,4 +1,0 @@
-@startuml
-
-class Superhero extends hero
-@enduml

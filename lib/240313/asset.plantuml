@@ -10,12 +10,11 @@ abstract class TangibleAsset extends Asset implements Thing {
   
   -double get weight()
   -set weight()
-
 }
 
 interface Thing {
-  -double get weight()
-  -set weight()
+  -{abstract} double get weight()
+  -{abstract} set weight()
 }
 
 class Book extends TangibleAsset {
@@ -28,5 +27,4 @@ class Computer extends TangibleAsset {
   +String makerName
   -double get weight()
   -set weight()
-
 }
