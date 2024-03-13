@@ -1,11 +1,11 @@
-import 'Asset/abstract_asset.dart';
+import 'intangible_asset.dart';
 
-class idea extends intangibleAsset {
+class Idea extends IntangibleAsset {
   String patentNum;
 
-  idea({
-    required super.name,
-    required super.patent,
+  Idea({
+    required String name,
+    required String patent,
     required this.patentNum,
-  });
+  }) : super(name: name, patent: patent);
 }
