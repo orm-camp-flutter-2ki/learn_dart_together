@@ -1,0 +1,46 @@
+@startuml
+class Asset {
+name
+price
+assetInfo()
+isVisibility()
+}
+
+'interface'
+abstract class Thing{
+weight()
+}
+
+class TangibleAsset extends Asset implements Thing {
+color
+buy()
+}
+
+class IntangibleAsset extends Asset {
+tradeMark
+}
+
+class Book extends TangibleAsset {
+title
+author
+contents
+isbn
+read()
+}
+
+class Computer extends TangibleAsset {
+makerName
+search()
+playOnlineGame()
+}
+
+class Patent extends IntangibleAsset {
+patentNumber
+registrationYear
+}
+
+
+
+
+
+@enduml
