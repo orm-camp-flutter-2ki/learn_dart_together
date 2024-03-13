@@ -6,7 +6,9 @@ class SuperHero extends Hero {
   SuperHero({
     required super.name,
     required super.hp,
-  });
+  }) {
+    print('2. SuperHero 생성자');
+  }
 
   bool get isFlying => _isFlying;
 
@@ -19,11 +21,40 @@ class SuperHero extends Hero {
       print('내려왔다');
     }
   }
+
+  void hi() {
+    print('hi');
+  }
+
+  @override
+  void attack() {
+    if (isFlying) {
+      print('추가 공격');
+    }
+
+    super.attack();
+  }
+
+  // annotation : 일종의 주석
+  @override
+  void run() {
+    print('재정의: 슈퍼 히어로는 퇴각했다');
+  }
 }
 
 void main() {
+
+  // final hero = Hero(name: 'ss', hp: 10);
+
   final superHero = SuperHero(name: 'name', hp: 100);
-  superHero.isFlying = true;
-  superHero.isFlying = false;
+  // superHero.isFlying = true;
+  // superHero.isFlying = false;
+  //
+  // superHero.run();
+  // superHero.hi();
+  //
+  // superHero.isFlying = true;
+  //
+  // superHero.attack();
 
 }

@@ -1,5 +1,13 @@
 @startuml
 
+class Hero {
+    +String name
+    -int hp
+
+    +attack()
+    -die()
+}
+
 class SuperHero extends Hero
 
 @enduml

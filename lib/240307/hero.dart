@@ -26,7 +26,9 @@ class Hero {
     required this.name,
     required int hp,
     this.sword,
-  }) : _hp = hp;
+  }) : _hp = hp {
+    print('1. Hero 생성자');
+  }
 
   // expression body, lambda expression
   // 람다식, 화살표 표기법, arrow function
@@ -53,7 +55,9 @@ class Hero {
   }
 
   // 도망
-  void run() {}
+  void run() {
+    print('영웅은 도망쳤다');
+  }
 
   void _die() {}
 
