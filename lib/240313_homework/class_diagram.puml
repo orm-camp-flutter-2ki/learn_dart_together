@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Asset{
++ String name
++asset()
+}
+interface Thing{
+.. Simple Getter ..
++ weight()
++ modelYear()
+}
+abstract class TangibleAsset implements Thing{
+- double _weight
+.. Simple Getter ..
++ weight()
++ moonWeight()
+}
+abstract class IntangibleAsset{
++ asset()
+}
+abstract class Book{
++int price
++String color
++String isbn
+}
+class Computer{
++ int price;
++ String color;
++ String makerName;
+- int _modelYear;
+.. Simple Getter ..
++ modelYear()
+}
+
+Asset <|-- TangibleAsset
+Asset <|-- IntangibleAsset
+
+IntangibleAsset <|-- Patent
+
+TangibleAsset <|-- Book
+TangibleAsset <|-- Computer
+@enduml
