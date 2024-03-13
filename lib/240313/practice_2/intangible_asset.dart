@@ -4,5 +4,9 @@ import 'asset.dart';
 abstract class IntangibleAsset extends Asset {
   String ownerName;
 
-  IntangibleAsset(this.ownerName);
+  IntangibleAsset(
+    super.price,
+    super.name,
+    this.ownerName,
+  );
 }
