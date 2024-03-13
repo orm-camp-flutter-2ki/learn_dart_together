@@ -1,4 +1,13 @@
-abstract class TangibleAsset {
+//Asset 추상클래스
+abstract class Asset {
+  String name;
+  int price;
+
+  Asset(this.name, this.price);
+}
+
+//유형자산 클래스
+abstract class TangibleAsset extends Asset{
   String name;
   int price;
   String color;
