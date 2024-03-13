@@ -1,11 +1,14 @@
 abstract class Asset {
-  String name;
-  int price;
+  String _name;
+  int _price;
 
   Asset({
-    required this.name,
-    required this.price
-  });
+    required String name,
+    required int price
+  }) : _name = name, _price = price;
+
+  String get name => _name;
+  int get price => _price;
 
   void printInformation() {
     print('이름 : $name');
