@@ -3,7 +3,7 @@ import 'package:learn_dart_together/24_03_13/thing.dart';
 
 abstract class TangibleAsset extends Asset implements Thing{
   String _color;
-  int _weight;
+  double _weight;
 
   TangibleAsset(super.name, super.price, this._color, this._weight);
 
@@ -11,10 +11,10 @@ abstract class TangibleAsset extends Asset implements Thing{
   String generateDescription();
 
   @override
-  int get weight => _weight;
+  double get weight => _weight;
 
   @override
-  set weight(int weight) => _weight = weight;
+  set weight(double weight) => _weight = weight;
 
   get color => _color;
 }

@@ -3,7 +3,7 @@ import 'package:learn_dart_together/24_03_13/tangible_asset.dart';
 class Computer extends TangibleAsset {
   final String _makerName;
 
-  Computer({required String name, required int price, required String color, required int weight, required String makerName})
+  Computer({required String name, required int price, required String color, required double weight, required String makerName})
       : _makerName = makerName, super(name, price, color, weight);
 
   @override
