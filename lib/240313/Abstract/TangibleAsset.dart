@@ -13,12 +13,12 @@ abstract class TangibleAsset extends Asset implements Thing {
   }
 
   TangibleAsset({
+    required super.owner,
+    required super.productionYear,
     required this.name,
     required this.price,
     required this.color,
-    required this.makerName,
-    required super.owner,
-    required super.productionYear
+    required this.makerName
   });
 
   void repair() {
