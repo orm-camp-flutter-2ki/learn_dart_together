@@ -1,5 +1,5 @@
 @startuml Asset 
-scale 4
+scale 1
 abstract class Asset {
   +String name
   +int price  
@@ -18,12 +18,28 @@ class Patent extends InTangibleAsset {
   +String jurisdictionPerson
 
 }
-class Book extends TangibleAsset {
+class Book extends TangibleAsset implements Thing {
   +String isbn
+  +double _weight;
 
+  +set weight(double value) {}
+  +double get weight();
 }
-class Computer extends TangibleAsset {
+class Computer extends TangibleAsset implements Thing {
   +String makerName
+  +double _weight;
 
+  +set weight(double value) {}
+  +double get weight();
+}
+class Stone implements Thing {  
+  +double _weight;
+
+  +set weight(double value) {}
+  +double get weight();
+}
+interface Thing {
+  +set weight(double value) 
+  +double get weight()
 }
 @enduml
