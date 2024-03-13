@@ -1,0 +1,23 @@
+@startuml
+scale 2
+
+abstract class Vehicle implements Movable {
+{abstract} move()
+}
+
+class Car extends Vehicle {
+
+}
+
+class Truck extends Vehicle {
+
+}
+
+class Person implements Movable {
+}
+
+interface Movable {
+move()
+}
+
+@enduml
