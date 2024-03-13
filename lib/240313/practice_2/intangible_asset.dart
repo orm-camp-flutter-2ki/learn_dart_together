@@ -1,7 +1,8 @@
 import 'asset.dart';
 
+// 무형자산
 abstract class IntangibleAsset extends Asset {
-  String patent; // 특허권
+  String ownerName;
 
-  IntangibleAsset(this.patent);
+  IntangibleAsset(this.ownerName);
 }
