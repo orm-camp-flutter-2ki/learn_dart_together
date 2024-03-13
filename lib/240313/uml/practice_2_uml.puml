@@ -3,20 +3,33 @@
 abstract class Asset {
 }
 
+'무형 자산
 abstract class IntangibleAsset extends Asset{
-String patent
+String ownerName
 }
 
+'유형 자산
 abstract class TangibleAsset extends Asset{
 String name
 String color
 int price
 }
 
-class book extends TangibleAsset {
+'무형 자산 상속
+class Patent extends IntangibleAsset {
+'특허 명칭
++ String nickName
+'특허 번호
++ int number
++ DateTime expirationPeriod
+}
+
+'유형 자산 상속
+class Book extends TangibleAsset {
 + String isbn
 }
 
+'유형 자산 상속
 class Computer extends TangibleAsset {
 + String makerName
 }
