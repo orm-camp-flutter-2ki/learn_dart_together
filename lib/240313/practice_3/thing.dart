@@ -1,8 +1,5 @@
-abstract class Thing {
-  double _weight;
+abstract interface class Thing {
 
-  Thing(this._weight);
-
-  double get weight => _weight;
-  set weight(double value) => _weight = value;
+  double get weight;
+  set weight(double value);
 }
