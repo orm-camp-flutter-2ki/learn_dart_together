@@ -23,6 +23,7 @@ String warrantyExpiredMonth
 String warrantyExpiredDay
 
 String rental()
+{abstract} value()
 }
 
 '무형 자산 상속
