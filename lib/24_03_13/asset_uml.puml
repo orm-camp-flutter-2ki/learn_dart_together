@@ -1,0 +1,65 @@
+@startuml
+abstract class Asset {
+  -final bool _isTangible;
+  -final String _name;
+  -final int _price;
+
+  bool get isTangible => _isTangible;
+  String get name => _name;
+  int get price => _price;
+}
+
+interface Thing {
+  double get weight;
+  set weight(double weight);
+}
+
+abstract class TangibleAsset extends Asset implements Thing {
+  -final String _color;
+  -final int _quantity;
+  -final String _department;
+  -double _weight;
+
+  String get color => _color;
+  int get quantity => _quantity;
+  String get department => _department;
+
+  @override double get weight => _weight;
+  @override set weight(double weight) => _weight = weight;
+}
+
+class Monitor extends TangibleAsset {
+  -final String _brand;
+  -final String _resolution;
+  -final bool _isPivot;
+
+  String get brand => _brand;
+  String get resolution => _resolution;
+  bool get isPivot => _isPivot;
+}
+
+class Computer extends TangibleAsset {
+  -final bool _isLaptop;
+  -final String _OS;
+
+  bool get isLaptop => _isLaptop;
+  String get OS => _OS;
+}
+
+abstract class IntangibleAsset extends Asset {
+  -final String _type;
+  -final int _amount;
+
+  String get type => _type;
+  int get amount => _amount;
+}
+
+class Stock extends IntangibleAsset {
+  -final String _item;
+}
+
+class Debenture extends IntangibleAsset {
+
+}
+
+@enduml
