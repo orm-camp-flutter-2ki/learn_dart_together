@@ -1,0 +1,16 @@
+@startuml skinparam groupInheritance 1
+
+class Point {
+    +double x
+    +double y
+}
+class Rectangle {
+    -double _width
+    -double _height
+    -Point _topLeft
+    -Point _bottomRight
+    +double getExtent()
+    +double getRound()
+}
+Rectangle --> Point
+@enduml

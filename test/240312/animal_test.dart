@@ -1,6 +1,6 @@
-import 'package:learn_dart_together/240312/Bird.dart';
-import 'package:learn_dart_together/240312/cat.dart';
-import 'package:learn_dart_together/240312/dog.dart';
+import 'package:learn_dart_together/240312/animal/bird.dart';
+import 'package:learn_dart_together/240312/animal/cat.dart';
+import 'package:learn_dart_together/240312/animal/dog.dart';
 import 'package:test/test.dart';
 
 void main() {

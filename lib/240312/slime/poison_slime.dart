@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/240312/hero.dart';
-import 'package:learn_dart_together/240312/slime.dart';
+import 'package:learn_dart_together/240312/slime/hero.dart';
+import 'package:learn_dart_together/240312/slime/slime.dart';
 
 class PoisonSlime extends Slime {
   int _poisonAttack = 5; // 초기값 확인

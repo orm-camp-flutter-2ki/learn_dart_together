@@ -1,13 +1,14 @@
 import 'dart:math';
 
-import '../240307/sword.dart';
+import '../../240307/sword.dart';
 import 'slime.dart';
 
 class Hero {
   static int money = 100;
-  String name;
-  // 1) hp변수 private으로 변경, late로 변경
+  // 1) hp변수 private으로 변경
   int _hp;
+
+  String name;
   Sword? sword;
 
   void bye() {
