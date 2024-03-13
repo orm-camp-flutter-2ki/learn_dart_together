@@ -1,7 +1,7 @@
 import 'animal.dart';
 
-class Car extends Animal {
-  Car({required super.name, required super.type, required super.sound});
+class Cat extends Animal {
+  Cat({required super.name, required super.type, required super.sound});
 
   void entersBox() {
     print('$type $name 이/가 상자에 들어갑니다.');
