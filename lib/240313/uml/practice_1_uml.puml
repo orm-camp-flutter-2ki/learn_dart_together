@@ -1,0 +1,17 @@
+@startuml
+
+abstract class TangibleAsset {
+  String name
+  String color
+  int price
+}
+
+class book extends TangibleAsset {
++ String isbn
+}
+
+class Computer extends TangibleAsset {
++ String makerName
+}
+
+@enduml
