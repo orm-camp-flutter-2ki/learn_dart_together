@@ -1,0 +1,53 @@
+@startuml
+
+abstract class Asset {
+  # String _name
+  # int _price
+  + {abstract} generateDescription(): String
+  + valuationPrice(): int
+  + name(): String
+}
+
+interface Thing {
+  + {abstract} weight(): double
+  + {abstract} weight(weight: double): void
+}
+
+abstract class TangibleAsset {
+  # String _color
+  # double _weight
+  + {abstract} generateDescription(): String
+  + weight(): double
+  + weight(weight: double): void
+  + color(): String
+}
+
+abstract class IntangibleAsset {
+  # String _intangibleAsset
+  + {abstract} generateDescription(): String
+  + intangibleAsset(): String
+}
+
+class CopyRight {
+  - final String _owner
+  + generateDescription(): String
+}
+
+class Computer {
+  - final String _makerName
+  + generateDescription(): String
+}
+
+class Book {
+  - final String _isbn
+  + generateDescription(): String
+}
+
+Asset <|-- IntangibleAsset
+Asset <|-- TangibleAsset
+IntangibleAsset <|-- CopyRight
+TangibleAsset <|-- Computer
+TangibleAsset <|-- Book
+Thing <|.. TangibleAsset
+
+@enduml
