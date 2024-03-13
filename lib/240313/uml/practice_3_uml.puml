@@ -1,0 +1,47 @@
+@startuml
+
+abstract class Asset {
+String name
+int price
+}
+
+interface Thing {
+double get weight
+set weight(double value)
+}
+
+'무형 자산
+abstract class IntangibleAsset extends Asset implements Thing {
+String ownerName
+}
+
+'유형 자산
+abstract class TangibleAsset extends Asset implements Thing {
+String color
+String warrantyExpiredYear
+String warrantyExpiredMonth
+String warrantyExpiredDay
+
+String rental()
+}
+
+'무형 자산 상속
+class Patent extends IntangibleAsset {
+'특허 명칭
++ String nickName
+'특허 번호
++ int number
++ DateTime expirationPeriod
+}
+
+'유형 자산 상속
+class Book extends TangibleAsset {
++ String isbn
+}
+
+'유형 자산 상속
+class Computer extends TangibleAsset {
++ String makerName
+}
+
+@enduml
