@@ -14,7 +14,7 @@ interface Thing {
   set weight(double weight);
 }
 
-abstract class IntangibleAsset extends Asset implements Thing {
+abstract class TangibleAsset extends Asset implements Thing {
   -final String _color;
   -final int _quantity;
   -final String _department;
@@ -28,7 +28,7 @@ abstract class IntangibleAsset extends Asset implements Thing {
   @override set weight(double weight) => _weight = weight;
 }
 
-class Monitor extends IntangibleAsset {
+class Monitor extends TangibleAsset {
   -final String _brand;
   -final String _resolution;
   -final bool _isPivot;
@@ -38,7 +38,7 @@ class Monitor extends IntangibleAsset {
   bool get isPivot => _isPivot;
 }
 
-class Computer extends IntangibleAsset {
+class Computer extends TangibleAsset {
   -final bool _isLaptop;
   -final String _OS;
 
@@ -46,7 +46,7 @@ class Computer extends IntangibleAsset {
   String get OS => _OS;
 }
 
-abstract class TangibleAsset extends Asset {
+abstract class IntangibleAsset extends Asset {
   -final String _type;
   -final int _amount;
 
@@ -54,11 +54,11 @@ abstract class TangibleAsset extends Asset {
   int get amount => _amount;
 }
 
-class Stock extends TangibleAsset {
+class Stock extends IntangibleAsset {
   -final String _item;
 }
 
-class Debenture extends TangibleAsset {
+class Debenture extends IntangibleAsset {
 
 }
 

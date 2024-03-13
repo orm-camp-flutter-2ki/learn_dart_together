@@ -1,26 +1,34 @@
+import '../interface/thing.dart';
 import 'asset.dart';
 
-abstract class TangibleAsset extends Asset {
-  //타입의 경우 추후 enum같은 것을 활용한 네임스페이스를 사용할것 아직안배움..
-  final String _type;
-  final int _amount;
+abstract class IntangibleAsset extends Asset {
+  final String _color;
+  final int _quantity;
+  final String _department;
+  double _weight;
 
-  TangibleAsset(
+  IntangibleAsset(
       {required super.name,
       required super.price,
-      required String type,
-      required int amount})
-      : _type = type,
-        _amount = amount,
-        super(isTangible: true);
+      required String color,
+      required int quantity,
+      required String department,
+      required double weight})
+      : _color = color,
+        _quantity = quantity,
+        _department = department,
+        _weight = weight,
+        super(isTangible: false);
 
-  String get type => _type;
+  String get color => _color;
 
-  int get amount => _amount;
+  int get quantity => _quantity;
 
-  int get totalPrice {
-    int total = price * amount;
+  String get department => _department;
 
-    return total;
-  }
+  @override
+  double get weight => _weight;
+
+  @override
+  set weight(double weight) => _weight = weight;
 }

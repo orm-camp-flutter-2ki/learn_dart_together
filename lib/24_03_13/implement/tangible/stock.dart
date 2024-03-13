@@ -1,6 +1,6 @@
-import '../../abstract/tangible_asset.dart';
+import '../../abstract/intangible_asset.dart';
 
-class Stock extends TangibleAsset {
+class Stock extends IntangibleAsset {
   final String _item;
 
   Stock(
