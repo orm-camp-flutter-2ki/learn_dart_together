@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class Asset { }
+
+abstract class IntangibleAsset extends Asset {}
+
+abstract class Patent extends IntangibleAsset {}
+
+abstract class TangibleAsset extends Asset {}
+
+class Computer extends TangibleAsset {}
+
+
+class Book extends TangibleAsset {}
+
+@enduml
