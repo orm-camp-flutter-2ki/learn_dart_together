@@ -1,4 +1,6 @@
-abstract class TangibleAsset {
+import 'package:learn_dart_together/240313/asset.dart';
+
+abstract class TangibleAsset extends Asset {
   String name;
   int price;
   String color;
