@@ -1,0 +1,36 @@
+@startuml
+
+scale 1.5
+
+interface Thing {}
+
+abstract class Asset {
+  +name
+}
+
+abstract class IntangibleAsset extends Asset {
+  +proprietor // 소유주
+}
+
+abstract class TangibleAsset extends Asset implements Thing {
+  +price
+  +color
+  -weight
+
+  +disposal()
+}
+
+class Patent extends IntangibleAsset {
+  +applicationNumber // 특허출원 번호
+  +applicationDate // 특허출원일
+}
+
+class Computer extends TangibleAsset {
+  +makerName
+}
+
+class Book extends TangibleAsset{
+  +isbn
+}
+
+@enduml
