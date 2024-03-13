@@ -1,6 +1,6 @@
-import '../../abstract/tangible_asset.dart';
+import '../../abstract/intangible_asset.dart';
 
-class Debenture extends TangibleAsset {
+class Debenture extends IntangibleAsset {
   Debenture(
       {required super.name,
       required super.price,

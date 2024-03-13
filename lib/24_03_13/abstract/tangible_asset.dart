@@ -1,13 +1,13 @@
 import '../interface/thing.dart';
 import 'asset.dart';
 
-abstract class IntangibleAsset extends Asset {
+abstract class TangibleAsset extends Asset {
   final String _color;
   final int _quantity;
   final String _department;
   double _weight;
 
-  IntangibleAsset(
+  TangibleAsset(
       {required super.name,
       required super.price,
       required String color,
@@ -18,7 +18,7 @@ abstract class IntangibleAsset extends Asset {
         _quantity = quantity,
         _department = department,
         _weight = weight,
-        super(isTangible: false);
+        super(isTangible: true);
 
   String get color => _color;
 

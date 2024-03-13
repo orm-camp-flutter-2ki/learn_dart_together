@@ -1,6 +1,6 @@
-import '../../abstract/intangible_asset.dart';
+import '../../abstract/tangible_asset.dart';
 
-class Monitor extends IntangibleAsset {
+class Monitor extends TangibleAsset {
   final String _brand;
   final String _resolution;
   final bool _isPivot;

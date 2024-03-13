@@ -1,6 +1,6 @@
-import '../../abstract/intangible_asset.dart';
+import '../../abstract/tangible_asset.dart';
 
-class Computer extends IntangibleAsset {
+class Computer extends TangibleAsset {
   final bool _isLaptop;
   final String _OS;
 
