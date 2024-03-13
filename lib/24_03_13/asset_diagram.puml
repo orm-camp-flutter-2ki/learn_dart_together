@@ -1,0 +1,26 @@
+@startuml Asset
+
+
+
+abstract class Asset{
+    +String name
+    +int price
+}
+
+abstract class TangibleAsset extends Asset{
+    +String color
+}
+class Book extends Asset{
+
+    +String isbn
+}
+
+class computer extends Asset{
+
+    +String makerName
+}
+
+
+
+
+@enduml
