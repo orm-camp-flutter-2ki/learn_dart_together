@@ -1,0 +1,29 @@
+@startuml Asset 
+scale 4
+abstract class Asset {
+  +String name
+  +int price  
+}
+abstract class TangibleAsset extends Asset {
+  +String color
+
+}
+class InTangibleAsset extends Asset {
+  +int period
+  +String field
+
+}
+class Patent extends InTangibleAsset {
+  +String jurisdictionDepartment
+  +String jurisdictionPerson
+
+}
+class Book extends TangibleAsset {
+  +String isbn
+
+}
+class Computer extends TangibleAsset {
+  +String makerName
+
+}
+@enduml
