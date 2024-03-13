@@ -8,7 +8,9 @@ class Computer extends TangibleAsset {
     required super.pirce,
     required super.color,
     required super.makerName,
-    required this.os
+    required this.os,
+    required super.owner,
+    required super.productionYear
   });
 }
 
@@ -20,6 +22,8 @@ class Book extends TangibleAsset {
     required super.pirce,
     required super.color,
     required super.makerName,
-    required this.publisher
+    required this.publisher, 
+    required super.owner,
+    required super.productionYear
   });
 }
