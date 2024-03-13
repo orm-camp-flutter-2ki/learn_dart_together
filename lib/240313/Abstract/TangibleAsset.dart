@@ -7,9 +7,18 @@ abstract class TangibleAsset extends Asset implements Thing {
   int price;
   String color;
   String makerName;
+  double _weight;
 
   String get assetCode {
     return makerName + color + name + price.toString();
+  }
+
+  @override
+  double get weight => _weight;
+
+  @override
+  set weight(double value) {
+    _weight = value;
   }
 
   TangibleAsset({
@@ -18,8 +27,9 @@ abstract class TangibleAsset extends Asset implements Thing {
     required this.name,
     required this.price,
     required this.color,
-    required this.makerName
-  });
+    required this.makerName,
+    required double weight
+  }) : _weight = weight;
 
   void repair() {
     print('수리완료');
