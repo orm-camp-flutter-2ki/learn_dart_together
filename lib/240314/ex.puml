@@ -1,0 +1,16 @@
+@startuml
+interface  조미료{
+void 맛보기()
+}
+
+class 설탕 extends 조미료{
+@override
+void 맛보기('단맛')
+
+}
+
+class 소금 extends 조미료{
+@override
+void 맛보기('짠맛')
+}
+@enduml
