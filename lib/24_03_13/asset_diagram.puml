@@ -9,15 +9,14 @@ abstract class Asset{
 
 interface Thing{
 
-   {abstract} double get weight()
-   {abstract} set weight(double value)
+double weight
+
 }
 
 
 abstract class TangibleAsset extends Asset implements Thing{
     +String color
-   + double get weight()
-   + set weight(double value)
+
 }
 class Book extends TangibleAsset{
 
@@ -27,6 +26,12 @@ class Book extends TangibleAsset{
 class computer extends TangibleAsset{
 
     +String makerName
+}
+
+class IntangibleAsset extends Asset{
+}
+
+class Patent extends IntangibleAsset{
 }
 
 
