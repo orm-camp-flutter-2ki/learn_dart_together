@@ -1,0 +1,26 @@
+@startuml X 
+scale 1
+    interface X {
+        void a();
+    }
+    abstract class Y implements X {
+        void b();
+    }
+    class A extends Y {
+        ' Aa
+        void a()
+        ' Ab 
+        void b() 
+        ' Ac
+        void c() 
+    }
+    class B extends Y {
+        ' Ba
+        void a() 
+        ' Bb
+        void b() 
+        ' Bc
+        void c() 
+    }
+
+@enduml

@@ -1,0 +1,107 @@
+@startuml X 
+scale 1
+    
+    abstract class BionicUnit implements Healable, Unit {
+            
+    }
+    class Point {
+        int x
+        int y
+    }
+    
+    class Mineral {
+        int amount
+    }
+
+    interface Movable {
+        void move(target: Point)
+    }
+    interface Attackable {
+        void attack(target: Object)
+    }
+    abstract class Object {
+        int hp
+    }
+    abstract class Unit extends Object implements Movable, Attackable {
+        void attack(target: Object)
+        void move(target: Point)
+    }    
+    abstract class Structure extends Object {
+
+    }
+    abstract class BionicStructure extends Structure implements Zerg{
+        
+    }
+    abstract class MechanicStructure extends Structure implements Repairable{
+
+    }
+    abstract class MechanicUnit extends Unit implements Repairable {
+        
+    }
+    interface Repairable {
+        ' Scv가 repair 가능
+    }
+    interface Healable {
+        ' 메딕이 치료가능
+        ' Teran, Unit, Bionic
+        
+    }
+' =================================================================================
+    interface Zerg {
+        void selfAid()
+    }    
+    class Zergling extends BionicUnit implements Zerg  {
+
+    }
+    class Hydra extends BionicUnit implements Zerg  {
+
+    }    
+    class SpawningPool extends BionicStructure  {
+
+    }
+' =================================================================================
+    interface Protoss {  
+        int shield              
+        void shieldRecover()        
+    }
+    class Zealot extends BionicUnit implements Protoss, Healable  {
+
+    }
+    class Dragun extends MechanicUnit implements Protoss  {
+
+    }
+    class Nexus extends MechanicStructure implements Protoss{
+
+    }
+' =================================================================================
+    interface Terran {
+
+    }
+    ' class Marine implements Bionic, Unit {
+
+    ' }
+    class Medic extends BionicUnit implements Terran {
+        void heal(target: Healable)        
+        void attack()
+    }
+    class Tank extends MechanicUnit implements Terran  {                
+        bool isSiege
+                
+    }
+    class Vulture extends MechanicUnit implements Terran  {
+
+    }
+
+    class Scv extends MechanicUnit implements Terran, Healable {
+        int getMineral()
+        void repair(target: Repairable)
+        void mine(target: Mineral)
+        
+    }
+    class CommandCenter extends MechanicStructure implements Terran  {
+        Scv buildScv()
+    }
+    Movable *-- Point
+    Scv *-- Mineral
+    CommandCenter *-- Scv
+@enduml

@@ -1,7 +1,7 @@
 import 'tangible_asset.dart';
 import 'thing.dart';
 
-class Computer extends TangibleAsset implements Thing {
+class Computer extends TangibleAsset {
   String makerName;
 
   Computer({

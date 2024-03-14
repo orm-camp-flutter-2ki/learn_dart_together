@@ -1,0 +1,9 @@
+(1) 
+Item item = Sword();
+Sword 인스턴스
+Sword를 생성했지만 어쨌든 Item으로 보임
+
+(2) 
+Monster monster = Slime();
+Slime 인스턴스
+Slime을 생성했지만 어쨌든 Slime으로 보임
