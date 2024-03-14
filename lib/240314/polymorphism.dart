@@ -47,5 +47,4 @@ void main() {
   instanceList.forEach((element) {
     element.b();
   });
-
 }
