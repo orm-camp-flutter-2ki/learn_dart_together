@@ -15,6 +15,18 @@ class Vehicle {
   }
 
   void rideNow() {
-    ride ? print('차를 타고 이동중입니다..') : print('차에서 내렸습니다.');
+    if (ride) {
+      print('차를 타고 이동중입니다.');
+      return;
+    }
+    print('차에서 내렸습니다.');
   }
+}
+
+void main() {
+  Vehicle vehicle = Vehicle(maker: 'maker', model: 'model', year: 443);
+
+  vehicle.rideNow();
+  vehicle.ride = true;
+  vehicle.rideNow();
 }

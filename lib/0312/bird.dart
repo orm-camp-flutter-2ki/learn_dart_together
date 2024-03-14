@@ -1,6 +1,6 @@
 import 'package:learn_dart_together/0312/animal.dart';
 
-class Bird extends Animal{
+class Bird extends Animal {
 // super class constructor
   Bird({
     required super.name,

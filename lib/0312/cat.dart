@@ -20,8 +20,11 @@ class Cat extends Animal {
   // setter
   set nailClean(bool nailValue) {
     _nailClean = nailValue;
-    nailValue ? print('고양이 발톱을 정리했습니다.') : print('고양이 발톱이 단정합니다..');
-    return;
+    if (nailValue) {
+      print('고양이 발톱을 정리했습니다.');
+      return;
+    }
+    print('고양이 발톱이 단정합니다..');
   }
 
   // 골골송, 고유한 메서드

@@ -10,6 +10,10 @@ class Truck extends Vehicle {
   });
 
   void freightCheck() {
-    freight ? print('화물이 있습니다.') : print('화물이 없습니다..');
+    if (freight) {
+      print('화물이 있습니다.');
+      return;
+    }
+    print('화물이 없습니다.');
   }
 }

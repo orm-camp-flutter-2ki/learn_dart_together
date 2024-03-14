@@ -10,6 +10,10 @@ class Car extends Vehicle {
   });
 
   void airBagNow() {
-    airBag ? print('에어백이 작동합니다.') : print('에어백이 고장났습니다.');
+    if (airBag) {
+      print('에어백이 작동합니다.');
+      return;
+    }
+    print('에어백이 고장났습니다.');
   }
 }
