@@ -1,40 +1,69 @@
 @startuml
-scale 2
+scale 5
 
-abstract class Unit implements Mineral {
+package "nonStarcraft" {
+
+abstract class 종족 {
 }
 
-abstract class Structure {
+abstract class Terran extends 종족 {
+}
+
+abstract class Zerg extends 종족 {
+    healsef();
+}
+
+abstract class Protoss extends 종족 {
 }
 
 
-abstract class Bionic extends Unit {
+interface Unit {
 }
 
-abstract class Mechanic extends Unit {
+interface Structure {
+저그에서 건물
 }
 
-abstract class Human {
+
+interface Bionic implements Unit {
 }
 
-class Terran extends Human {
+interface Mechanic implements Unit {
 }
 
-class Marin extends Bionic implements Attack {
+
+class Marin extends Terran implements Bionic, Attack {
 }
 
-class Medic extends Bionic implements Heal {
+class Medic extends Terran implements Bionic {
+    heal(Bionic, Scv);
 }
 
-class Scv extends Mechanic implements Attack {
+class Scv extends Terran implements Mechanic, Attack {
  mineralMining();
+ repair();
 }
 
-class Tank extends Mechanic implements Attack {
+class Tank extends Terran implements Mechanic, Attack {
 }
 
-class Vulture extends Mechanic implements Attack {
+class Vulture extends Terran implements Mechanic, Attack {
 }
+
+
+class Zergling extends Zerg implements Bionic {
+}
+
+class Hydra extends Zerg implements Bionic {
+
+}
+
+class Zealot extends Protoss implements Bionic {
+}
+
+class Dragun extends Protoss implements Mechanic {
+}
+
 
 interface Mineral {
     make-unit();
@@ -43,19 +72,7 @@ interface Mineral {
 interface Attack {
 }
 
-interface Heal {
 }
-
-interface Repair {
-}
-
-
-
-'class Zerg {
-'}
-'
-'class Protoss{
-'}
 
 
 
