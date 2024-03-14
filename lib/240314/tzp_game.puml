@@ -1,0 +1,62 @@
+@startuml
+scale 2
+
+abstract class Unit implements Mineral {
+}
+
+abstract class Structure {
+}
+
+
+abstract class Bionic extends Unit {
+}
+
+abstract class Mechanic extends Unit {
+}
+
+abstract class Human {
+}
+
+class Terran extends Human {
+}
+
+class Marin extends Bionic implements Attack {
+}
+
+class Medic extends Bionic implements Heal {
+}
+
+class Scv extends Mechanic implements Attack {
+ mineralMining();
+}
+
+class Tank extends Mechanic implements Attack {
+}
+
+class Vulture extends Mechanic implements Attack {
+}
+
+interface Mineral {
+    make-unit();
+}
+
+interface Attack {
+}
+
+interface Heal {
+}
+
+interface Repair {
+}
+
+
+
+'class Zerg {
+'}
+'
+'class Protoss{
+'}
+
+
+
+@enduml

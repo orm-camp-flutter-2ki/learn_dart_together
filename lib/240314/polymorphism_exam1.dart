@@ -54,8 +54,10 @@ class B extends Y {
 // }
 
 //List로 묶기
-void main(List<dynamic> arguments) {
-  final y = <Y>[];
+
+void main () {
+  List<Y> y = [];
+  // final y = <Y>[];
 
   y.add(A());
   y.add(B());
