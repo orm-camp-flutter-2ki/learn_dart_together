@@ -2,29 +2,18 @@ import 'package:learn_dart_together/AbstractClass_240313/TangibleAsset.dart';
 
 class Book extends TangibleAsset {
   String isbn;
-  final double _weight;
 
-  Book(
-      {required super.name,
-      required super.code,
-      required super.price,
-      required super.color,
-      required super.quantity,
-      required this.isbn,
-      required double weight,
-      t})
-      : _weight = weight;
 
-  @override
-  void addAsset() {
-    quantity++;
-  }
+  Book({
+    required super.name,
+    required super.code,
+    required super.price,
+    required super.color,
+    required super.quantity,
+    required this.isbn,
+    required super.weight,
+  });
 
-  @override
-  double get weight => throw UnimplementedError();
-
-  @override
-  set weight(double value) {}
 }
 
 void main() {
@@ -37,7 +26,7 @@ void main() {
     isbn: '34830P9FEI',
     weight: 30,
   );
-  book.addAsset();
+  book.addBuy();
   print('책을 한권 구입했습니다');
   print(book.quantity);
 }

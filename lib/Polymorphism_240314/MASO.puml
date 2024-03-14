@@ -1,0 +1,51 @@
+@startuml
+
+'class Race
+'
+'class Terran extends Race
+'
+'class Zerg extends Race
+
+Abstract Unit  {
+String name
+int hp
+}
+Abstract Structure{}
+Abstract BionicUnit extends Unit {}
+
+Abstract MechaniUnit extends Unit implements AttackAble {
+@override
+  void Attack()
+}
+class Scv extends MechaniUnit {
+{Abstract} Attack()
+-void gatherResource()
+}
+
+class Tank extends MechaniUnit {
+{Abstract} Attack()
+-void 대포()
+}
+
+class Vulture extends MechaniUnit {
+{Abstract} Attack()
+-void throwBomb()
+}
+
+class Medic extends BionicUnit implements heal {
+-void heal()
+}
+interface heal {
+-void heal()
+}
+
+class Marine extends BionicUnit {
+{Abstract} Attack(gun)
+}
+
+Interface AttackAble {
+void Attack()
+}
+
+class BionicStructure extends Structure
+@enduml

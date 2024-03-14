@@ -6,12 +6,17 @@ abstract class TangibleAsset extends AssetAll implements Thing{
   String color;
   int quantity;
 
+  @override
+  double weight;
+
+
   TangibleAsset({
     required super.name,
     required super.code,
     required this.price,
     required this.color,
     required this.quantity,
+    required this.weight,
   });
 
   void addBuy() {
