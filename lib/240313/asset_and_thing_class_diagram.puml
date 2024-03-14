@@ -1,6 +1,7 @@
 @startuml
 
 interface Thing {
+{abstract}double weight
 }
 
 abstract class Asset {
