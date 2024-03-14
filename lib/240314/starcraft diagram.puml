@@ -1,0 +1,119 @@
+@startuml
+
+package "StarCraft" {
+''추상 클래스 정의
+'종족
+abstract class Race {
+}
+
+'테란
+abstract class Terran extends Race {
+체력
+}
+'저그
+abstract class Zerg extends Race {
+체력
+자동체력회복()
+}
+'프로토스
+abstract class Protoss extends Race {
+방어막
+체력
+자동방어막회복()
+}
+
+'테란 유닛
+abstract class TerranUnit extends Terran{}
+'테란 건물
+abstract class TerranStructure extends Terran{
+수리하기(SCV, 미네랄)
+}
+'저그 유닛
+abstract class ZergUnit extends Zerg {}
+'저그 건물
+abstract class ZergStructure extends Zerg{}
+'프로토스 유닛
+abstract class ProtossUnit extends Protoss {}
+'프로토스 건물
+abstract class ProtossStructure extends Protoss{}
+' '공격가능
+' interface AttackableUnit implements Movable{
+' 공격가능()
+' }
+' interface NonAttackableUnit implements Movable{
+' 공격불가()
+' }
+'공격가능
+interface AttackableUnit{
+공격가능()
+}
+interface NonAttackableUnit{
+공격불가()
+}
+Movable <|-[dashed]- AttackableUnit
+NonAttackableUnit <|-[dashed]- Movable
+
+'인터페이스
+''바이오닉
+interface Bionic {}
+''메카닉
+interface Mechanic {}
+''유닛그룹
+' interface UnitGroup {}
+' interface UnitGroup {
+' 이동()
+' 공격()
+' }
+''이동가능
+interface Movable {
+이동()
+}
+
+'유닛생성
+''1.테란
+class Marine extends TerranUnit{}
+class Medic extends TerranUnit{
+힐({테란유닛(바이오닉),SCV})
+힐(프로토스유닛(바이오닉))
+}
+class Tank extends TerranUnit{}
+class Vulture extends TerranUnit{}
+class Scv extends TerranUnit{
+미네랄캐기(미네랄)
+수리하기(메카닉, 테란건물)
+}
+''2.저그
+class Zergling extends ZergUnit {}
+class Hydralisk extends ZergUnit {}
+'3. 프로토스
+class Zealot extends ProtossUnit {}
+class Dragoon extends ProtossUnit {}
+
+'(바이오닉)유닛 클래스 바이오닉 인터페이스에 연결
+class Marine implements Bionic{}
+class Medic implements Bionic{}
+class Zealot implements Bionic{}
+abstract Zerg implements Bionic{}
+'class Hydralisk implements ZergUnit {}
+'class Zergling implements ZergUnit {}
+
+'(메카닉)유닛 클래스 메카닉 인터페이스에 연결
+class Vulture implements Mechanic{}
+class Scv implements Mechanic{}
+class Tank implements Mechanic{}
+class Dragoon implements Mechanic{}
+
+'유닛 그룹화 인터페이스(이동, 공격) 유닛그룹 인터페이스에 연결
+class Scv implements AttackableUnit
+class Marine implements AttackableUnit
+class Tank implements AttackableUnit{}
+class Vulture implements AttackableUnit{}
+class Medic implements NonAttackableUnit{}
+
+class Zealot implements AttackableUnit{}
+class Dragoon implements AttackableUnit{}
+
+class Zergling implements AttackableUnit{}
+class Hydralisk implements AttackableUnit{}
+}
+@enduml
