@@ -1,0 +1,53 @@
+@startuml star
+
+
+abstract 종족{}
+abstract class 테란 extends 종족{}
+abstract class 저그 extends 종족 implements 자연회복, 생물{}
+abstract class 프로토스 extends 종족 implements 방어막{}
+
+interface 생물{}
+interface 기계{}
+interface 힐가능{
+  힐가능()
+}
+interface 방어막 extends 자연회복{}
+interface 자연회복{
+ +자연회복()
+}
+interface 공격가능{
+ +공격()
+}
+
+interface 유닛 {
+ +이동()
+}
+interface 건물 {}
+
+class 해병 extends 테란 implements 유닛, 생물, 힐가능 ,공격가능 {}
+class 간호사 extends 테란 implements 유닛, 생물, 힐가능{
+ +힐()
+}
+class 탱크 extends 테란 implements 유닛, 기계 , 공격가능{}
+class 오토바이 extends 테란 implements 유닛, 기계, 공격가능{}
+class 일꾼로봇 extends 테란 implements 유닛, 기계, 힐가능 ,공격가능{
+ +기계수리()
+ +광맥자원캐기()
+}
+
+class 배럭 extends 테란 implements 건물, 기계{}
+class 팩토리 extends 테란 implements 건물, 기계{}
+
+class 저글링 extends 저그 implements 유닛 , 공격가능{}
+class 히드라 extends 저그 implements 유닛 , 공격가능 {}
+class 해처리 extends 저그 implements 건물{}
+
+class 질럿 extends 프로토스 implements 유닛 , 생물 , 힐가능 , 공격가능{}
+class 드라군 extends 프로토스 implements 유닛, 기계 , 공격가능{}
+class 게이트웨이 extends 프로토스 implements 건물{}
+
+class 광맥{
+ +자원량
+}
+
+@enduml
