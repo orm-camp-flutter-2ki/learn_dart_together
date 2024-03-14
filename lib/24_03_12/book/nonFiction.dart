@@ -8,6 +8,7 @@ class NonFiction extends Book {
     super.price,
     super.color,
     super.isbn,
+    super._weight,
     this.subgenre
   );
 }
