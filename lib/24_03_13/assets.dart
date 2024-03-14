@@ -1,5 +1,6 @@
 abstract class Assets {
   String name;
+  int price;
 
-  Assets(this.name);
+  Assets(this.name, this.price);
 }
