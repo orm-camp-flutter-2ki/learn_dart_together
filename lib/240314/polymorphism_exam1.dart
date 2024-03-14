@@ -6,6 +6,7 @@ abstract class Y implements X {
   void b();
 }
 
+
 class A extends Y {
   @override
   void a() {
@@ -38,3 +39,14 @@ class B extends Y {
   }
 }
 
+//인스턴스 생성
+void main(){
+  X obj = A();
+  obj.a();
+
+  Y y1 = A();
+  y1.a();
+
+  Y y2 = B();
+  y2.a();
+}
