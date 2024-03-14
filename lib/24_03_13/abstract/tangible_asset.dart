@@ -8,7 +8,8 @@ abstract class TangibleAsset extends Asset implements Thing {
   double _weight;
 
   TangibleAsset(
-      {required super.name,
+      {super.isTangible = true,
+      required super.name,
       required super.price,
       required String color,
       required int quantity,
@@ -17,8 +18,7 @@ abstract class TangibleAsset extends Asset implements Thing {
       : _color = color,
         _quantity = quantity,
         _department = department,
-        _weight = weight,
-        super(isTangible: true);
+        _weight = weight;
 
   String get color => _color;
 
