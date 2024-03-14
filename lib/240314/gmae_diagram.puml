@@ -1,0 +1,73 @@
+@startuml
+abstract class Unit {
+ {abstract}void move()
+}
+abstract class Structure{
+}
+class StructureBionic extends Structure implements SelfHeal{
+void selfHeal()
+}
+class StructureMechanic extends Structure{}
+class StructureMechanicPro extends StructureMechanic implements Shield, SelfHeal{
+void shield()
+void selfHeal()
+}
+class Bionic extends Unit{
+}
+class Marine extends Bionic implements Heal{
+void attack()
+void healer()
+}
+class Medic extends Bionic implements Heal{
+void healer()
+}
+class Mechanic extends Unit implements Attack{
+void attack()
+}
+class Tank extends Mechanic{
+void attack()
+}
+class Vulture extends Mechanic{
+void attack()
+}
+class Scv extends Mechanic implements Heal{
+void attack()
+void healer()
+void getResource()
+void pix(Mechanic target)
+}
+class Zergling extends Bionic implements SelfHeal,Attack{
+void attack()
+void selfHeal()
+}
+class Hydra extends Bionic implements SelfHeal,Attack{
+void attack()
+void selfHeal()
+}
+class Zealot extends Bionic implements Shield,Attack,Heal{
+void attack()
+void shield()
+void healer()
+}
+class Dragun extends Mechanic implements Shield,Attack{
+void attack()
+void shield()
+}
+interface Heal{
+{abstract}void healer()
+}
+interface Shield{
+{abstract}void shield()
+}
+interface SelfHeal{
+{abstract}void selfHeal()
+}
+interface Attack{
+{abstract}void attack()
+}
+class UnitGroup {
+void addUnit()
+void setAttack(for)
+void setMove(for)
+}
+@enduml
