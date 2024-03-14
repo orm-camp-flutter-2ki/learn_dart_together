@@ -13,5 +13,5 @@ void decrementMoney() {
 
 void main() {
 
-  Vehicle vehicle = Vehicle('오토바이');
+  // Vehicle vehicle = Vehicle('오토바이');
 }
