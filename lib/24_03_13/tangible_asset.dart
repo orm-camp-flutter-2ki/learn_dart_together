@@ -7,12 +7,11 @@ import 'package:learn_dart_together/24_03_13/thing.dart';
 
 abstract class TangibleAsset extends Assets implements Thing {
   // 유형 자산
-  int price;
   String color;
 
   TangibleAsset(
     super.name,
-    this.price,
+    super.price,
     this.color
   );
 
