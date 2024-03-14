@@ -1,0 +1,28 @@
+@startuml
+
+scale 2
+
+interface Movable {
+    {abstract} void move()
+}
+
+interface Drawable {
+    {abstract} void draw()
+}
+
+class Dog implements Drawable, Movable {
+    void draw()
+    void move()
+}
+
+class House implements Drawable {
+    void draw()
+}
+
+
+class Car implements Drawable, Movable {
+    void draw()
+    void move()
+}
+
+@enduml

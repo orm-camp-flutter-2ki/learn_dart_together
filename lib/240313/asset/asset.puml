@@ -1,0 +1,34 @@
+@startuml
+
+scale 1.5
+
+interface Thing {
+    double weight
+}
+
+abstract class TangibleAsset extends Asset implements Thing {
+  String name;
+  int price;
+  String color;
+}
+
+class Computer extends TangibleAsset {
+  String makerName;
+
+}
+
+class Book extends TangibleAsset {
+  String isbn;
+
+}
+
+class Asset {
+}
+
+abstract class IntangibleAsset extends Asset {
+}
+
+class Patent extends IntangibleAsset{
+}
+
+@enduml

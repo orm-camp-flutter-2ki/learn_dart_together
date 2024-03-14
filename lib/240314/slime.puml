@@ -1,0 +1,13 @@
+@startuml
+
+scale 2
+
+class Slime extends Monster {
+ run() // 도망
+}
+
+abstract class Monster {
+ run() // 뚜벅
+}
+
+@enduml

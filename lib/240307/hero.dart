@@ -1,5 +1,9 @@
 import 'dart:math';
 
+import 'package:learn_dart_together/240307/monster.dart';
+import 'package:learn_dart_together/240307/wand.dart';
+
+import 'slime.dart';
 import 'sword.dart';
 
 int heroMoney = 100;
@@ -24,7 +28,9 @@ class Hero {
     required this.name,
     required int hp,
     this.sword,
-  }) : _hp = hp;
+  }) : _hp = hp {
+    print('1. Hero 생성자');
+  }
 
   // expression body, lambda expression
   // 람다식, 화살표 표기법, arrow function
@@ -44,19 +50,20 @@ class Hero {
 
   // 메서드
   // 싸우기
-  void attack() {
+  void attack(Monster monster) {
     Hero.money -= 50;
     _hp -= 5;
     print('이상하다 왜 내피가 $_hp가 까지지?');
   }
 
   // 도망
-  void run() {}
+  void run() {
+    print('영웅은 도망쳤다');
+  }
 
   void _die() {}
 
-  void bye() {
-  }
+  void bye() {}
 }
 
 void main() {
@@ -69,10 +76,29 @@ void main() {
 
   Hero.money = 100;
 
+  hero.attack(Goblin(100, 100));
+  hero.attack(Slime(100, 100));
+
   // Hero hero2 = Hero('홍길동', 100);
   // Hero hero3 = Hero('홍길동', 100);
 
   // print('공격 전 : ${hero.hp}');
   // hero.attack();
   // print('공격 후 : ${hero.hp}');
+  List aa = [1, 1];
+
+  Wand wand = Wand(name: '지팡이', power: 100);
+
+  print(wand.name);
+}
+
+class Person {
+  static const defaultBirthYear = 2024;
+  final String name;
+  final int _birthYear;
+
+  int get age => DateTime.now().year - _birthYear;
+
+  Person({required this.name, int? birthYear})
+      : _birthYear = birthYear ?? defaultBirthYear;
 }

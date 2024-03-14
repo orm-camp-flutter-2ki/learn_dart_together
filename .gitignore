@@ -3,3 +3,4 @@
 .dart_tool/
 .idea/
 *.iml
+merge_all_prs.sh
