@@ -4,12 +4,13 @@ import 'x.dart';
 import 'y.dart';
 
 void main() {
-  // [1]
+  // [2]
+  // [2-1]
   X obj = A();
   obj.a();
 
 
-  // [2]
+  // [2-2]
   Y y1 = A();
   Y y2 = B();
   y1.a();
