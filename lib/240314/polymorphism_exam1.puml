@@ -1,0 +1,21 @@
+@startuml
+
+
+class A extends Y{
+
+}
+
+class B extends Y{
+
+}
+
+abstract class X{
+    void a();
+}
+
+abstract class Y implements X{
+    void b();
+}
+
+
+@enduml

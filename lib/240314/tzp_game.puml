@@ -1,0 +1,79 @@
+@startuml
+scale 5
+
+package "nonStarcraft" {
+
+abstract class 종족 {
+}
+
+abstract class Terran extends 종족 {
+}
+
+abstract class Zerg extends 종족 {
+    healsef();
+}
+
+abstract class Protoss extends 종족 {
+}
+
+
+interface Unit {
+}
+
+interface Structure {
+저그에서 건물
+}
+
+
+interface Bionic implements Unit {
+}
+
+interface Mechanic implements Unit {
+}
+
+
+class Marin extends Terran implements Bionic, Attack {
+}
+
+class Medic extends Terran implements Bionic {
+    heal(Bionic, Scv);
+}
+
+class Scv extends Terran implements Mechanic, Attack {
+ mineralMining();
+ repair();
+}
+
+class Tank extends Terran implements Mechanic, Attack {
+}
+
+class Vulture extends Terran implements Mechanic, Attack {
+}
+
+
+class Zergling extends Zerg implements Bionic {
+}
+
+class Hydra extends Zerg implements Bionic {
+
+}
+
+class Zealot extends Protoss implements Bionic {
+}
+
+class Dragun extends Protoss implements Mechanic {
+}
+
+
+interface Mineral {
+    make-unit();
+}
+
+interface Attack {
+}
+
+}
+
+
+
+@enduml
