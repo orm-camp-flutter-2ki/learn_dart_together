@@ -6,8 +6,9 @@ abstract class Y implements X {
   void b();
 }
 
-
+//A클래스
 class A extends Y {
+
   @override
   void a() {
     print('Aa');
@@ -23,6 +24,7 @@ class A extends Y {
   }
 }
 
+//B클래스
 class B extends Y {
   @override
   void a() {
@@ -40,13 +42,25 @@ class B extends Y {
 }
 
 //인스턴스 생성
-void main(){
-  X obj = A();
-  obj.a();
+// void main() {
+//   X obj = A();
+//   obj.a();
+//
+//   Y y1 = A();
+//   y1.a();
+//
+//   Y y2 = B();
+//   y2.a();
+// }
 
-  Y y1 = A();
-  y1.a();
+//List로 묶기
+void main(List<dynamic> arguments) {
+  final y = <Y>[];
 
-  Y y2 = B();
-  y2.a();
+  y.add(A());
+  y.add(B());
+  
+  for (var item in y){ //b()메소드 호출
+    item.b();
+  }
 }
