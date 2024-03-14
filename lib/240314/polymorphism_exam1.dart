@@ -53,16 +53,15 @@ class B extends Y {
 //   y2.a();
 // }
 
-//List로 묶기
-
+//List로 묶기, 연습문제 3
 void main () {
-  List<Y> y = [];
+  List<Y> y = []; //변수타입 Y로 사용
   // final y = <Y>[];
 
   y.add(A());
   y.add(B());
   
-  for (var item in y){ //b()메소드 호출
-    item.b();
+  for (var item in y){
+    item.b(); //b()메소드 호출
   }
 }
