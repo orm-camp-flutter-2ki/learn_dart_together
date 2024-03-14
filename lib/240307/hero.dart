@@ -1,7 +1,9 @@
 import 'dart:math';
 
+import 'package:learn_dart_together/240307/monster.dart';
 import 'package:learn_dart_together/240307/wand.dart';
 
+import 'slime.dart';
 import 'sword.dart';
 
 int heroMoney = 100;
@@ -48,7 +50,7 @@ class Hero {
 
   // 메서드
   // 싸우기
-  void attack() {
+  void attack(Monster monster) {
     Hero.money -= 50;
     _hp -= 5;
     print('이상하다 왜 내피가 $_hp가 까지지?');
@@ -61,8 +63,7 @@ class Hero {
 
   void _die() {}
 
-  void bye() {
-  }
+  void bye() {}
 }
 
 void main() {
@@ -74,6 +75,9 @@ void main() {
   Hero hero = Hero(name: 'name', hp: 100);
 
   Hero.money = 100;
+
+  hero.attack(Goblin(100, 100));
+  hero.attack(Slime(100, 100));
 
   // Hero hero2 = Hero('홍길동', 100);
   // Hero hero3 = Hero('홍길동', 100);
@@ -95,6 +99,6 @@ class Person {
 
   int get age => DateTime.now().year - _birthYear;
 
-  Person({required this.name, int? birthYear}):
-        _birthYear = birthYear?? defaultBirthYear;
+  Person({required this.name, int? birthYear})
+      : _birthYear = birthYear ?? defaultBirthYear;
 }

@@ -10,3 +10,13 @@ class Dancer extends Character {
   }
 
 }
+
+void main() {
+  Character character = Dancer('name', 100);
+
+  // 타입 캐스팅
+  Dancer dancer = character as Dancer;
+
+  Character character2 = dancer;
+
+}

@@ -1,30 +1,34 @@
 #!/bin/bash
 
-# 현재 브랜치 이름 가져오기
-current_branch=$(git branch | grep '*' | cut -d ' ' -f 2)
+# 현재 브랜치 저장
+current_branch=$(git symbolic-ref --short HEAD)
 
-# 현재 브랜치를 제외한 모든 브랜치 목록 가져오기
-branches=$(git branch -r | grep -v '\->' | grep -v "$current_branch")
+# 원격 저장소에서 업데이트된 정보를 가져옴
+git fetch
 
-# 각 브랜치의 PR 목록 가져오기
-for branch in $branches; do
-  echo "### $branch 브랜치 PR 목록:"
-  pull_requests=$(gh pr list -B "$branch" -s open --json url,title | jq -r '.[].url')
-  for pull_request in $pull_requests; do
-    echo "- $pull_request"
-  done
+# 머지할 브랜치 목록 생성 (현재 브랜치를 제외한 모든 브랜치)
+branches=$(git branch -r | grep -v "origin/$current_branch" | sed 's/origin\///')
+
+# 각 브랜치에 대해 PR을 가져와서 머지
+for branch in $branches
+do
+    # 해당 브랜치의 PR을 가져옴
+    pr_number=$(hub pr list -h $branch -s open -f "%I")
+
+    # PR이 존재하면 머지
+    if [ -n "$pr_number" ]; then
+        # PR을 머지
+        git checkout $branch
+        git pull origin $branch
+        git merge "pull/$pr_number/head"
+        git push origin $branch
+
+        # PR이 머지된 후 브랜치를 삭제할 경우 아래 라인을 추가합니다.
+        # hub pr close -m "Merged manually" $pr_number
+    else
+        echo "No open PR found for branch $branch"
+    fi
 done
 
-# 각 브랜치의 PR을 모두 머지하기
-for branch in $branches; do
-  echo "### $branch 브랜치 PR 머지 시작:"
-  pull_requests=$(gh pr list -B "$branch" -s open --json url,title | jq -r '.[].url')
-  for pull_request in $pull_requests; do
-    echo "- $pull_request 머지 시작..."
-    gh pr merge "$pull_request" -m "Merge pull request #$(echo $pull_request | cut -d '/' -f 7)"
-    echo "- $pull_request 머지 완료."
-  done
-  echo "### $branch 브랜치 PR 머지 완료."
-done
-
-echo "### 모든 브랜치 PR 머지 완료."
+# 다시 현재 브랜치로 이동
+git checkout $current_branch

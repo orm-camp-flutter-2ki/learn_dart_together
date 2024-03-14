@@ -1,7 +1,7 @@
 import 'asset.dart';
 import 'thing.dart';
 
-class TangibleAsset extends Asset implements Thing {
+abstract class TangibleAsset extends Asset implements Thing {
   String name;
   int price;
   String color;

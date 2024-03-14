@@ -1,4 +1,6 @@
 import 'hero.dart';
+import 'monster.dart';
+import 'slime.dart';
 
 class SuperHero extends Hero {
   bool _isFlying = false;
@@ -27,12 +29,10 @@ class SuperHero extends Hero {
   }
 
   @override
-  void attack() {
+  void attack(Monster monster) {
     if (isFlying) {
       print('추가 공격');
     }
-
-    super.attack();
   }
 
   // annotation : 일종의 주석

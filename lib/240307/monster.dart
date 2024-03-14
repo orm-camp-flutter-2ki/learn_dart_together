@@ -5,7 +5,9 @@ abstract class Monster {
   Monster(this.hp, this.mp);
 
   void attack();
-  void run();
+  void run() {
+    print('뚜벅뚜벅');
+  }
 }
 
 abstract class WalkingMonster extends Monster {
