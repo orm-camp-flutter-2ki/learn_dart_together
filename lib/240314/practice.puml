@@ -1,0 +1,62 @@
+@startuml
+
+abstract class StarCraft {}
+
+abstract class Tribe extends StarCraft {}
+
+interface Unit {
+Bionic()
+Mechanic()
+attack()
+heal()
+}
+
+interface Structure {
+Bionic()
+Mechanic()
+recovery()
+}
+
+'테란
+abstract class Terran extends Tribe implements Unit {
+..Bionic..
+Marine
+Medic
+
+..Mechanic..
+Tank
+Vulture
+Scv
+}
+
+class Marine extends Terran {}
+class Medic extends Terran {
+heal()
+}
+class Tank extends Terran {}
+class Vulture extends Terran {}
+
+class Scv extends Terran {
++ int mineral
+- mineralCollection()
++ repairMachine()
+healFromMedic()
+}
+
+'저그
+abstract class Zerg extends Tribe implements Unit, Structure {
+..Bionic..
+Zergling
+Hydra
+}
+
+'프로토스
+abstract class Protoss extends Tribe implements Unit, Structure {
+..Bionic..
+Zealot
+
+..Mechanic..
+Dragon
+}
+
+@enduml
