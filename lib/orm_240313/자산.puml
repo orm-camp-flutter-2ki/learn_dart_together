@@ -17,6 +17,7 @@ class Book extends TangibleAsset
     +name()
     +price()
     -color
+    ++weight()
      isbn()
 }
 class Computer extends TangibleAsset
@@ -24,6 +25,7 @@ class Computer extends TangibleAsset
     +name()
     +price()
     -color
+    ++weight()
     makerName
 }
 
@@ -50,5 +52,9 @@ class Trademark extends Intangibleasset{
   -type
 }
 
-class TangibleAsset extends Thing
+Thing : ++weight()
+
+class TangibleAsset extends Thing{
+    ++weight()
+}
 @enduml
