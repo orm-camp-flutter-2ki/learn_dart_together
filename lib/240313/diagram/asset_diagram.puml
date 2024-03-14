@@ -20,11 +20,11 @@ class Patent extends InTangibleAsset {
   +String jurisdictionPerson
 
 }
-class Book extends TangibleAsset implements Thing {
+class Book extends TangibleAsset {
   +String isbn
 
 }
-class Computer extends TangibleAsset implements Thing {
+class Computer extends TangibleAsset {
   +String makerName
   
 }
