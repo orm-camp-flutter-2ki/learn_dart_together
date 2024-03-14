@@ -3,12 +3,13 @@ import 'package:learn_dart_together/24_03_13/thing.dart';
 
 class Computer extends TangibleAsset {
   String makerName;
-  double? _weight;
+  double _weight;
 
   Computer(
     super.name,
     super.price,
     super.color,
+    this._weight,
     this.makerName
   );
 
@@ -29,7 +30,7 @@ class Computer extends TangibleAsset {
 }
 
 void main() {
-  Computer computer = Computer('내 컴퓨터', 200, 'black', 'LG');
+  Computer computer = Computer('내 컴퓨터', 200, 'black', 300.0, 'LG');
   computer.mass = 200.0;
   computer.displayInfo();
   print('${computer.weight}');
