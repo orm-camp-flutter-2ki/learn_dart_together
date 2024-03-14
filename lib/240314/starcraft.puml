@@ -1,0 +1,43 @@
+@startuml
+
+scale 0.8
+
+
+abstract class Starcraft
+
+abstract class Terren
+abstract class Protoss
+abstract class Zerg
+
+'starcraft
+
+abstract class Unit extends Starcraft
+abstract class Structure extends Starcraft
+abstract class Resource extends Starcraft
+
+class Mineral extends Resource
+class Gas extends Resource
+
+abstract class bionic extends Unit
+abstract class machanic extends Unit
+
+'abstract class protoss extends bionic, machanic
+
+class marine extends bionic implements Attack
+class scv extends machanic implements Attack, repair
+class zealot extends bionic implements Attack, Shiled
+class dragun extends machanic implements Attack, Shiled
+class medic extends bionic implements heal
+class tank extends machanic implements Attack
+class vulture extends machanic implements Attack
+class hydra extends bionic implements Attack, recover
+class zergling extends bionic implements Attack, recover
+
+interface Attack
+interface heal
+interface Shiled{
+    +shiled
+    +shiledRecover
+}
+
+@enduml
