@@ -2,10 +2,14 @@
 
 scale 1.5
 
+interface Thing {
+    double weight
+}
+
 abstract class Asset{
 }
 
-abstract class TangibleAsset extends Asset {
+abstract class TangibleAsset extends Asset implements Thing {
   String name;
   int price;
   String color;
@@ -23,7 +27,7 @@ class Computer extends TangibleAsset {
 }
 
 
-class IntangibleAsset{
+class IntangibleAsset extends Asset {
 }
 
 class patent extends IntangibleAsset{
