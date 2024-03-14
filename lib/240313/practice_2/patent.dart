@@ -4,8 +4,7 @@ import 'package:learn_dart_together/240313/practice_2/intangible_asset.dart';
 class Patent extends IntangibleAsset {
   int number; // 특허 번호
 
-  Patent(
-    super.weight, {
+  Patent({
     required super.price,
     required super.name,
     required super.ownerName,
