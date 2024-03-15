@@ -1,6 +1,6 @@
 @startuml
 
-scale 0.8
+scale 1
 
 
 abstract class Starcraft

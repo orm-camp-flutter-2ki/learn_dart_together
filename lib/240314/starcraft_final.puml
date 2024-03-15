@@ -7,8 +7,8 @@ abstract class Starcraft
 
 abstract class Bionic extends Starcraft
 abstract class Mechanic extends Starcraft
-
 class Resource extends Starcraft
+
 abstract class Structure_Bionic extends Bionic
 abstract class Structure_Mechanic extends Mechanic
 abstract class Terran_Unit_Bionic extends Bionic implements Group
@@ -85,8 +85,6 @@ interface Shield {
 +shiledRecover
 }
 interface Group {
-+allAttack
-+allMove
 }
 
 }
