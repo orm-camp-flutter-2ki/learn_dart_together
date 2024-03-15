@@ -1,4 +1,4 @@
-class Book implements Comparable<Book>{
+class Book implements Comparable<Book> {
   String title;
   DateTime publishDate;
   String comment;
@@ -14,6 +14,4 @@ class Book implements Comparable<Book>{
     return publishDate.compareTo(other.publishDate);
     throw UnimplementedError();
   }
-
-
 }

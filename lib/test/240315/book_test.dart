@@ -11,8 +11,7 @@ void main() {
     Book book2 =
         Book(title: '논어', comment: '삶', publishDate: DateTime(2024, 1, 1));
     print(book.publishDate);
-    // 문제 1번
-    print(book == book2);
 
+    print(book == book2);
   });
 }
