@@ -9,7 +9,7 @@ class Book {
     DateTime? publishDate,
   }) : publishDate = DateTime.now();
 
-  String getFormattedDate(DateTime date) {
+  String _getFormattedDate(DateTime date) {
     return '${date.year}-${date.month}-${date.day}';
   }
 
@@ -18,10 +18,10 @@ class Book {
       identical(this, other) ||
       other is Book && runtimeType == other.runtimeType &&
       title == other.title &&
-      getFormattedDate(publishDate) == getFormattedDate(other.publishDate);
+      _getFormattedDate(publishDate) == _getFormattedDate(other.publishDate);
 
   @override
-  int get hashCode => int.parse('${title.hashCode}${getFormattedDate(publishDate).hashCode}');
+  int get hashCode => int.parse('${title.hashCode}${_getFormattedDate(publishDate).hashCode}');
 
   Book copyWith({
     String? title,
