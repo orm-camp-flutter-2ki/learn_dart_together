@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class Starcraft
+
+abstract class Unit extends Starcraft
+
+abstract class structure extends Starcraft
+
+class Protoss
+class Terran
+class Zerg
+
+abstract class Bionic extends Unit, structure
+
+abstract class Machanic extends Unit, structure
+
+class Zealot extends Bionic implements Attack,Shiled
+
+class Dragun extends Machanic implements Attack,Shiled
+
+class Marine extends Bionic implements Attack
+
+class Medic extends Bionic implements Heal
+
+class Tank extends Machanic implements Attack
+
+class Vulture extends Machanic implements Attack
+
+class SCV extends Machanic implements Attack,Repair,Mining
+
+interface Heal
+
+interface Attack
+
+interface Shiled{
+    +shiled
+    +shiledRecover
+}
+interface Recover
+
+interface Repair
+
+interface Mining
+
+
+@enduml
