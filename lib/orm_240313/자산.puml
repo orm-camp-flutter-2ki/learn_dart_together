@@ -6,10 +6,11 @@ class Asset{
     price()
 }
 
-class TangibleAsset extends Asset{
+abstract class TangibleAsset extends Asset implements Thing{
     +name()
     +price()
     -color
+    ++weight;
 
 }
 class Book extends TangibleAsset
@@ -17,7 +18,7 @@ class Book extends TangibleAsset
     +name()
     +price()
     -color
-    ++weight()
+    ++weight;
      isbn()
 }
 class Computer extends TangibleAsset
@@ -25,11 +26,11 @@ class Computer extends TangibleAsset
     +name()
     +price()
     -color
-    ++weight()
+    ++weight;
     makerName
 }
 
-class Intangibleasset extends Asset
+abstract class Intangibleasset extends Asset
 {
     +name()
     +price()
@@ -52,9 +53,10 @@ class Trademark extends Intangibleasset{
   -type
 }
 
-Thing : ++weight()
-
-class TangibleAsset extends Thing{
-    ++weight()
+interface Thing{
+    weight;
 }
+
+
+
 @enduml

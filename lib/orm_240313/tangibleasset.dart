@@ -2,35 +2,11 @@ import 'package:learn_dart_together/orm_240313/thing.dart';
 
 import 'asset.dart';
 
-// abstract class TangibleAsset extends Asset implements Thing {
-//   String color;
-//   double _weight;
-//
-//   TangibleAsset(
-//       {required super.name,
-//       required super.price,
-//       required this.color,
-//       required double _weight})
-//       : _weight = weight;
-//
-//   @override
-//   double get weight => _weight;
-//
-//   @override
-//   set weight(double value) {
-//     if (value > 0) {
-//       _weight = value;
-//     } else {
-//       throw Exception('Weight must be positive');
-//     }
-//   }
-// }
-
 abstract class TangibleAsset extends Asset implements Thing {
   String color;
   double _weight;
 
-  TangibleAsset(super.name,super.price,this.color, this._weight);
+  TangibleAsset(super.name, super.price, this.color, this._weight);
 
   @override
   double get weight => _weight;
@@ -53,7 +29,7 @@ abstract class TangibleAsset extends Asset implements Thing {
 class Book extends TangibleAsset {
   String isbn;
 
-  Book(super.name, super.price, super.color,  this.isbn, super.weight);
+  Book(super.name, super.price, super.color, this.isbn, super.weight);
 
   @override
   String toString() {
@@ -64,8 +40,7 @@ class Book extends TangibleAsset {
 class Computer extends TangibleAsset {
   String makerName;
 
-  Computer(super.name, super.price, super.color, this.makerName,super.weight);
-
+  Computer(super.name, super.price, super.color, this.makerName, super.weight);
 
   @override
   String toString() {

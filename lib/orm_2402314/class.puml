@@ -1,0 +1,75 @@
+@startuml
+
+scale 0.9
+
+
+'공통 class
+abstract class Starcraft
+
+abstract class Bionic extends Starcraft
+abstract class Mechanic extends Starcraft
+
+class Resource extends Starcraft
+abstract class Structure_Bionic extends Bionic
+abstract class Structure_Mechanic extends Mechanic
+abstract class Terran_Unit_Bionic extends Bionic
+abstract class Terran_Unit_Mechanic extends Mechanic
+abstract class Protoss_Unit_Bionic extends Bionic
+abstract class Protoss_Unit_Mechanic extends Mechanic
+abstract class Zerg_Unit_Bionic extends Bionic
+
+'종족 class
+class Scv extends Terran_Unit_Mechanic implements Attack, Mining, Healable, Repair, Repairable
+class Marine extends Terran_Unit_Bionic implements Attack, Healable
+class Medic extends Terran_Unit_Bionic implements Heal, Healable
+class Tank extends Terran_Unit_Mechanic implements Attack, Repairable
+class Vulture extends Terran_Unit_Mechanic implements Attack, Repairable
+
+class Zealot extends Protoss_Unit_Bionic implements Attack, Healable, Shield
+class Dragun extends Protoss_Unit_Mechanic implements Attack, Repairable, Shield
+
+class Zergling extends Zerg_Unit_Bionic implements Attack, Healable, Recover
+class Hydra extends Zerg_Unit_Bionic implements Attack, Healable, Recover
+
+'건물 class
+class Terran_Structure extends Structure_Mechanic implements Repairable
+class Protoss_Structure implements Shield
+class Zerg_Structure extends Structure_Bionic implements Recover
+
+'interface에 있는 추상메서드를 하위 클래스에서 오버라이딩하여 씀
+interface Attack {
++doAttack
++stopAttack
+}
+interface Heal {
++doHeal
++stopHeal
+}
+interface Healable {
++canHealed
++cannotHealed
+}
+interface Recover {
++canRecovered
++cannotRecovered
+}
+interface Mining {
++doMining
++stopMining
+}
+interface Repair {
++doRepair
++stopRepair
+}
+interface Repairable {
++canRepaired
++cannotRepaired
+}
+interface Shield {
++shiled
++shiledRecover
+}
+
+}
+
+@enduml
