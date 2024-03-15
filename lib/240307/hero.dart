@@ -1,5 +1,3 @@
-
-
 import 'dart:math';
 
 import 'sword.dart';
@@ -51,6 +49,23 @@ class Hero {
 
   // 도망
   void run() {}
+
+  @override
+  String toString() {
+    return 'name: $name, hp: $hp, sword: $sword';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is Hero &&
+        runtimeType == other.runtimeType &&
+        name == other.name &&
+        sword == other.sword;
+  }
+
+  @override
+  int get hashCode => name.hashCode ^ sword.hashCode;
+
 }
 
 void main() {
