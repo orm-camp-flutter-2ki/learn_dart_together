@@ -1,6 +1,7 @@
 import 'package:dart_cli_practice/240307/hero.dart';
+import 'package:dart_cli_practice/240314/monster.dart';
 
-class Slime {
+class Slime extends Monster {
   int hp = 50;
   final String suffix;
 
@@ -12,6 +13,7 @@ class Slime {
     hero.hp -= 10;
   }
 
+  @override
   void run() {
     print('[슬라임 $suffix 가 도망쳤다.]');
   }
