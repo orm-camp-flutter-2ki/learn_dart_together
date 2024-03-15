@@ -5,8 +5,8 @@ abstract class Asset{
 +price : int
 }
 interface Thing{
--{get} weight();
-+{set} weight();
+-{get} weight : double
++{set} weight : double
 }
 class TangibleAsset{
 -weight : double

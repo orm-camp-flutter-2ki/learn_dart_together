@@ -1,0 +1,154 @@
+/// b4팀 스타크래프트 설계도
+@startuml
+abstract class "StarCraftEntity" {
+string name;
+int teamID;
+int userID;
+int hp;
+int gas;
+int cost;
+Point location;
+}
+
+class Point {
+    double x;
+    double y;
+
+}
+
+Point --* "StarCraftEntity"
+
+abstract class "Terran" extends "StarCraftEntity"{
+}
+
+abstract class "Zerg" extends "StarCraftEntity" {
+{abstract} void healItself();
+}
+
+abstract class "Protoss" extends "StarCraftEntity" implements Shield{
+}
+
+abstract class "TerranUnit" extends "Terran" implements "Unit" {
+'    void attack(int damage);
+''    공격못하는건 0
+}
+
+abstract class "TerranStructure"  extends "Terran" implements "Structure" {
+}
+
+abstract class "ZergUnit"  extends "Zerg" implements "Unit" {
+}
+
+abstract class "ZergStructure" extends "Zerg" implements "Structure" {
+}
+
+
+abstract class "ProtossUnit" extends "Protoss" implements "Unit"{
+}
+
+abstract class "ProtossStructure" extends "Protoss" implements "Structure" {
+}
+
+abstract class "TerranUnitBionic" extends "TerranUnit" implements "Healable" {
+
+}
+
+abstract class "TerranUnitMechanic" extends "TerranUnit" implements "Repairable"{
+}
+
+abstract class "ZergUnitBionic" extends "ZergUnit"{
+}
+
+abstract class "ProtossUnitBionic" extends "ProtossUnit" implements "Healable" {
+}
+
+abstract class "ProtossUnitMechanic" extends "ProtossUnit" {
+}
+
+interface "Unit" {
+    void attack(int damage, "StarCraftEntity" entity);
+    void gotAttacked(int damage);
+    void death();
+    void move(int location)
+    void isSelected(bool isSelected);
+}
+
+interface "Structure" {
+'추상클래스 = 신분, 핏줄
+'인터페이스 = acting
+'유닛이 이동할수있는가? 동작만 하면 되는데 핏줄을 이어받을 필요가있나?
+'scv, medic을 먼저 구현하고 올라가기, 공통된것을 묶기 위함, 유지보수(oop목표)
+
+}
+
+'interface "Bionic" {
+''들어갈 속성이 없다.
+'}
+'
+'interface "Mechanic" {
+''들어갈 속성이 없다.
+'}
+
+interface Healable {
+'스스로 vs 남이
+    void heal(int healCount);
+}
+
+'interface Healer {
+'}
+
+interface Shield {
+'값 저장, 자동 회복 양 등등..
+    int healPoint;
+    void healingShield(int healCount);
+}
+
+'interface Repairer {
+'}
+
+interface Repairable {
+
+    void reparing(int repairCount);
+}
+
+'interface Miner {
+'}
+
+class "Marine" extends "TerranUnitBionic"  {
+}
+
+class "Medic" extends "TerranUnitBionic"  {
+    void heal("Healable" unit );
+}
+
+class "Tank" extends "TerranUnitMechanic"  {
+}
+
+class "Vulture" extends "TerranUnitMechanic" {
+}
+
+class "Scv" extends "TerranUnitMechanic" implements "Healable"{
+'힐이 가능.
+    void mining(int mineCount);
+    void repairing("Mechanic" unit);
+}
+
+'class "Hatchery" {
+'}
+
+class "Zergling" extends "ZergUnitBionic" {
+}
+
+class "Hydra" extends "ZergUnitBionic"{
+}
+
+class "Zealot" extends "ProtossUnitBionic" {
+
+}
+
+class "Dragun" extends "ProtossUnitMechanic"{
+}
+
+'그룹화 메서드 ?
+
+@enduml
