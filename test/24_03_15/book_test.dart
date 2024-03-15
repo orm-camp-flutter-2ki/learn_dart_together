@@ -18,8 +18,8 @@ void main() {
 
   test('TEST_Book의 딥카피 메서드로 복사한 객체는 원본과 다르다', () {
     Book lee = Book(title: '이순신', comment:'위인전', publishDate: DateTime(2024,03,15));
-    Book kim = lee.copyWith();
-
+    Book kim = lee.copyWith(title: '김유신', comment: '위인전');
+    
     expect(lee == kim, false);
   });
 }
