@@ -11,7 +11,8 @@ void main() {
       Book(title: '논어', comment: '삶', publishDate: DateTime(2004, 1, 1)),
     ];
 
-    bookList.sort((book1, book4) => book1.publishDate.compareTo(book4.publishDate));
+    bookList
+        .sort((book1, book4) => book1.publishDate.compareTo(book4.publishDate));
     for (var element in bookList) {
       print(element.publishDate);
     }
