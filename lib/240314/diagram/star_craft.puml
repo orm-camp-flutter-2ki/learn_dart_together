@@ -17,7 +17,7 @@ scale 1
     }
 '   건물    
     abstract class Structure extends Object {
-
+        
     }    
     abstract class BionicStructure extends Structure implements Zerg{
         
