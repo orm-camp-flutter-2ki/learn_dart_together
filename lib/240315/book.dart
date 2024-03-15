@@ -20,6 +20,7 @@ class Book {
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Book &&
+          runtimeType == other.runtimeType &&
           publishDateYMD(publishDate) == publishDateYMD(other.publishDate) &&
           title == other.title;
 
