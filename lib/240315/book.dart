@@ -24,28 +24,34 @@ class Book {
       publishDate: publishDate ?? this.publishDate,
     );
   }
+
+  @override
+  int get hashCode => publishDate.hashCode;
 }
 
 void main(List<String> args) {
   // 1번
-  final book1 = Book(title: '제목1', comment: '코멘트1', publishDate: DateTime.parse('2024-03-15'));
-  final book2 = Book(title: '제목2', comment: '코멘트2', publishDate: DateTime.parse('2024-03-15'));
+  final book1 = Book(title: '제목1', comment: '코멘트1', publishDate: DateTime.parse('3024-03-15'));
+  final book2 = Book(title: '제목2', comment: '코멘트2', publishDate: DateTime.parse('1024-03-15'));
 
   //print(book1 == book2);
 
   final book3 = Book(title: '제목1', comment: '코멘트1', publishDate: DateTime.parse('2024-03-15'));
-  final book4 = Book(title: '제목2', comment: '코멘트2', publishDate: DateTime.parse('2024-03-14'));
+  final book4 = Book(title: '제목2', comment: '코멘트2', publishDate: DateTime.parse('4024-03-14'));
   // 2번
   List<Book> books = [
-    book4,
+    book1,
+    book2,
     book3,
+    book4,
   ];
   // 내림차순 정렬
-  books.sort((book3, book4) => book3.publishDate.compareTo(book4.publishDate));
+  books.sort((a, b) => a.publishDate.compareTo(b.publishDate));
+
   for (var element in books) {
     print(element.publishDate);
   }
   // 3번
   Book book5 = book1.copyWith(title: '변경2');
-  print(book5.title);
+  //print(book5.title);
 }
