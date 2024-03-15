@@ -1,4 +1,6 @@
 @startuml
+scale 1
+
 abstract class Asset {
 String name;
 this.name
