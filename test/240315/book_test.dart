@@ -17,17 +17,22 @@ void main() {
 
   test('Book Test 2', () {
     print('=========Test 2=========');
-    Book book = Book(title: '책1', comment: '코멘트');
+    Book book1 = Book(title: '책1', comment: '코멘트');
     Book book2 = Book(title: '책2', comment: '코멘트');
     Book book3 = Book(title: '책3', comment: '코멘트');
     Book book4 = Book(title: '책4', comment: '코멘트');
+    book1.publishDate = DateTime.parse('2111-01-01');
+    book2.publishDate = DateTime.parse('5111-01-01');
+    book3.publishDate = DateTime.parse('4111-01-01');
+    book4.publishDate = DateTime.parse('1111-01-01');
 
-    List<Book> bookList = [book, book2, book3, book4];
+    List<Book> bookList = [book1, book2, book3, book4];
     // publishDate를 기준으로 오름차순으로 정렬
     bookList.sort((a, b) => a.publishDate.compareTo(b.publishDate));
     for(var item in bookList) {
       print(item.title);
     }
+    // 책4-책1-책3-책2 순으로 출력됨
   });
 
   test('Book Test 3', () {
