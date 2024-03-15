@@ -1,5 +1,4 @@
 class Book {
-
   String title;
   DateTime publishDate;
   String comment;
@@ -21,5 +20,13 @@ class Book {
 
   String getDate(DateTime dateTime) {
     return '${publishDate.year}-${publishDate.month}-${publishDate.day}';
+  }
+
+  Book copyWith({String? title, String? comment, DateTime? publishDate}) {
+    return Book(
+        title: title ?? this.title,
+        comment: comment ?? this.comment,
+        publishDate: publishDate ?? this.publishDate
+    );
   }
 }
