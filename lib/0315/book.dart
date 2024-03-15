@@ -16,7 +16,11 @@ class Book {
     return title == other.title && getDate(publishDate) == other.getDate(other.publishDate);
   }
 
+  @override
+  int get hashCode => '$title${getDate(publishDate)}'.hashCode;
+
   String getDate(DateTime dateTime) {
     return '${publishDate.year}-${publishDate.month}-${publishDate.day}';
   }
+
 }
