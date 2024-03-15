@@ -40,6 +40,6 @@ void main() {
     Book book = Book(title: '책1', comment: '코멘트');
     Book book2 = book.copyWith(comment: '커멘트');
     print(book == book2);
-    expect(book, book2);
+    expect(book, equals(book2));
   });
 }
