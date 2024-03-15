@@ -14,6 +14,10 @@ class Book implements Comparable<Book> {
     );
   }
 
+  String get publishDateFormatted {
+    return '${publishDate.year}-${publishDate.month}-${publishDate.day}';
+  }
+
   @override
   int get hashCode => title.hashCode ^ publishDate.toString().hashCode;
 
@@ -27,6 +31,6 @@ class Book implements Comparable<Book> {
 
   @override
   int compareTo(Book other) {
-    return publishDate.toString().compareTo(other.publishDate.toString());
+    return publishDateFormatted.toString().compareTo(other.publishDateFormatted.toString());
   }
 }
