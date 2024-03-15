@@ -29,9 +29,9 @@ class Book implements Comparable<Book> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Book &&
-          other.title == title &&
-          _isSameDate(other.publishDate, publishDate);
+          other is Book &&
+              other.title == title &&
+              _isSameDate(other.publishDate, publishDate);
 
   @override
   int get hashCode => title.hashCode ^ publishDate.hashCode;
@@ -50,35 +50,66 @@ class Book implements Comparable<Book> {
 }
 
 // 연습문제 1- 1)
-void main() {
-  Book book1 = Book(
-    title: 'Book 1',
-    publishDate: DateTime(2024, 1, 1),
-    comment: 'Comment 1',
-  );
-  Book book2 = Book(
-    title: 'Book 2',
-    publishDate: DateTime(2024, 1, 1),
-    comment: 'Comment 2',
-  );
-  Book book3 = Book(
-    title: 'Book 3',
-    publishDate: DateTime(2024, 1, 10),
-    comment: 'Comment 3',
-  );
-  Book book4 = Book(
-    title: 'Book 1',
-    publishDate: DateTime(2024, 1, 1),
-    comment: 'Comment 3',
-  );
+// void main() {
+//   Book book1 = Book(
+//     title: 'Book 1',
+//     publishDate: DateTime(2024, 1, 1),
+//     comment: 'Comment 1',
+//   );
+//   Book book2 = Book(
+//     title: 'Book 2',
+//     publishDate: DateTime(2024, 1, 1),
+//     comment: 'Comment 2',
+//   );
+//   Book book3 = Book(
+//     title: 'Book 3',
+//     publishDate: DateTime(2024, 1, 10),
+//     comment: 'Comment 3',
+//   );
+//   Book book4 = Book(
+//     title: 'Book 1',
+//     publishDate: DateTime(2024, 1, 1),
+//     comment: 'Comment 3',
+//   );
+//
+//   print("book1과 book2는 동일한 책입니까? ${book1 == book2}");
+//   print("book1과 book3는 동일한 책입니까? ${book1 == book3}");
+//   print("book2과 book3는 동일한 책입니까? ${book2 == book3}");
+//   print("book2과 book4는 동일한 책입니까? ${book2 == book4}");
+//   print("book1과 book4는 동일한 책입니까? ${book1 == book4}");
+// }
 
-  print("book1과 book2는 동일한 책입니까? ${book1 == book2}");
-  print("book1과 book3는 동일한 책입니까? ${book1 == book3}");
-  print("book2과 book3는 동일한 책입니까? ${book2 == book3}");
-  print("book2과 book4는 동일한 책입니까? ${book2 == book4}");
-  print("book1과 book4는 동일한 책입니까? ${book1 == book4}");
 
 //연습문제 1 -2)
 
+void main() {
+  List<Book> books = [
+    Book(
+      title: 'Book 1',
+      publishDate: DateTime(2024, 1, 1),
+      comment: 'Comment 1',
+    ),
+    Book(
+      title: 'Book 2',
+      publishDate: DateTime(2024, 2, 1),
+      comment: 'Comment 2',
+    ),
+    Book(title: 'Book 3',
+      publishDate: DateTime(2024, 3, 1),
+      comment: 'Comment 3',
+    ),
+    Book(title: 'Book 1',
+      publishDate: DateTime(2024, 1, 1),
+      comment: 'Comment 4',
+    ),
+  ];
 
+  // 출간일이 오래된 순서대로 정렬
+  books.sort((a, b) => a.publishDate.compareTo(b.publishDate));
+
+  for (int i = 0; i < books.length; i++) {
+    final book = books[i] as List;
+    print('${book.title}, 출간일: ${book.publishDate}');
+  }
 }
+
