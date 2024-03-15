@@ -9,18 +9,18 @@ abstract class 프로토스 extends 종족 implements 방어막{}
 interface 생물{}
 interface 기계{}
 interface 힐가능{
-  힐가능()
+  +{abstract}힐가능()
 }
 interface 방어막 extends 자연회복{}
 interface 자연회복{
- +자연회복()
+ +{abstract}자연회복()
 }
 interface 공격가능{
- +공격()
+ +{abstract}공격()
 }
 
 interface 유닛 {
- +이동()
+ +{abstract}이동()
 }
 interface 건물 {}
 
