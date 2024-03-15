@@ -19,18 +19,18 @@ class Book implements Comparable<Book> {
   }
 
   @override
-  int get hashCode => title.hashCode ^ publishDate.toString().hashCode;
+  int get hashCode => title.hashCode ^ publishDateFormatted.hashCode;
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other is! Book) return false;
     return title == other.title &&
-        publishDate.toString() == other.publishDate.toString();
+        publishDateFormatted == other.publishDateFormatted;
   }
 
   @override
   int compareTo(Book other) {
-    return publishDateFormatted.toString().compareTo(other.publishDateFormatted.toString());
+    return publishDate.toString().compareTo(other.publishDate.toString());
   }
 }
