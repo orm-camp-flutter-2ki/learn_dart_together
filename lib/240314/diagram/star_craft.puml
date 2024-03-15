@@ -1,43 +1,44 @@
 @startuml X 
 scale 1
-    
+'   공통 ===============================================================================
+    abstract class Object {
+        int hp
+    }
+'   유닛    
+    abstract class Unit extends Object implements Movable, Attackable {
+        void attack(target: Object)
+        void move(target: Point)
+    }
     abstract class BionicUnit implements Healable, Unit {
             
     }
+    abstract class MechanicUnit extends Unit implements Repairable {
+        
+    }
+'   건물    
+    abstract class Structure extends Object {
+
+    }    
+    abstract class BionicStructure extends Structure implements Zerg{
+        
+    }       
+    abstract class MechanicStructure extends Structure {
+'   기타 클래스
+    }    
     class Point {
         int x
         int y
-    }
-    
+    }    
     class Mineral {
         int amount
     }
-
+'   인터페이스    
     interface Movable {
         void move(target: Point)
     }
     interface Attackable {
         void attack(target: Object)
-    }
-    abstract class Object {
-        int hp
-    }
-    abstract class Unit extends Object implements Movable, Attackable {
-        void attack(target: Object)
-        void move(target: Point)
     }    
-    abstract class Structure extends Object {
-
-    }
-    abstract class BionicStructure extends Structure implements Zerg{
-        
-    }
-    abstract class MechanicStructure extends Structure implements Repairable{
-
-    }
-    abstract class MechanicUnit extends Unit implements Repairable {
-        
-    }
     interface Repairable {
         ' Scv가 repair 가능
     }
@@ -46,7 +47,7 @@ scale 1
         ' Teran, Unit, Bionic
         
     }
-' =================================================================================
+' 저그 ===============================================================================
     interface Zerg {
         void selfAid()
     }    
@@ -59,7 +60,7 @@ scale 1
     class SpawningPool extends BionicStructure  {
 
     }
-' =================================================================================
+' 프로토스 =============================================================================
     interface Protoss {  
         int shield              
         void shieldRecover()        
@@ -73,13 +74,13 @@ scale 1
     class Nexus extends MechanicStructure implements Protoss{
 
     }
-' =================================================================================
+' 테란 ===============================================================================
     interface Terran {
 
     }
-    ' class Marine implements Bionic, Unit {
+    class Marine extends BionicUnit implements Terran {
 
-    ' }
+    }
     class Medic extends BionicUnit implements Terran {
         void heal(target: Healable)        
         void attack()
