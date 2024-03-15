@@ -1,3 +1,5 @@
+import 'package:learn_dart_together/24_03_11/04_person.dart';
+
 import 'a.dart';
 import 'b.dart';
 import 'x.dart';
@@ -6,13 +8,13 @@ import 'y.dart';
 void main() {
   X obj = A();
 
-  obj.a();    // Aa
+  obj.a(); // Aa
   // 에러
   // obj.b();
   // obj.c();
 
-  Y y1 = A();   // Aa
-  Y y2 = B();   // Ba
+  Y y1 = A(); // Aa
+  Y y2 = B(); // Ba
 
   y1.a();
   y2.a();
