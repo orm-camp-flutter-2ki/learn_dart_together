@@ -13,10 +13,10 @@ class Book {
   @override
   bool operator ==(Object other) {
     if (other is! Book) return false;
+    return title == other.title && getDate(publishDate) == other.getDate(other.publishDate);
+  }
 
-    String thisDate = '${publishDate.year}-${publishDate.month}-${publishDate.day}';
-    String otherDate = '${other.publishDate.year}-${other.publishDate.month}-${other.publishDate.day}';
-
-    return title == other.title && thisDate == otherDate;
+  String getDate(DateTime dateTime) {
+    return '${publishDate.year}-${publishDate.month}-${publishDate.day}';
   }
 }
