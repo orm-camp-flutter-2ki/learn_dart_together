@@ -11,8 +11,7 @@ class Book {
 
   @override
   bool operator ==(Object other) {
-    if (other is! Book) return false;
-    return hashCode == other.hashCode;
+    return other is Book && hashCode == other.hashCode;
   }
 
   @override
