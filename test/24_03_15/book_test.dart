@@ -13,7 +13,7 @@ void main() {
       test('객체의 title과 publishDate를 이용해서 해시코드를 생성해서 반환한다.', () {
         // Given
         final expected =
-            book!.title.hashCode ^ book!.publishDate.toString().hashCode;
+            book!.title.hashCode ^ book!.publishDateFormatted.hashCode;
 
         // When
         final result = book!.hashCode;
