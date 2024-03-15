@@ -13,7 +13,7 @@ class Book {
   @override
   bool operator ==(Object other) {
     if (other is! Book) return false;
-    return title == other.title && getDate(publishDate) == other.getDate(other.publishDate);
+    return hashCode == other.hashCode;
   }
 
   @override
@@ -22,5 +22,4 @@ class Book {
   String getDate(DateTime dateTime) {
     return '${publishDate.year}-${publishDate.month}-${publishDate.day}';
   }
-
 }
