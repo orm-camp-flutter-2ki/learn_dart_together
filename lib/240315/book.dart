@@ -21,7 +21,7 @@ class Book {
       getFormattedDate(publishDate) == getFormattedDate(other.publishDate);
 
   @override
-  int get hashCode => int.parse('${title.hashCode}${publishDate.hashCode}');
+  int get hashCode => int.parse('${title.hashCode}${getFormattedDate(publishDate).hashCode}');
 
   Book copyWith({
     String? title,
