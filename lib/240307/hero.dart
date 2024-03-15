@@ -17,7 +17,7 @@ int f(int x) {
   return x * 2;
 }
 
-class Hero {
+class Hero implements Comparable<Hero> {
   static int money = 100;
 
   String name;
@@ -29,7 +29,7 @@ class Hero {
     required int hp,
     this.sword,
   }) : _hp = hp {
-    print('1. Hero 생성자');
+    // print('1. Hero 생성자');
   }
 
   // expression body, lambda expression
@@ -64,6 +64,34 @@ class Hero {
   void _die() {}
 
   void bye() {}
+
+  @override
+  String toString() {
+    return 'Hero{name: $name, _hp: $_hp, sword: $sword}';
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Hero && runtimeType == other.runtimeType && name == other.name;
+
+  @override
+  int get hashCode => name.hashCode;
+
+  @override
+  int compareTo(Hero other) {
+    return name.compareTo(other.name);
+  }
+
+  Hero copyWith({
+    String? name,
+    int? hp,
+  }) {
+    return Hero(
+      name: name ?? this.name,
+      hp: hp ?? this.hp,
+    );
+  }
 }
 
 void main() {
@@ -99,6 +127,6 @@ class Person {
 
   int get age => DateTime.now().year - _birthYear;
 
-  Person({required this.name, int? birthYear})
+  const Person({required this.name, int? birthYear})
       : _birthYear = birthYear ?? defaultBirthYear;
 }
