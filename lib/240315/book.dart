@@ -23,8 +23,7 @@ class Book implements Comparable<Book> {
 
   @override
   int get hashCode =>
-      title.hashCode ^
-      publishDate.hashCode; //^ 연산자는 두 비트가 서로 다를 때 = 1, 같을 때 = 0을 반환
+      title.hashCode ^ publishDate.hashCode; //^ 연산자는 두 비트가 서로 다를 때 = 1, 같을 때 = 0을 반환
 
   @override
   int compareTo(Book other) {
