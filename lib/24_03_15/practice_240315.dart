@@ -31,7 +31,10 @@ class Book {
           publishDate.toString().substring(0, 10) ==
               other.publishDate.toString().substring(0, 10);
 
-  //
+  @override
+  int get hashCode =>
+      title.hashCode ^ publishDate.toString().substring(0, 10).hashCode;
+
   @override
   String toString() {
     return 'title: $title, publishDate: $publishDate';
@@ -56,6 +59,8 @@ void main() {
   print('${book4.title}, ${book4.comment}, ${book4.publishDate}');
 
   print(book == book1);
+
+  print('here ${book.hashCode}, ${book4.hashCode}');
 
   final books = <Book>[];
 
