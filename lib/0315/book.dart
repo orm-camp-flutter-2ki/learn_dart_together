@@ -12,7 +12,7 @@ class Book {
     required this.title,
     required this.comment,
     DateTime? publishDate,
-  }) : this.publishDate = publishDate ?? DateTime.now();
+  }) : publishDate = publishDate ?? DateTime.now();
 
   /// 연, 월, 일만 비교하기 위한 메서드
   String dateForm(DateTime dateValue) {
@@ -22,7 +22,7 @@ class Book {
   /// toString 오버라이딩
   @override
   String toString() {
-    return '[$title] 발행일: ${dateForm(publishDate)} comment: $comment';
+    return '[$title] 발행일: ${dateForm(publishDate)} 댓글: $comment';
   }
 
   /// operator == 오버라이딩
@@ -35,7 +35,8 @@ class Book {
 
   /// operator == 와 hashcode는 세트로 override 한다.
   @override
-  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  int get hashCode => title.hashCode ^ dateForm(publishDate).hashCode;
+  // int get hashCode => title.hashCode ^ publishDate.hashCode;
 
   /// deep copy
   Book copyWith({
