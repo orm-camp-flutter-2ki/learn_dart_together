@@ -7,109 +7,30 @@ class Book implements Comparable<Book> {
     required this.title,
     required this.comment,
     DateTime? publishDate,
-  }) : publishDate = publishDate ?? DateTime(2024, 1, 1);
-
-  @override
-  int compareTo(Book other) {
-    //제목과 출판일이 같으면 같은 책으로 판단 연습문제 1 -1)
-    if (title == other.title && _isSameDate(publishDate, other.publishDate)) {
-      return 0;
-    }
-    //출판일을 기준으로 비교
-    return publishDate.compareTo(other.publishDate);
-  }
-
-  //두 날짜가 같은지 확인하는 함수
-  bool _isSameDate(DateTime date1, DateTime date2) {
-    return date1.year == date2.year &&
-        date1.month == date2.month &&
-        date1.day == date2.day;
-  }
+  }) : publishDate = publishDate ?? DateTime.now();
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Book &&
-              other.title == title &&
-              _isSameDate(other.publishDate, publishDate);
+      other is Book &&
+          title == other.title &&
+          publishDate.year == other.publishDate.year &&
+          publishDate.month == other.publishDate.month &&
+          publishDate.day == other.publishDate.day;
 
   @override
-  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  int get hashCode =>
+      '$title${publishDate.year}${publishDate.month}${publishDate.day}'
+          .hashCode;
 
-  Book copyWith({
-    String? title,
-    DateTime? publishDate,
-    String? comment,
-  }) {
-    return Book(
-      title: title ?? this.title,
-      publishDate: publishDate ?? this.publishDate,
-      comment: comment ?? this.comment,
-    );
+  @override
+  int compareTo(Book other) {
+//제목과 출판일이 같으면 같은 책으로 판단 연습문제 1 -1)
+    var cmp = title.compareTo(other.title);
+    if (cmp == 0) {
+      cmp = publishDate.compareTo(other.publishDate);
+    }
+//출판일을 기준으로 비교
+    return cmp;
   }
 }
-
-// 연습문제 1- 1)
-// void main() {
-//   Book book1 = Book(
-//     title: 'Book 1',
-//     publishDate: DateTime(2024, 1, 1),
-//     comment: 'Comment 1',
-//   );
-//   Book book2 = Book(
-//     title: 'Book 2',
-//     publishDate: DateTime(2024, 1, 1),
-//     comment: 'Comment 2',
-//   );
-//   Book book3 = Book(
-//     title: 'Book 3',
-//     publishDate: DateTime(2024, 1, 10),
-//     comment: 'Comment 3',
-//   );
-//   Book book4 = Book(
-//     title: 'Book 1',
-//     publishDate: DateTime(2024, 1, 1),
-//     comment: 'Comment 3',
-//   );
-//
-//   print("book1과 book2는 동일한 책입니까? ${book1 == book2}");
-//   print("book1과 book3는 동일한 책입니까? ${book1 == book3}");
-//   print("book2과 book3는 동일한 책입니까? ${book2 == book3}");
-//   print("book2과 book4는 동일한 책입니까? ${book2 == book4}");
-//   print("book1과 book4는 동일한 책입니까? ${book1 == book4}");
-// }
-
-
-//연습문제 1 -2)
-
-void main() {
-  List<Book> books = [
-    Book(
-      title: 'Book 1',
-      publishDate: DateTime(2024, 1, 1),
-      comment: 'Comment 1',
-    ),
-    Book(
-      title: 'Book 2',
-      publishDate: DateTime(2024, 2, 1),
-      comment: 'Comment 2',
-    ),
-    Book(title: 'Book 3',
-      publishDate: DateTime(2024, 3, 1),
-      comment: 'Comment 3',
-    ),
-    Book(title: 'Book 1',
-      publishDate: DateTime(2024, 1, 1),
-      comment: 'Comment 4',
-    ),
-  ];
-
-  // 출간일이 오래된 순서대로 정렬
-  books.sort((a, b) => a.publishDate.compareTo(b.publishDate));
-
-  for (int i = 0; i < books.length; i++) {
-    final book = books[i] as List;
-    print('${book.title}, 출간일: ${book.publishDate}');
-  }
-}
-
