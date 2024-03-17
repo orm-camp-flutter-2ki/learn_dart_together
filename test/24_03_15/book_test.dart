@@ -27,17 +27,17 @@ void main() {
     test('Hashcode 비교 테스트', () {
       final book1 = Book(
         title: 'Spy Family',
-        comment: '1',
+        comment: '파워풀한 요르 포저',
         publishDate: DateTime(2024, 01, 01, 11, 11, 11),
       );
       final book2 = Book(
         title: 'Spy Family',
-        comment: '1',
+        comment: '구김살 없는 아냐 포저',
         publishDate: DateTime(2024, 01, 01, 09, 11, 23),
       );
       final book3 = Book(
         title: '귀멸의 칼날',
-        comment: '1',
+        comment: '탄지로 같은 상냥한 사람이 되자',
         publishDate: DateTime(2024, 01, 01, 09, 11, 23),
       );
 
