@@ -5,17 +5,35 @@ class Book implements Comparable<Book> {
 
   Book({
     required this.title,
+
     required this.comment,
     DateTime? publishDate,
   }) : publishDate = publishDate ?? DateTime.now();
 
-  // Comparable interface를 구현하여 정렬 시 출간일 오래된 순서로 정렬되도록 함
+  @override
+  String toString() {
+    return 'Book{title: $title, publishDate: $publishDate, comment: $comment}';
+  }
+
+  // 1) 동등성 비교 규칙 정의 (제목과 출간일이 같으면 같은 책으로 판단한다)
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Book &&
+          runtimeType == other.runtimeType &&
+          title == other.title &&
+          publishDate == other.publishDate;
+
+  @override
+  int get hashCode => title.hashCode ^ publishDate.hashCode;
+
+  // 2) 출간일이 오래된 순서대로 정렬
   @override
   int compareTo(Book other) {
     return this.publishDate.compareTo(other.publishDate);
   }
 
-  // deep copy를 위한 copyWith() 메서드
+  // 3) deep copy를 위한 copyWith() 메서드
   Book copyWith({
     String? title,
     DateTime? publishDate,
@@ -30,7 +48,6 @@ class Book implements Comparable<Book> {
 }
 
 void main() {
-
   List<Book> books = [
     Book(
         title: 'Must Have 코드팩토리의 플러터 프로그래밍 2판',
@@ -55,15 +72,15 @@ void main() {
   }
 
   Book junsukBook = books[0];
+  Book shallowCopiedBook = junsukBook; //shallowCopy
+  Book deepCopiedBook = junsukBook.copyWith(comment: '(사인 포함)'); // deepCopy
 
-  Book shallowCopiedBook = junsukBook;
-  Book deepCopiedBook = junsukBook.copyWith(comment: '(사인 포함)');
-
-  print('원본 책: ${junsukBook.title} ${junsukBook.comment}');
-
-  print('얕은 복사 책: ${shallowCopiedBook.title} ${shallowCopiedBook.comment}');
+  // shallowCopy한 객체는 동등성 비교 재정의 하지 않아도 true를 반환
   print(junsukBook == shallowCopiedBook); // true
 
-  print('깊은 복사 책: ${deepCopiedBook.title} ${deepCopiedBook.comment}');
-  print(junsukBook == deepCopiedBook); // false
+  // deepCopy한 객체는 기존 객체와 동등성 비교(==)하면 false가 되나,
+  // 동등성 비교 규칙 정의(제목과 출간일이 같으면 같은 책으로 판단)에 따라,
+  print(junsukBook == deepCopiedBook); // true를 반환
+  print(junsukBook);
+  print(deepCopiedBook);
 }
