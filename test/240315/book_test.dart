@@ -30,8 +30,8 @@ void main() {
     // when(실행)
     Book junsukBook = books[0];
     Book shallowCopiedBook = junsukBook;
-    Book deepCopiedBook = junsukBook.copyWith(comment: '(사인 포함)'); // deepcopy한 객체는 기존 객체와 동등성 비교(==)하면 false가 됨
+    Book deepCopiedBook = junsukBook.copyWith(comment: '(사인 포함)'); // deepcopy한 객체는 기존 객체와 동등성 비교(==) 재정의 않으면 false가 됨
     // then(검증)
-    expect(junsukBook==deepCopiedBook, equals(true)); // 제목과 출간일이 같으면 같은 객체로 판단
+    expect(junsukBook==deepCopiedBook, equals(true)); // 동등성 비교 재정의 하였으므로 제목과 출간일이 같으면 같은 객체로 판단
   });
 }
