@@ -16,3 +16,4 @@ class Hero {
     print('$name이 도망쳤다.');
   }
 }
+
