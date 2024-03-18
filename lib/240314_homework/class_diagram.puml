@@ -1,0 +1,69 @@
+@startuml
+'https://plantuml.com/class-diagram
+interface Bionic{}
+interface Mechanic{}
+
+abstract Unit implements Move{
++ hp
++ name
+}
+abstract Structure{
++ hp
++ produce()
+}
+
+interface Terran{}
+class TerranUnit extends Unit implements Terran{}
+class TerranStructure extends Structure implements Terran{}
+class Scv extends TerranUnit implements Mechanic,Bionic,Mine,Repair{}
+class Marine extends TerranUnit implements Bionic,Attack{}
+class Medic extends TerranUnit implements Bionic,Heal{
++ heal(Unit unit){if(바이오닉&&!저그)}
+}
+class Tank extends TerranUnit implements Mechanic,Attack{}
+class Vulture extends TerranUnit implements Mechanic,Attack{}
+
+
+interface Zerg{
++ naturalHealing()
+}
+class ZergUnit extends Unit implements Zerg{}
+class ZergStructure extends Structure implements Zerg,Bionic{}
+class Drone extends ZergUnit implements Bionic,Mine{
++ turningStructure()
+}
+class Zergling extends ZergUnit implements Bionic,Attack{}
+class Hydra extends ZergUnit implements Bionic,Attack{}
+
+
+interface Protoss{}
+class ProtossUnit extends Unit implements Protoss{
++ sheild
++ khalaNetwork()
+}
+class ProtossStructure extends Structure implements Protoss{
++ sheild
+}
+class Probe extends ProtossUnit implements Mechanic,Mine{}
+class Zealot extends ProtossUnit implements Bionic,Attack{}
+class Dragun extends ProtossUnit implements Mechanic,Attack{}
+
+
+interface Attack{
++ attack()
+}
+interface Move{
++ move()
+}
+interface Repair{
++ repair(Mechanic mechanic)
+}
+interface Mine{
++ mine()
+}
+interface Heal{
++ heal()
+}
+
+
+@enduml
