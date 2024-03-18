@@ -12,37 +12,27 @@ class StrongBox<E> {
     _item = item;
   }
 
+  E? boxCount(int value) {
+    if (_count < value) {
+      _count++;
+      return null;
+    } else {
+      return _item;
+    }
+  }
+
   E? get() {
     switch (keyType) {
       case KeyType.padlock:
-        if (_count < 1024) {
-          _count++;
-          return null;
-        } else {
-          return _item;
-        }
+        boxCount(1024);
       case KeyType.button:
-        if (_count < 10000) {
-          _count++;
-          return null;
-        } else {
-          return _item;
-        }
+        boxCount(10000);
       case KeyType.dial:
-        if (_count < 30000) {
-          _count++;
-          return null;
-        } else {
-          return _item;
-        }
+        boxCount(30000);
       case KeyType.finger:
-        if (_count < 1000000) {
-          _count++;
-          return null;
-        } else {
-          return _item;
-        }
+        boxCount(1000000);
     }
+    return null;    // <- return null 이 추가되는 이유를 모르겠습니다.
   }
 }
 
