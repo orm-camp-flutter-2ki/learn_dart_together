@@ -20,9 +20,9 @@ class StrongBox<E> {
   E? get() {
     if (_currentUses < maxUses) {
       _currentUses++;
-      return _item;
-    } else {
       return null;
+    } else {
+      return _item;
     }
   }
 
