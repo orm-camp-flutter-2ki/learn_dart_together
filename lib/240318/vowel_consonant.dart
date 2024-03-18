@@ -27,10 +27,10 @@ void main() {
 
   for (int i = 0; i < word.word.length; i++) {
     if (word.isVowel(i) == true) {
-      print('${i+1}번째 글자는 모음: ${word.isVowel(i)}');
+      print('${i+1}번째 글자는 모음');
     }
     if (word.isConsonant(i) == true) {
-      print('${i+1}번째 글자는 자음: ${word.isConsonant(i)}');
+      print('${i+1}번째 글자는 자음');
     }
   }
 }
