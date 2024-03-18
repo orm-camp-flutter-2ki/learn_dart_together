@@ -5,24 +5,11 @@ enum KeyType {
   finger;
 
   int get value {
-    int result;
-    switch (this) {
-      case KeyType.padlock:
-        result = 1024;
-        break;
-      case KeyType.button:
-        result = 10000;
-        break;
-      case KeyType.dial:
-        result = 30000;
-        break;
-      case KeyType.finger:
-        result = 1000000;
-        break;
-      default:
-        result = 0;
-        break;
-    }
-    return result;
+    return switch (this) {
+      KeyType.padlock => 1024,
+      KeyType.button => 10000,
+      KeyType.dial => 30000,
+      KeyType.finger => 1000000,
+    };
   }
 }
