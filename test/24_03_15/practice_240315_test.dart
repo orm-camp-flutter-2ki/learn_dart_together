@@ -5,13 +5,13 @@ import 'package:test/scaffolding.dart';
 void main() {
   group('Book class test', () {
     // 1.
-    test('제목과 출판일이 같으면 같은 책으로 판단, return true', () {
+    test('제목과 출판(연, 월, 일)이 같으면 같은 책으로 판단, return true', () {
       // given when
       Book book = Book(
-          title: 'abc', comment: 'abc', publishDate: DateTime(2015, 9, 10));
+          title: 'abc', comment: 'abc', publishDate: DateTime(2015, 9, 10, 1));
 
       Book book1 = Book(
-          title: 'abc', comment: 'cba', publishDate: DateTime(2015, 9, 10));
+          title: 'abc', comment: 'cba', publishDate: DateTime(2015, 9, 10, 2));
 
       // then
       expect(book == book1, equals(true));
