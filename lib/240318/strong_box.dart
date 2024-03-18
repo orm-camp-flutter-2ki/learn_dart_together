@@ -9,3 +9,12 @@ class StrongBox<E> {
     return _data;
   }
 }
+
+enum KeyType {
+  padlock,
+  buttom,
+  dial,
+  finger,
+}
+
+void main() {}
