@@ -17,12 +17,12 @@ class Word {
   Word(this.word);
 
   bool isVowel(int i) {
-    var findVowel = vowel.contains(word.substring(i - 1, i));
+    var findVowel = vowel.contains(word[i]);
     return findVowel;
   }
 
   bool isConsonant(int i) {
-    var findConsonant = !(vowel.contains(word.substring(i - 1, i)));
+    var findConsonant = !(vowel.contains(word[i]));
     return findConsonant;
   }
 }

@@ -1,12 +1,12 @@
 void main() {
-  StrongBox strongBox = StrongBox(keyValue: KeyType.padlock);
+  StrongBox strongBox = StrongBox(keyValue: KeyType.padlock, treasure: '황금');
   for (int i = 0; i < 1025; i++) {
     print('결과 : ${strongBox.tryUnlock()}. 횟수:${strongBox.count}');
   }
 }
 
 class StrongBox<E> {
-  E? _treasure;
+  E _treasure;
   KeyType keyValue;
   int _count = 0;
 
@@ -20,24 +20,21 @@ class StrongBox<E> {
     return _treasure;
   }
 
-  StrongBox({required this.keyValue});
+  StrongBox({required this.keyValue, required E treasure})
+      : _treasure = treasure;
 
   E? tryUnlock() {
     switch (keyValue) {
       case KeyType.padlock:
-        _count++;
-        print('횟수$_count');
-        return (_count < 1024) ? null : _treasure;
+        if (_count++ < 1024) return null;
       case KeyType.button:
-        _count++;
-        return (_count < 10000) ? null : _treasure;
+        if (_count++ < 10000) return null;
       case KeyType.dial:
-        _count++;
-        return (_count < 30000) ? null : _treasure;
+        if (_count++ < 30000) return null;
       case KeyType.finger:
-        _count++;
-        return (_count < 1000000) ? null : _treasure;
+        if (_count++ < 1000000) return null;
     }
+    return _treasure;
   }
 }
 
