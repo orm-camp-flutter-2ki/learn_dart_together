@@ -1,4 +1,6 @@
 # https://dart.dev/guides/libraries/private-files
-# Created by `dart pub`
+ /Users/jungeunhan/learn_dart_together/test/240315/test.dart
+ /Users/jungeunhan/learn_dart_together/lib/240315/book.dart
+
 .dart_tool/
 .idea/
