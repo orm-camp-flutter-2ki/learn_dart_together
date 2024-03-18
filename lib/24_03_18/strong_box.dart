@@ -10,7 +10,10 @@ class StrongBox<T> {
   // 1. 인스턴스 타입 미정
   T? _item;
   KeyType keyType; // 열쇠 종류 필드 변수
-  int openNum = 0;
+  int padlockMax = 1024;
+  int buttonMax = 10000;
+  int dialMax = 30000;
+  int fingerMax = 1000000;
   int useNum = 0;
 
   StrongBox({required this.keyType});
@@ -24,22 +27,27 @@ class StrongBox<T> {
 
   T? get() {
     // 3. 인스턴스 얻기
-    switch (keyType) {
-      case KeyType.padlock:
-        openNum = 1024;
-      case KeyType.button:
-        openNum = 10000;
-      case KeyType.dial:
-        openNum = 30000;
-      case KeyType.finger:
-        openNum = 1000000;
-    }
-
     useNum++;
 
-    if (useNum <= openNum) {
-      return null;
+    switch (keyType) {
+      case KeyType.padlock:
+        if (useNum <= padlockMax) {
+          return null;
+        }
+      case KeyType.button:
+        if (useNum <= buttonMax) {
+          return null;
+        }
+      case KeyType.dial:
+        if (useNum <= dialMax) {
+          return null;
+        }
+      case KeyType.finger:
+        if (useNum <= fingerMax) {
+          return null;
+        }
     }
+
     return _item;
   }
 }
