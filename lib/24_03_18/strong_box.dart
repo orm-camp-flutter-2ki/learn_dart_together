@@ -1,18 +1,15 @@
-enum KeyType {
-  padlock,
-  button,
-  dial,
-  finger
-}
+enum KeyType { padlock, button, dial, finger }
 
 class StrongBox<T> {
   final KeyType _keyType;
   T _savedInstance;
   int _usedCnt = 0;
 
-  StrongBox(this._savedInstance, this._keyType);
+  StrongBox({required value, required keyType})
+      : _savedInstance = value,
+        _keyType = keyType;
 
-  void put(T newInstance) => _savedInstance = newInstance;
+  void put(T value) => _savedInstance = value;
 
   T? get() {
     var limitCnt = switch (_keyType) {
