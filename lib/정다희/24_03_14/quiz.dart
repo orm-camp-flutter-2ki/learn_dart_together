@@ -27,3 +27,7 @@ for (Y y in list){
     y.b();
 }
 ```
+List<dynamic> list = []
+list.reversed
+
+sort

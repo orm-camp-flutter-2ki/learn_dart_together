@@ -1,0 +1,73 @@
+@startuml
+
+abstract class StarEntity {
+int hp;
+String name;
+String location;
+int userID
+}
+
+abstract class Terran extends StarEntity {
+
+}
+abstract class Zerg extends StarEntity {
+'모든 종족이 bionic
+
+}
+
+abstract class Protoss extends StarEntity {
+
+}
+
+interface Structure extends Bionic, Mechanic {
+}
+interface TerranUnit extends Bionic, Mechanic{
+    void attack(int damage, Structure target ){
+        target.hp -= damage;
+    };
+}
+
+interface ZergUnit extends Bionic{
+void autoHeal(){}}
+
+
+
+
+
+interface Mechanic extends TerranUnit, Structure{
+
+}
+
+interface Bionic extends TerranUnit, Structure{
+'메딕은 여기에만 힐을 할 수 있음
+    void autoHeal();
+}
+
+
+class Marine extends Bionic, Terran{
+
+}
+
+class Medic extends Bionic, Terran{
+    void heal(Bionic bionicUnit){print('힐'};
+}
+
+class Vulture extends Mechanic, Terran{
+}
+
+class Tank extends Mechanic, Terran{}
+
+class Scv extends Bionic, Terran{
+'    메딕의 힐을 받기 위해 Bionic을 상속받는게 맞나?
+    void mining(){}
+    void repairing(){}
+}
+
+class Zergling extends ZergUnit, Zerg{
+@override
+void attack(){}
+}
+
+
+
+@enduml
