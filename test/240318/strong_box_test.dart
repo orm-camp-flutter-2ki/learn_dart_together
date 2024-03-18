@@ -13,7 +13,7 @@ void main() {
       expect(strongBox.get(), equals("파이썬"));
     });
 
-    test('Testing button key type', () {
+    test('button key type', () {
       StrongBox strongBox = StrongBox(KeyType.button);
       strongBox.put("자바");
 
@@ -23,7 +23,7 @@ void main() {
       expect(strongBox.get(), equals("자바"));
     });
 
-    test('Testing dial key type', () {
+    test('dial key type', () {
       StrongBox strongBox = StrongBox(KeyType.dial);
       strongBox.put("다트");
 
@@ -33,7 +33,7 @@ void main() {
       expect(strongBox.get(), equals("다트"));
     });
 
-    test('Testing finger key type', () {
+    test('finger key type', () {
       StrongBox strongBox = StrongBox(KeyType.finger);
       strongBox.put("플러터");
 
