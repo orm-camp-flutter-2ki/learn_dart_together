@@ -7,9 +7,7 @@ class Book implements Comparable<Book> {
     required this.title,
     required this.comment,
     DateTime? publishDate,
-  }) : publishDate = publishDate ??
-      DateTime.now();
-
+  }) : publishDate = publishDate ?? DateTime.now();
 
   @override
   bool operator ==(Object other) =>
@@ -17,10 +15,16 @@ class Book implements Comparable<Book> {
       other is Book &&
           runtimeType == other.runtimeType &&
           title == other.title &&
-          publishDate == other.publishDate;
+          publishDate.year == other.publishDate.year &&
+          publishDate.month == other.publishDate.month &&
+          publishDate.day == other.publishDate.day;
 
   @override
-  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  int get hashCode =>
+      title.hashCode ^
+      publishDate.year.hashCode ^
+      publishDate.month.hashCode ^
+      publishDate.day.hashCode;
 
   Book copyWith({String? title, String? comment, DateTime? publishDate}) {
     return Book(
