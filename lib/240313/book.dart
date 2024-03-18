@@ -11,7 +11,7 @@ class Book extends TangibleAsset {
     super.price,{
     required super.color,
     required super.weight,
-    required this.isbn,
+    required this.isbn, required String name, required int price,
   });
 
 // @override
