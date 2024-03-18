@@ -19,13 +19,13 @@ class StrongBox<T> {
   void putDataType(T dataValue) => _dataType = dataValue;
 
   /// getter
-  /// keyType 을 통해 _dataType을 얻는 메서드
+  /// keyTypeCount를 통해 _dataType을 얻는 메서드
   T? getKeyType() {
     _tryCount++;
-    for (int i = 0; _tryCount < typeCountLimit(); i++) {
+    if (_tryCount < typeCountLimit()) {
       return null;
     }
-      return _dataType;
+    return _dataType;
   }
 
   /// key type별 횟수 제한을 return하는 메서드
