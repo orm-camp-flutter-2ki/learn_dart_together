@@ -1,4 +1,4 @@
-const vowels = ['a', 'e', 'i', 'o', 'u']
+const vowels = ['a', 'e', 'i', 'o', 'u'];
 
 class Word {
   String word = '';
