@@ -15,6 +15,10 @@ void main() {
 
       // then
       expect(book == book1, equals(true));
+
+      final Set<Book> bookSet = {book, book1};
+      
+      expect(bookSet.length, 1);
     });
 
     // 2.
