@@ -20,6 +20,8 @@ abstract class TangibleAsset extends Asset implements Thing {
     }
   }
 
+  
+
   @override
   String toString() {
     return '제목: $name, 가격: $price원, 색깔: $color, 무게: $weight kg';

@@ -1,4 +1,4 @@
-class Book implements Comparable<Book> {
+class Book {
   String title;
   DateTime publishDate;
   String comment;
@@ -10,12 +10,14 @@ class Book implements Comparable<Book> {
   }) : publishDate = publishDate ?? DateTime.now();
 
   @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    return other is Book &&
-        title == other.title &&
-        publishDate == other.publishDate;
-  }
+  bool operator ==(Object other) =>
+    identical(this, other) ||
+    other is Book &&
+      runtimeType == other.runtimeType &&
+      title == other.title &&
+        publishDate.year == other.publishDate.year &&
+  publishDate.month == other.publishDate.month &&
+  publishDate.day == other.publishDate.day;
 
   @override
   int get hashCode => title.hashCode ^ publishDate.hashCode;
