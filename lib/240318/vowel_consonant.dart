@@ -13,7 +13,7 @@ class Word {
 
   bool isConsonant(int i) {
     String character = word.substring(i, i + 1).toLowerCase();
-    return !(character == 'a' &&
+    return !(character == 'a' ||
         character == 'e' ||
         character == 'i' ||
         character == 'o' ||
