@@ -27,6 +27,12 @@ class Book {
           publishDate.day == other.publishDate.day;
 
   @override
+  int get hashCode =>
+      publishDate.year.hashCode ^
+      publishDate.month.hashCode ^
+      publishDate.day.hashCode;
+
+  @override
   String toString() {
     return title;
   }
@@ -38,10 +44,10 @@ void main() {
   DateTime today2 = DateTime(2024, 03, 15);
   DateTime weekAgo = DateTime(2024, 03, 08);
 
-  Book lee = Book(title: '이순신', comment:'위인전', publishDate: today);
-  Book hong = Book(title: '홍길동', comment:'위인전', publishDate: today);
-  Book kim = Book(title: '김정호', comment:'위인전', publishDate: yesterday);
-  Book jeon = Book(title: '전성수', comment:'위인전', publishDate: weekAgo);
+  Book lee = Book(title: '이순신', comment: '위인전', publishDate: today);
+  Book hong = Book(title: '홍길동', comment: '위인전', publishDate: today);
+  Book kim = Book(title: '김정호', comment: '위인전', publishDate: yesterday);
+  Book jeon = Book(title: '전성수', comment: '위인전', publishDate: weekAgo);
 
   List<Book> books = [lee, kim, hong, jeon];
   print('정렬 전 $books');
