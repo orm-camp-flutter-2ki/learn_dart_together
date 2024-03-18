@@ -20,11 +20,13 @@ class StrongBox<E> {
         return 30000;
       case KeyType.finger:
         return 1000000;
+      case KeyType.once:
+        return 0;
     }
   }
 
-  void put(E thing) {
-    _stuff = thing;
+  void put(E stuff) {
+    _stuff = stuff;
   }
 
   E? get() {
