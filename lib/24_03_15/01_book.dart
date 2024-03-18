@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class Book {
   String title;
   DateTime publishDate;
@@ -8,6 +10,11 @@ class Book {
     required this.comment,
     DateTime? publishDate,
   }) : publishDate = publishDate ?? DateTime.now();
+
+  // publishDate를 '년월일'로 변환하는 메서드
+  String editDate(DateTime dateTime) {
+    return '${publishDate.year}-${publishDate.month}-${publishDate.day}';
+  }
 
   // 연습문제 3)
   Book copyWith({
@@ -22,30 +29,28 @@ class Book {
     );
   }
 
+  //
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Book &&
           title == other.title &&
-          publishDate == other.publishDate &&
+          editDate(publishDate) == other.editDate(publishDate) &&
           comment == other.comment;
 
   @override
-  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  int get hashCode => title.hashCode ^ editDate(publishDate).hashCode;
 
   @override
   String toString() {
-    return '책 제목 : $title, 출간일 : $publishDate, 코멘트 : $comment';
+    return '책 제목 : $title, 출간일 : ${editDate(publishDate)}, 코멘트 : $comment';
   }
 }
 
 void main() {
-  DateTime year2024 = DateTime(2024 - 01 - 01);
-  DateTime year2023 = DateTime(2023 - 02 - 02);
-  DateTime year2022 = DateTime(2022 - 03 - 03);
-  Book book1 = Book(title: '쇼펜하우어', comment: '좋아요', publishDate: year2024);
-  Book book2 = Book(title: '불변의 법칙', comment: '최고', publishDate: year2023);
-  Book book3 = Book(title: '데일 카네기', comment: '추천', publishDate: year2022);
+  Book book1 = Book(title: '쇼펜하우어', comment: '좋아요', publishDate: DateTime(24-12-12));
+  Book book2 = Book(title: '불변의 법칙', comment: '최고', publishDate: DateTime(23-04-05));
+  Book book3 = Book(title: '데일 카네기', comment: '추천', publishDate: DateTime(22-03-02));
 
   // 연습문제 1)
   print(book1 == book2); // 제목이 달라서 false 출력
