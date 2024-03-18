@@ -3,4 +3,4 @@ class IsConsonant {
 
   IsConsonant({required String word}) : _word = word;
 
-  bool isConsonant(int i) {}
+  // bool isConsonant(int i) {}
