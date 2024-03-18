@@ -1,5 +1,7 @@
 class Word {
-  String word = '';
+  String word;
+
+  Word(this.word);
 
   bool isVowel(int i) {
     var target = word[i].toLowerCase();
