@@ -1,6 +1,6 @@
 class Word {
+  final String _vowels = 'aeiou';
   String word = '';
-  String _vowels = 'aeiou';
 
   Word(this.word);
 
