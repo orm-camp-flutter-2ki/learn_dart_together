@@ -29,7 +29,7 @@ class Book {
     return 'Book{title : $title, comment : $comment, publishDate : ${_publishDateYMD(publishDate)}}';
   }
 
-  copyWith({
+  Book copyWith({
     String? title,
     String? comment,
     DateTime? publishDate,
