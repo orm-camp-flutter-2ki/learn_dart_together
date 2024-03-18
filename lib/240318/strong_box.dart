@@ -9,12 +9,9 @@ class StrongBox<E> {
   E? _data;
   int _usageCount = 0;
   bool _locked = false;
-
   final KeyType _keyType;
 
-  StrongBox(this._keyType) {
-    int keyLitmit = getKeyLimit();
-  }
+  StrongBox(this._keyType);
 
   int getKeyLimit() {
     switch (_keyType) {
