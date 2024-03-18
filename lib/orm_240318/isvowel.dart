@@ -1,7 +1,7 @@
 class Word {
-  String word = '';
+  String word;
 
-  Word(this.word);
+  Word({required this.word});
 
   bool isVowel(int i) {
     final List<String> vowel = ['a', 'e', 'i', 'o', 'u'];
@@ -11,5 +11,12 @@ class Word {
       return true;
     }
     return false;
+  }
+
+  bool isConsonant(int i) {
+    if (isVowel(i)) {
+      return false;
+    }
+    return true;
   }
 }
