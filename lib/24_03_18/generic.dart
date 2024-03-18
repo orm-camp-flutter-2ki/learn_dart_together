@@ -20,7 +20,7 @@
 // dial             (30,000회)
 // finger       (1,000,000회)
 //
-// 금고에서 get() 메서드를 호출할 때 마다 사용횟수를 카운트하고 각 열쇠의 사용횟수에 도달하기 전에는 null을 리턴한다.
+// 금고에서 get() 메서드를 호출할 때 마다 사용 횟수를 카운트하고 각 열쇠의 사용횟수에 도달하기 전에는 null을 리턴한다.
 
 enum KeyType {
   padlock('padlock', 1024),
@@ -39,18 +39,17 @@ class StrongBox<E> {
   KeyType keyType;
   int _usageCount = 0;
 
-  StrongBox(this.keyType);
+  StrongBox(E? data, this.keyType) : _data = data;
 
   void put(E data) {
     _data = data;
   }
 
   E? get() {
-    if (_usageCount != keyType.availableUsageCount) {
+    if (_usageCount < keyType.availableUsageCount) {
       _usageCount++;
       return null;
     }
-
     return _data;
   }
 }
