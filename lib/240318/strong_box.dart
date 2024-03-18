@@ -9,7 +9,7 @@ class StrongBox<E> {
   StrongBox({required KeyType keyType})
       : _keyType = keyType
   {
-    _keyPoint = switch (_keyType) {
+    _keyPoint = switch(_keyType) {
       KeyType.padlock => 1024,
       KeyType.button => 10000,
       KeyType.dial => 30000,

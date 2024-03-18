@@ -1,6 +1,7 @@
 class Word {
   String word = '';
   String _vowels = 'aeiou';
+
   Word(this.word);
 
   bool isVowel(int i) {
