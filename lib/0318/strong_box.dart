@@ -17,4 +17,8 @@ class StrongBox<T> {
     if (tryCount >= key.needToTry) return _data;
     return null;
   }
+
+  void close() {
+    tryCount = 0;
+  }
 }
