@@ -12,9 +12,9 @@ class StrongBox<T> {
   void put(T item) => _item = item;
 
   T? get() {
-    T? result;
+    T? result = _item;
     if (_key.value > _keyUsageCount) {
-      result = _item;
+      result = null;
       ++_keyUsageCount;
     }
     return result;
