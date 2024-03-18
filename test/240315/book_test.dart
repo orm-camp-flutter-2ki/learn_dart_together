@@ -19,7 +19,7 @@ void main() {
       comment: 'Good book',
       publishDate: DateTime.parse('2024-02-01'),
     );
-    //
+
     // test('Book equality - Same title and publish date', () {
     //   expect(book1 == book2, true);
     // });
@@ -41,13 +41,14 @@ void main() {
     // });
 
     test('copyWith 테스트', () {
-      var book1 = Book(
+      final book1 = Book(
         title: '테스트 책',
         comment: '테스트용',
         publishDate: DateTime.parse('2024-03-16'),
       );
-      var book2 = book1.copyWith(publishDate: DateTime.parse('2024-03-17'));
+      final book2 = book1.copyWith(publishDate: DateTime.parse('2024-03-17'));
 
+      //
       expect(book1.title, book2.title);
       expect(book1.comment, book2.comment);
       expect(book1.publishDate, isNot(book2.publishDate));
