@@ -14,3 +14,5 @@ class Book {
       identical(this, other) ||
       other is Book && title == other.title && publishDate == other.publishDate;
 }
+
+void main() {}
