@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:learn_dart_together/240318/practice_3.dart';
+import 'package:learn_dart_together/240318/practice_string.dart';
 import 'package:test/test.dart';
 
 void main() {
