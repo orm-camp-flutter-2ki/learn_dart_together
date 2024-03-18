@@ -21,14 +21,3 @@ class IsConsonant {
     return true;
   }
 }
-
-void main() {
-  // String test = 'awdfs';
-  // print(test.codeUnitAt(4));
-  // test.is
-  IsConsonant test = IsConsonant(word: 'A');
-  print(test._word[0]);
-  print(test.isConsonant(0));
-  IsConsonant test2 = IsConsonant(word: 'b');
-  print(test2.isConsonant(0));
-}
