@@ -1,9 +1,0 @@
-import 'package:learn_dart_together/240318/generic/safe.dart';
-import 'package:test/test.dart';
-
-void main() {
-  test('safe', () {
-    Safe<int> safeTest = Safe();
-
-  });
-}
