@@ -1,5 +1,11 @@
-class StrongBox<T> {
+enum KeyType {
+  padlock,
+  button,
+  dial,
+  finger
+}
 
+class StrongBox<T> {
   T _savedInstance;
 
   StrongBox(this._savedInstance);
