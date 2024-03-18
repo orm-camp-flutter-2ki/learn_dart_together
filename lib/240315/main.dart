@@ -4,7 +4,7 @@ void main() {
   final Book book1 = Book(
       title: '한정은1', comment: '코멘트', publishDate: DateTime.parse('2024-01-03'));
   final Book book2 = Book(
-      title: '한정은1', comment: '코멘트', publishDate: DateTime.parse('2024-01-03'));
+      title: '한정은2', comment: '코멘트', publishDate: DateTime.parse('2024-01-01'));
   final Book book3 = Book(
       title: '한정은3', comment: '코멘트', publishDate: DateTime.parse('2024-01-02'));
   final Book book4 = Book(
@@ -13,12 +13,11 @@ void main() {
 
   book4.title = '한정은5';
   print(book5.title); //공유하고 있다는 코드
-  print(DateTime.now());
-  print(DateTime.now());
+  print(book4.title);
+
   print(book1 == book2);
   print(book2 == book3);
-  print(book1.hashCode);
-  print(book2.hashCode);
+  print(book4.hashCode);
   print(book5.hashCode); //책이 같은지 같지 않은지 테스트
   print(book1.publishDate);
   print(book3.publishDate);

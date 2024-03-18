@@ -17,13 +17,12 @@ class Book implements Comparable<Book> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Book &&
-          toString() == other.toString(); //this book에 문자열로 반환한것과 other book에 문자열로 반환한것이 같은지 확인
-
+          other is Book &&
+              toString() == other.toString(); //this book에 문자열로 반환한것과 other book에 문자열로 반환한것이 같은지 확인
 
   @override
   int get hashCode =>
-      title.hashCode ^ publishDate.hashCode; //^ 연산자는 두 비트가 서로 다를 때 = 1, 같을 때 = 0을 반환
+      title.hashCode ^ publishDate.hashCode;
 
   @override
   int compareTo(Book other) {

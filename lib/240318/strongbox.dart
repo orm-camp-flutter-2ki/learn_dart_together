@@ -1,17 +1,39 @@
-// 다음 조건을 만족하는 금고인 StrongBox 클래스를 정의하시오.
-// 금고 클래스에 담는 인스턴스의 타입은 미정
-// 금고에는 1개의 인스턴스를 담을 수 있음
-// put() 메서드로 인스턴스를 저장하고 get() 메서드로 인스턴스를 얻을 있음
-// get() 으로 얻을 때는 별도의 타입 캐스팅을 사용하지 않아도 됨
+class StrongBox<T> {
+  T? _stuff;
+  final KeyType _key;
+  int count = 0;
 
-class StrongBox<E> {
-  E? _data;
+  StrongBox({required KeyType key}) : _key = key;
 
-  void put(E data) {
-    _data = data;
+  void put(T stuff) {
+    _stuff = stuff;
   }
 
-  E? get() {
-    return _data;
+  T? get() {
+    if (_key.value > count) {
+      count++;
+      return null;
+    }
+    return _stuff;
+  }
+}
+
+enum KeyType {
+  padlock,
+  button,
+  dial,
+  finger;
+
+  int get value {
+    switch (this) { //this = KeyType를 넣은 것
+      case KeyType.padlock:
+        return 1024;
+      case KeyType.button:
+        return 10000;
+      case KeyType.dial:
+        return 30000;
+      case KeyType.finger:
+        return 1000000;
+    }
   }
 }
