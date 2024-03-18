@@ -7,8 +7,11 @@ class Book2 {
     required this.title,
     required this.comment,
     DateTime? publishDate,
-  }) : publishDate = publishDate ?? DateTime.now();
-
+  }) : publishDate = publishDate ?? DateTime(
+    DateTime.now().year,
+    DateTime.now().month,
+    DateTime.now().day,
+  );
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
@@ -18,7 +21,7 @@ class Book2 {
 
   @override
   int get hashCode {
-    return title.hashCode ^ publishDate.hashCode ^ comment.hashCode;
+    return title.hashCode ^ publishDate.hashCode; // 제목과 날짜로만 동등성 비교
   }
 
   @override
