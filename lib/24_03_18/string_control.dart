@@ -14,7 +14,7 @@ class Word {
     }
 
     // 방법 1
-     return vowel.contains(word[i]);
+    return vowel.contains(word[i]);
 
     // 방법 2) substring() 써서 체크 해 보기
     // int afterLetter = (i + 1) < word.length ? (i + 1) : word.length;
@@ -24,7 +24,6 @@ class Word {
     // 방법 3) 어떤 글자던 소문자로 바꿔서 확인하기
     // String letter = word.substring(i, afterLetter).toLowerCase();
     // return vowel.contains(letter);
-
   }
 
   // i 번째 글자가 자음인지 알려주는 isConsonant() 함수를 완성하시오
