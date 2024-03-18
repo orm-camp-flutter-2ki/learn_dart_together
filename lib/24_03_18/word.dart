@@ -7,4 +7,9 @@ class Word {
     String char = word.substring(i, i + 1);
     return 'aeiou'.contains(char);
   }
+
+  bool isConsonant(int i) {
+    String char = word.substring(i, i + 1);
+    return !'aeiou'.contains(char);
+  }
 }
