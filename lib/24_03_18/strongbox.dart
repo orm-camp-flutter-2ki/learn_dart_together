@@ -1,19 +1,38 @@
-//다음 조건을 만족하는 금고인 StrongBox 클래스를 정의하시오.
-//금고 클래스에 담는 인스턴스의 타입은 미정
-//금고에는 1개의 인스턴스를 담을 수 있음
-//put() 메서드로 인스턴스를 저장하고 get() 메서드로 인스턴스를 얻을 있음
-//get() 으로 얻을 때는 별도의 타입 캐스팅을 사용하지 않아도 됨
+import 'dart:math';
+import 'keytype.dart';
 
-class StrongBox<E> {
+class StrongBox<E> {   // StrongBox 클래스 정의
   E? _data;
+  final KeyType? keyType; // 열쇠의 종류를 나타내는 필드 변수 추가
+  int use = 0;
 
-  void put(E data){
+  StrongBox(this.keyType);
+
+  void put(E data) {      // put() 메서드로 인스턴스를 저장
     _data = data;
   }
 
-  E? get() {
-    return _data;
+  E? get() {     // get() 메서드로 인스턴스를 얻음
+    use++;      // 열기 횟수 증가
+    if (use <= max) {       // 각 최대값(열쇠의 사용 횟수)을 초과하기 전까지 null을 반환
+      return null;
+    } else {
+      return _data; // 초과하면 열림
+    }
+  }
+
+  int get _max {
+    switch (keyType) {
+      case KeyType.padlock:
+        return 1024;
+      case KeyType.button:
+        return 10000;
+      case KeyType.dial:
+        return 30000;
+      case KeyType.finger:
+        return 1000000;
+      default:
+        return 0;
+    }
   }
 }
-
-
