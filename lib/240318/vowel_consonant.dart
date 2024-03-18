@@ -1,5 +1,6 @@
 class Word {
-  String word = '';
+  String word;
+  Word(this.word);
 
   bool isVowel(int i) {
     String character = word.substring(i, i + 1).toLowerCase();
@@ -21,8 +22,7 @@ class Word {
 }
 
 void main() {
-  Word word = Word();
-  word.word = "Hello";
+  Word word = Word('Hello');
   print('주어진 문자의 개수는 ${word.word.length} 개입니다.');
 
   for (int i = 0; i < word.word.length; i++) {
