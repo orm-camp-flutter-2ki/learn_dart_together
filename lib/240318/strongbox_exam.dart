@@ -7,16 +7,11 @@ enum KeyType { //열쇠 종류를 정의
 
 class StrongBox<E> {
   E? _data;
-  late final KeyType _keyType;
-  int _useCount = 0;
+  KeyType _keyType;
+  int useCount = 0;
 
   /// 열쇠 종류를 받는 생성자
   StrongBox(this._keyType);
-
-
-  set data(E value) {
-    _data = value;
-  }
 
   /// 인스턴스를 저장
   void put(E data) {
@@ -26,8 +21,8 @@ class StrongBox<E> {
   /// 저장된 인스턴스를 반환
   /// 사용 횟수 제한을 고려하여 null을 리턴
   E? get() {
-    if (_useCount < _getAllowedUseCount()) {
-      _useCount++;
+    if (useCount < _getAllowedUseCount()) {
+      useCount++;
       return _data;
     }
     return null;

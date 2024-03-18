@@ -4,11 +4,11 @@ import 'package:test/test.dart';
 void main() {
   test('put() 메서드 테스트', () {
     final box = StrongBox<String>(KeyType.padlock);
-    box.put('Hello, world!');
+    box.put('Hello!');
 
     // `_data` 필드 변수에 직접 접근하지 않고 `get()` 메서드를 사용
     final String? message = box.get();
-    expect(message, 'Hello, world!');
+    expect(message, 'Hello!');
   });
 
   test('get() 메서드 테스트 - 정상 작동', () {
@@ -20,7 +20,7 @@ void main() {
       expect(message, 'Hello, world!');
     }
     // _useCount 변수가 1024와 같아야 함을 확인
-    expect(box._useCount, 1024);
+    expect(box.useCount, 1024);
   });
 
   test('get() 메서드 테스트 - 사용 횟수 제한', () {
