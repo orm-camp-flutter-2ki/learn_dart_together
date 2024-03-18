@@ -1,6 +1,6 @@
-enum KeyType{
+enum KeyType {
   padlock,
   button,
   dial,
-  finger
+  finger,
 }

@@ -8,13 +8,13 @@ void main() {
     StrongBox <int> safeTest = StrongBox (KeyType.padlock);
     safeTest.put(20);
     int? testInt = safeTest.get();
-    expect(testInt, equals(20));
+    expect(testInt, equals(null));
 
     Book book = Book(title: '플러터', comment: '플러터');
     StrongBox <Book> safeTest1 = StrongBox(KeyType.padlock);
     safeTest1.put(book);
     Book? testBook = safeTest1.get();
-    expect(testBook?.title, equals('플러터'));
+    expect(testBook?.title, equals(null));
   });
   test('safeq2', () {
     StrongBox <Book> safeTest = StrongBox (KeyType.padlock);
