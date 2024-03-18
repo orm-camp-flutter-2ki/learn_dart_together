@@ -31,5 +31,4 @@ void main() {
       expect(word.isConsonant(4), false);
     });
   });
-
 }
