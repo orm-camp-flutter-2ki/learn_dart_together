@@ -1,0 +1,4 @@
+class Word {
+
+  String word = '';
+}
