@@ -60,28 +60,3 @@ class Book implements Comparable<Book> {
   }
 }
 
-void main() {
-  Book book1 = Book(
-      title: '신승찬', comment: '코멘트', publishDate: DateTime.parse('2024-05-16'));
-  Book book2 = Book(
-      title: '신승찬2', comment: '코멘트', publishDate: DateTime.parse('2024-05-17'));
-  Book book3 = Book(
-      title: '신승찬', comment: '코멘트', publishDate: DateTime.parse('2024-05-16'));
-  Book book4 = Book(
-      title: '신승찬', comment: '코멘트', publishDate: DateTime.parse('2024-05-18'));
-  Book book5;
-  print(book1 == book2);
-  print(book1 == book3);
-
-  List<Book> bookList = []; //book형 리스트 생성 초기화
-  bookList.add(book1);
-  bookList.add(book2);
-  bookList.add(book3);
-  bookList.add(book4);
-  bookList.sort(); //출간일 순서대로 정렬됨
-  for (var book in bookList) {
-    print(book.toString());
-  }
-  book5 = book1.copyWith();
-  print(book5);
-}
