@@ -6,24 +6,26 @@ void main() {
     test('put, get 테스트', () {
       final strongBox = StrongBox<int>(KeyType.padlock);
       strongBox.put(5);
-      expect(strongBox.get(), equals(5));
+
+      expect(strongBox.get(), equals(null));
     });
 
     test('맥시멈 테스트', () {
       final strongBox = StrongBox<int>(KeyType.button);
       strongBox.put(10);
 
-      for (int i = 0; i < 10001; i++) {
+      for (int i = 0; i < 10000; i++) {
         strongBox.get();
       }
-      expect(strongBox.get(), equals(null));
+
+      expect(strongBox.get(), equals(10));
     });
 
     test('키 타입별로 테스트', () {
-      expect(StrongBox<int>(KeyType.padlock).maxUses, equals(1024));
-      expect(StrongBox<int>(KeyType.button).maxUses, equals(10000));
-      expect(StrongBox<int>(KeyType.dial).maxUses, equals(30000));
-      expect(StrongBox<int>(KeyType.finger).maxUses, equals(1000000));
+      expect(StrongBox<String>(KeyType.padlock).maxUses, equals(1024));
+      expect(StrongBox<String>(KeyType.button).maxUses, equals(10000));
+      expect(StrongBox<String>(KeyType.dial).maxUses, equals(30000));
+      expect(StrongBox<String>(KeyType.finger).maxUses, equals(1000000));
     });
   });
 }
