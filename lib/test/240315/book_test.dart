@@ -7,7 +7,7 @@ void main() {
     Book book1 = Book(
       title: '군중심리',
       comment: '책1',
-      publishDate: DateTime(2024, 01, 01, 23),
+      publishDate: DateTime(2024, 01, 01, 9),
     );
     Book book2 = Book(
         title: '총, 균, 쇠',
@@ -19,7 +19,7 @@ void main() {
     Book book5 = Book(
       title: '군중심리',
       comment: '책1123123',
-      publishDate: DateTime(2024, 01, 01, 23),
+      publishDate: DateTime(2024, 01, 01, 12),
     );
 
     final books = <Book>[];
