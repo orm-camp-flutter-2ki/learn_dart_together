@@ -33,6 +33,7 @@ void main(){
         break;
       case KeyType.dial:
         checkCount = 30000;
+        break;
     }
 
     var safe2 = StrongBox<String, KeyType>(germs, keyType);
