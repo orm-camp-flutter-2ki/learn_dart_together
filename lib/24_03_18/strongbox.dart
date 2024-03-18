@@ -1,3 +1,10 @@
+enum KeyType {
+  padlock,
+  buttom,
+  dial,
+  finger,
+}
+
 class StrongBox<E> {
   E? _data;
 
