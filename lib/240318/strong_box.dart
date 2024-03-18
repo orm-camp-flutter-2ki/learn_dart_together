@@ -1,12 +1,14 @@
 class StrongBox<E> {
-  E? _data;
+  KeyType? _key;
 
-  void put(E data) {
-    _data = data;
+  StrongBox(KeyType key) : _key = key;
+
+  void put(KeyType key) {
+    _key = key;
   }
 
   get() {
-    return _data;
+    return _key;
   }
 }
 
