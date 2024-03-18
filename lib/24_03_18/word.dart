@@ -9,7 +9,7 @@ class Word {
   bool isConsonant(int i) {
     if (word[i].toLowerCase().codeUnits[0] <= 97 &&
         word[i].toLowerCase().codeUnits[0] >= 122 &&
-        !vowel.contains(word[i])) {
+        !vowel.contains(word[i].toLowerCase())) {
       return true;
     }
 
