@@ -3,7 +3,6 @@ class StrongBox<E> {
   final KeyType _keyType;
   int _count = 0;
 
-
   StrongBox(this._keyType);
 
   void put(E data) {
@@ -20,18 +19,17 @@ class StrongBox<E> {
   }
 
   int get max {
-  switch(_keyType) {
-  case KeyType.padlock:
-  return 1024;
-  case KeyType.button:
-  return 10000;
-  case KeyType.dial:
-  return 30000;
-  case KeyType.finger:
-  return 1000000;
+    switch (_keyType) {
+      case KeyType.padlock:
+        return 1024;
+      case KeyType.button:
+        return 10000;
+      case KeyType.dial:
+        return 30000;
+      case KeyType.finger:
+        return 1000000;
+    }
   }
-}
-
 }
 
 enum KeyType {
@@ -40,5 +38,3 @@ enum KeyType {
   dial,
   finger,
 }
-
-

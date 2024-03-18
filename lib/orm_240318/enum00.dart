@@ -1,20 +1,17 @@
-void main(){
+void main() {
   AuthState authState = AuthState.authenticated;
 
   switch (authState) {
-    case AuthState. authenticated:
+    case AuthState.authenticated:
       print('authenticated');
       break;
-    case AuthState. unauthenticated:
+    case AuthState.unauthenticated:
       print('unauthenticated');
       break;
-    case AuthState. unknown:
+    case AuthState.unknown:
       print('unknown');
       break;
-
   }
+}
 
-}
-enum AuthState{
-  authenticated,	unauthenticated, unknown
-}
+enum AuthState { authenticated, unauthenticated, unknown }

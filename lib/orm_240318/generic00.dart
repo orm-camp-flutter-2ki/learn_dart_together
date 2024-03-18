@@ -12,7 +12,6 @@ void main() {
   print(string);
 }
 
-
 class Pocket<E> {
   E? _data;
 
