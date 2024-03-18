@@ -33,5 +33,8 @@ void main() {
     print(books);
 
     expect(book1, equals(book5));
+
+    final Set<Book> bookss = {book3, book5};
+    print(bookss.length);
   });
 }
