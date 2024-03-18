@@ -9,16 +9,12 @@ class StrongBox<E> {
   StrongBox({required KeyType keyType})
       : _keyType = keyType
   {
-    switch (_keyType) {
-      case KeyType.padlock:
-        _keyPoint = 1024;
-      case KeyType.button:
-        _keyPoint = 10000;
-      case KeyType.dial:
-        _keyPoint = 30000;
-      case KeyType.finger:
-        _keyPoint = 1000000;
-    }
+    _keyPoint = switch (_keyType) {
+      KeyType.padlock => 1024,
+      KeyType.button => 10000,
+      KeyType.dial => 30000,
+      KeyType.finger => 1000000,
+    };
   }
 
   void put(E data) {
