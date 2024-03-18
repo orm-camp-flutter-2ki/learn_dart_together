@@ -2,14 +2,14 @@ import 'package:learn_dart_together/240318/key_type.dart';
 
 class StrongBox<E> {
   E _data;
-  KeyType _keyType;
+  final KeyType _keyType;
   int _keyPoint = 0;
 
   StrongBox({required E data, required KeyType keyType})
       : _data = data,
         _keyType = keyType
   {
-    switch (keyType) {
+    switch (_keyType) {
       case KeyType.padlock:
         _keyPoint = 1024;
       case KeyType.button:
