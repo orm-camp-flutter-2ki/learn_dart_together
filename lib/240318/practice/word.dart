@@ -4,17 +4,27 @@ class Word {
   String word = '';
 
   bool isVowel(int i) {
-    int index;
-    if (i >= 0) { // i 가 양수일 때
-      index = i;
+    return vowels.contains(word[_normalizeNegativeIndex(word.length, i)]);
+  }
+  
+  bool isConsonant(int i) {
+    return !vowels.contains(word[_normalizeNegativeIndex(word.length, i)]);
+  }
+
+  /// 음수 인덱스가 주어졌을 때 일반화하는 함수
+  int _normalizeNegativeIndex(int length, int index) {
+    int normalizeIndex;
+
+    if (index >= 0) { // i 가 양수일 때
+      normalizeIndex = index;
     } else { // i 가 음수일 때
-      if (i.abs() <= word.length) { // i의 절대값이 문자열의 길이보다 같거나 작을 때
-        index = word.length + i;
+      if (index.abs() <= length) { // i의 절대값이 문자열의 길이보다 같거나 작을 때
+        normalizeIndex = length + index;
       } else { // i의 절대값이 문자열의 길이보다 클 때
-        index = word.length - (i.abs() % word.length);
+        normalizeIndex = length - (index.abs() % length);
       }
     }
 
-    return vowels.contains(word[index]);
+    return normalizeIndex;
   }
 }
