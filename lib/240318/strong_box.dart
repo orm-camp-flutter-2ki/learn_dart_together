@@ -38,19 +38,5 @@ class StrongBox<T> {
   void put(T item) {
     _item = item;
   }
-
 }
 
-void main() {
-  StrongBox strongBox = StrongBox(KeyType.dial);
-
-  strongBox.put("다트");
-
-  for (int i = 0; i < 30001; i++) {
-    var item = strongBox.get();
-    if (item != null) {
-      print(item);
-      break;
-    }
-  }
-}
