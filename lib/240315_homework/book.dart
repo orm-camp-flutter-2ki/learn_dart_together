@@ -3,7 +3,7 @@
 //    2. Book 인스턴스를 담고 있는 컬렉션에 대해 sort()를 수행하여 출간일이 오래된 순서대로 정렬
 //    3. deep copy를 위한 copyWith() 메서드를 제공
 
-class Book {
+class Book implements Comparable<Book> {
   String title;
   DateTime publishDate;
   String comment;
@@ -25,7 +25,28 @@ class Book {
           publishDate.day == other.publishDate.day;
 
   @override
-  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  int get hashCode =>
+      title.hashCode ^
+      publishDate.hashCode ^
+      publishDate.year ^
+      publishDate.month;
+
+  @override
+  int compareTo(Book other) {
+    return publishDate.compareTo(other.publishDate);
+  }
+
+  Book copyWith({
+    String? title,
+    DateTime? publishDate,
+    String? comment,
+  }) {
+    return Book(
+      title: title ?? this.title,
+      publishDate: publishDate ?? this.publishDate,
+      comment: comment ?? this.comment,
+    );
+  }
 }
 
 void main() {
