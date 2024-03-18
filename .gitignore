@@ -1,7 +1,7 @@
 # https://dart.dev/guides/libraries/private-files
-/Users/jungeunhan/learn_dart_together/test/240315/test
-/Users/jungeunhan/learn_dart_together/lib/240315/book
-
+/Users/jungeunhan/learn_dart_together/test/240315/test.dart
+/Users/jungeunhan/learn_dart_together/lib/240315/book.dart
+/Users/jungeunhan/learn_dart_together/lib/240315/main.dart
 
 .dart_tool/
 .idea/
