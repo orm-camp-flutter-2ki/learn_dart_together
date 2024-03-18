@@ -7,18 +7,18 @@ enum KeyType {
 
 class StrongBox<E> {
   final KeyType _keyType;
-  final int _maxUses;
+  final int maxUses;
   int _currentUses = 0;
   E? _item;
 
-  StrongBox(this._keyType) : _maxUses = _getMaxUsesForType(_keyType);
+  StrongBox(this._keyType) : maxUses = _getMaxUsesForType(_keyType);
 
   void put(E item) {
     _item = item;
   }
 
   E? get() {
-    if (_currentUses < _maxUses) {
+    if (_currentUses < maxUses) {
       _currentUses++;
       return _item;
     } else {
