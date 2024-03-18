@@ -12,5 +12,15 @@ void main() {
       expect(w.isVowel(3), false);
       expect(w.isVowel(4), true);
     });
+    test('isConsonant() test', () {
+      String word = 'tomato';
+      Word w = Word(word);
+      expect(w.isConsonant(0), true);
+      expect(w.isConsonant(1), false);
+      expect(w.isConsonant(2), true);
+      expect(w.isConsonant(3), false);
+      expect(w.isConsonant(4), true);
+      expect(w.isConsonant(5), false);
+    });
   });
 }
