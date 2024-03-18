@@ -2,7 +2,7 @@ import 'package:learn_dart_together/24_03_15/book.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('📖 책 체스트를 시작합니다.', () {
+  group('📖 책 테스트를 시작합니다.', () {
     test('동등성 비교', () {
       final book1 = Book(
         title: '오준석의 생존코딩',
