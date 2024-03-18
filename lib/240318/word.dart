@@ -5,10 +5,16 @@ class Word {
   Word(this._word);
 
   bool isVowel(int i) {
-    bool result = false;
     final List<String> splited = vowel.split(',');
 
     if (vowel.contains(_word.substring(i, i + 1))) {
+      return true;
+    }
+    return false;
+  }
+
+  bool isConsonant(int i) {
+    if (!vowel.contains(_word.substring(i, i + 1))) {
       return true;
     }
     return false;
@@ -17,8 +23,9 @@ class Word {
 
 void main() {
   String word = 'tomato';
-  Word w = Word(word);
-  for (int i = 0; i < word.length; i++) {
-    print('$i는 모음=> ${w.isVowel(i)}');
+  String word1 = 'apple';
+  Word w = Word(word1);
+  for (int i = 0; i < word1.length; i++) {
+    print('$i는 모음=> ${w.isConsonant(i)}');
   }
 }
