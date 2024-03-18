@@ -1,12 +1,11 @@
-class Safe<E>{
+class StrongBox<E> {
   E? _data;
 
-  void put(E data){
+  void put(E data) {
     _data = data;
   }
 
-  E? get(){
+  E? get() {
     return _data;
   }
-
 }
