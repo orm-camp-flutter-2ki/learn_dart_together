@@ -4,7 +4,7 @@ class Word {
   Word(this.word);
 
   bool isVowel(int i) {
-    switch(word.substring(i - 1, i)) {
+    switch(word.substring(i - 1, i).toLowerCase()) {
       case 'a':
       case 'e':
       case 'i':
@@ -17,7 +17,7 @@ class Word {
   }
 
   bool isConsonant(int i) {
-    switch(word.substring(i - 1, i)) {
+    switch(word.substring(i - 1, i).toLowerCase()) {
       case 'a':
       case 'e':
       case 'i':
