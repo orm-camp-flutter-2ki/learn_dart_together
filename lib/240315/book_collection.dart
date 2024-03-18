@@ -12,6 +12,5 @@ class Book implements Comparable<Book> {
   @override
   int compareTo(Book other) {
     return publishDate.compareTo(other.publishDate);
-    throw UnimplementedError();
   }
 }

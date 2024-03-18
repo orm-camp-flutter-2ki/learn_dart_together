@@ -6,12 +6,12 @@ void main() {
     Book book = Book(
       title: '논어',
       comment: '인생은 흘러가는것',
-      publishDate: DateTime(2024, 1, 1),
+      publishDate: DateTime(2024, 1, 1, 1),
     );
     Book book2 =
-        Book(title: '논어', comment: '삶', publishDate: DateTime(2024, 1, 1));
+        Book(title: '논어', comment: '삶', publishDate: DateTime(2024, 1, 1, 2));
     print(book.publishDate);
-
     print(book == book2);
+    expect(book == book2, true);
   });
 }
