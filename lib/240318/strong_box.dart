@@ -3,25 +3,15 @@ import 'dart:convert';
 
 class StrongBox<E> {
   E _item;
-  int _count = 0;
+  int _count;
   KeyType _key;
 
   StrongBox(
     E item,
     KeyType key,
   )   : _item = item,
-        _key = key {
-    switch (key) {
-      case KeyType.padlock:
-        _count = 1024;
-      case KeyType.buttom:
-        _count = 10000;
-      case KeyType.dial:
-        _count = 30000;
-      case KeyType.finger:
-        _count = 1000000;
-    }
-  }
+        _key = key,
+        _count = key.value;
 
   void put(E item) {
     _item = item;
@@ -35,24 +25,24 @@ class StrongBox<E> {
       return null;
     }
   }
-
-  // int setCount(KeyType key) {
-  //   switch (key) {
-  //     case KeyType.padlock:
-  //       return 1024;
-  //     case KeyType.buttom:
-  //       return 10000;
-  //     case KeyType.dial:
-  //       return 30000;
-  //     case KeyType.finger:
-  //       return 1000000;
-  //   }
-  // }
 }
 
 enum KeyType {
   padlock,
   buttom,
   dial,
-  finger,
+  finger;
+
+  int get value {
+    switch (this) {
+      case KeyType.padlock:
+        return 1024;
+      case KeyType.buttom:
+        return 10000;
+      case KeyType.dial:
+        return 30000;
+      case KeyType.finger:
+        return 1000000;
+    }
+  }
 }
