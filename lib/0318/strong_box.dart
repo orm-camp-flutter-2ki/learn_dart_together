@@ -41,6 +41,11 @@ class StrongBox<T> {
         return fingerCountLimit;
     }
   }
+
+  @override
+  String toString() {
+    return '$_dataType';
+  }
 }
 
 void main() {}
