@@ -1,31 +1,13 @@
 class Word {
   String word = '';
-
+  String _vowels = 'aeiou';
   Word(this.word);
 
   bool isVowel(int i) {
-    switch(word.substring(i - 1, i).toLowerCase()) {
-      case 'a':
-      case 'e':
-      case 'i':
-      case 'o':
-      case 'u':
-        return true;
-      default:
-        return false;
-    }
+    return _vowels.contains(word.substring(i - 1, i).toLowerCase());
   }
 
   bool isConsonant(int i) {
-    switch(word.substring(i - 1, i).toLowerCase()) {
-      case 'a':
-      case 'e':
-      case 'i':
-      case 'o':
-      case 'u':
-        return false;
-      default:
-        return true;
-    }
+    return !_vowels.contains(word.substring(i - 1, i).toLowerCase());
   }
 }
