@@ -18,3 +18,4 @@ class Word {
         jaem != 'o' &&
         jaem != 'u';
   }
+}
