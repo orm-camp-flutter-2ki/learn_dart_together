@@ -22,7 +22,7 @@ class Word {
     // return vowel.contains(letter);
 
     // 방법 3) 어떤 글자던 소문자로 바꿔서 확인하기
-    // String letter = word.substring(i, afterLetter).toLowerCase();
+    // String letter = word[i].toLowerCase();
     // return vowel.contains(letter);
   }
 
