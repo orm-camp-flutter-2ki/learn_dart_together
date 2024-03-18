@@ -1,12 +1,5 @@
-void main() {
-  StrongBox strongBox = StrongBox(keyValue: KeyType.padlock, treasure: '황금');
-  for (int i = 0; i < 1025; i++) {
-    print('결과 : ${strongBox.tryUnlock()}. 횟수:${strongBox.count}');
-  }
-}
-
 class StrongBox<E> {
-  E _treasure;
+  E? _treasure;
   KeyType keyValue;
   int _count = 0;
 
@@ -20,8 +13,7 @@ class StrongBox<E> {
     return _treasure;
   }
 
-  StrongBox({required this.keyValue, required E treasure})
-      : _treasure = treasure;
+  StrongBox({required this.keyValue});
 
   E? tryUnlock() {
     switch (keyValue) {
