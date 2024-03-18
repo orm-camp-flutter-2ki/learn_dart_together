@@ -8,11 +8,7 @@ class Book implements Comparable<Book> {
     required this.comment,
     DateTime? publishDate,
   }) : publishDate = publishDate ??
-      DateTime(
-        DateTime.now().year,
-        DateTime.now().month,
-        DateTime.now().day,
-      );
+      DateTime.now();
 
 
   @override
