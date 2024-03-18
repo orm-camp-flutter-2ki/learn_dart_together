@@ -31,10 +31,13 @@ class Book implements Comparable<Book> {
       other is Book &&
           runtimeType == other.runtimeType &&
           title == other.title &&
-          publishDate == other.publishDate;
+          publishDate.year == other.publishDate.year &&
+          publishDate.month == other.publishDate.month &&
+          publishDate.day == other.publishDate.day;
 
   @override
-  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  int get hashCode =>
+      title.hashCode ^ publishDate.year ^ publishDate.month ^ publishDate.day;
 
   /// 이제 sort() 메소드를 호출하면 이 함수가 동작한다.
   @override
