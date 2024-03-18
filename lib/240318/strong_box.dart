@@ -6,9 +6,10 @@ class StrongBox<E> {
   int _keyPoint = 0;
 
   StrongBox({required E data, required KeyType keyType})
-      : _data = data, _keyType = keyType
+      : _data = data,
+        _keyType = keyType
   {
-    switch(keyType) {
+    switch (keyType) {
       case KeyType.padlock:
         _keyPoint = 1024;
       case KeyType.button:
@@ -18,7 +19,7 @@ class StrongBox<E> {
       case KeyType.finger:
         _keyPoint = 1000000;
     }
-}
+  }
 
   void put(E data) {
     _data = data;
@@ -29,12 +30,4 @@ class StrongBox<E> {
     _keyPoint--;
     return null;
   }
-}
-
-void main() {
-  StrongBox<int> a = StrongBox<int>(data: 3, keyType: KeyType.dial);
-  a.put(3);
-  print(a.get());
-  print(a.get());
-  print(a._keyPoint);
 }

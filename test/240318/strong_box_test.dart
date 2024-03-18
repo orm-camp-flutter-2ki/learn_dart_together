@@ -4,7 +4,8 @@ import 'package:test/test.dart';
 
 void main() {
   test('Strong Box Test', () {
-    StrongBox<String> a = StrongBox<String>(data: 'Secret', keyType: KeyType.padlock);
+    StrongBox<String> a =
+        StrongBox<String>(data: 'Secret', keyType: KeyType.padlock);
 
     expect(a.get() == null, true); // get했을 때 null return 테스트
 
@@ -16,5 +17,4 @@ void main() {
     a.put('Bimil');
     expect(a.get() == 'Bimil', true); // put 테스트
   });
-
 }
