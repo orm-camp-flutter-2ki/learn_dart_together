@@ -1,18 +1,41 @@
 enum KeyType {
   padlock,
-  buttom,
+  button,
   dial,
-  finger,
+  finger
 }
 
 class StrongBox<E> {
-  E? _data;
+  final KeyType _keyType;
+  final int _maxUses;
+  int _currentUses = 0;
+  E? _item;
 
-  void put(E data) {
-    _data = data;
+  StrongBox(this._keyType) : _maxUses = _getMaxUsesForType(_keyType);
+
+  void put(E item) {
+    _item = item;
   }
 
-  get() {
-    return _data;
-  } // 별도로 타입 캐스팅을 사용하지 않아도 된다는 말이 그대로 리턴하면 된다는 의미인가요?
+  E? get() {
+    if (_currentUses < _maxUses) {
+      _currentUses++;
+      return _item;
+    } else {
+      return null;
+    }
+  }
+
+  static int _getMaxUsesForType(KeyType keyType) {
+    switch (keyType) {
+      case KeyType.padlock:
+        return 1024;
+      case KeyType.button:
+        return 10000;
+      case KeyType.dial:
+        return 30000;
+      case KeyType.finger:
+        return 1000000;
+    }
+  }
 }
