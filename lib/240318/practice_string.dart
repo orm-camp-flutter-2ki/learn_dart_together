@@ -29,7 +29,7 @@ class Word {
     }
 
     String value = word[i].toLowerCase();
-    print(value);
+
     return (value != 'a' &&
         value != 'e' &&
         value != 'i' &&
