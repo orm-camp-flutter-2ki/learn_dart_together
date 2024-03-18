@@ -18,7 +18,7 @@ void main() {
     Word w = Word('hello world');
 
     // When
-    bool isConsonant = w.isConsonant(3);
+    bool isConsonant = w.isConsonant(1);
 
     // Then
     expect(isConsonant, true);
