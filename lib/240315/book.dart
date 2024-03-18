@@ -32,6 +32,18 @@ class Book implements Comparable<Book> {
   int compareTo(Book other) {
     return publishDate.compareTo(other.publishDate);
   }
+
+  Book copyWith({
+    String? title,
+    DateTime? publishDate,
+    String? comment,
+  }) {
+    return Book(
+      title: title ?? this.title,
+      publishDate: publishDate ?? this.publishDate,
+      comment: comment ?? this.comment,
+    );
+  }
 }
 
 void main() {

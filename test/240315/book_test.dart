@@ -43,4 +43,18 @@ void main() {
 
     expect(books.first.title == sortedBooks.first.title, true);
   });
+
+  test('deep copy 가 잘 되는가', () {
+    final book = Book(title: 'title', comment: 'comment');
+    final book2 = book.copyWith();
+
+    // 복사 잘 됨
+    expect(book == book2, true);
+
+    // title 복사
+    final book3 = book.copyWith(title: 'change');
+    expect(book3.title == 'change', true);
+    expect(book3.publishDate == book.publishDate, true);
+    expect(book3.comment == book.comment, true);
+  });
 }
