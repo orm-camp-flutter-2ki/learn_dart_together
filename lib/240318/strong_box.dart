@@ -2,8 +2,9 @@ import 'package:learn_dart_together/240318/key_type.dart';
 
 class StrongBox<E> {
   E _data;
-  final KeyType _keyType;
   int _keyPoint = 0;
+
+  final KeyType _keyType;
 
   StrongBox({required E data, required KeyType keyType})
       : _data = data,
