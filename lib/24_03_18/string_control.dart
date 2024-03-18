@@ -7,30 +7,38 @@ class Word {
   Word(this.word);
 
   bool isVowel(int i) {
+    final String vowel = 'aeiou';
+
     if (i > word.length) {
       throw Exception('입력값이 글자 길이보다 큽니다.');
     }
 
-    int afterLetter = (i + 1) < word.length ? (i + 1) : word.length;
+    // 방법 1
+     return vowel.contains(word[i]);
 
-    String letter = word.substring(i, afterLetter);
-    String vowel = 'aeiou';
+    // 방법 2) substring() 써서 체크 해 보기
+    // int afterLetter = (i + 1) < word.length ? (i + 1) : word.length;
+    // String letter = word.substring(i, afterLetter);
+    // return vowel.contains(letter);
 
-    return vowel.contains(letter);
+    // 방법 3) 어떤 글자던 소문자로 바꿔서 확인하기
+    // String letter = word.substring(i, afterLetter).toLowerCase();
+    // return vowel.contains(letter);
+
   }
 
-  // 반복문으로도 해보고, 대소문자 체크도 해보기 , 강제로 소문자로 바꿔서 체크 하는 방법도 있음.
   // i 번째 글자가 자음인지 알려주는 isConsonant() 함수를 완성하시오
   bool isConsonant(int i) {
+    List<String> vowels = ['a', 'e', 'i', 'o', 'u'];
+
     if (i > word.length) {
       throw Exception('입력값이 글자 길이보다 큽니다.');
     }
 
-    int beforeLetter = (i - 1) >= 0 ? (i - 1) : 0;
+    for (String s in vowels) {
+      if (s == word[i]) return false;
+    }
 
-    String letter = word.substring(beforeLetter, i);
-    String vowel = 'aeiou';
-
-    return !vowel.contains(letter);
+    return true;
   }
 }
