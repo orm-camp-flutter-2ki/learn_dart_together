@@ -13,5 +13,5 @@ void main() {
   final file = File('${fileDirectoryPath}save.txt');
   file.writeAsStringSync('Hello World, I wanna sleep asap');
 
-  copy(file.path, '${fileDirectoryPath}copyFile');
+  copy(file.path, '${fileDirectoryPath}copyFile.txt');
 }
