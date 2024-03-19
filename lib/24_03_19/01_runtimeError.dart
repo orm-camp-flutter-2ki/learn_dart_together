@@ -4,9 +4,13 @@ void main() {
 
   final numString = '10.5';
 
-  int num = int.parse(numString);
+  try {
+    int num = int.parse(numString);
 
-  print(num);
+    print(num);
+  } catch (e) {
+    print(0);
+  }
 
   // // 이미 위에서 터져서 안뜸
   // throw Exception('에러발생');
