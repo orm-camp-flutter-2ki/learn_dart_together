@@ -17,7 +17,18 @@ void main() {
     test('인스턴스를 직렬화', () {
 
       // Then(검증)
-      print(department!.toJson());
+      // 직렬화
+      // 객체를 json 형태로 표현
+      var jsonSerialize = department!.toJson();
+
+      // 역직렬화
+      // json 형태를 객체로 변환
+      var jsonDeserialize = Department.fromJson(jsonSerialize);
+
+      // 인코딩(Map 을 String 으로 변환)하여
+      // 직렬화가 역직렬화가 가능한지 확인
+      expect(jsonEncode(jsonSerialize), equals(jsonEncode(jsonDeserialize)));
+
     });
 
     test('company.txt 파일에 쓰는 프로그램을 작성하시오.', () {
