@@ -4,8 +4,8 @@ import 'package:test/test.dart';
 
 KeyType keyType = KeyType.button;
 
-void main(){
-  test('instance test', (){
+void main() {
+  test('instance test', () {
     //given(준비)
     // var safe = StrongBox();
     //when(실행)
@@ -14,14 +14,13 @@ void main(){
     // expect(safe.get(), equals(999));
   });
 
-  test('get 실행 test', ()
-  {
+  test('get 실행 test', () {
     //bdd
-    String? result ;
+    String? result;
     String germs = '금은보화';
     int checkCount = 0;
     int nullCount = 0;
-    switch(keyType){
+    switch (keyType) {
       case KeyType.button:
         checkCount = 10000;
         break;
@@ -37,17 +36,17 @@ void main(){
     }
 
     var safe2 = StrongBox<String, KeyType>(germs, keyType);
-    for (int i =0; i<checkCount; i++){
+    for (int i = 0; i < checkCount; i++) {
       var sol = safe2.get();
-      if(sol == null){
+      if (sol == null) {
         nullCount++;
       }
-      if(sol != null){
+      if (sol != null) {
         result = sol;
       }
     }
 
-    expect(nullCount, equals(checkCount -1));
+    expect(nullCount, equals(checkCount - 1));
     expect(result, equals(germs));
   });
 }
