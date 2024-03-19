@@ -1,5 +1,5 @@
 void main() {
-  final numString = '10å5';
+  final numString = '10.5';
 
   int num;
   try {
