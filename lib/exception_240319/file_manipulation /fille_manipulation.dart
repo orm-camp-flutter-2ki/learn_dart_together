@@ -2,8 +2,7 @@ import 'dart:io';
 
 // 파일 복사 함수
 void copy(String source, String target) {
-  final sourceFile = File('save.txt');
-  final targetFile = File('target.txt');
+  File(source).copySync(target);
 }
 
 void main() {
@@ -18,5 +17,5 @@ void main() {
   myFile.writeAsStringSync('\nAgain World 2002', mode: FileMode.append);
 
   // 파일 복사 실행
-  myFile.copy;
+  copy('save.txt', 'copied_save.txt');
 }
