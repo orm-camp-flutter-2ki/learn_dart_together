@@ -3,13 +3,14 @@ void main() {
   // throw Exception('에러발생');
 
   final numString = '10.5';
+  int num;
 
   try {
-    int num = int.parse(numString);
-
+    num = int.parse(numString);
     print(num);
   } catch (e) {
-    print(0);
+    num = 0;
+    print(num);
   }
 
   // // 이미 위에서 터져서 안뜸
