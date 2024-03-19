@@ -7,7 +7,7 @@ class StringToIntPrinter {
     int num;
     try {
       num = int.parse(_numString);
-    } catch(e) {
+    } catch (e) {
       num = 0;
     }
     return num;
@@ -20,7 +20,7 @@ void main() {
   int num;
   try {
     num = int.parse(numString);
-  } catch(e) {
+  } catch (e) {
     num = 0;
   }
 
