@@ -14,4 +14,10 @@ class Department implements Mappable {
       'manager': manager.toJson(),
     };
   }
+
+  @override
+  Department toObject(Map<String, dynamic> json) {
+    return Department(json['name'],
+        Employee(json['manager']['name'], json['manager']['age']));
+  }
 }

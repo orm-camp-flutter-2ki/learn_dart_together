@@ -13,4 +13,9 @@ class Employee implements Mappable {
       'age': age,
     };
   }
+
+  @override
+  Employee toObject(Map<String, dynamic> json) {
+    return Employee(json['name'], json['age']);
+  }
 }
