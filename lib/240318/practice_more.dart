@@ -18,7 +18,9 @@ class StrongBox<T> {
   T? get() {
     _usageCount++;
 
-    var limitCount =
+    // 수정될 값이 아니니 final 로 변경
+    final limitCount =
+    // 패턴 매칭
     switch(_keyType) {
       KeyType.padlock => padlockUsageValue,
       KeyType.button => buttonUsageValue,
