@@ -4,11 +4,8 @@ import 'package:test/scaffolding.dart';
 
 void main() {
   test('isVowel test', () {
-    // given
-    Word word = Word();
-
-    // when
-    word.word = 'apple';
+    // given when
+    Word word = Word(word: 'apple');
 
     // then
     expect(word.isVowel(0), true);
@@ -16,11 +13,8 @@ void main() {
   });
 
   test('isConsonant test', () {
-    // given
-    Word word = Word();
-
-    // when
-    word.word = 'apple';
+    // given when
+    Word word = Word(word: 'apple');
 
     // then
     expect(word.isConsonant(1), true);
