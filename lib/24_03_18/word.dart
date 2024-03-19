@@ -5,7 +5,7 @@ class Word {
 
   bool isVowel(int i) {
     final List<String> vowel = ['a','e','i','o','u'];
-    final char = word.substring(i, i + 1);
+    final char = word.substring(i, i + 1).toLowerCase();
 
     if (vowel.contains(char)) {
       return true;
