@@ -8,6 +8,14 @@ void main() {
 
   String jsonString = jsonEncode(department.toJson());
   file.writeAsStringSync(jsonString);
+
+  jsonString = file.readAsStringSync();
+  Map<String, dynamic> data = jsonDecode(jsonString);
+
+  Department.fromJson(data);
+  print(Department.fromJson(data));
+
+  department.name = '리암니슨';
 }
 
 class Employee {
@@ -16,10 +24,14 @@ class Employee {
 
   Employee(this.name, this.age);
 
+  Employee.fromJson(Map<String, dynamic> json)
+      : name = json['name'],
+        age = (json['age']);
+
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'age': age,
-      };
+    'name': name,
+    'age': age,
+  };
 }
 
 class Department {
@@ -28,8 +40,14 @@ class Department {
 
   Department(this.name, this.leader);
 
+  Department.fromJson(Map<String, dynamic> json)
+      : name = json['name'],
+        leader = Employee.fromJson(json['leader']);
+
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'leader': leader.toJson(),
-      };
+    'name': name,
+    'leader': leader.toJson(),
+  };
+
 }
+
