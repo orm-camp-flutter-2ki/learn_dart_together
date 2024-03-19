@@ -16,4 +16,13 @@ void main() {
 
     expect(myFile.readAsStringSync(), jsonString);
   });
+
+  test('JSON 형식을 객체로 변환', () {
+    String jsonString = '{"name":"General Affairs","leader":{"name":"홍길동","age":41}}';
+    Map<String, dynamic> json = jsonDecode(jsonString);
+    Department department = Department.fromJson(json);
+
+    expect(department.name, 'General Affairs');
+    expect(department.leader.name, '홍길동');
+  });
 }
