@@ -1,15 +1,23 @@
 class Word {
-  String word = '';
-  List<String> vowel = ['a', 'e', 'i', 'o', 'u'];
+  String _word;
+  final List<String> _vowel = ['a', 'e', 'i', 'o', 'u'];
+
+  Word({required String word}) : _word = word;
+
+  String get word => _word;
+
+  set word(String value) {
+    _word = value;
+  }
 
   bool isVowel(int i) {
-    return vowel.contains(word[i].toLowerCase());
+    return _vowel.contains(_word[i].toLowerCase());
   }
 
   bool isConsonant(int i) {
-    if (word[i].toLowerCase().codeUnits[0] <= 97 &&
-        word[i].toLowerCase().codeUnits[0] >= 122 &&
-        !vowel.contains(word[i].toLowerCase())) {
+    if (_word[i].toLowerCase().codeUnits[0] >= 97 &&
+        _word[i].toLowerCase().codeUnits[0] <= 122 &&
+        !_vowel.contains(_word[i].toLowerCase())) {
       return true;
     }
 

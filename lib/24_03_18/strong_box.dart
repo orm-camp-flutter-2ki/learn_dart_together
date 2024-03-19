@@ -10,10 +10,12 @@ class StrongBox<T> {
   // 1. 인스턴스 타입 미정
   T? _item;
   KeyType keyType; // 열쇠 종류 필드 변수
-  int padlockMax = 1024;
-  int buttonMax = 10000;
-  int dialMax = 30000;
-  int fingerMax = 1000000;
+
+  static final int padlockMax = 1024;
+  static final int buttonMax = 10000;
+  static final int dialMax = 30000;
+  static final int fingerMax = 1000000;
+
   int useNum = 0;
 
   StrongBox({required this.keyType});
