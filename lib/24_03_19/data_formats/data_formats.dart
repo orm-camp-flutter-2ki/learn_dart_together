@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:learn_dart_together/24_03_19/data_formats/department.dart';
 import 'package:learn_dart_together/24_03_19/data_formats/employee.dart';
@@ -12,7 +13,7 @@ void main() {
   final serialized = generalAffair.toJson();
 
   // String으로 변경
-  String jsonToString = serialized.toString();
+  String jsonToString = jsonEncode(serialized);
 
   // company.txt
   final companyFile = File('company.txt');
