@@ -1,7 +1,7 @@
 void main() {
   final numString = '10.5';
-  late int num;
-  
+  int num;
+
   try {
     num = int.parse(numString);
   } catch (error) {
