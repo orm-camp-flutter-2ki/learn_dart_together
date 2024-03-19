@@ -1,7 +1,8 @@
 void main() {
   final numString = '10.5';
-
-  int num = int.parse(numString);
-
-  print(num);
+  try {
+    int num = int.parse(numString);
+  } catch (e) {
+    print(0);
+  }
 }
