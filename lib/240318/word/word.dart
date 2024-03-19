@@ -4,7 +4,8 @@ class Word {
   Word(this.word);
 
   bool isVowel(int i) {
-    return 'aeiouAEIOU'.contains(word.substring(i, i + 1));
+    // return 'aeiouAEIOU'.contains(word.substring(i, i + 1));
+    return RegExp(r'[aeiouAEIOU]').hasMatch(word.substring(i, i + 1));
   }
 
   bool isConsonant(int i) => !isVowel(i);
