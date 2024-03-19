@@ -15,7 +15,10 @@ class FileService {
   }
 
   void deleteFile(String path) {
-    final file = File(path);
-    file.deleteSync();
+    File(path).deleteSync();
+  }
+
+  void writeToFile(String path, String content) {
+    File(path).writeAsStringSync(content);
   }
 }
