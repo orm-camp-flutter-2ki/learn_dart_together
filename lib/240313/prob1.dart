@@ -30,7 +30,7 @@
 
 //추상 클래스
 abstract class TangibleAsset {
-  String na me;
+  String name;
   int price;
   String color;
 
