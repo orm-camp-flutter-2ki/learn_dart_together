@@ -10,7 +10,7 @@ class MapperService<T extends Mappable> {
     _fileService.writeToFile(path, JsonEncoder().convert(object.toJson()));
   }
 
-  T deserialize(String path, T Function(Map<String, dynamic>) fromJson) {
-    return fromJson(json.decode(_fileService.readFile(path)));
+  T deserialize(String path, T object) {
+    return object.toObject(json.decode(_fileService.readFile(path)));
   }
 }
