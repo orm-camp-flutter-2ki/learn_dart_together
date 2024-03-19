@@ -2,16 +2,16 @@ import 'package:learn_dart_together/24_03_19/-3/employee.dart';
 import 'package:learn_dart_together/24_03_19/-3/mappable.dart';
 
 class Department implements Mappable {
-  String name;
-  Employee manager;
+  String _name;
+  Employee _manager;
 
-  Department(this.name, this.manager);
+  Department(this._name, this._manager);
 
   @override
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
-      'manager': manager.toJson(),
+      'name': _name,
+      'manager': _manager.toJson(),
     };
   }
 

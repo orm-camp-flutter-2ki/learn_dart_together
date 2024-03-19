@@ -1,16 +1,16 @@
 import 'package:learn_dart_together/24_03_19/-3/mappable.dart';
 
 class Employee implements Mappable {
-  String name;
-  int age;
+  String _name;
+  int _age;
 
-  Employee(this.name, this.age);
+  Employee(this._name, this._age);
 
   @override
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
-      'age': age,
+      'name': _name,
+      'age': _age,
     };
   }
 
