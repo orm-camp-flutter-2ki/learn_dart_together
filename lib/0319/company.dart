@@ -1,54 +1,61 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:learn_dart_together/0319/file_copy.dart';
+
 /// 부서 클래스
 class Department {
   String departmentTeam;
-  String companyHierarchy;
+  String officeTel;
 
-  Department({required this.departmentTeam, required this.companyHierarchy});
+  Department({required this.departmentTeam, required this.officeTel});
 
+  /// 직렬화 : Map를 Json형태의 String으로 변환
+  Map<String, dynamic> toJason() => {
+        'departmentTeam': departmentTeam,
+        'officeTel': officeTel,
+      };
+
+  /// 역직렬화 : Sring형태의 Json을 Map으로 변환
   Department.fromJason(Map<String, dynamic> json)
       : departmentTeam = json['departmentTeam'],
-        companyHierarchy = json['companyHierarchy'];
+        officeTel = json['officeTel'];
+
+  @override
+  String toString() {
+    return '[$departmentTeam Tel.$officeTel]';
+  }
 }
 
 /// 사원 클래스
-class Employee extends Department {
+class Employee {
+  String companyHierarchy;
   String name;
   int age;
 
   Employee({
-    required super.departmentTeam,
-    required super.companyHierarchy,
+    required this.companyHierarchy,
     required this.name,
     required this.age,
   });
 
   @override
   String toString() {
-    return '[$departmentTeam $companyHierarchy] $name ($age세)';
+    return '$name $companyHierarchy ($age세)';
   }
 
   /// 직렬화 : Map를 Json형태의 String으로 변환
   Map<String, dynamic> toJason() => {
-        'Department': departmentTeam,
-        'Hierarchy': companyHierarchy,
+        'companyHierarchy': companyHierarchy,
         'name': name,
         'age': age,
       };
 
   /// 역직렬화 : Sring형태의 Json을 Map으로 변환
   Employee.fromJason(Map<String, dynamic> json)
-      : name = json['name'],
+      : companyHierarchy = json['companyHierarchy'],
+        name = json['name'],
         age = json['age'];
-}
-
-void main() {
-  // Department GeneralAffairs = Department('총무', 6);
-  Employee affairsLeader = Employee(
-    departmentTeam: '총무부',
-    companyHierarchy: '팀장',
-    name: '홍길동',
-    age: 41,
-  );
 }
 
 /*
