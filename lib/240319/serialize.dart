@@ -22,6 +22,7 @@ class Department {
   Map<String, dynamic> toJson() => {
     'name': _name,
     'leader': _leader.toJson()
+    // 상위 클래스에 toJson이 있으면 Line 24의 toJson() 생략 가능
   };
 
   void createTxtFile() {
