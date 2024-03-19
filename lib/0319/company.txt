@@ -1,0 +1,3 @@
+[Company Text File]
+{"departmentTeam":"총무부","officeTel":"02)000-0000"}
+{"companyHierarchy":"팀장","name":"홍길동","age":41}
