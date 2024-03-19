@@ -1,6 +1,6 @@
 class StrongBox<E> {
   E? _treasure;
-  KeyType keyValue;
+  final KeyType keyValue;
   int _count = 0;
 
   void put(E treasure) {
