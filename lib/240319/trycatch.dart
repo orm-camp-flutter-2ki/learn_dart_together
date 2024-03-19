@@ -1,19 +1,12 @@
 void main(){
   final numString = '10.5';
+  int num;
 
   try {
-    int num = int.parse(numString);
-    print(num);
-  } on FormatException {
-    print('숫자 변환에 실패. num 변수에 0을 할당');
-    int num = 0;
-    print(num);
+    num = int.parse(numString);
   } catch(e) {
-    print(e.toString());
+    print(e);
+    num = 0; //예외 발생하면 0으로 처리
   }
-}
-
-void someError() {
-  //뭔가를 하는 코드
-  throw FormatException('에러가 발생했습니다.');
+  print(num);
 }
