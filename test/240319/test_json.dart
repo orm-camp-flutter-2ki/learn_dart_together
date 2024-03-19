@@ -27,6 +27,6 @@ void main() {
     final fileJson = jsonDecode(sourcetext);
     Department department1 = Department.from(fileJson);
 
-    expect(department1.name, equals('총무부'));
+    expect(department1.leader.name, equals('홍길동'));
   });
 }
