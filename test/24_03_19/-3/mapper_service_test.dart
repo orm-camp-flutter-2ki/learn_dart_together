@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:learn_dart_together/24_03_19/-2/file_service.dart';
 import 'package:learn_dart_together/24_03_19/-3/department.dart';
 import 'package:learn_dart_together/24_03_19/-3/employee.dart';
-import 'package:learn_dart_together/24_03_19/-3/mappable.dart';
 import 'package:learn_dart_together/24_03_19/-3/mapper_service.dart';
 import 'package:test/test.dart';
 
@@ -23,7 +22,7 @@ void main() {
         Department department = Department('IT', Employee('John Doe', 1000));
         MapperService<Department> mapperService = MapperService();
         String expected = jsonEncode(department.toJson());
-        
+
         // When
         mapperService.serialize(path, department);
 
