@@ -6,7 +6,15 @@ void main() {
     try {
       final numString = '10.5';
       int num = int.parse(numString);
-
+    } catch (e) {
+      int num = 0;
+      expect(num, 0);
+    }
+  });
+  test('에러 미발생', () {
+    try {
+      final numString = '10';
+      int num = int.parse(numString);
     } catch (e) {
       int num = 0;
       expect(num, 0);
