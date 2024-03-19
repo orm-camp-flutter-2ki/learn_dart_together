@@ -9,7 +9,7 @@ void main() {
   Department generalAffair = Department('총무부', hong);
 
   // 직렬화
-  final serialized = hong.toJson();
+  final serialized = generalAffair.toJson();
 
   // String으로 변경
   String jsonToString = serialized.toString();
