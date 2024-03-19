@@ -11,8 +11,8 @@ void main() {
     Departemnet hong = Departemnet('총무부', Employee('홍길동', 41));
     File companyFile = File('lib/240319/company.txt');
 
-    companyFile.writeAsStringSync(hong.toJson().toString());
+    companyFile.writeAsStringSync(json.encode(hong));
 
-    expect(companyFile.readAsStringSync().toString(), hong.toJson().toString());
+    expect(companyFile.readAsStringSync(), json.encode(hong));
   });
 }
