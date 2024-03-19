@@ -14,9 +14,17 @@ class CopyFile {
 
       print('파일이 복사되었습니다.');
 
-    } on PathNotFoundException catch(error) {
-      print('파일 경로가 잘못 되었습니다.');
+    } on FileSystemException catch(error) {
+      if( error.osError?.errorCode == 2 ) {
+        print('파일 경로가 잘못 되었습니다. \n$error');
+      } else {
+        print('다른 예외: $error');
+      }
     }
 
+  }
+
+  void deleteFile(String path) {
+    File(path).deleteSync();
   }
 }

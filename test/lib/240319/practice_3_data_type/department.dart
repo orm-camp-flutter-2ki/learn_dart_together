@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:learn_dart_together/240319/practice_3_data_type/department.dart';
@@ -15,17 +16,18 @@ void main() {
 
     test('인스턴스를 직렬화', () {
 
-      // When(실행)
+      // Then(검증)
       print(department!.toJson());
     });
 
     test('company.txt 파일에 쓰는 프로그램을 작성하시오.', () {
 
       final file = File('company.txt');
-      file.writeAsStringSync(department!.toJson().toString());
+      file.writeAsStringSync(jsonEncode(department!.toJson()));
       final companyText = file.readAsStringSync();
 
-      expect(department!.toJson().toString() == companyText.toString(), true);
+      // Then(검증)
+      expect(jsonEncode(department!.toJson()), equals(companyText.toString()));
     });
   });
 }
