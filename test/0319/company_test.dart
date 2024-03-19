@@ -13,14 +13,14 @@ void main() {
   /// company.txt 생성 및 경로 지정, 시작 멘트 작성
   final companyTextFile =
       File('/Users/yong/Desktop/learn_dart_together/lib/0319/company.txt');
-  companyTextFile.writeAsString('[Company Text File]\n');
+  companyTextFile.writeAsStringSync('[Company Text File]');
 
   /// 직렬화 : class -> toJason()
   String departmentString = jsonEncode(affairsTeam.toJason());
   String employeeString = jsonEncode(affairsLeader.toJason());
 
   /// 직렬화 된 내용 .txt에 넣기
-  companyTextFile.writeAsStringSync(departmentString, mode: FileMode.append);
+  companyTextFile.writeAsStringSync('\n$departmentString', mode: FileMode.append);
   companyTextFile.writeAsStringSync('\n$employeeString', mode: FileMode.append);
 
   /// 직렬화 확인하기
