@@ -1,16 +1,17 @@
 import 'employee.dart';
 
 class Department {
-  final String _departmentName; // Employee 클래스에 있는 name과 구분짓고 싶어서 변수명을 변경해봤습니다.
-  final Employee _leader;
+  String name;
+  Employee leader;
 
-  Department(this._departmentName, this._leader);
+  Department(this.name, this.leader);
 
-  String get departmentName => _departmentName;
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    'leader': leader.toJson(),
+  };
 
-  Department.fromJson(Map<String, dynamic> json)
-    : _departmentName = json['name'],
-      _leader = Employee.fromJson(json['leader']);
-
-  Employee get leader => _leader;
+  Department.from(Map<String, dynamic> json)
+      : name = json['name'],
+        leader = Employee.from( json['leader']);
 }
