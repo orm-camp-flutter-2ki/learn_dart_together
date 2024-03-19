@@ -3,4 +3,9 @@ class Employee {
   int age;
 
   Employee({required this.name, required this.age});
+
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    'age' : age
+  };
 }

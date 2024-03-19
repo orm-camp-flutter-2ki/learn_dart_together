@@ -5,4 +5,9 @@ class Department {
   Employee leader;
 
   Department({required this.name, required this.leader});
+
+  Map<String,dynamic> toJson() => {
+    'name': name,
+    'leader' : leader.toJson()
+  };
 }
