@@ -19,7 +19,6 @@ void main() {
   String departmentString = jsonEncode(affairsTeam.toJason());
   String employeeString = jsonEncode(affairsLeader.toJason());
 
-
   /// 직렬화 된 내용 .txt에 넣기
   companyTextFile.writeAsStringSync(departmentString, mode: FileMode.append);
   companyTextFile.writeAsStringSync('\n$employeeString', mode: FileMode.append);
