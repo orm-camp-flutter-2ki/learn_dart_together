@@ -13,9 +13,6 @@ void main() {
 
     companyFile.writeAsStringSync(hong.toJson().toString());
 
-    final String a = companyFile.readAsStringSync();
-    final String b = companyFile.readAsStringSync();
-
-    expect(a, b);
+    expect(companyFile.readAsStringSync().toString(), hong.toJson().toString());
   });
 }
