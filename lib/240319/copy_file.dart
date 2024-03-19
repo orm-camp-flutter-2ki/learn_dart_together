@@ -7,7 +7,3 @@ void copy(String source, String target) {
   final String content = file.readAsStringSync();
   copyFile.writeAsStringSync(content);
 }
-
-void main() {
-  copy('lib/240319/save.txt', 'lib/240319/savecopy.txt');
-}
