@@ -1,5 +1,15 @@
-void copy(String source, String target) {
+import 'dart:io'; // html말고 io로 import 하는 것이 좋다.
 
+void _copy(String source, String target) {
+  // 원본 파일 경로
+  final getSource = File(source);
+  // 내용 읽기
+  final readSource = getSource.readAsStringSync();
+
+  // 복사할 파일 경로
+  final fileWithCopy = File(target);
+  // 내용 쓰기
+  fileWithCopy.writeAsStringSync(readSource);
 }
 
 /*
