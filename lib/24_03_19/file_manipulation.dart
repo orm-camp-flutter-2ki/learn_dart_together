@@ -23,6 +23,5 @@ void main() {
 
     print('🌟🧙 환영분신술로 복사완료!! 🧙🌟');
   }
-
   copy(sourcePath, targetPath); // 복사가 되는지 테스트
 }
