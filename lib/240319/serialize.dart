@@ -2,27 +2,36 @@ import 'dart:convert';
 import 'dart:io';
 
 class Employee {
-  String _name;
-  int _age;
+  String name;
+  int age;
 
-  Employee(this._name, this._age);
+  Employee(this.name, this.age);
+
+  Employee.fromJson(Map<String, dynamic> json)
+    : name = json['name'],
+      age = json['age'];
 
   Map<String, dynamic> toJson() => {
-    'name': _name,
-    'age': _age,
+    'name': name,
+    'age': age,
   };
 }
 
 class Department {
-  String _name;
-  Employee _leader;
+  String name;
+  Employee leader;
 
-  Department(this._name, this._leader);
+  Department(this.name, this.leader);
+
+  Department.fromJson(Map<String, dynamic> json)
+    : name = json['name'],
+      leader = Employee.fromJson(json['leader']);
 
   Map<String, dynamic> toJson() => {
-    'name': _name,
-    'leader': _leader.toJson()
-    // 상위 클래스에 toJson이 있으면 Line 24의 toJson() 생략 가능
+    'name': name,
+    'leader': leader.toJson()
+    // Employee 클래스에 toJson()이 있으면
+    // leader에 값을 넣을 때 toJson() 생략 가능
   };
 
   void createTxtFile() {
