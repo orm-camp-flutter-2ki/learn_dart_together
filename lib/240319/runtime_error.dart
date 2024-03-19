@@ -1,4 +1,4 @@
-void main() {
+void runtime() {
   final numString = '10.5';
   int num;
   try {
