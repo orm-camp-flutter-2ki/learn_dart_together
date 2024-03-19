@@ -4,7 +4,7 @@ import 'package:learn_dart_together/24_03_19/serialization/interface/serializabl
 
 class Department implements Serializable {
   String name;
-  Employee leader;
+  Serializable leader;
 
   Department({required this.name, required this.leader});
 
