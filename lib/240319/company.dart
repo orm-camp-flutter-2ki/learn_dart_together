@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class Employee {
@@ -10,9 +9,14 @@ class Employee {
     this.age,
   );
 
-  Employee.fromJson(Map<String, dynamic> json)
-      : name = json['name'],
-        age = json['age'];
+  // Employee.fromJson(Map<String, dynamic> json)
+  //     : name = json['name'],
+  //       age = json['age'];
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'age': age,
+      };
 }
 
 class Departemnet {
@@ -24,15 +28,12 @@ class Departemnet {
     this.leader,
   );
 
-  Departemnet.fromJson(Map<String, dynamic> json)
-      : name = json['name'],
-        leader = json['leader'];
-}
+  // Departemnet.fromJson(Map<String, dynamic> json)
+  //     : name = json['name'],
+  //       leader = json['leader'];
 
-void main() {
-  Departemnet hong = Departemnet('총무부', Employee('홍길동', 41));
-
-  String jsonString = jsonEncode(hong);
-
-  print(jsonString);
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'leader': leader.toJson(),
+      };
 }
