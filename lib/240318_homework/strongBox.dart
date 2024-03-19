@@ -10,16 +10,12 @@ class StrongBox<E> {
   int get count => _count;
 
   E? get() {
-    return _treasure;
-  }
-
-  StrongBox({required this.keyValue});
-
-  E? tryUnlock() {
     if (_count++ < keyValue.count) return null;
 
     return _treasure;
   }
+
+  StrongBox({required this.keyValue});
 }
 
 enum KeyType {
