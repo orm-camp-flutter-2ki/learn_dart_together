@@ -9,9 +9,10 @@ void copy(String source, String target) {
 }
 
 void main() {
-  final file = File('./save.txt');
+  final fileDirectoryPath = './lib/24_03_19/file_copy/';
+  final file = File('${fileDirectoryPath}save.txt');
   file.writeAsStringSync('Hello World, I wanna sleep asap');
 
-  copy(file.path, './copyFile');
-  copy(file.path, './secondCopyFile');
+  copy(file.path, '${fileDirectoryPath}copyFile');
+  copy(file.path, '${fileDirectoryPath}secondCopyFile');
 }
