@@ -5,12 +5,20 @@ class Word {
 
   bool isVowel(int i) {
     String lowCaseWord = word.toLowerCase();
-    return lowCaseWord.substring(i, i + 1) == 'a';
+    return lowCaseWord.substring(i, i + 1) == 'a' ||
+        lowCaseWord.substring(i, i + 1) == 'e'||
+        lowCaseWord.substring(i, i + 1) == 'i'||
+        lowCaseWord.substring(i, i + 1) == 'o'||
+        lowCaseWord.substring(i, i + 1) == 'u';
   }
 
   bool isConsonant(int i) {
     String lowCaseWord = word.toLowerCase();
-    return lowCaseWord.substring(i, i + 1) != 'a';
+    return lowCaseWord.substring(i, i + 1) != 'a'||
+        lowCaseWord.substring(i, i + 1) == 'e'||
+        lowCaseWord.substring(i, i + 1) == 'i'||
+        lowCaseWord.substring(i, i + 1) == 'o'||
+        lowCaseWord.substring(i, i + 1) == 'u';
   }
 }
 
