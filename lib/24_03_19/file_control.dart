@@ -14,5 +14,4 @@ void main() {
   file.writeAsStringSync('Hello World, I wanna sleep asap');
 
   copy(file.path, '${fileDirectoryPath}copyFile');
-  copy(file.path, '${fileDirectoryPath}secondCopyFile');
 }
