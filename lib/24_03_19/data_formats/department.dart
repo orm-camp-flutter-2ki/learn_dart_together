@@ -6,8 +6,12 @@ class Department {
 
   Department(this.name, this.leader);
 
+  Department.fromJson(Map<String, dynamic> json)
+      : name = json['name'],
+        leader = json['leader'];
+
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'leader': leader.toJson(),
-  };
+        'name': name,
+        'leader': leader.toJson(),
+      };
 }
