@@ -43,4 +43,10 @@ void main() {
 
   final myFile = File('company.txt');
   myFile.writeAsStringSync(stringText);
+
+  //디코드
+  final stringText2 = jsonDecode(stringText);
+  print(text);          //Map
+  print(stringText2);   // Map
+
 }
