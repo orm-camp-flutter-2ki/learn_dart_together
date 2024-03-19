@@ -4,6 +4,10 @@ void main(){
   try {
     int num = int.parse(numString);
     print(num);
+  } on FormatException {
+    print('숫자 변환에 실패. num 변수에 0을 할당');
+    int num = 0;
+    print(num);
   } catch(e) {
     print(e.toString());
   }
