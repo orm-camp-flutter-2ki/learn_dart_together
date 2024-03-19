@@ -6,11 +6,25 @@ enum KeyType {
 }
 
 class StrongBox<T> {
+  static final int padlock = 1024;
+  static final int button = 10000;
+  static final int dial = 30000;
+  static final int finger = 1000000;
+
   T? _treasure;
 
   final KeyType _keyType;
 
   int _count = 0;
+
+  bool get isOpen =>
+      _count <
+      switch (_keyType) {
+        KeyType.padlock => padlock,
+        KeyType.button => button,
+        KeyType.dial => dial,
+        KeyType.finger => finger,
+      };
 
   StrongBox({required KeyType keyType}) : _keyType = keyType;
 
