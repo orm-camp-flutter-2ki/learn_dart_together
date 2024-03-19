@@ -6,16 +6,10 @@ void main() {
   Department department = Department('총무부', employee);
   final file = File('lib/240319_homework/company.txt');
 
-  String jsonString = jsonEncode(department.toJson());
-  file.writeAsStringSync(jsonString);
-
-  jsonString = file.readAsStringSync();
-  Map<String, dynamic> data = jsonDecode(jsonString);
-
-  Department.fromJson(data);
-  print(Department.fromJson(data));
-
-  department.name = '리암니슨';
+  department.encode(file, department);
+  department.decode(file);
+  employee.name = '리암니슨';
+  department.encode(file, department);
 }
 
 class Employee {
@@ -29,9 +23,9 @@ class Employee {
         age = (json['age']);
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'age': age,
-  };
+        'name': name,
+        'age': age,
+      };
 }
 
 class Department {
@@ -45,9 +39,18 @@ class Department {
         leader = Employee.fromJson(json['leader']);
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'leader': leader.toJson(),
-  };
+        'name': name,
+        'leader': leader.toJson(),
+      };
 
+  void encode(file, Department department) {
+    String jsonString = jsonEncode(department.toJson());
+    file.writeAsStringSync(jsonString);
+  }
+
+  void decode(file) {
+    String jsonString = file.readAsStringSync();
+    Map<String, dynamic> data = jsonDecode(jsonString);
+    Department.fromJson(data);
+  }
 }
-
