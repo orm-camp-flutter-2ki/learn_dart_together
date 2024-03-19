@@ -7,7 +7,7 @@ class Employee {
 
   Employee(this._name, this._age);
 
-  Map<String, dynamic> _toJson() => {
+  Map<String, dynamic> toJson() => {
     'name': _name,
     'age': _age,
   };
@@ -19,16 +19,13 @@ class Department {
 
   Department(this._name, this._leader);
 
-  Map<String, dynamic> _toJson() => {
+  Map<String, dynamic> toJson() => {
     'name': _name,
-    'leader': {
-      'name': _leader._name,
-      'age': _leader._age
-    }
+    'leader': _leader.toJson()
   };
 
   void createTxtFile() {
     final file = File('test/240319/company.txt');
-    file.writeAsStringSync(jsonEncode(_toJson()));
+    file.writeAsStringSync(jsonEncode(toJson()));
   }
 }
