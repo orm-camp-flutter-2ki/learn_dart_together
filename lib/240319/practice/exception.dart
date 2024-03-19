@@ -1,6 +1,4 @@
-void main() {
-  final numString = "10.5";
-
+int catchException(String numString) {
   int num;
   try {
     num = int.parse(numString);
@@ -9,5 +7,5 @@ void main() {
     num = 0;
   }
 
-  print(num);
+  return num;
 }
