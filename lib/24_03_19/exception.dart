@@ -5,6 +5,7 @@ void main() {
   try {
     num = int.parse(numString);
   } catch (e) {
+    print('$e');
     num = 0;
   }
 
