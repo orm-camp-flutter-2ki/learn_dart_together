@@ -5,7 +5,7 @@ class StrongBox<E> {
 
   KeyType keyType;
 
-  int number = 0;
+  int _number = 0;
 
   StrongBox(this.keyType);
 
@@ -13,34 +13,37 @@ class StrongBox<E> {
     _data = data;
   }
 
+  int get number {
+    return _number;
+  }
+
   E? get() {
-    number++;
+    _number++;
     switch (keyType) {
       case KeyType.padlock:
-        if (number <= 1024) {
+        if (_number <= 1024) {
           return null;
         } else {
           return _data;
         }
       case KeyType.button:
-        if (number <= 10000) {
+        if (_number <= 10000) {
           return null;
         } else {
           return _data;
         }
       case KeyType.dial:
-        if (number <= 30000) {
+        if (_number <= 30000) {
           return null;
         } else {
           return _data;
         }
       case KeyType.finger:
-        if (number <= 1000000) {
+        if (_number <= 1000000) {
           return null;
         } else {
           return _data;
         }
     }
   }
-
 }
