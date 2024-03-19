@@ -13,5 +13,5 @@ class Department {
 
   Department.from(Map<String, dynamic> json)
       : name = json['name'],
-        leader = Employee.from( json['leader']);
+        leader = Employee.from(json['leader']);
 }
