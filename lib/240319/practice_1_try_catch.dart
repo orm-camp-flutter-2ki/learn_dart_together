@@ -1,10 +1,3 @@
-void main() {
-  final numString = '10.1';
-
-  TryCatch aa = TryCatch();
-  print(aa.checkException(numString));
-}
-
 class TryCatch {
 
 

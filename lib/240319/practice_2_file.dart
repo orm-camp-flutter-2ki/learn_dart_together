@@ -11,19 +11,12 @@ class CopyFile {
     try {
       final copyFile = originalFile.readAsStringSync();
       targetFile.writeAsStringSync(copyFile);
-      final text = targetFile.readAsStringSync();
 
       print('파일이 복사되었습니다.');
-      print('[내용]\n$text');
 
     } on PathNotFoundException catch(error) {
       print('파일 경로가 잘못 되었습니다.');
     }
 
   }
-}
-
-void main() {
-  CopyFile aa = CopyFile();
-  aa.copy('save.txt', 'lib/240319/copy.txt');
 }
