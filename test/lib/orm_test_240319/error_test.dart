@@ -8,6 +8,11 @@ void main() {
     expect(error1.errorSome(numString), 0);
   });
 
+  test('에러 발생', () {
+    final numString = 'ten dot five';
+    expect(error1.errorSome(numString), 0);
+  });
+
   test('에러 미발생', () {
     final numString = '10';
     expect(error1.errorSome(numString), 10);
