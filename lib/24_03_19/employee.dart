@@ -8,10 +8,10 @@ class Employee {
   Employee(this._name, this._age, this._department); // 사원 생성자 수정
 
   // json으로부터 객체를 생성하는 생성자
-  Employee.fromJson(Map<String, dynamic> json) : // 직렬화를 위한 생성자 수정
-    _name = json['name'],
-    _age = json['age'],
-    _department = Department.fromJson(json['department']);
+  Employee.fromJson(Map<String, dynamic> json)
+      : _name = json['name'],
+        _age = json['age'],
+        _department = json['department'];
 
   // 객체를 json 형태로 표현하는 메서드
   Map<String, dynamic> toJson() => {
@@ -19,4 +19,10 @@ class Employee {
     'age': _age,
     'department': _department?.departmentName
   };
+
+  Department? get department => _department;
+
+  int get age => _age;
+
+  String get name => _name;
 }

@@ -11,4 +11,6 @@ class Department {
   Department.fromJson(Map<String, dynamic> json)
     : _departmentName = json['name'],
       _leader = Employee.fromJson(json['leader']);
+
+  Employee get leader => _leader;
 }

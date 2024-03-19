@@ -18,4 +18,8 @@ void main() {
   File('company.txt').writeAsStringSync(jsonString);
 
   print('😁🌼🌸 직렬화가 완료됐습니다. 홍길동씨 오늘도 화이팅 🌼🌸😁');
+
+  File file = File('company.txt');
+
+  String fileContent = file.readAsStringSync();
 }
