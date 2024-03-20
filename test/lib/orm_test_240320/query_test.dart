@@ -20,5 +20,12 @@ void main() {
     print('$citys');
   });
 
-
+  test('query 문제 3', () {
+    transactions
+        .where((transactions) => transactions.trader.city == 'Cambridge')
+        .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
+        .map((transaction) => transaction.trader.name)
+        .toSet()
+        .forEach(print);
+  });
 }
