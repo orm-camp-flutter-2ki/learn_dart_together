@@ -57,4 +57,13 @@ void main() {
 
     expect(allTraders, equals(expectedList));
   });
+
+  // 5. 밀라노에 거래자가 있는가?
+  test('test5', () {
+    bool milanTraderExists = transaction
+        .where((e) => e.trader.city == 'Milan')
+        .isNotEmpty;
+
+    expect(milanTraderExists, equals(true));
+  });
 }
