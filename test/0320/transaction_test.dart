@@ -12,6 +12,18 @@ void main() {
     expect(set.toString(), '{Cambridge, Milan}');
   });
 
+  test('3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열한다.', () {
+    List<Transaction> list = transactions.where((element) => element.trader.city == 'Cambridge').toList();
+    List<Transaction> sorted = list.toList();
+
+    sorted.sort((a, b) => a.trader.name.compareTo(b.trader.name));
+
+    expect(sorted.length, 4);
+    expect(sorted.first.trader.name, 'Alan');
+    expect(sorted.last.trader.name, 'Raoul');
+
+  });
+
   test('4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열한다.', () {
     List<Transaction> sorted = transactions.toList();
 
