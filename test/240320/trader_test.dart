@@ -23,4 +23,12 @@ void main() {
         .map((element) => element.trader.name)
         .forEach(print);
   });
+
+  // 2. 거래자가 근무하는 모든 도시를 중복 없이 나열하시오
+  test('Second Test', () {
+    transactions
+        .map((element) => element.trader.city)
+        .toSet()
+        .forEach(print);
+  });
 }
