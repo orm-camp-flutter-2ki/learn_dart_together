@@ -18,4 +18,8 @@ class Query {
   List<Transaction> firstTask() {
     return copyList().where((transaction) => transaction.year == 2011).toList();
   }
+
+  List<String> secondTask() {
+    return copyList().map((transaction) => transaction.trader.city).toSet().toList();
+  }
 }
