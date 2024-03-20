@@ -74,11 +74,11 @@ void main() {
   print('$sumValue');
   //값 2650
 
-  // 전체 트랜잭션 중 최대값은 얼마인가?
+  // 전체 트랜잭션 중 최대값은 얼마인가? 문제 7번
   final maxValue = transactions.map((transactions) => transactions.value).max;
   print(maxValue);
 
-  // 전체 트랜잭션 중 최소값은 얼마인가?
+  // 전체 트랜잭션 중 최소값은 얼마인가? 문제 8번
   final minValue = transactions.map((transactions) => transactions.value).min;
   print(minValue);
 }
