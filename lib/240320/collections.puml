@@ -1,0 +1,14 @@
+@startuml
+scale 2
+
+interface Iterable {
+    toList()
+    toSet()
+}
+
+interface List implements Iterable
+interface Set implements Iterable
+
+class OrderedHashSet implements Set
+
+@enduml
