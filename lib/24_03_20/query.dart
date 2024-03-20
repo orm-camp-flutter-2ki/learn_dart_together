@@ -58,4 +58,10 @@ class Query {
         .map((transaction) => transaction.value)
         .reduce((value, element) => value > element ? value : element);
   }
+
+  int eighthTask() {
+    return copyList()
+        .map((transaction) => transaction.value)
+        .reduce((value, element) => value < element ? value : element);
+  }
 }
