@@ -59,8 +59,7 @@ void main() {
           .sorted((a, b) => a.compareTo(b));
 
       // then
-      expect(result.toList(),
-          ['Alan', 'Brian', 'Mario', 'Mario', 'Raoul', 'Raoul']);
+      expect(result, ['Alan', 'Brian', 'Mario', 'Mario', 'Raoul', 'Raoul']);
     });
 
     test('5. 밀라노에 거래자가 있는가?', () {
