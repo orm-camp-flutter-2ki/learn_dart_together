@@ -51,8 +51,10 @@ void main() {
         .toList();
 
     print('$sumValue');
-
   });
 
-
+  test('query 문제 7', () {
+    final maxValue = transactions.map((transactions) => transactions.value).max;
+    print(maxValue);
+  });
 }
