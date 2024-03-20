@@ -71,4 +71,11 @@ void main() {
         .map((element) => element.value)
         .reduce((e, v) => max(e, v)));
   });
+
+  // 8. 전체 트랜잭션 중 최소값은 얼마인가?
+  test('Eighth Test', () {
+    print(transactions
+        .map((element) => element.value)
+        .reduce((e, v) => min(e, v)));
+  });
 }
