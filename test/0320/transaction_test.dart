@@ -47,9 +47,11 @@ void main() {
   });
 
   test('6. 케임브리지에 거주하는 거래자의 모든 트랙잭션 값을 출력한다.', () {
-    transactions
+    Iterable<int> result = transactions
         .where((element) => element.trader.city == 'Cambridge')
-        .forEach((element) => print(element.value));
+        .map((element) => element.value);
+
+    expect(result.length, 4);
   });
 
   test('7. 전체 트랜잭션 중 최댓값은 얼마인가?', () {
