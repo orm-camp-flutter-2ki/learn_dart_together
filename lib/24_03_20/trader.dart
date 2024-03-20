@@ -3,4 +3,9 @@ class Trader {
   String city;
 
   Trader(this.name, this.city);
+
+  @override
+  String toString() {
+    return 'Name: $name';
+  }
 }

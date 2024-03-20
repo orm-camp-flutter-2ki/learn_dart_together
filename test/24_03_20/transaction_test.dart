@@ -1,3 +1,4 @@
+import 'package:learn_dart_together/24_03_20/trader.dart';
 import 'package:test/test.dart';
 import 'package:collection/collection.dart';
 import 'package:learn_dart_together/24_03_20/transaction.dart';
@@ -29,5 +30,19 @@ void main() {
 
     expect(cities, equals(expectedSet));
     expect(cities, equals(expectedSet2));
+  });
+
+  // '3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열하시오'
+  test('test3', () {
+    List<String> traders  = transaction
+        .where((element) => element.trader.city == 'Cambridge')
+        .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
+        .map((element) => element.trader.name)
+        .toSet()
+        .toList();
+
+    List<String> expectedList = ['Alan', 'Brian', 'Raoul'];
+
+    expect(traders, equals(expectedList));
   });
 }
