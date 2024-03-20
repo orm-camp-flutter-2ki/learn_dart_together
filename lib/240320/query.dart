@@ -27,6 +27,7 @@ final transactions = [
 void main() {
   question1(transactions);
   question2(transactions);
+  question3(transactions);
 }
 
 void question1(List<Transaction> transactions) {
@@ -37,4 +38,14 @@ void question1(List<Transaction> transactions) {
 void question2(List<Transaction> transactions) {
   print('2. 거래자가 근무하는 모든 도시를 중복 없이 나열하시오');
   transactions.map((transaction) => transaction.trader.city).toSet().forEach(print);
+}
+
+void question3(List<Transaction> transactions) {
+  print('3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열하시오');
+  transactions
+      .where((transaction) => transaction.trader.city == 'Cambridge')
+      .map((transaction) => transaction.trader.name)
+      .toSet()
+      .sorted((a, b) => a.toString().compareTo(b.toString()))
+      .forEach(print);
 }
