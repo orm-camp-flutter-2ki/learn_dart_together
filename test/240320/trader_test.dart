@@ -57,4 +57,11 @@ void main() {
       print('밀라노에 거래자가 없습니다.');
     }
   });
+
+  // 6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 출력하시오
+  test('Sixth Test', () {
+    transactions
+        .where((element) => element.trader.city == 'Cambridge')
+        .forEach(print); // toString() 활용
+  });
 }
