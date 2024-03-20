@@ -28,6 +28,7 @@ void main() {
   question1(transactions);
   question2(transactions);
   question3(transactions);
+  question4(transactions);
 }
 
 void question1(List<Transaction> transactions) {
@@ -48,4 +49,9 @@ void question3(List<Transaction> transactions) {
       .toSet()
       .sorted((a, b) => a.toString().compareTo(b.toString()))
       .forEach(print);
+}
+
+void question4(List<Transaction> transactions) {
+  print('4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열하시오');
+  transactions.map((transaction) => transaction.trader.name).toSet().sorted((a, b) => a.compareTo(b)).forEach(print);
 }
