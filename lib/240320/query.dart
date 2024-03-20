@@ -29,6 +29,7 @@ void main() {
   question2(transactions);
   question3(transactions);
   question4(transactions);
+  question5(transactions);
 }
 
 void question1(List<Transaction> transactions) {
@@ -54,4 +55,9 @@ void question3(List<Transaction> transactions) {
 void question4(List<Transaction> transactions) {
   print('4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열하시오');
   transactions.map((transaction) => transaction.trader.name).toSet().sorted((a, b) => a.compareTo(b)).forEach(print);
+}
+
+void question5(List<Transaction> transactions) {
+  print('5. 밀라노에 거래자가 있는가?');
+  transactions.where((transaction) => transaction.trader.city == 'Milan').map((transaction) => transaction.trader.name).toSet().forEach(print);
 }
