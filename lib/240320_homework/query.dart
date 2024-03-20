@@ -58,4 +58,13 @@ void main() {
       .sorted((a, b) => b.trader.name.compareTo(a.trader.name))
       .map((transaction) => transaction.trader.name)
       .toList();
+
+  //연습 문제 5번
+  transactions.any((transaction) => transaction.trader.city == "Milan");
+
+  //연습 문제 6번
+  transactions
+      .where((transaction) => transaction.trader.city == "Cambridge")
+      .map((transaction) => transaction.value)
+      .toList();
 }
