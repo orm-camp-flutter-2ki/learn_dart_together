@@ -7,6 +7,8 @@
 // 7. 전체 트랜잭션 중 최대값은 얼마인가?
 // 8. 전체 트랜잭션 중 최소값은 얼마인가?
 
+import 'package:collection/collection.dart';
+
 class Trader {
   String name;
   String city;
@@ -31,3 +33,15 @@ final transactions = [
   Transaction(Trader("Alan", "Cambridge"), 2012, 950),
 ];
 
+void main() {
+  //연습문제 1번
+  transactions
+      .where((transaction) => transaction.year == 2011)
+      .toList()
+      .sorted((a, b) => b.value.compareTo(a.value))
+      .map((transaction) => transaction.trader.name)
+      .forEach(print);
+
+
+
+}
