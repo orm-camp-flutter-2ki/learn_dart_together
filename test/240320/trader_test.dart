@@ -48,4 +48,13 @@ void main() {
         .map((element) => element.trader.name)
         .forEach(print);
   });
+
+  // 5. 밀라노에 거래자가 있는가?
+  test('Fifth Test', () {
+    if (transactions.where((element) => element.trader.city == 'Milan').isNotEmpty) {
+      print('밀라노에 거래자가 있습니다');
+    } else {
+      print('밀라노에 거래자가 없습니다.');
+    }
+  });
 }
