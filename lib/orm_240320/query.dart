@@ -69,10 +69,10 @@ void main() {
   final sumValue = transactions
       .where((transactions) => transactions.trader.city == 'Cambridge')
       .map((transactions) => transactions.value)
-      .toList()
-      .sum;
+      .toList();
+
   print('$sumValue');
-  //값 2650
+
 
   // 전체 트랜잭션 중 최대값은 얼마인가? 문제 7번
   final maxValue = transactions.map((transactions) => transactions.value).max;
