@@ -64,4 +64,11 @@ void main() {
         .where((element) => element.trader.city == 'Cambridge')
         .forEach(print); // toString() 활용
   });
+
+  // 7. 전체 트랜잭션 중 최대값은 얼마인가?
+  test('Seventh Test', () {
+    print(transactions
+        .map((element) => element.value)
+        .reduce((e, v) => max(e, v)));
+  });
 }
