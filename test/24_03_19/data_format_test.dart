@@ -7,46 +7,22 @@ import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
 void main() {
-  test('serialize test', () {
-    // given
-    Employee hong = Employee('홍길동', 41);
-    Department generalAffair = Department('총무부', hong);
+  test('employee test', () {
+    final department = Department('총무부', Employee('홍길동', 41));
 
-    // when
-    final serialized = generalAffair.toJson();
+    // String jsonString = jsonEncode(department.toJson());
+    // https://api.flutter.dev/flutter/dart-convert/jsonEncode.html
+    String jsonString = jsonEncode(department);
 
-    // then
-    expect(serialized.toString(), '{name: 총무부, leader: {name: 홍길동, age: 41}}');
-  });
+    File('company.txt').writeAsStringSync(jsonString);
 
-  test('deserialize test', () {
-    // given
-    Employee hong = Employee('홍길동', 41);
-    Department generalAffair = Department('총무부', hong);
+    jsonString = File('company.txt').readAsStringSync();
+    final json = jsonDecode(jsonString) as Map<String, dynamic>;
 
-    // when
-    final serialized = generalAffair.toJson();
-    String jsonToString = jsonEncode(serialized);
-    Map<String, dynamic> deserialized = jsonDecode(jsonToString);
+    Department decodedDepartment = Department.fromJson(json);
 
-    // then
-    expect(deserialized['name'], equals('총무부'));
-    expect(deserialized['leader'], equals({'name': '홍길동', 'age': 41}));
-  });
-
-  test('company file test', () {
-    // given
-    Employee hong = Employee('홍길동', 41);
-    Department generalAffair = Department('총무부', hong);
-
-    // when
-    final serialized = generalAffair.toJson();
-    String jsonToString = jsonEncode(serialized);
-    final companyFile = File('company.txt');
-
-    companyFile.writeAsStringSync(jsonToString);
-
-    // then
-    expect(companyFile.readAsStringSync() == jsonToString, true);
+    expect(decodedDepartment.name, '총무부');
+    expect(decodedDepartment.leader.name, '홍길동');
+    expect(decodedDepartment.leader.age, 41);
   });
 }
