@@ -157,10 +157,17 @@ void main() {
 // 7. 전체 트랜잭션(value) 중 최대값은 얼마인가?
 
   // 모든 트랜잭션의 value 값을 추출하여 List에 저장합니다.
+  // final allTransactionValues = transactions.map((transaction) => transaction.value).toList();
+  //
+  // // 최대값을 찾아 출력합니다.
+  // final maxValue = allTransactionValues.reduce((a, b) => a > b ? a : b);
+  // print("최대 트랜잭션 값:" + maxValue.toString());
+
+// 8. 전체 트랜잭션(value) 중 최소값은 얼마인가?
+  // 모든 트랜잭션의 value 값을 추출하여 List에 저장합니다.
   final allTransactionValues = transactions.map((transaction) => transaction.value).toList();
 
-  // 최대값을 찾아 출력합니다.
-  final maxValue = allTransactionValues.reduce((a, b) => a > b ? a : b);
-  print("최대 트랜잭션 값:" + maxValue.toString());
-
+  // 최소값을 찾아 출력합니다.
+  final minValue = allTransactionValues.reduce((a, b) => a < b ? a : b);
+  print("최소 트랜잭션 값: " + minValue.toString());
 }
