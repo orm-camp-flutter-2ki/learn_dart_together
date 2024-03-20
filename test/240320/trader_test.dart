@@ -40,4 +40,12 @@ void main() {
         .map((element) => element.trader.name)
         .forEach(print);
   });
+
+  // 4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열하시오
+  test('Fourth Test', () {
+    transactions
+        .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
+        .map((element) => element.trader.name)
+        .forEach(print);
+  });
 }
