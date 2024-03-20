@@ -1,9 +1,18 @@
-import 'dart:math';
-
 import 'package:learn_dart_together/0320/transaction.dart';
 import 'package:test/test.dart';
 
 void main() {
+  test('1. 2011년에 일어난 모든 트랜잭션을 찾아 가격 기준 오름차순으로 정렬하여 이름을 나열한다.', () {
+    List<Transaction> list = transactions.where((element) => element.year == 2011).toList();
+    List<Transaction> sorted = list.toList();
+
+    sorted.sort((a, b) => a.value.compareTo(b.value));
+
+    expect(sorted.length, 2);
+    expect(sorted.first.value, 300);
+    expect(sorted.last.value, 400);
+  });
+
   test('2. 거래자가 근무하는 모든 도시를 중복 없이 나열한다.', () {
     Set<String> set = {};
 
