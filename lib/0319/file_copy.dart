@@ -1,17 +1,23 @@
 import 'dart:io'; // html말고 io로 import 하는 것이 좋다.
 
 void copyFile(String sourcePath, String targetPath) {
-  /// 원본 파일 경로
-  final getSource = File(sourcePath);
+  final getSource = File(sourcePath); // 원본 파일 경로
 
-  /// 내용 읽고 변수에 담음
-  final readSource = getSource.readAsStringSync();
+  final readSource = getSource.readAsStringSync(); // 내용 읽고 변수에 담음
 
-  /// 복사할 파일 경로
-  final fileWithCopy = File(targetPath);
+  final fileWithCopy = File(targetPath); // 복사할 파일 경로
 
-  /// 내용 쓰기
-  fileWithCopy.writeAsStringSync(readSource);
+  fileWithCopy.writeAsStringSync(readSource); // 내용 쓰기
+}
+
+void copyFile2(String sourcePath, String targetPath) {
+  /// 이런 방법도 있다.
+  File(targetPath).writeAsStringSync(File(sourcePath).readAsStringSync());
+}
+
+void copyFile3(String sourcePath, String targetPath) {
+  /// 사실 이미 메서드로도 있다.
+  File(sourcePath).copySync(targetPath);
 }
 
 /*
