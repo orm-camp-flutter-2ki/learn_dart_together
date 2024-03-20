@@ -1,4 +1,3 @@
-import 'package:learn_dart_together/24_03_20/trader.dart';
 import 'package:test/test.dart';
 import 'package:collection/collection.dart';
 import 'package:learn_dart_together/24_03_20/transaction.dart';
@@ -44,5 +43,18 @@ void main() {
     List<String> expectedList = ['Alan', 'Brian', 'Raoul'];
 
     expect(traders, equals(expectedList));
+  });
+
+  // 4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열하시오
+  test('test4', () {
+    List<String> allTraders = transaction
+        .map((e) => e.trader.name)
+        .toSet()
+        .toList()
+        .sorted();
+
+    List<String> expectedList = ['Alan', 'Brian', 'Mario' ,'Raoul'];
+
+    expect(allTraders, equals(expectedList));
   });
 }
