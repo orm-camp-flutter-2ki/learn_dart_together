@@ -13,12 +13,13 @@ void main() {
 }
 
 void copy(String source, String target){
-  final sourceFile = File(source);
+  // final sourceFile = File(source);
+  //
+  // final text = sourceFile.readAsStringSync();
+  //
+  // final fileCopy = File(target);
+  //
+  // fileCopy.writeAsStringSync(text);
 
-  final text = sourceFile.readAsStringSync();
-
-  final fileCopy = File(target);
-
-  fileCopy.writeAsStringSync(text);
-
+  File(source).copySync(target);
 }

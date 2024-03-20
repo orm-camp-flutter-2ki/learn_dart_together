@@ -7,7 +7,7 @@ void main() {
       name: '책 제목',
       price: 20000,
       color: '파란색',
-      weight: 1.5,
+      weight: 15,
       isbn: '9781234567890',
     ); //Book클래스 인스턴스 생성
 

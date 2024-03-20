@@ -7,15 +7,12 @@ class Book extends TangibleAsset {
   String isbn;
 
   Book(
-    String name, 
-    int price,  
-  // super.name,
-  //   super.price,
-  {
+    super.name,
+    super.price,{
     required super.color,
     required super.weight,
-    required this.isbn,
-  }) : super('', 0, color: '', weight: 0.0);
+    required this.isbn, required String name, required int price,
+  });
 
 // @override
 // double weight;
