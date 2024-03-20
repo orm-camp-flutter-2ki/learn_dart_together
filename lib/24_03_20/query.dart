@@ -41,4 +41,8 @@ class Query {
         .toList()
         ..sort((a, b) => a.compareTo(b));
   }
+
+  bool fifthTask() {
+    return copyList().any((transaction) => transaction.trader.city == "Milan");
+  }
 }
