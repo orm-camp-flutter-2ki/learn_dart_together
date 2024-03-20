@@ -31,6 +31,7 @@ void main() {
   question4(transactions);
   question5(transactions);
   question6(transactions);
+  question7(transactions);
 }
 
 void question1(List<Transaction> transactions) {
@@ -66,4 +67,10 @@ void question5(List<Transaction> transactions) {
 void question6(List<Transaction> transactions) {
   print('6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 출력하시오');
   transactions.where((transaction) => transaction.trader.city == 'Cambridge').map((transaction) => transaction.value).sorted((a, b) => a.compareTo(b)).forEach(print);
+}
+
+void question7(List<Transaction> transactions) {
+  print('7. 전체 트랜잭션 중 최대값은 얼마인가?');
+  final question7 = transactions.map((transaction) => transaction.value).sorted((a, b) => a.compareTo(b));
+  print('${question7.last}');
 }
