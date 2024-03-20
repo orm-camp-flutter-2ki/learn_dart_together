@@ -1,6 +1,5 @@
 class RegularExpression {
   List<String> getNumsString() {
-    String str;
     StringBuffer stringBuffer = StringBuffer('');
 
     for (int i = 1; i <= 100; i++) {
@@ -10,7 +9,7 @@ class RegularExpression {
       }
       stringBuffer.write('$i,');
     }
-    str = stringBuffer.toString();
+    String str = stringBuffer.toString();
 
     List<String> numsString = str.split(RegExp(r','));
     return numsString;
