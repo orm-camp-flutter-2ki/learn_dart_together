@@ -7,7 +7,7 @@ void main() {
 
     hero.hp = 10;
 
-    expect(hero.hp, 20);
+    expect(hero.hp, 10);
   });
 
   test('Hero hp 타당성 검사 테스트', () {
