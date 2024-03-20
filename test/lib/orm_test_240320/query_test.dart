@@ -37,4 +37,10 @@ void main() {
         .toList()
         .forEach(print);
   });
+
+  test('query 문제 5', () {
+    final person =
+    transactions.any((transactions) => transactions.trader.city == 'Milan');
+    expect(person, true);
+  });
 }
