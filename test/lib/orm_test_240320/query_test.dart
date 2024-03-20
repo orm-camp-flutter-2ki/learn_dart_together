@@ -11,4 +11,14 @@ void main() {
         .map((transaction) => transaction.trader.name)
         .forEach(print);
   });
+
+  test('query 문제 2', () {
+    final citys = transactions
+        .map((transaction) => transaction.trader.city)
+        .toSet()
+        .toList();
+    print('$citys');
+  });
+
+
 }
