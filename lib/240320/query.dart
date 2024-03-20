@@ -82,8 +82,7 @@ final transactions = [
   Transaction(Trader("Alan", "Cambridge"), 2012, 950),
 ];
 
-void main(){
-
+void main() {
 //1. 2011년에 일어난 모든 트랜잭션을 찾아 가격기준 오름차순으로 정리하여 이름을 나열하시오.
 //가격기준,
 //오름차순
@@ -125,11 +124,32 @@ void main(){
 //     traderNames.forEach(print);
 
 //5. 밀라노에 거래자가 있는가?
-  final hasMilanTrader = transactions.any((transaction) => transaction.trader.city == "Milan");
+//   final hasMilanTrader = transactions.any((transaction) => transaction.trader.city == "Milan");
+//
+//   // 결과 출력
+//   if (hasMilanTrader) {
+//   print("밀라노에 거래자가 있습니다.");
+//   } else {
+//   print("밀라노에 거래자가 없습니다.");
+//   }
 
-  // 결과 출력
-  if (hasMilanTrader) {
-  print("밀라노에 거래자가 있습니다.");
-  } else {
-  print("밀라노에 거래자가 없습니다.");
-  }}
+// 6. 케임브리지에 거주하는 거래자의 모든 트랙잭션(value)값을 출력하시오
+
+// 케임브리지 거주 거래자의 모든 트랜잭션 값을 추출하여 List에 저장합니다.
+  final cambridgeTransactionValues = transactions
+      .where((transaction) => transaction.trader.city == "Cambridge")
+      .map((transaction) => transaction.value)
+      .toList();
+
+// 케임브리지 거래자가 없는 경우 메시지 출력
+  if (cambridgeTransactionValues.isEmpty) {
+    print("케임브리지에 거주하는 거래자가 없습니다.");
+    return;
+  }
+
+// 트랜잭션 값을 오름차순으로 정렬합니다.
+  cambridgeTransactionValues.sort();
+
+// 정렬된 트랜잭션 값 출력
+  cambridgeTransactionValues.forEach(print);
+}
