@@ -41,7 +41,7 @@ class Query {
     return transactions.map((e) => e.trader.city).toSet();
   }
 
-  /// 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬 후 반환
+  /// 3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬 후 반환
   Set<String> question3() {
     return transactions
         .where((e) => e.trader.city == 'Cambridge')
@@ -49,7 +49,7 @@ class Query {
         .toSet();
   }
 
-  /// 모든 거래자의 이름을 알파벳순으로 정렬 후 반환
+  /// 4. 모든 거래자의 이름을 알파벳순으로 정렬 후 반환
   List<String> question4() {
     return transactions
         .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
@@ -62,7 +62,7 @@ class Query {
     return transactions.any((element) => element.trader.city == 'Milan');
   }
 
-  /// 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 반환
+  /// 6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 반환
   List<int> question6() {
     return transactions
         .where((element) => element.trader.city == 'Cambridge')
@@ -75,7 +75,7 @@ class Query {
     return transactions.map((e) => e.value).reduce(max);
   }
 
-  /// 7. 전체 트랜잭션 중 최소값
+  /// 8. 전체 트랜잭션 중 최소값
   int question8() {
     return transactions.map((e) => e.value).reduce(min);
   }
