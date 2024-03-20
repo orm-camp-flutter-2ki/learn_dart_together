@@ -52,4 +52,10 @@ class Query {
         .map((transaction) => transaction.value)
         .toList();
   }
+
+  int seventhTask() {
+    return copyList()
+        .map((transaction) => transaction.value)
+        .reduce((value, element) => value > element ? value : element);
+  }
 }
