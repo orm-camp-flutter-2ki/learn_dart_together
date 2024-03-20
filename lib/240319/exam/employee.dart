@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 // 데이터 클래스
@@ -69,4 +70,6 @@ void main() {
   String jsonString = department.toJson().toString();
 
   File('company.txt').writeAsStringSync(jsonString);
+
+  Map<String, dynamic> json = jsonDecode(jsonString);
 }
