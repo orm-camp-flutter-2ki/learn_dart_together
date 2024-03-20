@@ -52,4 +52,10 @@ void main() {
       .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
       .map((transaction) => transaction.trader.name)
       .toList();
+
+  //연습 문제 4번 [Alan, Brian, Mario, Mario, Raoul, Raoul]
+  transactions
+      .sorted((a, b) => b.trader.name.compareTo(a.trader.name))
+      .map((transaction) => transaction.trader.name)
+      .toList();
 }
