@@ -21,6 +21,10 @@ void main() {
       // 객체를 json 형태로 표현
       var jsonSerialize = department!.toJson();
 
+      // 새로운 방법
+      // jsonEncode 가 toJson 을 자동 호출해서 직렬화해준다.
+      // jsonEncode(jsonSerialize); = jsonEncode(department);
+
       // 역직렬화
       // json 형태를 객체로 변환
       var jsonDeserialize = Department.fromJson(jsonSerialize);
