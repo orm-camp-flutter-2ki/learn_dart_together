@@ -35,12 +35,21 @@ void main() {
     print(e.trader.name);
   }
   print('\n1번 문제 결과 -2');
-  transactions.where((element) => element.year == 2011).map((e) => e.trader.name).sorted((a, b) => a.compareTo(b)).forEach(print);
-  // sorted()는 원본을 건드리지 않고 결과를 리턴 해준다.
+  transactions
+      .where((element) => element.year == 2011)
+      .map((e) => e.trader.name)
+      .sorted((a, b) => a.compareTo(b))
+      .forEach(print);
+  // 원본을 건드리지 않고 결과를 리턴 해준다.
 
   // 디버깅할 때는 이런식으로 쪼개서 해보는 것도 나쁘지 않음.
   // var stage1 = transactions.where((element) => e.year ==2011);
   // var stage2 = stage1.toList();
   // var stage3 = stage2.sorted((a, b) => a.value.compareTo(b.value));
+
+
+  /// 2. 거래자가 근무하는 모든 도시를 중복 없이 나열하시오 => set
+  print('\n2번 문제 결과');
+  transactions.map((e) => e.trader.city).toSet().forEach(print);
 
 }
