@@ -116,12 +116,20 @@ void main(){
 // cambridgeTraders.forEach((trader) => print(trader.name));
 
 // 4. 모든 거래자(trader)의 이름을 알파벳순으로 정렬하여 나열하시오
-final traderNames = transactions
-    .map((transaction) => transaction.trader.name)
-    .toList();
+// final traderNames = transactions
+//     .map((transaction) => transaction.trader.name)
+//     .toList();
+//
+//     traderNames.sort();
+//
+//     traderNames.forEach(print);
 
-    traderNames.sort();
+//5. 밀라노에 거래자가 있는가?
+  final hasMilanTrader = transactions.any((transaction) => transaction.trader.city == "Milan");
 
-    traderNames.forEach(print);
-
-}
+  // 결과 출력
+  if (hasMilanTrader) {
+  print("밀라노에 거래자가 있습니다.");
+  } else {
+  print("밀라노에 거래자가 없습니다.");
+  }}
