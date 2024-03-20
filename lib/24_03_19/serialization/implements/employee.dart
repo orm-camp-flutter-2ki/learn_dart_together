@@ -6,9 +6,10 @@ class Employee implements Serializable {
 
   Employee({required this.name, required this.age});
 
+  Employee.fromJson(Map<String, dynamic> json)
+      : name = json['name'],
+        age = json['age'];
+
   @override
-  Map<String, dynamic> toMap() => {
-    'name': name,
-    'age' : age
-  };
+  Map<String, dynamic> toMap() => {'name': name, 'age': age};
 }
