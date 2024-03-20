@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:js_interop';
 
 class Employee {
   String name;
@@ -21,7 +22,7 @@ class Department {
   Department({required this.name, required this.leader});
 
   //직원 정보의 역직렬화
-  Map<String, dynamic> fromJson() => {
+  Map<String, dynamic> toJSBox() => {
         'name': name,
         'leader': leader.toJson(),
       };
@@ -41,6 +42,6 @@ void main() {
 
   // instance > insert to Map > send to 'company.txt'
   Department department = Department(name: '디자인팀', leader: employee);
-  Map<String, dynamic> departmentMap = department.fromJson();
+  Map<String, dynamic> departmentMap = department.toJSBox();
   myFile.writeAsStringSync('$departmentMap', mode: FileMode.append);
 }

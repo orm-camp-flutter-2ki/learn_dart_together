@@ -19,3 +19,8 @@ void main() {
   // 파일 복사 실행
   copy('save.txt', 'copied_save.txt');
 }
+
+
+void copy2(String source, String target) {
+  File(target).writeAsStringSync(File(source).readAsStringSync());
+}

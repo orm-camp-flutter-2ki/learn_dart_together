@@ -19,6 +19,7 @@ int? numTest() {
     // 예외가 발생하든 안 하든 항상 실행되는 코드
     print('Finally block executed'); // 항상 출력됨
   }
+  return null;
 }
 
 

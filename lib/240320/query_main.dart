@@ -1,31 +1,7 @@
-import 'dart:ffi';
 import 'dart:math';
 
 import 'package:collection/collection.dart';
-
-class Trader {
-  String name;
-  String city;
-
-  Trader(this.name, this.city);
-}
-
-class Transaction {
-  Trader trader;
-  int year;
-  int value;
-
-  Transaction(this.trader, this.year, this.value);
-}
-
-final transactions = [
-  Transaction(Trader("Brian", "Cambridge"), 2011, 300),
-  Transaction(Trader("Raoul", "Cambridge"), 2012, 1000),
-  Transaction(Trader("Raoul", "Cambridge"), 2011, 400),
-  Transaction(Trader("Mario", "Milan"), 2012, 710),
-  Transaction(Trader("Mario", "Milan"), 2012, 700),
-  Transaction(Trader("Alan", "Cambridge"), 2012, 950),
-];
+import 'query_trader_transaction_info.dart';
 
 void main() {
   //------------------------------------------------------------------------
@@ -76,5 +52,4 @@ void main() {
   //------------------------------------------------------------------------
   print('8. 전체 트랜잭션 중 최소값은 얼마인가?');
   print(transactions.map((e) => e.value).reduce(min));
-
 }
