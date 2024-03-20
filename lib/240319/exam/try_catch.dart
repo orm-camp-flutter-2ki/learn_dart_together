@@ -8,7 +8,8 @@ void main() {
   //
   // print(number);
 
-  print(exception('10.5'));
+  // 섹시코드
+  print(int.tryParse('10.5') ?? 0);
 }
 
 int exception(String numString) {
