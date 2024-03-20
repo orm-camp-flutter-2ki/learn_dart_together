@@ -42,11 +42,8 @@ void main() {
   });
 
   test('5. 밀라노에 거래자가 있는가?', () {
-    bool resultTrue = transactions.any((element) => element.trader.city == 'Milan');
-    bool resultFalse = transactions.any((element) => element.trader.city == 'Korea');
-
-    expect(resultTrue, true);
-    expect(resultFalse, false);
+    expect(transactions.any((element) => element.trader.city == 'Milan'), true);
+    expect(transactions.any((element) => element.trader.city == 'Korea'), false);
   });
 
   test('6. 케임브리지에 거주하는 거래자의 모든 트랙잭션 값을 출력한다.', () {
