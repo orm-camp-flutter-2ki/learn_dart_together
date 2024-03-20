@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:learn_dart_together/0320/transaction.dart';
 import 'package:test/test.dart';
 import 'package:collection/collection.dart';
@@ -55,12 +57,12 @@ void main() {
   });
 
   test('7. 전체 트랜잭션 중 최댓값은 얼마인가?', () {
-    Transaction result = transactions.reduce((value, element) => value.value > element.value ? value: element);
-    expect(result.value, 1000);
+    int result = transactions.map((element) => element.value).reduce((value, element) => max(value, element));
+    expect(result, 1000);
   });
 
   test('8. 전체 트랜잭션 중 최솟값은 얼마인가?', () {
-    Transaction result = transactions.reduce((value, element) => value.value < element.value ? value: element);
-    expect(result.value, 300);
+    int result = transactions.map((element) => element.value).reduce(min);
+    expect(result, 300);
   });
 }
