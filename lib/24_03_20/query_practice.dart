@@ -47,9 +47,15 @@ void main() {
   // var stage2 = stage1.toList();
   // var stage3 = stage2.sorted((a, b) => a.value.compareTo(b.value));
 
-
   /// 2. 거래자가 근무하는 모든 도시를 중복 없이 나열하시오 => set
   print('\n2번 문제 결과');
   transactions.map((e) => e.trader.city).toSet().forEach(print);
 
+  /// 3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열하시오
+  print('\n3번 문제 결과');
+  transactions
+      .where((e) => e.trader.city == 'Cambridge')
+      .map((e) => e.trader.name)
+      .toSet()
+      .forEach(print);
 }
