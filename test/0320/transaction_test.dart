@@ -30,4 +30,9 @@ void main() {
     Transaction result = transactions.reduce((value, element) => value.value > element.value ? value: element);
     expect(result.value, 1000);
   });
+
+  test('8. 전체 트랜잭션 중 최솟값은 얼마인가?', () {
+    Transaction result = transactions.reduce((value, element) => value.value < element.value ? value: element);
+    expect(result.value, 300);
+  });
 }
