@@ -64,4 +64,9 @@ void main() {
   transactions
       .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
       .forEach((e) => print(e.trader.name));
+
+  /// 5. 밀라노에 거래자가 있는가?
+  print('\n5번 문제 결과');
+  print(transactions.any((element) => element.trader.city == 'Milan'));
+
 }
