@@ -58,4 +58,10 @@ void main() {
       .map((e) => e.trader.name)
       .toSet()
       .forEach(print);
+
+  /// 4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열하시오
+  print('\n4번 문제 결과');
+  transactions
+      .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
+      .forEach((e) => print(e.trader.name));
 }
