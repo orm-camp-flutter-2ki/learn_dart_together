@@ -1,7 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-
-import 'package:collection/collection.dart';
+import 'package:learn_dart_together/240320/query.dart';
 
 class Trader {
   String name;

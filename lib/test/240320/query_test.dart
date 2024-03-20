@@ -37,14 +37,18 @@ void main() {
 
     test('3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열하시오', () {
       //given
-      List<String> sol3 = ['Alan', 'Brian', 'Raoul'];
+      var sol3 = [
+        Trader('Alan', 'Cambridge'),
+        Trader('Brian', 'Cambridge'),
+        Trader('Raoul', 'Cambridge')
+      ];
 
       //when
       final problem3 = transactions
           .where((transaction) => transaction.trader.city == "Cambridge")
           // .toList()
           .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
-          .map((transaction) => transaction.trader.name)
+          .map((transaction) => transaction.trader)
           .toSet()
         ..forEach(print);
 
