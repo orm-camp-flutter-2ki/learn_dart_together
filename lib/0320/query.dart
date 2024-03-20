@@ -29,7 +29,7 @@ class Transaction {
 
   @override
   String toString() {
-    return 'trader:$trader year:$year value:$value ';
+    return 'name:${trader.name}, city:${trader.city}, year:$year, value:$value';
   }
 
   @override
