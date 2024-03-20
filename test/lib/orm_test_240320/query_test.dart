@@ -43,4 +43,16 @@ void main() {
     transactions.any((transactions) => transactions.trader.city == 'Milan');
     expect(person, true);
   });
+
+  test('query 문제 6', () {
+    final sumValue = transactions
+        .where((transactions) => transactions.trader.city == 'Cambridge')
+        .map((transactions) => transactions.value)
+        .toList();
+
+    print('$sumValue');
+
+  });
+
+
 }
