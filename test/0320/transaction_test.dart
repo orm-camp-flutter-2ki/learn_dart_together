@@ -32,12 +32,13 @@ void main() {
   });
 
   test('4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열한다.', () {
-    List<Transaction> sorted = transactions.toList();
+    List<String> result = transactions
+        .map((element) => element.trader.name)
+        .sorted((a, b) => a.compareTo(b));
 
-    sorted.sort((a, b) => a.trader.name.compareTo(b.trader.name));
-
-    expect(sorted.first.trader.name, 'Alan');
-    expect(sorted.last.trader.name, 'Raoul');
+    expect(result.first, 'Alan');
+    expect(result[1], 'Brian');
+    expect(result.last, 'Raoul');
   });
 
   test('5. 밀라노에 거래자가 있는가?', () {
