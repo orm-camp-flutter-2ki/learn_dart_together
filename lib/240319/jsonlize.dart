@@ -16,7 +16,7 @@ class Employee {
   // 역직렬화 : fromJson() 메서드
   Employee.fromJson(Map<String, dynamic> json)
       : name = json['name'],
-        age = json['age']; // 'age'로 수정
+        age = json['age'];
 }
 
 class Department {
