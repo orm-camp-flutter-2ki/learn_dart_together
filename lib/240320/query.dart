@@ -30,6 +30,7 @@ void main() {
   question3(transactions);
   question4(transactions);
   question5(transactions);
+  question6(transactions);
 }
 
 void question1(List<Transaction> transactions) {
@@ -60,4 +61,9 @@ void question4(List<Transaction> transactions) {
 void question5(List<Transaction> transactions) {
   print('5. 밀라노에 거래자가 있는가?');
   transactions.where((transaction) => transaction.trader.city == 'Milan').map((transaction) => transaction.trader.name).toSet().forEach(print);
+}
+
+void question6(List<Transaction> transactions) {
+  print('6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 출력하시오');
+  transactions.where((transaction) => transaction.trader.city == 'Cambridge').map((transaction) => transaction.value).sorted((a, b) => a.compareTo(b)).forEach(print);
 }
