@@ -28,12 +28,12 @@ void main() {
       .where((transaction) => transaction.year == 2011)
       .toList();
   transactions2011.sort((a, b) => a.value.compareTo(b.value));
-  final traders2011 = transactions2011.map((transaction) => transaction.trader.name);
-  print("1. ${traders2011.join(', ')}");
+  final traders2011 = transactions2011.map((transaction) => transaction.trader.name).toList();
+  print("1. $traders2011");
 
   // 2. 거래자가 근무하는 모든 도시를 중복 없이 나열하시오
-  final cities = transactions.map((transaction) => transaction.trader.city).toSet();
-  print("2. ${cities.join(', ')}");
+  final cities = transactions.map((transaction) => transaction.trader.city).toSet().toList();
+  print("2. $cities");
 
   // 3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열하시오
   final cambridgeTraders = transactions
@@ -42,12 +42,12 @@ void main() {
       .toSet() // 중복 제거
       .toList(); // Set을 다시 리스트로 변환
   cambridgeTraders.sort();
-  print("3. ${cambridgeTraders.join(', ')}");
+  print("3. $cambridgeTraders");
 
   // 4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열하시오
   final allTraders = transactions.map((transaction) => transaction.trader.name).toSet().toList();
   allTraders.sort();
-  print("4. ${allTraders.join(', ')}");
+  print("4. $allTraders");
 
   // 5. 밀라노에 거래자가 있는가?
   final milanTraderExists = transactions.any((transaction) => transaction.trader.city == "Milan");
@@ -58,7 +58,7 @@ void main() {
       .where((transaction) => transaction.trader.city == "Cambridge")
       .map((transaction) => transaction.value)
       .toList();
-  print("6. ${cambridgeTransactions.join(', ')}");
+  print("6. $cambridgeTransactions");
 
   // 7. 전체 트랜잭션 중 최대값은 얼마인가?
   final maxValue = transactions.map((transaction) => transaction.value).reduce((a, b) => a > b ? a : b);

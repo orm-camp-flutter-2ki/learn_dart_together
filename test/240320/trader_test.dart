@@ -18,7 +18,7 @@ void main() {
         .where((transaction) => transaction.year == 2011)
         .toList();
     transactions2011.sort((a, b) => a.value.compareTo(b.value));
-    final traders2011 = transactions2011.map((transaction) => transaction.trader.name);
+    final traders2011 = transactions2011.map((transaction) => transaction.trader.name).toList();
 
     // Then
     expect(traders2011, equals(['Brian', 'Raoul']));
@@ -26,10 +26,10 @@ void main() {
 
   test('2. 모든 거래자가 근무하는 도시 나열', () {
     // When
-    final cities = transactions.map((transaction) => transaction.trader.city).toSet();
+    final cities = transactions.map((transaction) => transaction.trader.city).toSet().toList();
 
     // Then
-    expect(cities, equals({'Cambridge', 'Milan'}));
+    expect(cities, equals(['Cambridge', 'Milan']));
   });
 
   test('3. 케임브리지에서 근무하는 모든 거래자를 이름순으로 정렬하여 나열', () {
@@ -69,7 +69,7 @@ void main() {
         .toList();
 
     // Then
-    print("케임브리지 거래: $cambridgeTransactions");
+    expect(cambridgeTransactions, equals([300, 1000, 400, 950]));
   });
 
   test('7. 전체 트랜잭션 중 최대값은 얼마인가?', () {
