@@ -78,6 +78,9 @@ void main() {
     print(element.value);
   });
 
+  /// 7. 전체 트랜잭션 중 최대값은 얼마인가?
+  print('\n7번 문제 결과');
+  print(transactions.map((e) => e.value).reduce((v, e) => max(v, e)));
 
 
 }
