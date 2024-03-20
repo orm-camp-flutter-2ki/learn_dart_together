@@ -11,7 +11,7 @@ class Query {
     Transaction(Trader("Alan", "Cambridge"), 2012, 950),
   ];
 
-  List<Transaction> copyList(){
+  List<Transaction> copyList() {
     return [..._transactions];
   }
 
@@ -20,6 +20,17 @@ class Query {
   }
 
   List<String> secondTask() {
-    return copyList().map((transaction) => transaction.trader.city).toSet().toList();
+    return copyList()
+        .map((transaction) => transaction.trader.city)
+        .toSet()
+        .toList();
+  }
+
+  List<Trader> thirdTask() {
+    return copyList()
+        .where((transaction) => transaction.trader.city == "Cambridge")
+        .map((transaction) => transaction.trader)
+        .toList()
+        ..sort((a, b) => a.name.compareTo(b.name));
   }
 }
