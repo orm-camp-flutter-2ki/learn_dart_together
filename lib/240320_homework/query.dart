@@ -34,7 +34,7 @@ final transactions = [
 ];
 
 void main() {
-  //연습문제 1번
+  //연습 문제 1번 Raoul Brian
   transactions
       .where((transaction) => transaction.year == 2011)
       .toList()
@@ -42,6 +42,6 @@ void main() {
       .map((transaction) => transaction.trader.name)
       .forEach(print);
 
-
-
+  //연습 문제 2번 {Cambridge, Milan}
+  transactions.map((transaction) => transaction.trader.city).toList().toSet();
 }
