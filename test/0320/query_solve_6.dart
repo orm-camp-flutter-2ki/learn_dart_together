@@ -15,20 +15,4 @@ void main() {
         .map((e) => e.value)
         .forEach((print));
   });
-
-  test('query_solve_6 toMap test', () {
-    /// map은 key의 중복을 허용하지 않는다... 자꾸 Raoul 한 명이 사라지는게 이상해서 찾아보다가 깨달았다...
-    List<Transaction> testList = transactions
-        .where((element) => element.trader.city == 'Cambridge')
-        .toList();
-
-    Map<String, int> transactionMap = {
-      for (var element in testList) element.trader.name: element.value
-    };
-
-    // print(transactionMap);
-    for (var element in transactionMap.entries) {
-      print('name: ${element.key} Value: ${element.value}');
-    }
-  });
 }

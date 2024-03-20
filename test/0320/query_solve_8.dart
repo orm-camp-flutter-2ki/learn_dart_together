@@ -10,11 +10,7 @@ void main() {
   // 8. 전체 트랜잭션 중 최소값은 얼마인가?
   // 예상 값 : 300
 
-  test('query_solve_4 test', () {
-    final maxValue = transactions
-        .map((e) => e.value)
-        .reduce((value, element) => min(value, element));
-
-    expect(maxValue, 300);
+  test('query_solve_8 test', () {
+    expect(transactions.map((e) => e.value).reduce(min), 300);
   });
 }

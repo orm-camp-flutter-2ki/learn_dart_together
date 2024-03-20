@@ -10,11 +10,7 @@ void main() {
   //  7. 전체 트랜잭션 중 최대값은 얼마인가?
   // 예상 값 : 1000
 
-  test('query_solve_4 test', () {
-    final maxValue = transactions
-        .map((e) => e.value)
-        .reduce((value, element) => max(value, element));
-
-    expect(maxValue, 1000);
+  test('query_solve_7 test', () {
+    expect(transactions.map((e) => e.value).reduce(max), 1000);
   });
 }
