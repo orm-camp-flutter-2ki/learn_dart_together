@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+import 'practice_1_debug/collectionChartDataList.dart';
+import 'practice_1_debug/collectionSalePrice.dart';
+
 final String json = '''{
  "collectionChartDataList": [
    {
@@ -23,20 +26,25 @@ final String json = '''{
 }''';
 
 void main() {
+  // String -> Map<String, dynamic>
   Map<String, dynamic> data = jsonDecode(json);
-
+  // List 로 강제 형 변환
   List collectionChartDataList = data['collectionChartDataList'] as List;
 
   var result = collectionChartDataList.map(dataMapping).toList();
 
   print(result);
+
 }
+
 // 일급 함수
 var innerDataMapping = (dynamic data) {
   return CollectionSalePrice(data['price'], data['cvtDatetime']);
 };
 
+
 var dataMapping = (dynamic data) {
+
   if (data['collectionSalePrice'] != null) {
     return CollectionChartDataList(
       data['collectionName'],
@@ -45,27 +53,3 @@ var dataMapping = (dynamic data) {
   }
   return CollectionChartDataList(data['collectionName'], null);
 };
-
-class CollectionChartDataList {
-  String collectionName;
-  List<CollectionSalePrice>? collectionSalePrice;
-
-  CollectionChartDataList(this.collectionName, this.collectionSalePrice);
-
-  @override
-  String toString() {
-    return 'CollectionChartDataList{collectionName: $collectionName, collectionSalePrice: $collectionSalePrice}';
-  }
-}
-
-class CollectionSalePrice {
-  double price;
-  String cvtDatetime;
-
-  CollectionSalePrice(this.price, this.cvtDatetime);
-
-  @override
-  String toString() {
-    return 'CollectionSalePrice{price: $price, cvtDatetime: $cvtDatetime}';
-  }
-}
