@@ -69,4 +69,15 @@ void main() {
   print('\n5번 문제 결과');
   print(transactions.any((element) => element.trader.city == 'Milan'));
 
+
+  /// 6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 출력하시오
+  print('\n6번 문제 결과');
+  transactions
+      .where((element) => element.trader.city == 'Cambridge')
+      .forEach((element) {
+    print(element.value);
+  });
+
+
+
 }
