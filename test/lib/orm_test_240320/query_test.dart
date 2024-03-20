@@ -28,4 +28,13 @@ void main() {
         .toSet()
         .forEach(print);
   });
+
+  test('query 문제 4', () {
+    transactions
+        .map((transactions) => transactions.trader.name)
+        .sorted((a, b) => a.compareTo(b))
+        .toSet()
+        .toList()
+        .forEach(print);
+  });
 }
