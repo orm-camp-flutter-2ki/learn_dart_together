@@ -66,4 +66,16 @@ void main() {
 
     expect(milanTraderExists, equals(true));
   });
+
+  // 6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 출력하시오
+  test('test6', () {
+    List<int> cambridgeTransactions = transaction
+        .where((e) => e.trader.city == 'Cambridge')
+        .map((e) => e.value)
+        .toList();
+
+    List<int> expectedList = [300, 1000, 400, 950];
+
+    expect(cambridgeTransactions, equals(expectedList));
+  });
 }
