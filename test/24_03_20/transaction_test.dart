@@ -17,4 +17,17 @@ void main() {
 
     expect(sortedList1, equals(expectedList1));
   });
+
+  // '2. 거래자가 근무하는 모든 도시를 중복 없이 나열하시오'
+  test('test2', () {
+    Set<String> cities = transaction
+        .map((e) => e.trader.city)
+        .toSet();
+
+    Set<String> expectedSet = {'Cambridge', 'Milan'};
+    Set<String> expectedSet2 = {'Milan', 'Cambridge'};
+
+    expect(cities, equals(expectedSet));
+    expect(cities, equals(expectedSet2));
+  });
 }
