@@ -46,7 +46,9 @@ void main() {
 
   //디코드
   final stringText2 = jsonDecode(stringText);
-  print(text);          //Map
-  print(stringText2);   // Map
+  print(text); //Map
+  print(stringText2); // Map
 
+  String name = '신승찬';
+  name.trim();
 }
