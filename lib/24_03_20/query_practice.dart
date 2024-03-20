@@ -69,7 +69,6 @@ void main() {
   print('\n5번 문제 결과');
   print(transactions.any((element) => element.trader.city == 'Milan'));
 
-
   /// 6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 출력하시오
   print('\n6번 문제 결과');
   transactions
@@ -82,5 +81,7 @@ void main() {
   print('\n7번 문제 결과');
   print(transactions.map((e) => e.value).reduce((v, e) => max(v, e)));
 
-
+  /// 8. 전체 트랜잭션 중 최소값은 얼마인가?
+  print('\n8번 문제 결과');
+  print(transactions.map((e) => e.value).reduce((v, e) => min(v, e)));
 }
