@@ -33,4 +33,12 @@ class Query {
         .toList()
         ..sort((a, b) => a.name.compareTo(b.name));
   }
+
+  List<String> fourthTask() {
+    return copyList()
+        .map((transaction) => transaction.trader.name)
+        .toSet()
+        .toList()
+        ..sort((a, b) => a.compareTo(b));
+  }
 }
