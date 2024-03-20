@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:learn_dart_together/24_03_20/trader.dart';
 import 'package:learn_dart_together/24_03_20/transaction.dart';
 
@@ -17,8 +18,12 @@ class Query {
   }
 
   // 1. 2011년에 일어난 모든 트랜잭션을 찾아 가격 기준 오름차순으로 정리하여 이름을 나열
-  List<Transaction> firstTask() {
-    return copyList().where((transaction) => transaction.year == 2011).toList();
+  List<String> firstTask() {
+    return copyList()
+        .where((transaction) => transaction.year == 2011)
+        .sorted((a, b) => a.value.compareTo(b.value))
+        .map((transaction) => transaction.trader.name)
+        .toList();
   }
 
   // 2. 거래자가 근무하는 모든 도시를 중복 없이 나열
@@ -34,8 +39,7 @@ class Query {
     return copyList()
         .where((transaction) => transaction.trader.city == "Cambridge")
         .map((transaction) => transaction.trader)
-        .toList()
-      ..sort((a, b) => a.name.compareTo(b.name));
+        .sorted((a, b) => a.name.compareTo(b.name));
   }
 
   // 4. 모든 거래자의 이름을 알파벳순으로 정렬해서 반환
@@ -43,8 +47,7 @@ class Query {
     return copyList()
         .map((transaction) => transaction.trader.name)
         .toSet()
-        .toList()
-      ..sort((a, b) => a.compareTo(b));
+        .sorted((a, b) => a.compareTo(b));
   }
 
   // 5. 밀라노에 거래자가 있는지 여부
