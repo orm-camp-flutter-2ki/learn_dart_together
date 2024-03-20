@@ -67,4 +67,10 @@ void main() {
       .where((transaction) => transaction.trader.city == "Cambridge")
       .map((transaction) => transaction.value)
       .toList();
+
+  //연습 문제 7번
+  transactions.map((transaction) => transaction.value).toList().max;
+
+  //연습 문제 8번
+  transactions.map((transaction) => transaction.value).toList().min;
 }
