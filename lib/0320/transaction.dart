@@ -2,9 +2,9 @@ import 'trader.dart';
 
 class Transaction {
 
-  Trader trader;
-  int year;
-  int value;
+  final Trader trader;
+  final int year;
+  final int value;
 
   Transaction(this.trader, this.year, this.value);
 
