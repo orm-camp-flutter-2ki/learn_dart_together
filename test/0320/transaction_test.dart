@@ -14,11 +14,10 @@ void main() {
   });
 
   test('2. 거래자가 근무하는 모든 도시를 중복 없이 나열한다.', () {
-    Set<String> set = {};
-
-    transactions.forEach((element) { set.add(element.trader.city); });
-
-    expect(set.toString(), '{Cambridge, Milan}');
+    Set<String> result = transactions.map((element) => element.trader.city).toSet();
+    
+    expect(result.length, 2);
+    expect(result.toString(), '{Cambridge, Milan}');
   });
 
   test('3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열한다.', () {
