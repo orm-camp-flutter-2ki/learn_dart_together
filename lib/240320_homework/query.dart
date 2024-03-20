@@ -43,7 +43,7 @@ void main() {
       .forEach(print);
 
   //연습 문제 2번 {Cambridge, Milan}
-  transactions.map((transaction) => transaction.trader.city).toList().toSet();
+  transactions.map((transaction) => transaction.trader.city).toSet();
 
   //연습 문제 3번 [Alan, Brian, Raoul, Raoul]
   transactions
@@ -54,7 +54,7 @@ void main() {
 
   //연습 문제 4번 [Alan, Brian, Mario, Mario, Raoul, Raoul]
   transactions
-      .sorted((a, b) => b.trader.name.compareTo(a.trader.name))
+      .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
       .map((transaction) => transaction.trader.name)
       .toList();
 
