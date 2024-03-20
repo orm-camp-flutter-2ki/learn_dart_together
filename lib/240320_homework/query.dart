@@ -44,4 +44,12 @@ void main() {
 
   //연습 문제 2번 {Cambridge, Milan}
   transactions.map((transaction) => transaction.trader.city).toList().toSet();
+
+  //연습 문제 3번 [Alan, Brian, Raoul, Raoul]
+  transactions
+      .where((transaction) => transaction.trader.city == "Cambridge")
+      .toList()
+      .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
+      .map((transaction) => transaction.trader.name)
+      .toList();
 }
