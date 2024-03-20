@@ -108,12 +108,22 @@ void main(){
 // cities.toList()..sort()..forEach(print);
 
 //3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열하시오
- final cambridgeTraders = transactions
-     .where((transaction) => transaction.trader.city == "Cambridge")
-    // .map((transaction) => transaction.trader.city == "Cambridge") // 케임브리지에 거주하는 거래자만
-    .map((transaction) => transaction.trader)
-    .toList()
-    .sorted((a,b) => a.name.compareTo(b.name));
+//  final cambridgeTraders = transactions
+//      .where((transaction) => transaction.trader.city == "Cambridge")
+//     // .map((transaction) => transaction.trader.city == "Cambridge") // 케임브리지에 거주하는 거래자만
+//     .map((transaction) => transaction.trader)
+//     .toList()
+//     .sorted((a,b) => a.name.compareTo(b.name));
+//
+// cambridgeTraders.forEach((trader) => print(trader.name));
 
-cambridgeTraders.forEach((trader) => print(trader.name));
+// 4. 모든 거래자(trader)의 이름을 알파벳순으로 정렬하여 나열하시오
+final traderNames = transactions
+    .map((transaction) => transaction.trader.name)
+    .toList();
+
+    traderNames.sort();
+
+    traderNames.forEach(print);
+
 }
