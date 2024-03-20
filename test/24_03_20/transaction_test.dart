@@ -91,4 +91,19 @@ void main() {
 
     expect(maxTransactionValue, equals(1000));
   });
+
+  // 8. 전체 트랜잭션 중 최소값은 얼마인가?
+  test('test8', () {
+    List<int> minTransactionValueList = transaction
+        .map((e) => e.value)
+        .toList()
+        .sorted((a, b) => a.compareTo(b));
+
+    final minTransactionValue = minTransactionValueList.isNotEmpty
+        ? minTransactionValueList.first : null;
+
+    expect(minTransactionValue, equals(300));
+  });
 }
+
+// 매번 늦어서 죄송합니다 😢 빠르게 해보고 싶은데 잘 안되네요.
