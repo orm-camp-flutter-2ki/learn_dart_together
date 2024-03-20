@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 class Trader {
   String name;
   String city;
@@ -21,3 +23,17 @@ final transactions = [
   Transaction(Trader("Mario", "Milan"), 2012, 700),
   Transaction(Trader("Alan", "Cambridge"), 2012, 950),
 ];
+
+void main(){
+  //1. 2011년에 일어난 모든 트랜잭션을 찾아 가격기준 오름차순으로 정리하여 이름을 나열하시오.
+//가격기준,
+//오름차순
+//이름만 나열
+
+transactions
+    .where((transaction) => transaction.year == 2011) //where 이터러블, 리스트로 바꿔야 함
+    .toList()
+    .sorted((a,b) => a.value.compareTo(b.value)) //오름차순 정렬
+    .map((transaction) => transaction.trader.name) //트렌젝션 트레이더의 이름으로 다 바꾸겠음, 스트링만 남는다
+    .forEach(print);
+}
