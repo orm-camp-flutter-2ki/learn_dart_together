@@ -31,7 +31,7 @@ class Query {
         .where((transaction) => transaction.trader.city == "Cambridge")
         .map((transaction) => transaction.trader)
         .toList()
-        ..sort((a, b) => a.name.compareTo(b.name));
+      ..sort((a, b) => a.name.compareTo(b.name));
   }
 
   List<String> fourthTask() {
@@ -39,10 +39,17 @@ class Query {
         .map((transaction) => transaction.trader.name)
         .toSet()
         .toList()
-        ..sort((a, b) => a.compareTo(b));
+      ..sort((a, b) => a.compareTo(b));
   }
 
   bool fifthTask() {
     return copyList().any((transaction) => transaction.trader.city == "Milan");
+  }
+
+  List<int> sixthTask() {
+    return copyList()
+        .where((transaction) => transaction.trader.city == "Cambridge")
+        .map((transaction) => transaction.value)
+        .toList();
   }
 }
