@@ -1,7 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-
-import 'package:learn_dart_together/240314/ab_class.dart';
 import 'package:test/test.dart';
 
 import '../../240319/company.dart';
@@ -11,8 +9,8 @@ void main() {
     Departemnet hong = Departemnet('총무부', Employee('홍길동', 41));
     File companyFile = File('lib/240319/company.txt');
 
-    companyFile.writeAsStringSync(json.encode(hong));
+    companyFile.writeAsStringSync(jsonEncode(hong));
 
-    expect(companyFile.readAsStringSync(), json.encode(hong));
+    expect(companyFile.readAsStringSync(), jsonEncode(hong));
   });
 }
