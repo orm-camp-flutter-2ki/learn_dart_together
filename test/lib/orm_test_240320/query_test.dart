@@ -57,4 +57,9 @@ void main() {
     final maxValue = transactions.map((transactions) => transactions.value).max;
     print(maxValue);
   });
+
+  test('query 문제 8', () {
+    final minValue = transactions.map((transactions) => transactions.value).min;
+    print(minValue);
+  });
 }
