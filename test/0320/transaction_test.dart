@@ -15,21 +15,20 @@ void main() {
 
   test('2. 거래자가 근무하는 모든 도시를 중복 없이 나열한다.', () {
     Set<String> result = transactions.map((element) => element.trader.city).toSet();
-    
+
     expect(result.length, 2);
     expect(result.toString(), '{Cambridge, Milan}');
   });
 
   test('3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열한다.', () {
-    List<Transaction> list = transactions.where((element) => element.trader.city == 'Cambridge').toList();
-    List<Transaction> sorted = list.toList();
+    List<String> result = transactions
+        .where((element) => element.trader.city == 'Cambridge')
+        .map((element) => element.trader.name)
+        .sorted((a, b) => a.compareTo(b));
 
-    sorted.sort((a, b) => a.trader.name.compareTo(b.trader.name));
-
-    expect(sorted.length, 4);
-    expect(sorted.first.trader.name, 'Alan');
-    expect(sorted.last.trader.name, 'Raoul');
-
+    expect(result.length, 4);
+    expect(result.first, 'Alan');
+    expect(result.last, 'Raoul');
   });
 
   test('4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열한다.', () {
