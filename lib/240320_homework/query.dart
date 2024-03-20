@@ -48,7 +48,6 @@ void main() {
   //연습 문제 3번 [Alan, Brian, Raoul, Raoul]
   transactions
       .where((transaction) => transaction.trader.city == "Cambridge")
-      .toList()
       .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
       .map((transaction) => transaction.trader.name)
       .toList();
@@ -59,18 +58,18 @@ void main() {
       .map((transaction) => transaction.trader.name)
       .toList();
 
-  //연습 문제 5번
+  //연습 문제 5번 true
   transactions.any((transaction) => transaction.trader.city == "Milan");
 
-  //연습 문제 6번
+  //연습 문제 6번 300 1000 400 950
   transactions
       .where((transaction) => transaction.trader.city == "Cambridge")
       .map((transaction) => transaction.value)
-      .toList();
+      .forEach(print);
 
-  //연습 문제 7번
+  //연습 문제 7번 1000
   transactions.map((transaction) => transaction.value).toList().max;
 
-  //연습 문제 8번
+  //연습 문제 8번 300
   transactions.map((transaction) => transaction.value).toList().min;
 }
