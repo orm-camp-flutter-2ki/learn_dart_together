@@ -1,3 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
 import 'package:collection/collection.dart';
 
 class Trader {
@@ -5,6 +8,40 @@ class Trader {
   String city;
 
   Trader(this.name, this.city);
+
+  @override
+  bool operator ==(covariant Trader other) {
+    if (identical(this, other)) return true;
+
+    return other.name == name && other.city == city;
+  }
+
+  @override
+  int get hashCode => name.hashCode ^ city.hashCode;
+
+  @override
+  String toString() => 'Trader(name: $name, city: $city)';
+
+  Map<String, dynamic> tojson() {
+    return <String, dynamic>{
+      'name': name,
+      'city': city,
+    };
+  }
+
+  Trader.fromMap(Map<String, dynamic> json)
+      : name = json['name'],
+        city = json['city'];
+
+  Trader copyWith({
+    String? name,
+    String? city,
+  }) {
+    return Trader(
+      name ?? this.name,
+      city ?? this.city,
+    );
+  }
 }
 
 class Transaction {
@@ -13,6 +50,45 @@ class Transaction {
   int value;
 
   Transaction(this.trader, this.year, this.value);
+
+  @override
+  bool operator ==(covariant Transaction other) {
+    if (identical(this, other)) return true;
+
+    return other.trader == trader && other.year == year && other.value == value;
+  }
+
+  @override
+  int get hashCode => trader.hashCode ^ year.hashCode ^ value.hashCode;
+
+  @override
+  String toString() =>
+      'Transaction(trader: $trader, year: $year, value: $value)';
+
+  Transaction copyWith({
+    Trader? trader,
+    int? year,
+    int? value,
+  }) {
+    return Transaction(
+      trader ?? this.trader,
+      year ?? this.year,
+      value ?? this.value,
+    );
+  }
+
+  Map<String, dynamic> tojson() {
+    return <String, dynamic>{
+      'trader': trader.tojson(),
+      'year': year,
+      'value': value,
+    };
+  }
+
+  Transaction.fromJson(Map<String, dynamic> json)
+      : trader = json['trader'],
+        year = json['year'],
+        value = json['value'];
 }
 
 final transactions = [
