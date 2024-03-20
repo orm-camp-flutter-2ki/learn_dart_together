@@ -8,7 +8,9 @@ void main() {
   test('employee test', () {
     final department = Department('총무부', Employee('홍길동', 41));
 
-    String jsonString = jsonEncode(department.toJson());
+    // String jsonString = jsonEncode(department.toJson());
+    // https://api.flutter.dev/flutter/dart-convert/jsonEncode.html
+    String jsonString = jsonEncode(department);
 
     File('company.txt').writeAsStringSync(jsonString);
 
