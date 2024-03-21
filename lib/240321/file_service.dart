@@ -1,7 +1,7 @@
 import 'dart:io';
 
 class FileService {
-  void replaceText ({
+  Future<void> replaceText ({
     required String copyPath,
     required String pastePath,
     required String targetText,
@@ -9,7 +9,14 @@ class FileService {
   }) async {
     final copyFile = File(copyPath);
     final pasteFile = File(pastePath);
-    await pasteFile
-        .writeAsString(copyFile.readAsStringSync().replaceAll(targetText, changeText));
+
+    try {
+      final copyFileText = await copyFile.readAsString();
+      await pasteFile.writeAsString(copyFileText.replaceAll(targetText, changeText));
+    } on PathNotFoundException catch (e) {
+      print('에러 : 파일을 찾을 수 없습니다.');
+    } catch (e) {
+      print('에러 : $e');
+    }
   }
 }
