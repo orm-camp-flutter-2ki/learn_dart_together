@@ -4,11 +4,11 @@ void main() {
   timeoutTask();
 }
 
-void timeoutTask() async {
+Future<String> timeoutTask() async {
   try {
-    await waitTask().timeout(const Duration(seconds: 5));
+    return await waitTask().timeout(const Duration(seconds: 5));
   } on TimeoutException catch (error) {
-    print('timeout');
+    return 'timeout';
   }
 }
 
