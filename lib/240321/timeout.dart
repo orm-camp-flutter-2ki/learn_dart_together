@@ -5,7 +5,7 @@ Future<String> timeoutFuture() async {
   return 'ok';
 }
 
-Future<void> main() async {
+void main() async {
   try {
     final result = await Future.timeout(
       Duration(seconds: 5),

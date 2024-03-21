@@ -6,8 +6,7 @@ class Movie {
   final String director;
   final int year;
 
-  const Movie({required this.title, required this.director, required this.year});
-
+  Movie({required this.title, required this.director, required this.year});
 
   @override
   bool operator ==(Object other) =>
@@ -32,24 +31,23 @@ class Movie {
         director = json['director'],
         year = json['year']
 
-  Future<Map<String, dynamic>> toJson() async => {
-    'title': title,
-    'director': director,
-    'year': year,
-  };
+  // Future<Map<String, dynamic>> toJson() async => {
+  //   'title': title,
+  //   'director': director,
+  //   'year': year,
+  // };
 
-  Movie copyWith({
-    String? title,
-    String? director,
-    int? year,
-  }) {
-    return Movie(
-      title: title ?? this.title,
-      director:director?? this.director,
-      year: year ?? this.year,
-    );
-  }
-
+  // Movie copyWith({
+  //   String? title,
+  //   String? director,
+  //   int? year,
+  // }) {
+  //   return Movie(
+  //     title: title ?? this.title,
+  //     director:director?? this.director,
+  //     year: year ?? this.year,
+  //   );
+  // }
 }
 
 Future<Movie> getMovieInfo() async {
