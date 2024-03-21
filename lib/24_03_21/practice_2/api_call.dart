@@ -68,4 +68,9 @@ class Movie {
       };
 }
 
-void main() {}
+void main() async {
+  final movieInfo = await getMovieInfo();
+  final List<String> infoList = movieInfo.toString().split(',');
+
+  print(infoList[1]);
+}
