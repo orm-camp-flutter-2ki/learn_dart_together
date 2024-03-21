@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-void main() {
-  getMovieInfo();
+void main() async {
+  print((await getMovieInfo()).director);
 }
 
 Future<Movie> getMovieInfo() async {
@@ -15,7 +15,7 @@ Future<Movie> getMovieInfo() async {
   "year": 1977
   }''';
 
-  Map<String, dynamic> dataMap = json.decode(jsonstring);
+  Map<String, dynamic> dataMap =  jsonDecode(jsonstring);
 
   //to jason
 //TODO: Movie 데이터 클래스를 리턴하도록 작성
@@ -29,8 +29,8 @@ class Movie {
 
   Movie(this.title, this.director, this.year);
 
-  Movie.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
-        director = json['director'],
-        year = json['year'];
+  // Movie.fromJson(Map<String, dynamic> json)
+  //     : title = json['title'],
+  //       director = json['director'],
+  //       year = json['year'];
 }
