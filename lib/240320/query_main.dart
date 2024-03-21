@@ -24,6 +24,7 @@ void main() {
   transactions
       .where((e) => e.trader.city == "Cambridge")
       .map((e) => e.trader.name)
+      .sorted(Comparable.compare)
       .toSet()
       .forEach(print);
 
@@ -37,11 +38,11 @@ void main() {
 
   //------------------------------------------------------------------------
   print('5. 밀라노에 거래자가 있는가?');
-  print(transactions.any((e) => e.trader.city == "Milano"));
+  print(transactions.any((e) => e.trader.city == 'Milan'));
 
   //------------------------------------------------------------------------
   print('6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 출력하시오.');
-  transactions.where((e) => e.trader.city == "Cambridge").forEach((e) {
+  transactions.where((e) => e.trader.city == 'Cambridge').forEach((e) {
     print('${e.trader.name},${e.year},${e.value}');
   });
 
