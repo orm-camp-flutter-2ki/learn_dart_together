@@ -1,14 +1,18 @@
 import 'dart:convert';
 
 void main() async {
+  Stopwatch stopwatch = Stopwatch();
+  stopwatch.start();
   Movie movieInfo = await getMovieInfo();
   String director = movieInfo.director;
-  print(director);
+  print('director:$director');
+  stopwatch.stop();
+  print('getMovieInfo 함수는 ${stopwatch.elapsed.toString().substring(5)}초가 걸렸습니다.');
 }
 
 Future<Movie> getMovieInfo() async {
   //TODO: 2초동안 기다리는 코드 작성
-  Future.delayed(const Duration(seconds: 2));
+  await Future.delayed(const Duration(seconds: 2));
 
   //서버에서 들어오는 데이터라고 상상
   final String jsonstring = '''{
