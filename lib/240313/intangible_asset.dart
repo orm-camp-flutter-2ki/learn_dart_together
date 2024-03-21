@@ -7,5 +7,4 @@ abstract class IntangibleAsset extends Asset {
   // int price;
   // String color;
 
-  IntangibleAsset(super.name, super.price);
 }

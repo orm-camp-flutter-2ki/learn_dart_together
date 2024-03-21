@@ -1,19 +1,13 @@
-import 'tangible_asset.dart';
+import 'package:learn_dart_together/240313/tangible_asset.dart';
 
 class Book extends TangibleAsset {
-  // String name;
-  // int price;
-  // String color;
   String isbn;
 
-  Book(
-    super.name,
-    super.price,{
+  Book({
+    required super.name,
+    required super.price,
     required super.color,
+    required this.isbn,
     required super.weight,
-    required this.isbn, required String name, required int price,
   });
-
-// @override
-// double weight;
 }
