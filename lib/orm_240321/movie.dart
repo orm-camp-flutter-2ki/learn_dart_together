@@ -37,6 +37,25 @@ class Movie {
     );
   }
 
+  Map<String, dynamic> toJson() => {
+        'title': title,
+        'director': director,
+        'year': year,
+      };
+
+  factory Movie.fromJson(Map<String, dynamic> json) {
+    return Movie(
+      json["title"],
+      json["director"],
+      json['year'],
+    );
+  }
+
+  @override
+  String toString() {
+    return 'Movie{_title: $_title, _director: $_director, _year: $_year}';
+  }
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -48,31 +67,15 @@ class Movie {
 
   @override
   int get hashCode => title.hashCode ^ director.hashCode ^ year.hashCode;
-
-  Map<String, dynamic> toJson() => {
-        'title': title,
-        'director': director,
-        'year': year,
-      };
-
-  Movie.fromJson(Map<String, dynamic> json)
-      : _title = json["title"],
-        _director = json["director"],
-        _year = json['year'];
-
-  @override
-  String toString() {
-    return 'People{ $title, $director, $year }';
-  }
 }
 
-Future<void> main() async {
-  final String jsonString = '''{
-  "title": "Star Ward",
-  "director": "George Lucas",
-  "year": 1997
-  }''';
-
-  getMovieInfo(jsonString);
-  // 아직 미완..
-}
+// Future<void> main() async {
+//   final String jsonString = '''{
+//   "title": "Star Ward",
+//   "director": "George Lucas",
+//   "year": 1997
+//   }''';
+//
+//   getMovieInfo(jsonString);
+//
+// }
