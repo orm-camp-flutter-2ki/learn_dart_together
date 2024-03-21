@@ -22,7 +22,7 @@ class Employee {
     );
   }
 
-  //fromJson JSON 형식의 문자열을 객체나 데이터 구조로 역직렬화하는 기능
+  //디코딩 함수: fromJson JSON 형식의 문자열을 객체나 데이터 구조로 역직렬화하는 기능
   Employee.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         age = json['age'];
