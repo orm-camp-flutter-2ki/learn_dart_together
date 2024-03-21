@@ -6,9 +6,11 @@ import 'package:test/scaffolding.dart';
 
 void main() {
   // 5. 밀라노에 거래자가 있는가?
-  // 예상 값 : true(Mario, Mario)
+  final expectedResult = true;
 
   test('query_solve_5 밀라노 거래자가 있는지 test', () {
-    expect(transactions.any((element) => element.trader.city == 'Milan'), true);
+    final actualResult = transactions.any((element) => element.trader.city == 'Milan');
+
+    expect(actualResult, expectedResult);
   });
 }
