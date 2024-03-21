@@ -4,7 +4,7 @@ void copyModify(String source) async {
   try {
     final filePath = source.replaceAll('sample.csv', '');
     final originDetail = await File(source).readAsString();
-    final copyFile = File('$filePath/sample_copy.csv');
+    final copyFile = File('${filePath}sample_copy.csv');
 
     final bool isHan = originDetail
         .replaceAll(" ", "") // 공백제거
