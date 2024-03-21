@@ -8,6 +8,7 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  intl: ^0.18.1
   collection: ^1.18.0
   # path: ^1.8.0
 
