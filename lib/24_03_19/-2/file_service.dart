@@ -38,4 +38,8 @@ class FileService {
   Future<void> asyncWriteToFile(String path, String content) async {
     await File(path).writeAsString(content);
   }
+
+  bool isFileExist(String path) {
+    return File(path).existsSync();
+  }
 }
