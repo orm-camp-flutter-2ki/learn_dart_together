@@ -1,48 +1,69 @@
 import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-Future<Movie> getMovieInFo() {
+Future<Movie> getMovieInFo() async {
   // 2초 기다리는 코드 작성
-  Future.delayed(Duration(seconds: 2));
+  await Future.delayed(Duration(seconds: 2));
 
   // 서버에 들어오는 데이터
   final String jsonString = '''{
-    "title" : "Star Ward"
+    "title" : "Star Ward",
     "director" : "George Lucas",
     "year" : 1977
   }''';
 
   // 무비 데이터 클래스를 리턴
-  return jsonDecode(jsonString);
+  return Movie.fromJson(jsonDecode(jsonString));
 }
 
 class Movie {
-  String _title;
-  String _director;
-  int _year;
+  String title;
+  String director;
+  int year;
 
   Movie({
-    required String title,
-    required String director,
-    required int year,
-  })  : _title = title,
-        _director = director,
-        _year = year;
+    required this.title,
+    required this.director,
+    required this.year,
+  });
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      '_title': _title,
-      '_director': _director,
-      '_year': _year,
+      'title': title,
+      'director': director,
+      'year': year,
     };
   }
 
-  Movie.fromMap(Map<String, dynamic> json)
-      : _title = json['title'],
-        _director = json['_director'],
-        _year = json['_year'];
-}
+  Movie.fromJson(Map<String, dynamic> json)
+      : title = json['title'],
+        director = json['director'],
+        year = json['year'];
 
-void main() {
-  getMovieInFo();
+  @override
+  bool operator ==(covariant Movie other) {
+    if (identical(this, other)) return true;
+
+    return other.title == title &&
+        other.director == director &&
+        other.year == year;
+  }
+
+  @override
+  int get hashCode => title.hashCode ^ director.hashCode ^ year.hashCode;
+
+  Movie copyWith({
+    String? title,
+    String? director,
+    int? year,
+  }) {
+    return Movie(
+      title: title ?? this.title,
+      director: director ?? this.director,
+      year: year ?? this.year,
+    );
+  }
+
+  @override
+  String toString() => 'Movie(title: $title, director: $director, year: $year)';
 }
