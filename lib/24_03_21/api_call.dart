@@ -1,5 +1,6 @@
 import 'dart:convert';
-
+/// 다음과 같은 영화 정보 Json 을 반환하는 함수가 있다. (async - await 사용할 것)
+/// 함수를 완성하고 director 가 누군지 출력해 보시오.
 Future<Movie> getMovieInfo() async {
   Future.delayed(Duration(seconds: 2));
 
@@ -44,7 +45,7 @@ class Movie {
 
   @override
   String toString() {
-    return 'Movie{_title: $title, _director: $director, _year: $year}';
+    return 'Movie{title: $title, director: $director, year: $year}';
   }
 
   @override
