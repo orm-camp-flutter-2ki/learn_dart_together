@@ -32,7 +32,7 @@ class AsyncPractice {
   // 과제3. 5초 이내에 완료되지 않으면 timeout 문자열을 반환하는 메소드
   Future<String> timeoutFuture(int delayed, int timeout) async {
     try {
-      await Future.delayed(Duration(seconds: 7)).timeout(Duration(seconds: 5));
+      await Future.delayed(Duration(seconds: delayed)).timeout(Duration(seconds: timeout));
       return '완료';
     } on TimeoutException {
       return 'timeout';

@@ -45,5 +45,35 @@ void main() {
         expect(result.director, expected);
       });
     });
+
+    group('timeoutFuture 메소드는', () {
+      test('지정된 시간안에 함수가 끝나지 않으면 timeout 문자를 반환한다.', () async {
+        // Given
+        String expected = 'timeout';
+        int delayed = 5;
+        int timeout = 3;
+
+        // When
+        String result = await asyncPractice.timeoutFuture(delayed, timeout);
+
+        // Then
+        expect(result, expected);
+      });
+    });
+
+    group('timeoutFuture 메소드는', () {
+      test('지정된 시간안에 함수가 끝나면 완료 문자를 반환한다.', () async {
+        // Given
+        String expected = '완료';
+        int delayed = 1;
+        int timeout = 3;
+
+        // When
+        String result = await asyncPractice.timeoutFuture(delayed, timeout);
+
+        // Then
+        expect(result, expected);
+      });
+    });
   });
 }
