@@ -13,7 +13,7 @@ class StrongBox<T> {
 
   T? get() {
     _usageCount++;
-    int maxUsage = getMaxUsage();
+    int maxUsage = _getMaxUsage();
     if (_usageCount < maxUsage) {
       return null; // 사용 횟수가 최대 사용 횟수에 도달하지 않으면 null을 반환
     } else {
@@ -21,7 +21,7 @@ class StrongBox<T> {
     }
   }
 
-  int getMaxUsage() {
+  int _getMaxUsage() {
     switch (_keyType) {
       case KeyType.padlock:
         return 1024;

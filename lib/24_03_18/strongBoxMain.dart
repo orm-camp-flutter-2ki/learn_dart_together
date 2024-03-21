@@ -1,5 +1,7 @@
 import 'package:learn_dart_together/24_03_18/strongBox.dart';
 
+final KeyType keyType = KeyType.padlock;
+
 void main() {
   StrongBox<String> padlockBox = StrongBox<String>(KeyType.padlock);
   StrongBox<String> buttonBox = StrongBox<String>(KeyType.button);
@@ -13,7 +15,7 @@ void main() {
 
   // 최대 사용 횟수까지 아이템을 얻기
   String? getItemBeforeLimit(StrongBox box) {
-    int maxUsage = box.getMaxUsage(); // 최대 사용 횟수 가져오기
+    int maxUsage = _getMaxUsage(); // 최대 사용 횟수 가져오기
     for (int i = 0; i < maxUsage; i++) {
       String? item = box.get();
       if (item != null) {
@@ -45,5 +47,18 @@ void main() {
   String? finger = getItemBeforeLimit(fingerBox);
   if (finger != null) {
     print(finger);
+  }
+}
+
+int _getMaxUsage() {
+  switch (keyType) {
+    case KeyType.padlock:
+      return 1024;
+    case KeyType.button:
+      return 10000;
+    case KeyType.dial:
+      return 30000;
+    case KeyType.finger:
+      return 1000000;
   }
 }
