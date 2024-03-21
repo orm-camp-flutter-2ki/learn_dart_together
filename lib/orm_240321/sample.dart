@@ -26,21 +26,20 @@ class People{
 
 }
 
-final sample1 = [
-    People(1,'홍길동',30),
-    People(2,'한석봉',20),
-];
+final sample1 = (
+    '''1, 홍길동, 30, \n2, 한석봉, 20'''
+);
+
+// final sample1 = [
+//     People(1,'홍길동',30),
+//     People(2,'한석봉',20),
+// ];
 
 Future<void> main() async{
   final File csvFile = File('csv_file.csv');
   csvFile.writeAsString(sample1.toString());
   await copy('csv_file.csv', 'copy_file.csv');
 }
-
-
-
-
-
 
 Future<void> copy(String sourece, String target) async{
   try {
