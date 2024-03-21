@@ -10,7 +10,6 @@ void main() {
   });
   // 매 test 끝날 때 실행할 부분
   tearDown(() {
-    File('lib/240319/save.txt').deleteSync();
     File('lib/240319/savecopy.txt').deleteSync();
     File('lib/240319/savecopy2.txt').deleteSync();
   });
