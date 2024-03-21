@@ -12,12 +12,12 @@ Future<Movie> getMovieInfo() async {
   }''';
 
   final Map<String, dynamic> json = jsonDecode(jsonString);
-  final movie = Movie.fromJson(json);
+  final Movie movie = Movie.fromJson(json);
 
   return movie;
 }
 
 void main() async{
-  final movie = await getMovieInfo();
+  final Movie movie = await getMovieInfo();
   print('영화 감독: ${movie.director}');
 }
