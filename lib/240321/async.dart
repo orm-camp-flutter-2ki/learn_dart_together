@@ -23,6 +23,14 @@ Future<void> replaceText() async {
 }
 
 void main() async {
+
+  try {
+    await createCsvFile();
+    print('CSV파일 생성완료!');
+  } catch(e) {
+    print('오류발생 : $e');
+  }
+
   try {
     await replaceText();
     final replacedContent = await File('sample_copy.csv').readAsString();
@@ -38,12 +46,3 @@ void main() async {
     print('오류 : $error');
   }
 }
-
-// Future<void> main() async {
-//   try {
-//     await createCsvFile();
-//     print('CSV파일 생성완료!');
-//   } catch(e) {
-//     print('오류발생 : $e');
-//   }
-// }
