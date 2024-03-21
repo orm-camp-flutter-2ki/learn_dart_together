@@ -34,8 +34,8 @@ void main() async {
     } else {
       print('파일 시스템 오류: ${e.message}');
     }
-  } catch (e) {
-    print('오류 : $e');
+  } catch (error) {
+    print('오류 : $error');
   }
 }
 
