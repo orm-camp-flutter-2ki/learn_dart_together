@@ -3,7 +3,7 @@ import 'dart:convert';
 Future<Movie> getMovieInfo(String jsonString) async {
   // 2초간 대기 코드
   await Future.delayed(Duration(seconds: 2));
-  //서버에서 들어오는 데이터라고 상상
+
   Movie movie = Movie.fromJson(jsonDecode(jsonString) as Map<String, dynamic>);
   // Movie('Star Ward', 'George Lucas', 1997);
 
