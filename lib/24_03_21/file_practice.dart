@@ -10,9 +10,15 @@ void main() {
 /// (async - await 사용할 것)
 void copyAndEditFile() async {
   final String currentPath = 'lib/24_03_21/';
+  final String fileString;
 
-  File file = File('${currentPath}sample.csv');
-  String fileString = await file.readAsString();
+  try {
+    File file = File('${currentPath}sample.csv');
+    fileString = await file.readAsString();
+  } catch (e) {
+    print('$e 파일을 찾을 수 없습니다.');
+    return;
+  }
 
   File newFile = File('${currentPath}sample_copy.csv');
   newFile.writeAsString(fileString.replaceAll('한석봉', '김석봉'));
