@@ -10,6 +10,10 @@ void copy(String source, String target) {
   }
 }
 
+void delete(String source) {
+  File(defaultPath + source).delete();
+}
+
 void writeWithString(String title, String text) {
   File(defaultPath + title).writeAsStringSync(text);
 }
