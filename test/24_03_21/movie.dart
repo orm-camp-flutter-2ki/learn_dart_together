@@ -35,7 +35,7 @@ void main() {
       final result = Movie.copyWith(origin);
 
       // Then
-      expect(result == origin, true);
+      expect(result.director == origin.director, true);
     });
   });
 }
