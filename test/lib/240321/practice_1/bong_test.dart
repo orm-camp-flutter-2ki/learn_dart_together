@@ -15,7 +15,7 @@ void main() {
     test('"한석봉"이라는 문자열이 있다면, '
         'sample_copy.csv 파일에 “김석봉"으로 수정하는 함수를 작성하시오. ', () async {
       // Given
-      fileHandle = FileHandle(originalFile, newPath);
+      fileHandle = FileHandle(originalFile: originalFile, newPath: newPath);
 
       // When
       String result = await fileHandle.findAndChangeName();
@@ -28,7 +28,7 @@ void main() {
 
     test('"한석봉"이라는 문자열이 없는 경우, ', () async {
       // Given
-      fileHandle = FileHandle(fakeFile, newPath);
+      fileHandle = FileHandle(originalFile: fakeFile, newPath: newPath);
 
       // When
       String result = await fileHandle.findAndChangeName();
