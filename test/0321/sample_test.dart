@@ -16,8 +16,8 @@ Future<void> copyReplaceFile(String sourcePath, String targetPath) async {
     String originFile = await File(sourcePath).readAsString();
     String replaceFile = originFile.replaceAll('한석봉', '김석봉');
 
-    if (!(originFile.contains('한석봉'))) {
-      throw Exception('[error]\n 한석봉을 찾을 수 없습니다.');
+    if (!(originFile.contains('한석봉')) || !(await File(sourcePath).exists())) {
+      throw Exception('[error]\n 에러가 발생했습니다.');
     }
 
     // 복사할 파일에 쓰기
@@ -33,42 +33,10 @@ Future<void> main() async {
   final sampleCopy =
       File('$todayDirectory/sample_copy.csv').openRead(); // 카피 경로
 
-  test('csv file copy test', () async {
-    copyReplaceFile(
-        '/Users/yong/Desktop/learn_dart_together/lib/0321/sample.csv',
-        '/Users/yong/Desktop/learn_dart_together/lib/0321/sample_copy.csv');
+  copyReplaceFile('/Users/yong/Desktop/learn_dart_together/lib/0321/sample.csv',
+      '/Users/yong/Desktop/learn_dart_together/lib/0321/sample_copy.csv');
 
+  test('csv file copy test', () async {
     expect(eq(sample, sampleCopy), false);
   });
-
-  test('한석봉이 없다!', () async {
-    String originFile = await File(
-            '/Users/yong/Desktop/learn_dart_together/lib/0321/sample.csv')
-        .readAsString();
-    String replaceFile = originFile.replaceAll('한석봉', '한라봉');
-
-    copyReplaceFile(
-        '/Users/yong/Desktop/learn_dart_together/lib/0321/sample.csv',
-        '/Users/yong/Desktop/learn_dart_together/lib/0321/sample_copy.csv');
-
-    expect(replaceFile.contains('한석봉'), false);
-    expect(replaceFile.contains('한라봉'), true);
-    // expect(replaceFile.contains('한석봉'), true); // error
-    // expect(replaceFile.contains('한라봉'), false);
-  });
-
-  // test('description', () async {
-  //   // 내가 무엇을 작성한건지는 잘 모르겠다...
-  //   //   https: //pub.dev/packages/csv
-  //
-  //   final sampleString = await sample
-  //       .transform(utf8.decoder)
-  //       .transform(CsvToListConverter())
-  //       .toList();
-  //
-  //   final sampleCopyString = await sampleCopy
-  //       .transform(utf8.decoder)
-  //       .transform(CsvToListConverter())
-  //       .toList();
-  // });
 }

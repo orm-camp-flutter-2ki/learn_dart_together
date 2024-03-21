@@ -7,33 +7,31 @@ class Movie {
 
   @override
   String toString() {
-    return '[$title] 개봉일:$year년 감독:$director';
+    return 'Movie{title: $title, director: $director, year: $year}';
   }
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       other is Movie &&
+          runtimeType == other.runtimeType &&
           title == other.title &&
           director == other.director &&
           year == other.year;
 
   @override
-  // TODO: implement hashCode
   int get hashCode => title.hashCode ^ director.hashCode ^ year.hashCode;
 
-  Future<Map<String, dynamic>> toJson() async =>
+  Map<String, dynamic> toJson() => // 함수
       {'title': title, 'director': director, 'year': year};
 
-  Movie.fromJson(Map<String, dynamic> json)
+  Movie.fromJson(Map<String, dynamic> json) // 생성자
       : title = json['title'],
         director = json['director'],
-        year = json['year'];
+        year = json['year']; // 이니셜라이즈 리스트
 
-  Future<Movie> copyWith(
-      {required String? title,
-      required String? director,
-      required int? year}) async {
+  Movie copyWith(
+      {required String? title, required String? director, required int? year}) {
     return Movie(
         title: title ?? this.title,
         director: director ?? this.director,
