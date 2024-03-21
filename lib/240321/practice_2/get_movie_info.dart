@@ -9,9 +9,5 @@ Future<Movie> getMovieInfo(String data) async {
 
   Map<String, dynamic> dataDecode = jsonDecode(data);
 
-  String title = dataDecode['title'];
-  String director = dataDecode['director'];
-  int year = dataDecode['year'];
-
-  return Movie(title, director, year);
+  return Movie.fromJson(dataDecode);
 }
