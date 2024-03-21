@@ -8,6 +8,29 @@ class Movie {
 
   Movie({required this.title, required this.director, required this.year});
 
+  Movie copyWith({
+    String? title,
+    String? director,
+    int? year,
+  }) {
+    return Movie(
+      title: title ?? this.title,
+      director:director?? this.director,
+      year: year ?? this.year,
+    );
+  }
+
+  Movie.fromJson(Map<String, dynamic> json)
+      : title = json['title'],
+        director = json['director'],
+        year = json['year'];
+
+  Map<String, dynamic> toJson() => {
+    'title': title,
+    'director': director,
+    'year': year,
+  };
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -26,28 +49,7 @@ class Movie {
     return 'Movie{title: $title, director: $director, year: $year}';
   }
 
-  Movie.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
-        director = json['director'],
-        year = json['year']
 
-  // Future<Map<String, dynamic>> toJson() async => {
-  //   'title': title,
-  //   'director': director,
-  //   'year': year,
-  // };
-
-  // Movie copyWith({
-  //   String? title,
-  //   String? director,
-  //   int? year,
-  // }) {
-  //   return Movie(
-  //     title: title ?? this.title,
-  //     director:director?? this.director,
-  //     year: year ?? this.year,
-  //   );
-  // }
 }
 
 Future<Movie> getMovieInfo() async {
