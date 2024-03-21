@@ -8,7 +8,6 @@ Future<void> main() async {
   sampleFile.writeAsString('''1, 홍길동, 30
 2, 한석봉, 20''');
   // 파일 복사 및 수정
-
   await copy('sample.csv', 'sample_copy.csv');
 }
 
@@ -22,7 +21,7 @@ Future<void> copy(String source, String target) async {
     final contents = await sourceFile.readAsString();
     // 내용 수정
     final editContents = contents.replaceAll('한석봉', '김석봉');
-    await targetFile.writeAsString(editContents);
+    targetFile.writeAsString(editContents);
     print('파일 수정 완료');
   } catch (e) {
     print('파일 오류 ${e}');
