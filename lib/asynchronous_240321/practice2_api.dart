@@ -47,7 +47,9 @@ class Movie {
   }
 }
 
+//비동기
 Future<Movie> getMovieInfo() async {
+  //await 먼저하고 가실게요.
   await Future.delayed(Duration(seconds: 2));
   //서버에서 들어오는 데이터 *String인 JSON코드
   String jsonString = '''{
@@ -65,6 +67,9 @@ Future<Movie> getMovieInfo() async {
 
 //비동기
 void main() async {
+  //await 먼저하고 가실게요.
+  //REASON: getMovieInfo 함수 안에 2초 딜레이가 포함되어 있기에,
+  //await를 추가하지 않으면, print가 먼저 실행됨으로 코드 작성 시 빨간줄 생성.
   final movie = await getMovieInfo();
   print(movie.director);
 }
