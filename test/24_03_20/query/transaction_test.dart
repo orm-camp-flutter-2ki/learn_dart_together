@@ -97,8 +97,7 @@ void main() {
     test('전체 트랜잭션 중 최대값을 출력하면 1000이 나온다.', () {
       int maxValue;
 
-      maxValue = transactions.map((e) => e.value)
-          .reduce((value, element) => max(value, element));
+      maxValue = transactions.map((e) => e.value).max;
 
       expect(maxValue == 1000, true);
     });
@@ -106,8 +105,7 @@ void main() {
     test('전체 트랜잭션 중 최소값을 출력하면 300이 나온다.', () {
       int maxValue;
 
-      maxValue = transactions.map((e) => e.value)
-          .reduce((value, element) => min(value, element));
+      maxValue = transactions.map((e) => e.value).min;
 
       expect(maxValue == 300, true);
     });
