@@ -10,7 +10,7 @@ void main() {
   });
   test('한석봉 김석봉 수정', () async {
     //given
-    String sol1 = '1, 홍길동, 30\r\n2, 김석봉, 20';
+    String sol = '1, 홍길동, 30\r\n2, 김석봉, 20';
 
     //when
     reWrite('lib/240321/sample.csv', 'lib/240321/sample_copy.csv');
@@ -18,6 +18,17 @@ void main() {
     String data = await rewrite.readAsString();
 
     //then
-    expect(data, sol1);
+    expect(data, sol);
   });
+  // test('파일 없음', () async {
+  //   //given
+
+  //   //when
+  //   reWrite('lib/2403213/1sample.csv', 'lib/240321/sample_copy.csv');
+  //   File rewrite = File('lib/240321/sample_copy.csv');
+  //   String data = await rewrite.readAsString();
+
+  //   //then
+  //   expect(data, returnsNormally);
+  // });
 }
