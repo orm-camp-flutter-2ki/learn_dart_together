@@ -18,6 +18,7 @@ void main() {
       test('기존의 파일을 copy하는데 한성복 이라는 문자열이 있으면 김석봉으로 수정해서 파일을 만든다.', () async {
         // Given
         String expected = '1, 홍길동, 30\n2, 김석봉, 20';
+
         // When
         await asyncPractice.fileHandler(sourcePath, targetPath);
 
