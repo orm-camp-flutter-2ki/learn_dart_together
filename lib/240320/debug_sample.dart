@@ -41,6 +41,7 @@ class YukymController {
 
     final nowTime = DateTime.now();
     int nowTimeH = nowTime.hour;
+
     if (nowTime.hour >= 0 && nowTime.hour < 2) {
       return timeDataOne.first.ty1;
     } else if (nowTime.hour >= 2 && nowTime.hour < 4) {
