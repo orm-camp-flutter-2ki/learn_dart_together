@@ -48,8 +48,8 @@ void main() {
           .where((transaction) => transaction.trader.city == "Cambridge")
           // .toList()
           .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
-          .map((transaction) => transaction.trader)
           .toSet()
+          .map((transaction) => transaction.trader)
         ..forEach(print);
 
       //then
