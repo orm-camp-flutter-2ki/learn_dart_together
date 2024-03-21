@@ -13,11 +13,11 @@ Future<Movie> getMovieInfo() async {
 }
 
 class Movie {
-  final String _title;
-  final String _director;
-  final int _year;
+  final String title;
+  final String director;
+  final int year;
 
-  Movie(this._title, this._director, this._year);
+  Movie(this.title, this.director, this.year);
 
   Movie copyWith({
     String? title,
@@ -25,26 +25,26 @@ class Movie {
     int? year,
   }) {
     return Movie(
-      title ?? _title,
-      director ?? _director,
-      year ?? _year,
+      title ?? this.title,
+      director ?? this.director,
+      year ?? this.year,
     );
   }
 
   Movie.fromJson(Map<String, dynamic> json)
-      : _title = json['title'],
-        _director = json['director'],
-        _year = json['year'];
+      : title = json['title'],
+        director = json['director'],
+        year = json['year'];
 
   Map<String, dynamic> toJson() => {
-        'title': _title,
-        'director': _director,
-        'year': _year,
+        'title': title,
+        'director': director,
+        'year': year,
       };
 
   @override
   String toString() {
-    return 'Movie{_title: $_title, _director: $_director, _year: $_year}';
+    return 'Movie{_title: $title, _director: $director, _year: $year}';
   }
 
   @override
@@ -52,15 +52,15 @@ class Movie {
       identical(this, other) ||
       other is Movie &&
           runtimeType == other.runtimeType &&
-          _title == other._title &&
-          _director == other._director &&
-          _year == other._year;
+          title == other.title &&
+          director == other.director &&
+          year == other.year;
 
   @override
-  int get hashCode => _title.hashCode ^ _director.hashCode ^ _year.hashCode;
+  int get hashCode => title.hashCode ^ director.hashCode ^ year.hashCode;
 }
 
 void main() async{
   Movie m = await getMovieInfo();
-  print(m._director);
+  print(m.director);
 }
