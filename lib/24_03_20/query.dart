@@ -24,14 +24,4 @@ final transactions = [
   Transaction(Trader("Mario", "Milan"), 2012, 710),
   Transaction(Trader("Mario", "Milan"), 2012, 700),
   Transaction(Trader("Alan", "Cambridge"), 2012, 950),
-
-
-
-
-
-
-
-
-
 ];
-
