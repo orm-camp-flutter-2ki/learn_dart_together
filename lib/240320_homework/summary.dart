@@ -26,6 +26,7 @@ void main() {
       (a, b) => b.length.compareTo(a.length)); //프린트 시 [three, one, two] 반환
   print(list1);
   // [one, two, three] 가 반환. list1의 값이 재할당 되지 않았다. Why? list1을 복사해서 가공하니까
+  //따라서 sorted()함수 값을 저장하고 싶다면 다른 변수가 받아줘야 한다.
 
 //sort메서드에서 왜 위치를 바꾼다고 오름차순이 되는가?  -> a>b일때 1, a==b일때 0, a<b일때 -1을 반환하기 때문
 //list1.sorted((a,b)=> b.length.compareTo(a.length)) 는 오름차순
