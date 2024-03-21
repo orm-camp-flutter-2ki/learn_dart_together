@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 import 'movie.dart';
 
 Future<Movie> getMovieInfo() async {
