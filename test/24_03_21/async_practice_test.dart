@@ -11,8 +11,8 @@ void main() {
     const String targetPath = 'test/24_03_21/resource/sample_copy_test.csv';
     setUp(() => fileService.writeToFile(sourcePath, exampleStr));
     tearDown(() {
-      fileService.deleteFile(targetPath);
-      fileService.deleteFile(sourcePath);
+      if (fileService.isFileExist(targetPath)) fileService.deleteFile(targetPath);
+      if (fileService.isFileExist(sourcePath)) fileService.deleteFile(sourcePath);
     });
     group('fileHandler 메소드는', () {
       test('기존의 파일을 copy하는데 한성복 이라는 문자열이 있으면 김석봉으로 수정해서 파일을 만든다.', () async {
