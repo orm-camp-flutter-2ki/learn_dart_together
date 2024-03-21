@@ -62,6 +62,7 @@ void main() {
       //when
       final problem4 = transactions
           .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
+          .toSet()
           .map((transaction) => transaction.trader.name)
           .toSet()
         ..forEach(print);
@@ -101,10 +102,8 @@ void main() {
       int sol7 = 1000;
 
       //when
-      final maxValue = transactions
-          .where((transaction) => transaction.trader.city == "Cambridge")
-          .map((transaction) => transaction.value)
-          .reduce(max);
+      final maxValue =
+          transactions.map((transaction) => transaction.value).reduce(max);
 
       //then
       expect(maxValue, sol7);
@@ -115,10 +114,8 @@ void main() {
       int sol8 = 300;
 
       //when
-      final minValue = transactions
-          .where((transaction) => transaction.trader.city == "Cambridge")
-          .map((transaction) => transaction.value)
-          .reduce(min);
+      final minValue =
+          transactions.map((transaction) => transaction.value).reduce(min);
 
       //then
       expect(minValue, sol8);
