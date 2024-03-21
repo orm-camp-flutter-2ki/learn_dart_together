@@ -31,7 +31,6 @@ final sample1 = [
     People(2,'한석봉',20),
 ];
 
-
 Future<void> main() async{
   final File csvFile = File('csv_file.csv');
   csvFile.writeAsString(sample1.toString());
