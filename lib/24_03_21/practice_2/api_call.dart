@@ -14,11 +14,10 @@ Future<Movie> getMovieInfo() async {
 
   final Map<String, dynamic> info = jsonDecode(jsonString);
 
-  Movie movie1 = Movie(
-      title: info['title'], director: info['director'], year: info['year']);
+  Movie movie = Movie.fromJson(info);
 
   // Movie 데이터 클래스 리턴
-  return movie1;
+  return movie;
 }
 
 class Movie {
