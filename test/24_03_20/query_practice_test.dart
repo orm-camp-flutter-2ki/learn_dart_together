@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:learn_dart_together/24_03_20/query_practice.dart';
 import 'package:test/test.dart';
 
@@ -8,7 +9,8 @@ void main() {
 
       final res = Query().question1();
 
-      expect(res, expected);
+      expect(ListEquality().equals(res, expected), true);
+      // expect( res, expected);
     });
   });
 
@@ -16,9 +18,9 @@ void main() {
     test('거래자가 근무하는 모든 도시를 중복 없이 나열한다.', () {
       final expected = ["Cambridge", "Milan"];
 
-      final res = Query().question2();
+      final res = Query().question2().toList();
 
-      expect(res, expected);
+      expect(ListEquality().equals(res, expected), true);
     });
   });
 
@@ -26,9 +28,9 @@ void main() {
     test('케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 반환', () {
       final expected = ["Brian", "Raoul", "Alan"];
 
-      final res = Query().question3();
+      final res = Query().question3().toList();
 
-      expect(res, expected);
+      expect(ListEquality().equals(res, expected), true);
     });
   });
 
@@ -38,17 +40,15 @@ void main() {
 
       final res = Query().question4();
 
-      expect(res, expected);
+      expect(ListEquality().equals(res, expected), true);
     });
   });
 
   group('문제 5번', () {
     test('밀라노에 거래자가 있는지 여부', () {
-      final expected = true;
-
       final res = Query().question5();
 
-      expect(res, expected);
+      expect(res, true);
     });
   });
 
@@ -64,21 +64,17 @@ void main() {
 
   group('문제 7번', () {
     test('전체 트랜잭션 중 최대값', () {
-      final expected = 1000;
-
       final res = Query().question7();
 
-      expect(res, expected);
+      expect(res, 1000);
     });
   });
 
   group('문제 8번', () {
     test('전체 트랜잭션 중 최소값', () {
-      final expected = 300;
-
       final res = Query().question8();
 
-      expect(res, expected);
+      expect(res, 300);
     });
   });
 }
