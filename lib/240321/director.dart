@@ -5,9 +5,9 @@ class Movie {
   final String title;
   final String director;
   final int year;
-
+//생성자
   Movie({required this.title, required this.director, required this.year});
-
+//생성자
   Movie copyWith({
     String? title,
     String? director,
@@ -19,7 +19,7 @@ class Movie {
       year: year ?? this.year,
     );
   }
-
+//생성자
   Movie.fromJson(Map<String, dynamic> json)
       : title = json['title'],
         director = json['director'],
@@ -48,8 +48,6 @@ class Movie {
   String toString() {
     return 'Movie{title: $title, director: $director, year: $year}';
   }
-
-
 }
 
 Future<Movie> getMovieInfo() async {
