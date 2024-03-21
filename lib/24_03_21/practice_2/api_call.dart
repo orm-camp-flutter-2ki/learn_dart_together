@@ -14,7 +14,8 @@ Future<Movie> getMovieInfo() async {
 
   final Map<String, dynamic> info = jsonDecode(jsonString);
 
-  Movie movie1 = Movie(info['title'], info['director'], info['year']);
+  Movie movie1 = Movie(
+      title: info['title'], director: info['director'], year: info['year']);
 
   // Movie 데이터 클래스 리턴
   return movie1;
@@ -25,7 +26,7 @@ class Movie {
   final String director;
   final int year;
 
-  Movie(this.title, this.director, this.year);
+  Movie({required this.title, required this.director, required this.year});
 
   @override
   bool operator ==(Object other) =>
@@ -42,6 +43,18 @@ class Movie {
   @override
   String toString() {
     return 'Movie{title: $title}, {director: $director}, {year: $year}';
+  }
+
+  Movie copyWith({
+    String? title,
+    String? director,
+    int? year,
+  }) {
+    return Movie(
+      title: title ?? this.title,
+      director: director ?? this.director,
+      year: year ?? this.year,
+    );
   }
 
   Movie.fromJson(Map<String, dynamic> json)
