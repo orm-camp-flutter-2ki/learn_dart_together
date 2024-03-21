@@ -34,4 +34,8 @@ class FileService {
 
     return await file.readAsString();
   }
+
+  void asyncWriteToFile(String path, String content) async {
+    await File(path).writeAsString(content);
+  }
 }
