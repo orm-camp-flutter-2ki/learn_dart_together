@@ -46,9 +46,8 @@ void main() {
       //when
       final problem3 = transactions
           .where((transaction) => transaction.trader.city == "Cambridge")
-          // .toList()
-          .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
           .toSet()
+          .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
           .map((transaction) => transaction.trader)
         ..forEach(print);
 
