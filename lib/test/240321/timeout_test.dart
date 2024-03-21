@@ -7,23 +7,23 @@ void main() {
   group('타임', () {
     test('시간초과', () async {
       //given
-      String sol1 = 'timeout';
+      String sol = 'timeout';
 
       //when
       String time = await timeoutFuture(5);
 
       //then
-      expect(time, sol1);
+      expect(time, sol);
     });
     test('시간충분', () async {
       //given
-      String sol1 = 'ok';
+      String sol = 'ok';
 
       //when
       String time = await timeoutFuture(6);
 
       //then
-      expect(time, sol1);
+      expect(time, sol);
     });
   });
 }

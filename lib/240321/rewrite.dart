@@ -7,6 +7,6 @@ Future<void> reWrite(String source, String target) async {
     String data = await sample.readAsString();
     await sampleCopy.writeAsString(data.replaceAll('한석봉', '김석봉'));
   } catch (e) {
-    print('$e');
+    print('파일을 찾을 수 없습니다.');
   }
 }
