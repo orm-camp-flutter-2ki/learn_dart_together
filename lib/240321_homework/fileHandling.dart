@@ -9,17 +9,15 @@ void main() {
 
 Future<void> copy(File file, File copyFile) async {
   try {
-    await copyFile.writeAsString(file.readAsStringSync());
+    copyFile.writeAsString(await file.readAsString());
+    //await copyFile.writeAsString(await file.readAsString()); 앞에도 붙여야 하는지??
   } catch (e) {
     print('파일이 없습니다.');
   }
 }
 
 Future<void> modifyName(File file, File copyFile) async {
-  if ((await file.readAsString()).contains('한석봉')) {
-    copyFile
-        .writeAsString((await file.readAsString()).replaceAll('한석봉', '김석봉'));
-  }
+  copyFile.writeAsString((await file.readAsString()).replaceAll('한석봉', '김석봉'));
 }
 // 알아낸것
 //final read = await file.readAsString();이랗게 쓰고 read.contains()~~ 라고 작성했는데
