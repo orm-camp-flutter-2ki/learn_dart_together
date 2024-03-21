@@ -25,10 +25,8 @@ final transactions = [
 
 // 4. 모든 거래자의 이름을 알파벳순으로 정렬하여 나열하시오
 void main() {
-  final traderNames = transactions
-      .map((transaction) => transaction.trader.name) // 거래자의 이름 추출
-      .toSet() // 중복 제거
-      .toList(); // 리스트로 변환
-  traderNames.sort(); // 알파벳 순으로 정렬
-  print(traderNames);
+  transactions
+      .sorted((a, b) => b.trader.name.compareTo(a.trader.name))
+      .map((transaction) => transaction.trader.name)
+      .toList();
 }
