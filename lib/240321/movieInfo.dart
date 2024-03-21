@@ -23,3 +23,5 @@ Future<Movie> getMovieInfo() async {
   // Movie 객체 생성 및 반환
   return decodeMovie;
 }
+
+
