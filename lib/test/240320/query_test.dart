@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'dart:math';
 
 import 'package:test/test.dart';
 import 'package:collection/collection.dart';
@@ -51,6 +52,7 @@ void main() {
   test('4번 test', () {
     transactions
         .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
+        // 이코드 없으면 , Instance of 'Transaction'
         .map((e) => e.trader.name)
         .forEach(print);
   });
@@ -71,12 +73,14 @@ void main() {
   test('7번 test', () {
     final maxValue =
         transactions.map((e) => e.value).reduce((e, v) => e > v ? e : v);
+    // transactions.map((e) => e.value).reduce(max);
     print(maxValue);
     expect(maxValue, equals(1000));
   });
   test('8번 test', () {
     final minValue =
         transactions.map((e) => e.value).reduce((e, v) => e < v ? e : v);
+    // transactions.map((e) => e.value).reduce(min);
     print(minValue);
     expect(minValue, equals(300));
   });
