@@ -2,7 +2,7 @@ import 'package:intl/intl.dart';
 
 class YukymController {
   // DateTime.parse(_userData.value!.selectDate)
-  String nowDate = DateFormat('yyyy-mm-dd').format(DateTime.now());
+  String nowDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
   late String nowTime;
 
@@ -14,6 +14,7 @@ class YukymController {
       nowTime = timeDataOne.first.ty1;
 
       final month = nowDate.substring(5, 7);
+
       if (month == '01' || month == '02') {
         return '경오1국';
       } else if (month == '03' || month == '04') {
