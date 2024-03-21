@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:async';
 import 'package:test/test.dart';
-import 'package:learn_dart_together/240321/moveinfo2.dart';
+import 'package:learn_dart_together/240321/movie_info2.dart';
 
 void main() {
   group('Movie', () {
