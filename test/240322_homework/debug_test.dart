@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240322_homework/debug.dart';
+import 'package:learn_dart_together/240322_homework/debugtwo.dart';
 import 'package:test/test.dart';
 
 void main(){
