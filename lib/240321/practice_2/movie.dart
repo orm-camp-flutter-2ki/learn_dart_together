@@ -1,9 +1,7 @@
-import 'dart:convert';
-
 class Movie {
-  String title;
-  String director;
-  int year;
+  final String title;
+  final String director;
+  final int year;
 
   Movie(this.title, this.director, this.year);
 
@@ -18,6 +16,17 @@ class Movie {
         'year': year,
       };
 
+  Movie copyWith({
+    String? title,
+    String? director,
+    int? year,
+  }) {
+    return Movie(
+      title ?? this.title,
+      director ?? this.director,
+      year ?? this.year,
+    );
+  }
 
   @override
   String toString() {
