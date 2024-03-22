@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:collection/collection.dart';
 
 class Trader {
@@ -54,6 +52,7 @@ class Query {
     return transactions
         .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
         .map((e) => e.trader.name)
+        .toSet()
         .toList();
   }
 
@@ -72,11 +71,13 @@ class Query {
 
   /// 7. 전체 트랜잭션 중 최대값
   int question7() {
-    return transactions.map((e) => e.value).reduce(max);
+    return transactions.map((e) => e.value).max;
+    // return transactions.map((e) => e.value).reduce(max);
   }
 
   /// 8. 전체 트랜잭션 중 최소값
   int question8() {
-    return transactions.map((e) => e.value).reduce(min);
+    return transactions.map((e) => e.value).min;
+    // return transactions.map((e) => e.value).reduce(min);
   }
 }
