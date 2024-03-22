@@ -121,8 +121,7 @@ void question6(List<Transaction> transaction) {
   final q6 = transactions
       .where((e) => e.trader.city == 'Cambridge')
       .map((e) => e.value)
-      .toList()
-      .forEach(print);
+      .toSet();
 }
 
 void question7(List<Transaction> transaction) {
