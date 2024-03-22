@@ -37,15 +37,18 @@ void main() {
 
     test('3. 케임브리지에서 근무하는 모든 거래자를 찾아서 이름순으로 정렬하여 나열하시오', () {
       //given
-      List<String> sol3 = ['Alan', 'Brian', 'Raoul'];
+      var sol3 = [
+        Trader('Alan', 'Cambridge'),
+        Trader('Brian', 'Cambridge'),
+        Trader('Raoul', 'Cambridge')
+      ];
 
       //when
       final problem3 = transactions
           .where((transaction) => transaction.trader.city == "Cambridge")
-          // .toList()
-          .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
-          .map((transaction) => transaction.trader.name)
           .toSet()
+          .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
+          .map((transaction) => transaction.trader)
         ..forEach(print);
 
       //then
@@ -59,6 +62,7 @@ void main() {
       //when
       final problem4 = transactions
           .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
+          .toSet()
           .map((transaction) => transaction.trader.name)
           .toSet()
         ..forEach(print);
@@ -98,10 +102,8 @@ void main() {
       int sol7 = 1000;
 
       //when
-      final maxValue = transactions
-          .where((transaction) => transaction.trader.city == "Cambridge")
-          .map((transaction) => transaction.value)
-          .reduce(max);
+      final maxValue =
+          transactions.map((transaction) => transaction.value).reduce(max);
 
       //then
       expect(maxValue, sol7);
@@ -112,10 +114,8 @@ void main() {
       int sol8 = 300;
 
       //when
-      final minValue = transactions
-          .where((transaction) => transaction.trader.city == "Cambridge")
-          .map((transaction) => transaction.value)
-          .reduce(min);
+      final minValue =
+          transactions.map((transaction) => transaction.value).reduce(min);
 
       //then
       expect(minValue, sol8);

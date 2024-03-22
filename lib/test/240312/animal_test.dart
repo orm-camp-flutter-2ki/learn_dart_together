@@ -1,4 +1,3 @@
-import 'package:learn_dart_together/240312/animal/animal.dart';
 import 'package:test/test.dart';
 import '../../240312/animal/bird.dart';
 import '../../240312/animal/cat.dart';
