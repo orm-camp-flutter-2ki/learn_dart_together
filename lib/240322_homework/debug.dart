@@ -3,11 +3,13 @@ void main() {
   YukymController yukymController = YukymController();
   print(yukymController.getTyA()); // 해당 월에 맞는 자시의 국 표시
   print(yukymController.getTyB()); // 해당 시간에 맞는 자시의 국 표시
+  print(DateFormat('yyyy-MM-dd').format(DateTime.now()));
 }
+
 class YukymController {
 
   // DateTime.parse(_userData.value!.selectDate)
-  String nowDate = DateFormat('yyyy-mm-dd').format(DateTime.now());
+  String nowDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
   late String nowTime;
 
@@ -20,7 +22,6 @@ class YukymController {
       nowTime = timeDataOne.first.ty1;
 
       final month = nowDate.substring(5, 7);
-      print(month);
       if (month == '01' || month == '02') {
         return '경오1국';
       } else if (month == '03' || month == '04') {
