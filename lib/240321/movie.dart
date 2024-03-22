@@ -1,7 +1,7 @@
 class Movie {
-  String title;
-  String director;
-  int year;
+  final String title;
+  final String director;
+  final int year;
 
   Movie(
     this.title,
