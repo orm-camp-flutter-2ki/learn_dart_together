@@ -9,6 +9,7 @@ void timeoutFuture() async {
     await waitTask("completed").timeout(Duration(seconds: 6));
 
   } on TimeoutException catch(e, s){
+    print('timeout');
     print(e);
     print(s);
 
