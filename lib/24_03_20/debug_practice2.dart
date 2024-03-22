@@ -1,92 +1,73 @@
 import 'package:intl/intl.dart';
 
-class YukymController {
+enum YukymTimeModel {
+  ty1('갑자1국'),
+  ty2('갑자2국'),
+  ty3('갑자3국'),
+  ty4('갑자4국'),
+  ty5('갑자5국'),
+  ty6('갑자6국'),
+  ty7('갑자7국'),
+  ty8('갑자8국'),
+  ty9('갑자9국'),
+  ty10('갑자10국'),
+  ty11('갑자11국'),
+  ty12('갑자12국');
 
-  // DateTime.parse(_userData.value!.selectDate)
-  String nowDate = DateFormat('yyyy-mm-dd').format(DateTime.now());
+  const YukymTimeModel(this.type);
 
-  late String nowTime;
-
-  // 1. 자시의 국 : 갑자1국 = getTyOne()의 값
-  String getTyA() {
-    List<YukymTimeModel> timeDataOne =
-    _getTimeDataOne(nowDate);
-
-    if (timeDataOne.isNotEmpty) {
-      nowTime = timeDataOne.first.ty1;
-
-      final month = nowDate.substring(5, 7);
-      if (month == '01' || month == '02') {
-        return '경오1국';
-      } else if (month == '03' || month == '04') {
-        return '경오2국';
-      } else if (month == '05' || month == '06') {
-        return '경오3국';
-      } else if (month == '07' || month == '08') {
-        return '경오4국';
-      } else if (month == '09' || month == '10') {
-        return '경오5국';
-      } else if (month == '11' || month == '12') {
-        return '경오6국';
-      }
-      return nowTime;
-    } else {
-      // Handle the case when the list is empty
-      return '경오7국';  // Or any other appropriate action
-    }
-  }
-
-  String getTyB() {
-    List<YukymTimeModel> timeDataOne =
-    _getTimeDataOne(nowDate);
-    String result = timeDataOne.first.ty12;
-
-    final nowTime = DateTime.now();
-    if (nowTime.hour >= 0 || nowTime.hour < 2) {
-      return timeDataOne.first.ty1;
-    } else if (nowTime.hour >= 4 || nowTime.hour < 6) {
-      return timeDataOne.first.ty2;
-    } else if (nowTime.hour >= 6 || nowTime.hour < 8) {
-      return timeDataOne.first.ty3;
-    } else if (nowTime.hour >= 8 || nowTime.hour < 10) {
-      return timeDataOne.first.ty4;
-    } else if (nowTime.hour >= 10 || nowTime.hour < 12) {
-      return timeDataOne.first.ty5;
-    } else if (nowTime.hour >= 12 || nowTime.hour < 14) {
-      return timeDataOne.first.ty6;
-    } else if (nowTime.hour >= 16 || nowTime.hour < 18) {
-      return timeDataOne.first.ty7;
-    } else if (nowTime.hour >= 18 || nowTime.hour < 20) {
-      return timeDataOne.first.ty8;
-    } else if (nowTime.hour >= 20 || nowTime.hour < 22) {
-      return timeDataOne.first.ty9;
-    } else if (nowTime.hour >= 22 || nowTime.hour < 24) {
-      return timeDataOne.first.ty10;
-    }
-
-    return result;
-  }
-
-  List<YukymTimeModel> _getTimeDataOne(String nowDate) {
-    List<YukymTimeModel> timeDataOne = [];
-    for (int i = 0; i < 24; i++) {
-      timeDataOne.add(YukymTimeModel());
-    }
-    return timeDataOne;
-  }
+  final String type;
 }
 
-class YukymTimeModel {
-  String ty1 = '갑자1국';
-  String ty2 = '갑자2국';
-  String ty3 = '갑자3국';
-  String ty4 = '갑자4국';
-  String ty5 = '갑자5국';
-  String ty6 = '갑자6국';
-  String ty7 = '갑자7국';
-  String ty8 = '갑자8국';
-  String ty9 = '갑자9국';
-  String ty10 = '갑자10국';
-  String ty11 = '갑자11국';
-  String ty12 = '갑자12국';
+class YukymController {
+  String nowDate = DateFormat('yyyy-mm-dd').format(DateTime.now());
+
+  // 1. 자시의 국 : 갑자1국 = getTyOne()의 값
+  static String getTyA() {
+    final month = DateTime.now().month;
+
+    if (month == 1 || month == 2) {
+      return '경오1국';
+    } else if (month == 3 || month == 4) {
+      return '경오2국';
+    } else if (month == 5 || month == 6) {
+      return '경오3국';
+    } else if (month == 7 || month == 8) {
+      return '경오4국';
+    } else if (month == 9 || month == 10) {
+      return '경오5국';
+    } else if (month == 11 || month == 12) {
+      return '경오6국';
+    }
+
+    return YukymTimeModel.ty1.type;
+  }
+
+  static String getTyB() {
+    final nowTime = DateTime.now();
+
+    if (nowTime.hour >= 0 && nowTime.hour < 2) {
+      return YukymTimeModel.ty1.type;
+    } else if (nowTime.hour >= 4 && nowTime.hour < 6) {
+      return YukymTimeModel.ty4.type;
+    } else if (nowTime.hour >= 6 && nowTime.hour < 8) {
+      return YukymTimeModel.ty5.type;
+    } else if (nowTime.hour >= 8 && nowTime.hour < 10) {
+      return YukymTimeModel.ty6.type;
+    } else if (nowTime.hour >= 10 && nowTime.hour < 12) {
+      return YukymTimeModel.ty7.type;
+    } else if (nowTime.hour >= 12 && nowTime.hour < 14) {
+      return YukymTimeModel.ty8.type;
+    } else if (nowTime.hour >= 16 && nowTime.hour < 18) {
+      return YukymTimeModel.ty9.type;
+    } else if (nowTime.hour >= 18 && nowTime.hour < 20) {
+      return YukymTimeModel.ty10.type;
+    } else if (nowTime.hour >= 20 && nowTime.hour < 22) {
+      return YukymTimeModel.ty11.type;
+    } else if (nowTime.hour >= 22 && nowTime.hour < 24) {
+      return YukymTimeModel.ty12.type;
+    }
+
+    return YukymTimeModel.ty12.type;
+  }
 }
