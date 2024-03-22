@@ -17,8 +17,8 @@ void main() {
 //sort는 void를 리턴한다. 따라서 체인메서드가 불가능 이지만 ..를 써서 가능하게 한다.경우에 따라 ()로 감싸서 우선순위를 매겨줘야 한다.
 //sort는 void이기 때문에 변수에 등록 안된다.
   List list1 = ['one', 'two', 'three'];
-  //..sort
-  list1..sort((a, b) => b.length.compareTo(a.length));
+  //.sort (메서드 체인으로 다른 기능을 호출할 것이 아니라면 cascade안해도 된다.
+  list1.sort((a, b) => b.length.compareTo(a.length));
   print(list1); // [three,one,two] 가 반환 Why? list1에 덮어 씌우니까
 
   //.sorted
@@ -26,6 +26,7 @@ void main() {
       (a, b) => b.length.compareTo(a.length)); //프린트 시 [three, one, two] 반환
   print(list1);
   // [one, two, three] 가 반환. list1의 값이 재할당 되지 않았다. Why? list1을 복사해서 가공하니까
+  //따라서 sorted()함수 값을 저장하고 싶다면 다른 변수가 받아줘야 한다.
 
 //sort메서드에서 왜 위치를 바꾼다고 오름차순이 되는가?  -> a>b일때 1, a==b일때 0, a<b일때 -1을 반환하기 때문
 //list1.sorted((a,b)=> b.length.compareTo(a.length)) 는 오름차순

@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 
 void main() {
   test('문제1 테스트', () {
-    List testCode = transactions
+    List<String> testCode = transactions
         .where((transaction) => transaction.year == 2011)
         .toList()
         .sorted((a, b) => b.value.compareTo(a.value))
@@ -16,7 +16,7 @@ void main() {
   });
 
   test('문제2 테스트', () {
-    Set testCode =
+    Set<String> testCode =
         transactions.map((transaction) => transaction.trader.city).toSet();
 
     expect(testCode.first == 'Cambridge', true);
@@ -24,7 +24,7 @@ void main() {
   });
 
   test('문제3 테스트', () {
-    List testCode = transactions
+    List<String> testCode = transactions
         .where((transaction) => transaction.trader.city == "Cambridge")
         .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
         .map((transaction) => transaction.trader.name)
@@ -37,7 +37,7 @@ void main() {
   });
 
   test('문제4 테스트', () {
-    List testCode = transactions
+    List<String> testCode = transactions
         .sorted((a, b) => a.trader.name.compareTo(b.trader.name))
         .map((transaction) => transaction.trader.name)
         .toList();
@@ -58,7 +58,7 @@ void main() {
   });
 
   test('문제6 테스트', () {
-    List testCode = transactions
+    List<int> testCode = transactions
         .where((transaction) => transaction.trader.city == "Cambridge")
         .map((transaction) => transaction.value)
         .toList();
