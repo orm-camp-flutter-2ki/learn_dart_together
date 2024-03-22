@@ -1,13 +1,12 @@
 import 'package:intl/intl.dart';
+
 void main() {
   YukymController yukymController = YukymController();
   print(yukymController.getTyA()); // 해당 월에 맞는 자시의 국 표시
   print(yukymController.getTyB()); // 해당 시간에 맞는 자시의 국 표시
-  print(DateFormat('yyyy-MM-dd').format(DateTime.now()));
 }
 
 class YukymController {
-
   // DateTime.parse(_userData.value!.selectDate)
   String nowDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
@@ -15,8 +14,7 @@ class YukymController {
 
   // 1. 자시의 국 : 갑자1국 = getTyOne()의 값
   String getTyA() {
-    List<YukymTimeModel> timeDataOne =
-    _getTimeDataOne(nowDate);
+    List<YukymTimeModel> timeDataOne = _getTimeDataOne(nowDate);
 
     if (timeDataOne.isNotEmpty) {
       nowTime = timeDataOne.first.ty1;
@@ -38,35 +36,35 @@ class YukymController {
       return nowTime;
     } else {
       // Handle the case when the list is empty
-      return '경오7국';  // Or any other appropriate action
+      return '경오7국'; // Or any other appropriate action
     }
   }
 
   String getTyB() {
-    List<YukymTimeModel> timeDataOne =
-    _getTimeDataOne(nowDate);
+    List<YukymTimeModel> timeDataOne = _getTimeDataOne(nowDate);
     String result = timeDataOne.first.ty12;
 
     final nowTime = DateTime.now();
-    if (nowTime.hour >= 0 || nowTime.hour < 2) {
+
+    if (nowTime.hour >= 0 && nowTime.hour < 2) {
       return timeDataOne.first.ty1;
-    } else if (nowTime.hour >= 4 || nowTime.hour < 6) {
+    } else if (nowTime.hour >= 4 && nowTime.hour < 6) {
       return timeDataOne.first.ty2;
-    } else if (nowTime.hour >= 6 || nowTime.hour < 8) {
+    } else if (nowTime.hour >= 6 && nowTime.hour < 8) {
       return timeDataOne.first.ty3;
-    } else if (nowTime.hour >= 8 || nowTime.hour < 10) {
+    } else if (nowTime.hour >= 8 && nowTime.hour < 10) {
       return timeDataOne.first.ty4;
-    } else if (nowTime.hour >= 10 || nowTime.hour < 12) {
+    } else if (nowTime.hour >= 10 && nowTime.hour < 12) {
       return timeDataOne.first.ty5;
-    } else if (nowTime.hour >= 12 || nowTime.hour < 14) {
+    } else if (nowTime.hour >= 12 && nowTime.hour < 14) {
       return timeDataOne.first.ty6;
-    } else if (nowTime.hour >= 16 || nowTime.hour < 18) {
+    } else if (nowTime.hour >= 16 && nowTime.hour < 18) {
       return timeDataOne.first.ty7;
-    } else if (nowTime.hour >= 18 || nowTime.hour < 20) {
+    } else if (nowTime.hour >= 18 && nowTime.hour < 20) {
       return timeDataOne.first.ty8;
-    } else if (nowTime.hour >= 20 || nowTime.hour < 22) {
+    } else if (nowTime.hour >= 20 && nowTime.hour < 22) {
       return timeDataOne.first.ty9;
-    } else if (nowTime.hour >= 22 || nowTime.hour < 24) {
+    } else if (nowTime.hour >= 22 && nowTime.hour < 24) {
       return timeDataOne.first.ty10;
     }
 
