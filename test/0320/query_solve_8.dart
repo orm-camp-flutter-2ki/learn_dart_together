@@ -8,13 +8,12 @@ import 'package:test/scaffolding.dart';
 
 void main() {
   // 8. 전체 트랜잭션 중 최소값은 얼마인가?
-  // 예상 값 : 300
+  final expectedResult = 300;
 
-  test('query_solve_4 test', () {
-    final maxValue = transactions
-        .map((e) => e.value)
-        .reduce((value, element) => min(value, element));
+  test('query_solve_8 test', () {
+    // final actualResult = transactions.map((e) => e.value).reduce(min);
+    final actualResult = transactions.map((e) => e.value).min;
 
-    expect(maxValue, 300);
+    expect(actualResult, expectedResult);
   });
 }
