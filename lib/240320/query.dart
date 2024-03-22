@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'package:learn_dart_together/240320/query.dart';
 
 class Trader {
   String name;

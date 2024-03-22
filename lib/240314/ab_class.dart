@@ -60,9 +60,9 @@ void main() {
 
   print('3 답');
 
-  abs.forEach((abs) {
+  for (var abs in abs) {
     abs.b();
-  });
+  }
 }
 
 

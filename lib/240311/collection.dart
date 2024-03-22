@@ -20,9 +20,9 @@ void main() {
   // people.add(hong);
   // people.add(han);
 
-  person.entries.forEach((element) {
+  for (var element in person.entries) {
     print('${element.key}의 나이는 ${element.value}살');
-  });
+  }
 }
 
 Map<String, dynamic> person = {
