@@ -11,7 +11,7 @@ void main() {
   ormList.add(B());
 
   // b() 메서드 호출
-  ormList.forEach((ormList) {
+  for (var ormList in ormList) {
     ormList.b();
-  });
+  }
 }

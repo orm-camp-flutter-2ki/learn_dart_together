@@ -11,8 +11,6 @@ class Transaction {
   int value;
 
   Transaction(this.trader, this.year, this.value);
-
-  compareTo(Transaction b) {}
 }
 
 final transactions = [
@@ -23,3 +21,6 @@ final transactions = [
   Transaction(Trader("Mario", "Milan"), 2012, 700),
   Transaction(Trader("Alan", "Cambridge"), 2012, 950),
 ];
+
+// compareTo(Transaction b) {} <- 의존성 추가하면서 삽입된 것으로 예상됩니다.
+// 저도 지금 봤습니다;;
