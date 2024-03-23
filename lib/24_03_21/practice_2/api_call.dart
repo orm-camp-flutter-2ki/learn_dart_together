@@ -1,16 +1,8 @@
 import 'dart:convert';
 
-Future<Movie> getMovieInfo() async {
+Future<Movie> getMovieInfo(String jsonString) async {
   // 2초 동안 기다리는 코드
   await Future.delayed(Duration(seconds: 2));
-
-  // 데이터 상상도
-  final String jsonString = '''{
-    "title": "Star Wars",
-    "director": "George Lucas",
-    "year": 1977
-  }
-  ''';
 
   final Map<String, dynamic> info = jsonDecode(jsonString);
 
@@ -69,7 +61,15 @@ class Movie {
 }
 
 void main() async {
-  final movieInfo = await getMovieInfo();
+  // 데이터 상상도
+  final String jsonString = '''{
+    "title": "Star Wars",
+    "director": "George Lucas",
+    "year": 1977
+  }
+  ''';
+
+  final movieInfo = await getMovieInfo(jsonString);
   final List<String> infoList = movieInfo.toString().split(',');
 
   print(infoList[1]);
