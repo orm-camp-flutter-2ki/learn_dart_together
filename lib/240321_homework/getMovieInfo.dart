@@ -54,9 +54,9 @@ class Movie {
   int get hashCode => title.hashCode ^ director.hashCode ^ year.hashCode;
 
   Movie copyWith({
-    String? title,
-    String? director,
-    int? year,
+    final String? title,
+    final String? director,
+    final int? year,
   }) {
     return Movie(
       title ?? this.title,
