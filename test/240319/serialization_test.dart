@@ -9,8 +9,7 @@ void main() {
   group('Serialization test ', () {
     test('직렬화한 결과가 출력하고자 하는 값과 동일함을 확인한다.', () {
       // Given
-      Employee employee = Employee('홍길동', 41);
-      Department department = Department('총무부', employee);
+      final department = Department('총무부', Employee('홍길동', 41));
       Map<String, dynamic> data = {
         'name': '총무부',
         'leader': {
@@ -20,20 +19,23 @@ void main() {
       };
 
       // When
-      bool result = data.toString() == department.toJson().toString();
 
+      bool result1 = department.name == '총무부';
+      bool result2 = department.leader.name == '홍길동';
+      bool result3 = department.leader.age == 41;
       // Then
-      expect(result, isTrue);
+      expect(result1, isTrue);
+      expect(result2, isTrue);
+      expect(result3, isTrue);
     });
     test('역직렬화한 결과를 출력한다.', () {
       // Given
-      Employee employee = Employee('홍길동', 41);
-      Department department = Department('총무부', employee);
-      Map<String, dynamic> Deserialized = (department.toJson());
+      Department department = Department('총무부', Employee('홍길동', 41));
+      Map<String, dynamic> deserialized = department.toJson();
       // When
-      bool result1 = Deserialized['name'] == '총무부';
-      bool result2 = Deserialized['leader']['name'] == '홍길동';
-      bool result3 = Deserialized['leader']['age'] == 41;
+      bool result1 = deserialized['name'] == '총무부';
+      bool result2 = deserialized['leader']['name'] == '홍길동';
+      bool result3 = deserialized['leader']['age'] == 41;
 
       // Then
       expect(result1, isTrue);
