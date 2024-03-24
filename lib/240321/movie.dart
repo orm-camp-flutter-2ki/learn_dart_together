@@ -1,19 +1,19 @@
 class Movie {
-  final String _title;
-  final String _director;
-  final int _year;
+  final String title;
+  final String director;
+  final int year;
 
-  Movie(this._title, this._director, this._year);
+  Movie(this.title, this.director, this.year);
 
   Movie.fromJson(Map<String, dynamic> json)
-      : _title = json['title'],
-        _director = json['director'],
-        _year = json['year'];
+      : title = json['title'],
+        director = json['director'],
+        year = json['year'];
 
   Map<String, dynamic> toJson() => {
-        'title': _title,
-        'director': _director,
-        'year': _year,
+        'title': title,
+        'director': director,
+        'year': year,
       };
 
   Movie copyWith({
@@ -22,22 +22,18 @@ class Movie {
     int? year,
   }) {
     return Movie(
-      title ?? _title,
-      director ?? _director,
-      year ?? _year,
+      title ?? this.title,
+      director ?? this.director,
+      year ?? this.year,
     );
   }
 
-  get title => _title;
-  get director => _director;
-  get year => _year;
-
   @override
-  bool operator ==(Object other) => identical(this, other) || other is Movie && runtimeType == other.runtimeType && _title == other.title && _director == other.director && _year == other.year;
+  bool operator ==(Object other) => identical(this, other) || other is Movie && runtimeType == other.runtimeType && title == other.title && director == other.director && year == other.year;
 
   @override
   int get hashCode => title.hashCode ^ director.hashCode ^ year.hashCode;
 
   @override
-  String toString() => 'Movie(_title: $_title, _director: $_director, _year: $_year)';
+  String toString() => 'Movie(_title: $title, _director: $director, _year: $year)';
 }
