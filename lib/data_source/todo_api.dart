@@ -41,6 +41,20 @@ class Todo {
   @override
   int get hashCode =>
       userId.hashCode ^ id.hashCode ^ title.hashCode ^ completed.hashCode;
+
+  Todo copyWith({
+    int? userId,
+    int? id,
+    String? title,
+    bool? completed,
+  }) {
+    return Todo(
+      userId: userId ?? this.userId,
+      id: id ?? this.id,
+      title: title ?? this.title,
+      completed: completed ?? this.completed,
+    );
+  }
 }
 
 class ToDoApi {
