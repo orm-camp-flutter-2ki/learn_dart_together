@@ -9,4 +9,10 @@ class TodoApi {
     final Map<String, dynamic> json = jsonDecode(result);
     return Todo.fromJson(json);
   }
+
+  Future<List<Todo>> getTodoList() async {
+    final result = await HttpService().callGet('https://jsonplaceholder.typicode.com/todos');
+    final List jsonList = jsonDecode(result);
+    return jsonList.map((e) => Todo.fromJson(e)).toList();
+  }
 }
