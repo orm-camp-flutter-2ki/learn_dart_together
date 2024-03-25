@@ -12,6 +12,12 @@ class UserApi {
 
     final response = await http.get(Uri.parse(uri));
     final jsonList = jsonDecode(response.body) as List;
-    return jsonList.map((e) => User.fromJson(e)).toList();
+
+    var aa = jsonList.map((e) => User.fromJson(e)).toList();
+    for( int i = 0; i < jsonList.length; i++ ) {
+      var bb = jsonList[i]['company'];
+      print(bb);
+    }
+    return aa;
   }
 }

@@ -1,3 +1,4 @@
+import 'package:learn_dart_together/240325/data_source/subwayApi.dart';
 import 'package:learn_dart_together/240325/data_source/todo_api.dart';
 import 'package:learn_dart_together/240325/data_source/user_api.dart';
 
@@ -12,7 +13,10 @@ void main() async {
   // todoApi.listToListTodo();
 
   // 과제 3
-  userApi.jsonToList();
+  // userApi.jsonToList();
+
+  SubwayApi subwayApi = SubwayApi();
+  subwayApi.fromXml();
 }
 
 
