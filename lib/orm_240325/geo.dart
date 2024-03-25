@@ -1,6 +1,6 @@
 class Geo {
-  double lat;
-  double lng;
+  String lat;
+  String lng;
 
   Geo(this.lat, this.lng);
 
@@ -14,8 +14,8 @@ class Geo {
         lng = json['lng'];
 
   Geo copyWith({
-    double? lat,
-    double? lng,
+    String? lat,
+    String? lng,
   }) {
     return Geo(
       lat ?? lat!,

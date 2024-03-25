@@ -12,14 +12,14 @@ class Address {
         'street': street,
         'city': city,
         'zipcode': zipcode,
-        'geo': geo,
+        'geo': geo.toJson(),
       };
 
   Address.fromJson(Map<String, dynamic> json)
       : street = json['street'],
         city = json['city'],
         zipcode = json['zipcode'],
-        geo = json['geo'];
+        geo = Geo.fromJson(json['geo']);
 
   Address copyWith({
     String? street,

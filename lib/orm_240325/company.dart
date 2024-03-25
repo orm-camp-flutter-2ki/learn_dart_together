@@ -1,25 +1,25 @@
 class Company {
-  String companyName;
+  String name;
   String catchPhrase;
   String bs;
 
-  Company(this.companyName, this.catchPhrase, this.bs);
+  Company(this.name, this.catchPhrase, this.bs);
 
   Map<String, dynamic> toJson() =>
-      {'company_name': companyName, 'catchPhrase': catchPhrase};
+      {'company_name': name, 'catchPhrase': catchPhrase};
 
   Company.fromJson(Map<String, dynamic> json)
-      : companyName = json['companyName'],
+      : name = json['name'],
         catchPhrase = json['catchPhrase'],
         bs = json['bs'];
 
   Company copyWith({
-    String? companyName,
+    String? name,
     String? catchPhrase,
     String? bs,
   }) {
     return Company(
-      companyName ?? companyName!,
+      name ?? name!,
       catchPhrase ?? catchPhrase!,
       bs ?? bs!,
     );
@@ -27,7 +27,7 @@ class Company {
 
   @override
   String toString() {
-    return 'Company{company_name: $companyName, catchPhrase: $catchPhrase, bs: $bs}';
+    return 'Company{company_name: $name, catchPhrase: $catchPhrase, bs: $bs}';
   }
 
   @override
@@ -35,10 +35,10 @@ class Company {
       identical(this, other) ||
       other is Company &&
           runtimeType == other.runtimeType &&
-          companyName == other.companyName &&
+          name == other.name &&
           catchPhrase == other.catchPhrase &&
           bs == other.bs;
 
   @override
-  int get hashCode => companyName.hashCode ^ catchPhrase.hashCode ^ bs.hashCode;
+  int get hashCode => name.hashCode ^ catchPhrase.hashCode ^ bs.hashCode;
 }
