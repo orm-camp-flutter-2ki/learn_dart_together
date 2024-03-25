@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
-
 import '../24_03_25/todo.dart';
 import '../http/http_service.dart';
 

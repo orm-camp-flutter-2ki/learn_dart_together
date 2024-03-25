@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:learn_dart_together/http/http_service.dart';
 
 import '../24_03_25/user.dart';
-import 'package:http/http.dart' as http;
 
 class UserApi {
   Future<List<User>> getUsers() async {

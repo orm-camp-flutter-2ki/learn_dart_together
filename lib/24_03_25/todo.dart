@@ -1,3 +1,11 @@
+// todo의 Json data
+// {
+// "userId": 1,
+// "id": 1,
+// "title": "delectus aut autem",
+// "completed": false
+// }
+
 class Todo {
   final num userId;
   final num id;
