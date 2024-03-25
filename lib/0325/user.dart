@@ -39,7 +39,7 @@ class User {
       };
 
   User copyWith({int? id, String? name, String? username, String? email, Address? address, String? phone, String? website, Company? company,
-    String? street, String? suite, String? city, String? zipcode, Geo? geo, String? lat, String? lng,
+    String? street, String? suite, String? city, String? zipcode, Geo? geo, double? lat, double? lng,
     String? companyName, String? catchPhrase, String? bs}) =>
       User(
           id ?? this.id,

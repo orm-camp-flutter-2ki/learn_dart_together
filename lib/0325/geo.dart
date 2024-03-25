@@ -1,18 +1,18 @@
 class Geo {
 
-  final String lat; // string? double?
-  final String lng; // string? double?
+  final double lat;
+  final double lng;
 
   Geo(this.lat, this.lng);
 
   Geo.fromJson(Map<String, dynamic> json)
-      : lat = json['lat'],
-        lng = json['lng'];
+      : lat = double.parse(json['lat']),
+        lng = double.parse(json['lng']);
 
   Map<String, dynamic> toJson() =>
-      {'lat': lat, 'lng': lng};
+      {'lat': lat.toString(), 'lng': lng.toString()};
 
-  Geo copyWith({String? lat, String? lng}) =>
+  Geo copyWith({double? lat, double? lng}) =>
       Geo(lat ?? this.lat, lng ?? this.lng);
 
   @override
