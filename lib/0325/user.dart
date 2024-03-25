@@ -1,6 +1,5 @@
 import 'address.dart';
 import 'company.dart';
-import 'geo.dart';
 
 class User {
 
