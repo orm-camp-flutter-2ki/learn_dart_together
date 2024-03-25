@@ -6,6 +6,7 @@ void main() async {
   try {
     final todoApi = TodoApi();
     final todo = await todoApi.getTodos();
+    print(todo);
   } catch (e) {
     print(e);
   }
