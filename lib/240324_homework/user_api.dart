@@ -4,12 +4,12 @@ import 'package:http/http.dart' as http;
 
 void main() async {
   UserApi user = UserApi();
-  await user.getTodos();
-  await user.getTodo(1);
+  await user.getUsers();
+  await user.getUser(1);
 }
 
 class UserApi {
-  Future<List<User>> getTodos() async {
+  Future<List<User>> getUsers() async {
     final response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
 
@@ -22,7 +22,7 @@ class UserApi {
     }
   }
 
-  Future<User> getTodo(id) async {
+  Future<User> getUser(id) async {
     final response = await http
         .get(Uri.parse('https://jsonplaceholder.typicode.com/users/$id'));
 
