@@ -7,6 +7,6 @@ class StockApi {
 
     csvList.removeAt(0);
 
-    return csvList.map((e) => Stock.fromJson(e)).toList();
+    return csvList.map((e) => Stock.fromCsv(e)).toList();
   }
 }

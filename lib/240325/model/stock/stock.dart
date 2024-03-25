@@ -11,14 +11,14 @@ class Stock {
       this.delistingDate, this.istatus,
   );
 
-  Stock.fromJson(List<dynamic> json)
-      : symbol = json[0],
-        name = json[1],
-        exchange = json[2],
-        assetType = json[3],
-        ipoDate = json[4] ?? '',
-        delistingDate = json[5],
-        istatus = json[6];
+  Stock.fromCsv(List<dynamic> csv)
+      : symbol = csv[0],
+        name = csv[1],
+        exchange = csv[2],
+        assetType = csv[3],
+        ipoDate = csv[4] ?? '',
+        delistingDate = csv[5],
+        istatus = csv[6];
 
   Map<String, dynamic> toJson() =>
       {
