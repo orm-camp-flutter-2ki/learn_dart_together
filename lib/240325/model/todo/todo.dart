@@ -1,8 +1,8 @@
 class Todo {
-  int userId;
-  int id;
-  String title;
-  bool completed;
+  final int userId;
+  final int id;
+  final String title;
+  final bool completed;
 
   Todo(this.userId, this.id, this.title, this.completed);
 
@@ -36,5 +36,19 @@ class Todo {
   @override
   String toString() {
     return 'Todo{userId: $userId, id: $id, title: $title, completed: $completed}';
+  }
+
+  Todo copyWith({
+    int? userId,
+    int? id,
+    String? title,
+    bool? completed
+  }) {
+    return Todo(
+        userId ?? this.userId,
+        id ?? this.id,
+        title ?? this.title,
+        completed ?? this.completed
+    );
   }
 }

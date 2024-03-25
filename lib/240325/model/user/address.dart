@@ -1,11 +1,11 @@
 import 'package:learn_dart_together/240325/model/user/geo.dart';
 
 class Address {
-  String street;
-  String suite;
-  String city;
-  String zipcode;
-  Geo geo;
+  final String street;
+  final String suite;
+  final String city;
+  final String zipcode;
+  final Geo geo;
 
   Address(this.street, this.suite, this.city, this.zipcode, this.geo);
 

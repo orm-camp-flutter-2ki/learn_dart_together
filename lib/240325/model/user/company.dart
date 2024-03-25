@@ -1,7 +1,7 @@
 class Company {
-  String name;
-  String catchPhrase;
-  String bs;
+  final String name;
+  final String catchPhrase;
+  final String bs;
 
   Company(this.name, this.catchPhrase, this.bs);
 
@@ -31,5 +31,17 @@ class Company {
   @override
   String toString() {
     return 'Company{name: $name, catchPhrase: $catchPhrase, bs: $bs}';
+  }
+
+  Company copyWith({
+    String? name,
+    String? catchPhrase,
+    String? bs
+  }) {
+    return Company(
+      name ?? this.name,
+      catchPhrase ?? this.catchPhrase,
+      bs ?? this.bs
+    );
   }
 }

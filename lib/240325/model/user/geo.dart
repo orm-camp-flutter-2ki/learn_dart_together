@@ -1,6 +1,6 @@
 class Geo {
-  String lat;
-  String lng;
+  final String lat;
+  final String lng;
 
   Geo(this.lat, this.lng);
 
@@ -27,5 +27,15 @@ class Geo {
   @override
   String toString() {
     return 'Geo{lat: $lat, lng: $lng}';
+  }
+
+  Geo copyWith({
+    String? lat,
+    String? lng
+  }) {
+    return Geo(
+      lat ?? this.lat,
+      lng ?? this.lng
+    );
   }
 }

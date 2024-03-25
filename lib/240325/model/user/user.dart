@@ -2,14 +2,14 @@ import 'package:learn_dart_together/240325/model/user/address.dart';
 import 'package:learn_dart_together/240325/model/user/company.dart';
 
 class User {
-  int id;
-  String name;
-  String username;
-  String email;
-  Address address;
-  String phone;
-  String website;
-  Company company;
+  final int id;
+  final String name;
+  final String username;
+  final String email;
+  final Address address;
+  final String phone;
+  final String website;
+  final Company company;
 
   User(this.id, this.name, this.username, this.email, this.address, this.phone,
       this.website, this.company);
@@ -63,5 +63,27 @@ class User {
   @override
   String toString() {
     return 'User{id: $id, name: $name, username: $username, email: $email, address: $address, phone: $phone, website: $website, company: $company}';
+  }
+
+  User copyWith({
+    int? id,
+    String? name,
+    String? username,
+    String? email,
+    Address? address,
+    String? phone,
+    String? website,
+    Company? company
+  }) {
+    return User(
+      id ?? this.id,
+      name ?? this.name,
+      username ?? this.username,
+      email ?? this.email,
+      address ?? this.address,
+      phone ?? this.phone,
+      website ?? this.website,
+      company ?? this.company
+    );
   }
 }
