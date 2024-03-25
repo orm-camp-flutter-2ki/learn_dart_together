@@ -47,6 +47,32 @@ class User {
   String toString() {
     return 'User(id: $id, name: $name, username: $username, email: $email, address: $address, phone: $phone, company: $company)';
   }
+
+  @override
+  bool operator ==(covariant User other) {
+    if (identical(this, other)) return true;
+
+    return other.id == id &&
+        other.name == name &&
+        other.username == username &&
+        other.email == email &&
+        other.address == address &&
+        other.phone == phone &&
+        other.website == website &&
+        other.company == company;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+        name.hashCode ^
+        username.hashCode ^
+        email.hashCode ^
+        address.hashCode ^
+        phone.hashCode ^
+        website.hashCode ^
+        company.hashCode;
+  }
 }
 
 class Address {
@@ -84,6 +110,26 @@ class Address {
   String toString() {
     return 'Address(street: $street, suite: $suite, city: $city, zipcode: $zipcode, geo: $geo)';
   }
+
+  @override
+  bool operator ==(covariant Address other) {
+    if (identical(this, other)) return true;
+
+    return other.street == street &&
+        other.suite == suite &&
+        other.city == city &&
+        other.zipcode == zipcode &&
+        other.geo == geo;
+  }
+
+  @override
+  int get hashCode {
+    return street.hashCode ^
+        suite.hashCode ^
+        city.hashCode ^
+        zipcode.hashCode ^
+        geo.hashCode;
+  }
 }
 
 class Geo {
@@ -108,6 +154,16 @@ class Geo {
 
   @override
   String toString() => 'Geo(lat: $lat, lng: $lng)';
+
+  @override
+  bool operator ==(covariant Geo other) {
+    if (identical(this, other)) return true;
+
+    return other.lat == lat && other.lng == lng;
+  }
+
+  @override
+  int get hashCode => lat.hashCode ^ lng.hashCode;
 }
 
 class Company {
@@ -137,4 +193,16 @@ class Company {
   @override
   String toString() =>
       'Company(name: $name, catchPhrase: $catchPhrase, bs: $bs)';
+
+  @override
+  bool operator ==(covariant Company other) {
+    if (identical(this, other)) return true;
+
+    return other.name == name &&
+        other.catchPhrase == catchPhrase &&
+        other.bs == bs;
+  }
+
+  @override
+  int get hashCode => name.hashCode ^ catchPhrase.hashCode ^ bs.hashCode;
 }

@@ -29,16 +29,18 @@ void main() {
         email: 'Sincere@april.biz',
         address: address,
         phone: '1-770-736-8031 x56442',
-        website: 'ildegard.org',
+        website: 'hildegard.org',
         company: company);
 
     //when
     List<User> user = await UserApi().getUsers();
+    List<User> user2 = await UserApi().getUsers();
 
     //then
-    // print(sol);
-    // print(user[0]);
-    expect(user[0].address.geo, sol.address.geo);
+    print(sol);
+
+    print(user[0]);
+    expect(user[0], sol);
   });
 }
 //유저 필드를 스테틱으로 필드명 자체를 유저네임을 문자열 네임

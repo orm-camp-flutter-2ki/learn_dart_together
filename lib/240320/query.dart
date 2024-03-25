@@ -1,4 +1,3 @@
-
 class Trader {
   String name;
   String city;
@@ -25,7 +24,7 @@ class Trader {
     };
   }
 
-  Trader.fromMap(Map<String, dynamic> json)
+  Trader.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         city = json['city'];
 
