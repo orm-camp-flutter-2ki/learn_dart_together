@@ -14,7 +14,7 @@ void main() {
       expect(users.length, greaterThan(0));
     });
 
-    test('getTodo() returns a specific todo', () async {
+    test('getUser() returns a specific user', () async {
       // Given
       UserApi todoApi = UserApi();
       int userId = 1; // userId to desired todo ID
