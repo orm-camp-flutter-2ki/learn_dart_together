@@ -6,9 +6,9 @@ import '../240325/todo.dart';
 
 class TodoApi {
   Future<List<Todo>> getTodos() async {
-    final Response =
+    final response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
-    List jsonList = jsonDecode(Response.body);
+    List jsonList = jsonDecode(response.body);
     return jsonList.map((e) => Todo.fromJson(e)).toList();
   }
 
