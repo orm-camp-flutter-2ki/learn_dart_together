@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:test/test.dart';
 import 'package:learn_dart_together/240321/practice1.dart';
 
-void main () async {
+void main() async {
   setUp(() {
-     File('sample.csv').writeAsStringSync('''
+    File('sample.csv').writeAsStringSync('''
     1, 홍길동, 30
     2, 한석봉, 20 
     ''');
@@ -18,8 +18,8 @@ void main () async {
   });
 
   test('practice1', () async {
-    await  replaceHanToKim('sample.csv');
-    String result  = await File('sample_copy.csv').readAsString();
+    await replaceHanToKim('sample.csv');
+    String result = await File('sample_copy.csv').readAsString();
     expect(result.contains('김석봉'), true);
   });
 }

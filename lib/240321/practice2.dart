@@ -10,6 +10,6 @@ Future<Movie> getMovieInfo() async {
     "director": "George Licas",
     "year": 1977
   }''';
-  Map<String,dynamic> map= jsonDecode(jsonString);
+  Map<String, dynamic> map = jsonDecode(jsonString);
   return Movie.from(map);
 }
