@@ -18,6 +18,7 @@ class FakeHttpProxy implements HttpProxy {
   String _getUriToPath(Uri uri) {
     return switch (uri.toString()) {
       'https://jsonplaceholder.typicode.com/todos/1' => 'test/24_03_25/resource/todo.json',
+      'https://jsonplaceholder.typicode.com/todos' => 'test/24_03_25/resource/todos.json',
       _ => throw Exception('Unknown URI: $uri')
     };
   }
