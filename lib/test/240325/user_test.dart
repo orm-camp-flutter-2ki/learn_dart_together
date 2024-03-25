@@ -34,12 +34,8 @@ void main() {
 
     //when
     List<User> user = await UserApi().getUsers();
-    List<User> user2 = await UserApi().getUsers();
 
     //then
-    print(sol);
-
-    print(user[0]);
     expect(user[0], sol);
   });
 }
