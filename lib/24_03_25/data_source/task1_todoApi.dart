@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/24_03_25/data_source/task1_todo.dart';
+import 'package:learn_dart_together/24_03_25/data_class/task1_todo.dart';
 
 class TodoApi {
   Future<List> getTodos() async {
