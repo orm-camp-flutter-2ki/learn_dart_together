@@ -8,7 +8,7 @@ class RealtimeStationArrival {
   RealtimeStationArrival(this.result, this.rows);
 
   RealtimeStationArrival.fromJson(Map<String, dynamic> json)
-      : result = Result.fromJson(json['RESULT'] ?? 'asdfsadf'),
+      : result = Result.fromJson(json['RESULT']),
         rows = (json['row'] as List).map((e) => Row.fromJson(e)).toList();
 
   Map<String, dynamic> toJson() => {
