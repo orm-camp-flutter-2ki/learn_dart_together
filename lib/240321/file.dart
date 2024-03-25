@@ -10,7 +10,7 @@ Future<void> main() async {
   // 파일 복사 및 수정
   await copy('sample.csv', 'sample_copy.csv');
 }
-
+// <타입> 선언 안하면 암묵적으로 dynamic 되니까 잘 확인 할 것!
 Future<void> copy(String source, String target) async {
   try {
     // 파일 경로
