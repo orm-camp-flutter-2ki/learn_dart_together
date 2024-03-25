@@ -14,7 +14,7 @@ void main() {
       expect(data[0] == expected, true);
     });
 
-    test('첫 번째 데이터 검증', () async {
+    test('데이터 길이 검증', () async {
       final data = await api.getStock();
       print(data.length);
 
