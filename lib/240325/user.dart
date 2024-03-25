@@ -9,7 +9,7 @@ class User {
   String website;
   Company company;
 
-  static String id1 = 'id'; // 헷갈리지 않기위해 사용가능 휴먼에러 방지
+  static String id1 = 'id'; // 필드명을 스테틱으로 선언하면 헷갈리지 않기위해 사용가능 휴먼에러 방지
 
   User(
       {required this.id,
