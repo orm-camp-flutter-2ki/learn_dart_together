@@ -47,4 +47,20 @@ class Address {
   String toString() {
     return 'Address{street: $street, suite: $suite, city: $city, zipcode: $zipcode, geo: $geo}';
   }
+
+  Address copyWith({
+    String? street,
+    String? suite,
+    String? city,
+    String? zipcode,
+    Geo? geo,
+  }) {
+    return Address(
+        street ?? this.street,
+        suite ?? this.suite,
+        city ?? this.city,
+        zipcode ?? this.zipcode,
+        geo ?? this.geo
+    );
+  }
 }
