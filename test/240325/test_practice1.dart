@@ -8,7 +8,9 @@ import 'package:learn_dart_together/data_source/todo_api.dart';
 
 void main() async {
   test('practice1', () async {
-    Todo practice1 = await TodoApi.getTodo(1);
+    TodoApi todoApi = TodoApi();
+
+    Todo practice1 = await todoApi.getTodo(1);
     expect(practice1.id, equals('1'));
   });
 }

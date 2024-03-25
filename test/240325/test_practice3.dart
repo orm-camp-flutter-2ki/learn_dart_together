@@ -8,7 +8,8 @@ import 'package:http/http.dart' as http;
 
 void main() async {
   test('practice3', () async {
-    List<User> users = await UserApi.getUsers();
+    UserApi userApi = UserApi();
+    List<User> users = await userApi.getUsers();
 
     print(users[0]);
 

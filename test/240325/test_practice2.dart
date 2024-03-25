@@ -9,7 +9,8 @@ import 'package:http/http.dart' as http;
 
 void main() async {
   test('practice2', () async {
-    final List<Todo> users = await TodoApi.getTodos();
+    TodoApi todoApi = TodoApi();
+    final List<Todo> users = await todoApi.getTodos();
 
     expect(users[0] is Todo, true);
   });
