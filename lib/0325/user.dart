@@ -38,18 +38,16 @@ class User {
         'company': company.toJson()
       };
 
-  User copyWith({int? id, String? name, String? username, String? email, Address? address, String? phone, String? website, Company? company,
-    String? street, String? suite, String? city, String? zipcode, Geo? geo, double? lat, double? lng,
-    String? companyName, String? catchPhrase, String? bs}) =>
+  User copyWith({int? id, String? name, String? username, String? email, Address? address, String? phone, String? website, Company? company}) =>
       User(
           id ?? this.id,
           name ?? this.name,
           username ?? this.username,
           email ?? this.email,
-          address ?? this.address.copyWith(street: street, suite: suite, city: city, geo: geo, lat: lat, lng: lng),
+          address ?? this.address,
           phone ?? this.phone,
           website ?? this.website,
-          company ?? this.company.copyWith(name: companyName, catchPhrase: catchPhrase, bs: bs));
+          company ?? this.company);
 
   @override
   bool operator ==(Object other) =>

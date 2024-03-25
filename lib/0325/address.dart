@@ -26,9 +26,9 @@ class Address {
         'geo': geo.toJson()
       };
 
-  Address copyWith({String? street, String? suite, String? city, String? zipcode, Geo? geo, double? lat, double? lng}) =>
+  Address copyWith({String? street, String? suite, String? city, String? zipcode, Geo? geo}) =>
       Address(street ?? this.street, suite ?? this.suite, city ?? this.city,
-          zipcode ?? this.zipcode, geo ?? this.geo.copyWith(lat: lat, lng: lng));
+          zipcode ?? this.zipcode, geo ?? this.geo);
 
   @override
   bool operator ==(Object other) =>
