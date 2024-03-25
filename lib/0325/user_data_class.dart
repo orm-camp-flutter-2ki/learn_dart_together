@@ -1,5 +1,6 @@
 class User {
   final int id;
+  final String name;
   final String username;
   final String email;
   final Address? address;
@@ -9,6 +10,7 @@ class User {
 
   User({
     required this.id,
+    required this.name,
     required this.username,
     required this.email,
     required this.address,
@@ -19,6 +21,7 @@ class User {
 
   User.fromJson(Map<String, dynamic> json) // 생성자
       : id = json['id'],
+        name = json['name'],
         username = json['username'],
         email = json['email'],
         address =
@@ -31,6 +34,7 @@ class User {
   Map<String, dynamic> toJson() => // 함수
       {
         'id': id,
+        'name': name,
         'username': username,
         'email': email,
         'address': address,
@@ -39,10 +43,12 @@ class User {
         'company': company,
       };
 
+
   @override
   String toString() {
-    return 'User{id: $id, username: $username, email: $email, address: $address, phone: $phone, website: $website, company: $company}';
+    return 'User{id: $id, name: $name, username: $username, email: $email, address: $address, phone: $phone, website: $website, company: $company}';
   }
+
 
   @override
   bool operator ==(Object other) =>
@@ -50,6 +56,7 @@ class User {
       other is User &&
           runtimeType == other.runtimeType &&
           id == other.id &&
+          name == other.name &&
           username == other.username &&
           email == other.email &&
           address == other.address &&
@@ -60,6 +67,7 @@ class User {
   @override
   int get hashCode =>
       id.hashCode ^
+      name.hashCode ^
       username.hashCode ^
       email.hashCode ^
       address.hashCode ^
@@ -69,6 +77,7 @@ class User {
 
   User copyWith({
     required int? id,
+    required String? name,
     required String? username,
     required String? email,
     required Address? address,
@@ -78,6 +87,7 @@ class User {
   }) {
     return User(
       id: id ?? this.id,
+      name: name ?? this.name,
       username: username ?? this.username,
       email: email ?? this.email,
       address: address ?? this.address,
