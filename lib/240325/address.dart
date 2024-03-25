@@ -1,11 +1,11 @@
 import 'geo.dart';
 
 class Address {
-  String street;
-  String suite;
-  String city;
-  String zipcode;
-  Geo geo;
+  final String street;
+  final String suite;
+  final String city;
+  final String zipcode;
+  final Geo geo;
 
   Address({
     required this.street,

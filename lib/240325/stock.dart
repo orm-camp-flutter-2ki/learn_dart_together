@@ -1,11 +1,11 @@
 class Stock {
-  String symbol;
-  String name;
-  String exchange;
-  String assetType;
-  String ipoDate;
-  String delistingDate;
-  String istatus;
+  final String symbol;
+  final String name;
+  final String exchange;
+  final String assetType;
+  final String ipoDate;
+  final String delistingDate;
+  final String istatus;
 
   Stock({
     required this.symbol,

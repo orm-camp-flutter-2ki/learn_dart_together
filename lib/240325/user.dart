@@ -3,10 +3,10 @@ import 'package:learn_dart_together/240314/a.dart';
 import 'address.dart';
 
 class User {
-  String id;
-  String name;
-  String username;
-  Address address;
+  final String id;
+  final String name;
+  final String username;
+  final Address address;
 
   User(
       {required this.id,

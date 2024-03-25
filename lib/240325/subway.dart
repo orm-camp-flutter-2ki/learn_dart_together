@@ -1,11 +1,11 @@
 class Subway {
-  String subwayId;
-  String updnLine;
-  String trainLineNm;
-  String btrainSttus;
-  String bstatnNm;
-  DateTime recptnDt;
-  String arvlMsg2;
+  final String subwayId;
+  final String updnLine;
+  final String trainLineNm;
+  final String btrainSttus;
+  final String bstatnNm;
+  final DateTime recptnDt;
+  final String arvlMsg2;
 
   Subway({
     required this.subwayId,
