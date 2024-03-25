@@ -32,7 +32,7 @@ void main() {
       // Given
       final origin = Movie(title: 'Star Wars', director: 'George Lucas', year: 1977);
       // When
-      final result = Movie.copyWith(origin);
+      final result = Movie.copyWith(origin: origin);
 
       // Then
       expect(result.director == origin.director, true);

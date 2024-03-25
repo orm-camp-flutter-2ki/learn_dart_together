@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 class Movie {
-  String title;
-  String director;
-  int year;
+  final String title;
+  final String director;
+  final int year;
 
   Movie({required this.title, required this.director, required this.year});
 
