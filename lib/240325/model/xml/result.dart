@@ -3,8 +3,8 @@ class Result {
   final String developerMessage;
   final String link;
   final String message;
-  final String status;
-  final String total;
+  final int status;
+  final int total;
 
   Result(this.code, this.developerMessage, this.link, this.message, this.status,
       this.total);
@@ -14,8 +14,8 @@ class Result {
     developerMessage = json['developerMessage'] ?? '',
     link = json['link'] ?? '',
     message = json['message'] ?? '',
-    status = json['status'] ?? '',
-    total = json['total'] ?? '';
+    status = int.parse(json['status'] ?? 0),
+    total = int.parse(json['total'] ?? 0);
 
   Map<String, dynamic> toJson() => {
     'code': code,
