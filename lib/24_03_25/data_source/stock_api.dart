@@ -16,6 +16,6 @@ class StockInfoApi {
 
     csvList.removeAt(0);
 
-    return csvList.map((e) =>  StockInfo.fromCsv(e)).toList();
+    return csvList.map((e) => StockInfo.fromCsv(e)).toList();
   }
 }

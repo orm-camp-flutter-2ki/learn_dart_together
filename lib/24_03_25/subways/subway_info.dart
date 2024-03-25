@@ -77,15 +77,15 @@ class SubwayInfo {
             DateTime.parse(row.findElements('recptnDt').single.innerText),
         arvlMsg2 = row.findElements('arvlMsg2').single.innerText;
 
-  // toXml이 가능한가?
+// toXml이 가능한가?
 
-  // Map<String, dynamic> toJson() => {
-  //       'subwayId': subwayId,
-  //       'updnLine': updnLine,
-  //       'trainLineNm': trainLineNm,
-  //       'btrainSttus': btrainSttus,
-  //       'bstatnNm': bstatnNm,
-  //       'recptnDt': recptnDt,
-  //       'arvlMsg2': arvlMsg2,
-  //     };
+// Map<String, dynamic> toJson() => {
+//       'subwayId': subwayId,
+//       'updnLine': updnLine,
+//       'trainLineNm': trainLineNm,
+//       'btrainSttus': btrainSttus,
+//       'bstatnNm': bstatnNm,
+//       'recptnDt': recptnDt,
+//       'arvlMsg2': arvlMsg2,
+//     };
 }
