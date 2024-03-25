@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import 'package:xml2json/xml2json.dart';
 
 class XmlService {
-
   Future<String> callGet(url) async {
     final myTransformer = Xml2Json();
     final response = await http.get(Uri.parse(url))
