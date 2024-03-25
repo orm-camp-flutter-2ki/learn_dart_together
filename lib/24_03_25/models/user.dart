@@ -46,4 +46,34 @@ class User {
       company: Company.fromJson(json['company']),
     );
   }
+
+  @override
+  String toString() {
+    return 'User{id: $id, name: $name, username: $username, email: $email, address: $address, phone: $phone, website: $website, company: $company}';
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is User &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          name == other.name &&
+          username == other.username &&
+          email == other.email &&
+          address == other.address &&
+          phone == other.phone &&
+          website == other.website &&
+          company == other.company;
+
+  @override
+  int get hashCode =>
+      id.hashCode ^
+      name.hashCode ^
+      username.hashCode ^
+      email.hashCode ^
+      address.hashCode ^
+      phone.hashCode ^
+      website.hashCode ^
+      company.hashCode;
 }
