@@ -5,17 +5,25 @@ import 'package:http/http.dart' as http;
 void main() async {
   try {
     final todoApi = TodoApi();
-    final todo = await todoApi.getTodo();
-    print(todo);
+    final todo = await todoApi.getTodos();
   } catch (e) {
     print(e);
   }
 }
 
 class TodoApi {
-  Future<List<Todo>> getTodo() async {
+  Future<List<Todo>> getTodos() async {
     final http.Response response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
+
+    if (response.statusCode == 200) {
+      List json = jsonDecode(response.body);
+
+      List<Todo> data = json.map((json) => Todo.fromJson(json)).toList();
+      return data;
+    } else {
+      throw Exception('Response 에러');
+    }
 
     final jsonList = jsonDecode(response.body) as List;
     return jsonList.map((e) => Todo.fromJson(e)).toList();
@@ -35,6 +43,27 @@ class Todo {
         id = json['id'],
         title = json['title'],
         completed = json['completed'];
+
+  Map<String, dynamic> toJson() => {
+        'userId': userId,
+        'id': id,
+        'title': title,
+        'completed': completed,
+      };
+
+  Todo copyWith({
+    int? userId,
+    int? id,
+    String? title,
+    bool? completed,
+  }) {
+    return Todo(
+      userId ?? this.userId,
+      id ?? this.id,
+      title ?? this.title,
+      completed ?? this.completed,
+    );
+  }
 
   @override
   String toString() {
