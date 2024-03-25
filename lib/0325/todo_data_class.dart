@@ -1,17 +1,17 @@
 // 데이터 클래스
-class User {
+class Todo {
   final int userId;
   final int id;
   final String title;
   final bool completed;
 
-  User(
+  Todo(
       {required this.userId,
       required this.id,
       required this.title,
       required this.completed});
 
-  User.fromJson(Map<String, dynamic> json) // 생성자
+  Todo.fromJson(Map<String, dynamic> json) // 생성자
       : userId = json['userId'],
         id = json['id'],
         title = json['title'],
@@ -28,7 +28,7 @@ class User {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is User &&
+      other is Todo &&
           runtimeType == other.runtimeType &&
           userId == other.userId &&
           id == other.id &&
@@ -39,12 +39,12 @@ class User {
   int get hashCode =>
       userId.hashCode ^ id.hashCode ^ title.hashCode ^ completed.hashCode;
 
-  User copyWith(
+  Todo copyWith(
       {required int? userId,
       required int? id,
       required String? title,
       required bool? completed}) {
-    return User(
+    return Todo(
       userId: userId ?? this.userId,
       id: id ?? this.id,
       title: title ?? this.title,
