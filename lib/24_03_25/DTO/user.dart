@@ -10,6 +10,16 @@ class User {
   String toString() {
     return 'User{userInfo: $userInfo}';
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is User &&
+          runtimeType == other.runtimeType &&
+          userInfo == other.userInfo;
+
+  @override
+  int get hashCode => userInfo.hashCode;
 }
 
 class UserInfo {
@@ -40,19 +50,42 @@ class UserInfo {
         company = Company.fromJson(json['company']);
 
   Map<String, dynamic> toJson() => {
-    'id' : id,
-    'name' : name,
-    'email' : email,
-    'address' : address.toJson(),
-    'phone' : phone,
-    'website' : website,
-    'company' : company.toJson()
-  };
+        'id': id,
+        'name': name,
+        'email': email,
+        'address': address.toJson(),
+        'phone': phone,
+        'website': website,
+        'company': company.toJson()
+      };
 
   @override
   String toString() {
     return 'UserInfo{id: $id, name: $name, email: $email, address: $address, phone: $phone, website: $website, company: $company}';
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserInfo &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          name == other.name &&
+          email == other.email &&
+          address == other.address &&
+          phone == other.phone &&
+          website == other.website &&
+          company == other.company;
+
+  @override
+  int get hashCode =>
+      id.hashCode ^
+      name.hashCode ^
+      email.hashCode ^
+      address.hashCode ^
+      phone.hashCode ^
+      website.hashCode ^
+      company.hashCode;
 }
 
 class Address {
@@ -77,17 +110,36 @@ class Address {
         geo = Geography.fromJson(json['geo']);
 
   Map<String, dynamic> toJson() => {
-    'street' : street,
-    'suite' : suite,
-    'city' : city,
-    'zipcode' : zipcode,
-    'geo' : geo.toJson()
-  };
+        'street': street,
+        'suite': suite,
+        'city': city,
+        'zipcode': zipcode,
+        'geo': geo.toJson()
+      };
 
   @override
   String toString() {
     return 'Address{street: $street, suite: $suite, city: $city, zipcode: $zipcode, geo: $geo}';
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Address &&
+          runtimeType == other.runtimeType &&
+          street == other.street &&
+          suite == other.suite &&
+          city == other.city &&
+          zipcode == other.zipcode &&
+          geo == other.geo;
+
+  @override
+  int get hashCode =>
+      street.hashCode ^
+      suite.hashCode ^
+      city.hashCode ^
+      zipcode.hashCode ^
+      geo.hashCode;
 }
 
 class Geography {
@@ -106,6 +158,17 @@ class Geography {
   String toString() {
     return 'Geography{lat: $lat, lng: $lng}';
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Geography &&
+          runtimeType == other.runtimeType &&
+          lat == other.lat &&
+          lng == other.lng;
+
+  @override
+  int get hashCode => lat.hashCode ^ lng.hashCode;
 }
 
 class Company {
@@ -127,4 +190,16 @@ class Company {
   String toString() {
     return 'Company{name: $name, catchPhrase: $catchPhrase, bs: $bs}';
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Company &&
+          runtimeType == other.runtimeType &&
+          name == other.name &&
+          catchPhrase == other.catchPhrase &&
+          bs == other.bs;
+
+  @override
+  int get hashCode => name.hashCode ^ catchPhrase.hashCode ^ bs.hashCode;
 }
