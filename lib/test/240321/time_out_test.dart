@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 void main() {
   test('timeout Test', () async {
     try {
-      final time = await timeoutFuture().timeout(Duration(seconds: 3));
+      final time = await timeoutFuture().timeout(Duration(seconds: 8));
       print(time);
     } catch (e) {
       print('timeout');
