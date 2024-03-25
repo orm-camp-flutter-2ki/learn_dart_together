@@ -18,7 +18,12 @@ class Todo {
         completed = json['completed'];
 
   Map<String, dynamic> toJson() => // 함수
-      {'userId': userId, 'id': id, 'title': title, 'completed': completed};
+      {
+        'userId': userId,
+        'id': id,
+        'title': title,
+        'completed': completed,
+      };
 
   @override
   String toString() {
@@ -39,11 +44,12 @@ class Todo {
   int get hashCode =>
       userId.hashCode ^ id.hashCode ^ title.hashCode ^ completed.hashCode;
 
-  Todo copyWith(
-      {required int? userId,
-      required int? id,
-      required String? title,
-      required bool? completed}) {
+  Todo copyWith({
+    required int? userId,
+    required int? id,
+    required String? title,
+    required bool? completed,
+  }) {
     return Todo(
       userId: userId ?? this.userId,
       id: id ?? this.id,
