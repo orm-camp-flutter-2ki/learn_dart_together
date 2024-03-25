@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/24_03_25/DTO/user.dart';
 
 class UserApi {
   Future<List<dynamic>> getUser() async {
