@@ -23,7 +23,7 @@ class TodoApi {
 
 
   // 과제2. Json List 를 List<Todo> 로 변환
-  Future<void> listToListTodo() async {
+  Future<List<Todo>> listToListTodo() async {
     String uri = 'https://jsonplaceholder.typicode.com/todos';
 
     // json List 형태의 json 코드를 받는다.
@@ -31,6 +31,6 @@ class TodoApi {
     // json 코드를 List<dynamic> 으로 변환
     var jsonList = jsonDecode(response.body) as List;
     // jsonList 에 담긴 값들을 List<Todo> 에 담는다.
-    jsonList.map((e) => Todo.fromJson(e)).toList();
+    return jsonList.map((e) => Todo.fromJson(e)).toList();
   }
 }
