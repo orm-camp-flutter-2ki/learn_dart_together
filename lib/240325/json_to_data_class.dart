@@ -1,13 +1,18 @@
 import 'package:learn_dart_together/240325/data_source/todo_api.dart';
+import 'package:learn_dart_together/240325/data_source/user_api.dart';
 
 void main() async {
   TodoApi todoApi = TodoApi();
+  UserApi userApi = UserApi();
 
   // 과제 1
-  todoApi.jsonToDataClass();
+  // todoApi.jsonToDataClass();
 
   // 과제 2
-  todoApi.listToListTodo();
+  // todoApi.listToListTodo();
+
+  // 과제 3
+  userApi.jsonToList();
 }
 
 
