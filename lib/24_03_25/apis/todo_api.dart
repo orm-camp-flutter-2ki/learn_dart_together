@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:learn_dart_together/24_03_25/http_proxy.dart';
 
 import '../models/todo.dart';
@@ -11,6 +13,6 @@ class TodoApi {
   Future<Todo> getTodo(num id) async {
     final response = await http.get(Uri.parse('$baseUrl/todos/$id'));
 
-    return Todo.fromJson(response.body as Map<String, dynamic>);
+    return Todo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   }
 }
