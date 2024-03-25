@@ -1,5 +1,5 @@
 import 'package:learn_dart_together/240325/data_source/user_api.dart';
-import 'package:learn_dart_together/240325/model/user.dart';
+import 'package:learn_dart_together/240325/model/user/user.dart';
 import 'package:test/test.dart';
 
 void main() {

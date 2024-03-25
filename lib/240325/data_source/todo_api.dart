@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:learn_dart_together/240325/service/http_service.dart';
-import 'package:learn_dart_together/240325/model/todo.dart';
+import 'package:learn_dart_together/240325/model/todo/todo.dart';
 
 class TodoApi {
   Future<Todo> getTodo(int i) async {

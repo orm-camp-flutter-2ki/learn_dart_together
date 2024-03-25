@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:learn_dart_together/240325/model/user.dart';
+import 'package:learn_dart_together/240325/model/user/user.dart';
 import 'package:learn_dart_together/240325/service/http_service.dart';
 
 class UserApi {

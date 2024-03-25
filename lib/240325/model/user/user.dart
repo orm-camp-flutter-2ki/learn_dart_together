@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/240325/model/address.dart';
-import 'package:learn_dart_together/240325/model/company.dart';
+import 'package:learn_dart_together/240325/model/user/address.dart';
+import 'package:learn_dart_together/240325/model/user/company.dart';
 
 class User {
   int id;

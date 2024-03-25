@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240325/model/todo.dart';
+import 'package:learn_dart_together/240325/model/todo/todo.dart';
 import 'package:learn_dart_together/240325/data_source/todo_api.dart';
 import 'package:test/test.dart';
 

@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240325/model/geo.dart';
+import 'package:learn_dart_together/240325/model/user/geo.dart';
 
 class Address {
   String street;
