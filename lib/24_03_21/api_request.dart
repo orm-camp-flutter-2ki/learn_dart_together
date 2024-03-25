@@ -12,10 +12,10 @@ class Movie {
         director = json['director'],
         year = json['year'];
 
-  Movie.copyWith(Movie origin)
-      : title = origin.title,
-        director = origin.director,
-        year = origin.year;
+  Movie.copyWith({required Movie origin, String? title, String? director, int? year})
+      : title = title ?? origin.title,
+        director = director ?? origin.director,
+        year = year ?? origin.year;
 
   @override
   bool operator ==(Object other) =>
