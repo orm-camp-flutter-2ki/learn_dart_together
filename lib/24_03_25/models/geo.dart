@@ -1,6 +1,6 @@
 class Geo {
-  final num lat;
-  final num lng;
+  final String lat;
+  final String lng;
 
   Geo({required this.lat, required this.lng});
 
@@ -19,12 +19,12 @@ class Geo {
   }
 
   Geo copyWith({
-    double? lat,
-    double? lng,
+    String? lat,
+    String? lng,
   }) {
     return Geo(
-      lat: lat ?? this.lat,
-      lng: lng ?? this.lng,
+      lat: this.lat,
+      lng: this.lng,
     );
   }
 
