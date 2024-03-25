@@ -1,3 +1,5 @@
+import 'package:xml/xml.dart';
+
 class SubwayInfo {
   final num rowNum;
   final num selectedCount;
@@ -49,7 +51,7 @@ class SubwayInfo {
     required this.arvlCd,
   });
 
-  Map<String, dynamic> toJson(){
+  Map<String, dynamic> toJson() {
     return {
       'rowNum': rowNum,
       'selectedCount': selectedCount,
@@ -77,7 +79,7 @@ class SubwayInfo {
     };
   }
 
-  factory SubwayInfo.fromJson(Map<String, dynamic> json){
+  factory SubwayInfo.fromJson(Map<String, dynamic> json) {
     return SubwayInfo(
       rowNum: json['rowNum'],
       selectedCount: json['selectedCount'],
@@ -91,7 +93,8 @@ class SubwayInfo {
       statnNm: json['statnNm'],
       trnsitCo: json['trnsitCo'],
       ordkey: json['ordkey'],
-      subwayList: json['subwayList'].split(',').map((e) => int.parse(e)).toList(),
+      subwayList:
+          json['subwayList'].split(',').map((e) => int.parse(e)).toList(),
       statnList: json['statnList'].split(',').map((e) => int.parse(e)).toList(),
       btrainSttus: json['btrainSttus'],
       barvlDt: json['barvlDt'],
@@ -105,6 +108,46 @@ class SubwayInfo {
     );
   }
 
+  factory SubwayInfo.fromXml(XmlElement el) {
+    return SubwayInfo(
+      rowNum: int.parse(el.findElements('rowNum').single.innerText),
+      selectedCount:
+          int.parse(el.findElements('selectedCount').single.innerText),
+      totalCount: int.parse(el.findElements('totalCount').single.innerText),
+      subwayId: int.parse(el.findElements('subwayId').single.innerText),
+      updnLine: el.findElements('updnLine').single.innerText,
+      trainLineNm: el.findElements('trainLineNm').single.innerText,
+      statnFid: int.parse(el.findElements('statnFid').single.innerText),
+      statnTid: int.parse(el.findElements('statnTid').single.innerText),
+      statnId: int.parse(el.findElements('statnId').single.innerText),
+      statnNm: el.findElements('statnNm').single.innerText,
+      trnsitCo: int.parse(el.findElements('trnsitCo').single.innerText),
+      ordkey: el.findElements('ordkey').single.innerText,
+      subwayList: el
+          .findElements('subwayList')
+          .single
+          .innerText
+          .split(',')
+          .map((e) => int.parse(e))
+          .toList(),
+      statnList: el
+          .findElements('statnList')
+          .single
+          .innerText
+          .split(',')
+          .map((e) => int.parse(e))
+          .toList(),
+      btrainSttus: el.findElements('btrainSttus').single.innerText,
+      barvlDt: int.parse(el.findElements('barvlDt').single.innerText),
+      btrainNo: el.findElements('btrainNo').single.innerText,
+      bstatnId: int.parse(el.findElements('bstatnId').single.innerText),
+      bstatnNm: el.findElements('bstatnNm').single.innerText,
+      recptnDt: el.findElements('recptnDt').single.innerText,
+      arvlMsg2: el.findElements('arvlMsg2').single.innerText,
+      arvlMsg3: el.findElements('arvlMsg3').single.innerText,
+      arvlCd: int.parse(el.findElements('arvlCd').single.innerText),
+    );
+  }
 
   @override
   bool operator ==(Object other) =>
