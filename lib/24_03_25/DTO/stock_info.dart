@@ -6,16 +6,14 @@ class Stocks {
   Stocks.fromCsv(List<List<dynamic>> json)
       : stockInfoList = json.map((e) => Stock.fromCsv(e)).toList();
 
-  List<List<dynamic>> toJson() =>
-    stockInfoList.map((e) => e.toJson()).toList();
-
+  List<List<dynamic>> toJson() => stockInfoList.map((e) => e.toJson()).toList();
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Stocks &&
-              runtimeType == other.runtimeType &&
-              stockInfoList == other.stockInfoList;
+      other is Stocks &&
+          runtimeType == other.runtimeType &&
+          stockInfoList == other.stockInfoList;
 
   @override
   int get hashCode => stockInfoList.hashCode;
@@ -35,13 +33,14 @@ class Stock {
   String delistingDate;
   String status;
 
-  Stock({required this.symbol,
-    required this.name,
-    required this.exchange,
-    required this.assertType,
-    required this.ipoDate,
-    required this.delistingDate,
-    required this.status});
+  Stock(
+      {required this.symbol,
+      required this.name,
+      required this.exchange,
+      required this.assertType,
+      required this.ipoDate,
+      required this.delistingDate,
+      required this.status});
 
   Stock.fromCsv(List<dynamic> json)
       : symbol = json[0],
@@ -53,22 +52,20 @@ class Stock {
         status = json[6];
 
   List<dynamic> toJson() =>
-      [
-        symbol, name, exchange, assertType, ipoDate, delistingDate, status
-      ];
+      [symbol, name, exchange, assertType, ipoDate, delistingDate, status];
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Stock &&
-              runtimeType == other.runtimeType &&
-              symbol == other.symbol &&
-              name == other.name &&
-              exchange == other.exchange &&
-              assertType == other.assertType &&
-              ipoDate == other.ipoDate &&
-              delistingDate == other.delistingDate &&
-              status == other.status;
+      other is Stock &&
+          runtimeType == other.runtimeType &&
+          symbol == other.symbol &&
+          name == other.name &&
+          exchange == other.exchange &&
+          assertType == other.assertType &&
+          ipoDate == other.ipoDate &&
+          delistingDate == other.delistingDate &&
+          status == other.status;
 
   @override
   int get hashCode =>

@@ -6,7 +6,8 @@ class StockApi {
     final http.Response response = await http.get(Uri.parse(
         'https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=demo'));
 
-    final List<List<dynamic>> jsonList = const CsvToListConverter().convert(response.body);
+    final List<List<dynamic>> jsonList =
+        const CsvToListConverter().convert(response.body);
 
     jsonList.removeAt(0);
 

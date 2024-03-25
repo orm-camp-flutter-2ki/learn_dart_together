@@ -8,6 +8,7 @@ void main() {
 
     test('UserApi 의 getUser 메서드가 잘 동작하는지', () async {
       List jsonList = await userApi.getUser();
+
       expect(jsonList is List, true);
     });
 
