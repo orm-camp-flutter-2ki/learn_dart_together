@@ -4,9 +4,10 @@ import 'package:http/http.dart' as http;
 import 'package:learn_dart_together/24_03_25/users/user.dart';
 
 class UserApi {
+  final url = 'https://jsonplaceholder.typicode.com/users';
+
   Future<List<User>> getUsers() async {
-    final http.Response response =
-        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
+    final http.Response response = await http.get(Uri.parse(url));
 
     // response.body == json String
 
@@ -18,8 +19,7 @@ class UserApi {
   Future<User> getUser(int id) async {
     try {
       // 없는 id가 들어올 수도 있지
-      final http.Response response = await http
-          .get(Uri.parse('https://jsonplaceholder.typicode.com/users/$id'));
+      final http.Response response = await http.get(Uri.parse('$url/$id'));
 
       // response.body == json String
       final Map<String, dynamic> json = jsonDecode(response.body);
