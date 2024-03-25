@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:csv/csv.dart';
-
 void main() {
   copyAndEditFile();
 }
