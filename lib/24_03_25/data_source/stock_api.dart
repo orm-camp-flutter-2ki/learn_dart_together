@@ -1,7 +1,5 @@
-import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/24_03_25/DTO/stock_info.dart';
 
 class StockApi {
   Future<List<List<dynamic>>> getStock() async {
