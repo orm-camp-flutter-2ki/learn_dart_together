@@ -4,9 +4,10 @@ import 'package:learn_dart_together/24_03_25/todos/todo.dart';
 import 'package:http/http.dart' as http;
 
 class TodoApi {
+  final url = 'https://jsonplaceholder.typicode.com/todos';
+
   Future<List<Todo>> getTodos() async {
-    final http.Response response =
-        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
+    final http.Response response = await http.get(Uri.parse(url));
 
     // response.body == json String
 
@@ -17,8 +18,7 @@ class TodoApi {
 
   Future<Todo> getTodo(int id) async {
     try {
-      final http.Response response = await http
-          .get(Uri.parse('https://jsonplaceholder.typicode.com/todos/$id'));
+      final http.Response response = await http.get(Uri.parse('$url/$id'));
 
       // responsse.body == json String
       final Map<String, dynamic> json = jsonDecode(response.body);
