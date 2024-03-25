@@ -6,7 +6,7 @@ class TodoApi {
   Future<List> getTodos() async {
     try {
       final http.Response res =
-      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
+      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos/'));
 
       if (res.statusCode == 200) {
         // 서버에서 정상적으로 데이터를 받아왔을 때
@@ -29,4 +29,10 @@ class TodoApi {
     final Map<String, dynamic> json = jsonDecode(res.body);
     return Todo.fromJson(json);
   }
+}
+
+void main() async {
+  TodoApi test = TodoApi();
+  // print(await test.getTodos());
+  print(await test.getTodo(1));
 }
