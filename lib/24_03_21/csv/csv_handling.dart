@@ -14,7 +14,7 @@ void main() async {
     //스트링 to List 컨버팅
     final List<List<dynamic>> convertedData =
         const CsvToListConverter(eol: '\n').convert(csvString);
-    
+
     //List 내용물 String 공백 제거 - 추후 원하는 값 제대로 찾기 위함.
     final List<List<dynamic>> changedData = convertedData
         .map((i) => i.map((e) => e is String ? e.trim() : e).toList())

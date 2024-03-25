@@ -13,7 +13,7 @@ class Movie {
   Map<String, dynamic> toJson() =>
       {'title': title, 'director': director, 'year': year};
 
-  Movie copyWith(String? title, String? director, int? year) {
+  Movie copyWith({String? title, String? director, int? year}) {
     return Movie(
         title: title ?? this.title,
         director: director ?? this.director,
