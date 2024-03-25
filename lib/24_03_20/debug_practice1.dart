@@ -44,23 +44,23 @@ void main() {
 }
 
 class CollectionSalePrice {
-  final num _price; // dart에서는 숫자는 거의 무조건적으로 num을 안정적으로 쓴다
-  final DateTime _cvtDateTime;
+  final num price; // dart에서는 숫자는 거의 무조건적으로 num을 안정적으로 쓴다
+  final DateTime cvtDateTime;
 
-  CollectionSalePrice(this._price, this._cvtDateTime);
+  CollectionSalePrice(this.price, this.cvtDateTime);
 
   CollectionSalePrice.fromJson(Map<String, dynamic> json)
-      : _price = json['price'],
-        _cvtDateTime = DateTime.parse(json['cvtDatetime']);
+      : price = json['price'],
+        cvtDateTime = DateTime.parse(json['cvtDatetime']);
 
   Map<String, dynamic> toJson() => {
-        'price': _price,
-        'cvtDatetime': _cvtDateTime,
+        'price': price,
+        'cvtDatetime': cvtDateTime,
       };
 
   @override
   String toString() {
-    return 'Price: $_price, Date: $_cvtDateTime';
+    return 'Price: $price, Date: $cvtDateTime';
   }
 
   @override
@@ -68,36 +68,36 @@ class CollectionSalePrice {
       identical(this, other) ||
       other is CollectionSalePrice &&
           runtimeType == other.runtimeType &&
-          _price == other._price &&
-          _cvtDateTime == other._cvtDateTime;
+          price == other.price &&
+          cvtDateTime == other.cvtDateTime;
 
   @override
-  int get hashCode => _price.hashCode ^ _cvtDateTime.hashCode;
+  int get hashCode => price.hashCode ^ cvtDateTime.hashCode;
 
   CollectionSalePrice copyWith({
     num? price,
     DateTime? cvtDateTime,
   }) {
     return CollectionSalePrice(
-      price ?? _price,
-      cvtDateTime ?? _cvtDateTime,
+      price ?? this.price,
+      cvtDateTime ?? this.cvtDateTime,
     );
   }
 }
 
 class CollectionChart {
-  final String _collectionName;
-  final List<CollectionSalePrice> _collectionSalePrices;
+  final String collectionName;
+  final List<CollectionSalePrice> collectionSalePrices;
 
-  CollectionChart(this._collectionName, this._collectionSalePrices);
+  CollectionChart(this.collectionName, this.collectionSalePrices);
 
   CollectionChart copyWith({
     String? collectionName,
     List<CollectionSalePrice>? collectionSalePrices,
   }) {
     return CollectionChart(
-      collectionName ?? _collectionName,
-      collectionSalePrices ?? _collectionSalePrices,
+      collectionName ?? this.collectionName,
+      collectionSalePrices ?? this.collectionSalePrices,
     );
   }
 
@@ -114,8 +114,8 @@ class CollectionChart {
   }
 
   Map<String, dynamic> toJson() => {
-        'collectionName': _collectionName,
-        'collectionSalePrice': _collectionSalePrices,
+        'collectionName': collectionName,
+        'collectionSalePrice': collectionSalePrices,
       };
 
   @override
@@ -123,15 +123,15 @@ class CollectionChart {
       identical(this, other) ||
       other is CollectionChart &&
           runtimeType == other.runtimeType &&
-          _collectionName == other._collectionName &&
-          _collectionSalePrices == other._collectionSalePrices;
+          collectionName == other.collectionName &&
+          collectionSalePrices == other.collectionSalePrices;
 
   @override
-  int get hashCode => _collectionName.hashCode ^ _collectionSalePrices.hashCode;
+  int get hashCode => collectionName.hashCode ^ collectionSalePrices.hashCode;
 
   @override
   String toString() {
-    return 'CollectionChart{_collectionName: $_collectionName, _collectionSalePrices: $_collectionSalePrices}';
+    return 'CollectionChart{collectionName: $collectionName, collectionSalePrices: $collectionSalePrices}';
   }
 }
 
