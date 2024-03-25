@@ -76,8 +76,7 @@ class StockInfo {
           exchange == other.exchange &&
           assetType == other.assetType &&
           ipoDate == other.ipoDate &&
-          status == other.status &&
-          delistingDate == other.delistingDate;
+          status == other.status;
 
   @override
   int get hashCode =>
@@ -86,6 +85,5 @@ class StockInfo {
       exchange.hashCode ^
       assetType.hashCode ^
       ipoDate.hashCode ^
-      status.hashCode ^
-      delistingDate.hashCode;
+      status.hashCode;
 }

@@ -1,3 +1,4 @@
+import 'package:learn_dart_together/24_03_25/http_proxy_impl.dart';
 import 'package:learn_dart_together/24_03_25/models/stock_info.dart';
 
 import '../http_proxy.dart';
@@ -27,17 +28,25 @@ class StockInfoApi {
       exchange,
       assetType,
       ipoDate,
-      status,
       delistingDate,
+      status,
     ] = el;
 
     return StockInfo(
         symbol: symbol,
-        name: name,
+        name: name.isEmpty ? 'Unknown' : name,
         exchange: exchange,
         assetType: assetType,
         ipoDate: ipoDate,
-        status: status,
+        status: status.replaceAll('\r', ''),
         delistingDate: delistingDate);
   }
+}
+
+void main() {
+  final StockInfoApi stockInfoApi = StockInfoApi(http: HttpProxyImpl());
+
+  stockInfoApi.getStockInfoList().then((value) {
+    print(value);
+  });
 }

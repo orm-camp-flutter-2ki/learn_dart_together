@@ -26,6 +26,8 @@ class FakeHttpProxy implements HttpProxy {
         'test/24_03_25/resource/users.json',
       'http://swopenapi.seoul.go.kr/api/subway/sample/xml/realtimeStationArrival/0/5/%EC%84%9C%EC%9A%B8' =>
         'test/24_03_25/resource/subway_info.xml',
+      'https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=demo' =>
+        'test/24_03_25/resource/listing_status.csv',
       _ => throw Exception('Unknown URI: $uri')
     };
   }
