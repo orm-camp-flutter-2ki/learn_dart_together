@@ -5,11 +5,12 @@ class Todo {
   final String title;
   final bool completed;
 
-  Todo(
-      {required this.userId,
-      required this.id,
-      required this.title,
-      required this.completed});
+  Todo({
+    required this.userId,
+    required this.id,
+    required this.title,
+    required this.completed,
+  });
 
   Todo.fromJson(Map<String, dynamic> json) // 생성자
       : userId = json['userId'],
