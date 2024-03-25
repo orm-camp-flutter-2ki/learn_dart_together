@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:learn_dart_together/24_03_25/http_proxy_impl.dart';
-
 import '../http_proxy.dart';
 import '../models/user.dart';
 
@@ -17,10 +15,4 @@ class UserApi {
         .map((e) => User.fromJson(e as Map<String, dynamic>))
         .toList();
   }
-}
-
-void main() async {
-  final UserApi userApi = UserApi(http: HttpProxyImpl());
-  List<User> users = await userApi.getUsers();
-  print(users);
 }
