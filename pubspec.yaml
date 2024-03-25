@@ -11,6 +11,7 @@ dependencies:
   collection: ^1.18.0
   csv: ^6.0.0
   # path: ^1.8.0
+  http: ^1.2.1
 
 dev_dependencies:
   lints: ^3.0.0
