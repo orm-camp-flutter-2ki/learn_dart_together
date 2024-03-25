@@ -9,8 +9,10 @@ class CopyFile {
     final targetFile = File(target);
 
     try {
-      final copyFile = originalFile.readAsStringSync();
-      targetFile.writeAsStringSync(copyFile);
+      // final copyFile = originalFile.readAsStringSync();
+      // targetFile.writeAsStringSync(copyFile);
+      // 간단하게 복사
+      File(source).copySync(target);
 
       print('파일이 복사되었습니다.');
 
