@@ -12,14 +12,20 @@ class FakeHttpProxy implements HttpProxy {
   }
 
   Future<http.Response> _getResponse(Uri uri) async {
-    return http.Response(await fileService.asyncReadFile(_getUriToPath(uri)), 200);
+    return http.Response(
+        await fileService.asyncReadFile(_getUriToPath(uri)), 200);
   }
 
   String _getUriToPath(Uri uri) {
     return switch (uri.toString()) {
-      'https://jsonplaceholder.typicode.com/todos/1' => 'test/24_03_25/resource/todo.json',
-      'https://jsonplaceholder.typicode.com/todos' => 'test/24_03_25/resource/todos.json',
-      'https://jsonplaceholder.typicode.com/users' => 'test/24_03_25/resource/users.json',
+      'https://jsonplaceholder.typicode.com/todos/1' =>
+        'test/24_03_25/resource/todo.json',
+      'https://jsonplaceholder.typicode.com/todos' =>
+        'test/24_03_25/resource/todos.json',
+      'https://jsonplaceholder.typicode.com/users' =>
+        'test/24_03_25/resource/users.json',
+      'http://swopenapi.seoul.go.kr/api/subway/sample/xml/realtimeStationArrival/0/5/%EC%84%9C%EC%9A%B8' =>
+        'test/24_03_25/resource/subway_info.xml',
       _ => throw Exception('Unknown URI: $uri')
     };
   }

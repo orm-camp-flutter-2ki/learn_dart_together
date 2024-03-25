@@ -149,6 +149,7 @@ class SubwayInfo {
     );
   }
 
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -166,8 +167,8 @@ class SubwayInfo {
           statnNm == other.statnNm &&
           trnsitCo == other.trnsitCo &&
           ordkey == other.ordkey &&
-          subwayList == other.subwayList &&
-          statnList == other.statnList &&
+          _listEquals(subwayList, other.subwayList) &&
+          _listEquals(statnList, other.statnList) &&
           btrainSttus == other.btrainSttus &&
           barvlDt == other.barvlDt &&
           btrainNo == other.btrainNo &&
@@ -192,8 +193,8 @@ class SubwayInfo {
       statnNm.hashCode ^
       trnsitCo.hashCode ^
       ordkey.hashCode ^
-      subwayList.hashCode ^
-      statnList.hashCode ^
+      _listHashCode(subwayList).hashCode ^
+      _listHashCode(statnList).hashCode ^
       btrainSttus.hashCode ^
       barvlDt.hashCode ^
       btrainNo.hashCode ^
@@ -207,5 +208,24 @@ class SubwayInfo {
   @override
   String toString() {
     return 'SubwayInfo{rowNum: $rowNum, selectedCount: $selectedCount, totalCount: $totalCount, subwayId: $subwayId, updnLine: $updnLine, trainLineNm: $trainLineNm, statnFid: $statnFid, statnTid: $statnTid, statnId: $statnId, statnNm: $statnNm, trnsitCo: $trnsitCo, ordkey: $ordkey, subwayList: $subwayList, statnList: $statnList, btrainSttus: $btrainSttus, barvlDt: $barvlDt, btrainNo: $btrainNo, bstatnId: $bstatnId, bstatnNm: $bstatnNm, recptnDt: $recptnDt, arvlMsg2: $arvlMsg2, arvlMsg3: $arvlMsg3, arvlCd: $arvlCd}';
+  }
+
+  bool _listEquals(List<num> a, List<num> b) {
+    if (identical(a, b)) return true;
+    if (a == null || b == null) return false;
+    if (a.length != b.length) return false;
+    for (int i = 0; i < a.length; i++) {
+      if (a[i] != b[i]) return false;
+    }
+    return true;
+  }
+
+  num _listHashCode(List<num> list) {
+    if (list == null) return 0;
+    num result = 1;
+    for (num element in list) {
+      result = 31 * result + element.hashCode;
+    }
+    return result;
   }
 }
