@@ -25,9 +25,6 @@ class TodoApi {
     } else {
       throw Exception('Response 에러');
     }
-
-    // final jsonList = jsonDecode(response.body) as List;
-    // return jsonList.map((e) => Todo.fromJson(e)).toList();
   }
 }
 
