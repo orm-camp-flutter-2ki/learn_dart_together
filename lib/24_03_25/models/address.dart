@@ -29,7 +29,7 @@ class Address {
         street: json['street'],
         suite: json['suite'],
         city: json['city'],
-        geo: json['geo'],
+        geo: Geo.fromJson(json['geo']),
         zipcode: json['zipcode']);
   }
 
