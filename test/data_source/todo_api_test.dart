@@ -10,8 +10,8 @@ void main() {
       List<Todo> todos = await todoApi.getTodos();
       // Then
       expect(todos, isA<List<Todo>>());
-      expect(todos.length, greaterThan(0));
       expect(todos.first, isA<Todo>());
+      expect(todos.length, greaterThan(0));
     });
 
     test('getTodo() returns a specific todo', () async {
