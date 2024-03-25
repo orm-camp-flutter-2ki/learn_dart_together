@@ -5,11 +5,25 @@ import '../../data_source/todo_api.dart';
 
 void main() {
   test('todo test', () async {
-    Future<Todo> todo = TodoApi().getTodo(1);
-    print(todo);
+    //given
+    Todo sol =
+        Todo(userId: 1, id: 1, title: 'delectus aut autem', completed: false);
+
+    //when
+    Todo todo = await TodoApi().getTodo(1);
+
+    //then
+    expect(todo, sol);
   });
-  test('todo test', () async {
-    Future<List<Todo>> todo = TodoApi().getTodos();
-    print(todo);
+  test('todos test', () async {
+    //given
+    Todo sol =
+        Todo(userId: 1, id: 1, title: 'delectus aut autem', completed: false);
+
+    //when
+    List<Todo> todo = await TodoApi().getTodos();
+
+    //then
+    expect(todo[0], sol);
   });
 }
