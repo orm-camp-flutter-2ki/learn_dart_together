@@ -12,5 +12,3 @@ class AlbumRepository {
     return _api.getAlbumsApiTop10();
   }
 }
-// Future<List<Album>> getAlbums()
-// Future<List<Album>> getAlbumsTop10()
