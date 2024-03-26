@@ -13,5 +13,4 @@ class CommentRepositoryImpl implements CommentRepository{
 
     return jsonList.map((e) => Comment.fromJson(e)).toList();
   }
-
 }

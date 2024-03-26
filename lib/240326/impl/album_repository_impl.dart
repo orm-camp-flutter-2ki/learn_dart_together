@@ -22,5 +22,4 @@ class AlbumRepositoryImpl implements AlbumRepository{
 
     return top10List.map((e) => Album.fromJson(e)).toList();
   }
-
 }
