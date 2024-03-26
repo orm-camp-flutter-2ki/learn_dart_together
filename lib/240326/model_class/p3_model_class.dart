@@ -39,7 +39,7 @@ class Photo {
 
   @override
   String toString() {
-    return 'Photo{albumId: $albumId, id: $id, title: $title, url: $url,, thumbnailUrl: $thumbnailUrl}';
+    return 'Photo{albumId: $albumId, id: $id, title: $title, url: $url, thumbnailUrl: $thumbnailUrl}';
   }
 
   @override
