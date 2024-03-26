@@ -1,5 +1,5 @@
 import 'package:learn_dart_together/240325/stock.dart';
-import 'package:learn_dart_together/data_source/stock_api.dart';
+import 'package:learn_dart_together/240325/data_source/stock_api.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 

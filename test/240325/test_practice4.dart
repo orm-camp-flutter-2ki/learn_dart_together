@@ -3,8 +3,8 @@ import 'dart:math';
 
 import 'package:learn_dart_together/240325/subway.dart';
 import 'package:learn_dart_together/240325/user.dart';
-import 'package:learn_dart_together/data_source/subway_api.dart';
-import 'package:learn_dart_together/data_source/user_api.dart';
+import 'package:learn_dart_together/240325/data_source/subway_api.dart';
+import 'package:learn_dart_together/240325/data_source/user_api.dart';
 import 'package:test/test.dart';
 import 'package:http/http.dart' as http;
 

@@ -51,7 +51,7 @@ class User {
         'id': id,
         'name': name,
         'username': username,
-        'address': address,
+        'address': address.toJson(),
       };
 
   User.fromJson(Map<String, dynamic> json)
