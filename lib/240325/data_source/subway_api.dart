@@ -7,7 +7,7 @@ class SubwayApi {
   // http://swopenapi.seoul.go.kr/api/subway/sample/xml/realtimeStationArrival/0/5/서울
   Future<String> getSubway(String station) async {
     final response = await http
-        .get(Uri.parse('http://swopenapi.seoul.go.kr/api/subway/sample/xml/realtimeStationArrival/0/5/$station'));
+        .get(Uri.parse('https://overwatch.blizzard.com/ko-kr/career/788b7c0163b5d6feb8a520a1%7C0f7b3ca3efb7f6e755b4402eb1789b20/'));
 
     // unicode
     return utf8.decode(response.bodyBytes);
