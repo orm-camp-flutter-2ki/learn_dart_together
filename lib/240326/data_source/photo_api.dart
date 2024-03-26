@@ -25,3 +25,5 @@ void main() async {
   final result = await photoRepo.getPhotos(5);
   print(result);
 }
+
+//연습문제 3번

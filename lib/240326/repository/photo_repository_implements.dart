@@ -11,3 +11,5 @@ class PhotoRepositoryImpl implements PhotoRepository {
     return _api.getPhotos(albumId);
   }
 }
+
+//연습문제 3번

@@ -46,3 +46,5 @@ class Photo {
         "thumbnailUrl": thumbnailUrl
       };
 }
+
+//연습문제 3번
