@@ -81,7 +81,7 @@ void main() {
       userApi = UserApi();
     });
 
-    test('getUsers() 친구', () async {
+    test('getUsers() 테스', () async {
       final users = await userApi.getUsers();
 
       expect(users, isA<List<User>>());

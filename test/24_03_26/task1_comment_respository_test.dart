@@ -10,11 +10,8 @@ void main() {
 
       final comments = await repository.getComment(postId);
 
-      expect(
-          comments,
-          isA<
-              List<
-                  Comment>>()); // isA는 주어진 값이 특정 클래스 또는 유형의 인스턴스인지를 확인하기 위한 함수 중에 하나 뭔가 신기하게 생겼다
+      expect(comments, isA<List<Comment>>());
+      // isA는 주어진 값이 특정 클래스 또는 유형의 인스턴스인지를 확인하기 위한 함수
     });
 
     test('getComment 는 유효한 postId를 리턴 하는가?', () async {
