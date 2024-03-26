@@ -6,7 +6,7 @@ Future<Movie> getMovieInfo() async {
 
   final String jsonString = ''' {
   "title": "Star Ward",
-  "directer": "Georgr Lucas",
+  "directer": "George Lucas",
   "year": 1977
   }'''; //Map 으로 만듦
   //Json이라는 것을 넣어서 돌려줌
@@ -37,3 +37,5 @@ void main() async {
   final movie = await getMovieInfo();
   print(movie.directer);
 }
+
+
