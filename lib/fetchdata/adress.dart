@@ -6,7 +6,7 @@ class Adress {
   final String suite;
   final String city;
   final String zipcode;
-  final String geo;
+  final Map<String, dynamic> geo;
 
   Adress({
     required this.street,
@@ -31,7 +31,7 @@ class Adress {
         suite = map['suite'] as String,
         city = map['city'] as String,
         zipcode = map['zipcode'] as String,
-        geo = map['geo'] as String;
+        geo = map['geo'];
 
   @override
   bool operator ==(covariant Adress other) {
