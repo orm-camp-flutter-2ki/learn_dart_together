@@ -1,7 +1,7 @@
 class Albums {
-  int userId;
-  int id;
-  String title;
+  final int userId;
+  final int id;
+  final String title;
 
   Albums(this.userId, this.id, this.title);
 
