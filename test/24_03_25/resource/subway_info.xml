@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<realtimeStationArrival>
+    <RESULT>
+        <code>INFO-000</code>
+        <developerMessage></developerMessage>
+        <link></link>
+        <message>ì ì ì²ë¦¬ëììµëë¤.</message>
+        <status>200</status>
+        <total>21</total>
+    </RESULT>
+    <row>
+        <rowNum>1</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>21</totalCount>
+        <subwayId>1065</subwayId>
+        <updnLine>ìí</updnLine>
+        <trainLineNm>ì¸ì²ê³µí­2í°ë¯¸ëí - ê³µëë°©ë©´</trainLineNm>
+        <statnFid>1065006502</statnFid>
+        <statnTid>1065006501</statnTid>
+        <statnId>1065006501</statnId>
+        <statnNm>ìì¸</statnNm>
+        <trnsitCo>4</trnsitCo>
+        <ordkey>01000ì¸ì²ê³µí­2í°ë¯¸ë0</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <btrainSttus>ì¼ë°</btrainSttus>
+        <barvlDt>0</barvlDt>
+        <btrainNo>A2171</btrainNo>
+        <bstatnId>110</bstatnId>
+        <bstatnNm>ì¸ì²ê³µí­2í°ë¯¸ë</bstatnNm>
+        <recptnDt>2024-03-25 21:19:30</recptnDt>
+        <arvlMsg2>ìì¸ ì¶ë°</arvlMsg2>
+        <arvlMsg3>ìì¸</arvlMsg3>
+        <arvlCd>2</arvlCd>
+    </row>
+    <row>
+        <rowNum>2</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>21</totalCount>
+        <subwayId>1001</subwayId>
+        <updnLine>ìí</updnLine>
+        <trainLineNm>ì²­ëë¦¬í - ìì²­ë°©ë©´</trainLineNm>
+        <statnFid>1001000134</statnFid>
+        <statnTid>1001000132</statnTid>
+        <statnId>1001000133</statnId>
+        <statnNm>ìì¸</statnNm>
+        <trnsitCo>4</trnsitCo>
+        <ordkey>01000ì²­ëë¦¬0</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <btrainSttus>ì¼ë°</btrainSttus>
+        <barvlDt>0</barvlDt>
+        <btrainNo>1944</btrainNo>
+        <bstatnId>249</bstatnId>
+        <bstatnNm>ì²­ëë¦¬</bstatnNm>
+        <recptnDt>2024-03-25 21:23:58</recptnDt>
+        <arvlMsg2>ìì¸ ëì°©</arvlMsg2>
+        <arvlMsg3>ìì¸</arvlMsg3>
+        <arvlCd>1</arvlCd>
+    </row>
+    <row>
+        <rowNum>3</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>21</totalCount>
+        <subwayId>1004</subwayId>
+        <updnLine>ìí</updnLine>
+        <trainLineNm>ë¹ê³ ê°í - ííë°©ë©´</trainLineNm>
+        <statnFid>1004000427</statnFid>
+        <statnTid>1004000425</statnTid>
+        <statnId>1004000426</statnId>
+        <statnNm>ìì¸</statnNm>
+        <trnsitCo>4</trnsitCo>
+        <ordkey>01001ë¹ê³ ê°0</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <btrainSttus>ì¼ë°</btrainSttus>
+        <barvlDt>115</barvlDt>
+        <btrainNo>4204</btrainNo>
+        <bstatnId>0</bstatnId>
+        <bstatnNm>ë¹ê³ ê°</bstatnNm>
+        <recptnDt>2024-03-25 21:25:39</recptnDt>
+        <arvlMsg2>ì ì­ ëì°©</arvlMsg2>
+        <arvlMsg3>ìëìêµ¬</arvlMsg3>
+        <arvlCd>5</arvlCd>
+    </row>
+    <row>
+        <rowNum>4</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>21</totalCount>
+        <subwayId>1001</subwayId>
+        <updnLine>ìí</updnLine>
+        <trainLineNm>ìì£¼í - ìì²­ë°©ë©´</trainLineNm>
+        <statnFid>1001000134</statnFid>
+        <statnTid>1001000132</statnTid>
+        <statnId>1001000133</statnId>
+        <statnNm>ìì¸</statnNm>
+        <trnsitCo>4</trnsitCo>
+        <ordkey>01001ìì£¼0</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <btrainSttus>ì¼ë°</btrainSttus>
+        <barvlDt>150</barvlDt>
+        <btrainNo>0196</btrainNo>
+        <bstatnId>183</bstatnId>
+        <bstatnNm>ìì£¼</bstatnNm>
+        <recptnDt>2024-03-25 21:25:44</recptnDt>
+        <arvlMsg2>ì ì­ ì¶ë°</arvlMsg2>
+        <arvlMsg3>ë¨ì</arvlMsg3>
+        <arvlCd>3</arvlCd>
+    </row>
+    <row>
+        <rowNum>5</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>21</totalCount>
+        <subwayId>1063</subwayId>
+        <updnLine>ìí</updnLine>
+        <trainLineNm>ì¼ì°í - ì ì´(ê²½ìì¤ìì )ë°©ë©´</trainLineNm>
+        <statnFid>1063080313</statnFid>
+        <statnTid>1063080312</statnTid>
+        <statnId>1063080313</statnId>
+        <statnNm>ìì¸</statnNm>
+        <trnsitCo>4</trnsitCo>
+        <ordkey>01002ì¼ì°0</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <btrainSttus>ì¼ë°</btrainSttus>
+        <barvlDt>0</barvlDt>
+        <btrainNo>5142</btrainNo>
+        <bstatnId>226</bstatnId>
+        <bstatnNm>ì¼ì°</bstatnNm>
+        <recptnDt>2024-03-25 21:25:24</recptnDt>
+        <arvlMsg2>[2]ë²ì§¸ ì ì­ (ìê°ë)</arvlMsg2>
+        <arvlMsg3>ìê°ë</arvlMsg3>
+        <arvlCd>99</arvlCd>
+    </row>
+</realtimeStationArrival>
