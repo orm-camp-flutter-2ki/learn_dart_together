@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:collection/collection.dart';
+
 /// 다음과 같은 데이터를 서버에서 받아서 처리해야 한다. 문제점이 있다면 생각해 보고 해결 방안을 도출하시오
 
 final String json = '''{
@@ -124,7 +126,7 @@ class CollectionChart {
       other is CollectionChart &&
           runtimeType == other.runtimeType &&
           collectionName == other.collectionName &&
-          collectionSalePrices == other.collectionSalePrices;
+          collectionSalePrices.equals(other.collectionSalePrices); // 리스트 알맹이 비교 하려면 이렇게
 
   @override
   int get hashCode => collectionName.hashCode ^ collectionSalePrices.hashCode;
