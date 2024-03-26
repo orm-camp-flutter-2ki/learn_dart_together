@@ -1,28 +1,28 @@
+// class User {
+//   final List<User> User;
+//
+//   User({required this.User});
+//
+//   User.fromJson(List json)
+//       : User = json.map((e) => User.fromJson(e)).toList();
+//
+//   @override
+//   String toString() {
+//     return 'User{User: $User}';
+//   }
+//
+//   @override
+//   bool operator ==(Object other) =>
+//       identical(this, other) ||
+//       other is User &&
+//           runtimeType == other.runtimeType &&
+//           User == other.User;
+//
+//   @override
+//   int get hashCode => User.hashCode;
+// }
+
 class User {
-  final List<UserInfo> userInfo;
-
-  User({required this.userInfo});
-
-  User.fromJson(List json)
-      : userInfo = json.map((e) => UserInfo.fromJson(e)).toList();
-
-  @override
-  String toString() {
-    return 'User{userInfo: $userInfo}';
-  }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is User &&
-          runtimeType == other.runtimeType &&
-          userInfo == other.userInfo;
-
-  @override
-  int get hashCode => userInfo.hashCode;
-}
-
-class UserInfo {
   final int id;
   final String name;
   final String email;
@@ -31,7 +31,7 @@ class UserInfo {
   final String website;
   final Company company;
 
-  UserInfo(
+  User(
       {required this.id,
       required this.name,
       required this.email,
@@ -40,7 +40,7 @@ class UserInfo {
       required this.website,
       required this.company});
 
-  UserInfo.fromJson(Map<String, dynamic> json)
+  User.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         name = json['name'],
         email = json['email'],
@@ -61,13 +61,13 @@ class UserInfo {
 
   @override
   String toString() {
-    return 'UserInfo{id: $id, name: $name, email: $email, address: $address, phone: $phone, website: $website, company: $company}';
+    return 'User{id: $id, name: $name, email: $email, address: $address, phone: $phone, website: $website, company: $company}';
   }
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is UserInfo &&
+      other is User &&
           runtimeType == other.runtimeType &&
           id == other.id &&
           name == other.name &&
