@@ -4,14 +4,14 @@ import 'dart:convert';
 import 'package:http/http.dart';
 
 class Comment {
-  final int postID;
+  final int postId;
   final int id;
   final String name;
   final String email;
   final String body;
 
   Comment({
-    required this.postID,
+    required this.postId,
     required this.id,
     required this.name,
     required this.email,
@@ -20,7 +20,7 @@ class Comment {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'postID': postID,
+      'postID': postId,
       'id': id,
       'name': name,
       'email': email,
@@ -29,7 +29,7 @@ class Comment {
   }
 
   Comment.fromJson(Map<String, dynamic> json)
-      : postID = json['postId'],
+      : postId = json['postId'],
         id = json['id'],
         name = json['name'],
         email = json['email'],
@@ -39,7 +39,7 @@ class Comment {
   bool operator ==(covariant Comment other) {
     if (identical(this, other)) return true;
 
-    return other.postID == postID &&
+    return other.postId == postId &&
         other.id == id &&
         other.name == name &&
         other.email == email &&
@@ -48,7 +48,7 @@ class Comment {
 
   @override
   int get hashCode {
-    return postID.hashCode ^
+    return postId.hashCode ^
         id.hashCode ^
         name.hashCode ^
         email.hashCode ^
@@ -63,7 +63,7 @@ class Comment {
     String? body,
   }) {
     return Comment(
-      postID: postID ?? this.postID,
+      postId: postID ?? this.postId,
       id: id ?? this.id,
       name: name ?? this.name,
       email: email ?? this.email,
@@ -73,6 +73,6 @@ class Comment {
 
   @override
   String toString() {
-    return 'Comment(postID: $postID, id: $id, name: $name, email: $email, body: $body)';
+    return 'Comment(postID: $postId, id: $id, name: $name, email: $email, body: $body)';
   }
 }
