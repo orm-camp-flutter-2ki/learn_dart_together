@@ -21,7 +21,8 @@ class PostRepositoryImpl implements PostRepository {
   }
 
   @override
-  Future<List<Post>> getPostsFiltered({required int page, required int limit}) async {
+  Future<List<Post>> getPostsFiltered(
+      {required int page, required int limit}) async {
     final postList = await _api.getPosts();
     final int pageValid = page < 1 ? 1 : page;
     final int lastPoint = pageValid * limit;

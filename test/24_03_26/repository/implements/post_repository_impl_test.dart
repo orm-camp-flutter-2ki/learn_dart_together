@@ -7,17 +7,18 @@ void main() {
   group('PostRepository 메서드 테스트', () {
     PostRepository repo = PostRepositoryImpl();
 
-    test('getPost(int id) 메서드 테스트',() async {
+    test('getPost(int id) 메서드 테스트', () async {
       final post = await repo.getPost(10);
 
       expect(post.id, 10);
     });
 
-    test('getPostsFiltered({required int page, required int limit}) 메서드 테스트', () async {
+    test('getPostsFiltered({required int page, required int limit}) 메서드 테스트',
+        () async {
       final sliced = await repo.getPostsFiltered(page: 2, limit: 3);
       final givenId = sliced.map((e) => e.id);
 
-      final expectedValue = [4,5,6];
+      final expectedValue = [4, 5, 6];
 
       expect(DeepCollectionEquality().equals(givenId, expectedValue), true);
     });
