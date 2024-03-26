@@ -11,6 +11,22 @@ class Post {
     this.body,
   );
 
+  factory Post.fromJson(Map<String, dynamic> json) {
+    return Post(
+      json['userId'],
+      json['id'],
+      json['title'],
+      json['body'],
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+        'userId': userId,
+        'id': id,
+        'title': title,
+        'body': body,
+      };
+
   @override
   String toString() {
     return 'Post{userId: $userId, id: $id, title: $title, body: $body}';
