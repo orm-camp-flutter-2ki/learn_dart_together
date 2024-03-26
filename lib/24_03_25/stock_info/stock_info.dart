@@ -22,14 +22,27 @@ class StockInfo {
       identical(this, other) ||
       other is StockInfo &&
           runtimeType == other.runtimeType &&
-          symbol == other.symbol;
+          symbol == other.symbol &&
+          name == other.name &&
+          exchange == other.exchange &&
+          assetType == other.assetType &&
+          ipoDate == other.ipoDate &&
+          delistingDate == other.delistingDate &&
+          status == other.status;
 
   @override
-  int get hashCode => symbol.hashCode;
+  int get hashCode =>
+      symbol.hashCode ^
+      name.hashCode ^
+      exchange.hashCode ^
+      assetType.hashCode ^
+      ipoDate.hashCode ^
+      delistingDate.hashCode ^
+      status.hashCode;
 
   @override
   String toString() {
-    return 'StockInfo{symbol: $symbol}';
+    return 'StockInfo{symbol: $symbol, name: $name, exchange: $exchange, assetType: $assetType, ipoDate: $ipoDate, delistingDate: $delistingDate, status: $status}';
   }
 
   StockInfo copyWith({
