@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 import '../../240325/user.dart';
-import '../../연습/240325/data_source/user_api.dart';
+import '../../240325/data_source/user_api.dart';
 
 void main() {
   test('user test', () async {
