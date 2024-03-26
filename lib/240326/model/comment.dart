@@ -5,7 +5,7 @@ class Comment {
   final String email;
   final String body;
 
-  Comment(this.postId, this.id, this.name, this.email, this.body);
+  const Comment(this.postId, this.id, this.name, this.email, this.body);
 
   Comment.fromJson(Map<String, dynamic> json)
       : postId = json['postId'],

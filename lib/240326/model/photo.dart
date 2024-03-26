@@ -5,7 +5,7 @@ class Photo {
   final String url;
   final String thumbnailUrl;
 
-  Photo(this.albumId, this.id, this.title, this.url, this.thumbnailUrl);
+  const Photo(this.albumId, this.id, this.title, this.url, this.thumbnailUrl);
 
   Photo.fromJson(Map<String, dynamic> json)
       : albumId = json['albumId'],

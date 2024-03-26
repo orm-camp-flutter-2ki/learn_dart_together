@@ -3,7 +3,7 @@ class Company {
   final String catchPhrase;
   final String bs;
 
-  Company(this.name, this.catchPhrase, this.bs);
+  const Company(this.name, this.catchPhrase, this.bs);
 
   Company.fromJson(Map<String, dynamic> json)
       : name = json['name'],

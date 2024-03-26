@@ -2,7 +2,7 @@ class Geo {
   final String lat;
   final String lng;
 
-  Geo(this.lat, this.lng);
+  const Geo(this.lat, this.lng);
 
   Geo.fromJson(Map<String, dynamic> json)
       : lat = json['lat'],

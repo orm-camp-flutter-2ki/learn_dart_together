@@ -11,7 +11,7 @@ class User {
   final String website;
   final Company company;
 
-  User(this.id, this.name, this.username, this.email, this.address, this.phone,
+  const User(this.id, this.name, this.username, this.email, this.address, this.phone,
       this.website, this.company);
 
   User.fromJson(Map<String, dynamic> json)

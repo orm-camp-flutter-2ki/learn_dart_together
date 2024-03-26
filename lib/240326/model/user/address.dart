@@ -7,7 +7,7 @@ class Address {
   final String zipcode;
   final Geo geo;
 
-  Address(this.street, this.suite, this.city, this.zipcode, this.geo);
+  const Address(this.street, this.suite, this.city, this.zipcode, this.geo);
 
   Address.fromJson(Map<String, dynamic> json)
       : street = json['street'],

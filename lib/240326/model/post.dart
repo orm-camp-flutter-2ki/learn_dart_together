@@ -4,7 +4,7 @@ class Post {
   final String title;
   final String body;
 
-  Post(this.userId, this.id, this.title, this.body);
+  const Post(this.userId, this.id, this.title, this.body);
 
   Post.fromJson(Map<String, dynamic> json)
       : userId = json['userId'],
