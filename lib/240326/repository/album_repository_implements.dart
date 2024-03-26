@@ -1,5 +1,5 @@
 import 'package:learn_dart_together/240326/data_source/album_api.dart';
-import 'package:learn_dart_together/240326/model/Album.dart';
+import 'package:learn_dart_together/240326/model/album.dart';
 import 'package:learn_dart_together/240326/repository/album_repository.dart';
 
 class AlbumRepositoryImpl implements AlbumRepository {

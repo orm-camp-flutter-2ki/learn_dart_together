@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:learn_dart_together/240326/repository/album_repository.dart';
 import 'package:learn_dart_together/240326/repository/album_repository_implements.dart';
 
-import '../model/Album.dart';
+import '../model/album.dart';
 
 class AlbumApi {
   Future<List<Album>> getAlbums() async {
