@@ -81,6 +81,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.0"
+  fetch_api:
+    dependency: transitive
+    description:
+      name: fetch_api
+      sha256: "77f3be8c9acaa64ed37dd49c21c056da71b78053d31131ca26a273884a753f66"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0-wasm"
+  fetch_client:
+    dependency: "direct main"
+    description:
+      name: fetch_client
+      sha256: e11722d7d8cd21f944b52af780392274f7c34a41156b1c80053fc2a414e09a1b
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0-wasm"
   file:
     dependency: transitive
     description:
@@ -105,6 +121,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      sha256: "761a297c042deedc1ffbb156d6e2af13886bb305c2a343a4d972504cd67dd938"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.1"
   http_multi_server:
     dependency: transitive
     description:

@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 class Movie {
-  String title;
-  String director;
-  int year;
+  final String title;
+  final String director;
+  final int year;
 
   Movie({required this.title, required this.director, required this.year});
 
@@ -12,10 +12,10 @@ class Movie {
         director = json['director'],
         year = json['year'];
 
-  Movie.copyWith(Movie origin)
-      : title = origin.title,
-        director = origin.director,
-        year = origin.year;
+  Movie.copyWith({required Movie origin, String? title, String? director, int? year})
+      : title = title ?? origin.title,
+        director = director ?? origin.director,
+        year = year ?? origin.year;
 
   @override
   bool operator ==(Object other) =>
