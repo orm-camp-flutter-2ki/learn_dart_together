@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import '../240325/practice/todo.dart';
+import 'package:dart_cli_practice/240325/practice/todo.dart';
 import 'package:http/http.dart' as http;
 
 class TodoApi {
   Future<List<Todo>> getTodos() async {
-    final http.Response response = await http
-        .get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
+    final http.Response response =
+        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
 
     List jsonList = jsonDecode(response.body);
 
@@ -14,8 +14,8 @@ class TodoApi {
   }
 
   Future<Todo> getTodo(int id) async {
-    final http.Response response = await http.get(
-        Uri.parse('https://jsonplaceholder.typicode.com/todos/$id'));
+    final http.Response response = await http
+        .get(Uri.parse('https://jsonplaceholder.typicode.com/todos/$id'));
 
     return Todo.fromJson(jsonDecode(response.body));
   }
