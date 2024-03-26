@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:learn_dart_together/0326/model/comment_model.dart';
 import 'package:learn_dart_together/0326/repository/comment_repository.dart';
 
-import 'comment_api.dart';
+import '../source/comment_api.dart';
 
 void main() async {
   final CommentRepository commentRepository = CommentRepositoryImpl();
