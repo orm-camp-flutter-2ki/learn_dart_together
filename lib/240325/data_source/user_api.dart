@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:untitled2/240325/user.dart';
+import 'package:untitled2/240325/model/user.dart';
 
 class UserApi {
 
