@@ -56,14 +56,14 @@ class Comment {
   }
 
   Comment copyWith({
-    int? postID,
+    int? postId,
     int? id,
     String? name,
     String? email,
     String? body,
   }) {
     return Comment(
-      postId: postID ?? this.postId,
+      postId: postId ?? this.postId,
       id: id ?? this.id,
       name: name ?? this.name,
       email: email ?? this.email,
