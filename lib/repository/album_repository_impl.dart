@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
 import 'package:learn_dart_together/24_03_26/album.dart';
 import 'package:learn_dart_together/data_source/album_api.dart';
 
@@ -11,9 +10,9 @@ class AlbumRepositoryImpl implements AlbumRepository {
 
   @override
   Future<List<Album>> getAlbums() async {
-    http.Response response = _api.getAlbums() as http.Response;
+    final response = await _api.getAlbums();
 
-    List jsonList = jsonDecode(response.body);
+    List jsonList = jsonDecode(response);
 
     return jsonList.map((e) => Album.fromJson(e)).toList();
   }
@@ -23,8 +22,8 @@ class AlbumRepositoryImpl implements AlbumRepository {
     List<Album> albums = [];
 
     try {
-      http.Response response = _api.getAlbums() as http.Response;
-      final List jsonList = response.statusCode == 200 ? jsonDecode(response.body) : throw Exception();
+      final response = await _api.getAlbums();
+      final List jsonList = jsonDecode(response);
       albums = jsonList.map((e) => Album.fromJson(e)).take(10).toList();
     } catch (e) {
       print(e);
