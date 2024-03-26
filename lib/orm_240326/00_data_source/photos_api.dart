@@ -7,7 +7,7 @@ class PhotosApi {
   final urlBase = 'https://jsonplaceholder.typicode.com/photos';
 
   Future<List<Photos>> getPhotos(int albumId) async {
-    final response = await http.get(Uri.parse(urlBase));
+    final response = await http.get(Uri.parse('$urlBase?albumId=$albumId'));
 
     if (response.statusCode == 200) {
       List<dynamic> jsonList = jsonDecode(response.body);

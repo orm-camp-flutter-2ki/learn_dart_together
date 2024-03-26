@@ -6,7 +6,7 @@ void main() {
   test('comments(postId) test', () async {
     final CommentsRepository commentsRo = CommentsRepositoryImpl();
     final results = await commentsRo.getComments(1);
-    // print(results);
+    print(results);
     expect(results.length, 5);
   });
 }
