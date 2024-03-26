@@ -24,7 +24,7 @@ void main() {
 
     final expected = expectedTodos.map(Todo.fromJson).toList();
 
-    expect(DeepCollectionEquality().equals(todos, expected), true);
+    expect(todos.equals(expected), true);
   });
 }
 
