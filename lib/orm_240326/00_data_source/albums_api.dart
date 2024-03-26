@@ -7,8 +7,7 @@ class AlbumsApi {
   final urlBase = 'https://jsonplaceholder.typicode.com/albums';
 
   Future<List<Albums>> getAlbums() async {
-    final response = await http
-        .get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
+    final response = await http.get(Uri.parse(urlBase));
 
     if (response.statusCode == 200) {
       List<dynamic> jsonList = jsonDecode(response.body);
