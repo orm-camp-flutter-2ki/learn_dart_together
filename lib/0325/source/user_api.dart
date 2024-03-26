@@ -27,11 +27,12 @@ class UserApi {
     } catch (error) {
       print('[Error]\n$error');
       return [];
-      // rethrow; // map일 경우...
     }
 
-    final List json = await jsonDecode(response.body);
-    return json.map((e) => User.fromJson(e)).toList();
+    // final List json = await jsonDecode(response.body);
+    // return json.map((e) => User.fromJson(e)).toList();
+    final Map<String, dynamic> json = jsonDecode(response.body);
+    return [User.fromJson(json)];
   }
 
   Future<List<User>> getUserTop10ByUserNameApi() async {
@@ -48,6 +49,13 @@ class UserApi {
     return json
         .map((e) => User.fromJson(e))
         .sorted((a, b) => a.name.compareTo(b.name))
+        .take(10)
         .toList();
   }
+}
+
+void main() async {
+  UserApi userApi = UserApi();
+  List<User> users = await userApi.getUserTop10ByUserNameApi();
+  users.forEach((print));
 }

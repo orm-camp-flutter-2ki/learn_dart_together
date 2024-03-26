@@ -7,17 +7,22 @@ class UserRepositoryImpl implements UserRepository {
 
   @override
   Future<List<User>> getUsers() async {
-    return _userApi.getUsersApi();
+    return await _userApi.getUsersApi();
   }
 
   @override
   Future<List<User>> getUser(int id) async {
-    return _userApi.getUserApi(1);
+    return await _userApi.getUserApi(1);
   }
 
   @override
   Future<List<User>> getUserTop10ByUserName() async {
-    final userTop10ByUserName = await _userApi.getUserTop10ByUserNameApi();
-    return userTop10ByUserName.sublist(0, 11);
+    return await _userApi.getUserTop10ByUserNameApi();
   }
+}
+
+void main() async {
+  final UserRepository userRepository = UserRepositoryImpl();
+  List<User> user = await userRepository.getUserTop10ByUserName();
+  user.forEach((print));
 }
