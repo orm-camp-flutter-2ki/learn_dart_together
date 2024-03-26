@@ -1,5 +1,5 @@
+import 'package:learn_dart_together/240318/word.dart';
 import 'package:test/test.dart';
-import '/Users/jungeunhan/learn_dart_together/lib/240318/word.dart';
 
 void main() {
   test('Vowel test', () {

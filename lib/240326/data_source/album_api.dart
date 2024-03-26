@@ -29,9 +29,3 @@ class AlbumApi {
     }
   }
 }
-
-// void main() async {
-//   AlbumRepository albumRepo = AlbumRepositoryImpl();
-//   final result = await albumRepo.getAlbumsTop10();
-//   print(result);
-// }
