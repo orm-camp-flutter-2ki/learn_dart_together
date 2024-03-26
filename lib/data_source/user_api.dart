@@ -1,15 +1,9 @@
-import 'dart:convert';
-
-import 'package:learn_dart_together/http/http_service.dart';
-
-import '../24_03_25/user.dart';
+import '../http/http_service.dart';
 
 class UserApi {
-  Future<List<User>> getUsers() async {
-    final response =
-        await HttpService().get('https://jsonplaceholder.typicode.com/users');
+  final baseUrl = 'https://jsonplaceholder.typicode.com/users';
 
-    List jsonList = jsonDecode(response.body);
-    return jsonList.map((e) => User.fromJson(e)).toList();
+  Future<String> getUsers() async {
+    return await HttpService().get((baseUrl));
   }
 }
