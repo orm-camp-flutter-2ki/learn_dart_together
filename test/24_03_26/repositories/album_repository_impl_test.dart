@@ -25,16 +25,16 @@ void main() {
       });
     });
 
-    group('getAlbum 메소드는', () {
-      test('AlbumApi.getAlbum 메소드를 호출하고 Album을 반환한다.', () async {
+    group('getAlbumsTop10 메소드는', () {
+      test('AlbumApi.getAlbums 메소드를 호출하고 id값 내림차순으로 10개를 선정해서 반환한다.', () async {
         // Given
-        final expected = Album(userId: 1, id: 1, title: "quidem molestiae enim");
+        final expected = Album(userId: 10, id: 100, title: "enim repellat iste");
 
         // When
-        final result = await albumRepository.getAlbum(1);
+        final result = await albumRepository.getAlbumsTop10();
 
         // Then
-        expect(result, expected);
+        expect(result.first, expected);
       });
     });
   });
