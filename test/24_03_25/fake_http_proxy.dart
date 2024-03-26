@@ -28,6 +28,18 @@ class FakeHttpProxy implements HttpProxy {
         'test/24_03_25/resource/subway_info.xml',
       'https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=demo' =>
         'test/24_03_25/resource/listing_status.csv',
+      'https://jsonplaceholder.typicode.com/comments' =>
+        'test/24_03_26/resource/comments.json',
+      'https://jsonplaceholder.typicode.com/albums' =>
+        'test/24_03_26/resource/albums.json',
+      'https://jsonplaceholder.typicode.com/albums/1' =>
+        'test/24_03_26/resource/album.json',
+      'https://jsonplaceholder.typicode.com/photos' =>
+        'test/24_03_26/resource/photos.json',
+      'https://jsonplaceholder.typicode.com/posts' =>
+        'test/24_03_26/resource/posts.json',
+      'https://jsonplaceholder.typicode.com/posts/1' =>
+        'test/24_03_26/resource/post.json',
       _ => throw Exception('Unknown URI: $uri')
     };
   }
