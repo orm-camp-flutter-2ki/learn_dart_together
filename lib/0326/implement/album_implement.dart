@@ -13,6 +13,15 @@ class AlbumRepositoryImpl implements AlbumRepository {
   @override
   Future<List<Album>> getAlbumsTop10() async {
     final albumTop10 = await _albumApi.getAlbumsApi();
-    return albumTop10.sublist(0, 11);
+    return albumTop10.sublist(0, 10);
   }
+}
+
+void main() async {
+  AlbumRepository albumRepository = AlbumRepositoryImpl();
+
+  // List<Album> albums = await albumRepository.getAlbums();
+  List<Album> albums = await albumRepository.getAlbumsTop10();
+
+  albums.forEach((print));
 }

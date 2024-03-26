@@ -7,8 +7,8 @@ class PhotoApi {
   Future<List<Photo>> getPhotosApi(int albumId) async {
     final http.Response response;
     try {
-      response = await http
-          .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+      response = await http.get(Uri.parse(
+          'https://jsonplaceholder.typicode.com/photos?albumId=$albumId')); // 쿼리 스트링 사용
     } catch (error) {
       print('[Error]\n$error');
       return [];

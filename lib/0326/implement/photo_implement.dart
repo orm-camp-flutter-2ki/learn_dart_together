@@ -8,6 +8,14 @@ class PhotoRepositoryImpl implements PhotoRepository {
 
   @override
   Future<List<Photo>> getPhotos(int albumId) async {
-    return _photoApi.getPhotosApi(albumId);
+    return await _photoApi.getPhotosApi(albumId);
   }
+}
+
+void main() async {
+  PhotoRepository photoRepository = PhotoRepositoryImpl();
+
+  List<Photo> photos = await photoRepository.getPhotos(1);
+
+  photos.forEach((print));
 }
