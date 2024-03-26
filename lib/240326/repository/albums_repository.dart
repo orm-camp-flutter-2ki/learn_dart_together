@@ -1,21 +1,40 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
 import 'package:learn_dart_together/240326/model/albums.dart';
 
-class AlbumsRepository {
+import '../data_source/albums_api.dart';
+
+abstract interface class AlbumsRepository {
+  Future<List<Albums>> getAlbums();
+
+  Future<List<Albums>> getAlbumsTop10();
+}
+
+class AlbumsRepositoryImpl implements AlbumsRepository {
+  final AlbumsApi _api = AlbumsApi();
+
+  //
+  // Future<List<Albums>> getAlbums() async {
+  //   final results = await _api.getAlbums();
+  // }
+// List<Albums> data = await _api.getAlbums();
+// return data.where((element) => element.userId == userId).toList();
+
+  @override
   Future<List<Albums>> getAlbums() async {
-    final response = await http
-        .get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
+    // return await _api.getAlbums();
+    List<Albums> data = await _api.getAlbums();
+    return data;
+  }
 
-    final jsonList = jsonDecode(response.body) as List;
-
-    return jsonList.map((e) => Albums.fromJson(e)).toList();
+  @override
+  Future<List<Albums>> getAlbumsTop10() async {
+    List<Albums> data = await _api.getAlbums();
+    return data.where((e) => e.id <= 10).toList();
   }
 }
 
 void main() async {
-  final albumsRepository = AlbumsRepository();
-  final List<Albums> albums = await albumsRepository.getAlbums();
-  print(albums);
+  List<Albums> albumsList = await AlbumsRepositoryImpl().getAlbums();
+  List<Albums> albumsList10 = await AlbumsRepositoryImpl().getAlbumsTop10();
+  // print(albumsList);
+  print(albumsList10);
 }

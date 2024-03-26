@@ -7,9 +7,15 @@ class AlbumsApi {
   Future<List<Albums>> getAlbums() async {
     final response = await http
         .get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
+    List<Albums> data = [];
 
-    final jsonList = jsonDecode(response.body) as List;
+    if (response.statusCode == 200) {
+      List json = jsonDecode(response.body) as List;
 
-    return jsonList.map((e) => Albums.fromJson(e)).toList();
+      List<Albums> data = json.map((json) => Albums.fromJson(json)).toList();
+      return data;
+    } else {
+      throw Exception('Response 에러');
+    }
   }
 }

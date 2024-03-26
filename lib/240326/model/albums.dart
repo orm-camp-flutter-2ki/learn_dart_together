@@ -3,7 +3,7 @@ class Albums {
   final int id;
   final String title;
 
-  Albums(this.userId, this.id, this.title);
+  const Albums(this.userId, this.id, this.title);
 
   Albums.fromJson(Map<String, dynamic> json)
       : userId = json['userId'],
