@@ -1,5 +1,7 @@
 import 'package:learn_dart_together/%EC%A0%95%EB%8B%A4%ED%9D%AC/24_03_26/Model/comment.dart';
+import 'package:learn_dart_together/%EC%A0%95%EB%8B%A4%ED%9D%AC/24_03_26/dataSource/todo_api.dart';
 
+import '../24_03_25/data_source/todo.dart';
 import 'Model/album.dart';
 import 'Model/photo.dart';
 import 'dataSource/album_api.dart';
@@ -58,5 +60,25 @@ class PhotoApiImpl implements PhotoRepository {
   @override
   Future<List<Photo>> getPhotos(int albumId) {
     return api.getPhotos(albumId);
+  }
+}
+
+// todos
+
+abstract interface class TodoRepository {
+  Future<List<Todo>> getTodos();
+  Future<List<Todo>> getCompletedTodos();
+}
+
+class TodoApiImpl implements TodoRepository {
+  final api = TodoApi();
+  @override
+  Future<List<Todo>> getCompletedTodos() {
+    return api.getCompletedTodos();
+  }
+
+  @override
+  Future<List<Todo>> getTodos() {
+    return api.getTodos();
   }
 }

@@ -4,7 +4,7 @@ class Todo {
   final String title;
   final bool completed;
 
-  Todo(
+  const Todo(
     this.userId,
     this.id,
     this.title,
