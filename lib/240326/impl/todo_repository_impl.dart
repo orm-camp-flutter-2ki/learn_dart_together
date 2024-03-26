@@ -4,7 +4,7 @@ import 'package:learn_dart_together/240326/model/todo.dart';
 import 'package:learn_dart_together/240326/repository/todo_repository.dart';
 import 'package:learn_dart_together/240326/service/http_service.dart';
 
-class TodoRepositoryImpl implements TodoRepository{
+class TodoRepositoryImpl implements TodoRepository {
 
   @override
   Future<List<Todo>> getTodos() async {
