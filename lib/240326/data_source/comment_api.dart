@@ -5,12 +5,17 @@ import 'package:http/http.dart' as http;
 import '../model/comment.dart';
 
 class CommentsApi {
-  Future<Comment> getComments(postId) async {
-    final response = await http.get(
-        Uri.parse('https://jsonplaceholder.typicode.com/comments/@postId'));
+  Future<List<Comment>> getComments() async {
+    final response = await http
+        .get(Uri.parse('https://jsonplaceholder.typicode.com/comments'));
 
-    final json = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      List json = jsonDecode(response.body) as List;
 
-    return Comment.fromJson(json);
+      List<Comment> data = json.map((json) => Comment.fromJson(json)).toList();
+      return data;
+    } else {
+      throw Exception('Response 에러');
+    }
   }
 }

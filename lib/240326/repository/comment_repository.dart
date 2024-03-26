@@ -1,22 +1,21 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
-
+import '../data_source/comment_api.dart';
 import '../model/comment.dart';
 
-class CommentRepository {
-  Future<List<Comment>> getComments(postId) async {
-    final response = await http.get(
-        Uri.parse('https://jsonplaceholder.typicode.com/comments/$postId'));
+abstract interface class CommentRepository {
+  Future<List<Comment>> getComments(int postId);
+}
 
-    final jsonList = jsonDecode(response.body) as List;
+class CommentRepositoryImpl implements CommentRepository {
+  final CommentsApi _api = CommentsApi();
 
-    return jsonList.map((e) => Comment.fromJson(e)).toList();
+  @override
+  Future<List<Comment>> getComments(int postId) async {
+    List<Comment> data = await _api.getComments();
+    return data.where((e) => e.postId == postId).toList();
   }
 }
 
 void main() async {
-  final commentRepository = CommentRepository();
-  final List<Comment> comments = await commentRepository.getComments(1);
-  print(comments);
+  List<Comment> commentList = await CommentRepositoryImpl().getComments(3);
+  print(commentList);
 }
