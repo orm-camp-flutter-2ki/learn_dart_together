@@ -1,15 +1,14 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/orm_240326/00_data_repository/albums_repository.dart';
 import 'package:learn_dart_together/orm_240326/albums.dart';
 
-class AlbumsRepositoryImpl implements AlbumsRepository {
+class AlbumsApi {
   final urlBase = 'https://jsonplaceholder.typicode.com/albums';
 
-  @override
   Future<List<Albums>> getAlbums() async {
-    final response = await http.get(Uri.parse('$urlBase'));
+    final response = await http
+        .get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
 
     if (response.statusCode == 200) {
       List<dynamic> jsonList = jsonDecode(response.body);
@@ -19,13 +18,11 @@ class AlbumsRepositoryImpl implements AlbumsRepository {
     }
   }
 
-  @override
   Future<List<Albums>> getAlbumsTop10() async {
-    final response = await http.get(Uri.parse('$urlBase'));
+    final response = await http.get(Uri.parse('$urlBase?title'));
 
     if (response.statusCode == 200) {
-      List<dynamic> jsonList = jsonDecode(response.body);
-
+      final List<dynamic> jsonList = jsonDecode(response.body) as List;
       return jsonList.map((e) => Albums.fromJson(e)).toList();
     } else {
       throw Exception('실패');
