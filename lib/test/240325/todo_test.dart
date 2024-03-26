@@ -14,6 +14,7 @@ void main() {
 
     //then
     expect(todo, sol);
+    print(sol);
   });
   test('todos test', () async {
     //given
@@ -25,5 +26,7 @@ void main() {
 
     //then
     expect(todo[0], sol);
+
+    print(todo);
   });
 }
