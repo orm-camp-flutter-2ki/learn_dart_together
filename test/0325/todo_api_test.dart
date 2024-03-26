@@ -1,9 +1,8 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:http/http.dart';
-import 'package:learn_dart_together/0325/todo_api.dart';
-import 'package:learn_dart_together/0325/todo_data_class.dart';
+import 'package:learn_dart_together/0325/source/todo_api.dart';
+import 'package:learn_dart_together/0325/model/todo_data_class.dart';
 import 'package:test/scaffolding.dart';
 import 'package:test/expect.dart';
 
@@ -18,7 +17,7 @@ Future<void> main() async {
 
       final actualResult = await todoApi.getTodo(1);
 
-      expect(actualResult == expectedResult, true);
+      expect(eq(actualResult, expectedResult), true);
     });
 
     test('전체 길이가 200인지', () async {

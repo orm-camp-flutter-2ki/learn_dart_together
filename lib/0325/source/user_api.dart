@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:learn_dart_together/0325/user_data_class.dart';
+import 'package:learn_dart_together/0325/model/user_data_class.dart';
 
 class UserApi {
   Future<List<User>> getUsers() async {

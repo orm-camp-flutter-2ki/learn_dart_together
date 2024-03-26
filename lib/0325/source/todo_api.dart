@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:learn_dart_together/0325/todo_data_class.dart';
+import 'package:learn_dart_together/0325/model/todo_data_class.dart';
 
 class TodoApi {
 // http를 사용하여 string 형태의 json을 list로...

@@ -1,7 +1,6 @@
 import 'package:collection/collection.dart';
-import 'package:http/http.dart';
-import 'package:learn_dart_together/0325/user_api.dart';
-import 'package:learn_dart_together/0325/user_data_class.dart';
+import 'package:learn_dart_together/0325/source/user_api.dart';
+import 'package:learn_dart_together/0325/model/user_data_class.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
@@ -31,7 +30,7 @@ Future<void> main() async {
 
       final actualResult = await userApi.getUser(1);
 
-      expect(actualResult == expectedResult, true);
+      expect(eq(actualResult, expectedResult), true);
     });
 
     test('전체 길이가 10인지', () async {

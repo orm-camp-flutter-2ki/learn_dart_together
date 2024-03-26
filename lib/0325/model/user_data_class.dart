@@ -37,10 +37,10 @@ class User {
         'name': name,
         'username': username,
         'email': email,
-        'address': address,
+        'address': address?.toJson(),
         'phone': phone,
         'website': website,
-        'company': company,
+        'company': company?.toJson(),
       };
 
 
