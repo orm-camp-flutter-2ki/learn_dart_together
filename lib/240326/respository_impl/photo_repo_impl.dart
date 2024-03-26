@@ -8,9 +8,16 @@ class PhotoRepositoryImpl implements PhotoRepository {
   @override
   Future<List<Photo>> getPhotos(num albumId) async {
     final getData = await photoApi.getPhotos();
-    final result =
-        getData.where((element) => element.albumId == albumId).toList();
 
-    return result;
+    if( albumId > 0 ) {
+      final result =
+      getData.where((element) => element.albumId == albumId).toList();
+
+      return result;
+
+    } else {
+      return [];
+    }
+
   }
 }
