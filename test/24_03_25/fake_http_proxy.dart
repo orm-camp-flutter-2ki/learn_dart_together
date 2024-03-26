@@ -36,6 +36,10 @@ class FakeHttpProxy implements HttpProxy {
         'test/24_03_26/resource/album.json',
       'https://jsonplaceholder.typicode.com/photos' =>
         'test/24_03_26/resource/photos.json',
+      'https://jsonplaceholder.typicode.com/posts' =>
+        'test/24_03_26/resource/posts.json',
+      'https://jsonplaceholder.typicode.com/posts/1' =>
+        'test/24_03_26/resource/post.json',
       _ => throw Exception('Unknown URI: $uri')
     };
   }
