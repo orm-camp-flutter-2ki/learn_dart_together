@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/240326/data_source/comments.dart';
+import 'package:learn_dart_together/240326/data_source/comment.dart';
 
 class CommentApi {
   Future<List<Comment>> getComments() async {
