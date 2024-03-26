@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 
 import '../../240325/todo.dart';
-import '../../data_source/todo_api.dart';
+import '../../240325/data_source/todo_api.dart';
 
 void main() {
   test('todo test', () async {
@@ -14,6 +14,7 @@ void main() {
 
     //then
     expect(todo, sol);
+    print(sol);
   });
   test('todos test', () async {
     //given
@@ -25,5 +26,7 @@ void main() {
 
     //then
     expect(todo[0], sol);
+
+    print(todo);
   });
 }
