@@ -1,6 +1,6 @@
 import 'address.dart';
 import 'company.dart';
-                                    // json 형식 string encoder string -> list<int> , map 형으로 [1, ,2 ,3,4] { key name :value "Leanne Graham" }
+
 class User {
   int id;
   String name;

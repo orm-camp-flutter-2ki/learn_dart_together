@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:learn_dart_together/24_03_25/data_source/user.dart';
 
 class UserApi {
-  Future<List<User>> getTodos() async {
+  Future<List<User>> getUsers() async {
     final http.Response response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
     List jsonList = jsonDecode(response.body); //String
@@ -12,7 +12,7 @@ class UserApi {
     return jsonList.map((e) => User.fromJson(e)).toList();
   }
 
-  Future<User> getTodo(int id) async {
+  Future<User> getUser(int id) async {
 // try catch 해야
     final http.Response response = await http
         .get(Uri.parse('https://jsonplaceholder.typicode.com/users/$id'));
