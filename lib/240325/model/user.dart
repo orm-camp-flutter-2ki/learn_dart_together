@@ -31,6 +31,7 @@ class User {
         address = Address.fromJson(json['address']),
         phoneNum = json['phone'],
         website = json['website'],
+
         // class의 인스턴스로 객체를 company 속성에 할당
         company = Company(json['company']['name']);
 

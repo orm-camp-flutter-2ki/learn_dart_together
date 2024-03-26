@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/240325/time.dart';
+import 'package:learn_dart_together/240325/model/time.dart';
 
 class TimeApi {
   Future<Time> getTime() async {
