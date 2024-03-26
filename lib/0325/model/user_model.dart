@@ -43,12 +43,10 @@ class User {
         'company': company?.toJson(),
       };
 
-
   @override
   String toString() {
     return 'User{id: $id, name: $name, username: $username, email: $email, address: $address, phone: $phone, website: $website, company: $company}';
   }
-
 
   @override
   bool operator ==(Object other) =>
