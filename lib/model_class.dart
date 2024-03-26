@@ -5,23 +5,17 @@ import 'dart:io';
 // toString
 // fromJson, toJson
 // copyWith
-class Employee {
-  final String stringA;
-  final String stringB;
-  final String stringC;
+class Hero {
+  final String name;
 
-  final int age;
-
-  Employee(this.stringA, this.age);
+  Hero(this.name);
 
   //copyWith
-  Employee copyWith({
+  Hero copyWith({
     String? name,
-    int? age,
   }) {
-    return Employee(
-      name ?? this.stringA,
-      age ?? this.age,
+    return Hero(
+      name ?? this.name,
     );
   }
 
@@ -32,7 +26,8 @@ class Employee {
         age = json['age'];
 
   //toJson 데이터를 JSON 형식의 문자열로 직렬화(Serialization)하는 기능
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() =>
+      {
         'name': stringA,
         'age': age,
       };
@@ -41,10 +36,10 @@ class Employee {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Employee &&
-          runtimeType == other.runtimeType &&
-          stringA == other.stringA &&
-          age == other.age;
+          other is Employee &&
+              runtimeType == other.runtimeType &&
+              stringA == other.stringA &&
+              age == other.age;
 
   //hashCode
   @override
@@ -66,7 +61,8 @@ class Department {
       : name = json['name'],
         leader = Employee.fromJson(json['leader']);
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() =>
+      {
         'name': name,
         'leader': leader.toJson(),
       };

@@ -5,14 +5,6 @@ import 'package:http/http.dart' as http;
 import '../model_class/p1_model_class.dart';
 
 class P1Api {
-  // Future<List<Comment>> getData() async {
-  //   final http.Response response = await http
-  //       .get(Uri.parse('https://jsonplaceholder.typicode.com/comments'));
-  //
-  //   List jsonList = jsonDecode(response.body);
-  //   return jsonList.map((e) => Comment.fromJson(e)).toList();
-  // }
-
   Future<List<Comment>> getCommentsBy(int postId) async {
     final http.Response response = await http
         .get(Uri.parse('https://jsonplaceholder.typicode.com/comments'));
@@ -24,6 +16,5 @@ class P1Api {
         .toList();
 
     return filteredComments;
-    // return jsonList.map((e) => Comment.fromJson(e)).toList();
   }
 }
