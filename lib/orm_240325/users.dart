@@ -3,16 +3,23 @@ import 'package:learn_dart_together/orm_240325/company.dart';
 import 'address.dart';
 
 class Users {
-  int id;
-  String name;
-  String username;
-  Address address;
-  String phone;
-  String website;
-  Company company;
+  final int id;
+  final String name;
+  final String username;
+  final Address address;
+  final String phone;
+  final String website;
+  final Company company;
 
-  Users(this.id, this.name, this.username, this.address, this.phone,
-      this.website, this.company);
+  Users(
+    this.id,
+    this.name,
+    this.username,
+    this.address,
+    this.phone,
+    this.website,
+    this.company,
+  );
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -21,7 +28,7 @@ class Users {
         'address': address.toJson(),
         'phone': phone,
         'website': website,
-        'company': company.toJson()
+        'company': company.toJson(),
       };
 
   Users.fromJson(Map<String, dynamic> json)
