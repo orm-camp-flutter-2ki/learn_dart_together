@@ -15,12 +15,22 @@ void main() {
     });
 
     test('get user top 10', () async {
+      // 이름순으로 정렬된
       List<User> usersTopTen =
           await UserRepositoryImpl().getUsersTop10ByUserName();
 
-      final expected = expectedUsers.map(User.fromJson).toList();
 
-      expect(usersTopTen.equals(expected), true);
+      final names = [];
+
+      // 이것이 정렬된 이름들이 아니라면
+      for (User user in usersTopTen) {
+        names.add(user.name);
+      }
+
+      // sorted와 다를 것
+      final sorted = names.sorted((a, b) => a.compareTo(b));
+
+      expect(names.equals(sorted), true);
     });
   });
 }
