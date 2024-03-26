@@ -1,5 +1,5 @@
 import '../model/photo.dart';
 
-abstract class PhotoRepository {
+abstract interface class PhotoRepository {
   Future<List<Photo>> getPhotos(num albumId);
 }
