@@ -11,13 +11,6 @@ abstract interface class AlbumsRepository {
 class AlbumsRepositoryImpl implements AlbumsRepository {
   final AlbumsApi _api = AlbumsApi();
 
-  //
-  // Future<List<Albums>> getAlbums() async {
-  //   final results = await _api.getAlbums();
-  // }
-// List<Albums> data = await _api.getAlbums();
-// return data.where((element) => element.userId == userId).toList();
-
   @override
   Future<List<Albums>> getAlbums() async {
     // return await _api.getAlbums();
