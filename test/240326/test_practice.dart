@@ -4,12 +4,15 @@ import 'package:learn_dart_together/240325/user.dart';
 import 'package:learn_dart_together/240326/datamodel/album.dart';
 import 'package:learn_dart_together/240326/datamodel/comment.dart';
 import 'package:learn_dart_together/240326/datamodel/photo.dart';
+import 'package:learn_dart_together/240326/datamodel/post.dart';
 import 'package:learn_dart_together/240326/repository/albumRepository.dart';
 import 'package:learn_dart_together/240326/repository/albumRepositoryImpl.dart';
 import 'package:learn_dart_together/240326/repository/commentsRepository.dart';
 import 'package:learn_dart_together/240326/repository/commentsRepositoryImpl.dart';
 import 'package:learn_dart_together/240326/repository/photoRepository.dart';
 import 'package:learn_dart_together/240326/repository/photoRepositoryImpl.dart';
+import 'package:learn_dart_together/240326/repository/postRepository.dart';
+import 'package:learn_dart_together/240326/repository/postRepositoryImpl.dart';
 import 'package:learn_dart_together/240326/repository/toDoRepository.dart';
 import 'package:learn_dart_together/240326/repository/toDoRepositoryImpl.dart';
 import 'package:learn_dart_together/240326/repository/userRepository.dart';
@@ -50,5 +53,16 @@ void main() {
         await userRepositoryImpl.getUsersTop10ByUserName();
     expect(userListTop10.length, equals(10));
     expect(userListTop10[0].username == 'Antonette', equals(true));
+  });
+  test('practice6', () async {
+    PostRepository postRepository = PostRepositoryImpl();
+    List<Post> postListLimit = await postRepository.getPostsLimit(2, 5);
+    expect(postListLimit[0].id == '6', equals(true));
+    List<Post> postListLimit1 = await postRepository.getPostsLimit(0, 5);
+    expect(postListLimit1[0].id == '1', equals(true));
+    Post postId = await postRepository.getPost(2);
+    expect(postId.id == '2', equals(true));
+    List<Post> postList = await postRepository.getPosts();
+    expect(postList[0].id == '1', equals(true));
   });
 }
