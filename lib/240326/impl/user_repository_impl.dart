@@ -24,9 +24,4 @@ class UserRepositoryImpl implements UserRepository {
 
   return sortedList.sublist(0, 10);
   }
-
-}
-
-void main() async {
-  final a = await UserRepositoryImpl().getUsersTop10ByUserName();
 }

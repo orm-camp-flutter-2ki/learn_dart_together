@@ -24,8 +24,3 @@ class PostRepositoryImpl implements PostRepository {
     return pageList.map((e) => Post.fromJson(e)).toList();
   }
 }
-
-void main() async {
-  // print(await PostRepositoryImpl().getPosts());
-  print(await PostRepositoryImpl().getPosts(page: 3, limit: 4));
-}
