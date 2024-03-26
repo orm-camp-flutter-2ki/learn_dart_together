@@ -6,7 +6,7 @@ import 'package:learn_dart_together/fetchdata/user.dart';
 
 Future<void> main() async {
   UserPool userPool = UserPool();
-  Data data = await userPool.getUser();
+  Data data = await userPool.getUsers();
   List<User> userList = data.userList;
   // 정렬
   JsonEncoder encoder = JsonEncoder.withIndent(' ');
@@ -16,7 +16,8 @@ Future<void> main() async {
 }
 
 class UserPool {
-  Future<Data> getUser() async {
+  // List타입일 때는 메서드명 복수형으로 할 것
+  Future<Data> getUsers() async {
     final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
     print(response.statusCode);
 

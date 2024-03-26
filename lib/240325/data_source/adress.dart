@@ -6,7 +6,7 @@ class Adress {
   final String suite;
   final String city;
   final String zipcode;
-  final Map<String, dynamic> geo;
+  final Map<String, num> geo; // {'lat': 11, 'Ing': 22 }
 
   Adress({
     required this.street,

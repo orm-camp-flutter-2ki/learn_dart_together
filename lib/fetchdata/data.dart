@@ -10,7 +10,7 @@ class Data {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'userList': userList.map((x) => x.toJson()).toList(),
+      'userList': userList.map((e) => e.toJson()).toList(),
     };
   }
 
