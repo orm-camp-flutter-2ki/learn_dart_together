@@ -48,4 +48,20 @@ class Comment {
       name.hashCode ^
       email.hashCode ^
       body.hashCode;
+
+  Comment copyWith({
+    int? postId,
+    int? id,
+    String? name,
+    String? email,
+    String? body,
+  }) {
+    return Comment(
+      postId ?? this.postId,
+      id ?? this.id,
+      name ?? this.name,
+      email ?? this.email,
+      body ?? this.body,
+    );
+  }
 }
