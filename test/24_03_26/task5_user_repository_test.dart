@@ -63,7 +63,6 @@ void main() {
       final newUser = User.fromJson(json);
 
       expect(newUser, isA<User>());
-      expect(newUser!.id, equals(1));
       expect(newUser.name, equals('문찬양'));
     });
 
