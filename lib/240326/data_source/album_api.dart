@@ -1,8 +1,6 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/240326/repository/album_repository.dart';
-import 'package:learn_dart_together/240326/repository/album_repository_implements.dart';
 
 import '../model/album.dart';
 
@@ -34,12 +32,6 @@ class AlbumApi {
 
 // void main() async {
 //   AlbumRepository albumRepo = AlbumRepositoryImpl();
-//   final result = await albumRepo.getAlbums();
+//   final result = await albumRepo.getAlbumsTop10();
 //   print(result);
 // }
-
-void main() async {
-  AlbumRepository albumRepo = AlbumRepositoryImpl();
-  final result = await albumRepo.getAlbumsTop10();
-  print(result);
-}
