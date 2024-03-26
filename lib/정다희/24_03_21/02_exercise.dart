@@ -46,11 +46,9 @@ class Movie {
     return 'Movie{title: $title, director:$director, year:$year}';
   }
 
-//   Movie CopyWith({
-//
-// }){
-//     return Movie(title, director, year)
-// }
+  Movie CopyWith() {
+    return Movie(title, director, year);
+  }
 
   @override
   bool operator ==(Object other) =>
