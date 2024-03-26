@@ -74,7 +74,7 @@ void main() {
   });
   test('exercise4', () async {
     // Given
-    XmlApi().getXmlData();
+    XmlApi().getXmlData('서울');
 
     // When
 

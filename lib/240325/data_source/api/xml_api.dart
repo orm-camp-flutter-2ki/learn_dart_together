@@ -5,8 +5,8 @@ import 'package:learn_dart_together/240325/data_source/real_time_station_arrival
 import 'package:xml2json/xml2json.dart';
 
 class XmlApi {
-  Future<RealTimeStationArrival> getXmlData() async {
-    final http.Response response = await http.get(Uri.parse('http://swopenapi.seoul.go.kr/api/subway/sample/xml/realtimeStationArrival/0/5/%EC%84%9C%EC%9A%B8'));
+  Future<RealTimeStationArrival> getXmlData(String station) async {
+    final http.Response response = await http.get(Uri.parse('http://swopenapi.seoul.go.kr/api/subway/sample/xml/realtimeStationArrival/0/5/$station'));
 
     final xml = utf8.decode(response.bodyBytes);
     final myTransformer = Xml2Json();
@@ -29,5 +29,5 @@ class XmlApi {
 }
 
 void main() async {
-  print(XmlApi().getXmlData());
+  print(XmlApi().getXmlData('서울'));
 }
