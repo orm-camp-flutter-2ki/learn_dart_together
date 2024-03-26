@@ -53,9 +53,3 @@ class UserApi {
         .toList();
   }
 }
-
-void main() async {
-  UserApi userApi = UserApi();
-  List<User> users = await userApi.getUserTop10ByUserNameApi();
-  users.forEach((print));
-}

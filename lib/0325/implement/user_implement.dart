@@ -23,6 +23,10 @@ class UserRepositoryImpl implements UserRepository {
 
 void main() async {
   final UserRepository userRepository = UserRepositoryImpl();
+
+  // List<User> user = await userRepository.getUsers();
+  // List<User> user = await userRepository.getUser(1);
   List<User> user = await userRepository.getUserTop10ByUserName();
+
   user.forEach((print));
 }

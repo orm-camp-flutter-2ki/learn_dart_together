@@ -25,12 +25,11 @@ class TodoApi {
           .get(Uri.parse('https://jsonplaceholder.typicode.com/todos/$id'));
     } catch (error) {
       print('[Error]\n$error');
-      return [];
-      // rethrow;
+      // return [];
+      rethrow;
     }
-
-    final List json = await jsonDecode(response.body);
-    return json.map((e) => Todo.fromJson(e)).toList();
+    final Map<String, dynamic> json = jsonDecode(response.body);
+    return [Todo.fromJson(json)];
   }
 
   Future<List<Todo>> getTodoCompletedTodosApi(bool completed) async {
