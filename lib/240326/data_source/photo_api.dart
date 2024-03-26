@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/240326/datamodel/comment.dart';
 
 import '../datamodel/photo.dart';
 
@@ -15,9 +14,3 @@ class PhotoApi {
     return jsonList.map((e) => Photo.fromJson(e)).toList();
   }
 }
-/*
-void main(){
-  CommentsApi commentsApi =CommentsApi();
-  commentsApi.getStocks();
-
-}*/

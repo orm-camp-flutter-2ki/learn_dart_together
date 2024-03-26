@@ -13,9 +13,3 @@ class CommentsApi {
     return jsonList.map((e) => Comment.fromJson(e)).toList();
   }
 }
-/*
-void main(){
-  CommentsApi commentsApi =CommentsApi();
-  commentsApi.getStocks();
-
-}*/
