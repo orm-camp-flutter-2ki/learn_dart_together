@@ -24,12 +24,12 @@ final String json = '''{
  ]
 }''';
 
-void main(){
+void main() {
   // json -> class
   Map<String, dynamic> jsonData = jsonDecode(json);
   //collectionSalePrice를 class로 변환
+  // List decodingString =
   List collectionSalePrice = jsonData['collectionSalePrice'];
   List<String> results = collectionSalePrice.map((e) => e.toString()).toList();
   print(results);
 }
-
