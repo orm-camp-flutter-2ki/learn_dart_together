@@ -3,7 +3,7 @@ import 'dart:convert';
 import '../data_source/user.dart';
 import 'package:http/http.dart' as http;
 
-class userApi {
+class UserApi {
   Future<List<User>> getUsers() async {
     final response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
