@@ -6,6 +6,6 @@ class Memo {
 
   @override
   String toString() {
-    return 'Memo{content: $content}';
+    return '$content';
   }
 }
