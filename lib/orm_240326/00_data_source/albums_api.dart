@@ -18,7 +18,7 @@ class AlbumsApi {
   }
 
   Future<List<Albums>> getAlbumsTop10() async {
-    final response = await http.get(Uri.parse('$urlBase?title'));
+    final response = await http.get(Uri.parse('$urlBase'));
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonList = jsonDecode(response.body) as List;

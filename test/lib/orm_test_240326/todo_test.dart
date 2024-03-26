@@ -8,13 +8,14 @@ void main() {
       final TodoRepository todosTest = TodoRepositoryImpl();
       final result = await todosTest.getTodos();
 
-      // print(result);
+      print(result);
     });
     test('getCompletedTodos', () async {
       final TodoRepository todoCompleted = TodoRepositoryImpl();
       final results = await todoCompleted.getCompletedTodos(true);
-      // print(results.length);
+      print(results.length);
       // expect(results == Todo.completed, true);
+      //  expect 코드를 어떻게 짜야하는지 잘 모르겠습니다.
     });
   });
 }
