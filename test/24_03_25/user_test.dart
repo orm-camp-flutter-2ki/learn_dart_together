@@ -3,7 +3,7 @@ import 'package:learn_dart_together/24_03_25/data_source/user_api.dart';
 
 void main() async{
 
-  final List<User> userList = await UserApi().getTodos();
+  final List<User> userList = await UserApi().getUsers();
   print(userList);
 
 }
