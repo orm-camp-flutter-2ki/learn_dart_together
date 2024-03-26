@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:learn_dart_together/24_03_25/http_proxy.dart';
-import 'package:learn_dart_together/24_03_26/model/Post.dart';
+import 'package:learn_dart_together/24_03_26/model/post.dart';
 
 class PostApi {
   static const baseUrl = 'https://jsonplaceholder.typicode.com';
