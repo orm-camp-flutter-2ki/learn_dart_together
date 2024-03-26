@@ -28,6 +28,8 @@ class FakeHttpProxy implements HttpProxy {
         'test/24_03_25/resource/subway_info.xml',
       'https://www.alphavantage.co/query?function=LISTING_STATUS&apikey=demo' =>
         'test/24_03_25/resource/listing_status.csv',
+      'https://jsonplaceholder.typicode.com/comments' =>
+        'test/24_03_26/resource/comments.json',
       _ => throw Exception('Unknown URI: $uri')
     };
   }
