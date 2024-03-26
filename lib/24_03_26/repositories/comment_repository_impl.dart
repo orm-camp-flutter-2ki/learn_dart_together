@@ -8,7 +8,9 @@ class CommentRepositoryImpl implements CommentRepository {
   CommentRepositoryImpl(this._commentApi);
 
   @override
-  Future<List<Comment>> getComments() async {
-    return await _commentApi.getComments();
+  Future<List<Comment>> getComments(int postId) async {
+    final comments = await _commentApi.getComments();
+
+    return comments.where((element) => element.postId == postId).toList();
   }
 }

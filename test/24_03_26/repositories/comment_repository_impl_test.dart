@@ -23,7 +23,8 @@ void main() {
               'reiciendis et nam sapiente accusantium',
         );
         // When
-        final result = await commentRepository.getComments();
+        final result =
+            await commentRepository.getComments(expected.postId.toInt());
 
         // Then
         expect(result.first, expected);
