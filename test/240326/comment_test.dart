@@ -57,5 +57,11 @@ void main() {
       expect(comments[0] == expected[0], true);
       expect(comments[0].name == expected[0].name, true);
     });
+
+    test('postId 확인', () async {
+      final comments = await repository.getComments(1);
+
+      comments.forEach((element) => expect(element.postId == 1, true));
+    });
   });
 }
