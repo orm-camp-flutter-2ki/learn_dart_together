@@ -6,10 +6,12 @@ import 'package:test/scaffolding.dart';
 
 void main() {
   /// Directory 경로 변수: 너무 길어서 변수에 담았다.
-  final String todayDirectory = '/Users/yong/Desktop/learn_dart_together/lib/0319';
+  final String todayDirectory =
+      '/Users/yong/Desktop/learn_dart_together/lib/0319';
 
   /// 원본 경로
   final originFile = File('$todayDirectory/origin_test_file.txt');
+
   /// 카피 할 경로
   final fileCopyTest = File('$todayDirectory/copy_test_file.txt');
 
@@ -31,8 +33,10 @@ void main() {
     /// copyFile 메서드 실행
     copyFile(originFile.path, fileCopyTest.path);
 
-    expect(originFile.readAsStringSync() == fileCopyTest.readAsStringSync(), true);
-    expect(originFile.readAsStringSync() != fileCopyTest.readAsStringSync(), false);
+    expect(
+        originFile.readAsStringSync() == fileCopyTest.readAsStringSync(), true);
+    expect(originFile.readAsStringSync() != fileCopyTest.readAsStringSync(),
+        false);
   });
 
   test('파일 지우기 test', () {
@@ -40,4 +44,19 @@ void main() {
     originFile.delete();
     fileCopyTest.delete();
   });
+
+  final String todayDirectory2 =
+      '/Users/yong/Desktop/learn_dart_together/test/0319'; // 오늘 derectory 경로
+
+  /// 매 test 시작 마다
+  setUp(() {
+    File('$todayDirectory/company2_test.txt').writeAsStringSync('hello dart');
+  });
+
+  /// 매 test 끝 마다
+  tearDown(() {
+    File('$todayDirectory/company2_test.txt').deleteSync();
+    File('$todayDirectory/company2_test2.txt').deleteSync();
+  });
+  test('description', () {});
 }
