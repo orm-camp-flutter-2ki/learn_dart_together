@@ -14,8 +14,10 @@ class PostRepositoryImpl implements PostRepository {
   }
 
   @override
-  Future<List<Post>> getPosts(int page) async {
+  Future<List<Post>> getPosts(int? page) async {
     List<Post> posts = await _postApi.getPosts();
+    if (page == null) return posts;
+
     int offset = _getOffset(page, posts.length);
     int limit = _getLimit(offset, posts.length);
 
