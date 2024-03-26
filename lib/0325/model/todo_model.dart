@@ -1,4 +1,3 @@
-// 데이터 클래스
 class Todo {
   final int userId;
   final int id;
