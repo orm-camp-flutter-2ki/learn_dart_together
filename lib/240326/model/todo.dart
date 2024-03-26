@@ -1,5 +1,3 @@
-
-
 class Todo {
   final int userId;
   final int id;
