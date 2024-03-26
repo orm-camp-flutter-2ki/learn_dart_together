@@ -1,13 +1,13 @@
 import 'package:xml/xml.dart';
 
 class SubwayInfo {
-  String subwayId;
-  String updnLine;
-  String trainLineNm;
-  String btrainSttus;
-  String bstatnNm;
-  DateTime recptnDt;
-  String arvlMsg2;
+  final String subwayId;
+  final String updnLine;
+  final String trainLineNm;
+  final String btrainSttus;
+  final String bstatnNm;
+  final DateTime recptnDt;
+  final String arvlMsg2;
 
   SubwayInfo(
     this.subwayId,
