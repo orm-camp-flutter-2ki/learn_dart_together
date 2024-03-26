@@ -1,16 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-
-void main() async {
-  List<dynamic> decode =
-      jsonDecode(await File('lib/240323_study/posts.json').readAsString());
-
-  List<Post> result = decode.map((e) => Post.fromJson(e)).toList();
-  String encode = jsonEncode(result);
-  final encodeFile =
-      File('lib/240323_study/postsEncode.json').writeAsString(encode);
-}
-
 class Post {
   final int userId;
   final int id;
@@ -38,8 +25,6 @@ class Post {
     return 'Post{userId: $userId, id: $id, title: $title, body: $body}';
   }
 
-  //toString을 재정의 하면 print문에서 암묵적으로 출력되게한다. Instance of Posts = > userID ~~ 샬라샬라
-  //List안에 있으면 또 호출되게한다.
   Post.fromJson(Map<String, dynamic> json)
       : userId = json['userId'],
         id = json['id'],
