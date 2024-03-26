@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class Photo {
-  int albumId;
-  int id;
-  String title;
-  String url;
-  String thumbnailUrl;
+  final int albumId;
+  final int id;
+  final String title;
+  final String url;
+  final String thumbnailUrl;
 
   Photo({
     required this.albumId,
