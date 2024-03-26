@@ -19,18 +19,36 @@ class PostRepositoryImpl implements PostRepository {
   }
 
   @override
-  Future<List<Post>> getPosts({int page = 1, int limit = 10}) async {
-    if (page < 1) {
-      page = 1;
+  Future<List<Post>> getPosts({int? page, int? limit}) async {
+    String url = _apiUrl;
+
+    if (page != null && limit != null) {
+      if (page < 1) {
+        page = 1;
+      }
+      url += '?_page=$page&_limit=$limit';
     }
 
-    final response = await http.get(Uri.parse('$_apiUrl?_page=$page&_limit=$limit'));
+    final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
       List<dynamic> jsonList = jsonDecode(response.body);
       return jsonList.map((e) => Post.fromJson(e)).toList();
     } else {
       throw Exception('Failed to load posts');
+    }
+  }
+
+  // 새로운 메소드 추가: 전체 게시물을 가져오는 메소드
+  @override
+  Future<List<Post>> getAllPosts() async {
+    final response = await http.get(Uri.parse('$_apiUrl'));
+
+    if (response.statusCode == 200) {
+      List<dynamic> jsonList = jsonDecode(response.body);
+      return jsonList.map((e) => Post.fromJson(e)).toList();
+    } else {
+      throw Exception('Failed to load all posts');
     }
   }
 }
@@ -41,12 +59,12 @@ Future<void> main() async {
 
   try {
     // 모든 게시물 목록 가져오기
-    List<Post> posts = await postRepository.getPosts();
+    List<Post> allPosts = await postRepository.getAllPosts();
     print('전체 게시물 목록:');
-    posts.forEach((post) => print(post));
+    allPosts.forEach((post) => print(post));
 
     // 페이지 및 제한을 지정하여 게시물 목록 가져오기
-    List<Post> pagedPosts = await postRepository.getPosts(page: 1, limit: 3);
+    List<Post> pagedPosts = await postRepository.getPosts(page: -1, limit: 3);
     print('\n페이지별 게시물 목록:');
     pagedPosts.forEach((post) => print(post));
   } catch (e) {
