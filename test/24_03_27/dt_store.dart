@@ -33,7 +33,7 @@ void main() {
       final result = Store.fromJson(json);
 
       // Then
-      expect(result == expected, true);
+      expect(result == expected, isTrue);
     });
 
     test('toJson()는 Store로 Json(Map)을 생성한다.', () async {
@@ -64,7 +64,7 @@ void main() {
       final result = store.toJson();
 
       // Then
-      expect(MapEquality().equals(result, expected), true);
+      expect(MapEquality().equals(result, expected), isTrue);
     });
 
     test('copyWith()는 Store을 통해 복사본 Store을 생성한다.', () async {
@@ -83,7 +83,7 @@ void main() {
       final copied = Store.copyWith(origin: origin, code: '123456');
 
       // Then
-      expect(copied == origin, false);
+      expect(copied == origin, isFalse);
     });
   });
 }

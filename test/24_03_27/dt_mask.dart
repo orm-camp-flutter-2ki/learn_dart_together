@@ -38,7 +38,7 @@ void main() {
       final result = Mask.fromJson(json);
 
       // Then
-      expect(result == expected, true);
+      expect(result == expected, isTrue);
     });
 
     test('toJson()는 Mask로 Json(Map)을 생성한다.', () async {
@@ -75,7 +75,7 @@ void main() {
       final result = mask.toJson();
 
       // Then
-      expect(MapEquality().equals(result, expected), true);
+      expect(DeepCollectionEquality().equals(expected, result), isTrue);
     });
 
     test('copyWith()는 Mask을 통해 복사본 Mask을 생성한다.', () async {
@@ -95,7 +95,7 @@ void main() {
       final copied = Mask.copyWith(origin: origin, count: 111);
 
       // Then
-      expect(copied == origin, false);
+      expect(copied == origin, isFalse);
     });
   });
 }
