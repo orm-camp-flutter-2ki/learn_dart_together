@@ -28,15 +28,39 @@ void main() {
 
     expect(bestSum(numbers) == 29, true);
   });
+
+  test('Q4. factorial test', () {
+    expect(factorial(5) == 120, true);
+  });
+
 }
 
-/// 주어진 정수 배열 또는 리스트에서 가장 큰 두 수를 찾아 더한 값을 반환하는 함수를 작성하세요
+/// Q4. 양의 정수 n이 주어졌을 때, n의 팩토리얼(factorial) 값을 반환하는 함수를 작성하세요.
+/// 팩토리얼은 1부터 n까지의 모든 양의 정수를 곱한 값입니다.
+int factorial(int n) {
+  // 0 또는 1의 팩토리얼은 항상 1
+  if (n == 0 || n == 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+
+    // 5 x factorial(4)
+    // 4 x factorial(3)
+    // 3 x factorial(2)
+    // 2 x factorial(1)
+    // => 즉 이것과 같음 : 5 x factorial(4) x factorial(3)x factorial(2) x factorial(1)
+    // = 5 x 4 x 3 x 2 x 1
+  }
+}
+
+/// Q3. 주어진 정수 배열 또는 리스트에서 가장 큰 두 수를 찾아 더한 값을 반환하는 함수를 작성하세요
 int bestSum(List<int> numbers) {
   numbers.sort((a, b) => b.compareTo(a));
 
   return numbers[0] + numbers[1];
 }
 
+/// Q2. 회문 체크
 bool palindromeCheck(String text) {
   int start = 0;
   int end = text.length - 1;
