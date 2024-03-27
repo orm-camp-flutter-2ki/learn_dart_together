@@ -1,4 +1,4 @@
-import '../practice1_bank.dart';
+// import '../practice1_bank.dart';
 
 final userData = {
   "name": "홍길동",
@@ -6,8 +6,8 @@ final userData = {
   "phone": "010-1111-2222"
 };
 
-class BankApi {
-  Bank getUserBank() {
-    return Bank.fromJson(userData);
-  }
-}
+// class BankApi {
+//   Bank getUserBank() {
+//     return Bank.fromJson(userData);
+//   }
+// }
