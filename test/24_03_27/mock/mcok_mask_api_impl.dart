@@ -10,7 +10,7 @@ class MockMaskApiImpl extends Mock implements MaskApi {
       // returnValue는 getMask() 메소드가 호출되었을 때 반환할 타입을 설정합니다. When.thenReturn or When.thenAnswer 필수로 사용해야 합니다.
       // returnValueForMissingStub은 테스트코드에서 When.thenReturn or When.thenAnswer를 사용하지 않았을 때 밑의 값이 검증에 사용됩니다.
       super.noSuchMethod(Invocation.getter(#getMask),
-          returnValueForMissingStub: Mask(
+          returnValue: Mask(
             count: 1,
             stores: [
               Stores(
