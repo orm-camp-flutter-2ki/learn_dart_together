@@ -18,7 +18,7 @@ class PostRepositoryImpl implements PostRepository {
     return getPostById.first;
   }
 
-  @override
+//@override
 // Future<List<Post>> getPosts({int? page, int? limit}) async {
 //   List<Post> data = await _api.getPosts();
 //   List<Post> getPostBypage = data.where((element) => element.id == id).toList();
@@ -29,5 +29,5 @@ class PostRepositoryImpl implements PostRepository {
 abstract interface class PostRepository {
   Future<Post> getPost(int id);
 
-  Future<List<Post>> getPosts({int? page, int? limit});
+//Future<List<Post>> getPosts({int? page, int? limit});
 }
