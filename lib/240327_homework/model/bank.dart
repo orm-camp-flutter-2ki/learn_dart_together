@@ -20,9 +20,9 @@ class Bank {
   }
 
   Bank.fromJson(Map<String, dynamic> json)
-      : name = json['name'] as String,
+      : name = json['name'],
         address = json['address'],
-        phone = json['phone'] as String;
+        phone = json['phone'];
 
   Map<String, dynamic> toJson() => {
         'name': name,
@@ -34,4 +34,4 @@ class Bank {
 //from json 영어 바꿈
 //tojson plone -> phone
 //객체값을 알기위해 toSring() 정의
-//as Strin 괜찮은가?
+//as String 괜찮은가?
