@@ -41,5 +41,34 @@ void main() {
         expect(result, mask);
       });
     });
+
+    group('getMask 메소드는', () {
+      test('api.getMask를 1번 호출한다.', () async {
+        // Given
+        final mask = Mask(
+          count: 1,
+          stores: [
+            Stores(
+              addr: '서울시 중구',
+              code: '1111',
+              lat: 37.1234,
+              lng: 126.1234,
+              name: '마스크판매처1',
+              remainStat: 'plenty',
+              stockAt: '2022-03-27 10:00:00',
+              type: '01',
+              createdAt: '2022-03-27 10:00:00',
+            ),
+          ],
+        );
+        when(maskApi.getMask()).thenAnswer((_) async => mask);
+
+        // When
+        await maskRepository.getMask();
+
+        // Then
+        verify(maskApi.getMask()).called(1);
+      });
+    });
   });
 }
