@@ -1,10 +1,17 @@
 import 'dart:convert';
 
 import 'package:learn_dart_together/24_03_27/bank.dart';
+import 'package:learn_dart_together/24_03_27/mask.dart';
+import 'package:learn_dart_together/http/fake_http_service.dart';
+import 'package:learn_dart_together/http/http_core.dart';
+import 'package:learn_dart_together/repository/mask_repository_impl.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
 void main() {
+  final _httpService =  HttpService();
+  final _fakeHttpService =  FakeHttpService();
+
   group('unit test', () {
     test('Q1. bank test', () {
       Map<String, dynamic> b = {
@@ -20,7 +27,7 @@ void main() {
   });
 
   test('Q2. palindrome test', () {
-    expect(palindromeCheck('racecar') == true, true);
+    expect(palindromeCheck('nooN') == true, true);
   });
 
   test('Q3. 가장 큰 두 수의 합 test', () {
@@ -33,6 +40,12 @@ void main() {
     expect(factorial(5) == 120, true);
   });
 
+  test('Q5. mask model test', () async {
+    // final Mask mask = await MaskRepositoryImpl(_httpService).getMask();
+    final Mask mask = await MaskRepositoryImpl(_fakeHttpService ).getMask();
+
+    expect(mask.stores[0].name == '승약국', true);
+  });
 }
 
 /// Q4. 양의 정수 n이 주어졌을 때, n의 팩토리얼(factorial) 값을 반환하는 함수를 작성하세요.
@@ -53,6 +66,9 @@ int factorial(int n) {
   }
 }
 
+// 위와 같은 함수, 람다식으로 표현.
+int factorial2(int n) => (n == 0 || n == 1) ? 1 : n * factorial2(n - 1);
+
 /// Q3. 주어진 정수 배열 또는 리스트에서 가장 큰 두 수를 찾아 더한 값을 반환하는 함수를 작성하세요
 int bestSum(List<int> numbers) {
   numbers.sort((a, b) => b.compareTo(a));
@@ -62,11 +78,12 @@ int bestSum(List<int> numbers) {
 
 /// Q2. 회문 체크
 bool palindromeCheck(String text) {
+  text = text.toLowerCase();
   int start = 0;
   int end = text.length - 1;
 
   while (start < end) {
-    // 시작과 끝에서 한 글자씩 비교. 다르면 false
+// 시작과 끝에서 한 글자씩 비교. 다르면 false
     if (text[start] != text[end]) {
       return false;
     }
