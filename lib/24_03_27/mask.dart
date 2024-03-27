@@ -18,9 +18,9 @@ class Mask {
 
   Mask.fromJson(Map<String, dynamic> json)
       : count = json['count'],
-        stores = json['stores'];
+        stores = (json['stores'] as List).map((e) => Store.fromJson(e)).toList();
 
-  Map<String, dynamic> toJson() => {'count': count, 'stores': stores};
+  Map<String, dynamic> toJson() => {'count': count, 'stores': stores.map((e) => e.toJson()).toList()};
 
   @override
   String toString() {
@@ -33,7 +33,14 @@ class Mask {
       other is Mask &&
           runtimeType == other.runtimeType &&
           count == other.count &&
-          ListEquality().equals(stores, other.stores);
+          compareStores(stores, other.stores);
+
+  bool compareStores(List<Store> origin, List<Store> other) {
+    for (int i = 0; i < origin.length; i++) {
+      if (origin[i] != other[i]) return false;
+    }
+    return true;
+  }
 
   @override
   int get hashCode => count.hashCode ^ stores.hashCode;
