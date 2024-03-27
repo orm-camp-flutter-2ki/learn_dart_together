@@ -8,8 +8,9 @@ class Mask {
 
   Mask.fromJson(Map<String, dynamic> json)
       : count = json['count'],
-        stores =
-            (json['stores'] as List).map((e) => Store.fromJson(e)).toList();
+        stores = (json['stores'] as List)
+            .map((e) => Store.fromJson(e as Map<String, dynamic>))
+            .toList();
 
   Map<String, dynamic> toJson() => {
         'count': count,
