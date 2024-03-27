@@ -15,5 +15,34 @@ void main() {
        expect(tomato, false);
        expect(anna, true);
     });
+
+    test('getMaxSum 메서드 테스트', () {
+      List<int> numbers = [1,2,5,3,9,8];
+      int result = getMaxSum(numbers);
+      int expectValue = 17;
+
+      expect(result, expectValue);
+
+      //빈배열 전달시 0을 리턴함
+      List<int> numbersEmpty = [];
+      int result2 = getMaxSum(numbersEmpty);
+      int expectValue2 = 0;
+
+      expect(result2, expectValue2);
+
+      //length 가 1이면 그값만 전달
+      List<int> numbersOne = [100];
+      int result3 = getMaxSum(numbersOne);
+      int expectValue3 = 100;
+
+      expect(result3, expectValue3);
+
+      //추가테스트
+      List<int> numbers4 = [10,1,2,5,3,9,8,10];
+      int result4 = getMaxSum(numbers4);
+      int expectValue4 = 20;
+
+      expect(result4, expectValue4);
+    });
   });
 }
