@@ -1,3 +1,12 @@
-/// 양의 정수 n이 주어졌을 때, n의 팩토리얼(factorial) 값을 반환하는 함수
-// reduce 나 fold를 사용하면 될 것 같은...
-void factorial(int N) {}
+int factorial(int N) {
+  if (N <= 0) {
+    throw Exception('1 이상의 양수만 가능합니다.');
+  }
+  int factorialResult = 1;
+
+  for (int i = 1; i <= N; i++) {
+    factorialResult *= i;
+  }
+
+  return factorialResult;
+}

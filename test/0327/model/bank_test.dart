@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:learn_dart_together/0327/model/bank_model.dart';
+import 'package:learn_dart_together/0327/model/bank.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 import 'package:collection/collection.dart';
