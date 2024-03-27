@@ -13,14 +13,14 @@ class SubwayApi {
       var arrivals = document.findAllElements('row');
       List<Subway> subways = [];
 
-      arrivals.forEach((arrival) {
+      for (var arrival in arrivals) {
         var trainLine = arrival.findElements('trainLine').first.text;
         var station = arrival.findElements('station').first.text;
         var arrivalTime = arrival.findElements('arrivalTime').first.text;
 
         var subway = Subway(trainLine, station, arrivalTime);
         subways.add(subway);
-      });
+      }
 
       return subways;
     } else {

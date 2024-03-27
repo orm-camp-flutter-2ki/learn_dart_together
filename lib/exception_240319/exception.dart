@@ -12,7 +12,7 @@ int? numTest() {
   } catch (e) {
     // 예외 처리
     int num = 0;
-    print('예외 처리됨. 값${num}으로 처리 ');
+    print('예외 처리됨. 값$num으로 처리 ');
     // Test를 하려면, return까지 해줘야함.
     return num;
   } finally {

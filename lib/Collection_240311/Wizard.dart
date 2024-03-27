@@ -1,9 +1,8 @@
-import 'dart:async';
 import 'Wand.dart';
 
 class Wizard {
   String _name;
-  int _hp;
+  final int _hp;
   int _mp;
   Wand wand;
 

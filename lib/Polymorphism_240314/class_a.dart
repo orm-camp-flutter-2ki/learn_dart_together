@@ -51,7 +51,7 @@ void main() {
   myList.add(y);
   myList.add(y2);
 
-  myList.forEach((myList) {
+  for (var myList in myList) {
     myList.a();
-  });
+  }
 }

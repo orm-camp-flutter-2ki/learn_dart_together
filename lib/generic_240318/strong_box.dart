@@ -1,6 +1,4 @@
-import 'dart:math';
 
-import 'package:learn_dart_together/AbstractClass_240313/TangibleAsset.dart';
 //enum 열거형
 enum KeyType {
   padlock,

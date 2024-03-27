@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 
 import '../data_source/todo_api.dart';
 import 'practice2.dart';

@@ -1,4 +1,3 @@
-import 'package:learn_dart_together/AbstractClass_240313/Thing.dart';
 
 abstract class AssetAll {
   String name;
