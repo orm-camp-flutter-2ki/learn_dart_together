@@ -35,7 +35,14 @@ class Address {
           suite == other.suite &&
           city == other.city &&
           zipcode == other.zipcode &&
-          geo == other.geo;
+          geo['lat'] == other.geo['lat'] &&
+          geo['lng'] == other.geo['lng'];
+
+  // bool dynamicEquals(dynamic a, dynamic b) {
+  //   if (identical(a, b)) return true;
+  //   if (a == null || b == null) return false;
+  //   return true;
+  // }
 
   @override
   String toString() {
@@ -48,5 +55,6 @@ class Address {
       suite.hashCode ^
       city.hashCode ^
       zipcode.hashCode ^
-      geo.hashCode;
+      geo['lat'].hashCode ^
+      geo['lng'].hashCode;
 }

@@ -3,9 +3,6 @@ import 'dart:convert'; //Decode 하기 위함
 import 'package:http/http.dart' as http;
 import 'package:learn_dart_together/240326/model/user.dart';
 
-import '../repository/user_repository.dart';
-import '../repository/user_repository_implements.dart';
-
 class UserApi {
   //감싸야 된다 그래야지 비싸지 않음
   Future<List<User>> getUsers() async {
@@ -43,8 +40,8 @@ class UserApi {
   }
 }
 
-void main() async {
-  UserRepository userRepo = UserRepositoryImpl();
-  final result = await userRepo.getUsersTop10ByUserName();
-  print(result);
-}
+// void main() async {
+//   UserRepository userRepo = UserRepositoryImpl();
+//   final result = await userRepo.getUsersTop10ByUserName();
+//   print(result);
+// }

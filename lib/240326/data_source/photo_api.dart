@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../model/photo.dart';
-import '../repository/photo_repository.dart';
-import '../repository/photo_repository_implements.dart';
 
 class PhotoApi {
   Future<List<Photo>> getPhotos(int albumId) async {
@@ -19,11 +17,3 @@ class PhotoApi {
     }
   }
 }
-
-void main() async {
-  PhotoRepository photoRepo = PhotoRepositoryImpl();
-  final result = await photoRepo.getPhotos(5);
-  print(result);
-}
-
-//연습문제 3번

@@ -37,6 +37,31 @@ class User {
   }
 
   @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is User &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          name == other.name &&
+          username == other.username &&
+          email == other.email &&
+          phone == other.phone &&
+          website == other.website &&
+          address == other.address &&
+          company == other.company;
+
+  @override
+  int get hashCode =>
+      id.hashCode ^
+      name.hashCode ^
+      username.hashCode ^
+      email.hashCode ^
+      phone.hashCode ^
+      website.hashCode ^
+      address.hashCode ^
+      company.hashCode;
+
+  @override
   String toString() {
     return 'User id: $id name: $name username: $username email: $email phone: $phone website: $website company: $company address: $address';
   }
