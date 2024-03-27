@@ -22,6 +22,19 @@ void main() {
   test('Q2. palindrome test', () {
     expect(palindromeCheck('racecar') == true, true);
   });
+
+  test('Q3. 가장 큰 두 수의 합 test', () {
+    final List<int> numbers = [1, 2, 4, 6, 9, 20];
+
+    expect(bestSum(numbers) == 29, true);
+  });
+}
+
+/// 주어진 정수 배열 또는 리스트에서 가장 큰 두 수를 찾아 더한 값을 반환하는 함수를 작성하세요
+int bestSum(List<int> numbers) {
+  numbers.sort((a, b) => b.compareTo(a));
+
+  return numbers[0] + numbers[1];
 }
 
 bool palindromeCheck(String text) {
