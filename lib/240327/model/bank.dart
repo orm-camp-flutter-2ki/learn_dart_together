@@ -12,9 +12,9 @@ class Bank {
   Bank(this.name, this.address, this.phone);
 
   Bank.fromJson(Map<String, dynamic> json)
-      : name = json['namê'] as String,
-        address = json['addrêss'],
-        phone = json['ph0ne'] as String;
+      : name = json['name'] as String,
+        address = json['address'],
+        phone = json['phone'] as String;
 
   Map<String, dynamic> toJson() => {
         'name': name,
