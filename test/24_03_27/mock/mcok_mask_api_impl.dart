@@ -6,6 +6,9 @@ import 'package:mockito/mockito.dart';
 class MockMaskApiImpl extends Mock implements MaskApi {
   @override
   Future<Mask> getMask() async =>
+      // invocation.getter(#getMask)은 getMask() 메소드가 호출되었을 때의 Mock을 생성합니다.
+      // returnValue는 getMask() 메소드가 호출되었을 때 반환할 타입을 설정합니다. When.thenReturn or When.thenAnswer 필수로 사용해야 합니다.
+      // returnValueForMissingStub은 테스트코드에서 When.thenReturn or When.thenAnswer를 사용하지 않았을 때 밑의 값이 검증에 사용됩니다.
       super.noSuchMethod(Invocation.getter(#getMask),
           returnValueForMissingStub: Mask(
             count: 1,
