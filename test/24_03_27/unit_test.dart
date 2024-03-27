@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:learn_dart_together/24_03_27/bank.dart';
 import 'package:learn_dart_together/24_03_27/mask.dart';
 import 'package:learn_dart_together/http/fake_http_service.dart';
@@ -9,8 +7,8 @@ import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
 void main() {
-  final _httpService =  HttpService();
-  final _fakeHttpService =  FakeHttpService();
+  final _httpService = HttpService();
+  final _fakeHttpService = FakeHttpService();
 
   group('unit test', () {
     test('Q1. bank test', () {
@@ -42,7 +40,7 @@ void main() {
 
   test('Q5. mask model test', () async {
     // final Mask mask = await MaskRepositoryImpl(_httpService).getMask();
-    final Mask mask = await MaskRepositoryImpl(_fakeHttpService ).getMask();
+    final Mask mask = await MaskRepositoryImpl(_fakeHttpService).getMask();
 
     expect(mask.stores[0].name == '승약국', true);
   });
