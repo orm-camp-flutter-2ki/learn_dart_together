@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:collection/collection.dart';
 
 class Mask {
   final int count;
   final List<Store> stores;
 
+//<editor-fold desc="Data Methods">
   const Mask({
     required this.count,
     required this.stores,
@@ -12,10 +15,10 @@ class Mask {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          (other is Mask &&
-              runtimeType == other.runtimeType &&
-              count == other.count &&
-              const ListEquality<Store>().equals(stores, other.stores));
+      (other is Mask &&
+          runtimeType == other.runtimeType &&
+          count == other.count &&
+          stores == other.stores);
 
   @override
   int get hashCode => count.hashCode ^ stores.hashCode;
@@ -37,31 +40,47 @@ class Mask {
 
   Map<String, dynamic> toJson() {
     return {
-      'count': count,
-      'stores': stores.map((store) => store.toJson()).toList(),
+      'count': this.count,
+      'stores': this.stores,
     };
   }
 
+  // 초안
+  // factory Mask.fromJson(Map<String, dynamic> json) {
+  //   return Mask(
+  //     count: json['count'] as int,
+  //     stores: json['stores'] as List<Store>,
+  //   );
+  // }
+
+  // 수정
   factory Mask.fromJson(Map<String, dynamic> json) {
+    List<Store> stores = <Store>[];
+    if (json['stores'] != null) {
+      var storeList = json['stores'] as List<dynamic>;
+      stores = storeList.map((storeJson) => Store.fromJson(storeJson as Map<String, dynamic>)).toList();
+    }
     return Mask(
       count: json['count'] as int,
-      stores: (json['stores'] as List<dynamic>)
-          .map((storeJson) => Store.fromJson(storeJson))
-          .toList(),
+      stores: stores,
     );
   }
+//</editor-fold>
 }
 
 class Store {
   final String addr;
   final String code;
-  final DateTime created_at;
+  final String created_at;
   final double lat;
   final double lng;
   final String name;
   final String remain_stat;
-  final DateTime stock_at;
+  final String stock_at;
   final String type;
+
+//<editor-fold desc="Data Methods">
+
 
   const Store({
     required this.addr,
@@ -74,6 +93,7 @@ class Store {
     required this.stock_at,
     required this.type,
   });
+
 
   @override
   bool operator ==(Object other) =>
@@ -88,7 +108,9 @@ class Store {
               name == other.name &&
               remain_stat == other.remain_stat &&
               stock_at == other.stock_at &&
-              type == other.type);
+              type == other.type
+          );
+
 
   @override
   int get hashCode =>
@@ -101,6 +123,7 @@ class Store {
       remain_stat.hashCode ^
       stock_at.hashCode ^
       type.hashCode;
+
 
   @override
   String toString() {
@@ -117,15 +140,16 @@ class Store {
         '}';
   }
 
+
   Store copyWith({
     String? addr,
     String? code,
-    DateTime? created_at,
+    String? created_at,
     double? lat,
     double? lng,
     String? name,
     String? remain_stat,
-    DateTime? stock_at,
+    String? stock_at,
     String? type,
   }) {
     return Store(
@@ -141,31 +165,49 @@ class Store {
     );
   }
 
+
   Map<String, dynamic> toJson() {
     return {
-      'addr': addr,
-      'code': code,
-      'created_at': created_at.toIso8601String(),
-      'lat': lat,
-      'lng': lng,
-      'name': name,
-      'remain_stat': remain_stat,
-      'stock_at': stock_at.toIso8601String(),
-      'type': type,
+      'addr': this.addr,
+      'code': this.code,
+      'created_at': this.created_at,
+      'lat': this.lat,
+      'lng': this.lng,
+      'name': this.name,
+      'remain_stat': this.remain_stat,
+      'stock_at': this.stock_at,
+      'type': this.type,
     };
   }
 
+  // 초안
+  // factory Store.fromJson(Map<String, dynamic> json) {
+  //   return Store(
+  //     addr: json['addr'] as String,
+  //     code: json['code'] as String,
+  //     created_at: json['created_at'] as String,
+  //     lat: json['lat'] as double,
+  //     lng: json['lng'] as double,
+  //     name: json['name'] as String,
+  //     remain_stat: json['remain_stat'] as String,
+  //     stock_at: json['stock_at'] as String,
+  //     type: json['type'] as String,
+  //   );
+
+  // 수정
   factory Store.fromJson(Map<String, dynamic> json) {
     return Store(
-      addr: json['addr'] as String,
-      code: json['code'] as String,
-      created_at: DateTime.parse(json['created_at'] as String),
-      lat: json['lat'] as double,
-      lng: json['lng'] as double,
-      name: json['name'] as String,
-      remain_stat: json['remain_stat'] as String,
-      stock_at: DateTime.parse(json['stock_at'] as String),
-      type: json['type'] as String,
+      addr: json['addr'] is String ? utf8.decode(json['addr'].toString().codeUnits) : '', // 인코딩 처리
+      code: json['code'] as String? ?? '',
+      created_at: json['created_at'] as String? ?? '',
+      lat: (json['lat'] as num).toDouble(),
+      lng: (json['lng'] as num).toDouble(),
+      // name: json['name'] as String? ?? '',
+      name: json['name'] is String ? utf8.decode(json['name'].toString().codeUnits) : '', // 인코딩 처리
+      remain_stat: json['remain_stat'] as String? ?? '',
+      stock_at: json['stock_at'] as String? ?? '',
+      type: json['type'] as String? ?? '',
     );
   }
+//</editor-fold>
 }
