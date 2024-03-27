@@ -1,6 +1,5 @@
-import '../../240326/data_source/comment.dart';
-import '../../240326/model/comment_api.dart';
-import '../../240326/repository/comment_repository_impl.dart';
+import 'package:learn_dart_together/240326/data_source/comment.dart';
+import 'package:learn_dart_together/240326/repository/comment_repository_impl.dart';
 import 'package:test/test.dart';
 
 void main() {

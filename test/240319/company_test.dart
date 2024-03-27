@@ -1,8 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:learn_dart_together/240319/company.dart';
 import 'package:test/test.dart';
-
-import '../../240319/company.dart';
 
 void main() {
   test('Company Test', () {

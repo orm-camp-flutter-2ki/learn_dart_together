@@ -1,7 +1,6 @@
+import 'package:learn_dart_together/240325/data_source/todo_api.dart';
+import 'package:learn_dart_together/240325/todo.dart';
 import 'package:test/test.dart';
-
-import '../../240325/todo.dart';
-import '../../240325/data_source/todo_api.dart';
 
 void main() {
   test('todo test', () async {

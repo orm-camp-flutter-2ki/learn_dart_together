@@ -1,6 +1,5 @@
+import 'package:learn_dart_together/240315/book.dart';
 import 'package:test/test.dart';
-
-import '../../240315/book.dart';
 
 void main() {
   test('Book Test', () {

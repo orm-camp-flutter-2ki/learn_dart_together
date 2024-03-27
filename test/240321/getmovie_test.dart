@@ -1,6 +1,5 @@
+import 'package:learn_dart_together/240321/getmovie.dart';
 import 'package:test/test.dart';
-
-import '../../240321/getmovie.dart';
 
 void main() {
   group('movie', () {

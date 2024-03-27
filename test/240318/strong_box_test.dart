@@ -1,4 +1,4 @@
-import '../../240318/strong_box.dart';
+import 'package:learn_dart_together/240318/strong_box.dart';
 import 'package:test/test.dart';
 
 void main() {

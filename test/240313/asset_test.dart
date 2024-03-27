@@ -1,7 +1,6 @@
+import 'package:learn_dart_together/240313/book.dart';
 import 'package:learn_dart_together/240313/computer.dart';
 import 'package:test/test.dart';
-
-import '../../240313/book.dart';
 
 void main() {
   test('Asset name', () {

@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:collection/collection.dart';
+import 'package:learn_dart_together/240320/query.dart';
 import 'package:test/test.dart';
-import '../../240320/query.dart';
 
 void main() {
   group("query test", () {

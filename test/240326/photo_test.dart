@@ -1,7 +1,6 @@
+import 'package:learn_dart_together/240326/data_source/photo.dart';
 import 'package:learn_dart_together/240326/repository/photo_repository_impl.dart';
 import 'package:test/test.dart';
-
-import '../../240326/data_source/photo.dart';
 
 void main() {
   test('PhotoReposirotyImpl.getPhotos 메소드를 호출한다', () async {
