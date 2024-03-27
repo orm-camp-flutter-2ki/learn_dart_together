@@ -4,7 +4,7 @@ import 'package:learn_dart_together/240326/model/comment.dart';
 import 'package:learn_dart_together/240326/repository/comment_repository.dart';
 import 'package:learn_dart_together/240326/service/http_service.dart';
 
-class CommentRepositoryImpl implements CommentRepository{
+class CommentRepositoryImpl implements CommentRepository {
 
   @override
   Future<List<Comment>> getComments(int postId) async {
