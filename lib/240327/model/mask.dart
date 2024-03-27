@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:collection/collection.dart';
 
 class Mask {
@@ -45,15 +44,6 @@ class Mask {
     };
   }
 
-  // 초안
-  // factory Mask.fromJson(Map<String, dynamic> json) {
-  //   return Mask(
-  //     count: json['count'] as int,
-  //     stores: json['stores'] as List<Store>,
-  //   );
-  // }
-
-  // 수정
   factory Mask.fromJson(Map<String, dynamic> json) {
     List<Store> stores = <Store>[];
     if (json['stores'] != null) {
@@ -180,21 +170,6 @@ class Store {
     };
   }
 
-  // 초안
-  // factory Store.fromJson(Map<String, dynamic> json) {
-  //   return Store(
-  //     addr: json['addr'] as String,
-  //     code: json['code'] as String,
-  //     created_at: json['created_at'] as String,
-  //     lat: json['lat'] as double,
-  //     lng: json['lng'] as double,
-  //     name: json['name'] as String,
-  //     remain_stat: json['remain_stat'] as String,
-  //     stock_at: json['stock_at'] as String,
-  //     type: json['type'] as String,
-  //   );
-
-  // 수정
   factory Store.fromJson(Map<String, dynamic> json) {
     return Store(
       addr: json['addr'] is String ? utf8.decode(json['addr'].toString().codeUnits) : '', // 인코딩 처리
