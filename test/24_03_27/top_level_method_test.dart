@@ -44,5 +44,17 @@ void main() {
 
       expect(result4, expectValue4);
     });
+
+    test('factorial 메서드 테스트', () {
+      int result = getFactorial(5);
+      int expectValue = 120;
+
+      expect(result, expectValue);
+      
+      int result2 = getFactorial(10);
+      int expectValue2 = 3628800;
+
+      expect(result2, expectValue2);
+    });
   });
 }
