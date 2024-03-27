@@ -96,15 +96,15 @@ class Store {
 
   factory Store.fromJson(Map<String, dynamic> map) {
     return Store(
-      addr: map['addr'] as String,
-      code: map['code'] as String,
-      createdAt: map['createdAt'] as String,
-      lat: map['lat'] as double,
-      lng: map['lng'] as double,
-      name: map['name'] as String,
-      remainStat: map['remainStat'] as String,
-      stockAt: map['stockAt'] as String,
-      type: map['type'] as String,
+      addr: map['addr'] ?? '',
+      code: map['code'] ?? '',
+      createdAt: map['created_at'] ?? '',
+      lat: map['lat'] ?? 0,
+      lng: map['lng'] ?? 0,
+      name: map['name'] ?? '',
+      remainStat: map['remain_stat'] ?? '',
+      stockAt: map['stock_at'] ?? '',
+      type: map['type'] ?? '',
     );
   }
 
