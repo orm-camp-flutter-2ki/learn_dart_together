@@ -18,8 +18,8 @@ class Bank {
 
   Map<String, dynamic> toJson() => {
         'name': name,
-        'αddress': address,
-        'plone': phone,
+        'address': address,
+        'phone': phone,
       };
 
   @override
