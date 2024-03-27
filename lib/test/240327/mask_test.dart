@@ -7,10 +7,10 @@ void main() {
   test('mask list test', () async {
     final repository = MaskRepositoryImpl();
     final masks = await repository.getMasks();
-    final storeList = masks.stores;
-    final result = expected.map((e) => Stores.fromJson(e)).toList();
+    final result = masks.stores;
+    final expectedList = expected.map((e) => Stores.fromJson(e)).toList();
 
-    expect(storeList, result);
+    expect(result, expectedList);
   });
   test('mask 요소 확인', () async {
     final repository = MaskRepositoryImpl();
