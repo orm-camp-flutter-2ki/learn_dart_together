@@ -21,4 +21,16 @@ class Bank {
         'αddress': address,
         'plone': phone,
       };
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Bank &&
+          runtimeType == other.runtimeType &&
+          name == other.name &&
+          address == other.address &&
+          phone == other.phone;
+
+  @override
+  int get hashCode => name.hashCode ^ address.hashCode ^ phone.hashCode;
 }
