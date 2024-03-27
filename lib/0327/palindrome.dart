@@ -1,4 +1,12 @@
-// 주어진 문자열이 회문(palindrome)인지 확인하는 함수를 작성하세요
-// 회문이란, 거꾸로 읽어도 원래와 같은 단어나 문장..
-// 문자를 하나씩 뜯어 오름차순 / 내림차순을 비교하면 될 것 같다는 생각...?
-void main(){}
+import 'package:collection/collection.dart';
+
+void main() {
+  print(palindromeCheck('12321'));
+  print(palindromeCheck('hello'));
+  print(palindromeCheck('level'));
+}
+
+bool palindromeCheck(String string) {
+  List<String> stringList = string.replaceAll(' ', '').toUpperCase().split('');
+  return stringList.equals(stringList.reversed.toList());
+}
