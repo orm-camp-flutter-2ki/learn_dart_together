@@ -21,4 +21,21 @@ class UserApi {
       return Future.error('과제 3 ERROR: $e');
     }
   }
+
+  Future<List<User>> getUsersTop10ByUserName() async {
+    String uri = 'https://jsonplaceholder.typicode.com/users?_sort=username';
+    final response = await http.get(Uri.parse(uri));
+
+    try {
+      if (response.statusCode == 200) {
+        final jsonList = jsonDecode(response.body) as List;
+
+        return jsonList.map((e) => User.fromJson(e)).toList();
+      } else {
+        throw Exception('240326 과제 5 ERROR: HTTP Status Code ${response.statusCode}');
+      }
+    } catch (e) {
+      return [];
+    }
+  }
 }

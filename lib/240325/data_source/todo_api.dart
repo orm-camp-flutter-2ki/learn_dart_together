@@ -46,4 +46,22 @@ class TodoApi {
       return Future.error('과제 2 ERROR: $e');
     }
   }
+
+  Future<List<Todo>> getCompletedTodos() async {
+    String uri = 'https://jsonplaceholder.typicode.com/todos';
+    var response = await http.get(Uri.parse(uri));
+
+    try {
+      if (response.statusCode == 200) {
+        var jsonList = jsonDecode(response.body) as List;
+
+        return jsonList.map((e) => Todo.fromJson(e)).toList();
+      } else {
+        throw Exception(
+            '240326 과제 4 ERROR: HTTP Status Code ${response.statusCode}');
+      }
+    } catch (e) {
+      return [];
+    }
+  }
 }
