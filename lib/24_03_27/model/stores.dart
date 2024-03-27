@@ -1,15 +1,15 @@
-class Address {
+class Stores {
   final String addr;
-  final num code;
-  final String createdAt;
+  final String code;
+  final String? createdAt;
   final num lat;
   final num lng;
   final String name;
-  final String remainStat;
-  final String stockAt;
+  final String? remainStat;
+  final String? stockAt;
   final String type;
 
-  const Address({
+  const Stores({
     required this.addr,
     required this.code,
     required this.createdAt,
@@ -24,7 +24,7 @@ class Address {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is Address &&
+      (other is Stores &&
           runtimeType == other.runtimeType &&
           addr == other.addr &&
           code == other.code &&
@@ -53,9 +53,9 @@ class Address {
     return 'Address{ addr: $addr, code: $code, createdAt: $createdAt, lat: $lat, lng: $lng, name: $name, remainStat: $remainStat, stockAt: $stockAt, type: $type,}';
   }
 
-  Address copyWith({
+  Stores copyWith({
     String? addr,
-    num? code,
+    String? code,
     String? createdAt,
     num? lat,
     num? lng,
@@ -64,7 +64,7 @@ class Address {
     String? stockAt,
     String? type,
   }) {
-    return Address(
+    return Stores(
       addr: addr ?? this.addr,
       code: code ?? this.code,
       createdAt: createdAt ?? this.createdAt,
@@ -91,8 +91,8 @@ class Address {
     };
   }
 
-  factory Address.fromJson(Map<String, dynamic> map) {
-    return Address(
+  factory Stores.fromJson(Map<String, dynamic> map) {
+    return Stores(
       addr: map['addr'],
       code: map['code'],
       createdAt: map['created_at'],

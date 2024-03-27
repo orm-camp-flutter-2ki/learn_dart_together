@@ -1,14 +1,13 @@
 import 'package:collection/collection.dart';
-
-import 'address.dart';
+import 'package:learn_dart_together/24_03_27/model/stores.dart';
 
 class Mask {
   final num count;
-  final List<Address> address;
+  final List<Stores> stores;
 
   const Mask({
     required this.count,
-    required this.address,
+    required this.stores,
   });
 
   @override
@@ -17,42 +16,41 @@ class Mask {
       (other is Mask &&
           runtimeType == other.runtimeType &&
           count == other.count &&
-          address.equals(other.address));
+          stores.equals(other.stores));
 
   @override
   int get hashCode =>
       count.hashCode ^
-      address
-          .map((e) => e.hashCode)
-          .reduce((value, element) => value ^ element);
+      stores.map((e) => e.hashCode).reduce((value, element) => value ^ element);
 
   @override
   String toString() {
-    return 'Mask{ count: $count, address: $address,}';
+    return 'Mask{ count: $count, Stores: $stores,}';
   }
 
   Mask copyWith({
     num? count,
-    List<Address>? address,
+    List<Stores>? stores,
   }) {
     return Mask(
       count: count ?? this.count,
-      address: address ?? this.address,
+      stores: stores ?? this.stores,
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'count': count,
-      'address': address,
+      'stores': stores,
     };
   }
 
   factory Mask.fromJson(Map<String, dynamic> map) {
     return Mask(
       count: map['count'],
-      address:
-          (map['address'] as List).map((e) => Address.fromJson(e)).toList(),
+      stores: (map['stores'] as List)
+          .map((e) => Stores.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
   }
 }
