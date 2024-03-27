@@ -30,7 +30,7 @@ class Bank {
 
   Bank.fromJson(Map<String, dynamic> json)
       : name = json['name'] as String,
-        address = json['address'],
+        address = json['address'] as String,
         phone = json['phone'] as String;
 
   Map<String, dynamic> toJson() => {
