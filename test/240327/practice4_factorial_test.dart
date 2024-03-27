@@ -9,4 +9,10 @@ void main() {
 
     expect(testFactorial, expectedValue);
   });
+  test('factorial test2', () async {
+    int testFactorial = await factorial(-5);
+    int expectedValue = -5;
+
+    expect(testFactorial == expectedValue, true);
+  });
 }

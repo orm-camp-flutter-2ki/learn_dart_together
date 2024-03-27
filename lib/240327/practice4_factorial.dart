@@ -1,12 +1,11 @@
 Future<int> factorial(int n) async {
   int result = 1;
-  for (int i = 2; i <= n; i++) {
-    result *= i;
+  if (n > 0) {
+    for (int i = 2; i <= n; i++) {
+      result *= i;
+    }
+    return result;
+  } else {
+    return n;
   }
-  return result;
-}
-
-void main() async {
-  int result = await factorial(5);
-  print(result);
 }
