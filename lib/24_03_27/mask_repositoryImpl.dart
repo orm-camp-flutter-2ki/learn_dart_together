@@ -7,11 +7,13 @@ abstract interface class MaskRepository {
 }
 
 class MaskRepositoryImpl implements MaskRepository {
-  final MaskApi _api = MaskApi();
+  final MaskApi _maskApi;
+
+  MaskRepositoryImpl({MaskApi? maskApi}) : _maskApi = maskApi ?? MaskApi();
 
   @override
   Future<Mask> getMask() {
-    return _api.getMask();
+    return _maskApi.getMask();
   }
 }
 
