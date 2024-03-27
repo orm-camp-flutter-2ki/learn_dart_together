@@ -6,6 +6,14 @@ import 'package:test/test.dart';
 void main() {
   test('getTodo() test', () async {
     final api = TodoApi();
+    // 0 ~ 100
+
+    // -1 실패
+    // 0 성공
+    // 1 성공
+    // 99 성공
+    // 100 성공
+    // 101 실패
     final Todo todo = await api.getTodo(1);
 
     final Map<String, dynamic> expected = {

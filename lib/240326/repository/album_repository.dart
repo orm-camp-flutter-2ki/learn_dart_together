@@ -9,7 +9,9 @@ abstract interface class AlbumRepository {
 }
 
 class AlbumRepositoryImpl implements AlbumRepository {
-  final JsonPlaceHolderApi _api = JsonPlaceHolderApi();
+  final JsonPlaceHolderApi _api;
+
+  AlbumRepositoryImpl(this._api);
 
   @override
   Future<List<Album>> getAlbums() async {

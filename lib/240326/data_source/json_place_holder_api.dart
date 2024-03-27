@@ -11,11 +11,15 @@ import '../model/post.dart';
 import '../model/user.dart';
 
 class JsonPlaceHolderApi {
+  final http.Client _client;
+
   final _baseUrl = 'https://jsonplaceholder.typicode.com';
+
+  JsonPlaceHolderApi({http.Client? client}) : _client = client ?? http.Client();
 
   Future<List<Comment>> getComments() async {
     final http.Response response =
-        await http.get(Uri.parse('$_baseUrl/comments'));
+        await _client.get(Uri.parse('$_baseUrl/comments'));
 
     List<Comment> results = [];
     if (response.statusCode == 200) {
@@ -30,7 +34,7 @@ class JsonPlaceHolderApi {
   }
 
   Future<List<Album>> getAlbums() async {
-    final response = await http.get(Uri.parse('$_baseUrl/albums'));
+    final response = await _client.get(Uri.parse('$_baseUrl/albums'));
 
     // 섹시 코드
     List jsonList = (response.statusCode == 200)
@@ -41,7 +45,7 @@ class JsonPlaceHolderApi {
   }
 
   Future<List<Photo>> getPhotos() async {
-    final response = await http.get(Uri.parse('$_baseUrl/photos'));
+    final response = await _client.get(Uri.parse('$_baseUrl/photos'));
 
     final jsonList = jsonDecode(response.body) as List;
 
@@ -49,7 +53,7 @@ class JsonPlaceHolderApi {
   }
 
   Future<List<Todo>> getTodos() async {
-    final response = await http.get(Uri.parse('$_baseUrl/todos'));
+    final response = await _client.get(Uri.parse('$_baseUrl/todos'));
 
     final jsonList = jsonDecode(response.body) as List;
 
@@ -57,7 +61,7 @@ class JsonPlaceHolderApi {
   }
 
   Future<List<User>> getUsers() async {
-    final response = await http.get(Uri.parse('$_baseUrl/todos'));
+    final response = await _client.get(Uri.parse('$_baseUrl/todos'));
 
     final jsonList = jsonDecode(response.body) as List;
 
@@ -65,7 +69,7 @@ class JsonPlaceHolderApi {
   }
 
   Future<List<Post>> getPosts() async {
-    final response = await http.get(Uri.parse('$_baseUrl/posts'));
+    final response = await _client.get(Uri.parse('$_baseUrl/posts'));
 
     final jsonList = jsonDecode(response.body) as List;
 
