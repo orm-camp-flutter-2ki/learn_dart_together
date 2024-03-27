@@ -1,7 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/orm_240326/user.dart';
+
+import '../model/user.dart';
 
 class UserApi {
   final urlBase = 'https://jsonplaceholder.typicode.com/users';

@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/orm_240326/todo.dart';
+import '../model/todo.dart';
 
 abstract interface class TodoRepository {
   Future<List<Todo>> getTodos();

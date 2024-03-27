@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/orm_240326/albums.dart';
+import '../model/albums.dart';
 
 abstract interface class AlbumsRepository {
   Future<List<Albums>> getAlbums();

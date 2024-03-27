@@ -1,6 +1,7 @@
 import 'package:learn_dart_together/orm_240326/00_data_repository/todo_repository.dart';
 import 'package:learn_dart_together/orm_240326/00_data_source/todo_api.dart';
-import 'package:learn_dart_together/orm_240326/todo.dart';
+
+import '../model/todo.dart';
 
 class TodoRepositoryImpl implements TodoRepository {
   final TodoApi _api = TodoApi();

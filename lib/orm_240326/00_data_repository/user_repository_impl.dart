@@ -1,7 +1,8 @@
 import 'package:collection/collection.dart';
 import 'package:learn_dart_together/orm_240326/00_data_repository/user_repository.dart';
 import 'package:learn_dart_together/orm_240326/00_data_source/user_api.dart';
-import 'package:learn_dart_together/orm_240326/user.dart';
+
+import '../model/user.dart';
 
 class UsersRepositoryImpl implements UsersRepository {
   final UserApi _api = UserApi();

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../todo.dart';
+import '../model/todo.dart';
 
 class TodoApi {
   final urlBase = 'https://jsonplaceholder.typicode.com/todos';

@@ -1,8 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-
-import '../comments.dart';
+import '../model/comments.dart';
 
 class CommentsApi {
   final urlBase = 'https://jsonplaceholder.typicode.com/comments';
