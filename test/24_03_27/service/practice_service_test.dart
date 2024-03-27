@@ -69,13 +69,16 @@ void main() {
         expect(result, expected);
       });
 
-      test('인자로 받은 리스트의 크기가 2 미만일경우 StateError 예외를 던진다.', () {
+      test('인자로 받은 리스트의 크기가 3 미만일경우 엘리먼트를 다 더해서 값을 반환한다.', () {
         // Given
-        final numbers = [1];
+        final expected = 3;
+        final numbers = [1, 2];
 
-        // When Then
-        expect(() => practiceService.sumOfLargestTwoNumbers(numbers),
-            throwsA(predicate((e) => e is StateError)));
+        // When
+        final result = practiceService.sumOfLargestTwoNumbers(numbers);
+
+        // Then
+        expect(result, expected);
       });
     });
 

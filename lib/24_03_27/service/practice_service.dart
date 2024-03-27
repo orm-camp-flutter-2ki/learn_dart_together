@@ -6,8 +6,15 @@ class PracticeService {
   }
 
   int sumOfLargestTwoNumbers(List<int> numbers) {
-    final [one, two, ...] = numbers.sorted(_compareDescending);
-    return one + two;
+    int result;
+    if (numbers.length < 3) {
+      result = numbers.sum;
+    } else {
+      final [one, two, ...] = numbers.sorted(_compareDescending);
+      result = one + two;
+    }
+
+    return result;
   }
 
   int _compareDescending(int a, int b) {
