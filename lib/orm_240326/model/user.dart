@@ -2,7 +2,7 @@ import 'package:learn_dart_together/orm_240325/company.dart';
 
 import 'address.dart';
 
-class Users {
+class User {
   final int id;
   final String name;
   final String username;
@@ -11,7 +11,7 @@ class Users {
   final String website;
   final Company company;
 
-  Users(
+  User(
     this.id,
     this.name,
     this.username,
@@ -31,7 +31,7 @@ class Users {
         'company': company.toJson(),
       };
 
-  Users.fromJson(Map<String, dynamic> json)
+  User.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         name = json['name'],
         username = json['username'],
@@ -40,7 +40,7 @@ class Users {
         website = json['website'],
         company = Company.fromJson(json['company']);
 
-  Users copyWith({
+  User copyWith({
     int? id,
     String? name,
     String? username,
@@ -49,14 +49,14 @@ class Users {
     String? website,
     Company? company,
   }) {
-    return Users(
-      id ?? id!,
-      name ?? name!,
-      username ?? username!,
-      address ?? address!,
-      phone ?? phone!,
-      website ?? website!,
-      company ?? company!,
+    return User(
+      id ?? this.id,
+      name ?? this.name,
+      username ?? this.username,
+      address ?? this.address,
+      phone ?? this.phone,
+      website ?? this.website,
+      company ?? this.company,
     );
   }
 
@@ -68,7 +68,7 @@ class Users {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Users &&
+      other is User &&
           runtimeType == other.runtimeType &&
           id == other.id &&
           name == other.name &&
