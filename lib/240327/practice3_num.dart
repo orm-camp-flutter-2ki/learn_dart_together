@@ -1,4 +1,4 @@
-Future<int> addNum() async {
+Future<int> addNum(numList) async {
   List<int> numList = [1, 2, 5, 3, 9, 8];
 
   numList.sort((a, b) => b.compareTo(a));
@@ -7,7 +7,7 @@ Future<int> addNum() async {
   return add2Num; // 리스트를 정렬
 }
 
-void main() async {
-  int result = await addNum();
-  print(result);
-}
+// void main() async {
+//   int result = await addNum();
+//   print(result);
+// }
