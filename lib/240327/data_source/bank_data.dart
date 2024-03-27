@@ -10,4 +10,10 @@ class BankData {
 
     return result;
   }
+
+  String dataEncode(Bank data) {
+    String jsonData = jsonEncode(data.toJson());
+
+    return jsonData;
+  }
 }
