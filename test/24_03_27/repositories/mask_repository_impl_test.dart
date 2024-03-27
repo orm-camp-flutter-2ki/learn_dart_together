@@ -14,7 +14,7 @@ void main() {
     final maskApi = MockMaskApiImpl();
     final maskRepository = MaskRepositoryImpl(maskApi: maskApi);
     group('getMask 메소드는', () {
-      test('json 맵을 받아 Bank 인스턴스를 생성한다.', () async {
+      test('api.getMask를 호출하고 받은 mask 인스턴스를 반환한다.', () async {
         // Given
         final mask = Mask(
           count: 1,
