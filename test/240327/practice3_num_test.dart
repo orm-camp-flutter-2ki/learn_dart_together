@@ -3,11 +3,11 @@ import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
 void main() {
-  test('가장 큰 2 숫자의 합구하기', () {
+  test('가장 큰 2 숫자의 합구하기', () async {
     int expectResult = 17;
     // Given
-    addNum([1, 2, 5, 3, 9, 8]);
+    int result = addNum([1, 2, 5, 3, 9, 8]);
 
-    expect(expectResult, 17);
+    expect(expectResult, equals(result));
   });
 }
