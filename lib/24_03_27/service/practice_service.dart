@@ -13,4 +13,8 @@ class PracticeService {
   int _compareDescending(int a, int b) {
     return b - a;
   }
+
+  int factorial(int n) {
+    return n <= 0 ? 1 : n * factorial(n - 1);
+  }
 }

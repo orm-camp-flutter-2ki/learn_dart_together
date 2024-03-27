@@ -78,5 +78,31 @@ void main() {
             throwsA(predicate((e) => e is StateError)));
       });
     });
+
+    group('factorial 메소드는', () {
+      test('1부터 인자로 받은 n까지의 수를 모두 곱해서 반환한다.', () {
+        // Given
+        final expected = 120;
+        final n = 5;
+
+        // When
+        final result = practiceService.factorial(n);
+
+        // Then
+        expect(result, expected);
+      });
+
+      test('0이나 음수를 받을경우 1을 반환한다.', () {
+        // Given
+        final expected = 1;
+        final n = 0;
+
+        // When
+        final result = practiceService.factorial(n);
+
+        // Then
+        expect(result, expected);
+      });
+    });
   });
 }
