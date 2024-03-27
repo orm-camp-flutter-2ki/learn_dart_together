@@ -13,7 +13,9 @@ class Bank {
   // plone -> phone으로 수정
   Map<String, dynamic> toJson() => {
         'name': name,
-        'αddress': address,
+        // αddress -> address
+        'address': address,
+        // plone -> phone
         'phone': phone,
       };
 }
