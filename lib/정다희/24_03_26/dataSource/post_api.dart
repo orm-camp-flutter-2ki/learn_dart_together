@@ -10,6 +10,7 @@ class PostApi {
         await http.get(Uri.parse("https://jsonplaceholder.typicode.com/posts"));
     if (res.statusCode == 200) {
       final List resList = jsonDecode(res.body);
+      // toList.first
       return Post.fromJson(resList.where((element) => element["id"] == id)
           as Map<String, dynamic>);
     } else {
