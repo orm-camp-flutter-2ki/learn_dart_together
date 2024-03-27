@@ -1,0 +1,3 @@
+/// 양의 정수 n이 주어졌을 때, n의 팩토리얼(factorial) 값을 반환하는 함수
+// reduce 나 fold를 사용하면 될 것 같은...
+void factorial(int N) {}
