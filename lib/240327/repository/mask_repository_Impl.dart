@@ -7,7 +7,6 @@ import '../data_source/store.dart';
 class MaskRepository_impl implements MaskRepository {
   final MaskApi _api;
 
-  // 생성자 수정
   MaskRepository_impl(MockClient mockClient)
       : _api = MaskApi(client: mockClient);
 
