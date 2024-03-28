@@ -1,4 +1,5 @@
-//회문(回文) 또는 팰린드롬(palindrome)은 거꾸로 읽어도 제대로 읽는 것과 같은 문장이나 낱말, 숫자, 문자열(sequence of characters) 등이다. 보통 낱말 사이에 있는 띄어쓰기나 문장 부호는 무시한다.
+// 회문(回文) 또는 팰린드롬(palindrome)은 거꾸로 읽어도 제대로 읽는 것과 같은 문장이나 낱말, 숫자, 문자열(sequence of characters) 등이다.
+// 보통 낱말 사이에 있는 띄어쓰기나 문장 부호는 무시한다.
 
 import 'package:test/test.dart';
 
@@ -7,6 +8,10 @@ bool palindrome(String text) {
   RegExp regExp = RegExp(r'[^ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z\d\\t\\r\\n][\\\^]?');
 
   final filteredText = text.replaceAll(regExp, '').toLowerCase();
+
+  if (filteredText.isEmpty) {
+    throw Exception('회문이 아닙니다.');
+  }
 
   final reversedText = filteredText.split('').reversed.toList().join();
 
