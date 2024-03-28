@@ -26,6 +26,9 @@ void main() {
         ),
       ],
     );
+    setUp(() {
+      reset(maskApi);
+    });
     group('getMask 메소드는', () {
       test('api.getMask를 호출하고 받은 mask 인스턴스를 반환한다.', () async {
         // Given
