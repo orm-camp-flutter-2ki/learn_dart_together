@@ -1,5 +1,5 @@
 class MaskStore {
-  final int count;
+  final num count;
   final List<Store> stores;
 
   MaskStore({
@@ -47,8 +47,8 @@ class Store {
   final String addr;
   final String code;
   final String createdAt;
-  final double lat;
-  final double lng;
+  final num lat;
+  final num lng;
   final String name;
   final String remainStat;
   final String stockAt;
@@ -70,8 +70,8 @@ class Store {
     String? addr,
     String? code,
     String? createdAt,
-    double? lat,
-    double? lng,
+    num? lat,
+    num? lng,
     String? name,
     String? remainStat,
     String? stockAt,
