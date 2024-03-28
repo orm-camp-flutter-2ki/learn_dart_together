@@ -54,7 +54,7 @@ class Stores {
     return 'Stores{' +
         ' addr: $addr,' +
         ' code: $code,' +
-        ' ccreated_at: $created_at,' +
+        ' created_at: $created_at,' +
         ' lat: $lat,' +
         ' lng: $lng,' +
         ' name: $name,' +

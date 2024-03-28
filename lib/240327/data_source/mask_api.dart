@@ -5,6 +5,7 @@ import 'package:learn_dart_together/240327/model/mask.dart';
 
 class MaskApi {
   Future<Mask> getMask() async {
+    //에이싱크가 있으면 무조건 퓨쳐로 감싸서 반환된다.
     final response =
         await http.get(Uri.parse('http://104.198.248.76:3000/mask'));
 
@@ -17,9 +18,4 @@ class MaskApi {
       throw Exception('Error: ${response.statusCode}');
     }
   }
-}
-
-void main() async {
-  MaskApi maskApi = MaskApi();
-  print(await maskApi.getMask());
 }
