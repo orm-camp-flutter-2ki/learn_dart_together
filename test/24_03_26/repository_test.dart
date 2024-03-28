@@ -1,12 +1,14 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:collection/collection.dart';
 import 'package:learn_dart_together/24_03_25/todo.dart';
-import 'package:learn_dart_together/24_03_25/user.dart';
 import 'package:learn_dart_together/24_03_26/album.dart';
 import 'package:learn_dart_together/24_03_26/comment.dart';
 import 'package:learn_dart_together/24_03_26/photo.dart';
 import 'package:learn_dart_together/24_03_26/post.dart';
+import 'package:learn_dart_together/24_03_28/user/model/user.dart';
+import 'package:learn_dart_together/http/http_core.dart';
 import 'package:learn_dart_together/repository/album_repository_impl.dart';
 import 'package:learn_dart_together/repository/comment_repository_impl.dart';
 import 'package:learn_dart_together/repository/photo_repository_impl.dart';
@@ -1178,10 +1180,10 @@ void main() {
     test('user repository top10 test', () async {
       bool isAscending = true;
       final List<User> users =
-          await UserRepositoryImpl().getUsersTop10ByUserName();
+          await UserRepositoryImpl(HttpService()).getUsersTop10ByUserName();
 
       for (int i = 1; i < users.length; i++) {
-        if (users[i].userName.compareTo(users[i - 1].userName) == 0) {
+        if (users[i].name.compareTo(users[i - 1].name) == 0) {
           return isAscending = false;
         }
       }

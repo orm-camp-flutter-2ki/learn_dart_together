@@ -1,6 +1,7 @@
 import 'package:learn_dart_together/24_03_25/todo.dart';
-import 'package:learn_dart_together/24_03_25/user.dart';
+import 'package:learn_dart_together/24_03_28/user/model/user.dart';
 import 'package:learn_dart_together/data_source/todo_api.dart';
+import 'package:learn_dart_together/http/http_core.dart';
 import 'package:learn_dart_together/repository/todo_repository_impl.dart';
 import 'package:learn_dart_together/repository/user_repository_impl.dart';
 import 'package:test/expect.dart';
@@ -21,9 +22,9 @@ void main() {
     });
 
     test('Q3, json user를 List<User>로 변환', () async {
-      final List<User> users = await UserRepositoryImpl().getUsers();
+      final List<User> users = await UserRepositoryImpl(HttpService()).getUsers();
 
-      expect(users[0].id == 1, true);
+      expect(users[0].latitude == -37.3159, true);
     });
   });
 }

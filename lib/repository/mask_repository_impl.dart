@@ -28,11 +28,11 @@ class MaskRepositoryImpl implements MaskRepository {
   }
 
   Future<List<Store>> getStores() async {
-    final List<Store> stores = [];
+    List<Store> stores = [];
     try {
       final response = await getMask();
       if (response.stores.isNotEmpty) {
-        response.stores.where((e) => e.isValid()).toList();
+        stores = response.stores.where((e) => e.isValid()).toList();
       }
     } catch (e) {
       print(e);

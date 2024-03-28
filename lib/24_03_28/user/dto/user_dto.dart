@@ -179,8 +179,8 @@ class Geo {
   }
 
   Geo.fromJson(dynamic json) {
-    lat = json['lat'] ?? 0.0;
-    lng = json['lng'] ?? 0.0;
+    lat = double.parse(json['lat'] ?? 0.0);
+    lng = double.parse(json['lng'] ?? 0.0);
   }
 
   Map<String, dynamic> toJson() {
