@@ -1,4 +1,12 @@
+import 'package:learn_dart_together/24_03_28/dto/geo_dto.dart';
+
 class AddressDto {
+  String? street;
+  String? suite;
+  String? city;
+  String? zipcode;
+  GeoDto? geo;
+
   AddressDto({
     this.street,
     this.suite,
@@ -12,14 +20,8 @@ class AddressDto {
     suite = json['suite'];
     city = json['city'];
     zipcode = json['zipcode'];
-    geo = json['geo'] != null ? Geo.fromJson(json['geo']) : null;
+    geo = json['geo'] != null ? GeoDto.fromJson(json['geo']) : null;
   }
-
-  String? street;
-  String? suite;
-  String? city;
-  String? zipcode;
-  Geo? geo;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -30,28 +32,6 @@ class AddressDto {
     if (geo != null) {
       map['geo'] = geo?.toJson();
     }
-    return map;
-  }
-}
-
-class Geo {
-  Geo({
-    this.lat,
-    this.lng,
-  });
-
-  Geo.fromJson(dynamic json) {
-    lat = json['lat'];
-    lng = json['lng'];
-  }
-
-  String? lat;
-  String? lng;
-
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['lat'] = lat;
-    map['lng'] = lng;
     return map;
   }
 }

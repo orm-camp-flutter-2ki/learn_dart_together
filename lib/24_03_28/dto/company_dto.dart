@@ -1,4 +1,8 @@
 class CompanyDto {
+  String? name;
+  String? catchPhrase;
+  String? bs;
+
   CompanyDto({
     this.name,
     this.catchPhrase,
@@ -10,10 +14,6 @@ class CompanyDto {
     catchPhrase = json['catchPhrase'];
     bs = json['bs'];
   }
-
-  String? name;
-  String? catchPhrase;
-  String? bs;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
