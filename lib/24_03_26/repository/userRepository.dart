@@ -20,8 +20,8 @@ class UserRepository {
     List jsonList = jsonDecode(response.body); //String
 
     return jsonList
-        .where((e) => e['id'] <= 10)
         .sorted((a, b) => a['name'].compareTo(b['name']))
+        .take(10)
         .map((e) => User.fromJson(e))
         .toList();
   }
