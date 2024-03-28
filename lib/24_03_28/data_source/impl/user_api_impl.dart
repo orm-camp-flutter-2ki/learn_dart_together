@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:learn_dart_together/24_03_25/http_proxy.dart';
-import 'package:learn_dart_together/24_03_28/data_source/user_api.dart';
+import 'package:learn_dart_together/24_03_28/data_source/interface/user_api.dart';
 import 'package:learn_dart_together/24_03_28/dto/user_dto.dart';
 import 'package:learn_dart_together/24_03_28/mapper/user_mapper.dart';
 import 'package:learn_dart_together/24_03_28/model/user.dart';
