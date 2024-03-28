@@ -1,3 +1,4 @@
+import 'package:learn_dart_together/240326/repository/user_repository.dart';
 import 'package:learn_dart_together/240328/mapper/user_mapper.dart';
 import 'package:test/test.dart';
 
@@ -37,6 +38,12 @@ void main() {
       expect(user.email, equals('hong.doe@example.com'));
       expect(user.latitude, equals(40.7128));
       expect(user.longitude, equals(74.0060));
+    });
+    test('test', () async {
+      final repository = UserRepositoryImpl();
+      final users = await repository.getUsers();
+      print(users);
+      expect(users.length, 10);
     });
   });
 }

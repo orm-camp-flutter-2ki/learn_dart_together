@@ -6,11 +6,16 @@ import 'package:learn_dart_together/240328/model/user.dart';
 class UserApi {
   final _url = 'https://jsonplaceholder.typicode.com';
 
-  Future<User> getUsers() async {
+  Future<List<User>> getUsers() async {
     final http.Response response = await http.get(Uri.parse('$_url/users'));
-    final Map<String, dynamic> json = (response.statusCode == 200)
-        ? jsonDecode(utf8.decode(response.bodyBytes))
-        : throw Exception('에러 확인');
-    return User.fromJson(json);
+    if (response.statusCode == 200) {
+      final List<dynamic> jsonList =
+          jsonDecode(utf8.decode(response.bodyBytes));
+      final List<User> userList =
+          jsonList.map((json) => User.fromJson(json)).toList();
+      return userList;
+    } else {
+      throw Exception('에러 확인');
+    }
   }
 }
