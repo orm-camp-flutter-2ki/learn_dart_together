@@ -47,7 +47,7 @@ void main() {
         stockAt: '2020/07/02 18:05:00',
         type: '01');
     expect(store == test[0], true);
-    MaskRepository maskRepository2 = MaskRepositoryImpl();
+
     final test2 = await maskRepository.getMasks();
     expect(test2.length < 222, true);
   });
