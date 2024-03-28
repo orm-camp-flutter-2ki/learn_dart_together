@@ -7,8 +7,8 @@ void main() {
   group('UserRepository 메서드 테스트', () {
     UserRepository repo = UserRepositoryImpl();
 
-    test('getUsers() 메서드 테스트', () async {
-      final List<User> userList =  await repo.getUsers();
+    test('getUsersList() 메서드 테스트', () async {
+      final List<User> userList =  await repo.getUsersList();
 
       expect(userList.length, 10);
     });
@@ -19,6 +19,12 @@ void main() {
       final String expectValue = 'Chelsey Dietrich';
 
       expect(userList[0].name, expectValue);
+    });
+
+    test('getUsersList() 메서드 테스트', () async {
+      final List<User> userList =  await repo.getUsersList();
+
+      expect(userList.length, 10);
     });
   });
 }
