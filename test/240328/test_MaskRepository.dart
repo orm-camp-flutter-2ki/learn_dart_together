@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:learn_dart_together/240327/data_source/mask_api.dart';
-import 'package:learn_dart_together/240327/model/store.dart';
-import 'package:learn_dart_together/240327/repository/maskRepository.dart';
-import 'package:learn_dart_together/240327/repository/maskRepositoryImpl.dart';
+import 'package:learn_dart_together/240328/data_source/mask_api.dart';
+import 'package:learn_dart_together/240328/model/store.dart';
+import 'package:learn_dart_together/240328/repository/maskRepository.dart';
+import 'package:learn_dart_together/240328/repository/maskRepositoryImpl.dart';
 import 'package:test/test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
@@ -40,13 +40,16 @@ void main() {
     Store store = Store(
         addr: '서울특별시 강북구 솔매로 38 (미아동)',
         code: '11817488',
-        created_at: '2020/07/03 11:00:00',
+        createdAt: '2020/07/03 11:00:00',
         lat: 37.6254369,
         lng: 127.0164096,
         name: '승약국',
-        remain_stat: 'plenty',
-        stock_at: '2020/07/02 18:05:00',
+        remainStat: 'plenty',
+        stockAt: '2020/07/02 18:05:00',
         type: '01');
     expect(store == test[0], true);
+    MaskRepository maskRepository2 = MaskRepositoryImpl();
+    final test2 = await maskRepository.getMasks();
+    expect(test2.length < 222, true);
   });
 }
