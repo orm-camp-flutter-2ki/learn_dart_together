@@ -24,4 +24,4 @@ void main() {
     expect(makeStores.any((e) => e.name == 'unknown'), false);
     expect(makeStores.any((e) => e.remain_stat == 'unknown'), false);
   });
-}
+} //테스트
