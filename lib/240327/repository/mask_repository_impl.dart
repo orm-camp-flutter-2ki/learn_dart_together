@@ -1,4 +1,5 @@
 import 'package:dart_cli_practice/240327/api/mask_api.dart';
+import 'package:dart_cli_practice/240327/mapper/mask_mapper.dart';
 import 'package:dart_cli_practice/240327/model/mask.dart';
 import 'package:dart_cli_practice/240327/model/store.dart';
 import 'package:dart_cli_practice/240327/repository/mask_repository.dart';
@@ -10,13 +11,14 @@ class MaskRepositoryImpl implements MaskRepository {
 
   @override
   Future<Mask> findMaskInfo() async {
-    return await _api.getMaskInfo();
+    final maskDto = await _api.getMaskInfo();
+    return maskDto.toMask();
   }
 
   @override
   Future<List<Store>> findAllMaskStore() async {
-    final storeList = await findMaskInfo();
-    return storeList.stores;
+    final mask = await findMaskInfo();
+    return mask.stores;
   }
 
   @override
@@ -28,6 +30,6 @@ class MaskRepositoryImpl implements MaskRepository {
   @override
   Future<List<Store>> findMaskStoreByRemainStat(String stat) async {
     final storeList = await findAllMaskStore();
-    return storeList.where((e) => e.remain_stat == stat).toList();
+    return storeList.where((e) => e.remainStat == stat).toList();
   }
 }
