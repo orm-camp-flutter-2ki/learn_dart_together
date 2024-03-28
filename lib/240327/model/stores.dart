@@ -5,7 +5,13 @@ class Stores {
   final String name;
   final String type;
 
-  Stores(this.addr, this.code, this.created_at, this.name, this.type);
+  Stores(
+    this.addr,
+    this.code,
+    this.created_at,
+    this.name,
+    this.type,
+  );
 
   Map<String, dynamic> toJson() => {
         'addr': addr,
