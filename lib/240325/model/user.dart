@@ -22,16 +22,6 @@ class User {
     required this.company,
   });
 
-  User.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        name = json['name'],
-        userName = json['username'],
-        email = json['email'],
-        address = Address.fromJson(json['address']),
-        phone = json['phone'],
-        website = json['website'],
-        company = Company.fromJson(json['company']);
-
   @override
   String toString() {
     return 'User{id: $id, name: $name, userName: $userName, email: $email, address: $address, phone: $phone, website: $website, company: $company}';
