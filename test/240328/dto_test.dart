@@ -1,4 +1,5 @@
 import 'package:learn_dart_together/24_03_27/mask.dart';
+import 'package:learn_dart_together/24_03_27/store.dart';
 import 'package:learn_dart_together/http/fake_http_service.dart';
 import 'package:learn_dart_together/http/http_service.dart';
 import 'package:learn_dart_together/repository/mask_repository_impl.dart';
@@ -14,6 +15,12 @@ void main() {
       final Mask mask = await MaskRepositoryImpl(_httpService).getMask();
 
       expect(mask.stores[0].name == '승약국', true);
+    });
+
+    test('store return', () async {
+      final List<Store> stores = await MaskRepositoryImpl(_httpService).getStores();
+
+      expect(stores[0].name == '승약국', true);
     });
   });
 }

@@ -1,8 +1,8 @@
-import '../../24_03_27/store.dart';
+import 'package:learn_dart_together/24_03_28/mask/dto/store_dto.dart';
 
 class MaskDto {
   num? count;
-  List<Store>? stores;
+  List<StoreDto>? stores;
 
   MaskDto({
     this.count,
@@ -14,14 +14,14 @@ class MaskDto {
     if (json['stores'] != null) {
       stores = [];
       json['stores'].forEach((v) {
-        stores?.add(Store.fromJson(v));
+        stores?.add(StoreDto.fromJson(v));
       });
     }
   }
 
   MaskDto copyWith({
     num? count,
-    List<Store>? stores,
+    List<StoreDto>? stores,
   }) =>
       MaskDto(
         count: count ?? this.count,
