@@ -1,5 +1,5 @@
 import 'package:learn_dart_together/240328/dto/store_dto.dart';
-import 'package:learn_dart_together/240328/model/store.dart';
+import 'package:learn_dart_together/240328/model/mask/store.dart';
 
 extension StoreDtoToStore on StoreDto {
   Store toStore() {

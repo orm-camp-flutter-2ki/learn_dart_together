@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:learn_dart_together/240328/data_source/mask_api.dart';
-import 'package:learn_dart_together/240328/model/store.dart';
+import 'package:learn_dart_together/240328/model/mask/store.dart';
 import 'package:learn_dart_together/240328/repository/mask_repository.dart';
 import 'package:test/test.dart';
 import 'package:http/testing.dart';

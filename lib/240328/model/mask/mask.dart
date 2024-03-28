@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:learn_dart_together/240328/model/store.dart';
+import 'package:learn_dart_together/240328/model/mask/store.dart';
 
 class Mask {
   final num count;

@@ -1,7 +1,7 @@
 import 'package:learn_dart_together/240328/data_source/mask_api.dart';
 import 'package:learn_dart_together/240328/dto/store_dto.dart';
 import 'package:learn_dart_together/240328/mapper/store_mapper.dart';
-import 'package:learn_dart_together/240328/model/store.dart';
+import 'package:learn_dart_together/240328/model/mask/store.dart';
 
 abstract interface class MaskRepository {
   Future<List<Store>> getMaskStores();
