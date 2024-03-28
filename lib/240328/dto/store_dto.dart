@@ -37,12 +37,12 @@ class StoreDto {
     final map = <String, dynamic>{};
     map['addr'] = addr;
     map['code'] = code;
-    map['created_at'] = createdAt;
+    map['createdAt'] = createdAt;
     map['lat'] = lat;
     map['lng'] = lng;
     map['name'] = name;
-    map['remain_stat'] = remainStat;
-    map['stock_at'] = stockAt;
+    map['remainStat'] = remainStat;
+    map['stockAt'] = stockAt;
     map['type'] = type;
     return map;
   }
