@@ -6,8 +6,8 @@ extension UserDtoToUser on UserDto {
     return User(
       name: name ?? '',
       email: email ?? '',
-      latitude: latitude ?? 0.0,
-      longitude: longitude ?? 0.0
+      latitude: double.parse(address?.geo?.lat ?? '0.0'),
+      longitude: double.parse(address?.geo?.lng ?? '0.0')
     );
   }
 }

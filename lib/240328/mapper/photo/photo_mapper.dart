@@ -5,12 +5,31 @@ extension PhotoDtoToPhoto on PhotoDto {
   Photo toPhoto() {
     return Photo(
         id: id ?? 0,
-        type: type ?? PhotoType.unknown,
+        type: _getPhotoType(type),
         title: title ?? '',
         url: url ?? '',
         content: content ?? '',
         caption: caption ?? '',
-        createdAt: createdAt ?? DateTime.now()
+        createdAt: _getCreatedDate(createdAt)
     );
+  }
+
+  PhotoType _getPhotoType(Object? type) {
+    switch (type.toString().toLowerCase()) {
+      case 'article':
+        return PhotoType.Article;
+      case 'image':
+        return PhotoType.Image;
+      case 'video':
+        return PhotoType.Video;
+      default:
+        return PhotoType.unknown;
+    }
+  }
+
+  DateTime _getCreatedDate(String? date) {
+    if (date == null) return DateTime(0);
+
+    return DateTime.parse(date);
   }
 }
