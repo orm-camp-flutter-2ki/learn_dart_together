@@ -7,7 +7,6 @@ import '../../240328/dto/user_dto.dart';
 void main() {
   group('UserDto to User mapping', () {
     test('Mapping Test', () {
-      // Given
       final userDto = UserDto(
         id: 1,
         name: '이순신',
