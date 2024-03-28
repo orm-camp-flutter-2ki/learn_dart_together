@@ -14,6 +14,6 @@ class AlbumRepositoryImpl implements AlbumRepository {
   Future<List<Album>> getAlbumsTop10() async {
     AlbumApi albumapi = AlbumApi();
     final albums = await albumapi.getAlbums();
-    return albums.where((album) => album.id < 11).toList();
+    return albums.take(10).toList();
   }
 }
