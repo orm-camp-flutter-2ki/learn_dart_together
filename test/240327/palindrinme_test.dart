@@ -8,7 +8,7 @@ void main() {
       //given
 
       //when
-      bool result = palindrinme('asddsa');
+      bool result = palindrinme('!!!///!!!');
 
       //then
       expect(result, true);
@@ -17,7 +17,7 @@ void main() {
       //given
 
       //when
-      bool result = palindrinme('asaaddddsa');
+      bool result = palindrinme('!!!?//!!');
 
       //then
       expect(result, false);
