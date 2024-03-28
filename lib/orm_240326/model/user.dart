@@ -17,7 +17,7 @@ class User {
       this.address,
       this.phone,
       this.website,
-      this.company, {required latitude, required longitude},);
+      this.company,);
 
   Map<String, dynamic> toJson() =>
       {

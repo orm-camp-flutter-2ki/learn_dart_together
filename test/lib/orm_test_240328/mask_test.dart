@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
-import 'package:learn_dart_together/orm_240328/02_data_sourc/mask_api.dart';
+import 'package:learn_dart_together/orm_240328/02_data_source/mask_api.dart';
 import 'package:learn_dart_together/orm_240328/02_dto/stores_dto.dart';
 import 'package:learn_dart_together/orm_240328/02_model/stores.dart';
 import 'package:learn_dart_together/orm_240328/02_repository/mask_repository_impl.dart';

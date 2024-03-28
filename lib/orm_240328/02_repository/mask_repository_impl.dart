@@ -3,7 +3,7 @@ import 'package:learn_dart_together/orm_240328/02_mapper/mask_mapper.dart';
 import 'package:learn_dart_together/orm_240328/02_model/stores.dart';
 import 'package:learn_dart_together/orm_240328/02_repository/mask_repository.dart';
 
-import '../02_data_sourc/mask_api.dart';
+import '../02_data_source/mask_api.dart';
 
 class MaskRepositoryImpl implements MaskRepository {
   final MaskApi _api;
