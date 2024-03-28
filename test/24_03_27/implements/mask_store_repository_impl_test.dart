@@ -66,6 +66,16 @@ void main() {
 
       expect(givenValue, expectValue);
     });
+
+    test('MaskStoreDto 사용 테스트', () async {
+      final MaskStoreRepository repo = MaskStoreRepositoryImpl(MaskStoreApi());
+      final MaskStore store = await repo.getStore();
+
+      final givenValue = store.stores.map((e) => e.name).first;
+      final expectValue = '승약국';
+
+      expect(givenValue, expectValue);
+    });
   });
 }
 
