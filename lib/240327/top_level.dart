@@ -5,7 +5,7 @@ class TopLevel {
     try {
       wordset = text.toLowerCase().trim();
     } catch (e) {
-      print('회문이 아닙니다. 오류메세지 :${e}');
+      print('회문이 아닙니다. 오류메세지 :$e');
     }
 
     return wordset == wordset.split('').reversed.join('');

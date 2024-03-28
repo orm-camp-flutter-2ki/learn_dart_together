@@ -16,7 +16,9 @@ class Mask {
   factory Mask.fromJson(Map<String, dynamic> map) {
     return Mask(
       map['count'] as int,
-      // 왜 List 형으로 변환 하여야 하나? first, last 처럼 형변환이 되어야 mapping 해서 fromjson 형태로 전환할 수 있기 때문!
+      // 왜 List 형으로 변환 하여야 하나?
+      // first, last 처럼 형변환이 되어야
+      // mapping 해서 fromjson 형태로 전환할 수 있기 때문!
       (map['stores'] as List).map((e) => Stores.fromJson(e)).toList(),
     );
   }
