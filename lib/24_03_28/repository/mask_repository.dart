@@ -1,6 +1,4 @@
 import 'package:learn_dart_together/24_03_28/datasource/mask_api.dart';
-import 'package:learn_dart_together/24_03_28/dto/mask_dto.dart';
-import 'package:learn_dart_together/24_03_28/mapper/mask_mapper.dart';
 import 'package:learn_dart_together/24_03_28/model/store.dart';
 
 abstract interface class MaskRepository {
@@ -19,19 +17,12 @@ class MaskRepositoryImpl implements MaskRepository {
 
   @override
   Future<List<Store>> getStores() async {
-    List<Store> result = [];
+    List<Store> stores = [];
     try {
-      MaskDto maskDto = (await api.getMaskDto());
-      if (maskDto.stores != null) {
-        result = maskDto.stores!
-            .where((element) => element.isValid)
-            .map((e) => e.toStore())
-            .toList();
-      }
+      stores = (await api.getStores());
     } catch (e) {
       print(e.toString());
-      rethrow;
     }
-    return result;
+    return stores;
   }
 }
