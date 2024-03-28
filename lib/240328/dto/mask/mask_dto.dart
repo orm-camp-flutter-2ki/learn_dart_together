@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/240328/dto/store_dto.dart';
+import 'package:learn_dart_together/240328/dto/mask/store_dto.dart';
 
 class MaskDto {
   num? count;

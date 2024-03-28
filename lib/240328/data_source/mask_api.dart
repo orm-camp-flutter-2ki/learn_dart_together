@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/240328/dto/store_dto.dart';
+import 'package:learn_dart_together/240328/dto/mask/store_dto.dart';
 
 class MaskApi {
   final http.Client _client;

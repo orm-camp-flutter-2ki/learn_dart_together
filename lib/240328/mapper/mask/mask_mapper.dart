@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/240328/dto/mask_dto.dart';
-import 'package:learn_dart_together/240328/mapper/store_mapper.dart';
+import 'package:learn_dart_together/240328/dto/mask/mask_dto.dart';
+import 'package:learn_dart_together/240328/mapper/mask/store_mapper.dart';
 import 'package:learn_dart_together/240328/model/mask/mask.dart';
 
 extension MaskDtoToMask on MaskDto {
