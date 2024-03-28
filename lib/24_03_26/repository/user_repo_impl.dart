@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:collection/collection.dart';
 import 'package:http/http.dart' as http;
 import 'package:learn_dart_together/24_03_26/model/user_related/user.dart';
 import 'package:learn_dart_together/24_03_26/repository/user_repository.dart';
@@ -22,7 +23,10 @@ class UserRepositoryImpl implements UserRepository {
 
     List<dynamic> jsonList = jsonDecode(response.body);
 
-    List<dynamic> topTen = jsonList.getRange(0, 10).toList();
+    List<dynamic> topTen = jsonList
+        .sorted((a, b) => a['name'].compareTo(b['name']))
+        .getRange(0, 10)
+        .toList();
 
     return topTen.map((e) => User.fromJson(e)).toList();
   }
