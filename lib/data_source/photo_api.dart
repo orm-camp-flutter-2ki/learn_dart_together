@@ -1,9 +1,8 @@
-import '../http/http_service.dart';
+import '../http/http_core.dart';
 
 class PhotoApi {
-  final baseUrl = 'https://jsonplaceholder.typicode.com/photos';
 
   Future<String> getPhotos(int albumId) async {
-    return await HttpService().get(('$baseUrl?albumId=$albumId'));
+    return await HttpService().get(('$photosUrl?albumId=$albumId'));
   }
 }

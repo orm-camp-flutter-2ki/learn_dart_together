@@ -1,9 +1,7 @@
-import '../http/http_service.dart';
+import '../http/http_core.dart';
 
 class UserApi {
-  final baseUrl = 'https://jsonplaceholder.typicode.com/users';
-
   Future<String> getUsers() async {
-    return await HttpService().get((baseUrl));
+    return await HttpService().get((usersUrl));
   }
 }

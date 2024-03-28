@@ -10,11 +10,16 @@ class AlbumRepositoryImpl implements AlbumRepository {
 
   @override
   Future<List<Album>> getAlbums() async {
-    final response = await _api.getAlbums();
+    try {
+      final response = await _api.getAlbums();
 
-    List jsonList = jsonDecode(response);
+      List jsonList = jsonDecode(response);
 
-    return jsonList.map((e) => Album.fromJson(e)).toList();
+      return jsonList.map((e) => Album.fromJson(e)).toList();
+    }  catch (e) {
+      print('AlbumRepositoryImpl error :: $e');
+      return [];
+    }
   }
 
   @override

@@ -21,7 +21,8 @@ void main() {
     test('comment test', () async {
       final postId = 2;
       bool isSame = true;
-      final List<Comment> comments = await CommentRepositoryImpl().getCommentsByPostId(postId);
+      final List<Comment> comments =
+          await CommentRepositoryImpl().getCommentsByPostId(postId);
 
       for (Comment e in comments) {
         if (e.postId != postId) {
@@ -35,7 +36,8 @@ void main() {
 
     test('comment test2', () async {
       final postId = 2;
-      final List<Comment> comments = await CommentRepositoryImpl().getCommentsByPostId(postId);
+      final List<Comment> comments =
+          await CommentRepositoryImpl().getCommentsByPostId(postId);
 
       //r 은 raw 데이터
       String jsonData = r'''[
@@ -78,7 +80,10 @@ void main() {
 
       List commentEquals = jsonDecode(jsonData);
 
-      expect(comments.equals(commentEquals.map((e) => Comment.fromJson(e)).toList()), true);
+      expect(
+          comments
+              .equals(commentEquals.map((e) => Comment.fromJson(e)).toList()),
+          true);
     });
 
     test('album test', () async {
@@ -125,7 +130,9 @@ void main() {
 
       List albumExamples = jsonDecode(jsonData);
 
-      expect(albums.equals(albumExamples.map((e) => Album.fromJson(e)).toList()), true);
+      expect(
+          albums.equals(albumExamples.map((e) => Album.fromJson(e)).toList()),
+          true);
     });
 
     test('photo test', () async {
@@ -488,12 +495,15 @@ void main() {
 
       List photoExamples = jsonDecode(jsonData);
 
-      expect(photos.equals(photoExamples.map((e) => Photo.fromJson(e)).toList()), true);
+      expect(
+          photos.equals(photoExamples.map((e) => Photo.fromJson(e)).toList()),
+          true);
     });
 
     test('todo repository completed only test', () async {
       final isCompleted = false;
-      final List<Todo> todos = await TodoRepositoryImpl().getCompletedTodos(isCompleted);
+      final List<Todo> todos =
+          await TodoRepositoryImpl().getCompletedTodos(isCompleted);
 
       //r 은 raw 데이터
       String jsonData = r'''[
@@ -1161,12 +1171,14 @@ void main() {
 
       List todoExamples = jsonDecode(jsonData);
 
-      expect(todos.equals(todoExamples.map((e) => Todo.fromJson(e)).toList()), true);
+      expect(todos.equals(todoExamples.map((e) => Todo.fromJson(e)).toList()),
+          true);
     });
 
     test('user repository top10 test', () async {
       bool isAscending = true;
-      final List<User> users = await UserRepositoryImpl().getUsersTop10ByUserName();
+      final List<User> users =
+          await UserRepositoryImpl().getUsersTop10ByUserName();
 
       for (int i = 1; i < users.length; i++) {
         if (users[i].userName.compareTo(users[i - 1].userName) == 0) {
@@ -1178,7 +1190,8 @@ void main() {
     });
 
     test('post repository paging test', () async {
-      final List<Post> posts = await PostRepositoryImpl().getPosts(page: 2, limit: 10);
+      final List<Post> posts =
+          await PostRepositoryImpl().getPosts(page: 2, limit: 10);
 
       expect(posts.length == 10, true);
       expect(posts.first.id == 11 && posts.last.id == 20, true);

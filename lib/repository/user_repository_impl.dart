@@ -19,6 +19,10 @@ class UserRepositoryImpl implements UserRepository {
   Future<List<User>> getUsersTop10ByUserName() async {
     final response = await _api.getUsers();
     List jsonList = jsonDecode(response);
-    return jsonList.map((e) => User.fromJson(e)).sorted((a, b) => a.userName.compareTo(b.userName)).take(10).toList();
+    return jsonList
+        .map((e) => User.fromJson(e))
+        .sorted((a, b) => a.userName.compareTo(b.userName))
+        .take(10)
+        .toList();
   }
 }
