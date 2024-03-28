@@ -21,10 +21,11 @@ class UserRepositoryImpl implements UserRepository {
     return _api.getUsers();
   }
 
-  Future<List<String>> getUserTopByUserName(String userName) async {
+  Future<List<String>> getUserTopByUserName() async {
     final users = await getUsers();
     final userSearch = users
         .sorted((a, b) => a.name.compareTo(b.name))
+        .take(10)
         .map((e) => e.name)
         .toList();
     return userSearch;

@@ -8,5 +8,7 @@ void main() {
     final repository = PhotoRepositoryImpl();
     final List<Photo> photos = await repository.getPhotosAlbum(1);
     print(photos);
+    expect(photos.first.albumId, 1);
+    expect(photos.last.albumId, 1);
   });
 }
