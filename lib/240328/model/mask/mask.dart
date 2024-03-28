@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
-import 'package:learn_dart_together/240327/model/store.dart';
+import 'package:learn_dart_together/240328/model/mask/store.dart';
 
 class Mask {
-  final int count;
+  final num count;
   final List<Store> stores;
 
 //<editor-fold desc="Data Methods">
@@ -14,10 +14,10 @@ class Mask {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is Mask &&
-          runtimeType == other.runtimeType &&
-          count == other.count &&
-          stores.equals(stores));
+          (other is Mask &&
+              runtimeType == other.runtimeType &&
+              count == other.count &&
+              stores.equals(stores));
 
   @override
   int get hashCode => count.hashCode ^ stores.hashCode;
@@ -34,20 +34,6 @@ class Mask {
     return Mask(
       count: count ?? this.count,
       stores: stores ?? this.stores,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'count': count,
-      'stores': stores,
-    };
-  }
-
-  factory Mask.fromJson(Map<String, dynamic> map) {
-    return Mask(
-      count: map['count'] as int,
-      stores: map['stores'] as List<Store>,
     );
   }
 
