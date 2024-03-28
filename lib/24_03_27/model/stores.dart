@@ -1,12 +1,12 @@
 class Stores {
   final String addr;
   final String code;
-  final String? createdAt;
+  final String createdAt;
   final num lat;
   final num lng;
   final String name;
-  final String? remainStat;
-  final String? stockAt;
+  final String remainStat;
+  final String stockAt;
   final String type;
 
   const Stores({
@@ -74,34 +74,6 @@ class Stores {
       remainStat: remainStat ?? this.remainStat,
       stockAt: stockAt ?? this.stockAt,
       type: type ?? this.type,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'addr': addr,
-      'code': code,
-      'created_at': createdAt,
-      'lat': lat,
-      'lng': lng,
-      'name': name,
-      'remain_stat': remainStat,
-      'stock_at': stockAt,
-      'type': type,
-    };
-  }
-
-  factory Stores.fromJson(Map<String, dynamic> map) {
-    return Stores(
-      addr: map['addr'],
-      code: map['code'],
-      createdAt: map['created_at'],
-      lat: map['lat'],
-      lng: map['lng'],
-      name: map['name'],
-      remainStat: map['remain_stat'],
-      stockAt: map['stock_at'],
-      type: map['type'],
     );
   }
 }

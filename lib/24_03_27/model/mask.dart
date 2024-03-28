@@ -37,20 +37,4 @@ class Mask {
       stores: stores ?? this.stores,
     );
   }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'count': count,
-      'stores': stores,
-    };
-  }
-
-  factory Mask.fromJson(Map<String, dynamic> map) {
-    return Mask(
-      count: map['count'],
-      stores: (map['stores'] as List)
-          .map((e) => Stores.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-  }
 }
