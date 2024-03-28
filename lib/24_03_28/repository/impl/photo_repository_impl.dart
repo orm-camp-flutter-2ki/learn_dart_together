@@ -1,4 +1,4 @@
-import 'package:learn_dart_together/24_03_28/data_source/interface/user_api.dart';
+import 'package:learn_dart_together/24_03_28/mapper/photo_mapper.dart';
 import 'package:learn_dart_together/24_03_28/model/photo.dart';
 import 'package:learn_dart_together/24_03_28/repository/interface/photo_repository.dart';
 
@@ -11,6 +11,7 @@ class PhotoRepositoryImpl implements PhotoRepository {
 
   @override
   Future<List<Photo>> getPhotos() async {
-    return await _photoApi.getPhotos();
+    final photoDtoList = await _photoApi.getPhotos();
+    return photoDtoList.map((photoDto) => photoDto.toPhoto()).toList();
   }
 }
