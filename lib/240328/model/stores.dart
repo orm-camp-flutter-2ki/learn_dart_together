@@ -1,17 +1,17 @@
-class Stores {
+class Store {
   final String addr;
   final String code;
   final String created_at;
   final String name;
   final String type;
 
-  Stores(
-    this.addr,
-    this.code,
-    this.created_at,
-    this.name,
-    this.type,
-  );
+  Store({
+    required this.addr,
+    required this.code,
+    required this.created_at,
+    required this.name,
+    required this.type,
+  });
 
   Map<String, dynamic> toJson() => {
         'addr': addr,
@@ -21,22 +21,27 @@ class Stores {
         'type': type,
       };
 
-  Stores.fromJson(Map<String, dynamic> json)
+  Store.fromJson(Map<String, dynamic> json)
       : addr = json['addr'],
         code = json['code'],
         created_at = json['created_at'] ?? '',
         name = json['name'],
         type = json['type'];
 
-  Stores copyWith(
-    String? addr,
-    String? code,
-    String? created_at,
-    String? name,
-    String? type,
-  ) {
-    return Stores(addr ?? this.addr, code ?? this.code,
-        created_at ?? this.created_at, name ?? this.name, type ?? this.type);
+  Store copyWith({
+    required String addr,
+    required String code,
+    required String created_at,
+    required String name,
+    required String type,
+  }) {
+    return Store(
+      addr: addr,
+      code: code,
+      created_at: created_at,
+      name: name,
+      type: type,
+    );
   }
 
   @override
@@ -47,7 +52,7 @@ class Stores {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Stores &&
+      other is Store &&
           runtimeType == other.runtimeType &&
           addr == other.addr &&
           code == other.code &&
