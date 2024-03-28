@@ -6,7 +6,7 @@ extension MaskStoreMapper on MaskStoreDto {
   MaskStore getMaskStore() {
     return MaskStore(
         count: count ?? 0,
-        stores: stores!.map((e) => e.getStore()).toList() ?? []
+        stores: stores?.map((e) => e.getStore()).toList() ?? []
     );
   }
 }
