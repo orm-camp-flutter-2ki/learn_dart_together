@@ -1,0 +1,34 @@
+@startuml
+scale 3
+'interface Drawable {
+'	void draw()
+'}
+'
+'interface Movable {
+'	void draw()
+'}
+'
+'class House implements Drawable {
+'    @override
+'	void draw()
+'}
+'class Rectangle implements Drawable {
+'    @override
+'	void draw()
+'}
+'
+'class Car implements Drawable, Movable {
+'    @override
+'	void draw()
+interface Movable {
+  void move()
+}
+
+interface Drawable {
+  void draw()
+}
+
+
+class Dog implements Drawable, Movable
+}
+@enduml

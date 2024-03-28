@@ -1,0 +1,1 @@
+{name: 홍길동, age: 41}{name: 디자인팀, leader: {name: 홍길동, age: 41}}

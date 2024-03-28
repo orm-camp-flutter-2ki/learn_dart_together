@@ -1,0 +1,38 @@
+@startuml
+
+scale 1
+
+interface Thing {
+weight
+}
+
+abstract class AssetAll {
+  String name;
+  String code;
+}
+abstract class TangibleAsset extends AssetAll implements Thing{
+int price;
+String color;
+int quantity;
+void addBuy()
+}
+abstract class IntangibleAsset extends AssetAll {
+String category
+}
+class Book extends TangibleAsset {
+String isbn
+{abstract}final double _weight
+void addBook()
+}
+
+class Computer extends TangibleAsset {
+String category
+{abstract}final double _weight
+void addComputer()
+}
+
+class Patent extends IntangibleAsset {
+String date
+}
+
+@enduml
