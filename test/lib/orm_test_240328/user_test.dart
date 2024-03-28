@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 import 'package:learn_dart_together/orm_240328/02_data_source/user_api.dart';
 import 'package:learn_dart_together/orm_240328/02_dto/user_dto.dart';
-import 'package:learn_dart_together/orm_240328/02_model/user.dart';
+import 'package:learn_dart_together/orm_240328/02_mapper/user_mapper.dart';
 import 'package:learn_dart_together/orm_240328/02_repository/user_repository_impl.dart';
 import 'package:test/test.dart';
 
@@ -23,11 +23,6 @@ void main() {
       "geo": {"lat": "-37.3159", "lng": "81.1496"}
     }
   };
-  User testUser = User(
-      name: 'Leanne Graham',
-      email: 'Sincere@april.biz',
-      latitude: -37.3159,
-      longitude: 81.1496);
 
   test('user test', () async {
     final mockClient = MockClient((request) async {
@@ -40,9 +35,10 @@ void main() {
     final repository = UserRepositoryImpl(UserApi(client: mockClient));
 
     final result = await repository.getUser();
-    final expected = result.map((e) => UserDto.fromJson(e)).toList();
+    final expected = result
+        .map((e) => UserDto.fromJson(e as Map<String, dynamic>).toUser())
+        .toList();
 
-    expect(result.equals(expected.cast<User>()), true);
-    expect(result[0] == testUser, true);
+    expect(result.equals(expected), true);
   });
 }
