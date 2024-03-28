@@ -1,24 +1,23 @@
 class Store {
   final String addr;
   final String code;
-  final String created_at;
-  final num lat;
+  final String createdAt;
+  final double lat;
   final num lng;
   final String name;
-  final String remain_stat;
-  final String stock_at;
+  final String remainStat;
+  final String stockAt;
   final String type;
 
-//<editor-fold desc="Data Methods">
   const Store({
     required this.addr,
     required this.code,
-    required this.created_at,
+    required this.createdAt,
     required this.lat,
     required this.lng,
     required this.name,
-    required this.remain_stat,
-    required this.stock_at,
+    required this.remainStat,
+    required this.stockAt,
     required this.type,
   });
 
@@ -29,77 +28,52 @@ class Store {
           runtimeType == other.runtimeType &&
           addr == other.addr &&
           code == other.code &&
-          created_at == other.created_at &&
+          createdAt == other.createdAt &&
           lat == other.lat &&
           lng == other.lng &&
           name == other.name &&
-          remain_stat == other.remain_stat &&
-          stock_at == other.stock_at &&
+          remainStat == other.remainStat &&
+          stockAt == other.stockAt &&
           type == other.type);
 
   @override
   int get hashCode =>
       addr.hashCode ^
       code.hashCode ^
-      created_at.hashCode ^
+      createdAt.hashCode ^
       lat.hashCode ^
       lng.hashCode ^
       name.hashCode ^
-      remain_stat.hashCode ^
-      stock_at.hashCode ^
+      remainStat.hashCode ^
+      stockAt.hashCode ^
       type.hashCode;
 
   @override
   String toString() {
-    return 'Store{ addr: $addr, code: $code, created_at: $created_at, lat: $lat, lng: $lng, name: $name, remain_stat: $remain_stat, stock_at: $stock_at, type: $type,}';
+    return 'Store{ addr: $addr, code: $code, created_at: $createdAt, lat: $lat, lng: $lng, name: $name, remain_stat: $remainStat, stock_at: $stockAt, type: $type,}';
   }
 
   Store copyWith({
     String? addr,
     String? code,
-    String? created_at,
-    num? lat,
+    String? createdAt,
+    double? lat,
     num? lng,
     String? name,
-    String? remain_stat,
-    String? stock_at,
+    String? remainStat,
+    String? stockAt,
     String? type,
   }) {
     return Store(
       addr: addr ?? this.addr,
       code: code ?? this.code,
-      created_at: created_at ?? this.created_at,
+      createdAt: createdAt ?? this.createdAt,
       lat: lat ?? this.lat,
       lng: lng ?? this.lng,
       name: name ?? this.name,
-      remain_stat: remain_stat ?? this.remain_stat,
-      stock_at: stock_at ?? this.stock_at,
+      remainStat: remainStat ?? this.remainStat,
+      stockAt: stockAt ?? this.stockAt,
       type: type ?? this.type,
     );
   }
-
-  Map<String, dynamic> toJson() => {
-        'addr': addr,
-        'code': code,
-        'created_at': created_at,
-        'lat': lat,
-        'lng': lng,
-        'name': name,
-        'remain_stat': remain_stat,
-        'stock_at': stock_at,
-        'type': type,
-      };
-
-  Store.fromJson(Map<String, dynamic> json)
-      : addr = json['addr'],
-        code = json['code'],
-        created_at = json['created_at'],
-        lat = json['lat'],
-        lng = json['lng'],
-        name = json['name'],
-        remain_stat = json['remain_stat'],
-        stock_at = json['stock_at'],
-        type = json['type'];
 }
-
-//</editor-fold>
