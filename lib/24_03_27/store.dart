@@ -96,4 +96,13 @@ class Store {
   String toString() {
     return 'Store{address: $address, code: $code, createdAt: $createdAt, lat: $lat, lng: $lng, name: $name, remainStat: $remainStat, stockAt: $stockAt, type: $type}';
   }
+
+  bool isValid() {
+    return address.isNotEmpty &&
+        createdAt.isNotEmpty &&
+        name.isNotEmpty &&
+        remainStat.isNotEmpty &&
+        stockAt.isNotEmpty &&
+        type.isNotEmpty;
+  }
 }
