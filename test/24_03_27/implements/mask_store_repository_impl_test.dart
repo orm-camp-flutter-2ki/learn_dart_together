@@ -76,8 +76,44 @@ void main() {
 
       expect(givenValue, expectValue);
     });
+
+    test('getStoreList 메서드 사용 테스트 (null값 필드를 가진 Store 객체 제거)', () async {
+      final mockClient = MockClient((request) async {
+        if (request.url.toString() == 'http://104.198.248.76:3000/mask') {
+          return http.Response(mockIncludeNull, 200, headers: {
+            HttpHeaders.contentTypeHeader: 'application/json; charset=utf-8'
+          });
+        }
+
+        return http.Response('''{"message":"잘못된 요청"}''', 400);
+      });
+
+      final MaskStoreRepository repo = MaskStoreRepositoryImpl(MaskStoreApi(client: mockClient));
+      final List<Store> store = await repo.getStoreList();
+
+      final int expectValue = 1;
+
+      expect(store.length, expectValue);
+    });
   });
 }
 
 final String toJson =
     '''{"count":222,"stores":[{"addr":"서울특별시 강북구 솔매로 38 (미아동)","code":"11817488","created_at":"2020/07/03 11:00:00","lat":37.6254369,"lng":127.0164096,"name":"승약국","remain_stat":"plenty","stock_at":"2020/07/02 18:05:00","type":"01"}]}''';
+
+final String mockIncludeNull = '''
+{
+  "count": 2,
+  "stores":[
+  {
+    "addr":"서울특별시 강북구 솔매로 38 (미아동)","code":"11817488","created_at":"2020/07/03 11:00:00","lat":37.6254369,"lng":127.0164096,"name":"승약국","remain_stat":"plenty","stock_at":"2020/07/02 18:05:00","type":"01"
+  },
+  {
+    "addr": null,"created_at":"2020/07/03 11:00:00","lat":37.6254369,"lng":127.0164096,"name":"승약국","remain_stat":"plenty","stock_at":"2020/07/02 18:05:00","type":"01"
+  },
+  {
+    "addr": "하이헬로","code":"11817488","created_at":"2020/07/03 11:00:00","lat":-9999,"lng":127.0164096,"name":"승약국","remain_stat":"plenty","stock_at":"2020/07/02 18:05:00","type":"01"
+  }
+  ]
+}
+''';
