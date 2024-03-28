@@ -8,7 +8,7 @@ enum PhotoType {
 
   const PhotoType(this.value);
 
-  PhotoType stringToPhotoType(String inputValue) {
+  static PhotoType stringToPhotoType(String inputValue) {
     return switch (inputValue) {
       'article' => PhotoType.article,
       'image' => PhotoType.image,
