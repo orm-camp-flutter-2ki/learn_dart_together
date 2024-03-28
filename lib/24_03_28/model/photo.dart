@@ -1,10 +1,12 @@
 import 'package:learn_dart_together/24_03_28/enum/photo_type.dart';
 
 class Photo {
-  String id;
+  num id;
   PhotoType type;
   String title;
   String content;
+  String url;
+  String caption;
   DateTime createdAt;
 
   Photo({
@@ -12,12 +14,14 @@ class Photo {
     required String type,
     required this.title,
     required this.content,
+    required this.url,
+    required this.caption,
     required this.createdAt,
   }) : type = PhotoType.stringToPhotoType(type);
 
   @override
   String toString() {
-    return 'Photo{id: $id, type: $type, title: $title, content: $content, createdAt: $createdAt}';
+    return 'Photo{id: $id, type: ${type.value}, title: $title, content: $content, url: $url, caption: $caption, createdAt: $createdAt}';
   }
 
   @override
@@ -29,6 +33,8 @@ class Photo {
           type == other.type &&
           title == other.title &&
           content == other.content &&
+          url == other.url &&
+          caption == other.caption &&
           createdAt == other.createdAt;
 
   @override
@@ -37,5 +43,7 @@ class Photo {
       type.hashCode ^
       title.hashCode ^
       content.hashCode ^
+      url.hashCode ^
+      caption.hashCode ^
       createdAt.hashCode;
 }
