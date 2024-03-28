@@ -23,7 +23,6 @@ void main() async {
     MaskRepository maskRepository =
     MaskRepositoryImpl(api: MaskApi(client: mockClient));
 
-
     test('data check', () async {
       final stores = await maskRepository.getMaskStores();
       expect(stores[0] == expectedStore, true);
