@@ -15,6 +15,6 @@ class MaskApi {
     final http.Response response =
         await _client.get(Uri.parse('$_baseUrl/mask'));
 
-    return Mask.fromJson(jsonDecode(response.body));
+    return Mask.fromJson(jsonDecode(utf8.decode(response.bodyBytes)));
   }
 }

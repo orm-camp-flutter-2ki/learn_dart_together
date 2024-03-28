@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 import 'store.dart';
 
 class Mask {
@@ -16,7 +18,7 @@ class Mask {
       (other is Mask &&
           runtimeType == other.runtimeType &&
           count == other.count &&
-          stores == other.stores);
+          stores.equals(other.stores));
 
   @override
   int get hashCode => count.hashCode ^ stores.hashCode;
