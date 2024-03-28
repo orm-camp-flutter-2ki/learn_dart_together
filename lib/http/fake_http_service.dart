@@ -20,7 +20,7 @@ class FakeHttpService implements CustomHttpClient {
   String _getUrlToFilePath(String url) {
     switch (url) {
       case maskUrl:
-        return 'test/24_03_27/resource/mask.json';
+        return 'test/resource/mask.json';
 
       default:
         throw Exception();
