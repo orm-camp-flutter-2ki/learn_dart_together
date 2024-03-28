@@ -1,8 +1,8 @@
 class User {
   final String name;
   final String email;
-  final num latitude;
-  final num longitude;
+  final double latitude;
+  final double longitude;
 
   User({required this.name, required this.email, required this.latitude, required this.longitude});
 
