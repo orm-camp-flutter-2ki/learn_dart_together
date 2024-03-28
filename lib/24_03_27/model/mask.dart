@@ -1,24 +1,19 @@
 import 'dart:convert';
 
-import 'stores.dart';
+import 'package:collection/collection.dart';
+
+import '../dto/store_dto.dart';
+import 'store.dart';
 
 class Mask {
-  int count;
-  List<Stores> stores;
+  num count;
+  List<Store> stores;
 
-  Mask(this.count, this.stores);
-
-  Mask.fromJson(Map<String, dynamic> json)
-      : count = json['count'],
-        stores = (json['stores'] as List).map((e) => Stores.fromJson(e)).toList();            //List<Stores>로 변환 현재 List<dynamic>
-
-
-
-  Map<String, dynamic> toJson() => {'count': count, 'stores': stores};
+  Mask({required this.count, required this.stores});
 
   @override
   String toString() {
-    return 'Stores{count: $count, stores: $stores}';
+    return 'Mask{count: $count, stores: $stores}';
   }
 
   @override
@@ -27,7 +22,7 @@ class Mask {
       other is Mask &&
           runtimeType == other.runtimeType &&
           count == other.count &&
-          stores == other.stores;
+          stores.equals(other.stores);
 
   @override
   int get hashCode => count.hashCode ^ stores.hashCode;
