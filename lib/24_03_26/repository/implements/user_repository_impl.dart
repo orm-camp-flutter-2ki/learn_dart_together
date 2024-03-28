@@ -6,8 +6,10 @@ import 'package:learn_dart_together/24_03_28/dto/user_dto.dart';
 import 'package:learn_dart_together/24_03_28/mapper/user_mapper.dart';
 
 class UserRepositoryImpl implements UserRepository {
-  final UserApi _api = UserApi();
+  final UserApi _api;
 
+  UserRepositoryImpl(this._api);
+  
   @override
   Future<List<User>> getUsersList() async {
     final userDto = await _api.getUserDtoList();

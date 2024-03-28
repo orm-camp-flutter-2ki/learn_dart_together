@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('User JSON 파싱 테스트', () {
-    UserRepository repo = UserRepositoryImpl();
+    UserRepository repo = UserRepositoryImpl(UserApi());
 
     test('User의 userInfo 필드의 length 는 10이다.', () async {
       List<User> userList = await repo.getUsersList();
