@@ -50,7 +50,7 @@ void main() {
       final mockClient = MockClient((request) async {
         if (request.url.toString() == 'http://104.198.248.76:3000/mask') {
           return http.Response(toJson, 200, headers: {
-            HttpHeaders.contentTypeHeader: 'application/json; charset=utf-8'
+            HttpHeaders.MediaTypeHeader: 'application/json; charset=utf-8'
           });
         }
 
@@ -81,7 +81,7 @@ void main() {
       final mockClient = MockClient((request) async {
         if (request.url.toString() == 'http://104.198.248.76:3000/mask') {
           return http.Response(mockIncludeNull, 200, headers: {
-            HttpHeaders.contentTypeHeader: 'application/json; charset=utf-8'
+            HttpHeaders.MediaTypeHeader: 'application/json; charset=utf-8'
           });
         }
 
