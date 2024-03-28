@@ -11,17 +11,16 @@ class User {
   final String website;
   final Company company;
 
-  User(
-    this.id,
-    this.name,
-    this.username,
-    this.address,
-    this.phone,
-    this.website,
-    this.company,
-  );
+  User(this.id,
+      this.name,
+      this.username,
+      this.address,
+      this.phone,
+      this.website,
+      this.company,);
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() =>
+      {
         'id': id,
         'name': name,
         'username': username,
@@ -68,15 +67,15 @@ class User {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is User &&
-          runtimeType == other.runtimeType &&
-          id == other.id &&
-          name == other.name &&
-          username == other.username &&
-          address == other.address &&
-          phone == other.phone &&
-          website == other.website &&
-          company == other.company;
+          other is User &&
+              runtimeType == other.runtimeType &&
+              id == other.id &&
+              name == other.name &&
+              username == other.username &&
+              address == other.address &&
+              phone == other.phone &&
+              website == other.website &&
+              company == other.company;
 
   @override
   int get hashCode =>
