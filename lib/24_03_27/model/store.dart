@@ -1,12 +1,12 @@
 class Store {
   final String addr;
   final String code;
-  final String createdAt;
-  final double lat;
-  final double lng;
+  final String? createdAt;
+  final num lat;
+  final num lng;
   final String name;
-  final String remainStat;
-  final String stockAt;
+  final String? remainStat;
+  final String? stockAt;
   final String type;
 
   Store({
@@ -43,30 +43,6 @@ class Store {
         stockAt: stockAt ?? this.stockAt,
         type: type ?? this.type,
       );
-
-  factory Store.fromJson(Map<String, dynamic> json) => Store(
-        addr: json["addr"],
-        code: json["code"],
-        createdAt: json["created_at"] ?? '',
-        lat: json["lat"],
-        lng: json["lng"],
-        name: json["name"],
-        remainStat: json["remain_stat"] ?? '',
-        stockAt: json["stock_at"] ?? '',
-        type: json["type"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "addr": addr,
-        "code": code,
-        "created_at": createdAt,
-        "lat": lat,
-        "lng": lng,
-        "name": name,
-        "remain_stat": remainStat,
-        "stock_at": stockAt,
-        "type": type,
-      };
 
   @override
   String toString() {

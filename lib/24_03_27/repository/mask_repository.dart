@@ -1,5 +1,5 @@
-import '../model/mask.dart';
+import 'package:learn_dart_together/24_03_27/model/store.dart';
 
 abstract interface class MaskRepository {
-  Future<Mask> getMasks();
+  Future<List<Store>> getStores();
 }
