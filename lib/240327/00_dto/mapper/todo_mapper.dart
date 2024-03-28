@@ -9,3 +9,11 @@ extension TodoDtoToTodo on TodoDto {
     );
   }
 }
+
+extension TodoToTodoDto on Todo {
+  TodoDto toTodoDto() {
+    return TodoDto(
+      title: title,
+    );
+  }
+}
