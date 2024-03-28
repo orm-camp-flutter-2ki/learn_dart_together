@@ -24,6 +24,17 @@ void main() {
           type: '01',
           createdAt: '2022-03-27 10:00:00',
         ),
+        Stores(
+          addr: 'unknown',
+          code: '1111',
+          lat: 37.1234,
+          lng: 126.1234,
+          name: '마스크판매처1',
+          remainStat: 'plenty',
+          stockAt: '2022-03-27 10:00:00',
+          type: '01',
+          createdAt: '2022-03-27 10:00:00',
+        ),
       ],
     );
     setUp(() {
@@ -40,9 +51,7 @@ void main() {
         // Then
         expect(result, mask);
       });
-    });
 
-    group('getMask 메소드는', () {
       test('api.getMask를 1번 호출한다.', () async {
         // Given
         when(maskApi.getMask()).thenAnswer((_) async => mask);
@@ -52,6 +61,35 @@ void main() {
 
         // Then
         verify(maskApi.getMask()).called(1);
+      });
+    });
+
+    group('getStores 메소드는', () {
+      test('getMask를 1번 호출한다.', () async {
+        // Given
+        when(maskApi.getMask()).thenAnswer((_) async => mask);
+
+        // When
+        await maskRepository.getStores();
+
+        // Then
+        verify(maskApi.getMask()).called(1);
+      });
+
+      test(
+          'Stores의 addr, code, lat, lng, name, remainStat, stockAt, type, createdAt이 unknown이 아닌 경우만 반환한다.',
+          () async {
+        // Given
+        final expectStore = [mask.stores[0]];
+        final expectLength = 1;
+        when(maskApi.getMask()).thenAnswer((_) async => mask);
+
+        // When
+        final result = await maskRepository.getStores();
+
+        // Then
+        expect(result, expectStore);
+        expect(result.length, expectLength);
       });
     });
   });
