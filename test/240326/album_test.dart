@@ -1,3 +1,4 @@
+import 'package:learn_dart_together/240326/data_source/album_api.dart';
 import 'package:learn_dart_together/240326/repository/album_repository.dart';
 import 'package:learn_dart_together/240326/vo/albums.dart';
 import 'package:test/test.dart';
@@ -110,13 +111,13 @@ void main() {
   ];
   list = list.map((e) => Albums.fromJson(e)).toList();
   test('album getAlbums()', () async {
-    List<Albums> albums = await AlbumRepository().getAlbums();
+    List<Albums> albums = await AlbumRepositoryImpl().getAlbums();
 
     expect(eq(list, albums), isTrue);
   });
 
   test('album getAlbumsTop10()', () async {
-    List<Albums> albums = await AlbumRepository().getAlbumsTop10();
+    List<Albums> albums = await AlbumRepositoryImpl().getAlbumsTop10();
     print(list.sublist(0, 10));
     print(albums);
     expect(eq(list.sublist(0, 10), albums), isTrue);
