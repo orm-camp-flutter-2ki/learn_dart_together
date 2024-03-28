@@ -1,7 +1,7 @@
 import 'store.dart';
 
 class Mask {
-  final int count;
+  final num count;
   final List<Store> stores;
 
   Mask({
@@ -17,16 +17,6 @@ class Mask {
         count: count ?? this.count,
         stores: stores ?? this.stores,
       );
-
-  factory Mask.fromJson(Map<String, dynamic> json) => Mask(
-        count: json["count"],
-        stores: List<Store>.from(json["stores"].map((x) => Store.fromJson(x))),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "count": count,
-        "stores": List<dynamic>.from(stores.map((x) => x.toJson())),
-      };
 
   @override
   String toString() {
