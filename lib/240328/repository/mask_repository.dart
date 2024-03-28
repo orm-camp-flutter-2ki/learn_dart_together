@@ -11,7 +11,7 @@ class MaskRepository {
 
   Future<List<Store>> getStores() async {
     final storeList = await _api.getMaskStores();
-    var stores = storeList
+    final stores = storeList
         .where(
             (e) => e.createdAt != '' || e.remainStat != '' || e.stockAt != '')
         .map((e) => e.toStore()) // Store 객체를 JSON 변환하여 전달
