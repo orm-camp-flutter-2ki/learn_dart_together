@@ -15,18 +15,19 @@ class PostRepositoryImpl implements PostRepository {
   Future<Post> getPost(int id) async {
     List<Post> data = await _api.getPosts();
     List<Post> getPostById = data.where((element) => element.id == id).toList();
-    return getPostById[0];
+    return getPostById.first;
   }
 
-// @override
-// Future<List<Post>> getPosts({page = 1, limit = 3}) {
-//   // TODO: implement getPosts
-//   throw UnimplementedError();
+//@override
+// Future<List<Post>> getPosts({int? page, int? limit}) async {
+//   List<Post> data = await _api.getPosts();
+//   List<Post> getPostBypage = data.where((element) => element.id == id).toList();
+//   return
 // }
 }
 
 abstract interface class PostRepository {
   Future<Post> getPost(int id);
 
-//Future<List<Post>> getPosts(page: 1, limit: 3);
+//Future<List<Post>> getPosts({int? page, int? limit});
 }

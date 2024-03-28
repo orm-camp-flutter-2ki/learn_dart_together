@@ -11,10 +11,7 @@ class TodoRepositoryImpl implements TodoRepository {
   final UserApi _api = UserApi();
 
   @override
-  Future<List<User>> getTodos() async {
-    List<User> data = await _api.getUsers();
-    return data;
-  }
+  Future<List<User>> getTodos() => _api.getUsers();
 
   @override
   Future<List<User>> getUsersTop10ByUserName() async {
