@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:learn_dart_together/240329/data_source/post_api.dart';
 import 'package:test/test.dart';
 
@@ -7,40 +5,36 @@ import '../../240329/dto/post_dto.dart';
 
 void main() {
   test('post list test 1)', () async {
-    final repository = PostApi();
-    final postList = await repository.getPosts(page: 1, limit: 4);
+    final api = PostApi();
+    final postList = await api.getPosts(page: 1, limit: 4);
     // print(postList);
     expect(postList.length, 4);
   });
 
   test('post search test 2', () async {
-    final repository = PostApi();
-    final postList = await repository.getPost(1);
+    final api = PostApi();
+    final postList = await api.getPost(1);
     expect(postList.id, 1);
   });
   test('post page test 3', () async {
-    final repository = PostApi();
-    final postList = await repository.getPostAll();
+    final api = PostApi();
+    final postList = await api.getPostAll();
     expect(postList.length, 100);
   });
   test('post delete test 4', () async {
-    final repository = PostApi();
-    final delete = await repository.deletePost(1);
+    final api = PostApi();
+    final delete = await api.deletePost(1);
     expect(delete, true);
   });
   test('post add test 5', () async {
-    final repository = PostApi();
+    final api = PostApi();
     final expected = 101;
-    final postExpect = jsonEncode(post.toJson());
-    // print(postExpect);
-    final result = await repository.addPost(post);
+    final result = await api.addPost(post);
     expect(result, expected);
   });
   test('post update test 6', () async {
-    final repository = PostApi();
-
-    // print(postExpect);
-    final result = await repository.updatePost(updatePost);
+    final api = PostApi();
+    final result = await api.updatePost(updatePost);
     expect(result, updatePost);
   });
 }
