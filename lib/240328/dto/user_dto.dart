@@ -24,8 +24,8 @@ class UserDto {
     return UserDto(
       name: json['name'] as String,
       email: json['email'] as String,
-      latitude: json['address']['geo']['latitude'] ?? 0.0,
-      longitude: json['address']['geo']['longitude'] ?? 0.0,
+      latitude: double.parse(json['address']['geo']['lat']),
+      longitude: double.parse(json['address']['geo']['lng']),
     );
   }
 }

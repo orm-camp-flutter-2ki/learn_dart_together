@@ -7,8 +7,8 @@ extension UserDtoToUser on UserDto {
     return User(
       name: name ?? '',
       email: email ?? '',
-      latitude: latitude ?? 0,
-      longitude: longitude ?? 0,
+      latitude: latitude ?? 0.0,
+      longitude: longitude ?? 0.0,
     );
   }
 }
