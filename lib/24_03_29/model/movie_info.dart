@@ -2,14 +2,14 @@ import 'package:collection/collection.dart';
 import 'package:learn_dart_together/24_03_29/model/date.dart';
 import 'package:learn_dart_together/24_03_29/model/movie.dart';
 
-class MoviePage {
+class MovieInfo {
   final Date dates;
   final num page;
   final List<Movie> results;
   final num totalPages;
   final num totalResults;
 
-  MoviePage({
+  MovieInfo({
     required this.dates,
     required this.page,
     required this.results,
@@ -19,13 +19,13 @@ class MoviePage {
 
   @override
   String toString() {
-    return 'MoviePage{dates: $dates, page: $page, results: $results, totalPages: $totalPages, totalResults: $totalResults}';
+    return 'MovieInfo{dates: $dates, page: $page, results: $results, totalPages: $totalPages, totalResults: $totalResults}';
   }
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is MoviePage &&
+      other is MovieInfo &&
           runtimeType == other.runtimeType &&
           dates == other.dates &&
           page == other.page &&

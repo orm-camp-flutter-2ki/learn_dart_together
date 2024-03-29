@@ -1,12 +1,12 @@
-import 'package:learn_dart_together/24_03_29/dto/movie_page_dto.dart';
+import 'package:learn_dart_together/24_03_29/dto/movie_info_dto.dart';
 import 'package:learn_dart_together/24_03_29/mapper/date_mapper.dart';
 import 'package:learn_dart_together/24_03_29/mapper/movie_mapper.dart';
 import 'package:learn_dart_together/24_03_29/model/date.dart';
-import 'package:learn_dart_together/24_03_29/model/movie_page.dart';
+import 'package:learn_dart_together/24_03_29/model/movie_info.dart';
 
-extension MoviePageDtoToMoviePage on MoviePageDto {
-  MoviePage toMoviePage() {
-    return MoviePage(
+extension MovieInfoDtoToMovieInfo on MovieInfoDto {
+  MovieInfo toMovieInfo() {
+    return MovieInfo(
       dates: dates?.toDate() ?? Date(),
       page: page ?? 0,
       results: results?.map((e) => e.toMovie()).toList() ?? [],
