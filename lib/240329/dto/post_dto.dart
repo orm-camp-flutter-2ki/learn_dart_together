@@ -26,4 +26,18 @@ class PostDto {
     map['body'] = body;
     return map;
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PostDto &&
+          runtimeType == other.runtimeType &&
+          userId == other.userId &&
+          id == other.id &&
+          title == other.title &&
+          body == other.body;
+
+  @override
+  int get hashCode =>
+      userId.hashCode ^ id.hashCode ^ title.hashCode ^ body.hashCode;
 }

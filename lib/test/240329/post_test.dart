@@ -38,11 +38,10 @@ void main() {
   });
   test('post update test 6', () async {
     final repository = PostApi();
-    final postExpect = jsonEncode(updatePost.toJson());
 
     // print(postExpect);
     final result = await repository.updatePost(updatePost);
-    expect(result.toString(), postExpect.toString());
+    expect(result, updatePost);
   });
 }
 

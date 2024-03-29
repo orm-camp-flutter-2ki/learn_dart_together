@@ -62,9 +62,11 @@ class PostApi {
 
   Future<PostDto> updatePost(PostDto postDto) async {
     final post = '$uri/posts/${postDto.id}';
-    final http.Response response =
-        await http.put(Uri.parse(post), body: jsonEncode(postDto.toJson()));
+    final http.Response response = await http.put(Uri.parse(post),
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode(postDto.toJson()));
     print(response.body);
+    print(postDto.toJson());
     print(post);
     return PostDto.fromJson(jsonDecode(utf8.decode(response.bodyBytes)));
   }
