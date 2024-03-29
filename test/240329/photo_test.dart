@@ -12,6 +12,8 @@ void main() {
 
     File file1 = File('lib/240329/image/icon.ico');
     final saved = file1.readAsBytesSync();
+    print(saved.runtimeType);
+    print(uint8list.runtimeType);
     expect(saved, uint8list);
   });
   test('', () async {
