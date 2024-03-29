@@ -23,7 +23,7 @@ class MovieInfo {
   @JsonKey(name: 'poster_path')
   String posterPath;
   @JsonKey(name: 'release_date')
-  String releaseDate;
+  DateTime releaseDate;
   String title;
   bool video;
 
@@ -106,7 +106,7 @@ class MovieInfo {
     String? overview,
     num? popularity,
     String? posterPath,
-    String? releaseDate,
+    DateTime? releaseDate,
     String? title,
     bool? video,
     num? voteAverage,
