@@ -45,7 +45,7 @@ class Mask {
   factory Mask.fromJson(Map<String, dynamic> map) {
     return Mask(
       count: map['count'] as int,
-      stores: map['stores'] as Stores,
+      stores: map['stores'],
     );
   }
 
