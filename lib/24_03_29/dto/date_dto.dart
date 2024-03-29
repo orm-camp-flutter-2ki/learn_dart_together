@@ -1,15 +1,17 @@
 class DateDto {
-  String? maximum;
-  String? minimum;
+  final String? maximum;
+  final String? minimum;
 
   DateDto({
-    this.maximum,
-    this.minimum,
+    required this.maximum,
+    required this.minimum,
   });
 
-  DateDto.fromJson(dynamic json) {
-    maximum = json['maximum'];
-    minimum = json['minimum'];
+  factory DateDto.fromJson(Map<String, dynamic> json) {
+    return DateDto(
+      maximum: json['maximum'],
+      minimum: json['minimum'],
+    );
   }
 
   Map<String, dynamic> toJson() {
