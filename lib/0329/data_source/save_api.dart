@@ -5,9 +5,6 @@ import 'package:http/http.dart' as http;
 
 class SaveApi {
   Future<Uint8List> downloadImageApi(String url) async {
-    // 고정 길이 unsigned 8byte integer attay
-    // 즉 byteArray 타입, 메모리라고 보면 된다.
-
     // 주어진 url에서 http.get 요청, 서버로부터 응답을 기다리다가(await) 응답이 도착하면 변수 response에 할당
     final http.Response response = await http.get(Uri.parse(url));
 
@@ -25,13 +22,21 @@ class SaveApi {
     final directory = Directory('/Users/yong/Downloads'); // macOS의 경우
 
     try {
-      if (directory.existsSync()) { // 외부 저장소 디렉토리가 실제로 존재하는지를 확인후, 저장하고 위치 출력
+      if (directory.existsSync()) {
+        // 외부 저장소 디렉토리가 실제로 존재하는지를 확인후, 저장하고 위치 출력
+        print('다운로드 시작');
+        final stopwatch = Stopwatch()..start();
+        // print('다운로드 경로: ${directory.path}/$fileName'); // 다운로드 경로를 출력
 
-        print('다운로드 경로: ${directory.path}/$fileName'); // 다운로드 경로를 출력
+        final file = File(
+            '${directory.path}/$fileName'); // 저장할 디렉토리 경로에 fileName 이름으로 파일을 생성
 
-        final file = File('${directory.path}/$fileName'); // 저장할 디렉토리 경로에 fileName 이름으로 파일을 생성
+        print(
+            '다운로드 끝\n========\n소요시간 : ${stopwatch.elapsed}\n용량 : ${bytes.lengthInBytes}bytes'); // 파일 쓰기 전에 위치해야 출력 된다.
 
-        await file.writeAsBytes(bytes); // 지정된 바이트 데이터(bytes)를 파일에 쓰는 것(writeAsBytes)을 기다린다(await)
+        await file.writeAsBytes(
+            bytes); // 지정된 바이트 데이터(bytes)를 파일에 쓰는 것(writeAsBytes)을 기다린다(await)
+
 
         return file;
       }
