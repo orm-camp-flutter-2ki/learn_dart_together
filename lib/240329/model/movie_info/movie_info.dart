@@ -50,7 +50,8 @@ class MovieInfo {
     return 'Movie(adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
   }
 
-  factory MovieInfo.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
+  factory MovieInfo.fromJson(Map<String, dynamic> json) =>
+      _$MovieFromJson(json);
 
   Map<String, dynamic> toJson() => _$MovieToJson(this);
 
