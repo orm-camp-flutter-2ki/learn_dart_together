@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 
-class MovieDto {
+class Movie {
   final bool adult;
   final String backdropPath;
   final List<num> genreIds;
@@ -16,7 +16,7 @@ class MovieDto {
   final num voteAverage;
   final num voteCount;
 
-  MovieDto({
+  Movie({
     required this.adult,
     required this.backdropPath,
     required this.genreIds,
@@ -35,13 +35,13 @@ class MovieDto {
 
   @override
   String toString() {
-    return 'MovieDto{adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount}';
+    return 'Movie{adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount}';
   }
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is MovieDto &&
+      other is Movie &&
           runtimeType == other.runtimeType &&
           adult == other.adult &&
           backdropPath == other.backdropPath &&

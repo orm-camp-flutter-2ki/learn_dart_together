@@ -1,14 +1,14 @@
 import 'package:learn_dart_together/24_03_29/dto/date_dto.dart';
 import 'package:learn_dart_together/24_03_29/dto/movie_dto.dart';
 
-class MovieDtoPage {
+class MoviePageDto {
   final DateDto? dates;
   final num? page;
   final List<MovieDto>? results;
   final num? totalPages;
   final num? totalResults;
 
-  MovieDtoPage({
+  MoviePageDto({
     required this.dates,
     required this.page,
     required this.results,
@@ -16,8 +16,8 @@ class MovieDtoPage {
     required this.totalResults,
   });
 
-  factory MovieDtoPage.fromJson(dynamic json) {
-    return MovieDtoPage(
+  factory MoviePageDto.fromJson(dynamic json) {
+    return MoviePageDto(
       dates: json['dates'] != null ? DateDto.fromJson(json['dates']) : null,
       page: json['page'],
       results: json['results'] != null

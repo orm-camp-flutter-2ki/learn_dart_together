@@ -3,9 +3,12 @@ class Date {
   final String minimum;
 
   Date({
-    required this.maximum,
-    required this.minimum,
-  });
+    String? maximum,
+    String? minimum,
+  })  : maximum = maximum ??
+            '${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}',
+        minimum = minimum ??
+            '${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}';
 
   @override
   String toString() {

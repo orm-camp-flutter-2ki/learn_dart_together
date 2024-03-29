@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
-import 'package:learn_dart_together/24_03_21/movie.dart';
 import 'package:learn_dart_together/24_03_29/model/date.dart';
+import 'package:learn_dart_together/24_03_29/model/movie.dart';
 
 class MoviePage {
   final Date dates;
