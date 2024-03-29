@@ -9,18 +9,21 @@ class MaskApi {
 
   MaskApi({http.Client? client}) : _client = client ?? http.Client();
 
-  Future<List<Mask>> getMasks() async {
+  Future<Mask> getMasks() async {
     final response = await _client.get(Uri.parse(urlBase));
 
-    List<Mask> results = [];
-
     if (response.statusCode == 200) {
-      final jsonList = jsonDecode(response.body) as List;
-
-      results = jsonList.map((e) => Mask.fromJson(e)).toList();
+      final json = jsonDecode(utf8.decode(response.bodyBytes));
+      // print(json['stores']);
+      final Mask results = Mask.fromJson(json);
+      return results;
     } else {
       throw Exception('실패');
     }
-    return results;
   }
 }
+
+// void main() async {
+//   final masks = await MaskApi().getMasks();
+//   // print(masks);
+// }
