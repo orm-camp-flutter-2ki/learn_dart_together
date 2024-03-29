@@ -2,7 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
-num addMaxAndSecondMax(List list) {
+num addMaxAndSecondMax(List<num> list) {
   num result;
 
   switch (list.length) {

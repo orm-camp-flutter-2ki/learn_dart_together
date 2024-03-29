@@ -20,7 +20,7 @@ import 'package:collection/collection.dart';
 import 'package:dart_cli_practice/240327/model/store.dart';
 
 class Mask {
-  final int count;
+  final num count;
   final List<Store> stores;
 
   const Mask({
@@ -54,17 +54,17 @@ class Mask {
     );
   }
 
-  Map<String, dynamic> toJson() {
-    return {
-      'count': count,
-      'stores': stores,
-    };
-  }
+// Map<String, dynamic> toJson() {
+//   return {
+//     'count': count,
+//     'stores': stores,
+//   };
+// }
 
-  factory Mask.fromJson(Map<String, dynamic> json) {
-    return Mask(
-      count: json['count'] as int,
-      stores: (json['stores'] as List).map((e) => Store.fromJson(e)).toList(),
-    );
-  }
+// factory Mask.fromJson(Map<String, dynamic> json) {
+//   return Mask(
+//     count: json['count'] as int,
+//     stores: (json['stores'] as List).map((e) => Store.fromJson(e)).toList(),
+//   );
+// }
 }

@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:dart_cli_practice/240327/api/mask_api.dart';
 import 'package:dart_cli_practice/240327/api/mock_mask_api.dart';
-import 'package:dart_cli_practice/240327/model/mask.dart';
+import 'package:dart_cli_practice/240327/dto/mask_dto.dart';
+import 'package:dart_cli_practice/240327/mapper/mask_mapper.dart';
 import 'package:dart_cli_practice/240327/repository/mask_repository.dart';
 import 'package:dart_cli_practice/240327/repository/mask_repository_impl.dart';
 import 'package:http/http.dart' as http;
@@ -144,7 +145,7 @@ void main() {
 
     final MaskRepository maskRepository = MaskRepositoryImpl(api: api);
 
-    final expectedMask = Mask.fromJson(data);
+    final expectedMask = MaskDto.fromJson(data).toMask();
 
     test('findMaskInfo() 메소드로 Mask 객체를 가져온다', () async {
       final actualMask = await maskRepository.findMaskInfo();
