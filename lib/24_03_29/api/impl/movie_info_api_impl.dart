@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:learn_dart_together/24_03_25/http_proxy.dart';
 import 'package:learn_dart_together/24_03_29/api/interface/movie_info_api.dart';
+import 'package:learn_dart_together/24_03_29/dto/movie_detail_dto.dart';
 import 'package:learn_dart_together/24_03_29/dto/movie_info_dto.dart';
 import 'package:learn_dart_together/24_03_29/dto/movie_info_response_dto.dart';
 
@@ -21,5 +22,13 @@ class MovieInfoApiImpl implements MovieInfoApi {
                 jsonDecode(response.body) as Map<String, dynamic>)
             .results ??
         [];
+  }
+
+  @override
+  Future<MovieDetailDto> getMovieDetail(int movieId) async {
+    final response = await _http.get(
+        Uri.parse('$_uri/3/movie/$movieId?api_key=$_apiKey&language=ko-KR'));
+    return MovieDetailDto.fromJson(
+        jsonDecode(response.body) as Map<String, dynamic>);
   }
 }
