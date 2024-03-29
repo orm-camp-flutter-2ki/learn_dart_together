@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/240329/model/movie_info.dart';
+import 'package:learn_dart_together/240329/model/movie/movie.dart';
 
 abstract interface class MovieRepository {
-  Future<List<MovieInfo>> getMovieInfoList();
+  Future<Movie> getMovieDetail();
 }
