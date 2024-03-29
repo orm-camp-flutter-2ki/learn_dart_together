@@ -1,6 +1,6 @@
 abstract class Character {
   String name;
-  in hp;
+  int hp;
 
   Character(this.name, this.hp);
 
