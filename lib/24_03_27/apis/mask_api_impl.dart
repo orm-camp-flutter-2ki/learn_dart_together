@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:learn_dart_together/24_03_25/http_proxy.dart';
 import 'package:learn_dart_together/24_03_27/apis/mask_api.dart';
+import 'package:learn_dart_together/24_03_27/dto/mask_dto.dart';
+import 'package:learn_dart_together/24_03_27/mapper/mask_mapper.dart';
 import 'package:learn_dart_together/24_03_27/model/mask.dart';
 
 class MaskApiImpl implements MaskApi {
@@ -17,7 +19,8 @@ class MaskApiImpl implements MaskApi {
       throw Exception('Failed to get mask ::message:: ${response.body}');
     }
 
-    return Mask.fromJson(
-        jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>);
+    return MaskDto.fromJson(
+            jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>)
+        .toMask();
   }
 }
