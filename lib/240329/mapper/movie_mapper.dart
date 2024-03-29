@@ -9,7 +9,8 @@ extension MovieDtoToMovie on Results {
         originalTitle: originalTitle ?? '',
         overview: overview ?? '',
         voteAverage: voteAverage ?? 0.0,
-        releaseDate: DateTime.tryParse(releaseDate??'') ?? DateTime(0, 0, 0, 0, 0, 0));
+        releaseDate:
+            DateTime.tryParse(releaseDate ?? '') ?? DateTime(0, 0, 0, 0, 0, 0));
   }
 }
 
@@ -20,7 +21,6 @@ extension MovieDtoToMovie on Results {
   final String title;
   final num voteAverage;
   final DateTime releaseDate;*/
-
 
 /*bool? adult;
 String? backdropPath;
