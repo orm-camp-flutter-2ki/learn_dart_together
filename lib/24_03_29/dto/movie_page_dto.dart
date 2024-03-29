@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/24_03_29/model/date_dto.dart';
-import 'package:learn_dart_together/24_03_29/model/movie_dto.dart';
+import 'package:learn_dart_together/24_03_29/dto/date_dto.dart';
+import 'package:learn_dart_together/24_03_29/dto/movie_dto.dart';
 
 class MovieDtoPage {
   DateDto? dates;
