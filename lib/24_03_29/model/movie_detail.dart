@@ -5,7 +5,7 @@ import 'package:learn_dart_together/24_03_29/model/production_company.dart';
 import 'package:learn_dart_together/24_03_29/model/production_country.dart';
 import 'package:learn_dart_together/24_03_29/model/spoken_language.dart';
 
-class Movie {
+class MovieDetail {
   final bool adult;
   final String backdropPath;
   final BelongsToCollection belongsToCollection;
@@ -32,7 +32,7 @@ class Movie {
   final num voteAverage;
   final num voteCount;
 
-  Movie({
+  MovieDetail({
     required this.adult,
     required this.backdropPath,
     required this.belongsToCollection,
@@ -62,13 +62,13 @@ class Movie {
 
   @override
   String toString() {
-    return 'Movie{adult: $adult, backdropPath: $backdropPath, belongsToCollection: $belongsToCollection, budget: $budget, genres: $genres, homepage: $homepage, id: $id, imdbId: $imdbId, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, productionCompanies: $productionCompanies, productionCountries: $productionCountries, releaseDate: $releaseDate, revenue: $revenue, runtime: $runtime, spokenLanguages: $spokenLanguages, status: $status, tagline: $tagline, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount}';
+    return 'MovieDetail{adult: $adult, backdropPath: $backdropPath, belongsToCollection: $belongsToCollection, budget: $budget, genres: $genres, homepage: $homepage, id: $id, imdbId: $imdbId, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, productionCompanies: $productionCompanies, productionCountries: $productionCountries, releaseDate: $releaseDate, revenue: $revenue, runtime: $runtime, spokenLanguages: $spokenLanguages, status: $status, tagline: $tagline, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount}';
   }
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is Movie &&
+      other is MovieDetail &&
           runtimeType == other.runtimeType &&
           adult == other.adult &&
           backdropPath == other.backdropPath &&

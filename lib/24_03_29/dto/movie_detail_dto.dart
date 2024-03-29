@@ -4,7 +4,7 @@ import 'package:learn_dart_together/24_03_29/dto/production_company_dto.dart';
 import 'package:learn_dart_together/24_03_29/dto/production_country_dto.dart';
 import 'package:learn_dart_together/24_03_29/dto/spoken_language_dto.dart';
 
-class MovieDto {
+class MovieDetailDto {
   final bool? adult;
   final String? backdropPath;
   final BelongsToCollectionDto? belongsToCollection;
@@ -31,7 +31,7 @@ class MovieDto {
   final num? voteAverage;
   final num? voteCount;
 
-  MovieDto({
+  MovieDetailDto({
     this.adult,
     this.backdropPath,
     this.belongsToCollection,
@@ -59,8 +59,8 @@ class MovieDto {
     this.voteCount,
   });
 
-  factory MovieDto.fromJson(Map<String, dynamic> json) {
-    return MovieDto(
+  factory MovieDetailDto.fromJson(Map<String, dynamic> json) {
+    return MovieDetailDto(
         adult: json['adult'],
         backdropPath: json['backdrop_path'],
         belongsToCollection: BelongsToCollectionDto.fromJson(json['belongs_to_collection']),

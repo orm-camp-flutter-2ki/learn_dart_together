@@ -1,15 +1,15 @@
-import 'package:learn_dart_together/24_03_29/dto/movie_dto.dart';
+import 'package:learn_dart_together/24_03_29/dto/movie_detail_dto.dart';
 import 'package:learn_dart_together/24_03_29/mapper/belongs_to_collection_mapper.dart';
 import 'package:learn_dart_together/24_03_29/mapper/genre_mapper.dart';
 import 'package:learn_dart_together/24_03_29/mapper/production_company_mapper.dart';
 import 'package:learn_dart_together/24_03_29/mapper/production_country_mapper.dart';
 import 'package:learn_dart_together/24_03_29/mapper/spoken_language_mapper.dart';
 import 'package:learn_dart_together/24_03_29/model/belongs_to_collection.dart';
-import 'package:learn_dart_together/24_03_29/model/movie.dart';
+import 'package:learn_dart_together/24_03_29/model/movie_detail.dart';
 
-extension MovieDtoToMovie on MovieDto {
-  Movie toMovie() {
-    return Movie(
+extension MovieDetailDtoToMovieDetail on MovieDetailDto {
+  MovieDetail toMovieDetail() {
+    return MovieDetail(
       adult: adult ?? false,
       backdropPath: backdropPath ?? 'unknown',
       belongsToCollection: belongsToCollection?.toBelongsToCollection() ??
