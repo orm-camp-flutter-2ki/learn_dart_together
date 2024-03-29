@@ -2,7 +2,7 @@ import 'package:learn_dart_together/24_03_29/dto/belongs_to_collection_dto.dart'
 import 'package:learn_dart_together/24_03_29/dto/genre_dto.dart';
 import 'package:learn_dart_together/24_03_29/dto/production_company_dto.dart';
 import 'package:learn_dart_together/24_03_29/dto/production_country_dto.dart';
-import 'package:learn_dart_together/24_03_29/dto/spoken_language.dart';
+import 'package:learn_dart_together/24_03_29/dto/spoken_language_dto.dart';
 
 class MovieDto {
   final bool? adult;
