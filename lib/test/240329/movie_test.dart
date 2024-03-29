@@ -11,7 +11,7 @@ void main() {
   test('movie id search test', () async {
     final repository = MovieRepositoryImpl();
     final result = await repository.getMovie(1011985);
-    // print(result);
+    print(result);
     expect(result.id, 1011985);
   });
 }
