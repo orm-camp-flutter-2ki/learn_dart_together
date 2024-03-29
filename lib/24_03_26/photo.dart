@@ -34,8 +34,13 @@ class Photo {
         url = json['url'],
         thumbnailUrl = json['thumbnailUrl'];
 
-  Map<String, dynamic> toJson() =>
-      {'albumId': albumId, 'id': id, 'title': title, 'url': url, 'thumbnailUrl': thumbnailUrl};
+  Map<String, dynamic> toJson() => {
+        'albumId': albumId,
+        'id': id,
+        'title': title,
+        'url': url,
+        'thumbnailUrl': thumbnailUrl
+      };
 
   @override
   bool operator ==(Object other) =>
@@ -49,7 +54,12 @@ class Photo {
           thumbnailUrl == other.thumbnailUrl;
 
   @override
-  int get hashCode => albumId.hashCode ^ id.hashCode ^ title.hashCode ^ url.hashCode ^ thumbnailUrl.hashCode;
+  int get hashCode =>
+      albumId.hashCode ^
+      id.hashCode ^
+      title.hashCode ^
+      url.hashCode ^
+      thumbnailUrl.hashCode;
 
   @override
   String toString() {
