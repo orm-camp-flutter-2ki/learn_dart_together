@@ -11,7 +11,7 @@ MovieInfo _$MovieInfoFromJson(Map<String, dynamic> json) => MovieInfo(
       backdropPath: json['backdrop_path'] as String,
       genreIds:
           (json['genre_ids'] as List<dynamic>).map((e) => e as num).toList(),
-      id: json['id'] as num,
+      id: json['id'] as int,
       originalLanguage: json['original_language'] as String,
       originalTitle: json['original_title'] as String,
       overview: json['overview'] as String,

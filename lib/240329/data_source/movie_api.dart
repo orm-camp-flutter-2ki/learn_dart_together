@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:learn_dart_together/240329/model/movie.dart';
 import 'package:learn_dart_together/240329/model/movie_info.dart';
 
 class MovieApi {
@@ -21,5 +22,16 @@ class MovieApi {
     final jsonList = json['results'] as List;
 
     return jsonList.map((e) => MovieInfo.fromJson(e)).toList();
+  }
+
+  Future<Movie> getMovie(int id) async {
+    final response = await _client.get(Uri.parse('$_baseUrl/$id?api_key=$_apiKey&language=ko-KR&page=1'))
+        .onError((error, stackTrace) => throw Exception('Error: $error'));
+
+    final json = response.statusCode == 200
+        ? jsonDecode(utf8.decode(response.bodyBytes))
+        : throw Exception('Error: statusCode:${response.statusCode}');
+
+    return Movie.fromJson(json);
   }
 }

@@ -11,14 +11,12 @@ class MovieInfo {
   String backdropPath;
   @JsonKey(name: 'genre_ids')
   List<num> genreIds;
-
-  num id;
+  int id;
 
   @JsonKey(name: 'original_language')
   String originalLanguage;
   @JsonKey(name: 'original_title')
   String originalTitle;
-
   String overview;
   num popularity;
 
@@ -26,7 +24,6 @@ class MovieInfo {
   String posterPath;
   @JsonKey(name: 'release_date')
   String releaseDate;
-
   String title;
   bool video;
 
@@ -103,7 +100,7 @@ class MovieInfo {
     bool? adult,
     String? backdropPath,
     List<num>? genreIds,
-    num? id,
+    int? id,
     String? originalLanguage,
     String? originalTitle,
     String? overview,
