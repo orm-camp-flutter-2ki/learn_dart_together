@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learn_dart_together/240329/model/movie_info.dart';
+import 'package:learn_dart_together/240329/model/movie_info/movie_info.dart';
 
 class MovieApi {
   final http.Client _client;
@@ -15,12 +15,7 @@ class MovieApi {
     // List 중요함*********************
     final List results = jsonList['results'];
     // 자동완성을 안하고, 복붙하면 문제될 수
-    final movies = results.map((e) => MovieInfo.fromJson(e as Map<String, dynamic>)).toList();
+    final movies = results.map((e) => MovieInfo.fromJson(e)).toList();
     return movies;
   }
-}
-
-void main(List<String> args) async {
-  final jsonList = await MovieApi().getMovieInfoList();
-  print(jsonList);
 }
