@@ -2,8 +2,8 @@ class Store {
   final String addr;
   final String code;
   final String created_at;
-  final double lat;
-  final double lng;
+  final num lat;
+  final num lng;
   final String name;
   final String remain_stat;
   final String stock_at;
@@ -21,34 +21,6 @@ class Store {
     required this.stock_at,
     required this.type,
   });
-
-  Map<String, dynamic> toJson() {
-    return {
-      'addr': addr,
-      'code': code,
-      'created_at': created_at,
-      'lat': lat,
-      'lng': lng,
-      'name': name,
-      'remain_stat': remain_stat,
-      'stock_at': stock_at,
-      'type': type,
-    };
-  }
-
-  factory Store.fromJson(Map<String, dynamic> json) {
-    return Store(
-      addr: json['addr'],
-      code: json['code'],
-      created_at: json['created_at'],
-      lat: json['lat'],
-      lng: json['lng'],
-      name: json['name'],
-      remain_stat: json['remain_stat'],
-      stock_at: json['stock_at'],
-      type: json['type'],
-    );
-  }
 
   @override
   bool operator ==(Object other) =>

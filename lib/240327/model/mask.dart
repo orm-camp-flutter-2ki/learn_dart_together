@@ -1,30 +1,14 @@
-import 'store.dart';
+import 'package:learn_dart_together/240328/dto/store_dto.dart';
 
 class Mask {
   final num count;
-  final List<Store> stores;
+  final List<StoreDto> stores;
 
 //<editor-fold desc="Data Methods">
   const Mask({
     required this.count,
     required this.stores,
   });
-
-  Map<String, dynamic> toJson() {
-    return {
-      'count': count,
-      'stores': stores,
-    };
-  }
-
-  factory Mask.fromJson(Map<String, dynamic> json) {
-    return Mask(
-      count: json['count'],
-      stores: (json['stores'] as List<dynamic>)
-          .map((e) => Store.fromJson(e))
-          .toList(),
-    );
-  }
 
   @override
   bool operator ==(Object other) =>
@@ -44,7 +28,7 @@ class Mask {
 
   Mask copyWith({
     num? count,
-    List<Store>? stores,
+    List<StoreDto>? stores,
   }) {
     return Mask(
       count: count ?? this.count,
