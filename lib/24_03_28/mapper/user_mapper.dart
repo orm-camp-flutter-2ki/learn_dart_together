@@ -11,8 +11,7 @@ extension UserMapper on UserDto {
         name: name ?? 'null',
         email: email ?? 'null',
         latitude: AddressDto().transferDtoAddress().geo.lat,
-        longitude: AddressDto().transferDtoAddress().geo.lng
-    );
+        longitude: AddressDto().transferDtoAddress().geo.lng);
   }
 }
 
@@ -23,8 +22,7 @@ extension AddressMapper on AddressDto {
         suite: suite ?? 'null',
         city: city ?? 'null',
         zipcode: zipcode ?? 'null',
-        geo: GeographyDto().transferDtoGeography()
-    );
+        geo: GeographyDto().transferDtoGeography());
   }
 }
 
@@ -39,7 +37,6 @@ extension CompanyMapper on CompanyDto {
     return Company(
         name: name ?? 'null',
         catchPhrase: catchPhrase ?? 'null',
-        bs: bs ?? 'null'
-    );
+        bs: bs ?? 'null');
   }
 }
