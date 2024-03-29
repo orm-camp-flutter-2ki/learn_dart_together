@@ -6,9 +6,11 @@ import 'package:learn_dart_together/24_03_29/repository/image_download/image_dow
 
 class ImageDownloadRepositoryImpl implements ImageDownloadRepository {
   @override
-  Future<void> saveFile(Uint8List bytes, String fileName, String savePath) async {
+  Future<File> saveFile(Uint8List bytes, String fileName, String savePath) async {
       final filePath = '$savePath/$fileName';
       final File file = File(filePath);
       await file.writeAsBytes(bytes);
+
+      return file;
   }
 }
