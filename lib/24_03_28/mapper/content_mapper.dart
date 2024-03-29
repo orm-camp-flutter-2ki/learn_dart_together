@@ -9,8 +9,7 @@ extension ContentMapper on ContentDto {
         type: parseMediaType(type),
         title: title ?? 'null',
         content: content ?? 'null',
-        createdAt: parseDateTime(createdAt)
-    );
+        createdAt: parseDateTime(createdAt));
   }
 
   MediaType parseMediaType(String? type) {
@@ -21,7 +20,7 @@ extension ContentMapper on ContentDto {
         return MediaType.image;
       case 'video':
         return MediaType.video;
-      default :
+      default:
         return MediaType.unknown;
     }
   }

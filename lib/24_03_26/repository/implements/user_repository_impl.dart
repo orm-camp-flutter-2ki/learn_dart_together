@@ -9,9 +9,9 @@ class UserRepositoryImpl implements UserRepository {
   final UserApi _api;
 
   UserRepositoryImpl(this._api);
-  
+
   @override
-  Future<List<User>> getUsersList() async {
+  Future<List<User>> getUserList() async {
     final userDto = await _api.getUserDtoList();
     final userList = userDto.map((e) => e.transferDtoUser()).toList();
 

@@ -19,7 +19,8 @@ void main() {
         return http.Response('''{"message":"잘못된 요청"}''', 400);
       });
 
-      ContentRepository repo = ContentRepositoryImpl(ContentApi(client: mockClient));
+      ContentRepository repo =
+          ContentRepositoryImpl(ContentApi(client: mockClient));
       List<Content> contentList = await repo.getContentList();
 
       expect(contentList[0].createdAt.runtimeType, DateTime);
@@ -35,10 +36,15 @@ void main() {
         return http.Response('''{"message":"잘못된 요청"}''', 400);
       });
 
-      ContentRepository repo = ContentRepositoryImpl(ContentApi(client: mockClient));
+      ContentRepository repo =
+          ContentRepositoryImpl(ContentApi(client: mockClient));
       List<Content> contentList = await repo.getContentList();
 
-      List<MediaType> expectValue = [MediaType.article, MediaType.unknown, MediaType.unknown];
+      List<MediaType> expectValue = [
+        MediaType.article,
+        MediaType.unknown,
+        MediaType.unknown
+      ];
       List<MediaType> givenValue = contentList.map((e) => e.type).toList();
 
       expect(expectValue, givenValue);

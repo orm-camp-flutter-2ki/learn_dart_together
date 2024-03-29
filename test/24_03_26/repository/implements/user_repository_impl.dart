@@ -12,7 +12,7 @@ void main() {
 
     test('getUsersList() 메서드 테스트', () async {
       UserRepository repo = UserRepositoryImpl(UserApi());
-      final List<User> userList =  await repo.getUsersList();
+      final List<User> userList =  await repo.getUserList();
 
       expect(userList.length, 10);
     });
@@ -38,7 +38,7 @@ void main() {
       });
 
       UserRepository repo = UserRepositoryImpl(UserApi(client: mockClient));
-      final List<User> userList =  await repo.getUsersList();
+      final List<User> userList =  await repo.getUserList();
 
       final String expectValue = 'Leanne Graham';
 
