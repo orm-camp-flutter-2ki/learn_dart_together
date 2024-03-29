@@ -17,7 +17,6 @@ Future<Uint8List> downloadImage(String url) async {
 
 Future<File> saveFile(Uint8List bytes, String fileName) async {
   final String filePath = 'lib/test/240329/$fileName';
-
   final File file = File(filePath);
   await file.create();
   final save = await file.writeAsBytes(bytes);
