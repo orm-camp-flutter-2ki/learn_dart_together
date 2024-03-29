@@ -1,0 +1,1 @@
+enum EnumType { article, image, video, unknown }
