@@ -1,25 +1,41 @@
 import 'package:collection/collection.dart';
-import 'package:learn_dart_together/24_03_29/model/date.dart';
-import 'package:learn_dart_together/24_03_29/model/movie.dart';
 
 class MovieInfo {
-  final Date dates;
-  final num page;
-  final List<Movie> results;
-  final num totalPages;
-  final num totalResults;
+  final bool adult;
+  final String backdropPath;
+  final List<num> genreIds;
+  final num id;
+  final String originalLanguage;
+  final String originalTitle;
+  final String overview;
+  final num popularity;
+  final String posterPath;
+  final String releaseDate;
+  final String title;
+  final bool video;
+  final num voteAverage;
+  final num voteCount;
 
   MovieInfo({
-    required this.dates,
-    required this.page,
-    required this.results,
-    required this.totalPages,
-    required this.totalResults,
+    required this.adult,
+    required this.backdropPath,
+    required this.genreIds,
+    required this.id,
+    required this.originalLanguage,
+    required this.originalTitle,
+    required this.overview,
+    required this.popularity,
+    required this.posterPath,
+    required this.releaseDate,
+    required this.title,
+    required this.video,
+    required this.voteAverage,
+    required this.voteCount,
   });
 
   @override
   String toString() {
-    return 'MovieInfo{dates: $dates, page: $page, results: $results, totalPages: $totalPages, totalResults: $totalResults}';
+    return 'MovieInfo{adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount}';
   }
 
   @override
@@ -27,19 +43,37 @@ class MovieInfo {
       identical(this, other) ||
       other is MovieInfo &&
           runtimeType == other.runtimeType &&
-          dates == other.dates &&
-          page == other.page &&
-          results.equals(other.results) &&
-          totalPages == other.totalPages &&
-          totalResults == other.totalResults;
+          adult == other.adult &&
+          backdropPath == other.backdropPath &&
+          genreIds.equals(other.genreIds) &&
+          id == other.id &&
+          originalLanguage == other.originalLanguage &&
+          originalTitle == other.originalTitle &&
+          overview == other.overview &&
+          popularity == other.popularity &&
+          posterPath == other.posterPath &&
+          releaseDate == other.releaseDate &&
+          title == other.title &&
+          video == other.video &&
+          voteAverage == other.voteAverage &&
+          voteCount == other.voteCount;
 
   @override
   int get hashCode =>
-      dates.hashCode ^
-      page.hashCode ^
-      results
-          .map((e) => e.hashCode)
-          .reduce((value, element) => value ^ element) ^
-      totalPages.hashCode ^
-      totalResults.hashCode;
+      adult.hashCode ^
+      backdropPath.hashCode ^
+      genreIds
+          .reduce((value, element) => value.hashCode ^ element.hashCode)
+          .toInt() ^
+      id.hashCode ^
+      originalLanguage.hashCode ^
+      originalTitle.hashCode ^
+      overview.hashCode ^
+      popularity.hashCode ^
+      posterPath.hashCode ^
+      releaseDate.hashCode ^
+      title.hashCode ^
+      video.hashCode ^
+      voteAverage.hashCode ^
+      voteCount.hashCode;
 }
