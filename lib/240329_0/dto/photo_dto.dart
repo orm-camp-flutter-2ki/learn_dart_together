@@ -1,5 +1,5 @@
 class PhotoDto {
-  num? id;
+  dynamic id;
   String? type;
   String? title;
   String? content;
@@ -21,7 +21,7 @@ class PhotoDto {
 
   factory PhotoDto.fromJson(Map<String, dynamic> map) {
     return PhotoDto(
-      id: map['id'] as num,
+      id: map['id'],
       type: map['type'] as String,
       title: map['title'] as String,
       content: map['content'] as String,

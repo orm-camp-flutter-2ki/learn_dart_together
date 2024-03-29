@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:collection/collection.dart';
 import 'package:learn_dart_together/240327/mask/data_source/mask_api.dart';
-import 'package:learn_dart_together/240327/mask/model/mask.dart';
 import 'package:learn_dart_together/240327/mask/repository/mask_repository_impl.dart';
 import 'package:test/test.dart';
 
