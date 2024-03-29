@@ -1,14 +1,14 @@
 class ProductionCompany {
-  num? id;
-  String? logoPath;
-  String? name;
-  String? originCountry;
+  num id;
+  String logoPath;
+  String name;
+  String originCountry;
 
   ProductionCompany({
-    this.id,
-    this.logoPath,
-    this.name,
-    this.originCountry,
+    required this.id,
+    required this.logoPath,
+    required this.name,
+    required this.originCountry,
   });
 
   @override

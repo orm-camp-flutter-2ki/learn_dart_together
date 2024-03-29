@@ -1,14 +1,14 @@
 class BelongsToCollection {
-  num? id;
-  String? name;
-  String? posterPath;
-  String? backdropPath;
+  num id;
+  String name;
+  String posterPath;
+  String backdropPath;
 
   BelongsToCollection({
-    this.id,
-    this.name,
-    this.posterPath,
-    this.backdropPath,
+    required this.id,
+    required this.name,
+    required this.posterPath,
+    required this.backdropPath,
   });
 
   @override

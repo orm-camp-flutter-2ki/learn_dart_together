@@ -1,12 +1,12 @@
 class SpokenLanguage {
-  String? englishName;
-  String? iso6391;
-  String? name;
+  String englishName;
+  String iso6391;
+  String name;
 
   SpokenLanguage({
-    this.englishName,
-    this.iso6391,
-    this.name,
+    required this.englishName,
+    required this.iso6391,
+    required this.name,
   });
 
   @override

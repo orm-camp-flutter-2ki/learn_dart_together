@@ -1,10 +1,10 @@
 class ProductionCountry {
-  String? iso31661;
-  String? name;
+  String iso31661;
+  String name;
 
   ProductionCountry({
-    this.iso31661,
-    this.name,
+    required this.iso31661,
+    required this.name,
   });
 
   @override

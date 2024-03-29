@@ -1,10 +1,10 @@
 class Genre {
-  num? id;
-  String? name;
+  num id;
+  String name;
 
   Genre({
-    this.id,
-    this.name,
+    required this.id,
+    required this.name,
   });
 
   @override
