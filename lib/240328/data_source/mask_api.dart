@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:learn_dart_together/240328/dto/mask_dto.dart';
 
 class MaskApi {
-  final http.Client _client; // 이렇게 하는 이유는??
+  final http.Client _client;
   final baseUrl = 'http://104.198.248.76:3000';
   MaskApi({http.Client? client}) : _client = client ?? http.Client();
 
