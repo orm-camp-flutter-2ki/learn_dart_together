@@ -1,11 +1,11 @@
 import '../enum/enum_photo.dart';
 
 class Photo {
-  num id;
-  PhotoEnum type;
-  String url;
-  String caption;
-  DateTime createdAt;
+  final num id;
+  final PhotoEnum type;
+  final String url;
+  final String caption;
+  final DateTime createdAt;
 
 //<editor-fold desc="Data Methods">
   Photo({
