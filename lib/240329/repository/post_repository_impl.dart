@@ -11,37 +11,36 @@ class PostRepositoryImpl implements PostRepository {
 
   @override
   Future<int> addPost(PostDto postDto) {
-    // TODO: implement addPost
+    // POST
     throw UnimplementedError();
   }
 
   @override
   Future<bool> deletePost(int postId) {
-    // TODO: implement deletePost
+    // DELETE
     throw UnimplementedError();
   }
 
   @override
   Future<Post> getPost(int id) {
-    // TODO: implement getPost
+    // GET
     throw UnimplementedError();
   }
 
   @override
   Future<List<Post>> getPosts({int page = 1, int limit = 2}) {
-    // TODO: implement getPosts
+    // GET
     throw UnimplementedError();
   }
 
   @override
   Future<List<Post>> getPostsAll() {
-    // TODO: implement getPostsAll
+    // GET
     throw UnimplementedError();
   }
 
   @override
   Future<Post> updatePost(PostDto postDto) {
-    // TODO: implement updatePost
-    throw UnimplementedError();
-  } // 교체하기 쉬움
+    // PUT
+  }
 }
