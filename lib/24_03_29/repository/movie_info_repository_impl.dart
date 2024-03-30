@@ -13,13 +13,12 @@ class MovieInfoRepositoryImpl implements MovieInfoRepository {
   @override
   Future<List<MovieInfo>> getMovieInfoList() async {
     List<MovieInfoDto> movie = await api.getMovieInfo();
-    List<MovieInfo> movie2 =  movie.map((e) => e.toMovieInfo()).toList();
+    List<MovieInfo> movie2 = movie.map((e) => e.toMovieInfo()).toList();
     return movie2;
   }
+}
 
-  }
-  void main()async{
-
+void main() async {
   MovieInfoRepositoryImpl test = MovieInfoRepositoryImpl(MovieInfoApi());
   print(await test.getMovieInfoList());
-  }
+}

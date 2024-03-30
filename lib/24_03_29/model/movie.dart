@@ -17,7 +17,6 @@ class Movie {
 
   Map<String, dynamic> toJson() => _$MovieToJson(this);
 
-
   @override
   String toString() {
     return 'Movie{id: $id, title: $title, overview: $overview}';

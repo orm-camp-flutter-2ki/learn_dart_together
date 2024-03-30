@@ -22,4 +22,3 @@ class MovieInfoApi {
     // can't be returned from the method 'getMovieInfo' because it has a return type of 'Future<List<MovieInfo>>'.
   }
 }
-
