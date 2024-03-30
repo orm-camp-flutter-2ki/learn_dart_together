@@ -27,7 +27,7 @@ class MaskRepositoryImpl implements MaskRepository {
 
   bool _isContainNull(StoreDto storeDto) {
     final json = storeDto.toJson();
-    if (json.containsValue(null) || json.containsValue('null') || json.containsValue(0)) return false;
+    if (json.containsValue(null) || json.containsValue('') || json.containsValue(0)) return false;
     return true;
   }
 }
