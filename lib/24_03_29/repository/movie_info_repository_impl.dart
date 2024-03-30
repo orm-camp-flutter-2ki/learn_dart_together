@@ -18,8 +18,8 @@ class MovieInfoRepositoryImpl implements MovieInfoRepository {
   }
 
   }
-  void main(){
+  void main()async{
 
   MovieInfoRepositoryImpl test = MovieInfoRepositoryImpl(MovieInfoApi());
-  print(test.getMovieInfoList());
+  print(await test.getMovieInfoList());
   }
