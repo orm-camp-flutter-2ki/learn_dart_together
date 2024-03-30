@@ -1,11 +1,13 @@
+import 'package:learn_dart_together/240329/mapper/movie_mapper.dart';
+
 import '../data_source/movie_api.dart';
 import '../model/movie.dart';
 import 'movie_repository.dart';
 
 class MovieRepositoryImpl implements MovieRepository {
-  final MovieApi _api;
+  final MovieApi _api = MovieApi();
 
-  MovieRepositoryImpl(this._api);
+  //MovieRepositoryImpl(this._api);
 
   @override
   Future<List<Movie>> getMovieInfoList() async {
