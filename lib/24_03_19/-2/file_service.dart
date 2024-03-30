@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 class FileService {
   String readFile(String path) {
@@ -37,6 +38,14 @@ class FileService {
 
   Future<void> asyncWriteToFile(String path, String content) async {
     await File(path).writeAsString(content);
+  }
+
+  Future<File> asyncWriteToFileBytes(
+      Uint8List fileBytes, String filename, String path) async {
+    File file = File('$path/$filename');
+    await file.writeAsBytes(fileBytes);
+
+    return file;
   }
 
   bool isFileExist(String path) {
