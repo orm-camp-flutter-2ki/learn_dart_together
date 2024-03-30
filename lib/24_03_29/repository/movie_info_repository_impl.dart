@@ -6,13 +6,13 @@ import '../model/movie_info.dart';
 import 'movie_info_repository.dart';
 
 class MovieInfoRepositoryImpl implements MovieInfoRepository {
-  final MovieInfoApi api;
+  final MovieInfoApi _api;
 
-  MovieInfoRepositoryImpl(this.api);
+  MovieInfoRepositoryImpl(this._api);
 
   @override
   Future<List<MovieInfo>> getMovieInfoList() async {
-    List<MovieInfoDto> movie = await api.getMovieInfo();
+    List<MovieInfoDto> movie = await _api.getMovieInfo();
     List<MovieInfo> movie2 = movie.map((e) => e.toMovieInfo()).toList();
     return movie2;
   }
