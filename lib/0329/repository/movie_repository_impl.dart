@@ -25,6 +25,7 @@ class MovieRepositoryImpl implements MovieRepository {
     }
   }
 
+  @override
   Future<MovieDetail> getMovieDetail(int movieId) async {
     try {
       MovieDetailDto movieDetailDto = await _movieApi.getMovieDetailDto(1011985);
