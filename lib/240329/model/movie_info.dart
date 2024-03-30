@@ -5,32 +5,32 @@ part 'movie_info.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class MovieInfo {
-  bool adult;
+  final bool adult;
 
   @JsonKey(name: 'backdrop_path')
-  String backdropPath;
+  final String backdropPath;
   @JsonKey(name: 'genre_ids')
-  List<num> genreIds;
-  int id;
+  final List<num> genreIds;
+  final int id;
 
   @JsonKey(name: 'original_language')
-  String originalLanguage;
+  final String originalLanguage;
   @JsonKey(name: 'original_title')
-  String originalTitle;
-  String overview;
-  num popularity;
+  final String originalTitle;
+  final String overview;
+  final num popularity;
 
   @JsonKey(name: 'poster_path')
-  String posterPath;
+  final String posterPath;
   @JsonKey(name: 'release_date')
-  DateTime releaseDate;
-  String title;
-  bool video;
+  final DateTime releaseDate;
+  final String title;
+  final bool video;
 
   @JsonKey(name: 'vote_average')
-  num voteAverage;
+  final num voteAverage;
   @JsonKey(name: 'vote_count')
-  num voteCount;
+  final num voteCount;
 
   factory MovieInfo.fromJson(Map<String, dynamic> json) => _$MovieInfoFromJson(json);
 

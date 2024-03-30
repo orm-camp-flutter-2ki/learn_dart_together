@@ -5,48 +5,48 @@ part 'movie.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Movie {
-  bool adult;
+  final bool adult;
 
   @JsonKey(name: 'backdrop_path')
-  String backdropPath;
+  final String backdropPath;
   @JsonKey(name: 'belongs_to_collection')
-  BelongsToCollection belongsToCollection;
-  num budget;
-  List<Genre> genres;
-  String homepage;
-  int id;
+  final BelongsToCollection belongsToCollection;
+  final num budget;
+  final List<Genre> genres;
+  final String homepage;
+  final int id;
 
   @JsonKey(name: 'imdb_id')
-  String imdbId;
+  final String imdbId;
   @JsonKey(name: 'original_language')
-  String originalLanguage;
+  final String originalLanguage;
   @JsonKey(name: 'original_title')
-  String originalTitle;
-  String overview;
-  num popularity;
+  final String originalTitle;
+  final String overview;
+  final num popularity;
 
   @JsonKey(name: 'poster_path')
-  String posterPath;
+  final String posterPath;
   @JsonKey(name: 'production_companies')
-  List<ProductionCompany> productionCompanies;
+  final List<ProductionCompany> productionCompanies;
   @JsonKey(name: 'production_countries')
-  List<ProductionCountry> productionCountries;
+  final List<ProductionCountry> productionCountries;
   @JsonKey(name: 'release_date')
-  String releaseDate;
-  num revenue;
-  num runtime;
+  final String releaseDate;
+  final num revenue;
+  final num runtime;
 
   @JsonKey(name: 'spoken_languages')
-  List<SpokenLanguage> spokenLanguages;
-  String status;
-  String tagline;
-  String title;
-  bool video;
+  final List<SpokenLanguage> spokenLanguages;
+  final String status;
+  final String tagline;
+  final String title;
+  final bool video;
 
   @JsonKey(name: 'vote_average')
-  num voteAverage;
+  final num voteAverage;
   @JsonKey(name: 'vote_count')
-  num voteCount;
+  final num voteCount;
 
   Movie({
     required this.adult,
@@ -204,10 +204,10 @@ class Movie {
 @JsonSerializable(explicitToJson: true)
 class SpokenLanguage {
   @JsonKey(name: 'english_name')
-  String englishName;
+  final String englishName;
   @JsonKey(name: 'iso_639_1')
-  String iso6391;
-  String name;
+  final String iso6391;
+  final String name;
 
   SpokenLanguage({
     required this.englishName,
@@ -252,8 +252,8 @@ class SpokenLanguage {
 @JsonSerializable(explicitToJson: true)
 class ProductionCountry {
   @JsonKey(name: 'iso_3166_1')
-  String iso31661;
-  String name;
+  final String iso31661;
+  final String name;
 
   ProductionCountry({
     required this.iso31661,
@@ -293,14 +293,14 @@ class ProductionCountry {
 
 @JsonSerializable(explicitToJson: true)
 class ProductionCompany {
-  int id;
+  final int id;
 
   @JsonKey(name: 'logo_path')
-  String logoPath;
-  String name;
+  final String logoPath;
+  final String name;
 
   @JsonKey(name: 'origin_country')
-  String originCountry;
+  final String originCountry;
 
   ProductionCompany({
     required this.id,
@@ -349,8 +349,8 @@ class ProductionCompany {
 
 @JsonSerializable(explicitToJson: true)
 class Genre {
-  int id;
-  String name;
+  final int id;
+  final String name;
 
   Genre({
     required this.id,
@@ -390,13 +390,13 @@ class Genre {
 
 @JsonSerializable(explicitToJson: true)
 class BelongsToCollection {
-  int id;
-  String name;
+  final int id;
+  final String name;
 
   @JsonKey(name: 'poster_path')
-  String posterPath;
+  final String posterPath;
   @JsonKey(name: 'backdrop_path')
-  String backdropPath;
+  final String backdropPath;
 
   BelongsToCollection({
     required this.id,
