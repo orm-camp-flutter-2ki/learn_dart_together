@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
-import 'package:learn_dart_together/240328/dto/user_dto.dart';
+import 'package:learn_dart_together/240328/model/user.dart';
 import 'package:learn_dart_together/240328/repository/user_repository.dart';
 import 'package:test/test.dart';
 
@@ -224,10 +224,15 @@ void main() {
     //When
     UserRepository userRepository = UserRepository(mockClient);
     final userList = await userRepository.getUser();
-    final result = mockMap.map((e) => UserDto.fromJson(e)).toList();
+    final result = User(
+      name: 'Leanne Graham',
+      email: 'Sincere@april.biz',
+      latitude: -37.3159,
+      longitude: 81.1496,
+    );
 
     //Then
     expect(userList.length, 10);
-    expect(userList.first.name, result.first.name);
+    expect(userList.first.longitude, result.longitude);
   });
 }
