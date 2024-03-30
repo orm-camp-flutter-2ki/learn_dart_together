@@ -18,8 +18,13 @@ class UpcomingMoviesRepoImpl implements UpcomingMoviesRepository {
 
   @override
   Future<List<MovieInfo>> getMovieInfoList() async {
+    // upcoming movie dto
     final upcomingMoviesDto = await _api.getUpcomingMovies();
+
+    // upcoming movie dto mapping
     final upcomingMovies = upcomingMoviesDto.toUpcomingMovies();
+
+    // upcoming movie results -> list movieInfo dto
     final movieInfoList = upcomingMovies.results;
 
     return movieInfoList;
