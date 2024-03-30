@@ -21,7 +21,8 @@ class UpcomingMoviesRepoImpl implements UpcomingMoviesRepository {
     // upcoming movie dto
     final upcomingMoviesDto = await _api.getUpcomingMovies();
 
-    // upcoming movie dto mapping
+    // upcoming movie dto mapping == toupcomingmovies
+    // movieinfo dto mapping == tomovieinfo in toupcomingmovies
     final upcomingMovies = upcomingMoviesDto.toUpcomingMovies();
 
     // upcoming movie results -> list movieInfo dto
