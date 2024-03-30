@@ -6,7 +6,7 @@ import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
 void main() {
-  test('movie detail이 exptect와 일치하는지', () async {
+  test('movie detail이 expected와 일치하는지', () async {
     final movieDetail = await MovieDetailRepositoryImpl(MovieDetailApi())
         .getMovieDetail(1011985);
 
