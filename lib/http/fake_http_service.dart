@@ -21,6 +21,10 @@ class FakeHttpService implements CustomHttpClient {
     switch (url) {
       case maskUrl:
         return 'test/resource/mask.json';
+      case movieListUrl:
+        return 'lib/24_03_29/movie/data_source/movie_info.json';
+      case fakeMovieInfoUrl:
+        return 'lib/24_03_29/movie/data_source/movie.json';
 
       default:
         throw Exception();

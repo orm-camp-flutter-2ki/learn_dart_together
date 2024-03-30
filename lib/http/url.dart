@@ -6,3 +6,8 @@ const photosUrl = '$_baseUrl/photos';
 const postsUrl = '$_baseUrl/posts';
 const usersUrl = '$_baseUrl/users';
 const maskUrl = 'http://104.198.248.76:3000/mask';
+const movieBaseUrl = 'https://api.themoviedb.org/3/movie';
+const movieListUrl = '$movieBaseUrl/upcoming?$movieQueryParam';
+const movieQueryParam = '$movieApiKey&language=ko-KR';
+const movieApiKey = 'api_key=a64533e7ece6c72731da47c9c8bc691f';
+const fakeMovieInfoUrl = '$movieBaseUrl/957304?$movieQueryParam&page=1';

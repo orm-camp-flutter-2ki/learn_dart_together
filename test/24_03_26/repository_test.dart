@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:collection/collection.dart';
 import 'package:learn_dart_together/24_03_25/todo.dart';
@@ -137,7 +136,7 @@ void main() {
           true);
     });
 
-    test('photo test', () async {
+    test('media_data test', () async {
       final albumId = 1;
       final List<Photo> photos = await PhotoRepositoryImpl().getPhotos(albumId);
 
