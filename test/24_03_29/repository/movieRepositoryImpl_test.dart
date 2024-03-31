@@ -25,9 +25,7 @@ void main() {
           MovieRepositoryImpl(MovieApi(client: mockClient));
       final contentList = await repoTest.getMovieInfoList();
       final realContentList = await realRepo.getMovieInfoList();
-      print(contentList[0].overview);
-      print(realContentList[0].overview);
-      ;
+
       expect(contentList[0].title, "쿵푸팬더 4");
       expect(contentList.equals(realContentList), true);
     });

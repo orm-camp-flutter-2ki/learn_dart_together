@@ -1,19 +1,26 @@
-import 'package:learn_dart_together/%EC%A0%95%EB%8B%A4%ED%9D%AC/24_03_29/model/movie.dart';
-import '../dto/MovieDto.dart';
+import 'package:learn_dart_together/%EC%A0%95%EB%8B%A4%ED%9D%AC/24_03_29/model/movieDetail.dart';
 
-extension ToMovie on MovieDto {
-  Movie toMovie() {
-    return Movie(
+import '../dto/MovieDetailDto.dart';
+
+extension ToMovieDetail on MovieDetailDto {
+  MovieDetail toMovieDetail() {
+    return MovieDetail(
       adult: adult ?? false,
       backdropPath: backdropPath ?? '',
-      genreIds: genreIds ?? [0],
+      budget: budget ?? 0,
+      homepage: homepage ?? '',
       id: id ?? 0,
+      imdbId: imdbId ?? '',
       originalLanguage: originalLanguage ?? '',
       originalTitle: originalTitle ?? '',
       overview: overview ?? '',
       popularity: popularity ?? 0,
       posterPath: posterPath ?? '',
       releaseDate: releaseDate ?? '',
+      revenue: revenue ?? 0,
+      runtime: runtime ?? 0,
+      status: status ?? '',
+      tagline: tagline ?? '',
       title: title ?? '',
       video: video ?? false,
       voteAverage: voteAverage ?? 0,
@@ -21,4 +28,3 @@ extension ToMovie on MovieDto {
     );
   }
 }
-

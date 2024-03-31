@@ -32,6 +32,7 @@ class Movie {
           runtimeType == other.runtimeType &&
           adult == other.adult &&
           backdropPath == other.backdropPath &&
+          // 아래 부분 수정됨
           genreIds.equals(other.genreIds) &&
           id == other.id &&
           originalLanguage == other.originalLanguage &&
