@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:learn_dart_together/240329/dto/movie_detail_dto.dart';
 import 'package:learn_dart_together/240329/dto/movie_dto.dart';
 
 // Movie데이터 중 result 항목만 가져오는 방식
@@ -23,5 +24,16 @@ class MovieApi {
     final movieList = resultJson.map((e) => MovieDto.fromJson(e)).toList();
 
     return movieList;
+  }
+
+  Future<MovieDetailDto> getMoviesDetailApi(int id) async {
+    final http.Response response2 = await http.get(Uri.parse(
+        '$_baseUrl/3/movie/$id?api_key=a64533e7ece6c72731da47c9c8bc691f&language=ko-KR&page=1'));
+    // final List<dynamic> jsonListType = jsonDecode(response2.body);
+    final Map<String, dynamic> jsonListType = jsonDecode(response2.body);
+
+    final movieDetailMap = MovieDetailDto.fromJson(jsonListType);
+
+    return movieDetailMap;
   }
 }
