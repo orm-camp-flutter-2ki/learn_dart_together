@@ -10,11 +10,11 @@ class MaskRepositoryImpl implements MaskRepository {
   @override
   Future<Mask> getMask() async {
     final masks = await _api.getMasks();
-    // print(masks);
+    print(masks);
     return masks;
   }
 }
 
-// void main() {
-//   MaskRepositoryImpl(MaskApi()).getMask();
-// }
+void main() {
+  MaskRepositoryImpl(MaskApi()).getMask();
+}

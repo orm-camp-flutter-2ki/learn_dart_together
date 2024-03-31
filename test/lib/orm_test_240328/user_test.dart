@@ -32,13 +32,14 @@ void main() {
       }
       return http.Response('error', 400);
     });
+
     final repository = UserRepositoryImpl(UserApi(client: mockClient));
 
     final result = await repository.getUser();
     final expected = result
         .map((e) => UserDto.fromJson(e as Map<String, dynamic>).toUser())
         .toList();
-
+    print(result);
     expect(result.equals(expected), true);
   });
 }
