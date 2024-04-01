@@ -25,19 +25,6 @@ void main() {
           expect((result as PhotoResult.Success).data is PhotoDto, isTrue);
         });
 
-        test('비속어(바보) 키워드의 요청에 대해 Future<Error>를 반환한다.', () async {
-          // Given
-          final PhotoApi api = PhotoApiImpl(client: http.Client());
-          final keyword = '바보';
-
-          // When
-          final result = await api.getPhotoDto(keyword);
-
-          // Then
-          expect(result is PhotoResult.Error, isTrue);
-          expect((result as PhotoResult.Error).e, equals(slangCensoredMessage));
-        });
-
         test('네트워크 비정상 응답에 대해 Future<Error>를 반환한다.', () async {
           // Given
           final abnormalCode = 123;

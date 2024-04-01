@@ -11,7 +11,7 @@ const slang = '바보';
 abstract interface class PhotoApi {
   final http.Client _client;
 
-  Future<PhotoResult> getPhotoDto(String keyword);
+  Future<PhotoResult<PhotoDto>> getPhotoDto(String keyword);
 
   PhotoApi({required client}):
       _client = client;
@@ -28,11 +28,8 @@ class PhotoApiImpl implements PhotoApi {
       _client = client;
 
   @override
-  Future<PhotoResult> getPhotoDto(String keyword) async {
-    if (keyword.contains(slang)) {
-      return PhotoResult.error(slangCensoredMessage);
-    }
-    late PhotoResult result;
+  Future<PhotoResult<PhotoDto>> getPhotoDto(String keyword) async {
+    late PhotoResult<PhotoDto> result;
     try {
       http.Response response = await _client.get(Uri.parse(queryUri(keyword)));
       if (response.statusCode == 200) {
