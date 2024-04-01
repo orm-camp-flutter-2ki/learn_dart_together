@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/24_03_29/Repository/movie_info_repository.dart';
-import 'package:learn_dart_together/24_03_29/Repository/movie_info_repository_impl.dart';
+import 'package:learn_dart_together/24_03_29/repository/movie/movie_info_repository.dart';
+import 'package:learn_dart_together/24_03_29/repository/movie/movie_info_repository_impl.dart';
 import 'package:learn_dart_together/24_03_29/data_source/movie_info_api.dart';
 import 'package:learn_dart_together/24_03_29/model/movie_info.dart';
 import 'package:learn_dart_together/24_03_29/model/movie_info_detail.dart';
