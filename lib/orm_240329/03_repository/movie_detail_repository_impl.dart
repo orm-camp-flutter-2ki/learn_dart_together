@@ -19,7 +19,7 @@ class MovieDetailRepositoryImpl implements MovieDetailRepository {
     }
   }
 }
-
+//
 // void main() {
 //   MovieDetailRepositoryImpl(MovieDetailApi()).getMovieDetail(634492);
 // }
