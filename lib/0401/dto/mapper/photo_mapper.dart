@@ -5,7 +5,7 @@ extension Mapper on HitDto {
   Photo toPhoto() {
     return Photo(
       tags: tags ?? '',
-      imageUrl: webformatURL ?? '',
+      previewURL: previewURL ?? '',
     );
   }
 }
