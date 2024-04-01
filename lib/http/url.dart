@@ -11,3 +11,5 @@ const movieListUrl = '$movieBaseUrl/upcoming?$movieQueryParam';
 const movieQueryParam = '$movieApiKey&language=ko-KR';
 const movieApiKey = 'api_key=a64533e7ece6c72731da47c9c8bc691f';
 const fakeMovieInfoUrl = '$movieBaseUrl/957304?$movieQueryParam&page=1';
+const pixabayUrl='https://pixabay.com/api/';
+const pixabayUserKey='3565685-4273f3b245457492a768921ad';
