@@ -62,9 +62,9 @@ class MovieInfo {
   }
 
   factory MovieInfo.fromJson(Map<String, dynamic> json) =>
-      _$ResultsFromJson(json);
+      _$MovieInfoFromJson(json);
 
-  Map<String, dynamic> toJson() => _$ResultsToJson(this);
+  Map<String, dynamic> toJson() => _$MovieInfoToJson(this);
 
   const MovieInfo({
     required this.adult,
