@@ -5,24 +5,6 @@ import 'package:test/test.dart';
 import '../../240401/repository/photo_repository_impl.dart';
 
 void main() {
-  // test('photo url test', () async {
-  //   final repository = PhotoRepositoryImpl();
-  //   final photos = await repository.getPhotos('yellow');
-  //   final result = photos;
-  //
-  //   expect(result, expected);
-  // });
-  //
-  // test('photo error test', () async {
-  //   final repository = PhotoRepositoryImpl();
-  //   final result = await repository.getPhotos('yuiyiuyiuyiu');
-  //   expect(result, throwsException);
-  // });
-  // test('photo q test', () async {
-  //   final repository = PhotoRepositoryImpl();
-  //   final photos = await repository.getPhotos('바보');
-  //   print(photos);
-  // });
   test('test 바보', () async {
     final repository = PhotoRepositoryImpl();
     final result = await repository.getPhotos('바보');
