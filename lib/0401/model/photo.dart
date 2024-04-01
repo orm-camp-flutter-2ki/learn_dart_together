@@ -5,6 +5,6 @@ part 'photo.freezed.dart';
 class Photo with _$Photo {
   const factory Photo({
     required String tags,
-    required String imageUrl,
+    required String previewURL,
   }) = _Photo;
 }
