@@ -12,6 +12,15 @@ Future<File> saveFile(Uint8List bytes, String fileName) async {
 }
 
 void main() async {
-  final bytes = await downloadImage('https://alimipro.com/favicon.ico');
-  await saveFile(bytes, 'icon.ico');
+  final stopWatch = Stopwatch()..start();
+
+  print('다운로드 시작');
+  final Uint8List bytes =
+      await downloadImage('https://alimipro.com/favicon.ico');
+  final File file = await saveFile(bytes, 'icon.ico');
+  stopWatch.stop();
+  print('다운로드 끝');
+  print('=========');
+  print('소요시간 : ${stopWatch.elapsed.toString()}');
+  print('용량 : ${await file.length()}');
 }
