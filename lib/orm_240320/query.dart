@@ -1,5 +1,4 @@
-import '''
-package:collection/collection.dart''';
+
 
 class Trader {
   String name;
@@ -82,3 +81,4 @@ final transactions = [
 //   final minValue = transactions.map((transactions) => transactions.value).min;
 //   print(minValue);
 // }
+//
