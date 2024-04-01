@@ -1,4 +1,5 @@
 import 'package:dart_cli_practice/240401/data_source/photo_api.dart';
+import 'package:dart_cli_practice/240401/data_source/photo_api_impl.dart';
 import 'package:dart_cli_practice/240401/mapper/photo_mapper.dart';
 import 'package:dart_cli_practice/240401/model/photo.dart';
 import 'package:dart_cli_practice/240401/repository/photo_repository.dart';
@@ -7,7 +8,7 @@ import 'package:dart_cli_practice/240401/repository/result.dart';
 class PhotoRepositoryImpl implements PhotoRepository {
   final PhotoApi _api;
 
-  PhotoRepositoryImpl({required PhotoApi api}) : _api = api ?? PhotoApi();
+  PhotoRepositoryImpl({PhotoApi? api}) : _api = api ?? PhotoApiImpl();
 
   @override
   Future<Result<List<Photo>>> findPhotosByKeyword(String keyword) async {
