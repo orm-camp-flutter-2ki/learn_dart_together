@@ -8,6 +8,7 @@ class ResultsApi {
   final _url = 'https://pixabay.com/api/?key=';
 
   Future<ResultsDto> getResults(String query) async {
+    // \를 넣어주지 않으면 제대로 동작하지 않는다.
     final replaced = query.replaceAll(' ', '\+');
 
     final http.Response response =
