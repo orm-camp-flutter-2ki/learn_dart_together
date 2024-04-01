@@ -20,7 +20,6 @@ class PhotoApi {
         ? throw Exception("오류남")
         : jsonDecode(utf8.decode(response.bodyBytes));
     final jsonList = json['hits'] as List;
-
     return jsonList.map((e) => HitsDto.fromJson(e)).toList();
   }
 }
