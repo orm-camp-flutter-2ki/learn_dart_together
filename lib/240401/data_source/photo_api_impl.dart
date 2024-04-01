@@ -11,8 +11,8 @@ class PhotoApiImpl implements PhotoApi {
   // PhotoDto : api 요청으로 넘어온 json data가 null 값 또는 이상한 타입의 값이 포함 되어있을 수 있음
   @override
   Future<List<PhotoDto>> getPhotos(String keyword) async {
-    final http.Response response =
-        await http.get(Uri.parse('$_baseUrl/?key=$_apiKey&q=$keyword'));
+    final http.Response response = await http
+        .get(Uri.parse('$_baseUrl/?key=$_apiKey&q=$keyword&image_type=photo'));
 
     final List hitsJson = jsonDecode(response.body)['hits'];
     final photoDtoList = hitsJson.map((e) => PhotoDto.fromJson(e)).toList();
