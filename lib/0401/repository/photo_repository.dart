@@ -1,5 +1,7 @@
 import '../model/photo.dart';
+import '../result.dart';
 
 abstract interface class PhotoRepository {
-  Future<List<Photo>> getPhoto(String query);
+  Future<Result<List<Photo>>> getPhoto(String query);
 }
+
