@@ -18,7 +18,7 @@ void main() {
         .toList();
 
     test('쿼리 테스트', () async {
-      var test;
+      final test;
       final Result<List<Photo>> result = await repository
           .getPhotos('yellow+flowers&page=1&per_page=3'); // 3개만 가져오기
       switch (result) {
@@ -33,7 +33,7 @@ void main() {
     });
 
     test('비속어 테스트', () async {
-      var test;
+      final test;
       final Result<List<Photo>> result = await repository
           .getPhotos('바보&page=1&per_page=3');
       switch (result) {
