@@ -15,13 +15,4 @@ class PhotoDataSource {
     final List<dynamic> jsonList = jsonDecode(response.body)['hits'];
     return jsonList.map((e) => PhotoDto.fromJson(e)).toList();
   }
-
-  Future<List<PhotoDto>> getPhotosDefault() async {
-    final String url = '$_baseUrl$_apiKey&image_type=photo&pretty=true';
-    final http.Response response = await _client.get(Uri.parse(url));
-    final List<dynamic> jsonList = jsonDecode(response.body)['hits'];
-    return jsonList.map((e) => PhotoDto.fromJson(e)).toList();
-  }
-
-
 }

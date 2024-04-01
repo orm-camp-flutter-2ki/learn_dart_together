@@ -1,18 +1,30 @@
 import './model/photo.dart';
 import './data_source/photo_data_source.dart';
 import './repository/photo_repository_impl.dart';
+import 'result.dart';
 
 void main() async {
-  PhotoDataSource photoDataSource = PhotoDataSource();
-  PhotoRepositoryImpl photoRepository = PhotoRepositoryImpl(photoDataSource);
+  final PhotoDataSource photoDataSource = PhotoDataSource();
+  final PhotoRepositoryImpl photoRepository =
+  PhotoRepositoryImpl(photoDataSource);
 
-    String queryInput = 'mad';
+  final String queryInput = '바보';
 
-    // 사진을 가져옵니다.
-    List<Photo> photos = await photoRepository.getPhotos(queryInput);
-    print(photos.first.imageUrl);
-    print(photos.first.tags);
+  final Result<List<Photo>> result =
+  await photoRepository.getPhotos(queryInput);
 
-    print(photos.last.imageUrl);
-    print(photos.last.tags);
+  switch (result) {
+    case Success<List<Photo>>():
+      final photos = result.data;
+      for (final photo in photos) {
+        print('Image URL: ${photo.imageUrl}');
+        print('Tags: ${photo.tags}');
+      }
+
+    case ArgumentError<List<Photo>>():
+      print('비속어를 사용할 수 없습니다.');
+
+    case NetworkError<List<Photo>>():
+      print('알 수 없는 네트워크 에러');
+  }
 }
