@@ -2,9 +2,9 @@
 import 'package:learn_dart_together/240401/model/photo/hit.dart';
 
 class PhotoDto extends Equatable {
-  final int? total;
-  final int? totalHits;
-  final List<Hit>? hits;
+  int? total;
+  int? totalHits;
+  List<Hit>? hits;
 
   const PhotoDto({this.total, this.totalHits, this.hits});
 

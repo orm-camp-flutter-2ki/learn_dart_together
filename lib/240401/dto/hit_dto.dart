@@ -2,28 +2,28 @@
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class HitDto {
-  final int? id;
-  final String? pageUrl;
-  final String? type;
-  final String? tags;
-  final String? previewUrl;
-  final int? previewWidth;
-  final int? previewHeight;
-  final String? webformatUrl;
-  final int? webformatWidth;
-  final int? webformatHeight;
-  final String? largeImageUrl;
-  final int? imageWidth;
-  final int? imageHeight;
-  final int? imageSize;
-  final int? views;
-  final int? downloads;
-  final int? collections;
-  final int? likes;
-  final int? comments;
-  final int? userId;
-  final String? user;
-  final String? userImageUrl;
+  int? id;
+  String? pageUrl;
+  String? type;
+  String? tags;
+  String? previewUrl;
+  int? previewWidth;
+  int? previewHeight;
+  String? webformatUrl;
+  int? webformatWidth;
+  int? webformatHeight;
+  String? largeImageUrl;
+  int? imageWidth;
+  int? imageHeight;
+  int? imageSize;
+  int? views;
+  int? downloads;
+  int? collections;
+  int? likes;
+  int? comments;
+  int? userId;
+  String? user;
+  String? userImageUrl;
   HitDto({
     this.id,
     this.pageUrl,
