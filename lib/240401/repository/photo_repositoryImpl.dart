@@ -13,17 +13,19 @@ class PhotoRepositoryImpl implements PhotoRepository {
   PhotoRepositoryImpl(this._api);
 
   @override
-  Future<Result<List<Photo>>> getPhotos(String query) async {
-    try {
-      final List<HitsDto> photoDtoList = await _api.getPhoto(query);
-      return Result.success(photoDtoList.map((e) => e.toPhoto()).toList());
-    } on TimeoutException {
-      return Result.error('Time out');
-    } catch (e) {
-      return Result.error('Network Error');
+  Future<Result<List<Photo>, NetworkError>> getPhotos(String query) async {
+    if (query != '바보') {
+      try {
+        final List<HitsDto> photoDtoList =
+            await _api.getPhoto(query).timeout(Duration(seconds: 10));
+        return Result.success(photoDtoList.map((e) => e.toPhoto()).toList());
+      } on TimeoutException {
+        return Result.error(NetworkError.requestTimeout);
+      } catch (e) {
+        return Result.error(NetworkError.unknown);
+      }
+    } else {
+      throw Exception('비속어를 사용할 수 없습니다');
     }
   }
 }
-//예외 처리 (Result 패턴)
-//try - catch 로 에러 검출시 “알 수 없는 네트워크 에러" 메시지를 리턴
-//‘바보' 로 검색하면 “비속어를 사용할 수 없습니다" 메시지를 리턴
