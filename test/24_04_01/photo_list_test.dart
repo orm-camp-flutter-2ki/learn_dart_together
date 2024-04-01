@@ -1,4 +1,3 @@
-import 'package:learn_dart_together/24_03_26/model/photo.dart';
 import 'package:learn_dart_together/24_04_01/data_source/results_api.dart';
 import 'package:learn_dart_together/24_04_01/repository/results_repo_impl.dart';
 import 'package:test/test.dart';
