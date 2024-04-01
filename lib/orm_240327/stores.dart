@@ -1,12 +1,12 @@
 class Stores {
   final String addr;
-  final int code;
-  final String created_at;
-  final double lat;
-  final double lng;
+  final String code;
+  final String? created_at;
+  final num lat;
+  final num lng;
   final String name;
-  final String remain_stat;
-  final String stock_at;
+  final String? remain_stat;
+  final String? stock_at;
   final String type;
 
 //<editor-fold desc="Data Methods">
@@ -56,10 +56,10 @@ class Stores {
 
   Stores copyWith({
     String? addr,
-    int? code,
+    String? code,
     String? created_at,
-    double? lat,
-    double? lng,
+    num? lat,
+    num? lng,
     String? name,
     String? remain_stat,
     String? stock_at,
@@ -95,13 +95,13 @@ class Stores {
   factory Stores.fromJson(Map<String, dynamic> map) {
     return Stores(
       addr: map['addr'] as String,
-      code: map['code'] as int,
-      created_at: map['created_at'] as String,
-      lat: map['lat'] as double,
-      lng: map['lng'] as double,
+      code: map['code'] as String,
+      created_at: map['created_at'] ?? '',
+      lat: map['lat'] as num,
+      lng: map['lng'] as num,
       name: map['name'] as String,
-      remain_stat: map['remain_stat'] as String,
-      stock_at: map['stock_at'] as String,
+      remain_stat: map['remain_stat'] ?? '',
+      stock_at: map['stock_at'] ?? '',
       type: map['type'] as String,
     );
   }

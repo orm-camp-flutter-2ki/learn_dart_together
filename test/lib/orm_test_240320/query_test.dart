@@ -1,5 +1,5 @@
-import 'package:learn_dart_together/orm_240320/query.dart';
 import 'package:collection/collection.dart';
+import 'package:learn_dart_together/orm_240320/query.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -40,7 +40,7 @@ void main() {
 
   test('query 문제 5', () {
     final person =
-    transactions.any((transactions) => transactions.trader.city == 'Milan');
+        transactions.any((transactions) => transactions.trader.city == 'Milan');
     expect(person, true);
   });
 
@@ -63,3 +63,4 @@ void main() {
     print(minValue);
   });
 }
+//

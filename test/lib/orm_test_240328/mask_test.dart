@@ -52,7 +52,7 @@ void main() {
     final expected = results
         .map((e) => StoreDto.fromJson(e as Map<String, dynamic>))
         .toList();
-
+    print(results);
     expect(results.equals(expected.cast<Stores>()), true);
   });
 }
