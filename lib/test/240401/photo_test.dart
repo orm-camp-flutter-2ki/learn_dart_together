@@ -1,7 +1,7 @@
-import 'package:learn_dart_together/240401/model/photo.dart';
 import 'package:learn_dart_together/240401/repository/result.dart';
 import 'package:test/test.dart';
 
+import '../../240401/model/photo.dart';
 import '../../240401/repository/photo_repository_impl.dart';
 
 void main() {
@@ -10,32 +10,40 @@ void main() {
     final result = await repository.getPhotos('바보');
 
     switch (result) {
-      case Error<List<Photo>, Exception>():
-        print('실패 : ${result.error.toString()}');
-      case Success<List<Photo>, Exception>():
-        print('성공 : ${result.data.toString()}');
+      case Success<List<Photo>>():
+        print('성공 : ${result.data}');
+        break;
+      case Error<List<Photo>>():
+        print('성공 : ${result.e}');
+        break;
     }
   });
+
   test('test yellow', () async {
     final repository = PhotoRepositoryImpl();
     final result = await repository.getPhotos('yellow');
 
     switch (result) {
-      case Error<List<Photo>, Exception>():
-        print('실패 : ${result.error.toString()}');
-      case Success<List<Photo>, Exception>():
-        print('성공 : ${result.data.toString()}');
+      case Success<List<Photo>>():
+        print('성공 : ${result.data}');
+        break;
+      case Error<List<Photo>>():
+        print('성공 : ${result.e}');
+        break;
     }
   });
+
   test('test yuouououo', () async {
     final repository = PhotoRepositoryImpl();
     final result = await repository.getPhotos('yuouououo');
 
     switch (result) {
-      case Error<List<Photo>, Exception>():
-        print('실패 : ${result.error.toString()}');
-      case Success<List<Photo>, Exception>():
-        print('성공 : ${result.data.toString()}');
+      case Success<List<Photo>>():
+        print('성공 : ${result.data}');
+        break;
+      case Error<List<Photo>>():
+        print('성공 : ${result.e}');
+        break;
     }
   });
 }
