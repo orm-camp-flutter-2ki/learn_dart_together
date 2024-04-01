@@ -24,6 +24,10 @@ void main() {
         Success<List<Photo>>() => result.data.length,
         Error() => result.e
       };
+
+      final test2 = result.when(success: (data) => data, error: (e) => e);
+      // 또 다른 방법
+
       expect(test == 3, true);
     });
 
