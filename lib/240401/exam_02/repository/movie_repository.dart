@@ -1,5 +1,6 @@
 import '../model/movie_detail.dart';
+import '../result.dart';
 
 abstract interface class MovieRepository {
-  Future<MovieDetail> getMovieDetail(int id);
+  Future<Result<MovieDetail>> getMovieDetail(int id);
 }

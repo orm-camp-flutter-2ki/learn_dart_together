@@ -4,6 +4,7 @@ import 'package:learn_dart_together/240401/exam_02/mapper/movie_detail_mapper.da
 import 'package:learn_dart_together/240401/exam_02/model/movie_detail.dart';
 import 'package:learn_dart_together/240401/exam_02/repository/movie_repository.dart';
 import 'package:learn_dart_together/240401/exam_02/repository/movie_repository_impl.dart';
+import 'package:learn_dart_together/240401/exam_02/result.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
@@ -13,8 +14,17 @@ void main() {
 
     final repository = MovieRepositoryImpl(MockMovieDataSource());
 
-    final result = await repository.getMovieDetail(id);
-    expect(result, MovieDetail.fromJson(movieDetailJson));
+    final Result<MovieDetail> result = await repository.getMovieDetail(id);
+
+    switch(result) {
+      case Success<MovieDetail>():
+        final MovieDetail movieDetail = result.data;
+        expect(movieDetail, MovieDetail.fromJson(movieDetailJson));
+      case Error<MovieDetail>():
+        final errorMessage = result.message;
+
+    }
+
   });
 }
 
@@ -29,10 +39,10 @@ class MockMovieRepository implements MovieRepository {
   final _dataSource = MovieDataSource();
 
   @override
-  Future<MovieDetail> getMovieDetail(int id) async {
+  Future<Result<MovieDetail>> getMovieDetail(int id) async {
     final movieDetailDto = await _dataSource.getMovieDetailDto(id);
 
-    return movieDetailDto.toMovieDetail();
+    return Result.success(movieDetailDto.toMovieDetail());
   }
 }
 
