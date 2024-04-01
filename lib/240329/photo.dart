@@ -6,7 +6,6 @@ import 'package:http/http.dart' as http;
 Future<Uint8List> downloadImage(String url) async {
   final http.Response response = await http.get(Uri.parse(url));
   if (response.statusCode == 200) {
-    print('다운로드 시작');
     final Uint8List image = response.bodyBytes;
     print('다운로드 끝');
     return image;
