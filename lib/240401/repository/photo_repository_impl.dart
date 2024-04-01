@@ -11,16 +11,17 @@ class PhotoRepositoryImpl implements PhotoRepository {
 
   @override
   Future<Result<List<Hits>>> getPhotos(String query) async {
+    if (query.contains('바보')) {
+      return Result.error('비속어를 사용할 수 없습니다.');
+    }
     try {
       final photoDto = await _api.getPhotos(query);
       final Result<List<Hits>> photoModel =
           Result.success(photoDto.map((e) => e.toHits()).toList());
-      if (query.contains('바보')) {
-        return Result.error('비속어를 사용할 수 없습니다.');
-      }
+
       return photoModel;
     } catch (e) {
-      return Result.error('$e');
+      return Result.error('네트워크 에러');
     }
   }
 }
