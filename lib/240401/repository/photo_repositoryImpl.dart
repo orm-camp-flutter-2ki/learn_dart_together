@@ -22,7 +22,7 @@ class PhotoRepositoryImpl implements PhotoRepository {
       } on TimeoutException {
         return Result.error(NetworkError.requestTimeout);
       } catch (e) {
-        return Result.error(NetworkError.unknown);
+        throw Exception('알 수 없는 네트워크 에러');
       }
     } else {
       throw Exception('비속어를 사용할 수 없습니다');
