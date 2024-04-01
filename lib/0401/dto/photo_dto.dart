@@ -1,24 +1,24 @@
-class PhotoDto {
-  PhotoDto({
+class PhotoResultDto {
+  num? total;
+  num? totalHits;
+  List<PhotoDto>? hits;
+
+  PhotoResultDto({
     this.total,
     this.totalHits,
     this.hits,
   });
 
-  PhotoDto.fromJson(dynamic json) {
+  PhotoResultDto.fromJson(dynamic json) {
     total = json['total'];
     totalHits = json['totalHits'];
     if (json['hits'] != null) {
       hits = [];
       json['hits'].forEach((v) {
-        hits?.add(Hits.fromJson(v));
+        hits?.add(PhotoDto.fromJson(v));
       });
     }
   }
-
-  num? total;
-  num? totalHits;
-  List<Hits>? hits;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -31,8 +31,31 @@ class PhotoDto {
   }
 }
 
-class Hits {
-  Hits({
+class PhotoDto {
+  num? id;
+  String? pageURL;
+  String? type;
+  String? tags;
+  String? previewURL;
+  num? previewWidth;
+  num? previewHeight;
+  String? webformatURL;
+  num? webformatWidth;
+  num? webformatHeight;
+  String? largeImageURL;
+  num? imageWidth;
+  num? imageHeight;
+  num? imageSize;
+  num? views;
+  num? downloads;
+  num? collections;
+  num? likes;
+  num? comments;
+  num? userId;
+  String? user;
+  String? userImageURL;
+
+  PhotoDto({
     this.id,
     this.pageURL,
     this.type,
@@ -57,7 +80,7 @@ class Hits {
     this.userImageURL,
   });
 
-  Hits.fromJson(dynamic json) {
+  PhotoDto.fromJson(dynamic json) {
     id = json['id'];
     pageURL = json['pageURL'];
     type = json['type'];
@@ -81,29 +104,6 @@ class Hits {
     user = json['user'];
     userImageURL = json['userImageURL'];
   }
-
-  num? id;
-  String? pageURL;
-  String? type;
-  String? tags;
-  String? previewURL;
-  num? previewWidth;
-  num? previewHeight;
-  String? webformatURL;
-  num? webformatWidth;
-  num? webformatHeight;
-  String? largeImageURL;
-  num? imageWidth;
-  num? imageHeight;
-  num? imageSize;
-  num? views;
-  num? downloads;
-  num? collections;
-  num? likes;
-  num? comments;
-  num? userId;
-  String? user;
-  String? userImageURL;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
