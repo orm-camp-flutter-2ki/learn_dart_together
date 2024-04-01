@@ -8,9 +8,9 @@ class PhotoRepositoryImpl implements PhotoRepository {
   final PhotoApi _api = PhotoApi();
 
   @override
-  Future<Result<List<Photo>, Exception>> getPhotos(String q) async {
+  Future<Result<List<Photo>>> getPhotos(String q) async {
     if (q == '바보') {
-      return Result.error(Exception('비속어를 사용할 수 없습니다.'));
+      return Result.error(('비속어를 사용할 수 없습니다.'));
     }
     try {
       final hitsDtoList = await _api.getPhotos(q);
@@ -19,7 +19,7 @@ class PhotoRepositoryImpl implements PhotoRepository {
           hitsDtoList.map((hitsDto) => hitsDto.toPhoto()).toList();
       return Result.success(photoList);
     } catch (e) {
-      return Result.error(Exception('알 수 없는 네트워크 에러: $e'));
+      return Result.error(('알 수 없는 네트워크 에러: $e'));
     }
   }
 }
