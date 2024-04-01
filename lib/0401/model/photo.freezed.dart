@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Photo {
   String get tags => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
+  String get previewURL => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PhotoCopyWith<Photo> get copyWith => throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ abstract class $PhotoCopyWith<$Res> {
   factory $PhotoCopyWith(Photo value, $Res Function(Photo) then) =
       _$PhotoCopyWithImpl<$Res, Photo>;
   @useResult
-  $Res call({String tags, String imageUrl});
+  $Res call({String tags, String previewURL});
 }
 
 /// @nodoc
@@ -45,16 +45,16 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
   @override
   $Res call({
     Object? tags = null,
-    Object? imageUrl = null,
+    Object? previewURL = null,
   }) {
     return _then(_value.copyWith(
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
+      previewURL: null == previewURL
+          ? _value.previewURL
+          : previewURL // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -67,7 +67,7 @@ abstract class _$$PhotoImplCopyWith<$Res> implements $PhotoCopyWith<$Res> {
       __$$PhotoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String tags, String imageUrl});
+  $Res call({String tags, String previewURL});
 }
 
 /// @nodoc
@@ -82,16 +82,16 @@ class __$$PhotoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? tags = null,
-    Object? imageUrl = null,
+    Object? previewURL = null,
   }) {
     return _then(_$PhotoImpl(
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String,
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
+      previewURL: null == previewURL
+          ? _value.previewURL
+          : previewURL // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -100,16 +100,16 @@ class __$$PhotoImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PhotoImpl implements _Photo {
-  const _$PhotoImpl({required this.tags, required this.imageUrl});
+  const _$PhotoImpl({required this.tags, required this.previewURL});
 
   @override
   final String tags;
   @override
-  final String imageUrl;
+  final String previewURL;
 
   @override
   String toString() {
-    return 'Photo(tags: $tags, imageUrl: $imageUrl)';
+    return 'Photo(tags: $tags, previewURL: $previewURL)';
   }
 
   @override
@@ -118,12 +118,12 @@ class _$PhotoImpl implements _Photo {
         (other.runtimeType == runtimeType &&
             other is _$PhotoImpl &&
             (identical(other.tags, tags) || other.tags == tags) &&
-            (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl));
+            (identical(other.previewURL, previewURL) ||
+                other.previewURL == previewURL));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tags, imageUrl);
+  int get hashCode => Object.hash(runtimeType, tags, previewURL);
 
   @JsonKey(ignore: true)
   @override
@@ -135,12 +135,12 @@ class _$PhotoImpl implements _Photo {
 abstract class _Photo implements Photo {
   const factory _Photo(
       {required final String tags,
-      required final String imageUrl}) = _$PhotoImpl;
+      required final String previewURL}) = _$PhotoImpl;
 
   @override
   String get tags;
   @override
-  String get imageUrl;
+  String get previewURL;
   @override
   @JsonKey(ignore: true)
   _$$PhotoImplCopyWith<_$PhotoImpl> get copyWith =>
