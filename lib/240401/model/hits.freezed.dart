@@ -21,7 +21,7 @@ Hits _$HitsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Hits {
   String get tags => throw _privateConstructorUsedError;
-  String get previewURL => throw _privateConstructorUsedError;
+  String get imageURL => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $HitsCopyWith<$Res> {
   factory $HitsCopyWith(Hits value, $Res Function(Hits) then) =
       _$HitsCopyWithImpl<$Res, Hits>;
   @useResult
-  $Res call({String tags, String previewURL});
+  $Res call({String tags, String imageURL});
 }
 
 /// @nodoc
@@ -50,16 +50,16 @@ class _$HitsCopyWithImpl<$Res, $Val extends Hits>
   @override
   $Res call({
     Object? tags = null,
-    Object? previewURL = null,
+    Object? imageURL = null,
   }) {
     return _then(_value.copyWith(
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String,
-      previewURL: null == previewURL
-          ? _value.previewURL
-          : previewURL // ignore: cast_nullable_to_non_nullable
+      imageURL: null == imageURL
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -72,7 +72,7 @@ abstract class _$$HitsImplCopyWith<$Res> implements $HitsCopyWith<$Res> {
       __$$HitsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String tags, String previewURL});
+  $Res call({String tags, String imageURL});
 }
 
 /// @nodoc
@@ -86,16 +86,16 @@ class __$$HitsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? tags = null,
-    Object? previewURL = null,
+    Object? imageURL = null,
   }) {
     return _then(_$HitsImpl(
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String,
-      previewURL: null == previewURL
-          ? _value.previewURL
-          : previewURL // ignore: cast_nullable_to_non_nullable
+      imageURL: null == imageURL
+          ? _value.imageURL
+          : imageURL // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -104,7 +104,7 @@ class __$$HitsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$HitsImpl implements _Hits {
-  const _$HitsImpl({required this.tags, required this.previewURL});
+  const _$HitsImpl({required this.tags, required this.imageURL});
 
   factory _$HitsImpl.fromJson(Map<String, dynamic> json) =>
       _$$HitsImplFromJson(json);
@@ -112,11 +112,11 @@ class _$HitsImpl implements _Hits {
   @override
   final String tags;
   @override
-  final String previewURL;
+  final String imageURL;
 
   @override
   String toString() {
-    return 'Hits(tags: $tags, previewURL: $previewURL)';
+    return 'Hits(tags: $tags, imageURL: $imageURL)';
   }
 
   @override
@@ -125,13 +125,13 @@ class _$HitsImpl implements _Hits {
         (other.runtimeType == runtimeType &&
             other is _$HitsImpl &&
             (identical(other.tags, tags) || other.tags == tags) &&
-            (identical(other.previewURL, previewURL) ||
-                other.previewURL == previewURL));
+            (identical(other.imageURL, imageURL) ||
+                other.imageURL == imageURL));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, tags, previewURL);
+  int get hashCode => Object.hash(runtimeType, tags, imageURL);
 
   @JsonKey(ignore: true)
   @override
@@ -150,14 +150,14 @@ class _$HitsImpl implements _Hits {
 abstract class _Hits implements Hits {
   const factory _Hits(
       {required final String tags,
-      required final String previewURL}) = _$HitsImpl;
+      required final String imageURL}) = _$HitsImpl;
 
   factory _Hits.fromJson(Map<String, dynamic> json) = _$HitsImpl.fromJson;
 
   @override
   String get tags;
   @override
-  String get previewURL;
+  String get imageURL;
   @override
   @JsonKey(ignore: true)
   _$$HitsImplCopyWith<_$HitsImpl> get copyWith =>

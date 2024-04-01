@@ -3,7 +3,10 @@ import 'package:learn_dart_together/240401/model/hits.dart';
 
 extension ToHits on HitsDto {
   Hits toHits() {
-    return Hits(tags: tags ?? '', previewURL: previewURL ?? '');
+    return Hits(
+      tags: tags ?? '',
+      imageURL: previewURL ?? '',
+    );
   }
 }
 

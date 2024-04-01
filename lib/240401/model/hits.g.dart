@@ -8,11 +8,11 @@ part of 'hits.dart';
 
 _$HitsImpl _$$HitsImplFromJson(Map<String, dynamic> json) => _$HitsImpl(
       tags: json['tags'] as String,
-      previewURL: json['previewURL'] as String,
+      imageURL: json['imageURL'] as String,
     );
 
 Map<String, dynamic> _$$HitsImplToJson(_$HitsImpl instance) =>
     <String, dynamic>{
       'tags': instance.tags,
-      'previewURL': instance.previewURL,
+      'imageURL': instance.imageURL,
     };

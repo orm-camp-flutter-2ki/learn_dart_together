@@ -7,7 +7,7 @@ part 'hits.g.dart';
 class Hits with _$Hits {
   const factory Hits({
     required String tags,
-    required String previewURL,
+    required String imageURL,
   }) = _Hits;
 
   factory Hits.fromJson(Map<String, Object?> json) => _$HitsFromJson(json);
