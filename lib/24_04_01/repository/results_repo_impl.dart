@@ -22,7 +22,7 @@ class ResultsRepoImpl implements ResultsRepository {
   Future<Result<List<Photo>>> getPhotos(String query) async {
     try {
       if (query == '바보') {
-        Result.error('비속어를 사용할 수 없습니다.');
+        return Result.error('비속어를 사용할 수 없습니다.');
       }
       final resultsDto = await _api.getResults(query);
       final results = resultsDto.toResults();
