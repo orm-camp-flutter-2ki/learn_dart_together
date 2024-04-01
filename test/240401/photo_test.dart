@@ -26,8 +26,6 @@ void main() {
           test = result.data.length;
         case Error():
           test = result.e;
-        default:
-          test = result;
       }
       expect(test == 3, true);
     });
@@ -41,8 +39,6 @@ void main() {
           test = result.data;
         case Error():
           test = result.e;
-        default:
-          test = result;
       }
       expect(test == 'Error : 비속어를 사용할 수 없습니다', true);
     });
