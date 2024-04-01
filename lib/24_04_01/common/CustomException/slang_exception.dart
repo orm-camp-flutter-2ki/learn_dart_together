@@ -7,4 +7,6 @@ class SlangException implements Exception {
   String toString() {
     return message;
   }
+
+  String get getMessage => message;
 }

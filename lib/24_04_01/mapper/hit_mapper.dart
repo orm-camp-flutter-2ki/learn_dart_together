@@ -5,7 +5,7 @@ import '../model/photo.dart';
 extension HitToPhoto on Hit {
   Photo toPhoto() {
     return Photo(
-      tags: tags?.split(',') ?? [],
+      tags: tags?.split(', ') ?? [],
       imageUrl: webformatURL ?? largeImageURL ?? previewURL ?? '',
     );
   }

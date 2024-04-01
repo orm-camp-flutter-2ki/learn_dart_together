@@ -15,19 +15,22 @@ class PhotoRepositoryImpl implements PhotoRepository {
 
   @override
   Future<Result<List<Photo>, Exception>> getPhotos(
-      List<String>? q, String? lang, String? imageType) async {
+      {List<String>? q, String? lang, String? imageType}) async {
+    Result<List<Photo>, Exception> result;
     try {
-      qValidate(q);
+      _qValidate(q);
       final response =
           await _photoApi.getPhotos(_paramToQuery(q, lang, imageType));
 
-      return Result.success(
-          response.hits?.map((e) => e.toPhoto()).toList() ?? []);
+      result =
+          Result.success(response.hits?.map((e) => e.toPhoto()).toList() ?? []);
     } on SlangException catch (e) {
-      return Result.error(e);
+      result = Result.error(e);
     } catch (e) {
-      return Result.error(Exception(ExceptionMessage.networkError));
+      result = Result.error(Exception(ExceptionMessage.networkError));
     }
+
+    return result;
   }
 
   String _paramToQuery(List<String>? q, String? lang, String? imageType) {
@@ -48,7 +51,7 @@ class PhotoRepositoryImpl implements PhotoRepository {
     return query.toString();
   }
 
-  void qValidate(List<String>? q) {
+  void _qValidate(List<String>? q) {
     final qList = q ?? [];
     for (String slang in slangList) {
       if (qList.contains(slang)) {

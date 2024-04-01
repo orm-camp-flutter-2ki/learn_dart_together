@@ -4,9 +4,8 @@ enum ExceptionMessage {
   slangError('비속어를 사용할 수 없습니다'),
   unknownError('알 수 없는 네트워크 에러');
 
-  final String _message;
+  final String message;
 
-  const ExceptionMessage(this._message);
+  const ExceptionMessage(this.message);
 
-  String get message => message;
 }

@@ -9,8 +9,7 @@ class PhotoResponseDto {
     total = json['total'];
     totalHit = json['totalHit'];
     if (json['hits'] != null) {
-      hits = [];
-      json['hits'].forEach((v) {
+      json['hits'].split(', ').forEach((v) {
         hits?.add(Hit.fromJson(v));
       });
     }
