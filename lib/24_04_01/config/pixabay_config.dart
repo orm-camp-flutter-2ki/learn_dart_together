@@ -1,16 +1,14 @@
 import 'dart:io';
 
 import 'package:dotenv/dotenv.dart';
+import 'package:learn_dart_together/24_04_01/config/profile.dart';
 
 final env = DotEnv(includePlatformEnvironment: true)..load([getProfile()]);
 
 String getProfile() {
-  String profile = Platform.environment['PROFILE'] ?? 'local';
-  return switch (profile) {
-    'dev' => 'lib/24_04_01/resource/env/dev.env',
-    'prod' => 'lib/24_04_01/resource/env/prod.env',
-    _ => 'lib/24_04_01/resource/env/local.env',
-  };
+  Profile profile =
+      Profile.stringToProfile(Platform.environment['PROFILE'] ?? 'local');
+  return profile.value;
 }
 
 class PixabayConfig {
