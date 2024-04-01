@@ -4,7 +4,7 @@ import 'package:learn_dart_together/24_03_25/http_proxy.dart';
 import 'package:learn_dart_together/24_04_01/config/pixabay_config.dart';
 import 'package:learn_dart_together/24_04_01/dto/photo_response_dto.dart';
 
-import 'photo_api.dart';
+import '../interface/photo_api.dart';
 
 class PhotoApiImpl implements PhotoApi {
   final HttpProxy _http;
