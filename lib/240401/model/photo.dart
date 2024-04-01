@@ -12,5 +12,5 @@ class Photo with _$Photo {
 
 // Object 기본값으로 만들어짐,, 왜지?
 
-  factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
+  factory Photo.fromJson(Map<String, Object> json) => _$PhotoFromJson(json);
 }

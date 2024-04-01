@@ -12,10 +12,8 @@ void main() {
     switch (result) {
       case Success<List<Photo>>():
         print('성공 : ${result.data}');
-        break;
       case Error<List<Photo>>():
-        print('성공 : ${result.e}');
-        break;
+        print('실패 : ${result.e}');
     }
   });
 
@@ -26,10 +24,8 @@ void main() {
     switch (result) {
       case Success<List<Photo>>():
         print('성공 : ${result.data}');
-        break;
       case Error<List<Photo>>():
-        print('성공 : ${result.e}');
-        break;
+        print('실패 : ${result.e}');
     }
   });
 
@@ -40,10 +36,8 @@ void main() {
     switch (result) {
       case Success<List<Photo>>():
         print('성공 : ${result.data}');
-        break;
       case Error<List<Photo>>():
-        print('성공 : ${result.e}');
-        break;
+        print('실패 : ${result.e}');
     }
   });
 }
