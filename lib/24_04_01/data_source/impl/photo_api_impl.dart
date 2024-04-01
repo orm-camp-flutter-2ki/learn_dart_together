@@ -16,6 +16,9 @@ class PhotoApiImpl implements PhotoApi {
     try {
       final response = await _http.get(Uri.parse(
           '${PixabayConfig.pixabayUrl}/?key=${PixabayConfig.apiKey}&$query'));
+      if (response.statusCode != 200) {
+        throw Exception('Failed to load photos');
+      }
       return PhotoResponseDto.fromJson(
           jsonDecode(utf8.decode(response.bodyBytes)));
     } catch (e) {
