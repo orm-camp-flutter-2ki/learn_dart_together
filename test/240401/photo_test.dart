@@ -25,7 +25,7 @@ void main() {
       //Given
       Hits result = Hits(
           tags: 'blossoms, flower bowl, wood',
-          previewURL:
+          imageURL:
               'https://cdn.pixabay.com/photo/2015/05/13/16/54/flowers-765757_150.jpg');
 
       //When
