@@ -14,26 +14,23 @@ class PhotoRepositoryImpl implements PhotoRepository {
   Future<Result<List<Photo>>> getPhoto(String query) async {
     try {
       final photos = await _api.getPhotosApi(query);
+      if(query == '바보') return Result.error('비속어를 사용할 수 없습니다');
       return Result.success(photos.map((e) => e.toPhotos()).toList());
     } catch (error) {
-      return Result.error('$error');
+      return Result.error('알 수 없는 네트워크 에러');
     }
   }
 }
+
 
 void main() async {
   final PhotoRepository photo = PhotoRepositoryImpl(PhotoApiImpl());
   final result = await photo.getPhoto('yellow+flowers');
 
-  // 실드클래스
   switch (result) {
     case Success<List<Photo>>():
       print(result.data);
     case Error<List<Photo>>():
       print(result.error);
   }
-
-
-
-  // photos.forEach((print));
 }
