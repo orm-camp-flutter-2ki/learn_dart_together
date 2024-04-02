@@ -1,8 +1,7 @@
 import 'dart:io';
 
-import 'package:learn_dart_together/240402/model/user.dart';
-import 'package:learn_dart_together/240402/repository/user_repository.dart';
-import 'package:learn_dart_together/240402/repository/user_repository_impl.dart';
+import 'package:learn_dart_together/240402_homework/model/user.dart';
+import 'package:learn_dart_together/240402_homework/repository/user_repository.dart';
 
 class UserRunApp {
   Future<void> userRunApp(UserRepository userRepository) async {

@@ -1,8 +1,6 @@
 import 'dart:io';
 
-import 'package:learn_dart_together/240402/repository/book_repository.dart';
-import 'package:learn_dart_together/240402/repository/book_repository_impl.dart';
-import 'package:learn_dart_together/240402/view.dart';
+import 'package:learn_dart_together/240402_homework/repository/book_repository.dart';
 
 import 'model/book.dart';
 
@@ -52,7 +50,8 @@ class InsertBookView {
     Book book = Book(
         id: idnum,
         title: _title!,
-        publishDate: DateTime(int.parse(year), int.parse(month), int.parse(day), 0, 0, 0),
+        publishDate: DateTime(
+            int.parse(year), int.parse(month), int.parse(day), 0, 0, 0),
         isAbleLoan: true,
         loanDate: DateTime(0, 0, 0),
         returnDate: DateTime(0, 0, 0));
@@ -63,7 +62,6 @@ class InsertBookView {
       return;
     }
   }
-
 
   bool _isFormatDate(String date) {
     if (date.length != 10) return false;

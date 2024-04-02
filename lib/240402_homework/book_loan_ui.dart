@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:collection/collection.dart';
-import 'package:learn_dart_together/240402/repository/book_repository.dart';
-import 'package:learn_dart_together/240402/repository/user_repository.dart';
+import 'package:learn_dart_together/240402_homework/repository/book_repository.dart';
+import 'package:learn_dart_together/240402_homework/repository/user_repository.dart';
 
 import 'model/book.dart';
 import 'model/user.dart';
@@ -85,16 +85,13 @@ class BookLoanUi {
     }
 
     Book book2 = book.copyWith(
-      isAbleLoan: false,
-      loanDate: DateTime.now(),
-      returnDate: DateTime.now().add(Duration(days: 14))
-    );
+        isAbleLoan: false,
+        loanDate: DateTime.now(),
+        returnDate: DateTime.now().add(Duration(days: 14)));
 
     loanBookList.add(book2);
 
-    User user2 = user.copyWith(
-      loanBooks: loanBookList
-    );
+    User user2 = user.copyWith(loanBooks: loanBookList);
 
     userRepository.changeUser(user.id, user2);
     bookRepository.changeBook(book.id, book2);
