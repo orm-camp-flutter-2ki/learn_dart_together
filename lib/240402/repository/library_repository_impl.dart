@@ -1,6 +1,7 @@
 import 'package:learn_dart_together/240402/model/book.dart';
 import 'package:learn_dart_together/240402/model/library.dart';
 import 'package:learn_dart_together/240402/model/user.dart';
+import 'package:learn_dart_together/240402/repository/repositoyr.dart';
 
 import '../data_source/book_data_source.dart';
 
@@ -39,12 +40,12 @@ class LibraryRepositoryImpl implements Repository {
   }
 
   @override
-  User getUser(User user) {
+  List<User> getUser(User user) {
     return _bookDataSource.readUser(user);
   }
 
   @override
-  User getUserByNameAndPhoneNum(String name, String phoneNum) {
+  List<User> getUserByNameAndPhoneNum(String name, String phoneNum) {
     return _bookDataSource.readUserByNameAndPhoneNum(name, phoneNum);
   }
 
