@@ -3,7 +3,7 @@ class User {
   final String phoneNum;
   final DateTime signUpDate;
   final String address;
-  final String birthDay;
+  final DateTime birthDay;
 
   // List id 중복제거 안돼서
   final Set<int> history;
