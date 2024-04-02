@@ -37,9 +37,8 @@ class LibraryService {
 
   //대출 조회
   List<Map<String, dynamic>> getCheckoutList({String? order}) {
-    final list = _checkoutList
-        .sorted((a, b) =>
-        a[order ?? 'expiration'].compareTo(b[order ?? 'expiration']));
+    final list = _checkoutList.sorted(
+        (a, b) => a[order ?? 'expiration'].compareTo(b[order ?? 'expiration']));
 
     return list;
   }
@@ -53,13 +52,12 @@ class LibraryService {
       print('해당 도서는 현재 대출중이 아닙니다.');
     } else {
       final index = _checkoutList.lastIndexOf(item[0]);
-      final stringDate = _checkoutList[index]['expiration'].replaceAll(
-          '/', '-');
+      final stringDate =
+          _checkoutList[index]['expiration'].replaceAll('/', '-');
       final beforeExpiration = DateTime.parse(stringDate);
 
-      _checkoutList[index]['expiration'] =
-          DateFormat('yyyy/MM/dd').format(
-              beforeExpiration.add(const Duration(days: 7)));
+      _checkoutList[index]['expiration'] = DateFormat('yyyy/MM/dd')
+          .format(beforeExpiration.add(const Duration(days: 7)));
     }
   }
 
@@ -68,13 +66,14 @@ class LibraryService {
 
   //최신 출간 순서대로 보여주기
   List<Book> recentBookList() {
-    final List<Book> recentBookList = _bookList.sorted((a, b) =>
-        b.publishDate.compareTo(a.publishDate));
+    final List<Book> recentBookList =
+        _bookList.sorted((a, b) => b.publishDate.compareTo(a.publishDate));
 
     return recentBookList;
   }
 
   //데이터 저장
+  //TODO: 객체 분리 필요
   void _saveBookList() async {
     String bookListPath = './assets/book_data/book_list.csv';
     String checkoutListPath = './assets/book_data/checkout_list.csv';
@@ -89,14 +88,14 @@ class LibraryService {
   }
 
   //대출목록 불러오기
-  static Future<List<Map<String, dynamic>>> _getCheckoutList() async {
+  //TODO: 객체 분리 필요
+  Future<List<Map<String, dynamic>>> _getCheckoutList() async {
     List<Map<String, dynamic>> list = [];
     String checkoutListPath = './assets/book_data/checkout_list.csv';
 
     File checkoutList = File(checkoutListPath);
-    int fileCheck = await Directory('./assets/book_data/checkout_list.csv')
-        .list()
-        .length;
+    int fileCheck =
+        await Directory('./assets/book_data/checkout_list.csv').list().length;
 
     if (fileCheck != 0) {
       String checkoutString = await checkoutList.readAsString();
@@ -106,7 +105,7 @@ class LibraryService {
     return list;
   }
 
-  LibraryService ({
+  LibraryService({
     required List<Book> bookList,
   }) : _bookList = bookList;
 }
@@ -116,13 +115,13 @@ void main() {
   Book book2 = Book(id: 2, title: '위인전', publishDate: DateTime(2023, 05, 11));
   Book book3 = Book(id: 3, title: '위인전', publishDate: DateTime(2020, 08, 01));
   final bookList = [book3, book, book2];
-  Member member = Member(signUpdate: DateTime.now(),
+  Member member = Member(
+      signUpdate: DateTime.now(),
       name: '전성수',
       address: '서울시',
       digits: '010-1234-1234',
       birthDay: DateTime(1970, 05, 05));
   LibraryService instance = LibraryService(bookList: bookList);
-
 
   instance.enrollCheckoutList(member, book);
   print(instance.bookList);
