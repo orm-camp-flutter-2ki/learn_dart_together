@@ -1,74 +1,80 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 
+interface Borrowable {
+  + borrow(): bool
+  + renew(): bool
+  + returnBook(): bool
+  + isAvailable(): bool
+}
 
-class Book {
-    String title;
-    String author;
-    '대출 상태: 대출 가능("available"), 대출 중("borrowed")
-    String status;
-    '출간일
-    Date publicationDate;
-    '반납일
-    Date returnDate;
-    }
+class Book implements Borrowable{
+  - title: String
+  - author: String
+  - publishDate: DateTime?
+  - borrowed: bool
+  - borrowDate: DateTime?
+  - returnDate: DateTime?
+  - renewalCount: int
+  + Book(title: String, author: String, publishDate: DateTime?)
+  + borrow(): bool
+  + renew(): bool
+  + returnBook(): bool
+  + isAvailable(): bool
+  + toJson(): Map<String, dynamic>
+}
 
 class Member {
-    String name;
-    String address;
-    String phoneNumber;
-    Date birthday;
-    '가입일
-    Date registrationDate;
-    }
-
-'도서관 시스템
-class LibrarySystem implements LoanList, LoanHistory, LoanExtension{
-List<Book>  books
-List<Member> members
-'파일에서 책 데이터 로드
-loadBooks()
-'파일에서 회원 데이터 로드
-loadMembers()
-'대출 가능한 책만 반환하는 메서드
-List<Book> getAvailableBooks()
-'최근 출간된 순서대로 정렬하는 메서드
-void sortByPublicationDate(List<Book> bookList)
-'날짜를 원하는 형식으로 포맷하는 메서드
-String formatDate(DateTime date)
-'대출 목록 표시 메서드
-void displayLoanList()
-'대출 이력 표시 메서드
-void displayLoanHistory()
-'대출 연장 메서드
-void extendLoanPeriod(Book book)
-'데이터 저장 csv로 1행엔 컬럼명 import 가능
-void saveData()
-
+  - name: String
+  - registrationDate: DateTime?
+  - address: String
+  - phoneNumber: String
+  - birthDate: DateTime?
+  + Member(name: String, address: String, phoneNumber: String, birthDate: DateTime?)
+  + getAge(): int
+  + toMap(): Map<String, dynamic>
 }
 
-'' 회원 삭제 커맨드 클래스
-class DeleteMemberCommand implements Command {}
-
-' 회원 복구 커맨드 클래스
-class UndoDeleteCommand implements Command {}
-
-'대출 목록 표시 메서드
-interface LoanList  {
-void displayLoanList();
-}
-'대출 이력 표시 메서드
-interface LoanHistory {
-void displayLoanHistory()
-
-}
-'대출 연장 메서드
-interface LoanExtension {
-void extendLoanPeriod(Book book)
+class BackupManager {
+  + backup(library: Library): void
 }
 
-abstract class Command {
-  void execute();
+class ImportBackUp {
+  + importBackup(library: Library): void
 }
+
+class Library {
+  - books: List<Book>
+  - members: List<Member>
+  - backupFileName: String
+  - mementos: List<LibraryMemento>
+  + addBook(book: Book): void
+  + addMember(member: Member): void
+  + borrowBook(book: Book, member: Member): void
+  + renewBook(book: Book): void
+  + returnBook(book: Book): void
+  + displayAvailableBooks(): void
+  + displayRecentBooks(): void
+  + displayMembersInfo(): void
+}
+
+class LibraryMemento {
+  - books: List<Book>
+  - members: List<Member>
+  + LibraryMemento(books: List<Book>, members: List<Member>)
+  + restore(library: Library): void
+}
+
+class MemberManager {
+  - mementos: List<LibraryMemento>
+  + deleteMember(library: Library, member: Member): void
+  + undoDelete(library: Library): void
+}
+
+Library "1" -- "0..*" Book : contains
+Library "1" -- "0..*" Member : contains
+Library "1" -- "0..*" LibraryMemento : has
+BackupManager "1" -- "1" Library : uses
+ImportBackUp "1" -- "1" Library : uses
+MemberManager "1" -- "1" Library : uses
 
 @enduml
