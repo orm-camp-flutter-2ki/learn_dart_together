@@ -1,0 +1,2 @@
+id,name,address,birth,isMember,createdAt,loanBooks
+1,박세훈,경기도,2001-10-07 00:00:00.000,true,2024-04-02 22:46:24.594404,"[Book(id: 1, title: 책, publishDate: 2002-03-03 00:00:00.000, isAbleLoan: false, loanDate: 2024-04-02 22:47:26.296810, returnDate: 2024-04-16 22:47:26.296810)]"
