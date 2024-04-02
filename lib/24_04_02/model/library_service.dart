@@ -61,11 +61,8 @@ class LibraryService {
     }
   }
 
-  //대출가능목록 보여주기
-  List<Book> get bookList => _bookList;
-
   //최신 출간 순서대로 보여주기
-  List<Book> recentBookList() {
+  List<Book> bookList() {
     final List<Book> recentBookList =
         _bookList.sorted((a, b) => b.publishDate.compareTo(a.publishDate));
 
@@ -124,6 +121,6 @@ void main() {
   LibraryService instance = LibraryService(bookList: bookList);
 
   instance.enrollCheckoutList(member, book);
-  print(instance.bookList);
+  print(instance.bookList());
   print(instance.getCheckoutList());
 }
