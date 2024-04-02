@@ -8,7 +8,7 @@ class PostDto {
   String? title;
   String? body;
 
-  const PostDto({this.userId, this.id, this.title, this.body});
+  PostDto({this.userId, this.id, this.title, this.body});
 
   factory PostDto.fromMap(Map<String, dynamic> data) => PostDto(
         userId: data['userId'] as int?,

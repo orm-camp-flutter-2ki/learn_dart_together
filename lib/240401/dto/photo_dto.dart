@@ -6,7 +6,7 @@ class PhotoDto extends Equatable {
   int? totalHits;
   List<Hit>? hits;
 
-  const PhotoDto({this.total, this.totalHits, this.hits});
+  PhotoDto({this.total, this.totalHits, this.hits});
 
   factory PhotoDto.fromJson(Map<String, dynamic> json) => PhotoDto(
         total: json['total'] as int?,

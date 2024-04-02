@@ -66,7 +66,3 @@ class PostApiImpl implements PostApi {
     throw UnimplementedError();
   }
 }
-
-main() {
-  PostApiImpl().addPost(Post);
-}
