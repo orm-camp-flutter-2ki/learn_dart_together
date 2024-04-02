@@ -7,6 +7,11 @@ class Member {
 
   Member(this.name, this.address, this.phoneNumber, this.birthDate);
 
+  @override
+  String toString() {
+    return 'Member{name: $name, registrationDate: $registrationDate, address: $address, phoneNumber: $phoneNumber, birthDate: $birthDate}';
+  }
+
   int getAge() {
     if (birthDate != null) {
       var now = DateTime.now();
