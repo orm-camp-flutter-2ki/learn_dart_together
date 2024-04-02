@@ -16,15 +16,18 @@ class LibraryService {
   //대출 등록
   void enrollCheckoutList(Member member, Book book) {
     if (!_bookList.contains(book)) {
+      print('등록되지 않은 책입니다.');
       return;
     }
 
     const int terms = 14;
-    DateTime today = DateTime.now();
-    DateTime expiration = today.add(const Duration(days: terms));
-    String expirationString = DateFormat('yyyy/MM/dd').format(expiration);
+    final DateTime today = DateTime.now();
+    final DateTime expiration = today.add(const Duration(days: terms));
+    final String expirationString = DateFormat('yyyy/MM/dd').format(expiration);
+    final int indexNumber = _checkoutList.length + 1;
 
     Map<String, dynamic> listItem = {
+      'index': indexNumber,
       'member': member,
       'book': book,
       'expiration': expirationString
@@ -49,7 +52,7 @@ class LibraryService {
     final item = _checkoutList.where((e) => e['book'].id == bookId).toList();
 
     if (item.isEmpty) {
-      print('해당 도서는 현재 대출중이 아닙니다.');
+      print('해당 내용을 찾을 수 없습니다. 책의 ID를 다시 확인해주세요.');
     } else {
       final index = _checkoutList.lastIndexOf(item[0]);
       final stringDate =
@@ -121,6 +124,9 @@ void main() {
   LibraryService instance = LibraryService(bookList: bookList);
 
   instance.enrollCheckoutList(member, book);
+  print(instance.bookList());
+  print(instance.getCheckoutList());
+  instance.enrollCheckoutList(member, book2);
   print(instance.bookList());
   print(instance.getCheckoutList());
 }
