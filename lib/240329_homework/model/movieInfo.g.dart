@@ -6,7 +6,7 @@ part of 'movieInfo.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MovieInfo _$ResultsFromJson(Map<String, dynamic> json) => MovieInfo(
+MovieInfo _$MovieInfoFromJson(Map<String, dynamic> json) => MovieInfo(
       adult: json['adult'] as bool,
       backdropPath: json['backdrop_path'] as String,
       genreIds:
@@ -24,7 +24,7 @@ MovieInfo _$ResultsFromJson(Map<String, dynamic> json) => MovieInfo(
       voteCount: json['vote_count'] as int,
     );
 
-Map<String, dynamic> _$ResultsToJson(MovieInfo instance) => <String, dynamic>{
+Map<String, dynamic> _$MovieInfoToJson(MovieInfo instance) => <String, dynamic>{
       'adult': instance.adult,
       'backdrop_path': instance.backdropPath,
       'genre_ids': instance.genreIds,
