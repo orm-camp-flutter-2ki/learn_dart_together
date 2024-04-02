@@ -9,6 +9,8 @@ environment:
 # Add regular dependencies here.
 dependencies:
   collection: ^1.18.0
+  freezed: ^2.4.7
+  freezed_annotation: ^2.4.1
   http: ^1.2.1
   json_annotation: ^4.8.1
   # path: ^1.8.0
