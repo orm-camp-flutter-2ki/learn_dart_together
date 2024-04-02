@@ -1,6 +1,8 @@
 import 'package:learn_dart_together/240402/model/book.dart';
 import 'package:learn_dart_together/240402/model/user.dart';
 
+import '../repository/repositoyr.dart';
+
 // 비지니스 로직
 class LibrarySystem {
   final Repository repository;
@@ -17,10 +19,17 @@ class LibrarySystem {
   // 연장
   Duration extensionPeriod = Duration(days: 7);
 
-  bool saveUser(User user) {
-    final getUser = repository.getUser(user);
+  bool isCheckOutable(int id) => bookList
+      .where((e) => e.id == id && e.startDate == Book.defaultDate)
+      .isNotEmpty;
 
-    if (getUser.userCompareForSignUp(user)) {
+  bool isExtendable(int id) =>
+      !bookList.where((e) => e.id == id).first.isExtended;
+
+  bool signUpUser(User user) {
+    if (repository
+        .getUserByNameAndPhoneNum(user.name, user.phoneNum)
+        .isNotEmpty) {
       return repository.saveUser(user);
     } else {
       return false;
@@ -30,19 +39,24 @@ class LibrarySystem {
   bool signIn(String name, String phoneNum) {
     final signIn = repository.getUserByNameAndPhoneNum(name, phoneNum);
 
-    if (signIn.name == name && signIn.phoneNum == phoneNum) {
-      user = signIn;
+    if (signIn.isEmpty) return false;
+    if (signIn.first.name == name && signIn.first.phoneNum == phoneNum) {
+      user = signIn.first;
       return true;
     }
     return false;
   }
 
-  List<Book> getBookList(bool isAvailable) {
-    bookList = repository.getBookList(isAvailable: isAvailable);
+  List<Book> getBookList({bool? isAvailable}) {
+    if (isAvailable != null) {
+      bookList = repository.getBookList(isAvailable: isAvailable);
+    } else {
+      bookList = repository.getBookList();
+    }
     return bookList;
   }
 
-  List<Book> sortBookList(BookSortBy sortedBy) {
+  List<Book> getSortBookList(BookSortBy sortedBy) {
     switch (sortedBy) {
       case BookSortBy.name:
         bookList.sort((a, b) => a.name.compareTo(b.name));
@@ -71,11 +85,11 @@ class LibrarySystem {
     return true;
   }
 
-  List<Book> getMyBookList(Object sortedBy) {
+  List<Book> getMyBookList() {
     return bookList.where((e) => user.history.contains(e.id)).toList();
   }
 
-  bool extension(int id) {
+  bool extendedBook(int id) {
     Book book = bookList.where((e) => e.id == id).first;
 
     if (!book.isExtended) {
@@ -96,20 +110,6 @@ class LibrarySystem {
     repository.updateBook(
         book.copyWith(startDate: Book.defaultDate, endDate: Book.defaultDate));
   }
-}
-
-abstract interface class Repository {
-  bool saveUser(User user);
-
-  User getUser(User user);
-
-  User getUserByNameAndPhoneNum(String name, String phoneNum);
-
-  List<Book> getBookList({bool isAvailable, BookSortBy sortBy, String name});
-
-  bool updateBook(Book book);
-
-  bool updateUser(User user);
 }
 
 enum BookSortBy {
