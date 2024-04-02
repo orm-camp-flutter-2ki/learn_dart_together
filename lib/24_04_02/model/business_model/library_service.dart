@@ -2,8 +2,6 @@ import 'package:intl/intl.dart';
 import 'package:collection/collection.dart';
 import 'package:learn_dart_together/24_03_15/book.dart';
 import 'package:learn_dart_together/24_04_02/model/data_class/member.dart';
-import 'package:learn_dart_together/24_04_02/repository/library_service_repository.dart';
-import 'package:learn_dart_together/24_04_02/repository/library_service_repository_impl.dart';
 import 'package:learn_dart_together/24_04_02/utility/file_manager.dart';
 
 // - 앱을 재시작해도 정보가 유지되어야 한다.
@@ -52,16 +50,13 @@ class LibraryService {
 
   //대출 연장
   //TODO: 리팩 개선 필요 - checkoutNumber와 일치하는 값을 가진 요소를 바로 뽑을 방법이 없을까?
-  void extendsExpiration(int checkoutNumber) {
+  void extendsExpiration(int checkoutOrder) {
     bool isValid = _checkoutList
-        .any((element) => element['checkoutNumber'] == checkoutNumber);
+        .any((element) => element['checkoutOrder'] == checkoutOrder);
 
     if (isValid) {
-      print('대출 번호를 다시 확인해주세요.');
-      return;
-    } else {
       for (var element in _checkoutList) {
-        if (element['checkoutNumber'] == checkoutNumber) {
+        if (element['checkoutOrder'] == checkoutOrder) {
           const int renewalDay = 7;
           final beforeExpiration =
               DateTime.parse(element['expiration'].replaceAll('/', '-'));
@@ -72,6 +67,9 @@ class LibraryService {
               DateFormat('yyyy/MM/dd').format(newExpiration);
         }
       }
+    } else {
+      print('대출 번호를 다시 확인해주세요.');
+      return;
     }
   }
 
@@ -89,18 +87,4 @@ class LibraryService {
     required this.fileManager,
   })  : _bookList = bookList,
         _checkoutList = checkoutList;
-}
-
-void main() async {
-  FileManager fileManager = FileManager.getInstance();
-  LibraryServiceRepository repo =
-      LibraryServiceRepositoryImpl(fileManager: fileManager);
-
-  final List<Book> bookList =
-      await repo.getBookList('./assets/book_data/book_list.json');
-  final checkoutList =
-      await repo.getCheckoutList('./assets/book_data/checkout_list.json');
-
-  LibraryService instance = LibraryService(
-      bookList: bookList, checkoutList: checkoutList, fileManager: fileManager);
 }
