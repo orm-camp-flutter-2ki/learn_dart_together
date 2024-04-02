@@ -46,6 +46,8 @@ void main() {
       }
     } catch (e) {
       print('에러가 발생하였습니다.\n프로그램을 재시작합니다.');
+      pageStack.clear();
+      pageStack.add(Page.loginPage);
     }
   }
 }
