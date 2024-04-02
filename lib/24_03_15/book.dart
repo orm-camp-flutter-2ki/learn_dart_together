@@ -45,11 +45,11 @@ class Book {
     };
   }
 
-  factory Book.fromJson(Map<String, dynamic> map) {
+  factory Book.fromJson(Map<String, dynamic> json) {
     return Book(
-      id: map['id'] as int,
-      title: map['title'] as String,
-      publishDate: map['publishDate'] as DateTime,
+      id: json['id'] as int,
+      title: json['title'] as String,
+      publishDate: DateTime.parse(json['publishDate']),
     );
   }
 }
