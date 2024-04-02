@@ -13,6 +13,8 @@ dependencies:
   xml: ^6.5.0
   path: ^1.8.0
   json_annotation: ^4.8.1
+  freezed_annotation: ^2.4.1
+  dotenv: ^4.2.0
 
 dev_dependencies:
   lints: ^3.0.0
@@ -20,3 +22,4 @@ dev_dependencies:
   mockito: ^5.4.4
   build_runner: ^2.4.0
   json_serializable: ^6.7.1
+  freezed: ^2.4.7
