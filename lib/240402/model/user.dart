@@ -17,12 +17,6 @@ class User {
     required this.history,
   });
 
-  bool userCompareForSignUp(User other) =>
-      name == other.name &&
-      phoneNum == other.phoneNum &&
-      address == other.address &&
-      birthDay == other.birthDay;
-
   @override
   String toString() {
     return 'User{name: $name, phoneNum: $phoneNum, signUpDate: $signUpDate, address: $address, birthDay: $birthDay, history: $history}';

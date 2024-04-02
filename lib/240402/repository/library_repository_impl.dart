@@ -3,7 +3,7 @@ import 'package:learn_dart_together/240402/model/library.dart';
 import 'package:learn_dart_together/240402/model/user.dart';
 import 'package:learn_dart_together/240402/repository/repositoyr.dart';
 
-import '../data_source/book_data_source.dart';
+import '../data_source/library_data_source.dart';
 
 class LibraryRepositoryImpl implements Repository {
   final BookDataSource _bookDataSource;

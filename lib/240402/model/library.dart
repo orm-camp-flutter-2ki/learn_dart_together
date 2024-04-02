@@ -93,9 +93,10 @@ class LibrarySystem {
     Book book = bookList.where((e) => e.id == id).first;
 
     if (!book.isExtended) {
+      //data_source 있는 값 업데이트
+      getBookList();
       repository.updateBook(book.copyWith(
           endDate: book.endDate.add(extensionPeriod), isExtended: true));
-      repository.updateUser(user);
       return true;
     } else {
       return false;
@@ -104,10 +105,13 @@ class LibrarySystem {
 
   void returnBook(int id) {
     Book book = bookList.where((e) => e.id == id).first;
+    getBookList();
     user.history.remove(id);
     repository.updateUser(user);
-    repository.updateBook(
-        book.copyWith(startDate: Book.defaultDate, endDate: Book.defaultDate));
+    repository.updateBook(book.copyWith(
+        startDate: Book.defaultDate,
+        endDate: Book.defaultDate,
+        isExtended: false));
   }
 }
 
