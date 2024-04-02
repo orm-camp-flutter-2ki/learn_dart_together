@@ -26,11 +26,6 @@ class User {
   }
 
   @override
-  String toString() {
-    return 'User(userId: $userId, userName: $userName, address: $address, phoneNumber: $phoneNumber, birth: $birth, joinDate: $joinDate)';
-  }
-
-  @override
   bool operator ==(covariant User other) {
     if (identical(this, other)) return true;
 
@@ -80,5 +75,10 @@ class User {
       birth: birth == null ? birth : DateTime(int.parse(this.birth)),
       joinDate: joinDate == null ? joinDate : DateTime(int.parse(this.joinDate!)),
     );
+  }
+
+  @override
+  String toString() {
+    return 'User(userId: $userId, userName: $userName, address: $address, phoneNumber: $phoneNumber, birth: $birth, joinDate: $joinDate)';
   }
 }

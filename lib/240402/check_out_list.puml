@@ -1,0 +1,16 @@
+﻿@startuml X 
+scale 1
+
+    class checkOutList{
+        User user;
+        Book book;
+        int period;
+        isCheckOut
+    }
+    class Book{
+        int id
+        String name
+        String canCkeckout
+    }
+    
+@enduml

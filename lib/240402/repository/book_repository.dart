@@ -18,6 +18,9 @@ abstract interface class BookRepository {
   // 최근 출간된 순서대로 볼 수
   // 날짜를 표시할 때는 (2013/10/20)
 
+  // void backUpCheckOutList(CheckOutList checkOutList);
+  void backUpCheckOutList(CheckOutList checkOutList);
+
   List<Book> checkOutBook(List<Book> books);
   // 회원이 책을 빌려가면 대출이력이 저장된다.
   // 대출이력 저장

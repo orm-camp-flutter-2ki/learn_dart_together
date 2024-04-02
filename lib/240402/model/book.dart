@@ -4,8 +4,14 @@ String _getFormattedDate(DateTime date) {
 }
 
 DateTime getRawDate(String date) {
-  final splited = date.split('/');
-  final rawDate = DateTime(int.parse(splited[0]), int.parse(splited[1]), int.parse(splited[2]));
+  final DateTime rawDate;
+  if (date.contains('/')) {
+    final splited = date.split('/');
+    rawDate = DateTime(int.parse(splited[0]), int.parse(splited[1]), int.parse(splited[2]));
+  } else {
+    rawDate = DateTime.parse(date);
+  }
+
   return rawDate;
 }
 
@@ -24,9 +30,9 @@ class Book {
     this.isExtended = false,
     required this.title,
     String? publishDate,
-    DateTime? dueReturn,
-  })  : publishDate = publishDate ?? _getFormattedDate(DateTime.now()),
-        dueReturn = dueReturn != null ? _getFormattedDate(dueReturn) : '';
+    String? dueReturn,
+  })  : publishDate = publishDate ?? '',
+        dueReturn = dueReturn ?? '';
 
   Book copyWith({
     int? id,
@@ -34,7 +40,7 @@ class Book {
     bool? isExtended,
     String? title,
     String? publishDate,
-    DateTime? dueReturn,
+    String? dueReturn,
   }) {
     return Book(
       id: id ?? this.id,
@@ -64,7 +70,7 @@ class Book {
       isExtended: map['isExtended'] as bool,
       title: map['title'] as String,
       publishDate: map['publishDate'],
-      dueReturn: map['dueReturn'] != null ? DateTime.fromMillisecondsSinceEpoch(map['dueReturn'] as int) : null,
+      dueReturn: map['dueReturn'] ?? '',
     );
   }
 
