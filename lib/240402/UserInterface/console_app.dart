@@ -14,7 +14,8 @@ enum Page {
   myBooksPage,
   sortPage,
   checkOutPage,
-  extendPage
+  extendPage,
+  returnPage
 }
 
 final List<Page> pageStack = [Page.loginPage];
@@ -43,6 +44,9 @@ void main() {
         case Page.extendPage:
           extendPage();
           break;
+        case Page.returnPage:
+          returnPage();
+          break;
       }
     } catch (e) {
       print('에러가 발생하였습니다.\n프로그램을 재시작합니다.');
@@ -58,8 +62,21 @@ enum SearchType {
   my;
 }
 
+void returnPage() {
+  print('\n반납할 책의 id를 입력해주세요.');
+  String input = stdin.readLineSync(encoding: utf8) ?? '';
+  if (int.tryParse(input) == null ||
+      !librarySystem.isReturnable(int.parse(input))) {
+    print('올바른 id를 입력해주세요.');
+    return;
+  }
+  int id = int.parse(input);
+  librarySystem.returnBook(id);
+  print('반납이 완료되었습니다.');
+  pageStack.removeLast();
+}
+
 void userPage() {
-  SearchType searchType = SearchType.total;
   if (librarySystem.bookList.isEmpty) {
     print('\n원하시는 메뉴의 번호를 입력해주세요.\n0. 전체 책 조회\n1. 대출 가능 책 조회\n2. 대출 목록 조회');
   } else {
@@ -69,17 +86,14 @@ void userPage() {
   String input = stdin.readLineSync(encoding: utf8) ?? '';
   switch (input) {
     case '0':
-      searchType = SearchType.total;
-      List<Book> books = librarySystem.getBookList(isAvailable: false);
+      List<Book> books = librarySystem.getBookList();
       books.forEach((print));
       return;
     case '1':
-      searchType = SearchType.available;
       List<Book> books = librarySystem.getBookList(isAvailable: true);
       books.forEach((print));
       return;
     case '2':
-      searchType = SearchType.my;
       List<Book> books = librarySystem.getMyBookList();
       books.forEach((print));
       pageStack.add(Page.myBooksPage);
@@ -111,7 +125,7 @@ void myBooksPage() {
       pageStack.add(Page.extendPage);
       break;
     case '1':
-      pageStack.add(Page.checkOutPage);
+      pageStack.add(Page.returnPage);
       break;
     case '2':
       pageStack.removeLast();
@@ -164,7 +178,7 @@ void sortPage() {
 }
 
 void checkOutPage() {
-  print('\n반납할 책의 id를 입력해주세요.');
+  print('\n대출할 책의 id를 입력해주세요.');
   String input = stdin.readLineSync(encoding: utf8) ?? '';
   if (int.tryParse(input) == null ||
       !librarySystem.isCheckOutable(int.parse(input))) {
@@ -173,7 +187,7 @@ void checkOutPage() {
   }
   int id = int.parse(input);
   if (librarySystem.checkOutBook(id)) {
-    print('반납이 완료되었습니다.');
+    print('대출이 완료되었습니다.');
     pageStack.removeLast();
   }
 }

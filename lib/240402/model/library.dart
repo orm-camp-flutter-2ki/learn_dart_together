@@ -26,6 +26,8 @@ class LibrarySystem {
   bool isExtendable(int id) =>
       !bookList.where((e) => e.id == id).first.isExtended;
 
+  bool isReturnable(int id) => bookList.any((e) => e.id == id);
+
   bool signUpUser(User user) {
     if (repository.getUserByNameAndPhoneNum(user.name, user.phoneNum).isEmpty) {
       return repository.saveUser(user);
@@ -76,9 +78,9 @@ class LibrarySystem {
   bool checkOutBook(int id) {
     Book book = bookList.where((e) => e.id == id).first;
     user.history.add(book.id);
-    book.copyWith(startDate: day, endDate: day.add(defaultPeriod));
-    // 대출 한 정보 업데이트
-    repository.updateBook(book);
+
+    repository.updateBook(
+        book.copyWith(startDate: day, endDate: day.add(defaultPeriod)));
     repository.updateUser(user);
     return true;
   }
@@ -91,9 +93,8 @@ class LibrarySystem {
     Book book = bookList.where((e) => e.id == id).first;
 
     if (!book.isExtended) {
-      book.copyWith(
-          endDate: book.endDate.add(extensionPeriod), isExtended: true);
-      repository.updateBook(book);
+      repository.updateBook(book.copyWith(
+          endDate: book.endDate.add(extensionPeriod), isExtended: true));
       repository.updateUser(user);
       return true;
     } else {
