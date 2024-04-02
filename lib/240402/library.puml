@@ -1,0 +1,74 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+class Book {
+    String title;
+    String author;
+    '대출 상태: 대출 가능("available"), 대출 중("borrowed")
+    String status;
+    '출간일
+    Date publicationDate;
+    '반납일
+    Date returnDate;
+    }
+
+class Member {
+    String name;
+    String address;
+    String phoneNumber;
+    Date birthday;
+    '가입일
+    Date registrationDate;
+    }
+
+'도서관 시스템
+class LibrarySystem implements LoanList, LoanHistory, LoanExtension{
+List<Book>  books
+List<Member> members
+'파일에서 책 데이터 로드
+loadBooks()
+'파일에서 회원 데이터 로드
+loadMembers()
+'대출 가능한 책만 반환하는 메서드
+List<Book> getAvailableBooks()
+'최근 출간된 순서대로 정렬하는 메서드
+void sortByPublicationDate(List<Book> bookList)
+'날짜를 원하는 형식으로 포맷하는 메서드
+String formatDate(DateTime date)
+'대출 목록 표시 메서드
+void displayLoanList()
+'대출 이력 표시 메서드
+void displayLoanHistory()
+'대출 연장 메서드
+void extendLoanPeriod(Book book)
+'데이터 저장 csv로 1행엔 컬럼명 import 가능
+void saveData()
+
+}
+
+'' 회원 삭제 커맨드 클래스
+class DeleteMemberCommand implements Command {}
+
+' 회원 복구 커맨드 클래스
+class UndoDeleteCommand implements Command {}
+
+'대출 목록 표시 메서드
+interface LoanList  {
+void displayLoanList();
+}
+'대출 이력 표시 메서드
+interface LoanHistory {
+void displayLoanHistory()
+
+}
+'대출 연장 메서드
+interface LoanExtension {
+void extendLoanPeriod(Book book)
+}
+
+abstract class Command {
+  void execute();
+}
+
+@enduml
