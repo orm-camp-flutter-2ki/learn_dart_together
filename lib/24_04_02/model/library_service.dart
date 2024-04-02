@@ -10,7 +10,7 @@ import 'package:learn_dart_together/24_04_02/model/member.dart';
 
 class LibraryService {
   //대출 목록
-  late final List<Map<String, dynamic>> _checkoutList = [];
+  final List<Map<String, dynamic>> _checkoutList = [];
   final List<Book> _bookList;
 
   //대출 등록
@@ -24,10 +24,10 @@ class LibraryService {
     final DateTime today = DateTime.now();
     final DateTime expiration = today.add(const Duration(days: terms));
     final String expirationString = DateFormat('yyyy/MM/dd').format(expiration);
-    final int indexNumber = _checkoutList.length + 1;
+    final int checkoutNumber = _checkoutList.length + 1;
 
     Map<String, dynamic> listItem = {
-      'index': indexNumber,
+      'checkoutOrder': checkoutNumber,
       'member': member,
       'book': book,
       'expiration': expirationString
@@ -47,20 +47,24 @@ class LibraryService {
   }
 
   //대출 연장
-  //TODO: 리팩 개선 필요
-  void extendsExpiration(int bookId) {
-    final item = _checkoutList.where((e) => e['book'].id == bookId).toList();
-
-    if (item.isEmpty) {
-      print('해당 내용을 찾을 수 없습니다. 책의 ID를 다시 확인해주세요.');
+  //TODO: 리팩 개선 필요 - checkoutNumber와 일치하는 값을 가진 요소를 바로 뽑을 방법이 없을까?
+  void extendsExpiration(int checkoutNumber) {
+    bool isValid = _checkoutList.any((element) => element['checkoutNumber'] == checkoutNumber);
+    
+    if (isValid) {
+      print('대출 번호를 다시 확인해주세요.');
+      return;
     } else {
-      final index = _checkoutList.lastIndexOf(item[0]);
-      final stringDate =
-          _checkoutList[index]['expiration'].replaceAll('/', '-');
-      final beforeExpiration = DateTime.parse(stringDate);
+      for (var element in _checkoutList) {
+        if (element['checkoutNumber'] == checkoutNumber) {
+          const int renewalDay = 7;
+          final beforeExpiration = DateTime.parse(element['expiration'].replaceAll('/', '-'));
+          final newExpiration = beforeExpiration.add(const Duration(days: renewalDay));
 
-      _checkoutList[index]['expiration'] = DateFormat('yyyy/MM/dd')
-          .format(beforeExpiration.add(const Duration(days: 7)));
+          element['expiration'] = DateFormat('yyyy/MM/dd')
+              .format(newExpiration);
+        }
+      }
     }
   }
 
