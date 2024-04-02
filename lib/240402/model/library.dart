@@ -27,9 +27,7 @@ class LibrarySystem {
       !bookList.where((e) => e.id == id).first.isExtended;
 
   bool signUpUser(User user) {
-    if (repository
-        .getUserByNameAndPhoneNum(user.name, user.phoneNum)
-        .isNotEmpty) {
+    if (repository.getUserByNameAndPhoneNum(user.name, user.phoneNum).isEmpty) {
       return repository.saveUser(user);
     } else {
       return false;

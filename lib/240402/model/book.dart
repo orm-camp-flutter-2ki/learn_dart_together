@@ -37,4 +37,16 @@ class Book {
       endDate: endDate ?? this.endDate,
     );
   }
+
+  @override
+  String toString() {
+    bool isCheckOutable = startDate == defaultDate;
+    String result =
+        'id: $id, 책이름: $name, 저자: $author, 출판일: ${publishedDate.toString().substring(0, 10)}, 대출: ${(isCheckOutable) ? '가능' : '불가'}';
+    if (!isCheckOutable) {
+      result +=
+          '반납 예정일: ${endDate.toString().substring(0, 10)}, 연장: ${isExtended ? '불가' : '가능'}';
+    }
+    return result;
+  }
 }

@@ -99,6 +99,13 @@ class BookDataSourceImpl implements BookDataSource {
         isExtended: false,
         startDate: Book.defaultDate,
         endDate: Book.defaultDate));
+    userList.add(User(
+        name: '변희선',
+        phoneNum: '9090',
+        signUpDate: DateTime(1999 - 09 - 09),
+        address: '광주',
+        birthDay: DateTime(1999 - 09 - 09),
+        history: {}));
   }
 
   @override
@@ -137,8 +144,7 @@ class BookDataSourceImpl implements BookDataSource {
     // bookList를 index로 for문 사용해서 순회
     for (int i = 0; i < bookList.length; i++) {
       if (bookList[i].id == book.id) {
-        bookList.removeAt(i);
-        bookList.insert(i, book);
+        bookList[i] = book;
         return true;
       }
     }
@@ -150,7 +156,13 @@ class BookDataSourceImpl implements BookDataSource {
 
   @override
   bool updateUser(User user) {
-    // TODO: implement updateUser
-    throw UnimplementedError();
+    for (int i = 0; i < userList.length; i++) {
+      if (user.name == userList[i].name &&
+          user.phoneNum == userList[i].phoneNum) {
+        userList[i] = user;
+        return true;
+      }
+    }
+    return false;
   }
 }
