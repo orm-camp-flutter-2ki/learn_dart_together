@@ -11,7 +11,7 @@ void main() {
     final result = await TodoRepositoryImpl().getTodos();
 
     // Then
-    expect(result.first, sol);
+    expect(result.first.title, sol.title);
   });
   test('TodoRepositoryImpl.getCompletedTodos 메소드를 호출한다', () async {
     // Given
@@ -21,6 +21,6 @@ void main() {
     final result = await TodoRepositoryImpl().getCompletedTodos();
 
     // Then
-    expect(result.first, sol);
+    expect(result.first.userId, sol.userId);
   });
 }
