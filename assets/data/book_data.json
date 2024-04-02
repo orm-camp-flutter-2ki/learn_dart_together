@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "title",
+    "author": "나",
+    "loanDate": "loanDate",
+    "isLoaned": false,
+    "returnDate": "returnDate",
+    "publishDate": "publishDate",
+    "isReturned": true
+  }
+]
