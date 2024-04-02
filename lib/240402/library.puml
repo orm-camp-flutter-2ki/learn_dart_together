@@ -1,0 +1,71 @@
+@startuml
+
+interface Borrowable {
+  + borrow(): bool
+  + renew(): bool
+  + returnBook(): bool
+  + isAvailable(): bool
+}
+
+class Book {
+  - title: String
+  - author: String
+  - publishDate: DateTime
+  - borrowed: bool
+  - borrowDate: DateTime
+  - returnDate: DateTime
+  - renewalCount: int
+  + Book(title: String, author: String, publishDate: DateTime)
+  + borrow(): bool
+  + renew(): bool
+  + returnBook(): bool
+  + isAvailable(): bool
+  + toMap(): Map<String, dynamic>
+}
+
+class Member {
+  - name: String
+  - registrationDate: DateTime
+  - address: String
+  - phoneNumber: String
+  - birthDate: DateTime
+  + Member(name: String, address: String, phoneNumber: String, birthDate: DateTime)
+  + getAge(): int?
+  + toMap(): Map<String, dynamic>
+}
+
+class Library {
+  - books: List<Book>
+  - members: List<Member>
+  - backupFileName: String
+  - mementos: List<LibraryMemento>
+  + Library()
+  + addBook(book: Book): void
+  + addMember(member: Member): void
+  + borrowBook(book: Book, member: Member): void
+  + renewBook(book: Book): void
+  + returnBook(book: Book): void
+  + displayAvailableBooks(): void
+  + displayDueBooks(): void
+  + displayRecentBooks(): void
+  + displayMembersInfo(): void
+  + backup(): void
+  + importBackup(): void
+  + deleteMember(member: Member): void
+  + undoDelete(): void
+}
+
+class LibraryMemento {
+  - books: List<Book>
+  - members: List<Member>
+  + LibraryMemento(books: List<Book>, members: List<Member>)
+  + restore(library: Library): void
+  + fromLibrary(library: Library): LibraryMemento
+}
+
+Book --|> Borrowable
+Library "1" -- "0..*" Book : contains
+Library "1" -- "0..*" Member : contains
+Library "*" -- "1..*" LibraryMemento : has
+
+@enduml
