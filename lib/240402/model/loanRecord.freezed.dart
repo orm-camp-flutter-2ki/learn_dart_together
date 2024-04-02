@@ -21,17 +21,12 @@ LoanRecord _$LoanRecordFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$LoanRecord {
   String get bookName => throw _privateConstructorUsedError;
-
   String get userName => throw _privateConstructorUsedError;
-
   DateTime get rentDate => throw _privateConstructorUsedError;
-
   DateTime get rentBackDate => throw _privateConstructorUsedError;
-
   num get extendReturnDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $LoanRecordCopyWith<LoanRecord> get copyWith =>
       throw _privateConstructorUsedError;
@@ -42,7 +37,6 @@ abstract class $LoanRecordCopyWith<$Res> {
   factory $LoanRecordCopyWith(
           LoanRecord value, $Res Function(LoanRecord) then) =
       _$LoanRecordCopyWithImpl<$Res, LoanRecord>;
-
   @useResult
   $Res call(
       {String bookName,
@@ -59,7 +53,6 @@ class _$LoanRecordCopyWithImpl<$Res, $Val extends LoanRecord>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -103,7 +96,6 @@ abstract class _$$LoanRecordImplCopyWith<$Res>
   factory _$$LoanRecordImplCopyWith(
           _$LoanRecordImpl value, $Res Function(_$LoanRecordImpl) then) =
       __$$LoanRecordImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -234,19 +226,14 @@ abstract class _LoanRecord implements LoanRecord {
 
   @override
   String get bookName;
-
   @override
   String get userName;
-
   @override
   DateTime get rentDate;
-
   @override
   DateTime get rentBackDate;
-
   @override
   num get extendReturnDate;
-
   @override
   @JsonKey(ignore: true)
   _$$LoanRecordImplCopyWith<_$LoanRecordImpl> get copyWith =>

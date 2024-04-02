@@ -21,21 +21,14 @@ User _$UserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$User {
   String get name => throw _privateConstructorUsedError;
-
   num get id => throw _privateConstructorUsedError;
-
   String get phoneNum => throw _privateConstructorUsedError;
-
   DateTime get birthDate => throw _privateConstructorUsedError;
-
   DateTime get joinDate => throw _privateConstructorUsedError;
-
   String get address => throw _privateConstructorUsedError;
-
   List<Book> get rentList => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
@@ -44,7 +37,6 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
-
   @useResult
   $Res call(
       {String name,
@@ -63,7 +55,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -116,7 +107,6 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$$UserImplCopyWith(
           _$UserImpl value, $Res Function(_$UserImpl) then) =
       __$$UserImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -209,7 +199,6 @@ class _$UserImpl implements _User {
   @override
   final String address;
   final List<Book> _rentList;
-
   @override
   List<Book> get rentList {
     if (_rentList is EqualUnmodifiableListView) return _rentList;
@@ -272,25 +261,18 @@ abstract class _User implements User {
 
   @override
   String get name;
-
   @override
   num get id;
-
   @override
   String get phoneNum;
-
   @override
   DateTime get birthDate;
-
   @override
   DateTime get joinDate;
-
   @override
   String get address;
-
   @override
   List<Book> get rentList;
-
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
