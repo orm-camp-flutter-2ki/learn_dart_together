@@ -3,7 +3,9 @@ import '../model/todo.dart';
 import 'todo_repository.dart';
 
 class TodoRepositoryImpl implements TodoRepository {
-  TodoApi _api = TodoApi();
+  final TodoApi _api;
+
+  TodoRepositoryImpl(this._api);
 
   @override
   Future<List<Todo>> getTodos() async {
