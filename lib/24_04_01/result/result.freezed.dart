@@ -19,19 +19,19 @@ mixin _$Result<D, E> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(D data) success,
-    required TResult Function(E networkError) error,
+    required TResult Function(E error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(D data)? success,
-    TResult? Function(E networkError)? error,
+    TResult? Function(E error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(D data)? success,
-    TResult Function(E networkError)? error,
+    TResult Function(E error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,7 +140,7 @@ class _$SuccessImpl<D, E> implements Success<D, E> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(D data) success,
-    required TResult Function(E networkError) error,
+    required TResult Function(E error) error,
   }) {
     return success(data);
   }
@@ -149,7 +149,7 @@ class _$SuccessImpl<D, E> implements Success<D, E> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(D data)? success,
-    TResult? Function(E networkError)? error,
+    TResult? Function(E error)? error,
   }) {
     return success?.call(data);
   }
@@ -158,7 +158,7 @@ class _$SuccessImpl<D, E> implements Success<D, E> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(D data)? success,
-    TResult Function(E networkError)? error,
+    TResult Function(E error)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -214,7 +214,7 @@ abstract class _$$ErrorImplCopyWith<D, E, $Res> {
           _$ErrorImpl<D, E> value, $Res Function(_$ErrorImpl<D, E>) then) =
       __$$ErrorImplCopyWithImpl<D, E, $Res>;
   @useResult
-  $Res call({E networkError});
+  $Res call({E error});
 }
 
 /// @nodoc
@@ -228,12 +228,12 @@ class __$$ErrorImplCopyWithImpl<D, E, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? networkError = freezed,
+    Object? error = freezed,
   }) {
     return _then(_$ErrorImpl<D, E>(
-      freezed == networkError
-          ? _value.networkError
-          : networkError // ignore: cast_nullable_to_non_nullable
+      freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
               as E,
     ));
   }
@@ -242,14 +242,14 @@ class __$$ErrorImplCopyWithImpl<D, E, $Res>
 /// @nodoc
 
 class _$ErrorImpl<D, E> implements Error<D, E> {
-  const _$ErrorImpl(this.networkError);
+  const _$ErrorImpl(this.error);
 
   @override
-  final E networkError;
+  final E error;
 
   @override
   String toString() {
-    return 'Result<$D, $E>.error(networkError: $networkError)';
+    return 'Result<$D, $E>.error(error: $error)';
   }
 
   @override
@@ -257,13 +257,12 @@ class _$ErrorImpl<D, E> implements Error<D, E> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorImpl<D, E> &&
-            const DeepCollectionEquality()
-                .equals(other.networkError, networkError));
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(networkError));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
@@ -275,29 +274,29 @@ class _$ErrorImpl<D, E> implements Error<D, E> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(D data) success,
-    required TResult Function(E networkError) error,
+    required TResult Function(E error) error,
   }) {
-    return error(networkError);
+    return error(this.error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(D data)? success,
-    TResult? Function(E networkError)? error,
+    TResult? Function(E error)? error,
   }) {
-    return error?.call(networkError);
+    return error?.call(this.error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(D data)? success,
-    TResult Function(E networkError)? error,
+    TResult Function(E error)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(networkError);
+      return error(this.error);
     }
     return orElse();
   }
@@ -335,9 +334,9 @@ class _$ErrorImpl<D, E> implements Error<D, E> {
 }
 
 abstract class Error<D, E> implements Result<D, E> {
-  const factory Error(final E networkError) = _$ErrorImpl<D, E>;
+  const factory Error(final E error) = _$ErrorImpl<D, E>;
 
-  E get networkError;
+  E get error;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<D, E, _$ErrorImpl<D, E>> get copyWith =>
       throw _privateConstructorUsedError;

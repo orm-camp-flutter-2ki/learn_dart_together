@@ -26,7 +26,7 @@ class PictureRepositoryImpl implements PictureRepository {
             .toList();
         return Result.success(listPictures);
       case Error<List<HitsDto>, int>():
-        switch (result.networkError) {
+        switch (result.error) {
           case >= 500 :
             return Result.error(NetworkingError.badServerResponse);
           case >= 400 :
