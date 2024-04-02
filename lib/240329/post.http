@@ -1,0 +1,14 @@
+### Get은 생략가능
+### HTTP/1.1도 생략가능
+### csv 타입도 가져올 수 있음
+
+GET https://jsonplaceholder.typicode.com/posts?id=1 HTTP/1.1
+Content-Type: application/json
+
+###
+POST https://jsonplaceholder.typicode.com/posts
+Content-type: application/json; charset=UTF-8
+
+{
+    "id": 1
+}

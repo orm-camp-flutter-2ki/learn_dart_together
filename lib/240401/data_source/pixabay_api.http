@@ -1,0 +1,25 @@
+﻿
+### search yellow + flower
+GET https://pixabay.com/api/?key=36206009-fe028570b3c99a317c543088c&q=yellow+flowers&image_type=photo HTTP/1.1
+Content-Type: application/jsonGET 
+
+### 전체
+###  "total": 1834965,
+GET https://pixabay.com/api/?key=36206009-fe028570b3c99a317c543088c HTTP/1.1
+Content-Type: application/json
+
+### photo
+### "total": 1448443,
+GET https://pixabay.com/api/?key=36206009-fe028570b3c99a317c543088c&image_type=photo
+Content-type: application/json; charset=UTF-8
+
+### illustration
+### "total": 386522,
+GET https://pixabay.com/api/?key=36206009-fe028570b3c99a317c543088c&image_type=illustration
+Content-type: application/json; charset=UTF-8
+
+### vector
+### "total": 386522,
+GET https://pixabay.com/api/?key=36206009-fe028570b3c99a317c543088c&image_type=vector
+Content-type: application/json; charset=UTF-8
+

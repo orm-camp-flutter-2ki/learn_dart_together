@@ -1,13 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class Post {
-  final int userId;
-  final int id;
-  final String title;
-  final String body;
-  const Post({
-    required this.userId,
-    required this.id,
-    required this.title,
-    required this.body,
+  int? userId;
+  int? id;
+  String? title;
+  String? body;
+
+  Post({
+    this.userId,
+    this.id,
+    this.title,
+    this.body,
   });
 
   @override
@@ -16,18 +18,28 @@ class Post {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(covariant Post other) {
     if (identical(this, other)) return true;
 
-    return other is Post &&
-        other.userId == userId &&
-        other.id == id &&
-        other.title == title &&
-        other.body == body;
+    return other.userId == userId && other.id == id && other.title == title && other.body == body;
   }
 
   @override
   int get hashCode {
     return userId.hashCode ^ id.hashCode ^ title.hashCode ^ body.hashCode;
+  }
+
+  Post copyWith({
+    int? userId,
+    int? id,
+    String? title,
+    String? body,
+  }) {
+    return Post(
+      userId: userId ?? this.userId,
+      id: id ?? this.id,
+      title: title ?? this.title,
+      body: body ?? this.body,
+    );
   }
 }

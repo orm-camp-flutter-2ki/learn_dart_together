@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 
 class PostDto {
-  final int? userId;
-  final int? id;
-  final String? title;
-  final String? body;
+  int? userId;
+  int? id;
+  String? title;
+  String? body;
 
   const PostDto({this.userId, this.id, this.title, this.body});
 

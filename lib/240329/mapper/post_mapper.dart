@@ -1,7 +1,7 @@
 import 'package:learn_dart_together/240329/Dto/post_dto.dart';
 import 'package:learn_dart_together/240329/model/post/post.dart';
 
-extension TOPost on PostDto {
+extension ToPost on PostDto {
   Post toPost() {
     return Post(
       userId: userId?.toInt() ?? -1,
