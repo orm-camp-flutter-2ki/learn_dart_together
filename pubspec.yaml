@@ -12,6 +12,8 @@ dependencies:
   freezed_annotation: ^2.4.1
   http: ^1.2.1
   json_annotation: ^4.8.1
+  mockito: ^5.4.4
+  uuid: ^4.3.2
   # path: ^1.8.0
 
 dev_dependencies:
