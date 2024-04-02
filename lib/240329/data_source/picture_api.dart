@@ -35,6 +35,7 @@ class PictureApi {
     final json = response.statusCode != 200
         ? throw Exception("오류남")
         : file.writeAsBytes(response.bodyBytes);
+
     // print('${file.lengthSync()}');
   }
 }
