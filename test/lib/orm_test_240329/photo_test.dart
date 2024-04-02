@@ -12,7 +12,7 @@ void main() {
     PhotoDownload().saveImageToFile(uint8list, fileName);
 
     File file = File(
-        'C:/Users/USER/StudioProjects/learn_dart_together/lib/orm_240329/hw/icon.co');
+        'C:/Users/USER/StudioProjects/learn_dart_together/lib/orm_240329/hw/icon.ico');
     final save = file.readAsBytesSync();
 
     expect(uint8list == save, true); // 검사 방법을 잘 모르겠다..
