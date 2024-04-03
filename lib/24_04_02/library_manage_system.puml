@@ -57,6 +57,7 @@ package "Repository" {
   }
 
   class RentRepositoryImplement implements RentRepository {
+
   }
 }
 
