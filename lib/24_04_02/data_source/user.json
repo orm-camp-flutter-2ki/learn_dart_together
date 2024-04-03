@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "signupDate": "2024-04-02 23:18:15.353063",
+    "name": "test1",
+    "address": "address",
+    "phoneNumber": "00",
+    "birth": "2024-04-02 23:18:15.354139",
+    "bookIds": [
+      1,
+      2,
+      3
+    ],
+    "isDelayed": true,
+    "isReturned": true
+  },
+  {
+    "id": 2,
+    "signupDate": "2024-04-02 23:18:22.815820",
+    "name": "test1",
+    "address": "address",
+    "phoneNumber": "00",
+    "birth": "2024-04-02 23:18:22.817059",
+    "bookIds": [],
+    "isDelayed": false,
+    "isReturned": true
+  },
+  {
+    "id": 3,
+    "signupDate": "2024-04-02 23:18:53.723518",
+    "name": "test1",
+    "address": "address",
+    "phoneNumber": "00",
+    "birth": "2024-04-02 23:18:53.724385",
+    "bookIds": [],
+    "isDelayed": false,
+    "isReturned": true
+  }
+]

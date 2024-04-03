@@ -1,0 +1,4 @@
+Id,Title,Author,LoanDate,IsLoaned,ReturnDate,PublishDate,IsReturned
+1,book is good,mimi,2024.01.05,true,2024.01.05,2004.01.05,false
+2,book is good,mimi,2024.01.05,false,2024.01.05,2004.01.05,false
+3,book is good,mimi,2024.01.05,false,2024.01.05,2004.01.05,false
