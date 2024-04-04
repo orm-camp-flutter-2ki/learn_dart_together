@@ -1,0 +1,82 @@
+@startuml
+'https://plantuml.com/class-diagram
+class BusinessLogic {}
+
+class UI{}
+
+class FacadeImpl implements Facade {
+final BookRepository bookRepository;
+final UserRepository userRepository;
+loanBook(int userId, int bookId);
+returnBook(int userId, int bookId);
+delayBook(int userId, int bookId);
+-readFile();
+-writeFile();
+}
+
+FacadeImpl --> BookRepository
+FacadeImpl --> UserRepository
+BusinessLogic --> Facade
+UI --> BusinessLogic
+
+class Book {
+final int id;
+final String title;
+final String author;
+final Datetime loanDate;
+final bool isLoaned;
+final Datetime returnDate;
+final Datetime publishDate;
+final bool isReturned;
+}
+
+class User {
+final int id;
+final String name;
+final Datetime signupDate;
+final String address;
+final int phoneNumber;
+final Datetime birth;
+final List<Book> books;
+get age();
+}
+
+
+interface BookRepository {
+loanableBooks();
+getBooks(bool isAscending);
+}
+
+class BookRepositoryImpl implements BookRepository{}
+
+interface UserRepository {
+loanHistory(int userId);
+signUp(User user);
+signOut(int userId);
+getUsers();
+}
+
+class UserRepositoryImpl implements UserRepository{}
+
+
+enum Order {
+id
+title
+publishDate
+}
+
+
+@enduml
+
+
+
+
+
+//책정보 회원정보 대출이력 대출기간 대출연장여부 반납기한 반납여부
+//책 (int Id, 제목, 대출된 날짜, 대출 여부, 예상 반납 날짜, 출간된 날짜, 연장 여부)
+//회원 (Id, 이름, 가입날짜, 주소, 연락처, 생일, 나이, 대출한 책)
+//북레포지토리 (책대출, 책반납,대출가능한책함수, 출간된순서목록)
+//멤버레포지토리 (대출기록저장, 회원가입, 회원탈퇴, 대출연장, 멤버목록)
+
+책대출(대출한다.) 책반납(반납한다.) 책연장(연장한다.) -> 함수
+북 멤버(회원가입)

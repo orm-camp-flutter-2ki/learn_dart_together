@@ -29,9 +29,7 @@ void main() {
                         print('비속어를 사용 할 수 없습니다.');
                     }
                   }
-              }
-
-              print(photos);
+               }
             })
           });
 }

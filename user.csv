@@ -1,0 +1,4 @@
+Id,name,signupDate,address,phoneNumber,birth,bookIds,isDelayed,isReturned
+1,test1,2024-04-02 23:18:15.353063,address,00,2024-04-02 23:18:15.354139,"[1, 2, 3]",true,true
+2,test1,2024-04-02 23:18:22.815820,address,00,2024-04-02 23:18:22.817059,[],false,true
+3,test1,2024-04-02 23:18:53.723518,address,00,2024-04-02 23:18:53.724385,[],false,true

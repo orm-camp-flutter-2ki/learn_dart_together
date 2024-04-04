@@ -31,7 +31,10 @@ class PhotoRepository {
     try {
       final response =
           await _httpClient.get('$pixabayUrl/?key=$pixabayUserKey&$query');
-      photoList = PhotoDto.fromJson(jsonDecode(response)).toPhotos();
+      photoList = PhotoDto.fromJson(jsonDecode(response))
+          .hits!
+          .map((e) => e.toPhoto())
+          .toList();
 
       return Result.success(photoList);
     } on TimeoutException {
