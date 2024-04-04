@@ -5,45 +5,39 @@ import '../../240401/model/photo.dart';
 import '../../240401/repository/photo_repository_impl.dart';
 
 void main() {
+  final repository = PhotoRepositoryImpl();
+
   test('test 바보', () async {
+    // freezd 사용할 시에만 사용 가능!
+    // .whenOrNull(error: (e) => e) String type 변환하는 기능
+
+    final expected = '비속어를 사용할 수 없습니다.';
     final repository = PhotoRepositoryImpl();
     final result = await repository.getPhotos('바보');
 
-    switch (result) {
-      case Success<List<Photo>>():
-        print('성공 : ${result.data}');
-        break;
-      case Error<List<Photo>>():
-        print('성공 : ${result.e}');
-        break;
-    }
+    final error = result.whenOrNull(error: (e) => e);
+    expect(error, expected);
   });
 
   test('test yellow', () async {
-    final repository = PhotoRepositoryImpl();
     final result = await repository.getPhotos('yellow');
 
     switch (result) {
       case Success<List<Photo>>():
         print('성공 : ${result.data}');
-        break;
       case Error<List<Photo>>():
-        print('성공 : ${result.e}');
-        break;
+        print('실패 : ${result.e}');
     }
   });
 
   test('test yuouououo', () async {
-    final repository = PhotoRepositoryImpl();
     final result = await repository.getPhotos('yuouououo');
 
     switch (result) {
       case Success<List<Photo>>():
         print('성공 : ${result.data}');
-        break;
       case Error<List<Photo>>():
-        print('성공 : ${result.e}');
-        break;
+        print('실패 : ${result.e}');
     }
   });
 }
