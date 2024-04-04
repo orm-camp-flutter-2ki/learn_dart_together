@@ -34,7 +34,7 @@ class PixabayRepositoryImpl implements PixabayRepository {
   Future<Result<List<Photo>, NetworkError>> getWebFormatImage(
       String prompt) async {
     try {
-      if (prompt == '바보') {
+      if (prompt.contains('바보')) {
         return Result.error(NetworkError.slang);
       }
       List<PhotoDto> dtoResult = await _api.getImgUrl(prompt);
