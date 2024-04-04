@@ -2,3 +2,7 @@
 # Created by `dart pub`
 .dart_tool/
 .idea/
+pubspec.lock
+*.g.dart
+*.freezed.dart
+*/*/resource

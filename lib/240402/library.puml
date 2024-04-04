@@ -1,0 +1,186 @@
+@startuml
+class FileUtil {
+    read(String path)
+    write(String path, String contents)
+}
+
+class Member {
+    String id
+    String name
+    String signUpDate
+    String address
+    String phone
+    String birthDate
+    int age
+}
+
+class Book {
+    String id
+    String name
+    String isbn
+    String publicationDate
+}
+
+class LoanRecord {
+    String id
+    String memberId
+    String bookId
+    String loanDate
+    String extendedReturnDate
+    String returnDate
+    bool isExtended
+    bool isReturned
+}
+
+interface MemberApi {
+    {abstract} +postMember()
+    {abstract} +getMembers()
+}
+
+interface BookApi {
+    {abstract} +postBook()
+    {abstract} +getBooks()
+}
+
+interface LoanRecordApi {
+    {abstract} +postLoanRecord()
+    {abstract} +getLoanRecords()
+    {abstract} +putLoanRecord()
+}
+
+class MemberApiImpl implements MemberApi  {
+    +postMember()
+    +getMembers()
+}
+
+class BookApiImpl  implements BookApi {
+    +postBook()
+    +getBooks()
+}
+
+class LoanRecordApiImpl  implements LoanRecordApi {
+    +postLoanRecord()
+    +getLoanRecord()
+    +putLoanRecord()
+}
+
+interface MemberRepository {
+    {abstract} +save(Member member)
+    {abstract} +findOneById(String id)
+    {abstract} +findAll()
+}
+
+interface BookRepository {
+    {abstract} +save(Book book)
+    {abstract} +findOneById(String id)
+    {abstract} +findAll()
+}
+
+interface LoanRecordRepository {
+    {abstract} +save(LoanRecord loanRecord)
+    {abstract} +update(LoanRecord loanRecord)
+    {abstract} +findOneByBookId(String bookId)
+    {abstract} +findAll()
+}
+
+class MemberRepositoryImpl implements MemberRepository {
+     #MemberApi api
+
+     +save(Member member)
+     +findOneById(String id)
+     +findAll()
+}
+
+class BookRepositoryImpl implements BookRepository {
+     #BookApi api
+
+     +save(Book book)
+     +findOneById(String id)
+     +findAll()
+}
+
+class LoanRecordRepositoryImpl implements LoanRecordRepository {
+     #LoanRecordApi api
+
+    +save(LoanRecord loanRecord)
+    +update(LoanRecord loanRecord)
+    +findOneByBookId(String bookId)
+    +findAll()
+}
+
+MemberRepositoryImpl --* MemberApi
+BookRepositoryImpl --* BookApi
+LoanRecordRepositoryImpl --* LoanRecordApi
+
+interface MemberService {
+    {abstract} +signUp()
+    {abstract} +getMember(String id)
+    {abstract} +getMembers()
+}
+
+interface BookService {
+    {abstract} +register()
+    {abstract} +getBook(String id)
+    {abstract} +getBooks()
+}
+
+interface LoanRecordService {
+   {abstract} +record()
+   {abstract} +getLoanRecord(String bookId)
+   {abstract} +getAvailableStatus(String bookId)
+   {abstract} +getLoanRecords()
+}
+
+class MemberServiceImpl implements MemberService {
+    #MemberRepository repository
+
+    +signUp()
+    +withdraw()
+    +getMember(String id)
+    +getMembers()
+}
+
+class BookServiceImpl implements BookService {
+    #BookRepository repository
+
+    +register()
+    +getBook(String id)
+    +getBooks()
+}
+
+class LoanRecordServiceImpl implements LoanRecordService {
+    #LoanRecordRepository repository
+
+    +record()
+    +getLoanRecord(String bookId)
+    +getAvailableStatus(String bookId)
+    +getLoanRecords()
+}
+
+MemberServiceImpl --* MemberRepository
+BookServiceImpl --* BookRepository
+LoanRecordServiceImpl --* LoanRecordRepository
+
+interface LoanService {
+    {abstract} +loanBook(String bookId)
+    {abstract} +returnBook(String bookId)
+    {abstract} +extendLoan(String bookId)
+    {abstract} +searchAvailableBook()
+}
+
+class LoanServiceImpl implements LoanService {
+    #MemberService memberService
+    #BookService bookService
+    #LoanRecordService loanRecordService
+
+    +loanBook(String bookId)
+    +returnBook(String bookId)
+    +extendLoan(String bookId)
+    +searchAvailableBook()
+}
+
+LoanServiceImpl --* MemberService
+LoanServiceImpl --* BookService
+LoanServiceImpl --* LoanRecordService
+
+@enduml
