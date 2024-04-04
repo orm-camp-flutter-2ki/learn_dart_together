@@ -21,7 +21,7 @@ void main() {
         case Success<List<Picture>, NetworkingError>():
           print(result.data);
         case Error<List<Picture>, NetworkingError>():
-          expect(result.networkError.message == expectValue, true);
+          expect(result.error.message == expectValue, true);
       }
     });
 
@@ -36,7 +36,7 @@ void main() {
         case Success<List<Picture>, NetworkingError>():
           print(result.data);
         case Error<List<Picture>, NetworkingError>():
-          expect(result.networkError == NetworkingError.badClientRequest, true);
+          expect(result.error == NetworkingError.badClientRequest, true);
       }
     });
   });

@@ -1,18 +1,21 @@
 class Book {
+  int id;
   String title;
   DateTime publishDate;
-  String comment;
 
   Book({
+    required this.id,
     required this.title,
-    required this.comment,
     DateTime? publishDate,
   }) : publishDate = publishDate ?? DateTime.now();
 
-  Book copyWith({String? title, String? comment, DateTime? publishDate}) {
+
+
+  Book copyWith(
+      {int? id, String? title, String? comment, DateTime? publishDate}) {
     return Book(
+        id: id ?? this.id,
         title: title ?? this.title,
-        comment: comment ?? this.comment,
         publishDate: publishDate);
   }
 
@@ -21,38 +24,32 @@ class Book {
       identical(this, other) ||
       other is Book &&
           runtimeType == other.runtimeType &&
+          id == other.id &&
           title == other.title &&
-          publishDate.year == other.publishDate.year &&
-          publishDate.month == other.publishDate.month &&
-          publishDate.day == other.publishDate.day;
+          publishDate == other.publishDate;
 
   @override
   int get hashCode =>
-      publishDate.year.hashCode ^
-      publishDate.month.hashCode ^
-      publishDate.day.hashCode;
+      id.hashCode ^ title.hashCode ^ publishDate.hashCode;
 
   @override
   String toString() {
-    return title;
+    return 'Book{id: $id, title: $title, publishDate: $publishDate}';
   }
-}
 
-void main() {
-  DateTime yesterday = DateTime(2024, 03, 14);
-  DateTime today = DateTime(2024, 03, 15);
-  DateTime today2 = DateTime(2024, 03, 15);
-  DateTime weekAgo = DateTime(2024, 03, 08);
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'publishDate': publishDate.toString(),
+    };
+  }
 
-  Book lee = Book(title: '이순신', comment: '위인전', publishDate: today);
-  Book hong = Book(title: '홍길동', comment: '위인전', publishDate: today);
-  Book kim = Book(title: '김정호', comment: '위인전', publishDate: yesterday);
-  Book jeon = Book(title: '전성수', comment: '위인전', publishDate: weekAgo);
-
-  List<Book> books = [lee, kim, hong, jeon];
-  print('정렬 전 $books');
-
-  books.sort((a, b) => a.publishDate.compareTo(b.publishDate));
-
-  print('정렬 후 $books');
+  factory Book.fromJson(Map<String, dynamic> json) {
+    return Book(
+      id: json['id'] as int,
+      title: json['title'] as String,
+      publishDate: DateTime.parse(json['publishDate']),
+    );
+  }
 }
