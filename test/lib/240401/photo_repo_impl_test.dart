@@ -19,29 +19,14 @@ void main() {
       apiKey = '43171022-dca0290df38de24cd';
       query = 'flowers+cat+home&image_type=photo';
 
-      String error = '';
       final expected = '알 수 없는 네트워크 에러';
 
       // When
-      final result = await repository.getPhotos(apiKey, query);
-      switch (result) {
-        case Success<List<Photo>, NetworkError>():
-          print(result.data);
-        case Error<List<Photo>, NetworkError>():
-          switch (result.error) {
-            case NetworkError.httpError:
-              error = 'HTTP Error';
-            case NetworkError.requestTimeout:
-              error = '타임 아웃';
-            case NetworkError.unknown:
-              error = '알 수 없는 네트워크 에러';
-            case NetworkError.babo:
-              error = '비속어를 사용할 수 없습니다.';
-          }
-      }
+      final data = await repository.getPhotos(apiKey, query);
+      final result = switchCase(data);
 
       // Then
-      expect(error, expected);
+      expect(result, expected);
     });
 
     test("‘바보' 로 검색하면 '비속어를 사용할 수 없습니다.' 메시지를 리턴", () async {
@@ -49,29 +34,36 @@ void main() {
       apiKey = '43171022-dca0290df38de24cd7ba6ed14';
       query = '바보';
 
-      String error = '';
       final expected = '비속어를 사용할 수 없습니다.';
 
       // When
-      final result = await repository.getPhotos(apiKey, query);
-      switch (result) {
-        case Success<List<Photo>, NetworkError>():
-          print(result.data);
-        case Error<List<Photo>, NetworkError>():
-          switch (result.error) {
-            case NetworkError.httpError:
-              error = 'HTTP Error';
-            case NetworkError.requestTimeout:
-              error = '타임 아웃';
-            case NetworkError.unknown:
-              error = '알 수 없는 네트워크 에러';
-            case NetworkError.babo:
-              error = '비속어를 사용할 수 없습니다.';
-          }
-      }
+      final data = await repository.getPhotos(apiKey, query);
+      final result = switchCase(data);
 
       // Then
-      expect(error, expected);
+      expect(result, expected);
     });
   });
+}
+
+String switchCase(ResultVer2<List<Photo>, NetworkError> setData) {
+  String result = '';
+
+  switch (setData) {
+    case Success<List<Photo>, NetworkError>():
+      print(setData.data);
+    case Error<List<Photo>, NetworkError>():
+      switch (setData.error) {
+        case NetworkError.httpError:
+          result = 'HTTP Error';
+        case NetworkError.requestTimeout:
+          result = '타임 아웃';
+        case NetworkError.unknown:
+          result = '알 수 없는 네트워크 에러';
+        case NetworkError.babo:
+          result = '비속어를 사용할 수 없습니다.';
+      }
+  }
+
+  return result;
 }
