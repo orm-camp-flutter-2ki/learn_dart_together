@@ -1,0 +1,16 @@
+@startuml
+class Member
+
+class Book
+class Rent
+
+class MemberRepositoryImpl implements MemberRepository
+class MemberRepository
+
+class BookRepositoryImpl implements BookRepository
+class BookRepository
+
+class RentRepositoryImpl implements RentRepository
+class RentRepository
+
+@enduml
