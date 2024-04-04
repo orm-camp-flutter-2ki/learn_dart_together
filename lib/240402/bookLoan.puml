@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Book{
+ +int id,
+ +String title,
+ +DateTime publishDate,
+ +bool isAbleLoan,
+ +DateTime loanDate,
+ +DateTime returnDate,
+}
+class User  {
++int id,
++String name,
++String address,
++DateTime birth,
++bool isMember,
++DateTime createdAt,
++List<Book> loanBooks,
+}
+User *-- Book
+
+interface BookRepository {
++bool createBook(Book book);
++List<Book> readBooks();
++Book? readBook(int val);
++int getIdInt();
++void changeBook(int val, Book book);
+}
+class BookRepositoryImpl implements BookRepository {
+-List<Book> _bookList = [];
+-int _bookId = 0;
+}
+interface UserRepository {
++List<User> getUsers();
++void delUser(int val);
++Future<void> saveUser();
++int createUser(User user);
++void delcanUser(int val);
++int getiIdInt();
++User? getUser(int val);
++void changeUser(int val, User user);
+}
+class UserRepositoryImpl implements UserRepository {
+-List<User> _userList = [];
+-int _userId = 0;
+}
+@enduml
